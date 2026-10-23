@@ -15,7 +15,7 @@ this model and this horizon. It does not establish any physical law.
 
 namespace RelationalPersistence
 
-def starSharpRatio : ℝ := (9 / 10 : ℝ) ^ 20
+noncomputable def starSharpRatio : ℝ := (9 / 10 : ℝ) ^ 20
 
 theorem starSharpRatio_nonneg : 0 ≤ starSharpRatio := by
   unfold starSharpRatio

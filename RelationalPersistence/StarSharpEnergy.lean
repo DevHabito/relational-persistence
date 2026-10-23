@@ -33,7 +33,8 @@ theorem starEigenLine_energy (c : ℝ) :
 theorem starEigenLine_step (c : ℝ) :
     realStarStep (starEigenLine c) =
       starEigenLine ((9 / 10 : ℝ) * c) := by
-  ext <;> simp [realStarStep, starEigenLine] <;> ring
+  unfold realStarStep starEigenLine
+  congr 1 <;> ring
 
 theorem starEigenLine_iterate (n : Nat) (c : ℝ) :
     realIterate realStarStep n (starEigenLine c) =

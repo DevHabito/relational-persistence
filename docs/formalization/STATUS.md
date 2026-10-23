@@ -58,3 +58,35 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
 - **Path graph:** `PathSlowEigenmode.lean` proves an explicit mean-zero real eigenmode, gain `(8+sqrt(3))/10`, its 20-step iterate, and that the resulting ratio is **attained** by a nonzero graph vector. [Lean #40040392019](https://github.com/DevHabito/relational-persistence/actions/runs/40040392019) passed. [PR #9](https://github.com/DevHabito/relational-persistence/pull/9) merged at `d71aa20ae56e6fc7542c257c06fe683cb7d30179`.
 - **Still open:** exact maximality of the path eigenmode, formalization of the full symmetric Laplacian spectrum and numerical equality with the reported floating-point metrics. Classical prior attribution remains required.
 - **CI repair history:** the star supremum proof initially failed over square-root algebra and a calc target mismatch; all failed runs remain accessible in the PR history. No `sorry`, `admit` or unsupported axioms were used in the accepted proofs. Compilation is mathematical validation of a declared model, not empirical verification.
+
+## RP-F002: exact real path supremum — formal certificate verified
+
+- **Result:** `PathSharpSOS.lean` proves `path_residual_supremum`:
+  `sSup pathResidualRatios = ((8+sqrt(3))/10)^20`. Every nonzero
+  mean-zero real P6 graph vector satisfies the sharp upper bound;
+  the eigenmode in `PathSlowEigenmode.lean` attains it.
+- **Proof technique:** an exact polynomial identity writes the one-step
+  squared-energy contraction defect as a sum of four nonnegative squares,
+  after imposing the zero-mean condition. The single algebraic identity
+  `sqrt(3)^2 = 3` is handled explicitly. The upper bound is propagated
+  through exactly 20 synchronous steps, transported to graph vectors,
+  and combined with an attained witness to establish the supremum.
+- **Successful formal run:** [Lean #40042195359](https://github.com/DevHabito/relational-persistence/actions/runs/40042195359);
+  exact proof commit `62bfe03e9bebd3f26ff107f206587f18c4b21e76`.
+  [PR #10](https://github.com/DevHabito/relational-persistence/pull/10)
+  merged into `main` at `563bab0e4cfe47c6440b479cf7cc104f22a9555a`.
+- **Independent arithmetic regression:** [PR #11](https://github.com/DevHabito/relational-persistence/pull/11)
+  merged at `5832de51ad4d3b1914eeb22cf02a8bd8d3d700ae`; Python and Lean
+  CI passed at [#40042154236](https://github.com/DevHabito/relational-persistence/actions/runs/40042154236).
+  The tests compare 36 matrix entries in exact `Q(sqrt(3))` arithmetic,
+  verify zero-sum eigenmode and check coefficients without float rounding.
+- **Exact residual pair now proved in Lean:** `r20(P6) =
+  ((8+sqrt(3))/10)^20` and `r20(S6)=(9/10)^20`, with ratio
+  sets defined over all nonzero mean-zero real six-node graph states.
+- **Scope:** these results are conditional instances of classical finite
+  graph spectral theory. The full graph-family spectral theorem, any
+  newly proposed physical law, PMFF derivation and observational
+  identification of `B`, `I` and `tau` are **not** established.
+- **Failed attempt retained:** CI #40041966015 initially rejected a
+  real-valued executable definition; the type-correct noncomputable
+  declaration compiled successfully without weakening the theorem.

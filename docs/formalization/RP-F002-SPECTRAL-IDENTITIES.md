@@ -91,7 +91,7 @@ their gain and the fixed twenty-step horizon.
   verified an explicit nonzero mean-zero P6 eigenmode and its
   exact 20-step attained norm ratio in Lean
   [#40040392019](https://github.com/DevHabito/relational-persistence/actions/runs/40040392019).
-  **The path maximality and exact path `sSup` remain open.**
+  The path maximality was subsequently verified through PR #10; see the final certificate below.
 - [PR #8](https://github.com/DevHabito/relational-persistence/pull/8)
   verified the exact S6 attainable-set norm-ratio supremum in Lean
   [#40041114514](https://github.com/DevHabito/relational-persistence/actions/runs/40041114514).
@@ -129,3 +129,33 @@ The **path** exact eigenmode has also been verified; its global
 maximality and resulting exact path supremum remain distinct open
 obligations. These results are classical spectral graph mathematics,
 not independent empirical discoveries.
+
+## RP-F002: exact two-graph result (verified)
+
+The exact classical finite-graph worst-case residuals are now both
+**machine-checked** on the original mean-zero real six-vector domains:
+
+```text
+sSup pathResidualRatios = ((8+sqrt(3))/10)^20
+sSup starResidualRatios = (9/10)^20
+```
+
+For P6, the [Lean proof #40042195359](https://github.com/DevHabito/relational-persistence/actions/runs/40042195359)
+certifies a universal squared-energy upper bound using an exact
+sum-of-squares identity. Together with the previously verified slow
+eigenmode, it certifies both the supremum and its attainment.
+[PR #10](https://github.com/DevHabito/relational-persistence/pull/10)
+was merged into main. The independent [PR #11](https://github.com/DevHabito/relational-persistence/pull/11)
+evaluates the SOS identity as an exact matrix equation in
+`Q(sqrt(3))`, rather than relying on floating-point eigensolvers.
+
+For S6, `star_residual_supremum` is established by the previously
+successful Lean [#40041114514](https://github.com/DevHabito/relational-persistence/actions/runs/40041114514),
+with an attained leaf-disagreement mode.
+
+**Interpretation:** the equality of these computed residues with the
+classical eigenvalue formula is proved for this fixed pair of graphs
+and this gain/horizon. The project has not formalized the full path-graph
+spectral theorem for arbitrary graph sizes, established a novel physical
+law, measured operational `B/I/tau` in an observed system, or validated
+the persistence hypothesis empirically.

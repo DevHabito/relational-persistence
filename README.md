@@ -75,10 +75,24 @@ and the exact supremum of achievable nonzero real star ratios,
 The verified source is in [`PathSlowEigenmode.lean`](RelationalPersistence/PathSlowEigenmode.lean)
 and [`StarSharpNorm.lean`](RelationalPersistence/StarSharpNorm.lean).
 
-**The path's exact operator-norm maximum is not yet verified in Lean:**
-an achieved eigenmode is not automatically the slowest mode. Full spectral
-decomposition and empirical persistence validation remain open. No part
-of this work establishes a physical law or derives the model from PMFF.
+**RP-F002 now has a complete exact twenty-step worst-case result** for the
+declared six-vertex path and star, on real mean-zero initial vectors:
+`r20(P6)=((8+sqrt(3))/10)^20` and `r20(S6)=(9/10)^20`.
+The new [`PathSharpSOS.lean`](RelationalPersistence/PathSharpSOS.lean)
+establishes the **universal P6 upper bound** using an explicit sum of
+nonnegative squares; together with the already verified attained slow
+eigenmode, it proves the exact `sSup` equality.
+[Lean #40042195359](https://github.com/DevHabito/relational-persistence/actions/runs/40042195359)
+passed at proof commit `62bfe03e9bebd3f26ff107f206587f18c4b21e76`.
+[The exact quadratic-field regression](tests/test_rp002_sos_oracle.py)
+separately compares all 36 Gram-matrix entries with no floating-point
+arithmetic; its [Lean and Python CI](https://github.com/DevHabito/relational-persistence/actions/runs/40042154236)
+also passed.
+
+These are machine-checked instances of **classical graph consensus and
+spectral mathematics**, not a new theorem about physical persistence.
+Empirical validation, domain measurements and a mathematical bridge from
+PMFF remain separate open problems.
 
 For claims and precise verification scopes, consult the
 [formalization status](docs/formalization/STATUS.md) and

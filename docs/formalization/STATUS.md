@@ -24,3 +24,12 @@
 - Real-data validity, model selection, units, identifiability, causal interpretation and physical relevance cannot be conferred by compilation.
 
 Track the complete RP-001 theorem at [RP-F001](https://github.com/DevHabito/relational-persistence/issues/1). A successful CI run only applies to its exact source commit and the propositions actually checked.
+
+## Exact twenty-step rational certificate (verified partial RP-F001)
+
+- **Verified code commit:** `9390e5657d6e6cd610ccbcb0a648bd8c27f11143`.
+- **Successful Lean run:** [#40034508194](https://github.com/DevHabito/relational-persistence/actions/runs/40034508194).
+- **Declaration:** `rp001_rational_twenty_step_certificate` in `RelationalPersistence/TwentyStep.lean`.
+- **Content:** rational path witness norm ratio > 1/5; universal rational mean-zero star bound ≤ 3/20 after 20 iterations, using exact squared norms and explicit certificates.
+- **Not yet checked at that commit:** `GraphBridge.lean` correspondence and the extension to the registered worst-case real-vector supremum. Both remain open until separate verified results exist.
+- **Failed precursor:** [#40034212699](https://github.com/DevHabito/relational-persistence/actions/runs/40034212699), where `decide` failed to normalize rational equalities. The correction used `norm_num` and passed. This is a tooling/proof-script failure, not a changed numerical target.

@@ -34,3 +34,13 @@ The project explicitly forbids `sorry`, `admit`, and newly declared unsupported 
 3. Certify the exact RP-001 twenty-step threshold with rational interval bounds or an equivalent symbolic proof, independently of the NumPy implementation.
 4. Establish the precise relationship between finite-step persistence, stationary variance, and the proposed scalar index in any class where that relationship is asserted.
 5. Maintain open counterexamples and non-theorems as first-class research artifacts.
+
+## Twenty-step progress
+
+`rp001_rational_twenty_step_certificate` proves a rational-state lower
+witness for the path and a universal rational-state upper bound for the star,
+using a fixed twenty-step horizon. It passed Lean run
+[#40034508194](https://github.com/DevHabito/relational-persistence/actions/runs/40034508194).
+See [the exact inequality and limitations](RP-F001-TWENTY-STEP-CERTIFICATE.md).
+The graph-coordinate bridge and real-operator-norm formulation are independent
+remaining acceptance conditions for the full RP-F001 claim.

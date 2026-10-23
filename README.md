@@ -47,9 +47,14 @@ The first experiment writes `docs/results/RP-001.json`. The case study writes `d
 
 ## Lean 4 formal verification
 
-The first machine-checked lemmas cover index positivity, bounded normalization,
-an exact one-step six-node topology witness, and a separate finite scalar-gain
-contrast. [Lean 4 CI run 40032271293](https://github.com/DevHabito/relational-persistence/actions/runs/40032271293)
+The machine-checked results now include index positivity, bounded normalization,
+a one-step topology witness, and an **exact rational twenty-step certificate**:
+one explicit mean-zero path state has norm ratio above 0.20, while every
+rational mean-zero star state has norm ratio at most 0.15.
+[The RP-F001 rational proof run](https://github.com/DevHabito/relational-persistence/actions/runs/40034508194)
+passed at commit `9390e5657d6e6cd610ccbcb0a648bd8c27f11143`.
+The correspondence with the graph update and extension to the registered
+real-vector operator-norm formulation are tracked separately. [Lean 4 CI run 40032271293](https://github.com/DevHabito/relational-persistence/actions/runs/40032271293)
 passed at commit `cafeb33b6b1b55e88cc5ada6cb88405b6903b8c2` on 2026-10-23.
 These limited results are **not** the full twenty-step RP-001 spectral theorem,
 nor do they certify observed-data claims or fundamental physics.

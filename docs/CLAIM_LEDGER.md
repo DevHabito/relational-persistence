@@ -14,3 +14,6 @@
 | RP-F012 | P6 and S6 with the same scalar inputs have different one-step coordinate responses for an explicit perturbation | Lean 4 verified finite witness | `equal_scalar_inputs_different_update`; CI #40032271293 | Formal proof of registered 20-step RP-001 metric |
 | RP-F013 | Two chosen rational response gains yield different scalar values after 20 powers | Lean 4 verified exact arithmetic | `distinct_gains_twenty_steps`; CI #40032271293 | Statistical variance or physical law |
 | RP-N001 | Any project result is a novel general stability theorem | Not asserted | Dedicated novelty review missing | Priority or a law of nature |
+
+| RP-F014 | An explicit mean-zero path witness exceeds a 0.20 twenty-step norm ratio, while every rational mean-zero star state is bounded by 0.15 under the declared six-coordinate maps | Lean 4 verified, partial RP-F001 | `rp001_rational_twenty_step_certificate`; CI #40034508194 at `9390e56` | Formal certificate for all real states or empirically observed persistence |
+| RP-F015 | The six-coordinate maps agree with the Fin 6 combinatorial graph update for every time step | Candidate formal bridge; CI verification pending | `GraphBridge.lean` (updated after failed induction rewrite) | A verified theorem until its exact source commit passes CI |

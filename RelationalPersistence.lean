@@ -1,3 +1,4 @@
 import RelationalPersistence.FiniteWitness
 import RelationalPersistence.TwentyStep
 import RelationalPersistence.GraphBridge
+import RelationalPersistence.RealTwentyStep

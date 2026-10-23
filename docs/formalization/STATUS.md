@@ -42,3 +42,11 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
 - **Content:** rational path witness norm ratio > 1/5; universal rational mean-zero star bound ≤ 3/20 after 20 iterations, using exact squared norms and explicit certificates.
 - **At that historical commit:** the graph correspondence and real-state transport were unverified. They were subsequently verified in run #40037215631; see above.
 - **Failed precursor:** [#40034212699](https://github.com/DevHabito/relational-persistence/actions/runs/40034212699), where `decide` failed to normalize rational equalities. The correction used `norm_num` and passed. This is a tooling/proof-script failure, not a changed numerical target.
+
+## RP-F002: optimal star squared-energy bound (verified)
+
+- **Proof:** `StarSharpEnergy.lean` proves `star_twenty_squared_energy_optimal`.
+- **Exact value:** `(81/100)^20` is the least *uniform squared-energy* coefficient for the mean-zero six-node star model, attained by the nonzero leaf-disagreement vector.
+- **Successful Lean CI:** [#40038735921](https://github.com/DevHabito/relational-persistence/actions/runs/40038735921), proof commit `9c6318214927b745b3e5166491f4783731464077`; merged through [PR #6](https://github.com/DevHabito/relational-persistence/pull/6).
+- **Independent check:** [PR #7](https://github.com/DevHabito/relational-persistence/pull/7) computes exact Laplacian characteristic polynomials with rational determinant arithmetic; CI #40038774188 passed. This test is **not** a Lean proof of spectral identities.
+- **Open:** a Lean checked equality for the star norm-ratio supremum, the exact path spectral residual, and a complete spectral interpretation. [PR #8](https://github.com/DevHabito/relational-persistence/pull/8) is under proof review. The original bounded-threshold RP-F001 remains complete.

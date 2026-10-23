@@ -65,12 +65,20 @@ energy to the Euclidean norm. The source is in
 [Lean 4 verification #40037215631](https://github.com/DevHabito/relational-persistence/actions/runs/40037215631)
 succeeded at commit `f681b973a54eb13f7260f52ecf48a228340fc124`.
 
-The proof establishes certified **bounds**, not the exact numerical spectral
-values in RP-001's simulation results. A separate explicit `sSup` formulation
-and a Lean formalization of spectral decomposition remain open; they are not
-needed for the bounded-threshold counterexample. No part of this proof
-establishes a new law of physics, validates real-world recovery data, or
-derives the model from the PMFF.
+The original RP-F001 certificate establishes **bounds**, not exact
+spectral equalities. Subsequent [RP-F002](https://github.com/DevHabito/relational-persistence/issues/5)
+work now also includes two stronger machine-checked classical results:
+an explicit path mode attaining the exact ratio
+`((8+sqrt(3))/10)^20` ([Lean #40040392019](https://github.com/DevHabito/relational-persistence/actions/runs/40040392019)),
+and the exact supremum of achievable nonzero real star ratios,
+`(9/10)^20` ([Lean #40041114514](https://github.com/DevHabito/relational-persistence/actions/runs/40041114514)).
+The verified source is in [`PathSlowEigenmode.lean`](RelationalPersistence/PathSlowEigenmode.lean)
+and [`StarSharpNorm.lean`](RelationalPersistence/StarSharpNorm.lean).
+
+**The path's exact operator-norm maximum is not yet verified in Lean:**
+an achieved eigenmode is not automatically the slowest mode. Full spectral
+decomposition and empirical persistence validation remain open. No part
+of this work establishes a physical law or derives the model from PMFF.
 
 For claims and precise verification scopes, consult the
 [formalization status](docs/formalization/STATUS.md) and

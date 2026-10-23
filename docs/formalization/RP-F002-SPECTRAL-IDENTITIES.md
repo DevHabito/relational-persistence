@@ -82,15 +82,19 @@ their gain and the fixed twenty-step horizon.
   separately targets the exact operator norm or `sSup` object and
   its equality with the spectral formula.
 - [PR #6](https://github.com/DevHabito/relational-persistence/pull/6)
-  attempts to formally prove the star's *sharp* squared-energy bound
-  from an attained eigenmode. An attempted proof is not verified
-  until the pinned Lean CI passes.
+  proved the star's sharp squared-energy bound, verified in Lean
+  [#40038735921](https://github.com/DevHabito/relational-persistence/actions/runs/40038735921).
 - [PR #7](https://github.com/DevHabito/relational-persistence/pull/7)
   independently checks both graph characteristic polynomials with
   exact fractions, rather than NumPy's eigenvalue implementation.
-- A complete Lean certificate of the path's algebraic eigenvalue
-  `2 - sqrt(3)`, its eigenspace, maximality and the exact `sSup`
-  equality **has not yet been produced**.
+- [PR #9](https://github.com/DevHabito/relational-persistence/pull/9)
+  verified an explicit nonzero mean-zero P6 eigenmode and its
+  exact 20-step attained norm ratio in Lean
+  [#40040392019](https://github.com/DevHabito/relational-persistence/actions/runs/40040392019).
+  **The path maximality and exact path `sSup` remain open.**
+- [PR #8](https://github.com/DevHabito/relational-persistence/pull/8)
+  verified the exact S6 attainable-set norm-ratio supremum in Lean
+  [#40041114514](https://github.com/DevHabito/relational-persistence/actions/runs/40041114514).
 
 ## Classical attribution
 
@@ -116,7 +120,12 @@ CI and were integrated in [PR #7](https://github.com/DevHabito/relational-persis
 These are numerical-free **exact computational checks**, but not Lean
 kernel proofs of the characteristic-polynomial identities.
 
-A formal proof of the precise **norm-ratio supremum** is being developed
-separately in [PR #8](https://github.com/DevHabito/relational-persistence/pull/8).
-Do not conflate the squared-energy result with a verified supremum
-declaration before its own pinned CI succeeds.
+The **star** norm-ratio supremum is now separately verified in Lean:
+`StarSharpNorm.lean` defines `starResidualRatios`, proves the sharp
+upper bound on every nonzero mean-zero real graph vector and constructs
+a nonzero state attaining it. Lean accepts
+`sSup starResidualRatios = (9/10)^20`.
+The **path** exact eigenmode has also been verified; its global
+maximality and resulting exact path supremum remain distinct open
+obligations. These results are classical spectral graph mathematics,
+not independent empirical discoveries.

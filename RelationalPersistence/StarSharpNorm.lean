@@ -29,43 +29,33 @@ theorem star_sharp_norm_upper (x : RealSixState)
   have h := realStar_energy_power_bound 20 x hz
   have hcoeff : (81 / 100 : ℝ) ^ 20 = starSharpRatio ^ 2 := by
     norm_num [starSharpRatio]
-  have ho := Real.sq_sqrt (realEnergy_nonneg (realIterate realStarStep 20 x))
-  have hi := Real.sq_sqrt (realEnergy_nonneg x)
-  have hlo : 0 ≤ euclideanNorm (realIterate realStarStep 20 x) := by
-    unfold euclideanNorm
-    positivity
-  have hli : 0 ≤ euclideanNorm x := by
-    unfold euclideanNorm
-    positivity
-  have hk : 0 ≤ starSharpRatio := starSharpRatio_nonneg
   rw [hcoeff] at h
-  unfold euclideanNorm at hlo hli ⊢
-  nlinarith
+  have hroot := Real.sqrt_le_sqrt h
+  calc
+    euclideanNorm (realIterate realStarStep 20 x)
+        = Real.sqrt (realEnergy (realIterate realStarStep 20 x)) := rfl
+    _ ≤ Real.sqrt (starSharpRatio ^ 2 * realEnergy x) := hroot
+    _ = starSharpRatio * euclideanNorm x := by
+      rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq_eq_abs,
+          abs_of_nonneg starSharpRatio_nonneg]
+      rfl
 
 /-- The nonzero leaf-to-leaf mode attains the norm coefficient exactly. -/
 theorem star_sharp_norm_attained :
     euclideanNorm (realIterate realStarStep 20 (starEigenLine 1)) =
       starSharpRatio * euclideanNorm (starEigenLine 1) := by
   rw [starEigenLine_iterate]
-  have hsq : starSharpRatio ^ 2 =
-      ((9 / 10 : ℝ) ^ 20) ^ 2 := rfl
-  have ho : 0 ≤ euclideanNorm (starEigenLine ((9 / 10 : ℝ) ^ 20 * 1)) := by
-    unfold euclideanNorm
-    positivity
-  have hi : 0 ≤ euclideanNorm (starEigenLine 1) := by
-    unfold euclideanNorm
-    positivity
-  have hk : 0 ≤ starSharpRatio := starSharpRatio_nonneg
-  have hs1 : euclideanNorm (starEigenLine ((9 / 10 : ℝ) ^ 20 * 1)) ^ 2 =
-      2 * starSharpRatio ^ 2 := by
-    unfold euclideanNorm
-    rw [Real.sq_sqrt (realEnergy_nonneg _), starEigenLine_energy]
-    simp [starSharpRatio]
-  have hs2 : euclideanNorm (starEigenLine 1) ^ 2 = 2 := by
-    unfold euclideanNorm
-    rw [Real.sq_sqrt (realEnergy_nonneg _), starEigenLine_energy]
-    norm_num
-  nlinarith
+  unfold euclideanNorm
+  rw [starEigenLine_energy, starEigenLine_energy]
+  simp only [mul_one, one_pow]
+  calc
+    Real.sqrt (2 * ((9 / 10 : ℝ) ^ 20) ^ 2)
+        = Real.sqrt (((9 / 10 : ℝ) ^ 20) ^ 2 * 2) := by ring
+    _ = starSharpRatio * Real.sqrt 2 := by
+      rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq_eq_abs,
+          abs_of_nonneg (by positivity : 0 ≤ (9 / 10 : ℝ) ^ 20)]
+      rfl
+    _ = starSharpRatio * Real.sqrt (2 * 1 ^ 2) := by norm_num
 
 /-- All graph vectors are covered by the finite-coordinate representation. -/
 theorem graph_star_sharp_upper :

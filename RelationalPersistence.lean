@@ -8,3 +8,4 @@ import RelationalPersistence.RealVectorBridge
 import RelationalPersistence.StarSharpEnergy
 import RelationalPersistence.PathSlowEigenmode
 import RelationalPersistence.StarSharpNorm
+import RelationalPersistence.PathSharpSOS

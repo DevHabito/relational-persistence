@@ -1,0 +1,49 @@
+{
+  "decision": "Y: scalar sufficiency fails in this declared dynamical class",
+  "environment": {
+    "networkx": "3.6.1",
+    "numpy": "2.3.5",
+    "python": "3.13.5"
+  },
+  "index_same_on_both_graphs": 100.0,
+  "limitations": [
+    "The networks and dynamics are constructed, not experimentally measured.",
+    "The spectral calculation establishes known linear-consensus behavior, not novelty.",
+    "The index is an operational proposal, not an independently calibrated stability law."
+  ],
+  "max_independent_check_error": 5.551115123125783e-16,
+  "method": "spectral calculation with independent matrix-power regression check",
+  "path": {
+    "algebraic_connectivity": 0.2679491924311227,
+    "alpha": 0.1,
+    "contraction_factor": 0.9732050807568877,
+    "edges": 5,
+    "horizon": 20,
+    "largest_laplacian_eigenvalue": 3.7320508075688767,
+    "nodes": 6,
+    "noise_variance": 0.01,
+    "residual_at_horizon": 0.5808812405283864,
+    "stationary_total_disagreement": 0.3056246764979149
+  },
+  "path_minus_star_residual": 0.4593045859378171,
+  "preregistration_tag": "rp-001-preregistered",
+  "protocol": "RP-001",
+  "separate_ar1_counterexample": {
+    "coefficient_0_5": "finite",
+    "coefficient_1_1": "unbounded",
+    "interpretation": "same external index proxies; different variance stability"
+  },
+  "star": {
+    "algebraic_connectivity": 0.9999999999999996,
+    "alpha": 0.1,
+    "contraction_factor": 0.9,
+    "edges": 5,
+    "horizon": 20,
+    "largest_laplacian_eigenvalue": 6.0,
+    "nodes": 6,
+    "noise_variance": 0.01,
+    "residual_at_horizon": 0.12157665459056935,
+    "stationary_total_disagreement": 0.2224310776942356
+  },
+  "threshold": 0.05
+}

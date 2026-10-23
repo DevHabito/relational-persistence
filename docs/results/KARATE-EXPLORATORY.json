@@ -1,0 +1,21 @@
+{
+  "experimental_status": "exploratory; not preregistered",
+  "measurement_boundary": "Real observed ties; consensus dynamics/noise hypothetical.",
+  "name": "Zachary karate club (observed network topology)",
+  "physical_validation": false,
+  "results": {
+    "algebraic_connectivity": 0.46852522670139113,
+    "alpha": 0.04,
+    "contraction_factor": 0.9812589909319444,
+    "edges": 78,
+    "horizon": 20,
+    "largest_laplacian_eigenvalue": 18.136695973004414,
+    "nodes": 34,
+    "noise_variance": 0.01,
+    "residual_at_horizon": 0.6849722558930303,
+    "stationary_total_disagreement": 1.8210931918228954
+  },
+  "source": "Zachary (1977), DOI: 10.1086/jar.33.4.3629752",
+  "source_implementation": "networkx.karate_club_graph() (built-in dataset)",
+  "weights": "Ignored; adjacency is unweighted."
+}

@@ -27,7 +27,7 @@ theorem realStarAdj_matches_rational (v w : Fin 6) :
     realStarAdj v w = (starAdj v w : ℝ) := by
   simp [realStarAdj, starAdj]
 
-def realUpdate (adj : Fin 6 → Fin 6 → ℝ)
+noncomputable def realUpdate (adj : Fin 6 → Fin 6 → ℝ)
     (x : Fin 6 → ℝ) (v : Fin 6) : ℝ :=
   x v - (1 / 10 : ℝ) * ∑ w : Fin 6, adj v w * (x v - x w)
 

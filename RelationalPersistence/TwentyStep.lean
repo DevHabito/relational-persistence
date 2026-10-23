@@ -115,121 +115,121 @@ private def pathState1 : SixState := ⟨1, 1, (4 / 5 : ℚ), (-4 / 5 : ℚ), -1,
 private theorem pathCertificate1 : iterate pathStep 1 pathStart = pathState1 := by
   change pathStep (iterate pathStep 0 pathStart) = pathState1
   rw [pathCertificate0]
-  decide
+  norm_num [pathStep, pathState0, pathState1, pathStart]
 
 private def pathState2 : SixState := ⟨1, (49 / 50 : ℚ), (33 / 50 : ℚ), (-33 / 50 : ℚ), (-49 / 50 : ℚ), -1⟩
 private theorem pathCertificate2 : iterate pathStep 2 pathStart = pathState2 := by
   change pathStep (iterate pathStep 1 pathStart) = pathState2
   rw [pathCertificate1]
-  decide
+  norm_num [pathStep, pathState1, pathState2]
 
 private def pathState3 : SixState := ⟨(499 / 500 : ℚ), (19 / 20 : ℚ), (14 / 25 : ℚ), (-14 / 25 : ℚ), (-19 / 20 : ℚ), (-499 / 500 : ℚ)⟩
 private theorem pathCertificate3 : iterate pathStep 3 pathStart = pathState3 := by
   change pathStep (iterate pathStep 2 pathStart) = pathState3
   rw [pathCertificate2]
-  decide
+  norm_num [pathStep, pathState2, pathState3]
 
 private def pathState4 : SixState := ⟨(2483 / 2500 : ℚ), (4579 / 5000 : ℚ), (487 / 1000 : ℚ), (-487 / 1000 : ℚ), (-4579 / 5000 : ℚ), (-2483 / 2500 : ℚ)⟩
 private theorem pathCertificate4 : iterate pathStep 4 pathStart = pathState4 := by
   change pathStep (iterate pathStep 3 pathStart) = pathState4
   rw [pathCertificate3]
-  decide
+  norm_num [pathStep, pathState3, pathState4]
 
 private def pathState5 : SixState := ⟨(49273 / 50000 : ℚ), (44033 / 50000 : ℚ), (2703 / 6250 : ℚ), (-2703 / 6250 : ℚ), (-44033 / 50000 : ℚ), (-49273 / 50000 : ℚ)⟩
 private theorem pathCertificate5 : iterate pathStep 5 pathStart = pathState5 := by
   change pathStep (iterate pathStep 4 pathStart) = pathState5
   rw [pathCertificate4]
-  decide
+  norm_num [pathStep, pathState4, pathState5]
 
 private def pathState6 : SixState := ⟨(48749 / 50000 : ℚ), (423161 / 500000 : ℚ), (195401 / 500000 : ℚ), (-195401 / 500000 : ℚ), (-423161 / 500000 : ℚ), (-48749 / 50000 : ℚ)⟩
 private theorem pathCertificate6 : iterate pathStep 6 pathStart = pathState6 := by
   change pathStep (iterate pathStep 5 pathStart) = pathState6
   rw [pathCertificate5]
-  decide
+  norm_num [pathStep, pathState5, pathState6]
 
 private def pathState7 : SixState := ⟨(4810571 / 5000000 : ℚ), (4068179 / 5000000 : ℚ), (223871 / 625000 : ℚ), (-223871 / 625000 : ℚ), (-4068179 / 5000000 : ℚ), (-4810571 / 5000000 : ℚ)⟩
 private theorem pathCertificate7 : iterate pathStep 7 pathStart = pathState7 := by
   change pathStep (iterate pathStep 6 pathStart) = pathState7
   rw [pathCertificate6]
-  decide
+  norm_num [pathStep, pathState6, pathState7]
 
 private def pathState8 : SixState := ⟨(23681659 / 25000000 : ℚ), (39146971 / 50000000 : ℚ), (3320991 / 10000000 : ℚ), (-3320991 / 10000000 : ℚ), (-39146971 / 50000000 : ℚ), (-23681659 / 25000000 : ℚ)⟩
 private theorem pathCertificate8 : iterate pathStep 8 pathStart = pathState8 := by
   change pathStep (iterate pathStep 7 pathStart) = pathState8
   rw [pathCertificate7]
-  decide
+  norm_num [pathStep, pathState7, pathState8]
 
 private def pathState9 : SixState := ⟨(465416833 / 500000000 : ℚ), (377144041 / 500000000 : ℚ), (19422707 / 62500000 : ℚ), (-19422707 / 62500000 : ℚ), (-377144041 / 500000000 : ℚ), (-465416833 / 500000000 : ℚ)⟩
 private theorem pathCertificate9 : iterate pathStep 9 pathStart = pathState9 := by
   change pathStep (iterate pathStep 8 pathStart) = pathState9
   rw [pathCertificate8]
-  decide
+  norm_num [pathStep, pathState8, pathState9]
 
 private def pathState10 : SixState := ⟨(2282947769 / 2500000000 : ℚ), (3637950817 / 5000000000 : ℚ), (1464815633 / 5000000000 : ℚ), (-1464815633 / 5000000000 : ℚ), (-3637950817 / 5000000000 : ℚ), (-2282947769 / 2500000000 : ℚ)⟩
 private theorem pathCertificate10 : iterate pathStep 10 pathStart = pathState10 := by
   change pathStep (iterate pathStep 9 pathStart) = pathState10
   rw [pathCertificate9]
-  decide
+  norm_num [pathStep, pathState9, pathState10]
 
 private def pathState11 : SixState := ⟨(44731010659 / 50000000000 : ℚ), (35134317707 / 50000000000 : ℚ), (1736457531 / 6250000000 : ℚ), (-1736457531 / 6250000000 : ℚ), (-35134317707 / 50000000000 : ℚ), (-44731010659 / 50000000000 : ℚ)⟩
 private theorem pathCertificate11 : iterate pathStep 11 pathStart = pathState11 := by
   change pathStep (iterate pathStep 10 pathStart) = pathState11
   rw [pathCertificate10]
-  decide
+  norm_num [pathStep, pathState10, pathState11]
 
 private def pathState12 : SixState := ⟨(218856706819 / 250000000000 : ℚ), (339697212563 / 500000000000 : ℚ), (132375939443 / 500000000000 : ℚ), (-132375939443 / 500000000000 : ℚ), (-339697212563 / 500000000000 : ℚ), (-218856706819 / 250000000000 : ℚ)⟩
 private theorem pathCertificate12 : iterate pathStep 12 pathStart = pathState12 := by
   change pathStep (iterate pathStep 11 pathStart) = pathState12
   rw [pathCertificate11]
-  decide
+  norm_num [pathStep, pathState11, pathState12]
 
 private def pathState13 : SixState := ⟨(855823587061 / 1000000000000 : ℚ), (657533410717 / 1000000000000 : ℚ), (158291098583 / 625000000000 : ℚ), (-158291098583 / 625000000000 : ℚ), (-657533410717 / 1000000000000 : ℚ), (-855823587061 / 1000000000000 : ℚ)⟩
 private theorem pathCertificate13 : iterate pathStep 13 pathStart = pathState13 := by
   change pathStep (iterate pathStep 12 pathStart) = pathState13
   rw [pathCertificate12]
-  decide
+  norm_num [pathStep, pathState12, pathState13]
 
 private def pathState14 : SixState := ⟨(4179972847133 / 5000000000000 : ℚ), (31846783152649 / 50000000000000 : ℚ), (12151968574233 / 50000000000000 : ℚ), (-12151968574233 / 50000000000000 : ℚ), (-31846783152649 / 50000000000000 : ℚ), (-4179972847133 / 5000000000000 : ℚ)⟩
 private theorem pathCertificate14 : iterate pathStep 14 pathStart = pathState14 := by
   change pathStep (iterate pathStep 13 pathStart) = pathState14
   rw [pathCertificate13]
-  decide
+  norm_num [pathStep, pathState13, pathState14]
 
 private def pathState15 : SixState := ⟨(408044339394619 / 500000000000000 : ℚ), (61745192453351 / 100000000000000 : ℚ), (2922764079307 / 12500000000000 : ℚ), (-2922764079307 / 12500000000000 : ℚ), (-61745192453351 / 100000000000000 : ℚ), (-408044339394619 / 500000000000000 : ℚ)⟩
 private theorem pathCertificate15 : iterate pathStep 15 pathStart = pathState15 := by
   change pathStep (iterate pathStep 14 pathStart) = pathState15
   rw [pathCertificate14]
-  decide
+  norm_num [pathStep, pathState14, pathState15]
 
 private def pathState16 : SixState := ⟨(1990562508409163 / 2500000000000000 : ℚ), (2994762600700939 / 5000000000000000 : ℚ), (225419980894543 / 1000000000000000 : ℚ), (-225419980894543 / 1000000000000000 : ℚ), (-2994762600700939 / 5000000000000000 : ℚ), (-1990562508409163 / 2500000000000000 : ℚ)⟩
 private theorem pathCertificate16 : iterate pathStep 16 pathStart = pathState16 := by
   change pathStep (iterate pathStep 15 pathStart) = pathState16
   rw [pathCertificate15]
-  decide
+  norm_num [pathStep, pathState15, pathState16]
 
 private def pathState17 : SixState := ⟨(38824887752065873 / 50000000000000000 : ℚ), (29066325726898553 / 50000000000000000 : ℚ), (1360557741501243 / 6250000000000000 : ℚ), (-1360557741501243 / 6250000000000000 : ℚ), (-29066325726898553 / 50000000000000000 : ℚ), (-38824887752065873 / 50000000000000000 : ℚ)⟩
 private theorem pathCertificate17 : iterate pathStep 17 pathStart = pathState17 := by
   change pathStep (iterate pathStep 16 pathStart) = pathState17
   rw [pathCertificate16]
-  decide
+  norm_num [pathStep, pathState16, pathState17]
 
 private def pathState18 : SixState := ⟨(37849031549549141 / 50000000000000000 : ℚ), (282239955499264241 / 500000000000000000 : ℚ), (105257559250968161 / 500000000000000000 : ℚ), (-105257559250968161 / 500000000000000000 : ℚ), (-282239955499264241 / 500000000000000000 : ℚ), (-37849031549549141 / 50000000000000000 : ℚ)⟩
 private theorem pathCertificate18 : iterate pathStep 18 pathStart = pathState18 := by
   change pathStep (iterate pathStep 17 pathStart) = pathState18
   rw [pathCertificate17]
-  decide
+  norm_num [pathStep, pathState17, pathState18]
 
 private def pathState19 : SixState := ⟨(3688652794958686931 / 5000000000000000000 : ℚ), (2741667518740573499 / 5000000000000000000 : ℚ), (127380358782005171 / 625000000000000000 : ℚ), (-127380358782005171 / 625000000000000000 : ℚ), (-2741667518740573499 / 5000000000000000000 : ℚ), (-3688652794958686931 / 5000000000000000000 : ℚ)⟩
 private theorem pathCertificate19 : iterate pathStep 19 pathStart = pathState19 := by
   change pathStep (iterate pathStep 18 pathStart) = pathState19
   rw [pathCertificate18]
-  decide
+  norm_num [pathStep, pathState18, pathState19]
 
 private def pathState20 : SixState := ⟨(17969771336684377939 / 25000000000000000000 : ℚ), (26641035815139316291 / 50000000000000000000 : ℚ), (394998704421314523 / 2000000000000000000 : ℚ), (-394998704421314523 / 2000000000000000000 : ℚ), (-26641035815139316291 / 50000000000000000000 : ℚ), (-17969771336684377939 / 25000000000000000000 : ℚ)⟩
 private theorem pathCertificate20 : iterate pathStep 20 pathStart = pathState20 := by
   change pathStep (iterate pathStep 19 pathStart) = pathState20
   rw [pathCertificate19]
-  decide
+  norm_num [pathStep, pathState19, pathState20]
 
 theorem path_twenty_witness_bound :
     (1/5 : ℚ)^2 * energy pathStart <

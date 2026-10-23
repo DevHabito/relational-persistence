@@ -21,11 +21,15 @@ def realStarAdj (v w : Fin 6) : ℝ :=
 
 theorem realPathAdj_matches_rational (v w : Fin 6) :
     realPathAdj v w = (pathAdj v w : ℝ) := by
-  simp [realPathAdj, pathAdj]
+  by_cases h : v.val + 1 = w.val ∨ w.val + 1 = v.val
+  · simp [realPathAdj, pathAdj, h]
+  · simp [realPathAdj, pathAdj, h]
 
 theorem realStarAdj_matches_rational (v w : Fin 6) :
     realStarAdj v w = (starAdj v w : ℝ) := by
-  simp [realStarAdj, starAdj]
+  by_cases h : (v.val = 0 ∧ w.val ≠ 0) ∨ (w.val = 0 ∧ v.val ≠ 0)
+  · simp [realStarAdj, starAdj, h]
+  · simp [realStarAdj, starAdj, h]
 
 noncomputable def realUpdate (adj : Fin 6 → Fin 6 → ℝ)
     (x : Fin 6 → ℝ) (v : Fin 6) : ℝ :=

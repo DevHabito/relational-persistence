@@ -68,7 +68,7 @@ theorem star_squared_energy_lower_bound (bound : ℝ)
   rw [starEigenLine_iterate, starEigenLine_energy, starEigenLine_energy] at h
   have hp : ((9 / 10 : ℝ) ^ 20) ^ 2 = (81 / 100 : ℝ) ^ 20 := by
     norm_num
-  norm_num at h
+  simp only [mul_one, one_pow] at h
   rw [hp] at h
   linarith
 

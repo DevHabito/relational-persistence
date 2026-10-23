@@ -18,7 +18,7 @@ This is a theorem about a declared classical consensus model, not new physics.
 
 namespace RelationalPersistence
 
-def euclideanNorm (x : RealSixState) : ℝ :=
+noncomputable def euclideanNorm (x : RealSixState) : ℝ :=
   Real.sqrt (realEnergy x)
 
 def isTwentyStepBound (step : RealSixState → RealSixState)

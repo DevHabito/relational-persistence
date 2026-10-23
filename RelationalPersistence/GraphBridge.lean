@@ -39,22 +39,24 @@ def graphIterate (adj : Fin 6 → Fin 6 → ℚ) :
   | 0, x => x
   | n + 1, x => fun v => update adj (graphIterate adj n x) v
 
-theorem path_iterate_matches_graph (n : Nat) (x : SixState) (v : Fin 6) :
-    coordinates (iterate pathStep n x) v =
-      graphIterate pathAdj n (coordinates x) v := by
+theorem path_iterate_matches_graph (n : Nat) (x : SixState) :
+    coordinates (iterate pathStep n x) =
+      graphIterate pathAdj n (coordinates x) := by
   induction n with
   | zero => rfl
   | succ n ih =>
+      funext v
       change coordinates (pathStep (iterate pathStep n x)) v =
         update pathAdj (graphIterate pathAdj n (coordinates x)) v
       rw [path_step_matches_graph, ih]
 
-theorem star_iterate_matches_graph (n : Nat) (x : SixState) (v : Fin 6) :
-    coordinates (iterate starStep n x) v =
-      graphIterate starAdj n (coordinates x) v := by
+theorem star_iterate_matches_graph (n : Nat) (x : SixState) :
+    coordinates (iterate starStep n x) =
+      graphIterate starAdj n (coordinates x) := by
   induction n with
   | zero => rfl
   | succ n ih =>
+      funext v
       change coordinates (starStep (iterate starStep n x)) v =
         update starAdj (graphIterate starAdj n (coordinates x)) v
       rw [star_step_matches_graph, ih]

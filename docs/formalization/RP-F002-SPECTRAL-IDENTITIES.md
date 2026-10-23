@@ -102,3 +102,21 @@ DOI: https://doi.org/10.1109/JPROC.2006.887293
 The result belongs to classical graph Laplacian consensus and
 finite-dimensional spectral theory. Neither the PMFF nor RZS has been
 shown to derive these particular dynamics.
+
+## Verified sharpness checkpoint
+
+The star squared-energy bound is no longer merely a candidate: Lean 4
+[run #40038735921](https://github.com/DevHabito/relational-persistence/actions/runs/40038735921)
+accepted the exact proof in `StarSharpEnergy.lean`. The result is the
+least uniform coefficient `(81/100)^20`, attained by a nonzero,
+zero-sum leaf-disagreement mode. See merged [PR #6](https://github.com/DevHabito/relational-persistence/pull/6).
+
+The independent characteristic-polynomial regression checks also passed
+CI and were integrated in [PR #7](https://github.com/DevHabito/relational-persistence/pull/7).
+These are numerical-free **exact computational checks**, but not Lean
+kernel proofs of the characteristic-polynomial identities.
+
+A formal proof of the precise **norm-ratio supremum** is being developed
+separately in [PR #8](https://github.com/DevHabito/relational-persistence/pull/8).
+Do not conflate the squared-energy result with a verified supremum
+declaration before its own pinned CI succeeds.

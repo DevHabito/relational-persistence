@@ -1,8 +1,6 @@
 # RP-F001: exact twenty-step certificate and its limits
 
-**Status:** proposed proof source under Lean CI review. Do not label this note
-machine-certified until the current source commit passes the pinned workflow.
-This document is separate from the frozen RP-001 preregistration.
+**Status:** RP-F001 bounded-threshold result verified by Lean 4; see [CI #40037215631](https://github.com/DevHabito/relational-persistence/actions/runs/40037215631) at `f681b973a54eb13f7260f52ecf48a228340fc124`. This document remains separate from the frozen RP-001 preregistration.
 
 ## Model
 
@@ -66,17 +64,29 @@ a separation strictly greater than `1/5 - 3/20 = 1/20 = 0.05`.
 The argument is an elementary exact certificate, not a spectral
 diagonalization, statistical test, or physical prediction.
 
-## What certification must still establish
+## Real graph-level verification
 
-1. Pinned Lean 4 + Mathlib type-checking of each rational recurrence and
-   the star identity, without `sorry`, `admit` or new axioms.
-2. The two coordinate updates coincide with the graph update function
-   already used in the formal baseline.
-3. The norm interpretation and quantification extend to all real
-   mean-zero vectors, rather than silently changing the registered
-   real-vector supremum into a rational-state supremum.
-4. Exactly which statement each accepted Lean theorem establishes must
-   be reflected in the claim ledger. This note is not empirical evidence.
+The rational argument was extended to real states and formally linked to
+all graph vectors on `Fin 6`. In `RealVectorBridge.lean`, an explicit
+inverse maps any vector of six real coordinates to `RealSixState`.
+The sum and squared-energy identities preserve the mean-zero condition
+and Euclidean norm. `RealGraphBridge.lean` proves the real graph updates
+coincide with the coordinate recurrence. `RealResidualNorm.lean` proves
+the squared-energy bounds imply the corresponding Euclidean norm bounds.
+
+The path lower witness and the universal star upper bound therefore apply
+to the **real graph-state space** named in RP-001, not only rational tuples.
+Lean checks the comparison with any valid path uniform upper bound; it
+does not separately construct a `sSup` or certify the reported exact
+spectral eigenvalues.
+
+## Historical certification obligations (now resolved in bounds form)
+
+1. Exact arithmetic and star bound: checked.
+2. Agreement with the six-vertex Laplacian graph update: checked.
+3. Transfer to all six-component real vectors and their Euclidean norm: checked.
+4. A separately defined supremum or operator-norm equality: **not formalized**.
+5. Physical interpretation and observed-data validity: **not established**.
 
 An early CI run failed because `decide` could not reduce the rational
 certificates. That is a **formalization failure**, not a contradiction

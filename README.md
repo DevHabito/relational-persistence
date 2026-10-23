@@ -47,20 +47,34 @@ The first experiment writes `docs/results/RP-001.json`. The case study writes `d
 
 ## Lean 4 formal verification
 
-The machine-checked results now include index positivity, bounded normalization,
-a one-step topology witness, and an **exact rational twenty-step certificate**:
-one explicit mean-zero path state has norm ratio above 0.20, while every
-rational mean-zero star state has norm ratio at most 0.15.
-[The RP-F001 rational proof run](https://github.com/DevHabito/relational-persistence/actions/runs/40034508194)
-passed at commit `9390e5657d6e6cd610ccbcb0a648bd8c27f11143`.
-The correspondence with the graph update and extension to the registered
-real-vector operator-norm formulation are tracked separately. [Lean 4 CI run 40032271293](https://github.com/DevHabito/relational-persistence/actions/runs/40032271293)
-passed at commit `cafeb33b6b1b55e88cc5ada6cb88405b6903b8c2` on 2026-10-23.
-These limited results are **not** the full twenty-step RP-001 spectral theorem,
-nor do they certify observed-data claims or fundamental physics.
-See [formalization scope](docs/formalization/README.md),
-[proof source](RelationalPersistence/FiniteWitness.lean), and
-[verification ledger](docs/formalization/STATUS.md).
+The registered RP-001 **twenty-step topology contrast** is now supported by
+machine-checked real-number inequalities, not only floating-point computations.
+For the declared synchronous six-vertex consensus models, the path has a
+mean-zero state with twenty-step Euclidean norm ratio strictly above 0.20;
+the star has a uniform bound of 0.15 for **every** real mean-zero state.
+Consequently, the two worst-case residuals differ by more than the
+registered decision threshold of 0.05.
+
+The proof follows the original graph update, with an explicit inverse between
+six-coordinate states and `Fin 6 → ℝ`, and an identity relating coordinate
+energy to the Euclidean norm. The source is in
+[`RealVectorBridge.lean`](RelationalPersistence/RealVectorBridge.lean),
+[`RealResidualNorm.lean`](RelationalPersistence/RealResidualNorm.lean),
+[`RealGraphBridge.lean`](RelationalPersistence/RealGraphBridge.lean) and
+[`RealTwentyStep.lean`](RelationalPersistence/RealTwentyStep.lean).
+[Lean 4 verification #40037215631](https://github.com/DevHabito/relational-persistence/actions/runs/40037215631)
+succeeded at commit `f681b973a54eb13f7260f52ecf48a228340fc124`.
+
+The proof establishes certified **bounds**, not the exact numerical spectral
+values in RP-001's simulation results. A separate explicit `sSup` formulation
+and a Lean formalization of spectral decomposition remain open; they are not
+needed for the bounded-threshold counterexample. No part of this proof
+establishes a new law of physics, validates real-world recovery data, or
+derives the model from the PMFF.
+
+For claims and precise verification scopes, consult the
+[formalization status](docs/formalization/STATUS.md) and
+[claim ledger](docs/CLAIM_LEDGER.md).
 
 ## Scientific boundaries
 

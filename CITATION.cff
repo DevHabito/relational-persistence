@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: >-
+  Please cite the repository version and the specific protocol or result file used.
+title: Relational Persistence: A Reproducible Mathematical Research Program
+version: 0.1.1
+authors:
+  - family-names: Romero
+    given-names: Felipe Gianini
+keywords:
+  - relational dynamics
+  - complex systems
+  - mathematical modeling
+  - reproducible computational research
+license: Apache-2.0

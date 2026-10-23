@@ -44,13 +44,13 @@ theorem realCoordinates_realTotal (x : RealSixState) :
   norm_num [realCoordinates, realTotal, Fin.sum_univ_succ]
   ring
 
-theorem path_step_matches_graph (x : RealSixState) (v : Fin 6) :
+theorem real_path_step_matches_graph (x : RealSixState) (v : Fin 6) :
     realCoordinates (realPathStep x) v = realUpdate realPathAdj (realCoordinates x) v := by
   fin_cases v <;>
     norm_num [realCoordinates, realPathStep, realUpdate, realPathAdj, Fin.sum_univ_succ] <;>
     ring
 
-theorem star_step_matches_graph (x : RealSixState) (v : Fin 6) :
+theorem real_star_step_matches_graph (x : RealSixState) (v : Fin 6) :
     realCoordinates (realStarStep x) v = realUpdate realStarAdj (realCoordinates x) v := by
   fin_cases v <;>
     norm_num [realCoordinates, realStarStep, realUpdate, realStarAdj, Fin.sum_univ_succ] <;>
@@ -61,7 +61,7 @@ def realGraphIterate (adj : Fin 6 → Fin 6 → ℝ) :
   | 0, x => x
   | n + 1, x => fun v => realUpdate adj (realGraphIterate adj n x) v
 
-theorem path_iterate_matches_graph (n : Nat) (x : RealSixState) :
+theorem real_path_iterate_matches_graph (n : Nat) (x : RealSixState) :
     realCoordinates (realIterate realPathStep n x) =
       realGraphIterate realPathAdj n (realCoordinates x) := by
   induction n with
@@ -70,9 +70,9 @@ theorem path_iterate_matches_graph (n : Nat) (x : RealSixState) :
       funext v
       change realCoordinates (realPathStep (realIterate realPathStep n x)) v =
         realUpdate realPathAdj (realGraphIterate realPathAdj n (realCoordinates x)) v
-      rw [path_step_matches_graph, ih]
+      rw [real_path_step_matches_graph, ih]
 
-theorem star_iterate_matches_graph (n : Nat) (x : RealSixState) :
+theorem real_star_iterate_matches_graph (n : Nat) (x : RealSixState) :
     realCoordinates (realIterate realStarStep n x) =
       realGraphIterate realStarAdj n (realCoordinates x) := by
   induction n with
@@ -81,6 +81,6 @@ theorem star_iterate_matches_graph (n : Nat) (x : RealSixState) :
       funext v
       change realCoordinates (realStarStep (realIterate realStarStep n x)) v =
         realUpdate realStarAdj (realGraphIterate realStarAdj n (realCoordinates x)) v
-      rw [star_step_matches_graph, ih]
+      rw [real_star_step_matches_graph, ih]
 
 end RelationalPersistence

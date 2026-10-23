@@ -6,3 +6,4 @@ import RelationalPersistence.RealGraphBridge
 import RelationalPersistence.RealResidualNorm
 import RelationalPersistence.RealVectorBridge
 import RelationalPersistence.StarSharpEnergy
+import RelationalPersistence.StarSharpNorm

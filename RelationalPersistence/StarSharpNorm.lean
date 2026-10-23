@@ -55,7 +55,7 @@ theorem star_sharp_norm_attained :
       rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq_eq_abs,
           abs_of_nonneg (by positivity : 0 ≤ (9 / 10 : ℝ) ^ 20)]
       rfl
-    _ = starSharpRatio * Real.sqrt (2 * 1 ^ 2) := by norm_num
+    _ = starSharpRatio * Real.sqrt (2 * 1 ^ 2) := by simp
 
 /-- All graph vectors are covered by the finite-coordinate representation. -/
 theorem graph_star_sharp_upper :

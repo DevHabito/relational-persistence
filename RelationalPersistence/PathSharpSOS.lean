@@ -30,7 +30,7 @@ def pathFastFive (t : ℝ) (x : RealSixState) : ℝ :=
     (2+t)*x.d + (1+t)*x.e - x.f
 
 /-- The four nonnegative components of the sharp contraction defect. -/
-def pathSquareCertificate (t : ℝ) (x : RealSixState) : ℝ :=
+noncomputable def pathSquareCertificate (t : ℝ) (x : RealSixState) : ℝ :=
   ((8*t-7)/200) * pathFastTwo x ^ 2 +
   ((3+16*t)/600) * pathFastThree x ^ 2 +
   ((9+8*t)/600) * pathFastFour x ^ 2 +

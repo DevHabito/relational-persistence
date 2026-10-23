@@ -1,0 +1,27 @@
+name: Lean 4 proof checking
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  formal-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check formal mathematical statements
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          test: false
+          lint: false
+          use-mathlib-cache: true
+      - name: Forbid admitted proofs
+        run: |
+          if grep -REn '^\s*(sorry|admit|axiom)\b|\bby\s+sorry\b' RelationalPersistence; then
+            echo 'An unproved assertion was found in the formalization directory.'
+            exit 1
+          fi

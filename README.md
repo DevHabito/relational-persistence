@@ -43,7 +43,19 @@ python -m experiments.run_rp001
 python -m experiments.karate_case_study
 ```
 
-The first experiment writes `docs/results/RP-001.json`. The case study writes `docs/results/KARATE-EXPLORATORY.json`. Neither script downloads data or fits its parameters to its own outcome. Environment versions are recorded in the main experiment output. For preregistration provenance, the Git tag `rp-001-preregistered` marks the protocol commit before implementations were added.
+The first experiment writes `docs/results/RP-001.json`. The case study writes `docs/results/KARATE-EXPLORATORY.json`. Neither script downloads data or fits its parameters to its own outcome. Environment versions are recorded in the main experiment output. On GitHub, the preregistration is preserved in [commit `d327e2c`](https://github.com/DevHabito/relational-persistence/commit/d327e2c60), before implementation commits. The original local research archive also has the tag `rp-001-preregistered`; that local tag has not been published as a GitHub tag.
+
+## Lean 4 formal verification
+
+The first machine-checked lemmas cover index positivity, bounded normalization,
+an exact one-step six-node topology witness, and a separate finite scalar-gain
+contrast. [Lean 4 CI run 40032271293](https://github.com/DevHabito/relational-persistence/actions/runs/40032271293)
+passed at commit `cafeb33b6b1b55e88cc5ada6cb88405b6903b8c2` on 2026-10-23.
+These limited results are **not** the full twenty-step RP-001 spectral theorem,
+nor do they certify observed-data claims or fundamental physics.
+See [formalization scope](docs/formalization/README.md),
+[proof source](RelationalPersistence/FiniteWitness.lean), and
+[verification ledger](docs/formalization/STATUS.md).
 
 ## Scientific boundaries
 

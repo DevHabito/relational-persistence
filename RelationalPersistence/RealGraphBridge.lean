@@ -13,23 +13,16 @@ calibration is inferred from this correspondence.
 
 namespace RelationalPersistence
 
-def realPathAdj (v w : Fin 6) : ℝ :=
-  if v.val + 1 = w.val ∨ w.val + 1 = v.val then 1 else 0
+/-- The real adjacency is the exact scalar extension of the rational graph. -/
+def realPathAdj (v w : Fin 6) : ℝ := (pathAdj v w : ℝ)
 
-def realStarAdj (v w : Fin 6) : ℝ :=
-  if (v.val = 0 ∧ w.val ≠ 0) ∨ (w.val = 0 ∧ v.val ≠ 0) then 1 else 0
+def realStarAdj (v w : Fin 6) : ℝ := (starAdj v w : ℝ)
 
 theorem realPathAdj_matches_rational (v w : Fin 6) :
-    realPathAdj v w = (pathAdj v w : ℝ) := by
-  by_cases h : v.val + 1 = w.val ∨ w.val + 1 = v.val
-  · simp [realPathAdj, pathAdj, h]
-  · simp [realPathAdj, pathAdj, h]
+    realPathAdj v w = (pathAdj v w : ℝ) := rfl
 
 theorem realStarAdj_matches_rational (v w : Fin 6) :
-    realStarAdj v w = (starAdj v w : ℝ) := by
-  by_cases h : (v.val = 0 ∧ w.val ≠ 0) ∨ (w.val = 0 ∧ v.val ≠ 0)
-  · simp [realStarAdj, starAdj, h]
-  · simp [realStarAdj, starAdj, h]
+    realStarAdj v w = (starAdj v w : ℝ) := rfl
 
 noncomputable def realUpdate (adj : Fin 6 → Fin 6 → ℝ)
     (x : Fin 6 → ℝ) (v : Fin 6) : ℝ :=
@@ -51,13 +44,13 @@ theorem realCoordinates_realTotal (x : RealSixState) :
 theorem real_path_step_matches_graph (x : RealSixState) (v : Fin 6) :
     realCoordinates (realPathStep x) v = realUpdate realPathAdj (realCoordinates x) v := by
   fin_cases v <;>
-    norm_num [realCoordinates, realPathStep, realUpdate, realPathAdj, Fin.sum_univ_succ] <;>
+    norm_num [realCoordinates, realPathStep, realUpdate, realPathAdj, pathAdj, Fin.sum_univ_succ] <;>
     ring
 
 theorem real_star_step_matches_graph (x : RealSixState) (v : Fin 6) :
     realCoordinates (realStarStep x) v = realUpdate realStarAdj (realCoordinates x) v := by
   fin_cases v <;>
-    norm_num [realCoordinates, realStarStep, realUpdate, realStarAdj, Fin.sum_univ_succ] <;>
+    norm_num [realCoordinates, realStarStep, realUpdate, realStarAdj, starAdj, Fin.sum_univ_succ] <;>
     ring
 
 noncomputable def realGraphIterate (adj : Fin 6 → Fin 6 → ℝ) :

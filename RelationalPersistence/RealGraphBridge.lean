@@ -56,7 +56,7 @@ theorem real_star_step_matches_graph (x : RealSixState) (v : Fin 6) :
     norm_num [realCoordinates, realStarStep, realUpdate, realStarAdj, Fin.sum_univ_succ] <;>
     ring
 
-def realGraphIterate (adj : Fin 6 → Fin 6 → ℝ) :
+noncomputable def realGraphIterate (adj : Fin 6 → Fin 6 → ℝ) :
     Nat → (Fin 6 → ℝ) → (Fin 6 → ℝ)
   | 0, x => x
   | n + 1, x => fun v => realUpdate adj (realGraphIterate adj n x) v

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "relational-persistence"
+version = "0.1.1"
+description = "Falsifiable mathematical and computational research on relational persistence"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{name = "Felipe Gianini Romero"}]
+dependencies = ["numpy>=1.24,<3", "networkx>=3.0,<4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

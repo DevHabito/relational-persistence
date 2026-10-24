@@ -9,4 +9,6 @@
 
 | RP-E004-P01 | Measured timings of a locally instrumented FIFO HTTP software service; two positive workload interventions and one sham | Preregistered software structural feasibility check passed; full sampled health trace was not archived | Controlled hosted software event measurements; **not** physical persistence or a predictive validation |
 
+| RP-E004-P02 | Timestamped queue observations and server-side controller events in a four-trial local HTTP service pilot | Full-sample instrument audit passed: controller-on, controller-off and zero-load sham cases; historical records replayable | Controlled software experiment with independent log replay; **not** a test of a physical persistence law |
+
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

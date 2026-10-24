@@ -1,0 +1,59 @@
+name: RP-E004-P02 Fully Auditable Instrumentation
+
+on:
+  push:
+    paths:
+      - experiments/rp_e004_p02.py
+      - tests/test_rp_e004_p02.py
+      - .github/workflows/rp-e004-p02.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate adversarial replay and data schema
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q tests/test_measurement_gate.py tests/test_rp_e004_p02.py
+      - name: Execute original preregistered P02 measurements
+        run: |
+          python -m experiments.rp_e004_p02 --output rp-e004-p02-observed
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('rp-e004-p02-observed/summary.json')
+          report = json.loads(path.read_text())
+          assert report['protocol'] == 'RP-E004-P02'
+          assert report['physical_law_test'] == 'NOT_PERFORMED'
+          assert report['decision'] in (
+              'PASS_AUDITABLE_INSTRUMENTATION',
+              'STOP_INSTRUMENTATION_UNRELIABLE'
+          )
+          print('FROZEN_P02_VERDICT', report['decision'])
+          for trial in report['trials']:
+              print('P02_TRIAL', trial['trial_id'], trial['verdict'])
+          PY
+      - name: Upload all role logs and sampled monitor events even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e004-p02-first-fully-sampled-run
+          path: rp-e004-p02-observed/
+          if-no-files-found: warn
+          retention-days: 30

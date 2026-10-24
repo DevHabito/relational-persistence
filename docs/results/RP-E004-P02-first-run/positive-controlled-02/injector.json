@@ -1,0 +1,10 @@
+{
+  "attempted": 120,
+  "delivered": 120,
+  "end_ns": 842228657818,
+  "logger_id": "injector-3954",
+  "onset_ns": 841755068045,
+  "pid": 3954,
+  "role": "injector",
+  "sham": false
+}

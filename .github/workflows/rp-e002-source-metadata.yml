@@ -1,0 +1,33 @@
+name: RP-E002 Source Metadata Audit
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - experiments/rp_e002_metadata.py
+      - .github/workflows/rp-e002-source-metadata.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Query archived metadata only
+        run: python -m experiments.rp_e002_metadata --output rp-e002-source-metadata.json
+      - name: Keep provenance metadata without redistributing observations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e002-source-metadata
+          path: rp-e002-source-metadata.json
+          if-no-files-found: warn

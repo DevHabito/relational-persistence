@@ -97,7 +97,7 @@ def test_invalid_matrix_horizon_rejected(n):
 
 
 def test_matrix_corruption_is_detected():
-    corrupted = ((Fraction(1), Fraction(0)), (Fraction(1), Fraction(0)))
+    corrupted = ((Fraction(1), Fraction(-2)), (Fraction(1), Fraction(0)))
     assert multiply(power(corrupted, 6),
                     ((Fraction(1),), (Fraction(1),)))[0][0] != 1
     with pytest.raises(ValueError):

@@ -90,3 +90,29 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
 - **Failed attempt retained:** CI #40041966015 initially rejected a
   real-valued executable definition; the type-correct noncomputable
   declaration compiled successfully without weakening the theorem.
+
+## RP-F003: matched-degree one-step finite witness — Lean verified
+
+- **Frozen protocol:** RP-F003-A01, preregistered at commit `96965042` before exhaustive graph computation.
+- **Theorem:** `matched_degree_graphs_have_distinct_updates` in
+  `RelationalPersistence/DegreeMatchedWitness.lean`, supported by
+  `matched_degrees_at_every_vertex`, `matched_initial_zero_mean`,
+  `matched_cycle_first_component` and `matched_triangle_first_component`.
+  For two explicit connected six-vertex graphs whose degree at each labeled
+  vertex is the same, the same mean-zero rational state gives one-step
+  values `7/10` and `3/5` at vertex zero.
+- **Accepted verification:** [Lean 4 workflow #40118067207](https://github.com/DevHabito/relational-persistence/actions/runs/40118067207),
+  **completed successfully** for proof commit `ecb807a5306b6180b46599c20dd6dceda11a8265`;
+  [PR #20](https://github.com/DevHabito/relational-persistence/pull/20)
+  merged at `725bc9aba12887a623b449e3b3ff3ca20fd5f63a`.
+- **Failure preserved:** initial [Lean workflow #40117482503](https://github.com/DevHabito/relational-persistence/actions/runs/40117482503)
+  failed because four finite cardinality proof obligations remained
+  unsolved. The correction discharged these finite goals with `decide`,
+  without changing the hypotheses, preregistration or result.
+- **Separate computation:** exact 20-step maximum `Q20` difference on all
+  degree-matched connected six-vertex graph pairs was found by integer
+  enumeration and checked by hosted Python regression
+  [#40118067163](https://github.com/DevHabito/relational-persistence/actions/runs/40118067163).
+  **It is not a theorem formalized in Lean 4.**
+- **No inferred physics:** neither the finite graph algebra nor successful
+  CI demonstrates a fundamental stability law or a physical observable.

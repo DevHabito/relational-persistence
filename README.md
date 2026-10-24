@@ -135,8 +135,9 @@ a separation of 0.04208 against the predeclared threshold 0.01.
 [Results and limits](docs/results/RP-F003-A01.md) include the full
 degree-group distribution, exact rational values, independent trace
 checks and adversarial tests. A separate [Lean source](RelationalPersistence/DegreeMatchedWitness.lean)
-targets a **one-step** matched-degree witness; it is not a Lean proof
-of the exhaustive 20-step maximum. The distinction between these two
+proves a **one-step** matched-degree witness: the pinned
+[Lean 4 workflow #40118067207](https://github.com/DevHabito/relational-persistence/actions/runs/40118067207)
+passed. This does **not** formally certify the exhaustive 20-step maximum. The distinction between these two
 validation scopes remains explicit.
 
 This is a conditional classical consensus counterexample, not

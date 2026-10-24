@@ -10,6 +10,9 @@ This is a starting bibliography, not a completed novelty review. Citations ident
 4. **OECD / European Union / EC-JRC (2008).** *Handbook on Constructing Composite Indicators: Methodology and User Guide.* OECD Publishing. DOI: [10.1787/9789264043466-en](https://doi.org/10.1787/9789264043466-en). Operational and statistical cautions in index construction, scale choices and sensitivity analyses.
 5. **Luce, R. D. (1959).** *Individual Choice Behavior: A Theoretical Analysis*. Wiley. Classic context for stochastic choice representations; relevant to local operational kernels, not evidence for the scalar index.
 
+6. **Weisstein, E. W.**, ["Connected Graph"](https://mathworld.wolfram.com/ConnectedGraph.html), *MathWorld*. Reports the established labeled connected-graph count sequence (OEIS A001187), including 26,704 at six vertices. Used as an independent count sanity check for RP-F003, not an endorsement of the model.
+7. **Liu, M., Yuan, Y., You, L., and Chen, Z. (2018).** ["Which cospectral graphs have same degree sequences"](https://doi.org/10.1016/j.disc.2018.07.017), *Discrete Mathematics* 341(11), 2969–2976. Existing research on degree sequences and Laplacian cospectrality; not claimed to prove RP-F003's particular energy difference.
+
 ## Project history and primary records (no novelty inferred)
 
 1. **Romero, F. G. (2026).** *The Romero Law of Relational Stability (RZS): A Closed-Form Statement, Cross-Domain Operationalization, and Computational Verification.* Historical formulation. Retained for provenance, not adopted as a validated law. The archived document calculates the putative outcome from its input quotient, so its algebraic consistency check does not count as external physical confirmation.

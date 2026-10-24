@@ -182,9 +182,10 @@ The [exact report](docs/results/RP-F005-A01.md) and
 include 25-step trajectories at two other prespecified gains,
 independent matrix-power and scalar-history oracles,
 and adversarial tests. [Lean source](RelationalPersistence/DelayedFeedback.lean)
-targets a **real six-step identity and finite contraction
-obstruction**; describe the new proof as verified only
-when pinned CI passes.
+proves the **real six-step identity and finite contraction
+obstruction**: [Lean 4 CI #40121843255](https://github.com/DevHabito/relational-persistence/actions/runs/40121843255)
+passed on proof head `3982b38`. [Python CI #40121843257](https://github.com/DevHabito/relational-persistence/actions/runs/40121843257)
+passed 180 tests on each of Python 3.11 and 3.12.
 
 **The feedback delays are different.** It would be false
 to call this a matched-latency test of `B/(I*tau)`.

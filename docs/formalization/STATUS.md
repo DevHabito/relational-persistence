@@ -134,10 +134,11 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
   exact rational enumerator compares the twelve-step outcome with the
   moment recurrence; Python 3.11/3.12 [CI #40120059073](https://github.com/DevHabito/relational-persistence/actions/runs/40120059073) passed **148 regression tests** per runtime. This finite check is not a Lean proof of an infinite-time limit.
 
-## RP-F005: real feedback-delay period-six obstruction — awaiting new Lean CI
+## RP-F005: real feedback-delay period-six obstruction — Lean 4 verified
 
 - **Preregistration:** RP-F005-A01, commit `1e4addb833e12eca487cdfce7ad61ad5029213b5`, registered before implementation and results.
 - **Submitted scope:** `DelayedFeedback.lean` encodes a real two-state delayed feedback map at gain one. Statements include a cube-equals-negative-identity component identity, sixth-iterate identity for **every real two-state initial condition**, one-step undelayed extinction, the registered squared-residual separation, and an explicit obstruction to uniform strict six-step squared-energy contraction.
-- **Formal status:** source added; these RP-F005 declarations require **successful pinned Lean CI** before they can be reported as machine verified.
+- **Verified formal status:** [Lean 4 CI #40121843255](https://github.com/DevHabito/relational-persistence/actions/runs/40121843255) **passed** on proof SHA `3982b38253759dd64f6588a9f07950ceae552087`. [PR #22](https://github.com/DevHabito/relational-persistence/pull/22) merged at `199e01fe8711a67c39a9658c9eace0490526a7df`. This proves only the specifically declared real-valued finite algebra.
+- **Failed formal attempt preserved:** [Lean CI #40121509212](https://github.com/DevHabito/relational-persistence/actions/runs/40121509212) failed because `FeedbackPair.ext` did not exist and a redundant `rfl` followed a closed goal. The corrected proof removed those elaboration errors without changing definitions or statements.
 - **Separate arithmetic:** an exact rational scalar-history iterator and an independent companion-matrix power implementation compare the six registered gain/delay cases for all 25 times, with primary decision checked against frozen threshold 1/2. This does **not** prove arbitrary delayed systems stable or unstable.
 - **Not proved:** real measured response latency, the general Schur stability region, PMFF/RZS connection, stochastic or empirical response outcomes.

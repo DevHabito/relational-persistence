@@ -244,24 +244,29 @@ The result is **replayable sampled instrument feasibility on one
 Linux runner only**. It is not a new Lean theorem, a predictive
 validation of `B/(I*tau)`, or independent physical replication.
 
-## Prospectively registered two-runner instrumentation replication (RP-E005-P01)
+## Two-runner software instrumentation replication: original result (RP-E005-P01)
 
-The [RP-E005-P01 preregistration](docs/preregistration/RP-E005-P01.md)
-was committed on `main` **before** new measurements. The separate
-[replication workflow](.github/workflows/rp-e005-p01.yml) plans two
-fresh GitHub-hosted Ubuntu VM jobs, each running the **unmodified**
-RP-E004-P02 four-trial FIFO instrumentation protocol. A third job
-recomputes each sampled recovery and file hash from original logs,
-requiring all 48 source files and both job-level P02 passes.
+The [preregistered RP-E005-P01 protocol](docs/preregistration/RP-E005-P01.md)
+was committed **before** any new run at `20d9262`. The original
+[hosted execution #40124159620](https://github.com/DevHabito/relational-persistence/actions/runs/40124159620)
+completed successfully: two separately provisioned Ubuntu 24.04
+GitHub-hosted VM jobs each executed four fresh-service P02 trials,
+and all **eight** original trial records were independently replayed.
 
-**No new observation is claimed until the first hosted experiment
-actually executes.** Review the [pre-run results status](docs/results/RP-E005-P01.md)
-and eventual permanently archived first-run evidence. A successful
-replication would validate only **repeatability of the single-host
-software instrumentation on separately allocated runners**. It does
-not identify a causal effect, prove separate hardware, or predict
-observed recovery from `B/(I*tau)`. No new Lean 4 theorem is
-introduced.
+**Registered decision: `PASS_TWO_RUNNER_REPLAY`.** The audit
+verified the original SHA-256 digests of **48/48 role and full-sample
+trace files**. The first measurement bytes were **permanently
+archived without reexecution** in [commit `d48d041`](https://github.com/DevHabito/relational-persistence/commit/d48d041250739b94d94513c4b7cf7143f13b8529).
+A separate regression suite checks all archived file hashes
+and recomputes the original verdict from the committed event bytes.
+
+Read the [observed measurements, exact provenance and limitations](docs/results/RP-E005-P01.md),
+[original evaluation](docs/results/RP-E005-P01-first-run/evaluation.json),
+and [archive index](docs/results/RP-E005-P01-first-run/archive-index.json).
+A passing result shows repeatability of **sampled software
+instrumentation** across two GitHub jobs. It **does not** establish
+independent physical hardware, a new Lean theorem, causal prediction
+by `B/(I*tau)`, or a universal physical law.
 
 ## Naming and provenance
 

@@ -117,7 +117,7 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
 - **No inferred physics:** neither the finite graph algebra nor successful
   CI demonstrates a fundamental stability law or a physical observable.
 
-## RP-F004: correlated-noise moment fixed points — submitted for Lean checking
+## RP-F004: correlated-noise moment fixed points — Lean verified
 
 - **Preregistered model:** `docs/preregistration/RP-F004-A01.md`;
   frozen before implementing F004 at `1ef43702931de3498d8cd9218563fa276b3dc3aa`.
@@ -129,9 +129,7 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
   probability space, conditional-expectation identity, convergence to
   the stationary second moment, empirical measurements, PMFF bridges,
   and any universal physical relationship.
-- **Formal verification status:** source submitted; **only a completed
-  successful pinned CI run can establish verified status**.
+- **Formal verification status:** [Lean 4 CI #40120059074](https://github.com/DevHabito/relational-persistence/actions/runs/40120059074) **passed** on exact PR head `4601bbdcccfee8e12a97a56835073498a7f5b820`; [PR #21](https://github.com/DevHabito/relational-persistence/pull/21) was merged at `8382ac0ba85c640323db1942efc817458adf9fbf`.
 - **Independent numerical-method check:** RP-F004's separate 4096-path
   exact rational enumerator compares the twelve-step outcome with the
-  moment recurrence; this finite check is not a Lean proof of an
-  infinite-time limit.
+  moment recurrence; Python 3.11/3.12 [CI #40120059073](https://github.com/DevHabito/relational-persistence/actions/runs/40120059073) passed **148 regression tests** per runtime. This finite check is not a Lean proof of an infinite-time limit.

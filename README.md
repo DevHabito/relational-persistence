@@ -158,11 +158,12 @@ independently reproduces the 12-step moment recurrence.
 [Read the complete result, controls and limitations](docs/results/RP-F004-A01.md)
 or inspect the [rational archive](docs/results/RP-F004-A01.json).
 
-[Lean 4 source](RelationalPersistence/ColoredNoiseMoments.lean) contains
-fixed-point and uniqueness lemmas over rational moments. It does
-**not** formalize a probability space, a stationary stochastic process,
-or its limit theorem; verify its acceptance against CI before claiming
-formal proof. This is textbook colored-noise moment algebra and a
+[Lean 4 source](RelationalPersistence/ColoredNoiseMoments.lean) now has
+[successful formal CI #40120059074](https://github.com/DevHabito/relational-persistence/actions/runs/40120059074)
+for rational fixed-point, uniqueness and separation lemmas.
+This does **not** formalize a probability space, a stationary stochastic
+process, or its limit theorem. Python [CI #40120059073](https://github.com/DevHabito/relational-persistence/actions/runs/40120059073)
+passed 148 regression tests on both configured runtimes. This is textbook colored-noise moment algebra and a
 conditional scalar-sufficiency counterexample, **not a new physical law**.
 
 ## Scientific boundaries

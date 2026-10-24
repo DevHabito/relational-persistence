@@ -106,7 +106,7 @@ def test_short_censored_followup_is_not_accepted(tmp_path):
         if sample["observed_ns"] >= injector["end_ns"]:
             sample["queued"] = 1
     samples_path.write_text(
-        "".join(json.dumps(row, sort_keys=True) + "\\n" for row in samples),
+        "".join(json.dumps(row, sort_keys=True) + chr(10) for row in samples),
         encoding="utf-8",
     )
     monitor_path = copied / "monitor.json"

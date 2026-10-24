@@ -92,3 +92,31 @@ def test_sham_and_disabled_controller_do_not_gain_an_undefined_index():
         assert row["health_replay"]["after_end_samples"] > 0
     assert rows["sham-01"]["delivered_units"] == 0
     assert rows["positive-disabled-01"]["delivered_units"] == 120
+
+
+def test_short_censored_followup_is_not_accepted(tmp_path):
+    import shutil
+    original = ARCHIVE / "positive-disabled-01"
+    copied = tmp_path / "positive-disabled-01"
+    shutil.copytree(original, copied)
+    injector = json.loads((copied / "injector.json").read_text())
+    samples_path = copied / "monitor-samples.jsonl"
+    samples = read_jsonlines(samples_path)
+    for sample in samples:
+        if sample["observed_ns"] >= injector["end_ns"]:
+            sample["queued"] = 1
+    samples_path.write_text(
+        "".join(json.dumps(row, sort_keys=True) + "\\n" for row in samples),
+        encoding="utf-8",
+    )
+    monitor_path = copied / "monitor.json"
+    monitor = json.loads(monitor_path.read_text())
+    monitor["recovered_at_ns"] = None
+    monitor["confirmed_at_ns"] = None
+    monitor_path.write_text(json.dumps(monitor), encoding="utf-8")
+    with pytest.raises(ValueError, match="Censored trial terminated"):
+        audit_trial(
+            copied, "positive-disabled-01",
+            summary()["preregistration_sha256"],
+            summary()["monotonic_resolution_ns"],
+        )

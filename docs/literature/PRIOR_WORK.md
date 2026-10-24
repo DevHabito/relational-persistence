@@ -40,3 +40,8 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 
 - [Improving performances of the emergency department using discrete event simulation, DEA and the MADM methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC6001262/), Section 4.3 (2018). Distinguishes verifying a simulator's behavior against its assumed model from validating the model against real-world behavior. RP-E008 verifies a second queue software model only; it does not provide that independent empirical validation.
 - [Reproducible analytical pipelines for healthcare discrete-event simulation: an open guide and worked examples](https://pmc.ncbi.nlm.nih.gov/articles/PMC13675625/) (2026), describes scenario and sensitivity analysis as standard reproducible simulation practice. No novelty in using a discrete-event simulation or a fixed sensitivity grid is claimed.
+ 
+## RP-E009 prior technology: independent executable queue and monitoring
+
+- [Python documentation, asyncio streams](https://docs.python.org/3/library/asyncio-stream.html) and [asyncio FIFO queues](https://docs.python.org/3/library/asyncio-queue.html): standard network and asynchronous scheduling mechanisms; implementing a TCP/asyncio queue is not new computer science.
+- [Kleijnen, Bettonvil and Van Groenendaal (1998), Validation of Trace-Driven Simulation Models](https://doi.org/10.1287/mnsc.44.6.812): classical context for trace-based model comparisons. Comparing two software systems is not a substitute for verifying general transfer to real-world systems.

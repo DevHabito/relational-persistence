@@ -82,6 +82,13 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - Preserve the important adverse findings: trend lost 16/36 individual holdouts, and **early-burst** arrivals favored static backlog (5.000 vs 12.125 ms MAE). No regime may be retrospectively excluded or its results described as a universal positive effect.
 - Any later real-service, hardware or physical validation needs another experimental protocol. An in-silico model can expose engineering failures, but it is not external empirical confirmation of a law.
 
+### RP-E009: first cross-implementation executable software test
+
+- Following the positive RP-E008 in-silico result with a negative early-burst subgroup, freeze **before measurements** an operationally different TCP/asyncio single-worker FIFO implementation (`61674d0`).
+- Measure own accepted/start/completed task events, calibration throughput, pre-end queue samples and independently replayed recovery. Nine new diagnostic and nine new heldout trials are collected on sequential hosted jobs.
+- Compare the original **unfitted** RP-E007 temporal and static queue forecasts at the registered 10% MAE threshold; preserve source failures as STOP, valid negative results as NO_GAIN and all original files unchanged.
+- This is still hosted Python software, not independent industrial deployment, sensor validation or evidence of a physical persistence law.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

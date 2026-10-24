@@ -30,3 +30,8 @@ This is a starting bibliography, not a completed novelty review. Citations ident
 ## Novelty check remains open
 
 A genuine novelty review requires claim-by-claim searches in network control, stochastic stability, graph spectra, inference, delay differential equations, critical transitions, and information theory. The existence of a new label does not imply the underlying mathematical content is new. Do not assert new physics on the basis of either a composite index or a classical spectral counterexample.
+
+## Additional established queue-monitoring literature for RP-E007
+
+- Ross, J. V., Taimre, T., and Pollett, P. K. (2007), [Estimation for queues from queue length data](https://doi.org/10.1007/s11134-006-9009-2), Queueing Systems 55:131-138. Prior research on rates inferred from sampled queues. The new two-sample RP-E007 forecast is a much simpler engineering extrapolation and not a novel theory of queues.
+- Bhaskara, A., Gollapudi, S., Im, S., Kollias, K., and Munagala, K. (2025), [Online Distributed Queue Length Estimation](https://research.google/pubs/online-distributed-queue-length-estimation/), ACDA 2025. Contemporary work on monitored queue length; contextual rather than an equivalent experiment.

@@ -13,5 +13,7 @@
 | RP-F005-A01 | Actual zero/one-step feedback delay, gain-one scalar difference equation; two additional prespecified gains | Exact six-step squared residual 0 versus 1; exact 25-step traces for six delay/gain combinations | 180 passing Python 3.11/3.12 regressions and Lean-verified real period-six identity (#40121843255); no measured physical latency |
 | RP-E005-P01 | First prospective repetition of RP-E004-P02 on two fresh GitHub-hosted Ubuntu VMs (eight measured software trials) | **Registered full-sample replay gate passed**; 8/8 trials, 48/48 raw files; original records archived at `d48d041` | True hosted-software observations and two replay algorithms; no physical-law inference, independent hardware or predictor validation |
 | RP-E006-P01 | Original 18-training + 9-heldout hosted FIFO software intervention study | **NO_REGISTERED_PREDICTIVE_GAIN**: index 68.19 ms MAE, finite backlog comparator 11.12 ms MAE; all 27 trials and 216 source files auditable | Original archived negative result `0fa7ad2`, fixed criterion set at `2aeabc6`, no physical-law confirmation or inferential population claim |
+| RP-E007-P01 | Prospectively registered new 18 diagnostic and nine future held-out FIFO trials | **PENDING NEW OBSERVATIONS**: frozen two-sample trend versus static queue MAE threshold 10% | Classical queue-state extrapolation; not a physical-law test or new Lean theorem |
+
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

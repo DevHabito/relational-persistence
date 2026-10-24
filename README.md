@@ -301,6 +301,12 @@ software queue**, not proof that all versions of
 relational persistence or all physical theories are
 false. No new Lean theorem was claimed.
 
+## RP-E007: prospective temporal queue-state forecast
+
+RP-E006 gave a negative index-only prediction result. RP-E007 now prospectively tests whether the recent change in observed queue backlog improves an unfitted queueing forecast. The protocol was frozen in commit 150dd5f before new code or observations. A static backlog/(2B) model and a two-sample linear extrapolation/(2B) must be compared on nine *new* forward-held-out software interventions. Passing requires at least 10% lower mean absolute error; valid negative results and source failures have separately frozen labels.
+
+See [the registered RP-E007 protocol](docs/preregistration/RP-E007-P01.md), [the prospective report](docs/results/RP-E007-P01.md), and [the hosted pipeline](.github/workflows/rp-e007-p01.yml). This is classical queue estimation, not evidence of a new physical law. Existing RP-E006 held-out outcomes cannot be treated as new observations.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

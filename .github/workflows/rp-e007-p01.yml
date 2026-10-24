@@ -1,0 +1,184 @@
+name: RP-E007-P01 Pre-registered Temporal Queue Prediction
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e007-p01.yml
+      - experiments/rp_e007_temporal_backlog.py
+      - tests/test_rp_e007_temporal_backlog.py
+      - docs/preregistration/RP-E007-P01.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e007-p01-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  training:
+    name: New instrument-only training/diagnostic block
+    runs-on: ubuntu-24.04
+    timeout-minutes: 16
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen project dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Validate code and original E006 archive before new observations
+        run: |
+          python -m pytest -q \
+            tests/test_rp_e007_temporal_backlog.py \
+            tests/test_rp_e006_first_run_archive.py
+      - name: Acquire NEW 18-trial block, preserving E006 instrument schema
+        run: |
+          python -m experiments.rp_e006_acquire \
+            --split train \
+            --output rp-e007-measured/train
+      - name: Preserve original training bytes even on error
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e007-p01-train
+          path: rp-e007-measured/train/
+          if-no-files-found: warn
+          retention-days: 90
+
+  holdout:
+    name: Fresh VM held-out source acquisition
+    needs: [training]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install identical frozen code
+        run: python -m pip install -e '.[dev]'
+      - name: Acquire NEW nine held-out source trials without training labels
+        run: |
+          python -m experiments.rp_e006_acquire \
+            --split test \
+            --output rp-e007-measured/test
+      - name: Preserve original held-out bytes even on error
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e007-p01-test
+          path: rp-e007-measured/test/
+          if-no-files-found: warn
+          retention-days: 90
+
+  evaluation:
+    name: Original event replay and frozen trend/static comparison
+    needs: [training, holdout]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install original project code for source replay
+        run: python -m pip install -e '.[dev]'
+      - name: Retrieve separately archived training and held-out bytes
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: rp-e007-p01-*
+          path: rp-e007-downloaded
+          merge-multiple: false
+      - name: Audit 27 original records before computing the frozen score
+        run: |
+          python -m experiments.rp_e007_temporal_backlog \
+            --input rp-e007-downloaded \
+            --output rp-e007-evaluation \
+            --run-id "${{ github.run_id }}" \
+            --source-sha "${{ github.sha }}"
+      - name: Always preserve aggregated score and sources even if STOP
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e007-p01-first-evaluation
+          path: |
+            rp-e007-evaluation/
+            rp-e007-downloaded/
+          retention-days: 90
+          if-no-files-found: warn
+      - name: Archive first run only (including a failed or negative outcome)
+        if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="docs/results/RP-E007-P01-first-run"
+          if test -e "$archive"; then
+            echo "First-run archive already exists: never overwrite or rerun as first."
+            exit 0
+          fi
+          if ! test -f rp-e007-evaluation/RP-E007-P01.json; then
+            echo "No original evaluation file; cannot claim permanent archival." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          if test -d rp-e007-downloaded; then
+            cp -a rp-e007-downloaded "$archive/raw"
+          fi
+          cp rp-e007-evaluation/RP-E007-P01.json "$archive/evaluation.json"
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          root = Path('docs/results/RP-E007-P01-first-run')
+          files = {
+              str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted(root.rglob('*')) if p.is_file()
+          }
+          observed = json.loads((root / 'evaluation.json').read_text())
+          index = {
+              'protocol': 'RP-E007-P01',
+              'source_commit': '${{ github.sha }}',
+              'workflow_run_id': '${{ github.run_id }}',
+              'decision': observed['decision'],
+              'file_sha256': files,
+              'archive_rule': 'Original first-run source bytes only, even on failure',
+              'physical_law_validation': 'NOT_PERFORMED',
+          }
+          (root / 'archive-index.json').write_text(
+              json.dumps(index, indent=2, sort_keys=True) + '\n'
+          )
+          print('ORIGINAL_RP_E007_SHA256_FILE_COUNT', len(files))
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(research): preserve first RP-E007 slope forecast including STOP/negative"
+          git push origin HEAD:main
+      - name: Do not recategorize a negative forecast as instrumentation failure
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('rp-e007-evaluation/RP-E007-P01.json')
+          if not path.exists():
+              raise SystemExit('STOP_INSTRUMENTATION: missing original verdict')
+          result = json.loads(path.read_text())
+          verdict = result['decision']
+          print('ORIGINAL_RP_E007_P01_VERDICT', verdict)
+          if verdict == 'STOP_INSTRUMENTATION':
+              raise SystemExit(verdict)
+          assert verdict in ('PASS_TREND_INCREMENT', 'NO_REGISTERED_TREND_GAIN')
+          PY

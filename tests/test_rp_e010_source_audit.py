@@ -136,7 +136,8 @@ def test_source_byte_tampering_cannot_pass_pinned_identity():
     assert outcome["identity_verified"] is False
     assert outcome["decision"] == "DATASET_SCHEMA_REJECTED"
     assert outcome["actual_git_blob_sha1"] != EXPECTED_BLOB
-    assert outcome["independent_parser_agreement"] is True
+    assert outcome["independent_parser_agreement"] is None
+    assert outcome["counters"] is None  # Bad provenance: parse must not begin
 
 
 def test_corrupt_unicode_is_not_silently_replaced():

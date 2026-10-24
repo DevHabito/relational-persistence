@@ -165,7 +165,7 @@ def compute() -> dict:
         assert energy_numerator(reversed_matrix) == numerator
         frac = Fraction(numerator, DENOMINATOR)
         measurements.append(dict(
-            mask=mask, edges=edges_of(mask), numerator=numerator,
+            mask=mask, edges=[list(edge) for edge in edges_of(mask)], numerator=numerator,
             q20=f"{frac.numerator}/{frac.denominator}",
             approximation=float(frac), reversed_mask=reversed_mask
         ))
@@ -185,7 +185,7 @@ def compute() -> dict:
             ",".join(map(str, sig)): v["count"] for sig, v in sorted(groups.items())
         },
         exact_denominator=DENOMINATOR,
-        chosen_degree_sequence=signature,
+        chosen_degree_sequence=list(signature),
         selected_graphs=measurements,
         delta_numerator=delta,
         delta_fraction=f"{exact_delta.numerator}/{exact_delta.denominator}",

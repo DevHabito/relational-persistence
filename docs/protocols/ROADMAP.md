@@ -95,10 +95,7 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
   operational trace, using the exact pinned Git mirror revision from
   preregistration `0aa03d6`; do not mistake the mirror for a verified
   bit-exact copy of the PWA original.
-- Before any predictive scoring, verify SWF source-byte identity,
-  original submit/wait/runtime fields, schema integrity,
-  duplicated IDs and missing or corrupted values with independent
-  parsers. Publish BLOCKED/REJECTED as legitimate source findings.
+- **Original data gate PASSED** in hosted first-run #40143917458, metadata archived at `ecae2dd`: 202,871 records, 201,992 structurally eligible; two parser oracles agreed on the source SHA, IDs and field counts. **All 202,871 records lack a queue ID**, and 878 have missing status. No forecast was computed.
 - **Do not** use NASA-iPSC-1993 SWF as real submission times:
   its original conversion substitutes start times because
   actual submission is absent.

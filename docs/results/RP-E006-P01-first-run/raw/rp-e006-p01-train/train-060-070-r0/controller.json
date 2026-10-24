@@ -1,0 +1,10 @@
+{
+  "acknowledged_ns": 213318212732,
+  "enabled": true,
+  "logger_id": "e006-controller-6786",
+  "pid": 6786,
+  "request_sent_ns": 213293649500,
+  "role": "controller",
+  "scheduled_lag_ms": 70,
+  "server_applied_ns": 213317601090
+}

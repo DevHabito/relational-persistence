@@ -1,0 +1,10 @@
+{
+  "acknowledged_ns": 208644312922,
+  "enabled": true,
+  "logger_id": "e006-controller-6411",
+  "pid": 6411,
+  "request_sent_ns": 208602980746,
+  "role": "controller",
+  "scheduled_lag_ms": 15,
+  "server_applied_ns": 208643555961
+}

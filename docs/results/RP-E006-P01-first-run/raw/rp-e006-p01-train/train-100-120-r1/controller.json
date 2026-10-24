@@ -1,0 +1,10 @@
+{
+  "acknowledged_ns": 179966181771,
+  "enabled": true,
+  "logger_id": "e006-controller-4009",
+  "pid": 4009,
+  "request_sent_ns": 179941631357,
+  "role": "controller",
+  "scheduled_lag_ms": 120,
+  "server_applied_ns": 179965714694
+}

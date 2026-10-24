@@ -1,0 +1,46 @@
+{
+  "logger_id": "calibrator-3346",
+  "pid": 3346,
+  "role": "calibration",
+  "sparse_probe": {
+    "completed": 12,
+    "end_ns": 52201022583,
+    "nominal_submissions": 12,
+    "start_ns": 51709438828
+  },
+  "windows": [
+    {
+      "active_end": 1,
+      "active_start": 1,
+      "completed_delta": 21,
+      "end_ns": 52556637540,
+      "end_service_snapshot_ns": 52556322244,
+      "queued_end": 150,
+      "queued_start": 171,
+      "start_ns": 52305474432,
+      "start_service_snapshot_ns": 52305249131
+    },
+    {
+      "active_end": 1,
+      "active_start": 1,
+      "completed_delta": 20,
+      "end_ns": 52807890333,
+      "end_service_snapshot_ns": 52807589304,
+      "queued_end": 130,
+      "queued_start": 150,
+      "start_ns": 52556637540,
+      "start_service_snapshot_ns": 52556322244
+    },
+    {
+      "active_end": 1,
+      "active_start": 1,
+      "completed_delta": 21,
+      "end_ns": 53059062738,
+      "end_service_snapshot_ns": 53058720452,
+      "queued_end": 109,
+      "queued_start": 130,
+      "start_ns": 52807890333,
+      "start_service_snapshot_ns": 52807589304
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "confirmed_at_ns": 75535797501,
+  "dwell_ns": 500000000,
+  "logged_injector_end_ns": 74653511971,
+  "logger_id": "monitor-5240",
+  "observation_end_ns": 75535851782,
+  "pid": 5240,
+  "probe_cadence_requested_ns": 25000000,
+  "recovered_at_ns": 75017967156,
+  "role": "monitor",
+  "sample_count": 60
+}

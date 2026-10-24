@@ -1,0 +1,10 @@
+{
+  "attempted": 100,
+  "delivered": 100,
+  "end_ns": 248630439120,
+  "logger_id": "e006-injector-9903",
+  "nominal_spacing_seconds": 0.003,
+  "onset_ns": 248226419938,
+  "pid": 9903,
+  "role": "injector"
+}

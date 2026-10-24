@@ -45,3 +45,10 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 
 - [Python documentation, asyncio streams](https://docs.python.org/3/library/asyncio-stream.html) and [asyncio FIFO queues](https://docs.python.org/3/library/asyncio-queue.html): standard network and asynchronous scheduling mechanisms; implementing a TCP/asyncio queue is not new computer science.
 - [Kleijnen, Bettonvil and Van Groenendaal (1998), Validation of Trace-Driven Simulation Models](https://doi.org/10.1287/mnsc.44.6.812): classical context for trace-based model comparisons. Comparing two software systems is not a substitute for verifying general transfer to real-world systems.
+ 
+## RP-E010 external production workload provenance
+
+- [Parallel Workloads Archive, HPC2N Seth log](https://www.cs.huji.ac.il/labs/parallel/workload/l_hpc2n/): a real Swedish HPC production cluster run under Maui, with archived submission, wait and runtime fields, known conversion anomalies, and extensive upstream filtering of dominant users and bursts. **Ake Sandgren** is credited for original logs. The RP-E010 mirror is separately version-pinned; PWA original compressed-file equality is NOT established by that fact.
+- [SWF 2.2 official column specification](https://www.cs.huji.ac.il/labs/parallel/workload/swf.html): 18-field job records, missing=-1 conventions, submit, wait, runtime, allocated processors, status and queue meaning.
+- [Parallel Workloads Archive, NASA-iPSC 1993 conversion notes](https://www.cs.huji.ac.il/labs/parallel/workload/l_nasa_ipsc/): no real job submission timestamps were recorded; converted SWF substituted job starts for missing submit times. **Excluded as an independent observed queue-arrival dataset.**
+- D. G. Feitelson, D. Tsafrir and D. Krakov (2014), [Experience with using the Parallel Workloads Archive](https://doi.org/10.1016/j.jpdc.2014.06.013), *Journal of Parallel and Distributed Computing*, 74(10), 2967–2982: source curation, cleanup and anomalies are methodological issues requiring disclosure, not evidence of a newly discovered physical mechanism.

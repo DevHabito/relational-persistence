@@ -1,0 +1,10 @@
+{
+  "acknowledged_ns": 60467335120,
+  "enabled": true,
+  "logger_id": "controller-3834",
+  "observed_depth": 9,
+  "pid": 3834,
+  "request_sent_ns": 60466456978,
+  "role": "controller",
+  "server_applied_ns": 60466886865
+}

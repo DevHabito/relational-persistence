@@ -1,0 +1,15 @@
+{
+  "e005_preregistration_sha256": "fbb9fa40531294d22efbaced6c495d16622faf8eb30b6ab5fb1184dfed6243d4",
+  "github_run_id": "40124159620",
+  "job_slot": "runner-a",
+  "p02_execution_returncode": 0,
+  "p02_preregistration_sha256": "c1e71b54b3bc63c69aa49959a4fc8387efe4352fe751f0dbd26f0c84c7ee4235",
+  "physical_instrument_independence": "NOT_ESTABLISHED",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "predictive_index_validation": "NOT_PERFORMED",
+  "protocol": "RP-E005-P01",
+  "python_version": "3.12.15",
+  "runner_label": "ubuntu-24.04",
+  "runner_name": "GitHub Actions 1000005714",
+  "source_commit": "542395dab0e23d7972ede8467c9283190d8381dc"
+}

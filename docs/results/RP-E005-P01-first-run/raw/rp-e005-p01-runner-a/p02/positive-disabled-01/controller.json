@@ -1,0 +1,10 @@
+{
+  "acknowledged_ns": null,
+  "enabled": false,
+  "logger_id": "controller-3356",
+  "observed_depth": null,
+  "pid": 3356,
+  "request_sent_ns": null,
+  "role": "controller",
+  "server_applied_ns": null
+}

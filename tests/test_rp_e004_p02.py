@@ -162,3 +162,37 @@ def test_frozen_order_is_deterministic_and_contains_all_groups():
     assert one == two
     assert len(set(one)) == 4
     assert one.count("sham-01") == 1
+
+
+def test_cross_boundary_sampling_gap_is_not_ignored():
+    event_end = 1_000_000_000
+    samples = [
+        sample(event_end - 100_000_000),
+        sample(event_end + 60_000_001),
+    ]
+    with pytest.raises(ValueError, match="gap"):
+        replay_monitor(samples, event_end, RECOVERY_DWELL_NS, GAP_LIMIT_NS)
+
+
+def test_probe_must_show_distinct_monotonic_service_snapshots():
+    end = 1_000_000_000
+    first = sample(end)
+    second = sample(end + 25_000_000)
+    second["server_snapshot_ns"] = first["server_snapshot_ns"]
+    with pytest.raises(ValueError, match="service-side snapshot"):
+        replay_monitor([first, second], end, RECOVERY_DWELL_NS, GAP_LIMIT_NS)
+
+
+def test_completed_work_counter_cannot_regress():
+    end = 1_000_000_000
+    with pytest.raises(ValueError, match="counter regressed"):
+        replay_monitor([sample(end, completed=20),
+                        sample(end + 25_000_000, completed=19)],
+                       end, RECOVERY_DWELL_NS, GAP_LIMIT_NS)
+
+
+def test_calibration_windows_must_be_contiguous():
+    x = calibration()
+    x["windows"][1]["start_ns"] += 1
+    with pytest.raises(ValueError, match="contiguous"):
+        audit_calibration(x)

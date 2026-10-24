@@ -56,7 +56,7 @@
       "monitor": "8af9949bb0f7b06d2324f216e8b7718b3ae96bfd269202ac9352c0ccc9f46cc8"
     },
     "sham-01": {
-      "calibration": "41695a81df4bca5025905782f3a2e118fb778591cb",
+      "calibration": "41695a81df4bca5025905782f3a2e1183b7008c9db400cc886e118fb778591cb",
       "controller": "b860d4d4b4af8f5bc7695f240a0637f2f9bad8a058c09c940cffc7b68506994e",
       "injector": "8f6ebc044debf8ceb67a6f7e8a88bfb0ad67dcbfb204fa70eaef2f842e604ac7",
       "monitor": "bfbeb8d1213165cf92d14932c11e469f861c0cb6ff1af2669201a0857bc57f0f"

@@ -22,6 +22,30 @@ C=\frac{B}{I\tau}, \qquad B,I,\tau>0.
 
 We use this only as an **operational index under declared units and proxies**. It is not currently a measured physical persistence variable. In particular, calling it an identity does not make it a prediction. The first protocol tests whether these proxies alone can determine an independently computed dynamical outcome.
 
+## First observed-trajectory benchmark: negative result
+
+Unlike the synthetic dynamics in RP-001, the
+[RP-E002-A01 observational benchmark](docs/preregistration/RP-E002-A01.md)
+uses *measured traffic speeds* from METR-LA. Its purpose is narrower:
+test whether a fixed external sensor graph improves short-horizon
+forecasting over ordinary temporal baselines and a permuted-network
+control. **It cannot identify the physical index `B/(I*tau)`.**
+
+The initial hosted run [#40043981617](https://github.com/DevHabito/relational-persistence/actions/runs/40043981617)
+passed source integrity checks, ran 48 regression tests successfully,
+and evaluated 207 sensors over 34,272 recorded timestamps.
+**The preregistered alternative failed:** none of the 15-, 30- or
+60-minute horizons achieved both of its required 1% improvements.
+At 60 minutes, a training-only seasonal baseline substantially
+outperformed the lightweight graph model.
+
+Read the complete [negative observational report](docs/results/RP-E002-A01.md),
+the [per-horizon reproducibility record](docs/results/RP-E002-A01.json),
+and the [source/data policy](data/RP-E002-A01-EXECUTION.md).
+This is an informative **negative finding for the specified model**,
+not a refutation of graph prediction methods generally or a test
+of fundamental physical persistence.
+
 ## What is included
 
 - **A falsifiable protocol:** fixed hypotheses, inputs, thresholds, exclusions, and decision rules.

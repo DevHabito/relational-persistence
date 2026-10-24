@@ -1,0 +1,74 @@
+name: RP-E002 Frozen Observational Run
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/rp-e002-observational.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  observed-evaluation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      DCRNN_REVISION: 602afd9d767d3aa1c9b3eac51710d6aeee12c227
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen research source
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q
+      - name: Check Zenodo v5 record rights and file checksum metadata
+        run: |
+          python -m experiments.rp_e002_metadata --output rp-e002-source-metadata.json
+          python - <<'PY'
+          import json
+          with open("rp-e002-source-metadata.json", encoding="utf-8") as stream:
+              report = json.load(stream)
+          assert report["pinned_checksum_matches"], "Wrong archived file checksum"
+          assert report["access_right"] == "open", "Source is not open access"
+          assert "cc-by-4.0" in report["license_identifiers"], "Source license changed"
+          print("Metadata gate passed; raw data will NOT be published")
+          PY
+      - name: Download versioned raw inputs into ephemeral runner only
+        run: |
+          mkdir -p data/raw
+          curl --fail --location --retry 3 --max-time 900 --silent --show-error \
+            'https://zenodo.org/records/5146275/files/METR-LA.csv?download=1' \
+            --output data/raw/METR-LA.csv
+          curl --fail --location --retry 3 --max-time 180 --silent --show-error \
+            "https://raw.githubusercontent.com/liyaguang/DCRNN/${DCRNN_REVISION}/data/sensor_graph/graph_sensor_ids.txt" \
+            --output data/raw/graph_sensor_ids.txt
+          curl --fail --location --retry 3 --max-time 180 --silent --show-error \
+            "https://raw.githubusercontent.com/liyaguang/DCRNN/${DCRNN_REVISION}/data/sensor_graph/distances_la_2012.csv" \
+            --output data/raw/distances_la_2012.csv
+          printf '%s  %s\n' 'd3adaa79856bf610f25558fc242c7190' 'data/raw/METR-LA.csv' | md5sum --check
+      - name: Run the frozen held-out protocol exactly once
+        run: |
+          python -m experiments.rp_e002_benchmark \
+            --speeds data/raw/METR-LA.csv \
+            --sensor-ids data/raw/graph_sensor_ids.txt \
+            --distances data/raw/distances_la_2012.csv \
+            --output rp-e002-a01-results.json
+      - name: Publish aggregate results and provenance only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e002-a01-aggregate-results
+          path: |
+            rp-e002-source-metadata.json
+            rp-e002-a01-results.json
+          if-no-files-found: warn
+          retention-days: 30

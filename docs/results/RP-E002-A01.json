@@ -1,0 +1,122 @@
+{
+  "protocol": "RP-E002-A01",
+  "status": "first_real_observational_execution",
+  "decision": "H0_not_rejected",
+  "verdict": "FROZEN_H1_FAILURE",
+  "source": {
+    "archive": "https://doi.org/10.5281/zenodo.5146275",
+    "source_record_id": 5146275,
+    "license_identified": "cc-by-4.0",
+    "filename": "METR-LA.csv",
+    "md5": "d3adaa79856bf610f25558fc242c7190",
+    "sha256": "5fa498de0c90f5ff9b67e7cf9654bec031a803b320a8eb13d48021b9983bec82",
+    "graph_sensor_ids_sha256": "3ba026caa2e6263ab0ea54b0fa1b125dbfa7216544cd05313b555e826292b990",
+    "graph_distances_sha256": "a576a2a3e28dbb959be6da22688e24dd1b246b81264595e129147c256cd53de5",
+    "graph_source_revision": "602afd9d767d3aa1c9b3eac51710d6aeee12c227"
+  },
+  "provenance": {
+    "preregistration_commit": "45866da450ce0443fc990a0ab01b6be8a853f13f",
+    "execution_commit": "4994f46e96ced0d0057c74c68cbb0df19d997fba",
+    "github_actions_run": "https://github.com/DevHabito/relational-persistence/actions/runs/40043981617",
+    "python": "3.12.15",
+    "numpy": "2.5.4",
+    "regression_tests_passed": 48,
+    "raw_data_in_git": false,
+    "source_time_start": "2012-03-01T00:00:00",
+    "source_time_end": "2012-06-27T23:55:00",
+    "rows": 34272,
+    "sensors": 207,
+    "source_zeros_fraction": 0.08109350825676487,
+    "source_nans_fraction": 0,
+    "train_end": 23990,
+    "validation_end": 27417,
+    "test_forecast_origins": 6831,
+    "embargo_steps": 12,
+    "graph_nonzero_directed_edges": 1515,
+    "graph_nodes_with_neighbors": 202,
+    "graph_distances_count": 11753
+  },
+  "thresholds": {
+    "relative_mae_gain_vs_best_temporal_baseline": 0.01,
+    "relative_mae_gain_vs_independently_tuned_permuted_graph": 0.01,
+    "required_all_horizons_minutes": [
+      15,
+      30,
+      60
+    ]
+  },
+  "primary_mask": "Only strictly positive finite current and target readings; identical mask for every model at each horizon",
+  "primary_results": {
+    "15_min": {
+      "step": 3,
+      "eligible_pairs": 1229410,
+      "valid_fraction": 0.86944,
+      "lambda_graph": 0.05,
+      "lambda_permuted_graph": 0.05,
+      "sensor_balanced_mae": {
+        "persistence": 3.46845,
+        "seasonal": 4.19571,
+        "graph": 3.43541,
+        "permuted_graph": 3.45016
+      },
+      "relative_gain_vs_best_temporal_baseline": 0.009525706677236942,
+      "relative_gain_vs_permuted_graph": 0.004274452482766077,
+      "passes_both": false
+    },
+    "30_min": {
+      "step": 6,
+      "eligible_pairs": 1220166,
+      "valid_fraction": 0.86291,
+      "lambda_graph": 0.05,
+      "lambda_permuted_graph": 0.05,
+      "sensor_balanced_mae": {
+        "persistence": 4.15897,
+        "seasonal": 4.19215,
+        "graph": 4.11706,
+        "permuted_graph": 4.12211
+      },
+      "relative_gain_vs_best_temporal_baseline": 0.010077719399311359,
+      "relative_gain_vs_permuted_graph": 0.00122694210661214,
+      "passes_both": false
+    },
+    "60_min": {
+      "step": 12,
+      "eligible_pairs": 1207094,
+      "valid_fraction": 0.85366,
+      "lambda_graph": 0.1,
+      "lambda_permuted_graph": 0.05,
+      "sensor_balanced_mae": {
+        "persistence": 5.32304,
+        "seasonal": 4.19398,
+        "graph": 5.25923,
+        "permuted_graph": 5.26005
+      },
+      "relative_gain_vs_best_temporal_baseline": -0.25399399261194205,
+      "relative_gain_vs_permuted_graph": 0.00015606733560847249,
+      "passes_both": false
+    }
+  },
+  "zero_inclusive_secondary_fixed_lambdas": {
+    "15_min": {
+      "graph_mae": 4.07558,
+      "persistence_mae": 4.05951,
+      "permuted_graph_mae": 4.10675,
+      "seasonal_mae": 10.97014
+    },
+    "30_min": {
+      "graph_mae": 5.38742,
+      "persistence_mae": 5.38388,
+      "permuted_graph_mae": 5.40894,
+      "seasonal_mae": 10.97105
+    },
+    "60_min": {
+      "graph_mae": 7.45429,
+      "persistence_mae": 7.43112,
+      "permuted_graph_mae": 7.42591,
+      "seasonal_mae": 10.97265
+    }
+  },
+  "original_scalar_index_identification": "NOT_IDENTIFIED",
+  "interpretation": "Negative for the preregistered lightweight graph forecast superiority claim, NOT a test of physical relational persistence or B/(I*tau).",
+  "note": "This is an exact transcription of the main recorded decision, effect sizes and rounded summary metrics from the immutable GitHub Actions aggregate artifact. The original full output remains attached to execution 40043981617 for its retention period."
+}

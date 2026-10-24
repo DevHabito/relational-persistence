@@ -1,0 +1,148 @@
+name: RP-E005-P01 Two-Runner Replication
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e005-p01.yml
+      - experiments/rp_e005_cross_runner.py
+      - experiments/rp_e005_replica.py
+      - docs/preregistration/RP-E005-P01.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e005-p01-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  replicate:
+    name: Fresh hosted VM (${{ matrix.slot }})
+    strategy:
+      fail-fast: false
+      matrix:
+        slot: [runner-a, runner-b]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the frozen source dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Verify historical archive and adversarial controls
+        run: |
+          python -m pytest -q tests/test_measurement_gate.py tests/test_rp_e004_p02.py tests/test_rp_e004_p02_original_archive.py tests/test_rp_e005_cross_runner.py
+      - name: Run the new P02 replica without modifying its instrumentation
+        run: |
+          python -m experiments.rp_e005_replica \
+            --slot ${{ matrix.slot }} \
+            --output rp-e005-p01-output/${{ matrix.slot }}
+      - name: Preserve every source log even on test or run failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e005-p01-${{ matrix.slot }}
+          path: rp-e005-p01-output/${{ matrix.slot }}/
+          if-no-files-found: warn
+          retention-days: 90
+
+  aggregate:
+    name: Independently replay original records and archive first run
+    needs: [replicate]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install repository code
+        run: python -m pip install -e '.[dev]'
+      - name: Retrieve both original role-and-sample archives
+        uses: actions/download-artifact@v4
+        with:
+          pattern: rp-e005-p01-runner-*
+          path: rp-e005-downloaded
+          merge-multiple: false
+      - name: Independently replay every recovered endpoint from original bytes
+        run: |
+          python -m experiments.rp_e005_cross_runner \
+            --input rp-e005-downloaded \
+            --output rp-e005-evaluation \
+            --run-id "${{ github.run_id }}" \
+            --source-sha "${{ github.sha }}"
+      - name: Retain aggregate report and both original archives regardless of verdict
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e005-p01-evaluation
+          path: |
+            rp-e005-evaluation/
+            rp-e005-downloaded/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Preserve the original first-run bytes in Git without rerunning
+        if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="docs/results/RP-E005-P01-first-run"
+          if test -e "$archive"; then
+            echo "Original first-run archival path already exists; will not overwrite."
+            exit 0
+          fi
+          if ! test -f rp-e005-evaluation/RP-E005-P01.json; then
+            echo "Aggregate decision missing: no archival success can be claimed." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          if test -d rp-e005-downloaded; then
+            cp -a rp-e005-downloaded "$archive/raw"
+          fi
+          cp rp-e005-evaluation/RP-E005-P01.json "$archive/evaluation.json"
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          root = Path("docs/results/RP-E005-P01-first-run")
+          records = {str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+                     for path in sorted(root.rglob("*")) if path.is_file()}
+          data = {"archive_policy": "first-run original bytes; no reexecution",
+                  "source_commit": "${{ github.sha }}",
+                  "workflow_run": "${{ github.run_id }}",
+                  "file_sha256": records,
+                  "independent_replay_decision": json.loads(
+                      (root / "evaluation.json").read_text())["decision"],
+                  "physical_law_validation": "NOT_PERFORMED"}
+          (root / "archive-index.json").write_text(
+              json.dumps(data, indent=2, sort_keys=True) + "\n")
+          print("ARCHIVED_SOURCE_FILE_COUNT", len(records))
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(research): preserve original RP-E005-P01 first-run measurements"
+          git push origin HEAD:main
+      - name: Enforce the preregistered decision without replacing failed trials
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("rp-e005-evaluation/RP-E005-P01.json")
+          if not path.exists():
+              raise SystemExit("STOP_REPLICATION_AUDIT: missing decision file")
+          verdict = json.loads(path.read_text())["decision"]
+          print("ORIGINAL_RP_E005_P01_DECISION", verdict)
+          if verdict != "PASS_TWO_RUNNER_REPLAY":
+              raise SystemExit("STOP_REPLICATION_AUDIT: failed gate remains archived")
+          PY

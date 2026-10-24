@@ -104,9 +104,7 @@ def test_single_corrupted_event_archive_cannot_pass_immutable_manifest(tmp_path)
     mutated_file = tmp_path / example_name
     mutated_file.write_bytes(corrupted)
     assert hashlib.sha256(corrupted).hexdigest() != expected
-    assert load(mutated_file) != load(ARCHIVE / example_name) if False else (
-        mutated_file.read_bytes() != (ARCHIVE / example_name).read_bytes()
-    )
+    assert mutated_file.read_bytes() != (ARCHIVE / example_name).read_bytes()
 
 
 def test_original_trial_files_have_no_hidden_physical_measurements():

@@ -1,0 +1,3572 @@
+{
+  "absolute_errors_seconds": {
+    "static": "57/1000",
+    "trend": "3/1000"
+  },
+  "actual_last_completion_ms": 1959,
+  "arrival_profile": "late_burst",
+  "arrivals": 215,
+  "calendar_event_sha256": "c8d398bd2b169e08d990ebc8e115b521da36ab95f47a37622860d5627e10b67b",
+  "completion_trace_sha256": "7317e028b9eba9b97cb766f0ad785c018efd90d48bc924a19be817bf05cf8fae",
+  "first_sampled_idle_after_origin_ms": 975,
+  "not_physical_measurement": true,
+  "observed_recovery_seconds": "39/40",
+  "oracle_A_B_equal": true,
+  "original_completion_times_ms": [
+    9,
+    20,
+    33,
+    46,
+    58,
+    70,
+    81,
+    92,
+    105,
+    114,
+    123,
+    132,
+    141,
+    150,
+    159,
+    168,
+    177,
+    186,
+    195,
+    204,
+    213,
+    222,
+    231,
+    240,
+    249,
+    258,
+    267,
+    276,
+    285,
+    294,
+    303,
+    312,
+    321,
+    330,
+    339,
+    348,
+    357,
+    366,
+    375,
+    384,
+    393,
+    402,
+    411,
+    420,
+    429,
+    438,
+    447,
+    456,
+    465,
+    474,
+    483,
+    492,
+    501,
+    510,
+    519,
+    528,
+    537,
+    546,
+    555,
+    564,
+    573,
+    582,
+    591,
+    600,
+    609,
+    618,
+    627,
+    636,
+    645,
+    654,
+    663,
+    672,
+    681,
+    690,
+    699,
+    708,
+    717,
+    726,
+    735,
+    744,
+    753,
+    762,
+    771,
+    780,
+    789,
+    798,
+    807,
+    816,
+    825,
+    834,
+    843,
+    852,
+    861,
+    870,
+    879,
+    888,
+    897,
+    906,
+    915,
+    924,
+    933,
+    942,
+    951,
+    960,
+    969,
+    978,
+    987,
+    996,
+    1005,
+    1014,
+    1023,
+    1032,
+    1041,
+    1050,
+    1059,
+    1068,
+    1077,
+    1086,
+    1095,
+    1104,
+    1113,
+    1122,
+    1131,
+    1140,
+    1149,
+    1158,
+    1167,
+    1176,
+    1185,
+    1194,
+    1203,
+    1212,
+    1221,
+    1230,
+    1239,
+    1248,
+    1257,
+    1266,
+    1275,
+    1284,
+    1293,
+    1302,
+    1311,
+    1320,
+    1329,
+    1338,
+    1347,
+    1356,
+    1365,
+    1374,
+    1383,
+    1392,
+    1401,
+    1410,
+    1419,
+    1428,
+    1437,
+    1446,
+    1455,
+    1464,
+    1473,
+    1482,
+    1491,
+    1500,
+    1509,
+    1518,
+    1527,
+    1536,
+    1545,
+    1554,
+    1563,
+    1572,
+    1581,
+    1590,
+    1599,
+    1608,
+    1617,
+    1626,
+    1635,
+    1644,
+    1653,
+    1662,
+    1671,
+    1680,
+    1689,
+    1698,
+    1707,
+    1716,
+    1725,
+    1734,
+    1743,
+    1752,
+    1761,
+    1770,
+    1779,
+    1788,
+    1797,
+    1806,
+    1815,
+    1824,
+    1833,
+    1842,
+    1851,
+    1860,
+    1869,
+    1878,
+    1887,
+    1896,
+    1905,
+    1914,
+    1923,
+    1932,
+    1941,
+    1950,
+    1959
+  ],
+  "original_event_calendar": [
+    {
+      "job": 0,
+      "kind": "arrival",
+      "time_ms": 0
+    },
+    {
+      "job": 0,
+      "kind": "completion",
+      "time_ms": 9
+    },
+    {
+      "job": 1,
+      "kind": "arrival",
+      "time_ms": 11
+    },
+    {
+      "job": 1,
+      "kind": "completion",
+      "time_ms": 20
+    },
+    {
+      "job": 2,
+      "kind": "arrival",
+      "time_ms": 24
+    },
+    {
+      "job": 2,
+      "kind": "completion",
+      "time_ms": 33
+    },
+    {
+      "job": 3,
+      "kind": "arrival",
+      "time_ms": 37
+    },
+    {
+      "job": 3,
+      "kind": "completion",
+      "time_ms": 46
+    },
+    {
+      "job": 4,
+      "kind": "arrival",
+      "time_ms": 49
+    },
+    {
+      "job": 4,
+      "kind": "completion",
+      "time_ms": 58
+    },
+    {
+      "job": 5,
+      "kind": "arrival",
+      "time_ms": 61
+    },
+    {
+      "job": 5,
+      "kind": "completion",
+      "time_ms": 70
+    },
+    {
+      "job": 6,
+      "kind": "arrival",
+      "time_ms": 72
+    },
+    {
+      "job": 6,
+      "kind": "completion",
+      "time_ms": 81
+    },
+    {
+      "job": 7,
+      "kind": "arrival",
+      "time_ms": 83
+    },
+    {
+      "job": 7,
+      "kind": "completion",
+      "time_ms": 92
+    },
+    {
+      "job": 8,
+      "kind": "arrival",
+      "time_ms": 96
+    },
+    {
+      "job": 9,
+      "kind": "arrival",
+      "time_ms": 99
+    },
+    {
+      "job": 10,
+      "kind": "arrival",
+      "time_ms": 104
+    },
+    {
+      "job": 8,
+      "kind": "completion",
+      "time_ms": 105
+    },
+    {
+      "job": 11,
+      "kind": "arrival",
+      "time_ms": 106
+    },
+    {
+      "job": 12,
+      "kind": "arrival",
+      "time_ms": 110
+    },
+    {
+      "job": 13,
+      "kind": "arrival",
+      "time_ms": 112
+    },
+    {
+      "job": 9,
+      "kind": "completion",
+      "time_ms": 114
+    },
+    {
+      "job": 14,
+      "kind": "arrival",
+      "time_ms": 116
+    },
+    {
+      "job": 15,
+      "kind": "arrival",
+      "time_ms": 117
+    },
+    {
+      "job": 16,
+      "kind": "arrival",
+      "time_ms": 120
+    },
+    {
+      "job": 10,
+      "kind": "completion",
+      "time_ms": 123
+    },
+    {
+      "job": 17,
+      "kind": "arrival",
+      "time_ms": 124
+    },
+    {
+      "job": 18,
+      "kind": "arrival",
+      "time_ms": 126
+    },
+    {
+      "job": 19,
+      "kind": "arrival",
+      "time_ms": 130
+    },
+    {
+      "job": 11,
+      "kind": "completion",
+      "time_ms": 132
+    },
+    {
+      "job": 20,
+      "kind": "arrival",
+      "time_ms": 134
+    },
+    {
+      "job": 21,
+      "kind": "arrival",
+      "time_ms": 137
+    },
+    {
+      "job": 22,
+      "kind": "arrival",
+      "time_ms": 138
+    },
+    {
+      "job": 12,
+      "kind": "completion",
+      "time_ms": 141
+    },
+    {
+      "job": 23,
+      "kind": "arrival",
+      "time_ms": 141
+    },
+    {
+      "job": 24,
+      "kind": "arrival",
+      "time_ms": 146
+    },
+    {
+      "job": 25,
+      "kind": "arrival",
+      "time_ms": 148
+    },
+    {
+      "job": 13,
+      "kind": "completion",
+      "time_ms": 150
+    },
+    {
+      "job": 26,
+      "kind": "arrival",
+      "time_ms": 150
+    },
+    {
+      "job": 27,
+      "kind": "arrival",
+      "time_ms": 155
+    },
+    {
+      "job": 28,
+      "kind": "arrival",
+      "time_ms": 156
+    },
+    {
+      "job": 14,
+      "kind": "completion",
+      "time_ms": 159
+    },
+    {
+      "job": 29,
+      "kind": "arrival",
+      "time_ms": 160
+    },
+    {
+      "job": 30,
+      "kind": "arrival",
+      "time_ms": 164
+    },
+    {
+      "job": 31,
+      "kind": "arrival",
+      "time_ms": 167
+    },
+    {
+      "job": 15,
+      "kind": "completion",
+      "time_ms": 168
+    },
+    {
+      "job": 32,
+      "kind": "arrival",
+      "time_ms": 168
+    },
+    {
+      "job": 33,
+      "kind": "arrival",
+      "time_ms": 171
+    },
+    {
+      "job": 34,
+      "kind": "arrival",
+      "time_ms": 176
+    },
+    {
+      "job": 16,
+      "kind": "completion",
+      "time_ms": 177
+    },
+    {
+      "job": 35,
+      "kind": "arrival",
+      "time_ms": 179
+    },
+    {
+      "job": 36,
+      "kind": "arrival",
+      "time_ms": 182
+    },
+    {
+      "job": 37,
+      "kind": "arrival",
+      "time_ms": 183
+    },
+    {
+      "job": 17,
+      "kind": "completion",
+      "time_ms": 186
+    },
+    {
+      "job": 38,
+      "kind": "arrival",
+      "time_ms": 187
+    },
+    {
+      "job": 39,
+      "kind": "arrival",
+      "time_ms": 190
+    },
+    {
+      "job": 40,
+      "kind": "arrival",
+      "time_ms": 193
+    },
+    {
+      "job": 18,
+      "kind": "completion",
+      "time_ms": 195
+    },
+    {
+      "job": 41,
+      "kind": "arrival",
+      "time_ms": 197
+    },
+    {
+      "job": 42,
+      "kind": "arrival",
+      "time_ms": 199
+    },
+    {
+      "job": 43,
+      "kind": "arrival",
+      "time_ms": 199
+    },
+    {
+      "job": 19,
+      "kind": "completion",
+      "time_ms": 204
+    },
+    {
+      "job": 20,
+      "kind": "completion",
+      "time_ms": 213
+    },
+    {
+      "job": 44,
+      "kind": "arrival",
+      "time_ms": 213
+    },
+    {
+      "job": 21,
+      "kind": "completion",
+      "time_ms": 222
+    },
+    {
+      "job": 45,
+      "kind": "arrival",
+      "time_ms": 225
+    },
+    {
+      "job": 22,
+      "kind": "completion",
+      "time_ms": 231
+    },
+    {
+      "job": 46,
+      "kind": "arrival",
+      "time_ms": 237
+    },
+    {
+      "job": 23,
+      "kind": "completion",
+      "time_ms": 240
+    },
+    {
+      "job": 24,
+      "kind": "completion",
+      "time_ms": 249
+    },
+    {
+      "job": 47,
+      "kind": "arrival",
+      "time_ms": 249
+    },
+    {
+      "job": 25,
+      "kind": "completion",
+      "time_ms": 258
+    },
+    {
+      "job": 48,
+      "kind": "arrival",
+      "time_ms": 259
+    },
+    {
+      "job": 26,
+      "kind": "completion",
+      "time_ms": 267
+    },
+    {
+      "job": 49,
+      "kind": "arrival",
+      "time_ms": 272
+    },
+    {
+      "job": 27,
+      "kind": "completion",
+      "time_ms": 276
+    },
+    {
+      "job": 50,
+      "kind": "arrival",
+      "time_ms": 284
+    },
+    {
+      "job": 28,
+      "kind": "completion",
+      "time_ms": 285
+    },
+    {
+      "job": 29,
+      "kind": "completion",
+      "time_ms": 294
+    },
+    {
+      "job": 51,
+      "kind": "arrival",
+      "time_ms": 296
+    },
+    {
+      "job": 52,
+      "kind": "arrival",
+      "time_ms": 301
+    },
+    {
+      "job": 53,
+      "kind": "arrival",
+      "time_ms": 302
+    },
+    {
+      "job": 30,
+      "kind": "completion",
+      "time_ms": 303
+    },
+    {
+      "job": 54,
+      "kind": "arrival",
+      "time_ms": 305
+    },
+    {
+      "job": 55,
+      "kind": "arrival",
+      "time_ms": 310
+    },
+    {
+      "job": 31,
+      "kind": "completion",
+      "time_ms": 312
+    },
+    {
+      "job": 56,
+      "kind": "arrival",
+      "time_ms": 313
+    },
+    {
+      "job": 57,
+      "kind": "arrival",
+      "time_ms": 314
+    },
+    {
+      "job": 58,
+      "kind": "arrival",
+      "time_ms": 318
+    },
+    {
+      "job": 32,
+      "kind": "completion",
+      "time_ms": 321
+    },
+    {
+      "job": 59,
+      "kind": "arrival",
+      "time_ms": 321
+    },
+    {
+      "job": 60,
+      "kind": "arrival",
+      "time_ms": 324
+    },
+    {
+      "job": 61,
+      "kind": "arrival",
+      "time_ms": 328
+    },
+    {
+      "job": 33,
+      "kind": "completion",
+      "time_ms": 330
+    },
+    {
+      "job": 62,
+      "kind": "arrival",
+      "time_ms": 330
+    },
+    {
+      "job": 63,
+      "kind": "arrival",
+      "time_ms": 333
+    },
+    {
+      "job": 64,
+      "kind": "arrival",
+      "time_ms": 336
+    },
+    {
+      "job": 34,
+      "kind": "completion",
+      "time_ms": 339
+    },
+    {
+      "job": 65,
+      "kind": "arrival",
+      "time_ms": 340
+    },
+    {
+      "job": 66,
+      "kind": "arrival",
+      "time_ms": 343
+    },
+    {
+      "job": 67,
+      "kind": "arrival",
+      "time_ms": 344
+    },
+    {
+      "job": 35,
+      "kind": "completion",
+      "time_ms": 348
+    },
+    {
+      "job": 68,
+      "kind": "arrival",
+      "time_ms": 349
+    },
+    {
+      "job": 69,
+      "kind": "arrival",
+      "time_ms": 352
+    },
+    {
+      "job": 70,
+      "kind": "arrival",
+      "time_ms": 353
+    },
+    {
+      "job": 36,
+      "kind": "completion",
+      "time_ms": 357
+    },
+    {
+      "job": 71,
+      "kind": "arrival",
+      "time_ms": 357
+    },
+    {
+      "job": 72,
+      "kind": "arrival",
+      "time_ms": 361
+    },
+    {
+      "job": 73,
+      "kind": "arrival",
+      "time_ms": 363
+    },
+    {
+      "job": 37,
+      "kind": "completion",
+      "time_ms": 366
+    },
+    {
+      "job": 74,
+      "kind": "arrival",
+      "time_ms": 367
+    },
+    {
+      "job": 75,
+      "kind": "arrival",
+      "time_ms": 370
+    },
+    {
+      "job": 76,
+      "kind": "arrival",
+      "time_ms": 372
+    },
+    {
+      "job": 77,
+      "kind": "arrival",
+      "time_ms": 374
+    },
+    {
+      "job": 38,
+      "kind": "completion",
+      "time_ms": 375
+    },
+    {
+      "job": 78,
+      "kind": "arrival",
+      "time_ms": 378
+    },
+    {
+      "job": 79,
+      "kind": "arrival",
+      "time_ms": 382
+    },
+    {
+      "job": 80,
+      "kind": "arrival",
+      "time_ms": 383
+    },
+    {
+      "job": 39,
+      "kind": "completion",
+      "time_ms": 384
+    },
+    {
+      "job": 81,
+      "kind": "arrival",
+      "time_ms": 388
+    },
+    {
+      "job": 82,
+      "kind": "arrival",
+      "time_ms": 389
+    },
+    {
+      "job": 83,
+      "kind": "arrival",
+      "time_ms": 392
+    },
+    {
+      "job": 40,
+      "kind": "completion",
+      "time_ms": 393
+    },
+    {
+      "job": 84,
+      "kind": "arrival",
+      "time_ms": 396
+    },
+    {
+      "job": 85,
+      "kind": "arrival",
+      "time_ms": 398
+    },
+    {
+      "job": 86,
+      "kind": "arrival",
+      "time_ms": 399
+    },
+    {
+      "job": 41,
+      "kind": "completion",
+      "time_ms": 402
+    },
+    {
+      "job": 42,
+      "kind": "completion",
+      "time_ms": 411
+    },
+    {
+      "job": 87,
+      "kind": "arrival",
+      "time_ms": 411
+    },
+    {
+      "job": 43,
+      "kind": "completion",
+      "time_ms": 420
+    },
+    {
+      "job": 88,
+      "kind": "arrival",
+      "time_ms": 425
+    },
+    {
+      "job": 44,
+      "kind": "completion",
+      "time_ms": 429
+    },
+    {
+      "job": 89,
+      "kind": "arrival",
+      "time_ms": 435
+    },
+    {
+      "job": 45,
+      "kind": "completion",
+      "time_ms": 438
+    },
+    {
+      "job": 46,
+      "kind": "completion",
+      "time_ms": 447
+    },
+    {
+      "job": 90,
+      "kind": "arrival",
+      "time_ms": 448
+    },
+    {
+      "job": 47,
+      "kind": "completion",
+      "time_ms": 456
+    },
+    {
+      "job": 91,
+      "kind": "arrival",
+      "time_ms": 461
+    },
+    {
+      "job": 48,
+      "kind": "completion",
+      "time_ms": 465
+    },
+    {
+      "job": 92,
+      "kind": "arrival",
+      "time_ms": 473
+    },
+    {
+      "job": 49,
+      "kind": "completion",
+      "time_ms": 474
+    },
+    {
+      "job": 50,
+      "kind": "completion",
+      "time_ms": 483
+    },
+    {
+      "job": 93,
+      "kind": "arrival",
+      "time_ms": 483
+    },
+    {
+      "job": 51,
+      "kind": "completion",
+      "time_ms": 492
+    },
+    {
+      "job": 94,
+      "kind": "arrival",
+      "time_ms": 496
+    },
+    {
+      "job": 95,
+      "kind": "arrival",
+      "time_ms": 499
+    },
+    {
+      "job": 52,
+      "kind": "completion",
+      "time_ms": 501
+    },
+    {
+      "job": 96,
+      "kind": "arrival",
+      "time_ms": 504
+    },
+    {
+      "job": 97,
+      "kind": "arrival",
+      "time_ms": 506
+    },
+    {
+      "job": 98,
+      "kind": "arrival",
+      "time_ms": 508
+    },
+    {
+      "job": 53,
+      "kind": "completion",
+      "time_ms": 510
+    },
+    {
+      "job": 99,
+      "kind": "arrival",
+      "time_ms": 512
+    },
+    {
+      "job": 100,
+      "kind": "arrival",
+      "time_ms": 516
+    },
+    {
+      "job": 101,
+      "kind": "arrival",
+      "time_ms": 518
+    },
+    {
+      "job": 54,
+      "kind": "completion",
+      "time_ms": 519
+    },
+    {
+      "job": 102,
+      "kind": "arrival",
+      "time_ms": 521
+    },
+    {
+      "job": 103,
+      "kind": "arrival",
+      "time_ms": 524
+    },
+    {
+      "job": 104,
+      "kind": "arrival",
+      "time_ms": 527
+    },
+    {
+      "job": 55,
+      "kind": "completion",
+      "time_ms": 528
+    },
+    {
+      "job": 105,
+      "kind": "arrival",
+      "time_ms": 529
+    },
+    {
+      "job": 106,
+      "kind": "arrival",
+      "time_ms": 533
+    },
+    {
+      "job": 107,
+      "kind": "arrival",
+      "time_ms": 536
+    },
+    {
+      "job": 56,
+      "kind": "completion",
+      "time_ms": 537
+    },
+    {
+      "job": 108,
+      "kind": "arrival",
+      "time_ms": 539
+    },
+    {
+      "job": 109,
+      "kind": "arrival",
+      "time_ms": 543
+    },
+    {
+      "job": 110,
+      "kind": "arrival",
+      "time_ms": 544
+    },
+    {
+      "job": 57,
+      "kind": "completion",
+      "time_ms": 546
+    },
+    {
+      "job": 111,
+      "kind": "arrival",
+      "time_ms": 547
+    },
+    {
+      "job": 112,
+      "kind": "arrival",
+      "time_ms": 550
+    },
+    {
+      "job": 113,
+      "kind": "arrival",
+      "time_ms": 554
+    },
+    {
+      "job": 58,
+      "kind": "completion",
+      "time_ms": 555
+    },
+    {
+      "job": 114,
+      "kind": "arrival",
+      "time_ms": 558
+    },
+    {
+      "job": 115,
+      "kind": "arrival",
+      "time_ms": 559
+    },
+    {
+      "job": 59,
+      "kind": "completion",
+      "time_ms": 564
+    },
+    {
+      "job": 116,
+      "kind": "arrival",
+      "time_ms": 564
+    },
+    {
+      "job": 117,
+      "kind": "arrival",
+      "time_ms": 566
+    },
+    {
+      "job": 118,
+      "kind": "arrival",
+      "time_ms": 568
+    },
+    {
+      "job": 119,
+      "kind": "arrival",
+      "time_ms": 571
+    },
+    {
+      "job": 60,
+      "kind": "completion",
+      "time_ms": 573
+    },
+    {
+      "job": 120,
+      "kind": "arrival",
+      "time_ms": 574
+    },
+    {
+      "job": 121,
+      "kind": "arrival",
+      "time_ms": 577
+    },
+    {
+      "job": 122,
+      "kind": "arrival",
+      "time_ms": 581
+    },
+    {
+      "job": 61,
+      "kind": "completion",
+      "time_ms": 582
+    },
+    {
+      "job": 123,
+      "kind": "arrival",
+      "time_ms": 583
+    },
+    {
+      "job": 124,
+      "kind": "arrival",
+      "time_ms": 586
+    },
+    {
+      "job": 125,
+      "kind": "arrival",
+      "time_ms": 589
+    },
+    {
+      "job": 62,
+      "kind": "completion",
+      "time_ms": 591
+    },
+    {
+      "job": 126,
+      "kind": "arrival",
+      "time_ms": 594
+    },
+    {
+      "job": 127,
+      "kind": "arrival",
+      "time_ms": 597
+    },
+    {
+      "job": 128,
+      "kind": "arrival",
+      "time_ms": 599
+    },
+    {
+      "job": 63,
+      "kind": "completion",
+      "time_ms": 600
+    },
+    {
+      "job": 129,
+      "kind": "arrival",
+      "time_ms": 600
+    },
+    {
+      "job": 64,
+      "kind": "completion",
+      "time_ms": 609
+    },
+    {
+      "job": 130,
+      "kind": "arrival",
+      "time_ms": 612
+    },
+    {
+      "job": 65,
+      "kind": "completion",
+      "time_ms": 618
+    },
+    {
+      "job": 131,
+      "kind": "arrival",
+      "time_ms": 623
+    },
+    {
+      "job": 66,
+      "kind": "completion",
+      "time_ms": 627
+    },
+    {
+      "job": 132,
+      "kind": "arrival",
+      "time_ms": 635
+    },
+    {
+      "job": 67,
+      "kind": "completion",
+      "time_ms": 636
+    },
+    {
+      "job": 68,
+      "kind": "completion",
+      "time_ms": 645
+    },
+    {
+      "job": 133,
+      "kind": "arrival",
+      "time_ms": 649
+    },
+    {
+      "job": 69,
+      "kind": "completion",
+      "time_ms": 654
+    },
+    {
+      "job": 134,
+      "kind": "arrival",
+      "time_ms": 661
+    },
+    {
+      "job": 70,
+      "kind": "completion",
+      "time_ms": 663
+    },
+    {
+      "job": 71,
+      "kind": "completion",
+      "time_ms": 672
+    },
+    {
+      "job": 135,
+      "kind": "arrival",
+      "time_ms": 673
+    },
+    {
+      "job": 72,
+      "kind": "completion",
+      "time_ms": 681
+    },
+    {
+      "job": 136,
+      "kind": "arrival",
+      "time_ms": 685
+    },
+    {
+      "job": 73,
+      "kind": "completion",
+      "time_ms": 690
+    },
+    {
+      "job": 137,
+      "kind": "arrival",
+      "time_ms": 696
+    },
+    {
+      "job": 74,
+      "kind": "completion",
+      "time_ms": 699
+    },
+    {
+      "job": 138,
+      "kind": "arrival",
+      "time_ms": 701
+    },
+    {
+      "job": 139,
+      "kind": "arrival",
+      "time_ms": 702
+    },
+    {
+      "job": 140,
+      "kind": "arrival",
+      "time_ms": 706
+    },
+    {
+      "job": 75,
+      "kind": "completion",
+      "time_ms": 708
+    },
+    {
+      "job": 141,
+      "kind": "arrival",
+      "time_ms": 710
+    },
+    {
+      "job": 142,
+      "kind": "arrival",
+      "time_ms": 711
+    },
+    {
+      "job": 143,
+      "kind": "arrival",
+      "time_ms": 714
+    },
+    {
+      "job": 76,
+      "kind": "completion",
+      "time_ms": 717
+    },
+    {
+      "job": 144,
+      "kind": "arrival",
+      "time_ms": 717
+    },
+    {
+      "job": 145,
+      "kind": "arrival",
+      "time_ms": 720
+    },
+    {
+      "job": 146,
+      "kind": "arrival",
+      "time_ms": 723
+    },
+    {
+      "job": 77,
+      "kind": "completion",
+      "time_ms": 726
+    },
+    {
+      "job": 147,
+      "kind": "arrival",
+      "time_ms": 726
+    },
+    {
+      "job": 148,
+      "kind": "arrival",
+      "time_ms": 730
+    },
+    {
+      "job": 149,
+      "kind": "arrival",
+      "time_ms": 732
+    },
+    {
+      "job": 78,
+      "kind": "completion",
+      "time_ms": 735
+    },
+    {
+      "job": 150,
+      "kind": "arrival",
+      "time_ms": 737
+    },
+    {
+      "job": 151,
+      "kind": "arrival",
+      "time_ms": 739
+    },
+    {
+      "job": 152,
+      "kind": "arrival",
+      "time_ms": 742
+    },
+    {
+      "job": 79,
+      "kind": "completion",
+      "time_ms": 744
+    },
+    {
+      "job": 153,
+      "kind": "arrival",
+      "time_ms": 746
+    },
+    {
+      "job": 154,
+      "kind": "arrival",
+      "time_ms": 749
+    },
+    {
+      "job": 155,
+      "kind": "arrival",
+      "time_ms": 752
+    },
+    {
+      "job": 80,
+      "kind": "completion",
+      "time_ms": 753
+    },
+    {
+      "job": 156,
+      "kind": "arrival",
+      "time_ms": 754
+    },
+    {
+      "job": 157,
+      "kind": "arrival",
+      "time_ms": 756
+    },
+    {
+      "job": 158,
+      "kind": "arrival",
+      "time_ms": 759
+    },
+    {
+      "job": 81,
+      "kind": "completion",
+      "time_ms": 762
+    },
+    {
+      "job": 159,
+      "kind": "arrival",
+      "time_ms": 762
+    },
+    {
+      "job": 160,
+      "kind": "arrival",
+      "time_ms": 765
+    },
+    {
+      "job": 161,
+      "kind": "arrival",
+      "time_ms": 768
+    },
+    {
+      "job": 82,
+      "kind": "completion",
+      "time_ms": 771
+    },
+    {
+      "job": 162,
+      "kind": "arrival",
+      "time_ms": 772
+    },
+    {
+      "job": 163,
+      "kind": "arrival",
+      "time_ms": 774
+    },
+    {
+      "job": 164,
+      "kind": "arrival",
+      "time_ms": 779
+    },
+    {
+      "job": 83,
+      "kind": "completion",
+      "time_ms": 780
+    },
+    {
+      "job": 165,
+      "kind": "arrival",
+      "time_ms": 780
+    },
+    {
+      "job": 166,
+      "kind": "arrival",
+      "time_ms": 785
+    },
+    {
+      "job": 167,
+      "kind": "arrival",
+      "time_ms": 788
+    },
+    {
+      "job": 84,
+      "kind": "completion",
+      "time_ms": 789
+    },
+    {
+      "job": 168,
+      "kind": "arrival",
+      "time_ms": 791
+    },
+    {
+      "job": 169,
+      "kind": "arrival",
+      "time_ms": 792
+    },
+    {
+      "job": 170,
+      "kind": "arrival",
+      "time_ms": 795
+    },
+    {
+      "job": 85,
+      "kind": "completion",
+      "time_ms": 798
+    },
+    {
+      "job": 171,
+      "kind": "arrival",
+      "time_ms": 800
+    },
+    {
+      "job": 172,
+      "kind": "arrival",
+      "time_ms": 800
+    },
+    {
+      "job": 86,
+      "kind": "completion",
+      "time_ms": 807
+    },
+    {
+      "job": 173,
+      "kind": "arrival",
+      "time_ms": 812
+    },
+    {
+      "job": 87,
+      "kind": "completion",
+      "time_ms": 816
+    },
+    {
+      "job": 174,
+      "kind": "arrival",
+      "time_ms": 823
+    },
+    {
+      "job": 88,
+      "kind": "completion",
+      "time_ms": 825
+    },
+    {
+      "job": 89,
+      "kind": "completion",
+      "time_ms": 834
+    },
+    {
+      "job": 175,
+      "kind": "arrival",
+      "time_ms": 835
+    },
+    {
+      "job": 90,
+      "kind": "completion",
+      "time_ms": 843
+    },
+    {
+      "job": 176,
+      "kind": "arrival",
+      "time_ms": 847
+    },
+    {
+      "job": 91,
+      "kind": "completion",
+      "time_ms": 852
+    },
+    {
+      "job": 177,
+      "kind": "arrival",
+      "time_ms": 860
+    },
+    {
+      "job": 92,
+      "kind": "completion",
+      "time_ms": 861
+    },
+    {
+      "job": 93,
+      "kind": "completion",
+      "time_ms": 870
+    },
+    {
+      "job": 178,
+      "kind": "arrival",
+      "time_ms": 873
+    },
+    {
+      "job": 94,
+      "kind": "completion",
+      "time_ms": 879
+    },
+    {
+      "job": 179,
+      "kind": "arrival",
+      "time_ms": 884
+    },
+    {
+      "job": 95,
+      "kind": "completion",
+      "time_ms": 888
+    },
+    {
+      "job": 96,
+      "kind": "completion",
+      "time_ms": 897
+    },
+    {
+      "job": 180,
+      "kind": "arrival",
+      "time_ms": 897
+    },
+    {
+      "job": 181,
+      "kind": "arrival",
+      "time_ms": 899
+    },
+    {
+      "job": 182,
+      "kind": "arrival",
+      "time_ms": 903
+    },
+    {
+      "job": 97,
+      "kind": "completion",
+      "time_ms": 906
+    },
+    {
+      "job": 183,
+      "kind": "arrival",
+      "time_ms": 906
+    },
+    {
+      "job": 184,
+      "kind": "arrival",
+      "time_ms": 908
+    },
+    {
+      "job": 185,
+      "kind": "arrival",
+      "time_ms": 911
+    },
+    {
+      "job": 98,
+      "kind": "completion",
+      "time_ms": 915
+    },
+    {
+      "job": 186,
+      "kind": "arrival",
+      "time_ms": 915
+    },
+    {
+      "job": 187,
+      "kind": "arrival",
+      "time_ms": 917
+    },
+    {
+      "job": 188,
+      "kind": "arrival",
+      "time_ms": 922
+    },
+    {
+      "job": 189,
+      "kind": "arrival",
+      "time_ms": 923
+    },
+    {
+      "job": 99,
+      "kind": "completion",
+      "time_ms": 924
+    },
+    {
+      "job": 190,
+      "kind": "arrival",
+      "time_ms": 927
+    },
+    {
+      "job": 191,
+      "kind": "arrival",
+      "time_ms": 930
+    },
+    {
+      "job": 100,
+      "kind": "completion",
+      "time_ms": 933
+    },
+    {
+      "job": 192,
+      "kind": "arrival",
+      "time_ms": 933
+    },
+    {
+      "job": 193,
+      "kind": "arrival",
+      "time_ms": 935
+    },
+    {
+      "job": 194,
+      "kind": "arrival",
+      "time_ms": 938
+    },
+    {
+      "job": 101,
+      "kind": "completion",
+      "time_ms": 942
+    },
+    {
+      "job": 195,
+      "kind": "arrival",
+      "time_ms": 943
+    },
+    {
+      "job": 196,
+      "kind": "arrival",
+      "time_ms": 944
+    },
+    {
+      "job": 197,
+      "kind": "arrival",
+      "time_ms": 947
+    },
+    {
+      "job": 102,
+      "kind": "completion",
+      "time_ms": 951
+    },
+    {
+      "job": 198,
+      "kind": "arrival",
+      "time_ms": 951
+    },
+    {
+      "job": 199,
+      "kind": "arrival",
+      "time_ms": 953
+    },
+    {
+      "job": 200,
+      "kind": "arrival",
+      "time_ms": 957
+    },
+    {
+      "job": 103,
+      "kind": "completion",
+      "time_ms": 960
+    },
+    {
+      "job": 201,
+      "kind": "arrival",
+      "time_ms": 961
+    },
+    {
+      "job": 202,
+      "kind": "arrival",
+      "time_ms": 964
+    },
+    {
+      "job": 203,
+      "kind": "arrival",
+      "time_ms": 967
+    },
+    {
+      "job": 204,
+      "kind": "arrival",
+      "time_ms": 968
+    },
+    {
+      "job": 104,
+      "kind": "completion",
+      "time_ms": 969
+    },
+    {
+      "job": 205,
+      "kind": "arrival",
+      "time_ms": 971
+    },
+    {
+      "job": 206,
+      "kind": "arrival",
+      "time_ms": 974
+    },
+    {
+      "job": 105,
+      "kind": "completion",
+      "time_ms": 978
+    },
+    {
+      "job": 207,
+      "kind": "arrival",
+      "time_ms": 978
+    },
+    {
+      "job": 208,
+      "kind": "arrival",
+      "time_ms": 980
+    },
+    {
+      "job": 209,
+      "kind": "arrival",
+      "time_ms": 984
+    },
+    {
+      "job": 210,
+      "kind": "arrival",
+      "time_ms": 986
+    },
+    {
+      "job": 106,
+      "kind": "completion",
+      "time_ms": 987
+    },
+    {
+      "job": 211,
+      "kind": "arrival",
+      "time_ms": 991
+    },
+    {
+      "job": 212,
+      "kind": "arrival",
+      "time_ms": 992
+    },
+    {
+      "job": 107,
+      "kind": "completion",
+      "time_ms": 996
+    },
+    {
+      "job": 213,
+      "kind": "arrival",
+      "time_ms": 997
+    },
+    {
+      "job": 214,
+      "kind": "arrival",
+      "time_ms": 998
+    },
+    {
+      "job": 108,
+      "kind": "completion",
+      "time_ms": 1005
+    },
+    {
+      "job": 109,
+      "kind": "completion",
+      "time_ms": 1014
+    },
+    {
+      "job": 110,
+      "kind": "completion",
+      "time_ms": 1023
+    },
+    {
+      "job": 111,
+      "kind": "completion",
+      "time_ms": 1032
+    },
+    {
+      "job": 112,
+      "kind": "completion",
+      "time_ms": 1041
+    },
+    {
+      "job": 113,
+      "kind": "completion",
+      "time_ms": 1050
+    },
+    {
+      "job": 114,
+      "kind": "completion",
+      "time_ms": 1059
+    },
+    {
+      "job": 115,
+      "kind": "completion",
+      "time_ms": 1068
+    },
+    {
+      "job": 116,
+      "kind": "completion",
+      "time_ms": 1077
+    },
+    {
+      "job": 117,
+      "kind": "completion",
+      "time_ms": 1086
+    },
+    {
+      "job": 118,
+      "kind": "completion",
+      "time_ms": 1095
+    },
+    {
+      "job": 119,
+      "kind": "completion",
+      "time_ms": 1104
+    },
+    {
+      "job": 120,
+      "kind": "completion",
+      "time_ms": 1113
+    },
+    {
+      "job": 121,
+      "kind": "completion",
+      "time_ms": 1122
+    },
+    {
+      "job": 122,
+      "kind": "completion",
+      "time_ms": 1131
+    },
+    {
+      "job": 123,
+      "kind": "completion",
+      "time_ms": 1140
+    },
+    {
+      "job": 124,
+      "kind": "completion",
+      "time_ms": 1149
+    },
+    {
+      "job": 125,
+      "kind": "completion",
+      "time_ms": 1158
+    },
+    {
+      "job": 126,
+      "kind": "completion",
+      "time_ms": 1167
+    },
+    {
+      "job": 127,
+      "kind": "completion",
+      "time_ms": 1176
+    },
+    {
+      "job": 128,
+      "kind": "completion",
+      "time_ms": 1185
+    },
+    {
+      "job": 129,
+      "kind": "completion",
+      "time_ms": 1194
+    },
+    {
+      "job": 130,
+      "kind": "completion",
+      "time_ms": 1203
+    },
+    {
+      "job": 131,
+      "kind": "completion",
+      "time_ms": 1212
+    },
+    {
+      "job": 132,
+      "kind": "completion",
+      "time_ms": 1221
+    },
+    {
+      "job": 133,
+      "kind": "completion",
+      "time_ms": 1230
+    },
+    {
+      "job": 134,
+      "kind": "completion",
+      "time_ms": 1239
+    },
+    {
+      "job": 135,
+      "kind": "completion",
+      "time_ms": 1248
+    },
+    {
+      "job": 136,
+      "kind": "completion",
+      "time_ms": 1257
+    },
+    {
+      "job": 137,
+      "kind": "completion",
+      "time_ms": 1266
+    },
+    {
+      "job": 138,
+      "kind": "completion",
+      "time_ms": 1275
+    },
+    {
+      "job": 139,
+      "kind": "completion",
+      "time_ms": 1284
+    },
+    {
+      "job": 140,
+      "kind": "completion",
+      "time_ms": 1293
+    },
+    {
+      "job": 141,
+      "kind": "completion",
+      "time_ms": 1302
+    },
+    {
+      "job": 142,
+      "kind": "completion",
+      "time_ms": 1311
+    },
+    {
+      "job": 143,
+      "kind": "completion",
+      "time_ms": 1320
+    },
+    {
+      "job": 144,
+      "kind": "completion",
+      "time_ms": 1329
+    },
+    {
+      "job": 145,
+      "kind": "completion",
+      "time_ms": 1338
+    },
+    {
+      "job": 146,
+      "kind": "completion",
+      "time_ms": 1347
+    },
+    {
+      "job": 147,
+      "kind": "completion",
+      "time_ms": 1356
+    },
+    {
+      "job": 148,
+      "kind": "completion",
+      "time_ms": 1365
+    },
+    {
+      "job": 149,
+      "kind": "completion",
+      "time_ms": 1374
+    },
+    {
+      "job": 150,
+      "kind": "completion",
+      "time_ms": 1383
+    },
+    {
+      "job": 151,
+      "kind": "completion",
+      "time_ms": 1392
+    },
+    {
+      "job": 152,
+      "kind": "completion",
+      "time_ms": 1401
+    },
+    {
+      "job": 153,
+      "kind": "completion",
+      "time_ms": 1410
+    },
+    {
+      "job": 154,
+      "kind": "completion",
+      "time_ms": 1419
+    },
+    {
+      "job": 155,
+      "kind": "completion",
+      "time_ms": 1428
+    },
+    {
+      "job": 156,
+      "kind": "completion",
+      "time_ms": 1437
+    },
+    {
+      "job": 157,
+      "kind": "completion",
+      "time_ms": 1446
+    },
+    {
+      "job": 158,
+      "kind": "completion",
+      "time_ms": 1455
+    },
+    {
+      "job": 159,
+      "kind": "completion",
+      "time_ms": 1464
+    },
+    {
+      "job": 160,
+      "kind": "completion",
+      "time_ms": 1473
+    },
+    {
+      "job": 161,
+      "kind": "completion",
+      "time_ms": 1482
+    },
+    {
+      "job": 162,
+      "kind": "completion",
+      "time_ms": 1491
+    },
+    {
+      "job": 163,
+      "kind": "completion",
+      "time_ms": 1500
+    },
+    {
+      "job": 164,
+      "kind": "completion",
+      "time_ms": 1509
+    },
+    {
+      "job": 165,
+      "kind": "completion",
+      "time_ms": 1518
+    },
+    {
+      "job": 166,
+      "kind": "completion",
+      "time_ms": 1527
+    },
+    {
+      "job": 167,
+      "kind": "completion",
+      "time_ms": 1536
+    },
+    {
+      "job": 168,
+      "kind": "completion",
+      "time_ms": 1545
+    },
+    {
+      "job": 169,
+      "kind": "completion",
+      "time_ms": 1554
+    },
+    {
+      "job": 170,
+      "kind": "completion",
+      "time_ms": 1563
+    },
+    {
+      "job": 171,
+      "kind": "completion",
+      "time_ms": 1572
+    },
+    {
+      "job": 172,
+      "kind": "completion",
+      "time_ms": 1581
+    },
+    {
+      "job": 173,
+      "kind": "completion",
+      "time_ms": 1590
+    },
+    {
+      "job": 174,
+      "kind": "completion",
+      "time_ms": 1599
+    },
+    {
+      "job": 175,
+      "kind": "completion",
+      "time_ms": 1608
+    },
+    {
+      "job": 176,
+      "kind": "completion",
+      "time_ms": 1617
+    },
+    {
+      "job": 177,
+      "kind": "completion",
+      "time_ms": 1626
+    },
+    {
+      "job": 178,
+      "kind": "completion",
+      "time_ms": 1635
+    },
+    {
+      "job": 179,
+      "kind": "completion",
+      "time_ms": 1644
+    },
+    {
+      "job": 180,
+      "kind": "completion",
+      "time_ms": 1653
+    },
+    {
+      "job": 181,
+      "kind": "completion",
+      "time_ms": 1662
+    },
+    {
+      "job": 182,
+      "kind": "completion",
+      "time_ms": 1671
+    },
+    {
+      "job": 183,
+      "kind": "completion",
+      "time_ms": 1680
+    },
+    {
+      "job": 184,
+      "kind": "completion",
+      "time_ms": 1689
+    },
+    {
+      "job": 185,
+      "kind": "completion",
+      "time_ms": 1698
+    },
+    {
+      "job": 186,
+      "kind": "completion",
+      "time_ms": 1707
+    },
+    {
+      "job": 187,
+      "kind": "completion",
+      "time_ms": 1716
+    },
+    {
+      "job": 188,
+      "kind": "completion",
+      "time_ms": 1725
+    },
+    {
+      "job": 189,
+      "kind": "completion",
+      "time_ms": 1734
+    },
+    {
+      "job": 190,
+      "kind": "completion",
+      "time_ms": 1743
+    },
+    {
+      "job": 191,
+      "kind": "completion",
+      "time_ms": 1752
+    },
+    {
+      "job": 192,
+      "kind": "completion",
+      "time_ms": 1761
+    },
+    {
+      "job": 193,
+      "kind": "completion",
+      "time_ms": 1770
+    },
+    {
+      "job": 194,
+      "kind": "completion",
+      "time_ms": 1779
+    },
+    {
+      "job": 195,
+      "kind": "completion",
+      "time_ms": 1788
+    },
+    {
+      "job": 196,
+      "kind": "completion",
+      "time_ms": 1797
+    },
+    {
+      "job": 197,
+      "kind": "completion",
+      "time_ms": 1806
+    },
+    {
+      "job": 198,
+      "kind": "completion",
+      "time_ms": 1815
+    },
+    {
+      "job": 199,
+      "kind": "completion",
+      "time_ms": 1824
+    },
+    {
+      "job": 200,
+      "kind": "completion",
+      "time_ms": 1833
+    },
+    {
+      "job": 201,
+      "kind": "completion",
+      "time_ms": 1842
+    },
+    {
+      "job": 202,
+      "kind": "completion",
+      "time_ms": 1851
+    },
+    {
+      "job": 203,
+      "kind": "completion",
+      "time_ms": 1860
+    },
+    {
+      "job": 204,
+      "kind": "completion",
+      "time_ms": 1869
+    },
+    {
+      "job": 205,
+      "kind": "completion",
+      "time_ms": 1878
+    },
+    {
+      "job": 206,
+      "kind": "completion",
+      "time_ms": 1887
+    },
+    {
+      "job": 207,
+      "kind": "completion",
+      "time_ms": 1896
+    },
+    {
+      "job": 208,
+      "kind": "completion",
+      "time_ms": 1905
+    },
+    {
+      "job": 209,
+      "kind": "completion",
+      "time_ms": 1914
+    },
+    {
+      "job": 210,
+      "kind": "completion",
+      "time_ms": 1923
+    },
+    {
+      "job": 211,
+      "kind": "completion",
+      "time_ms": 1932
+    },
+    {
+      "job": 212,
+      "kind": "completion",
+      "time_ms": 1941
+    },
+    {
+      "job": 213,
+      "kind": "completion",
+      "time_ms": 1950
+    },
+    {
+      "job": 214,
+      "kind": "completion",
+      "time_ms": 1959
+    }
+  ],
+  "original_sampled_status": [
+    {
+      "arrived": 1,
+      "backlog": 1,
+      "completed": 0,
+      "time_ms": 0
+    },
+    {
+      "arrived": 3,
+      "backlog": 1,
+      "completed": 2,
+      "time_ms": 25
+    },
+    {
+      "arrived": 5,
+      "backlog": 1,
+      "completed": 4,
+      "time_ms": 50
+    },
+    {
+      "arrived": 7,
+      "backlog": 1,
+      "completed": 6,
+      "time_ms": 75
+    },
+    {
+      "arrived": 10,
+      "backlog": 2,
+      "completed": 8,
+      "time_ms": 100
+    },
+    {
+      "arrived": 18,
+      "backlog": 7,
+      "completed": 11,
+      "time_ms": 125
+    },
+    {
+      "arrived": 27,
+      "backlog": 13,
+      "completed": 14,
+      "time_ms": 150
+    },
+    {
+      "arrived": 34,
+      "backlog": 18,
+      "completed": 16,
+      "time_ms": 175
+    },
+    {
+      "arrived": 44,
+      "backlog": 25,
+      "completed": 19,
+      "time_ms": 200
+    },
+    {
+      "arrived": 46,
+      "backlog": 24,
+      "completed": 22,
+      "time_ms": 225
+    },
+    {
+      "arrived": 48,
+      "backlog": 23,
+      "completed": 25,
+      "time_ms": 250
+    },
+    {
+      "arrived": 50,
+      "backlog": 23,
+      "completed": 27,
+      "time_ms": 275
+    },
+    {
+      "arrived": 52,
+      "backlog": 22,
+      "completed": 30,
+      "time_ms": 300
+    },
+    {
+      "arrived": 61,
+      "backlog": 28,
+      "completed": 33,
+      "time_ms": 325
+    },
+    {
+      "arrived": 69,
+      "backlog": 33,
+      "completed": 36,
+      "time_ms": 350
+    },
+    {
+      "arrived": 78,
+      "backlog": 39,
+      "completed": 39,
+      "time_ms": 375
+    },
+    {
+      "arrived": 87,
+      "backlog": 46,
+      "completed": 41,
+      "time_ms": 400
+    },
+    {
+      "arrived": 89,
+      "backlog": 45,
+      "completed": 44,
+      "time_ms": 425
+    },
+    {
+      "arrived": 91,
+      "backlog": 44,
+      "completed": 47,
+      "time_ms": 450
+    },
+    {
+      "arrived": 93,
+      "backlog": 43,
+      "completed": 50,
+      "time_ms": 475
+    },
+    {
+      "arrived": 96,
+      "backlog": 44,
+      "completed": 52,
+      "time_ms": 500
+    },
+    {
+      "arrived": 104,
+      "backlog": 49,
+      "completed": 55,
+      "time_ms": 525
+    },
+    {
+      "arrived": 113,
+      "backlog": 55,
+      "completed": 58,
+      "time_ms": 550
+    },
+    {
+      "arrived": 121,
+      "backlog": 60,
+      "completed": 61,
+      "time_ms": 575
+    },
+    {
+      "arrived": 130,
+      "backlog": 66,
+      "completed": 64,
+      "time_ms": 600
+    },
+    {
+      "arrived": 132,
+      "backlog": 66,
+      "completed": 66,
+      "time_ms": 625
+    },
+    {
+      "arrived": 134,
+      "backlog": 65,
+      "completed": 69,
+      "time_ms": 650
+    },
+    {
+      "arrived": 136,
+      "backlog": 64,
+      "completed": 72,
+      "time_ms": 675
+    },
+    {
+      "arrived": 138,
+      "backlog": 63,
+      "completed": 75,
+      "time_ms": 700
+    },
+    {
+      "arrived": 147,
+      "backlog": 70,
+      "completed": 77,
+      "time_ms": 725
+    },
+    {
+      "arrived": 155,
+      "backlog": 75,
+      "completed": 80,
+      "time_ms": 750
+    },
+    {
+      "arrived": 164,
+      "backlog": 81,
+      "completed": 83,
+      "time_ms": 775
+    },
+    {
+      "arrived": 173,
+      "backlog": 87,
+      "completed": 86,
+      "time_ms": 800
+    },
+    {
+      "arrived": 175,
+      "backlog": 86,
+      "completed": 89,
+      "time_ms": 825
+    },
+    {
+      "arrived": 177,
+      "backlog": 86,
+      "completed": 91,
+      "time_ms": 850
+    },
+    {
+      "arrived": 179,
+      "backlog": 85,
+      "completed": 94,
+      "time_ms": 875
+    },
+    {
+      "arrived": 182,
+      "backlog": 85,
+      "completed": 97,
+      "time_ms": 900
+    },
+    {
+      "arrived": 190,
+      "backlog": 90,
+      "completed": 100,
+      "time_ms": 925
+    },
+    {
+      "arrived": 198,
+      "backlog": 96,
+      "completed": 102,
+      "time_ms": 950
+    },
+    {
+      "arrived": 207,
+      "backlog": 102,
+      "completed": 105,
+      "time_ms": 975
+    },
+    {
+      "arrived": 215,
+      "backlog": 107,
+      "completed": 108,
+      "time_ms": 1000
+    },
+    {
+      "arrived": 215,
+      "backlog": 104,
+      "completed": 111,
+      "time_ms": 1025
+    },
+    {
+      "arrived": 215,
+      "backlog": 101,
+      "completed": 114,
+      "time_ms": 1050
+    },
+    {
+      "arrived": 215,
+      "backlog": 99,
+      "completed": 116,
+      "time_ms": 1075
+    },
+    {
+      "arrived": 215,
+      "backlog": 96,
+      "completed": 119,
+      "time_ms": 1100
+    },
+    {
+      "arrived": 215,
+      "backlog": 93,
+      "completed": 122,
+      "time_ms": 1125
+    },
+    {
+      "arrived": 215,
+      "backlog": 90,
+      "completed": 125,
+      "time_ms": 1150
+    },
+    {
+      "arrived": 215,
+      "backlog": 88,
+      "completed": 127,
+      "time_ms": 1175
+    },
+    {
+      "arrived": 215,
+      "backlog": 85,
+      "completed": 130,
+      "time_ms": 1200
+    },
+    {
+      "arrived": 215,
+      "backlog": 82,
+      "completed": 133,
+      "time_ms": 1225
+    },
+    {
+      "arrived": 215,
+      "backlog": 79,
+      "completed": 136,
+      "time_ms": 1250
+    },
+    {
+      "arrived": 215,
+      "backlog": 76,
+      "completed": 139,
+      "time_ms": 1275
+    },
+    {
+      "arrived": 215,
+      "backlog": 74,
+      "completed": 141,
+      "time_ms": 1300
+    },
+    {
+      "arrived": 215,
+      "backlog": 71,
+      "completed": 144,
+      "time_ms": 1325
+    },
+    {
+      "arrived": 215,
+      "backlog": 68,
+      "completed": 147,
+      "time_ms": 1350
+    },
+    {
+      "arrived": 215,
+      "backlog": 65,
+      "completed": 150,
+      "time_ms": 1375
+    },
+    {
+      "arrived": 215,
+      "backlog": 63,
+      "completed": 152,
+      "time_ms": 1400
+    },
+    {
+      "arrived": 215,
+      "backlog": 60,
+      "completed": 155,
+      "time_ms": 1425
+    },
+    {
+      "arrived": 215,
+      "backlog": 57,
+      "completed": 158,
+      "time_ms": 1450
+    },
+    {
+      "arrived": 215,
+      "backlog": 54,
+      "completed": 161,
+      "time_ms": 1475
+    },
+    {
+      "arrived": 215,
+      "backlog": 51,
+      "completed": 164,
+      "time_ms": 1500
+    },
+    {
+      "arrived": 215,
+      "backlog": 49,
+      "completed": 166,
+      "time_ms": 1525
+    },
+    {
+      "arrived": 215,
+      "backlog": 46,
+      "completed": 169,
+      "time_ms": 1550
+    },
+    {
+      "arrived": 215,
+      "backlog": 43,
+      "completed": 172,
+      "time_ms": 1575
+    },
+    {
+      "arrived": 215,
+      "backlog": 40,
+      "completed": 175,
+      "time_ms": 1600
+    },
+    {
+      "arrived": 215,
+      "backlog": 38,
+      "completed": 177,
+      "time_ms": 1625
+    },
+    {
+      "arrived": 215,
+      "backlog": 35,
+      "completed": 180,
+      "time_ms": 1650
+    },
+    {
+      "arrived": 215,
+      "backlog": 32,
+      "completed": 183,
+      "time_ms": 1675
+    },
+    {
+      "arrived": 215,
+      "backlog": 29,
+      "completed": 186,
+      "time_ms": 1700
+    },
+    {
+      "arrived": 215,
+      "backlog": 26,
+      "completed": 189,
+      "time_ms": 1725
+    },
+    {
+      "arrived": 215,
+      "backlog": 24,
+      "completed": 191,
+      "time_ms": 1750
+    },
+    {
+      "arrived": 215,
+      "backlog": 21,
+      "completed": 194,
+      "time_ms": 1775
+    },
+    {
+      "arrived": 215,
+      "backlog": 18,
+      "completed": 197,
+      "time_ms": 1800
+    },
+    {
+      "arrived": 215,
+      "backlog": 15,
+      "completed": 200,
+      "time_ms": 1825
+    },
+    {
+      "arrived": 215,
+      "backlog": 13,
+      "completed": 202,
+      "time_ms": 1850
+    },
+    {
+      "arrived": 215,
+      "backlog": 10,
+      "completed": 205,
+      "time_ms": 1875
+    },
+    {
+      "arrived": 215,
+      "backlog": 7,
+      "completed": 208,
+      "time_ms": 1900
+    },
+    {
+      "arrived": 215,
+      "backlog": 4,
+      "completed": 211,
+      "time_ms": 1925
+    },
+    {
+      "arrived": 215,
+      "backlog": 1,
+      "completed": 214,
+      "time_ms": 1950
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 1975
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2000
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2025
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2050
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2075
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2100
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2125
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2150
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2175
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2200
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2225
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2250
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2275
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2300
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2325
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2350
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2375
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2400
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2425
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2450
+    },
+    {
+      "arrived": 215,
+      "backlog": 0,
+      "completed": 215,
+      "time_ms": 2475
+    }
+  ],
+  "original_source": {
+    "all_jobs_accepted": true,
+    "arrival_ms": [
+      0,
+      11,
+      24,
+      37,
+      49,
+      61,
+      72,
+      83,
+      96,
+      99,
+      104,
+      106,
+      110,
+      112,
+      116,
+      117,
+      120,
+      124,
+      126,
+      130,
+      134,
+      137,
+      138,
+      141,
+      146,
+      148,
+      150,
+      155,
+      156,
+      160,
+      164,
+      167,
+      168,
+      171,
+      176,
+      179,
+      182,
+      183,
+      187,
+      190,
+      193,
+      197,
+      199,
+      199,
+      213,
+      225,
+      237,
+      249,
+      259,
+      272,
+      284,
+      296,
+      301,
+      302,
+      305,
+      310,
+      313,
+      314,
+      318,
+      321,
+      324,
+      328,
+      330,
+      333,
+      336,
+      340,
+      343,
+      344,
+      349,
+      352,
+      353,
+      357,
+      361,
+      363,
+      367,
+      370,
+      372,
+      374,
+      378,
+      382,
+      383,
+      388,
+      389,
+      392,
+      396,
+      398,
+      399,
+      411,
+      425,
+      435,
+      448,
+      461,
+      473,
+      483,
+      496,
+      499,
+      504,
+      506,
+      508,
+      512,
+      516,
+      518,
+      521,
+      524,
+      527,
+      529,
+      533,
+      536,
+      539,
+      543,
+      544,
+      547,
+      550,
+      554,
+      558,
+      559,
+      564,
+      566,
+      568,
+      571,
+      574,
+      577,
+      581,
+      583,
+      586,
+      589,
+      594,
+      597,
+      599,
+      600,
+      612,
+      623,
+      635,
+      649,
+      661,
+      673,
+      685,
+      696,
+      701,
+      702,
+      706,
+      710,
+      711,
+      714,
+      717,
+      720,
+      723,
+      726,
+      730,
+      732,
+      737,
+      739,
+      742,
+      746,
+      749,
+      752,
+      754,
+      756,
+      759,
+      762,
+      765,
+      768,
+      772,
+      774,
+      779,
+      780,
+      785,
+      788,
+      791,
+      792,
+      795,
+      800,
+      800,
+      812,
+      823,
+      835,
+      847,
+      860,
+      873,
+      884,
+      897,
+      899,
+      903,
+      906,
+      908,
+      911,
+      915,
+      917,
+      922,
+      923,
+      927,
+      930,
+      933,
+      935,
+      938,
+      943,
+      944,
+      947,
+      951,
+      953,
+      957,
+      961,
+      964,
+      967,
+      968,
+      971,
+      974,
+      978,
+      980,
+      984,
+      986,
+      991,
+      992,
+      997,
+      998
+    ],
+    "no_physical_service_or_network_measured": true,
+    "postchange_service_ms": [
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ],
+    "prechange_calibration_ms": [
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18,
+      18
+    ],
+    "spec": {
+      "arrival_profile": "late_burst",
+      "arrival_seed": 828006,
+      "replicate": 6,
+      "service_seed": 929006,
+      "service_variant": "constant",
+      "split": "heldout",
+      "trial_id": "late_burst-constant-r6"
+    }
+  },
+  "predictions": {
+    "B_work_per_second": "500/9",
+    "forecast_origin_ms": 1000,
+    "predicted_backlog_at_origin": "108/1",
+    "prediction_static_seconds": "459/500",
+    "prediction_trend_seconds": "243/250",
+    "q_last": 102,
+    "q_prev": 90,
+    "sample_last_ms": 975,
+    "sample_prev_ms": 925
+  },
+  "sampled_status_sha256": "348d99606b72e6331ab965b9bd0972688d8baf213a79df82c4b328adee1a458d",
+  "service_variant": "constant",
+  "source_sha256": "80000a55ad381ee88edb317d3722349239ae76ba6f5a5d480a7d43981676fbbc",
+  "split": "heldout",
+  "trial_id": "late_burst-constant-r6",
+  "true_drain_after_origin_ms": 959
+}

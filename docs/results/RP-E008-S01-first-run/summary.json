@@ -1,0 +1,54 @@
+{
+  "RP_E007_observations_reused": false,
+  "complete_trials": 72,
+  "decision": "PASS_SIMULATED_TRANSFER",
+  "diagnostic_mae_seconds": {
+    "static": "83/3000",
+    "trend": "83/7200"
+  },
+  "heldout_mae_approx_seconds": {
+    "static": 0.029611111111111112,
+    "trend": 0.012013888888888888
+  },
+  "heldout_mae_seconds": {
+    "static": "533/18000",
+    "trend": "173/14400"
+  },
+  "heldout_profile_mae_seconds": {
+    "constant": {
+      "static": "113/4000",
+      "trend": "263/24000"
+    },
+    "early_burst": {
+      "static": "1/200",
+      "trend": "97/8000"
+    },
+    "high_variance": {
+      "static": "7/240",
+      "trend": "281/24000"
+    },
+    "late_burst": {
+      "static": "123/2000",
+      "trend": "21/2000"
+    },
+    "mixed": {
+      "static": "377/12000",
+      "trend": "107/8000"
+    },
+    "uniform": {
+      "static": "67/3000",
+      "trend": "161/12000"
+    }
+  },
+  "heldout_trial_wins_ties_losses": {
+    "losses": 16,
+    "ties": 0,
+    "wins": 20
+  },
+  "heldout_trials": 36,
+  "independent_physical_replication": "NOT_PERFORMED",
+  "lean_formalization": "NO_NEW_THEOREM",
+  "mathematical_model_only": true,
+  "preregistered_threshold": "9/10",
+  "protocol": "RP-E008-S01"
+}

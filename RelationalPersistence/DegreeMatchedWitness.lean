@@ -34,7 +34,7 @@ theorem matched_degrees_at_every_vertex (v : Fin 6) :
   fin_cases v <;>
     norm_num [matchedCycleAdj, matchedTriangleAdj,
       undirectedAdj, cycleWithLeafEdges, triangleWithTailEdges,
-      Fin.sum_univ_succ]
+      Fin.sum_univ_succ] <;> decide
 
 /-- A fixed mean-zero perturbation, identical in both networks. -/
 def matchedInitial (v : Fin 6) : ℚ :=

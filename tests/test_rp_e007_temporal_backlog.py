@@ -176,10 +176,13 @@ def test_negative_queue_slope_clips_extrapolated_backlog_to_zero():
 
 
 def test_missing_original_new_experiment_cannot_be_claimed_a_pass(tmp_path):
-    outcome = evaluate(tmp_path, tmp_path, "original-run", "source-sha")
-    assert outcome["decision"] == "STOP_INSTRUMENTATION" if (
-        tmp_path / "docs/preregistration/RP-E007-P01.md"
-    ).exists() else True
+    project = __import__("pathlib").Path(__file__).resolve().parents[1]
+    outcome = evaluate(tmp_path, project, "original-run", "source-sha")
+    assert outcome["decision"] == "STOP_INSTRUMENTATION"
+    assert len(outcome["errors"]) == 2
+    assert outcome["original_training_trials_audited"] == 0
+    assert outcome["original_heldout_trials_audited"] == 0
+    assert outcome["physical_law_test"] == "NOT_PERFORMED"
 
 
 def test_frozen_horizon_and_cutoff_are_unmodified():

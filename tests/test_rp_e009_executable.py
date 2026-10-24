@@ -134,7 +134,7 @@ def test_service_double_control_and_nonidle_reset_are_rejected(tmp_path):
         response = await state.respond({"op": "enqueue"})
         assert response["accepted"] is True
         with pytest.raises(ValueError, match="nonidle"):
-            await state.respond({"op": "reset")
+            await state.respond({"op": "reset"})
     asyncio.run(check())
 
 

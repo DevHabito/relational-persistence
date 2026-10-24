@@ -75,6 +75,12 @@
 
 The prior RP-E006 holdout may not be used to adjust or validate a subsequent hypothesis as though it remained unseen. RP-E007 prospectively tests a two-sample temporal backlog prediction on new held-out data against the classical static queue baseline. The 10% MAE threshold, source replay and STOP gates were frozen in commit 150dd5f. The first hosted run #40129313787 produced **PASS_TREND_INCREMENT**: 13.617 ms trend MAE versus 23.227 ms static MAE on nine new held-out trials, archived unmodified at dd718df. This is a classical software queue forecasting result, not a proof of new physics. Any future proposed relational state model must demonstrate incremental utility beyond established queue and control alternatives.
 
+### RP-E008: conservative simulation-transfer stress test
+
+- Do not interpret RP-E007's positive result as transfer to independent service implementations. Freeze a new 72-case deterministic discrete-event FCFS model with irregular arrival and job-duration variability **before** generating its outputs; protocol at `2ca6d8e`.
+- Compare the fixed two-sample backlog extrapolation to a static queue snapshot in 36 untouched simulation cases; require exact oracle agreement and >=10% MAE gain, otherwise publish NO_GAIN or STOP. Preserve all original source/event traces.
+- Any later real-service, hardware or physical validation needs another experimental protocol. An in-silico model can expose engineering failures, but it is not external empirical confirmation of a law.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

@@ -1,0 +1,59 @@
+name: RP-E004 Instrument Feasibility Pilot
+
+on:
+  push:
+    paths:
+      - experiments/rp_e004_pilot.py
+      - tests/test_rp_e004_pilot.py
+      - .github/workflows/rp-e004-pilot.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  instrument:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install package and test structural guards
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q tests/test_measurement_gate.py tests/test_rp_e004_pilot.py
+      - name: Run registered controlled software instrument pilot
+        run: |
+          python -m experiments.rp_e004_pilot --output rp-e004-observed
+          python - <<'PY'
+          import json
+          with open("rp-e004-observed/summary.json", encoding="utf-8") as source:
+              report = json.load(source)
+          assert report["protocol"] == "RP-E004-P01"
+          assert report["scientific_claim"] == "INSTRUMENT_FEASIBILITY_ONLY"
+          assert report["physical_law_test"] == "NOT_PERFORMED"
+          assert report["decision"] in (
+              "PROCEED_TO_SEPARATE_STUDY_DESIGN",
+              "STOP_INSTRUMENTATION_UNRELIABLE",
+          )
+          print("Instrumentation verdict:", report["decision"])
+          for trial in report["trials"]:
+              print("Trial:", trial["trial_id"], trial["schema_verdict"])
+          PY
+      - name: Preserve measured event logs and decision without secrets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e004-first-instrumented-pilot
+          path: rp-e004-observed/
+          if-no-files-found: warn
+          retention-days: 30

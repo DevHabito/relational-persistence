@@ -1,0 +1,359 @@
+{
+  "hardware_independence": "NOT_ESTABLISHED",
+  "observations": [
+    {
+      "calibrated_B_work_per_s": 83.55969444554107,
+      "candidate_C_inverse_s": 2.2795495528692484,
+      "file_sha256": {
+        "calibration.json": "35b1702c58f6f9440b9242209fe61451ab83aa546660e07a5773df0abe4010e7",
+        "controller.json": "3ac22bb3fa2455fd0121976772332b42aebdcedd3fa8ccb9037c47091280adb4",
+        "forecast-snapshot.json": "c86755ab206ea1a3a3bc0d9b3f1730f32784b5b0ecb1e27e8a94ac54ba88e26b",
+        "injector-onset.json": "dbd587620cb4396c2f5f7b677f522864cf92f19e5f6d1369b2f5d429b2cf8c17",
+        "injector.json": "0bee1238d590de5f5c623066fa5e8555b0425b586b3905ccde33eb4d23f25489",
+        "monitor-samples.jsonl": "323487421e4b11d4166a05b3b354c49acb555c2c30269f5576df8f4cff1bd2a5",
+        "monitor.json": "8dbbec58dc38fd537625bf04fba57e102dc7e74f20d744ef0f19a44a9f78b7d7",
+        "service-actions.jsonl": "36219176efd23fa5ed24c177f3cf68594cfd50b5d4fe7f792a69046057c574c0"
+      },
+      "first_post_end_observed_ns": 49524896625,
+      "injection_end_ns": 49506955034,
+      "last_pre_end_backlog": 65,
+      "last_pre_end_observed_ns": 49498584999,
+      "measured_I_work_per_s": 254.04885923551566,
+      "measured_tau_s": 0.144288114,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 36,
+        "confirmed_at_ns": 50441640107,
+        "maximum_post_end_gap_ns": 26391411,
+        "recovered_at_ns": 49918431363,
+        "sample_count": 58
+      },
+      "sampled_recovery_Y_s": 0.411476329,
+      "scheduled_lag_ms": 120,
+      "trial_id": "test-140-120-r0",
+      "work_units": 140
+    },
+    {
+      "calibrated_B_work_per_s": 82.2135028791109,
+      "candidate_C_inverse_s": 3.528160264940897,
+      "file_sha256": {
+        "calibration.json": "99408cb31093ace54f824eade6efc9e8e99a45616026449374ebca2710b59832",
+        "controller.json": "c9209c3ac9e0d18ff4b9c9ec6a973949d6c183f8618c86f29ab135bd97b56d64",
+        "forecast-snapshot.json": "cdded89910a7d06c3646331d9df0a3a9f05c52172a0180e3f3a0039ea5ed1ac9",
+        "injector-onset.json": "b036dbda207f396ae362a6c7e0cfcdda8e3b98e2da6f44eb96d31cfc81cb62bf",
+        "injector.json": "987a0e90d8ef6d42f308e231a3ddb06437581286da6a923edd021bb5a04d9abc",
+        "monitor-samples.jsonl": "3f89fa3e33d4b5f3bcbb78f4d1215503d935c2c5b00dd690e9ae74dd4eff1702",
+        "monitor.json": "7d5f80b5559d840117e70a79cfb8348ad1fbfd698234ca591f14d929b5ac139c",
+        "service-actions.jsonl": "b007cce1e7cc8af49c8edaf6c54621ca43507711d04dd0c146e820d01b62ae92"
+      },
+      "first_post_end_observed_ns": 54752514523,
+      "injection_end_ns": 54747853923,
+      "last_pre_end_backlog": 57,
+      "last_pre_end_observed_ns": 54726392586,
+      "measured_I_work_per_s": 251.19623685070684,
+      "measured_tau_s": 0.092764481,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 35,
+        "confirmed_at_ns": 55643186988,
+        "maximum_post_end_gap_ns": 26448632,
+        "recovered_at_ns": 55119506872,
+        "sample_count": 59
+      },
+      "sampled_recovery_Y_s": 0.371652949,
+      "scheduled_lag_ms": 70,
+      "trial_id": "test-140-070-r0",
+      "work_units": 140
+    },
+    {
+      "calibrated_B_work_per_s": 82.2454146450202,
+      "candidate_C_inverse_s": 6.023017321659819,
+      "file_sha256": {
+        "calibration.json": "a8e4c4cf5be847029b350cb1afb65a292965dac6b14df2eaaa6366487b1665fc",
+        "controller.json": "937fde066a682d22d3ced46d116c0b048b6b65454177669aa31318a5d5cb7aeb",
+        "forecast-snapshot.json": "e667698f847f8ac5e4f3a69c8712666c7d76e46ad627c2e0ef91ec4c7b9c367d",
+        "injector-onset.json": "7b5f8d4319afae6be82e8c99a9d1d2b03d33ae7ee83c40be7c550b21d2ec0e22",
+        "injector.json": "2e6e434e52c468070e9bd1cc7f2da7fcb25796f2ed3664448cdd9047e1f9d435",
+        "monitor-samples.jsonl": "ee41f2ce8fcd9bcc25ba202228342913ea88b84720cd8535bb7da241177ba07a",
+        "monitor.json": "a3d285c2fdc22edc3da74bb38d7feee58ca24f32248ea20b93044f94fbc4c374",
+        "service-actions.jsonl": "aed38537e474508e64c798ea74c2c8cf0fbdf4628c86702c968b7e45012ee98a"
+      },
+      "first_post_end_observed_ns": 59729480028,
+      "injection_end_ns": 59716387115,
+      "last_pre_end_backlog": 41,
+      "last_pre_end_observed_ns": 59703238413,
+      "measured_I_work_per_s": 244.2315857627151,
+      "measured_tau_s": 0.055910806,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 31,
+        "confirmed_at_ns": 60511686692,
+        "maximum_post_end_gap_ns": 26241615,
+        "recovered_at_ns": 59989835563,
+        "sample_count": 46
+      },
+      "sampled_recovery_Y_s": 0.273448448,
+      "scheduled_lag_ms": 15,
+      "trial_id": "test-100-015-r0",
+      "work_units": 100
+    },
+    {
+      "calibrated_B_work_per_s": 82.22459032284182,
+      "candidate_C_inverse_s": 3.5443831804788455,
+      "file_sha256": {
+        "calibration.json": "51322b3e05482fa99fce50b79fffbb1858815cadb480305d39f0a54642867f39",
+        "controller.json": "51be6dcf5cf5a027ea0fc53cd1be7464c5fa68610e95712736bc8665b5124cf0",
+        "forecast-snapshot.json": "9058201450dfe99b84665dbc7b70d08d0a8ac128e40e6ea4e15cff52775eee28",
+        "injector-onset.json": "e2e50ef98779b68af63378e60867e02435f2bfeee19a9b6953286211a78c6351",
+        "injector.json": "ee9173f5536562f1f34b77618def70d476a102d60925f9b9bd4224a9f1378912",
+        "monitor-samples.jsonl": "ddaa6cb3200b71a72742e5b4df9cf476676b75f3b0a11bc59aec81c998c3a2d4",
+        "monitor.json": "7c91c6b19e13e2f14f1b3beab4aeb0f7d16cf9b40c456cf1d4ee884bc40cdcb4",
+        "service-actions.jsonl": "7ba651c0fc86f41221b14f863ce05e012a38d42e98230147c1ff5ab040980b65"
+      },
+      "first_post_end_observed_ns": 64652416977,
+      "injection_end_ns": 64644916133,
+      "last_pre_end_backlog": 43,
+      "last_pre_end_observed_ns": 64626390402,
+      "measured_I_work_per_s": 247.17989675023816,
+      "measured_tau_s": 0.093852945,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 32,
+        "confirmed_at_ns": 65463845727,
+        "maximum_post_end_gap_ns": 26417421,
+        "recovered_at_ns": 64939898562,
+        "sample_count": 52
+      },
+      "sampled_recovery_Y_s": 0.294982429,
+      "scheduled_lag_ms": 70,
+      "trial_id": "test-100-070-r0",
+      "work_units": 100
+    },
+    {
+      "calibrated_B_work_per_s": 82.22286164495667,
+      "candidate_C_inverse_s": 2.329535691304678,
+      "file_sha256": {
+        "calibration.json": "52bdddda6667e8011cdae96e549e00f9f1b469849e2f7c3544bdba282f92354e",
+        "controller.json": "002b2d2e605d66af8dab73f1c86c496bb3996783aadd1a17a9b474a707835022",
+        "forecast-snapshot.json": "25a6ee8de984ed95eb2abdcda5422fe010acf4e6de1d032960acf15b6e696908",
+        "injector-onset.json": "d1f5f9963f7549245bf2d7a850b45354436b482bf8afc9be12f16d5eabac7b4b",
+        "injector.json": "8637791b2764f7c7c0212faecd895b787c56565085b3fa07695d1913b9b9e6fd",
+        "monitor-samples.jsonl": "ec440375f0a0cddca105cc078d4b64e25ed513b5187db964a56db7f6bd0dec0a",
+        "monitor.json": "ea07b36e34d5782184fd48035fa55a400741feea7fec92fb1e541648b3253f81",
+        "service-actions.jsonl": "5cb4b77ba60b623ce95f8a554f777227c7c18a1b21c16e5094f32a7f42819605"
+      },
+      "first_post_end_observed_ns": 69577850860,
+      "injection_end_ns": 69570002206,
+      "last_pre_end_backlog": 47,
+      "last_pre_end_observed_ns": 69551658624,
+      "measured_I_work_per_s": 246.8583229922736,
+      "measured_tau_s": 0.14298005,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 33,
+        "confirmed_at_ns": 70417604365,
+        "maximum_post_end_gap_ns": 26517071,
+        "recovered_at_ns": 69892515624,
+        "sample_count": 51
+      },
+      "sampled_recovery_Y_s": 0.322513418,
+      "scheduled_lag_ms": 120,
+      "trial_id": "test-100-120-r0",
+      "work_units": 100
+    },
+    {
+      "calibrated_B_work_per_s": 82.26670001139473,
+      "candidate_C_inverse_s": 3.740435831575112,
+      "file_sha256": {
+        "calibration.json": "bfe4e61c3d5aa3625d28f71a92798da3c7b7ff19d38777a323fd147e8d7f4689",
+        "controller.json": "1f4bc6f671f6d7e9ee3d2a7beb6c4bbcf5bd0c569638a81839ed2419000ec67e",
+        "forecast-snapshot.json": "0e167b555c1a7a049bcf51a7efc3273a645851461fb6c4e7ab63a848ddfc2bf9",
+        "injector-onset.json": "da3b3f7b95141630341613a14fdb4f79f21f42c3ec1839cfc54f0a386f399cf7",
+        "injector.json": "4a916be0981fd6e71e4a42a27031be31240ac0dd0a02d1d58fd4644135212d13",
+        "monitor-samples.jsonl": "f8ebfbf3ea94e2ce5834d6c85e099b265a6e18322e84300acfe2e261cffd9be9",
+        "monitor.json": "0404160bdfb175dd967ce5ea3af1fcf02458c9d176b0b4c1d131f629d8f8110b",
+        "service-actions.jsonl": "9d2c9a84e4f8c0abccb8a5cc60fa545750d4ed29ba178985f0a83adb93683295"
+      },
+      "first_post_end_observed_ns": 74408816536,
+      "injection_end_ns": 74383334216,
+      "last_pre_end_backlog": 30,
+      "last_pre_end_observed_ns": 74382423416,
+      "measured_I_work_per_s": 233.3290914104515,
+      "measured_tau_s": 0.094261203,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 27,
+        "confirmed_at_ns": 75088243800,
+        "maximum_post_end_gap_ns": 26393120,
+        "recovered_at_ns": 74565616229,
+        "sample_count": 43
+      },
+      "sampled_recovery_Y_s": 0.182282013,
+      "scheduled_lag_ms": 70,
+      "trial_id": "test-060-070-r0",
+      "work_units": 60
+    },
+    {
+      "calibrated_B_work_per_s": 82.2362423932769,
+      "candidate_C_inverse_s": 6.699492976133944,
+      "file_sha256": {
+        "calibration.json": "0e0f9205e8bf24da10aad4117eb7a4161ec4e898041dc9568fb9cb1df2b8fe87",
+        "controller.json": "e479b0bf5faf4ef3e6d8eb2550129f29ec603f1e6c082f08680f9266d1c26b5b",
+        "forecast-snapshot.json": "0d000db521b4d106dc72a845de9fbec6c509437eb657937bb1eb85b387c15175",
+        "injector-onset.json": "479131cdb49d1447ef86020c891005e4e37c16bb62ce7d348199c6f48deac817",
+        "injector.json": "23cf752b564e8bc2d2fd8291405295dd8cdce8dad90c0984e92b0c2bd8f09b40",
+        "monitor-samples.jsonl": "49f6219990d7810616aaeca4a07958d3e55814b24a6f13eae3a30ef404ca5dce",
+        "monitor.json": "940bcede2524268e693f0229b9a7217d8b2203d55027e54c035ba3bc0978b64c",
+        "service-actions.jsonl": "d48516312400a1cf5d5a1fbeb2b521011a58cb030cdda629c069798299fb5019"
+      },
+      "first_post_end_observed_ns": 79367987216,
+      "injection_end_ns": 79361988174,
+      "last_pre_end_backlog": 56,
+      "last_pre_end_observed_ns": 79342067609,
+      "measured_I_work_per_s": 254.1662565134347,
+      "measured_tau_s": 0.04829514,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 35,
+        "confirmed_at_ns": 80253974310,
+        "maximum_post_end_gap_ns": 26338079,
+        "recovered_at_ns": 79731586905,
+        "sample_count": 58
+      },
+      "sampled_recovery_Y_s": 0.369598731,
+      "scheduled_lag_ms": 15,
+      "trial_id": "test-140-015-r0",
+      "work_units": 140
+    },
+    {
+      "calibrated_B_work_per_s": 82.2309241226111,
+      "candidate_C_inverse_s": 7.612263796501196,
+      "file_sha256": {
+        "calibration.json": "9d31305a0c05be53b0ae22a1a9d06ac7cb1bc654a938518313c77061f5ed77a7",
+        "controller.json": "afe82325c308ce43b3432db11d2d85a0d34c33e606aa6d9f1282f96c44f20762",
+        "forecast-snapshot.json": "92113e0fc41955afebc8ced4658655ef7b7d9e2304023ec59f980ba1cc7ae129",
+        "injector-onset.json": "e2bcfbe585f547c04e7be23e09b5e803683ffa7a51387ff38de3e3017c3ac8f4",
+        "injector.json": "d31876018717705551cf1af15283c912e7117d39b70e10af32ff32af62b1426a",
+        "monitor-samples.jsonl": "291f0ab3e1bf5569ccf01ce0e03e4e2fe0edb03b2d7d489a74009914c0eb9ebd",
+        "monitor.json": "cead00e83be06ca4c4cc0c81a59916a51486833f27eac77b1645adf3ac76bdb6",
+        "service-actions.jsonl": "4db6bb34a5b59f84f1e4692dcf007b871ca718d5ab3d8dc0571e736f443cbc2b"
+      },
+      "first_post_end_observed_ns": 84229243344,
+      "injection_end_ns": 84225581751,
+      "last_pre_end_backlog": 24,
+      "last_pre_end_observed_ns": 84203201038,
+      "measured_I_work_per_s": 234.49518886025604,
+      "measured_tau_s": 0.046066732,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 27,
+        "confirmed_at_ns": 84910930758,
+        "maximum_post_end_gap_ns": 26423355,
+        "recovered_at_ns": 84386630774,
+        "sample_count": 38
+      },
+      "sampled_recovery_Y_s": 0.161049023,
+      "scheduled_lag_ms": 15,
+      "trial_id": "test-060-015-r0",
+      "work_units": 60
+    },
+    {
+      "calibrated_B_work_per_s": 82.22752977643866,
+      "candidate_C_inverse_s": 2.474139382636585,
+      "file_sha256": {
+        "calibration.json": "fb9b10dbb51848c82e5f8ab5145d051f4dcc23e647291f2de49fb32f47d1bfb0",
+        "controller.json": "bce86450b8664f0905cbca5b642363536cfb56ee694bf27ad1d9ad2f863640b1",
+        "forecast-snapshot.json": "e798b50601e640e9aae0fa0bde3bf6a9f1048805efcd1e2245ae5cc68456d828",
+        "injector-onset.json": "77de8cce82c3c8252829f40dfe510f265c9972789d47cc27e6aea8859df88341",
+        "injector.json": "c5819661e3dc7633ad4b1093923ccf570aea197863f510cfdd51b9260cdd3bfc",
+        "monitor-samples.jsonl": "ea3ce7e44c97bb96d9638383821c8cb03759b75617f64cfc2c7575ac0f6233ac",
+        "monitor.json": "9f5c0b29ba9f90417003aa1d1769f42c0e035f61cb17ae99a7bd6cec7f5590c2",
+        "service-actions.jsonl": "496053b9b4c2c5449468763025004b517ced3a80540947750a840f898293a999"
+      },
+      "first_post_end_observed_ns": 88896792712,
+      "injection_end_ns": 88894855901,
+      "last_pre_end_backlog": 31,
+      "last_pre_end_observed_ns": 88870898626,
+      "measured_I_work_per_s": 232.6425915007449,
+      "measured_tau_s": 0.142857766,
+      "measurement_scope": "hosted software FIFO; NOT physical-law validation",
+      "replay": {
+        "after_end_samples": 29,
+        "confirmed_at_ns": 89629467182,
+        "maximum_post_end_gap_ns": 26392346,
+        "recovered_at_ns": 89106181009,
+        "sample_count": 41
+      },
+      "sampled_recovery_Y_s": 0.211325108,
+      "scheduled_lag_ms": 120,
+      "trial_id": "test-060-120-r0",
+      "work_units": 60
+    }
+  ],
+  "physical_law_test": "NOT_PERFORMED",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "protocol": "RP-E006-P01",
+  "protocol_sha256": "4edd3bbd5812de1a0846028a523bc323a68ccb11d8367acdb52b592d74b7a4f0",
+  "python": "3.12.15",
+  "run_quality": "PASS_ALL_RECORDED",
+  "scheduled_trials": [
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "test-140-120-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "test-140-070-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "test-100-015-r0",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "test-100-070-r0",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "test-100-120-r0",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "test-060-070-r0",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "test-140-015-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "test-060-015-r0",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "test-060-120-r0",
+      "work_units": 60
+    }
+  ],
+  "source_commit": "b9ddd525cd5f00be21d212695f3c5d3cc77e9d36",
+  "split": "test",
+  "trial_seed": 20261027,
+  "workflow_run_id": "40129313787"
+}

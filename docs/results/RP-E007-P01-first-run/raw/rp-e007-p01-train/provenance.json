@@ -1,0 +1,122 @@
+{
+  "hardware_independence": "NOT_ESTABLISHED",
+  "physical_law_test": "NOT_PERFORMED",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "protocol": "RP-E006-P01",
+  "protocol_sha256": "4edd3bbd5812de1a0846028a523bc323a68ccb11d8367acdb52b592d74b7a4f0",
+  "python": "3.12.15",
+  "scheduled_trials": [
+    {
+      "lag_ms": 15,
+      "repeat": 1,
+      "trial_id": "train-060-015-r1",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 1,
+      "trial_id": "train-140-120-r1",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 1,
+      "trial_id": "train-140-015-r1",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 1,
+      "trial_id": "train-100-120-r1",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 1,
+      "trial_id": "train-060-070-r1",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 1,
+      "trial_id": "train-060-120-r1",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "train-060-120-r0",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "train-100-120-r0",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 1,
+      "trial_id": "train-100-015-r1",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "train-060-015-r0",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "train-060-070-r0",
+      "work_units": 60
+    },
+    {
+      "lag_ms": 120,
+      "repeat": 0,
+      "trial_id": "train-140-120-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "train-140-015-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 1,
+      "trial_id": "train-140-070-r1",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 1,
+      "trial_id": "train-100-070-r1",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "train-100-070-r0",
+      "work_units": 100
+    },
+    {
+      "lag_ms": 70,
+      "repeat": 0,
+      "trial_id": "train-140-070-r0",
+      "work_units": 140
+    },
+    {
+      "lag_ms": 15,
+      "repeat": 0,
+      "trial_id": "train-100-015-r0",
+      "work_units": 100
+    }
+  ],
+  "source_commit": "b9ddd525cd5f00be21d212695f3c5d3cc77e9d36",
+  "split": "train",
+  "trial_seed": 20261026,
+  "workflow_run_id": "40129313787"
+}

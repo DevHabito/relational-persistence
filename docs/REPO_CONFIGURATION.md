@@ -24,4 +24,8 @@ Keep the default branch `main`; add CI checks before branch protections that dep
 
 ## Current deployment status
 
-This directory and its Git commits are prepared locally. **Do not call the GitHub repository published until the remote has been created and successfully checked.**
+The public repository is live at
+https://github.com/DevHabito/relational-persistence and is
+maintained through verified Git commits, pull requests and CI.
+Individual scientific claims are qualified by the claim ledger;
+a published repository is **not** equivalent to empirical validation.

@@ -39,6 +39,19 @@
 - Compare index-only predictors against constant, single-variable, simple linear, topology-aware and domain-standard baselines.
 - Do not equate real graph edges with real measured stability outcomes.
 
+### Measurement feasibility checkpoint: RP-E005-P01
+
+- Freeze an actual two-runner replay protocol before any new measurement.
+  Reuse immutable P02 instrumentation on each newly allocated runner VM.
+- Independently replay all source logs, record cross-run measurement
+  variation only descriptively, and archive every original trial,
+  including runs stopped by preregistered gates.
+- Do **not** represent reproducible hosted instrumentation as external
+  field replication or a confirmation of the quotient C. A distinct
+  held-out predictive protocol is required after this feasibility gate,
+  and must include meaningful independent variation of measured
+  disturbance, actual response time and a classical queueing baseline.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

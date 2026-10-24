@@ -244,6 +244,25 @@ The result is **replayable sampled instrument feasibility on one
 Linux runner only**. It is not a new Lean theorem, a predictive
 validation of `B/(I*tau)`, or independent physical replication.
 
+## Prospectively registered two-runner instrumentation replication (RP-E005-P01)
+
+The [RP-E005-P01 preregistration](docs/preregistration/RP-E005-P01.md)
+was committed on `main` **before** new measurements. The separate
+[replication workflow](.github/workflows/rp-e005-p01.yml) plans two
+fresh GitHub-hosted Ubuntu VM jobs, each running the **unmodified**
+RP-E004-P02 four-trial FIFO instrumentation protocol. A third job
+recomputes each sampled recovery and file hash from original logs,
+requiring all 48 source files and both job-level P02 passes.
+
+**No new observation is claimed until the first hosted experiment
+actually executes.** Review the [pre-run results status](docs/results/RP-E005-P01.md)
+and eventual permanently archived first-run evidence. A successful
+replication would validate only **repeatability of the single-host
+software instrumentation on separately allocated runners**. It does
+not identify a causal effect, prove separate hardware, or predict
+observed recovery from `B/(I*tau)`. No new Lean 4 theorem is
+introduced.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

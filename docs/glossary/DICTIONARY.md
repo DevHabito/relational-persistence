@@ -72,6 +72,21 @@ The same symbol `I` has different declared operational meanings
 across RP-001, RP-E004 and RP-F004. No cross-domain physical inference
 is allowed without a new measurement bridge.
 
+## RP-F005 actual discrete feedback-delay vocabulary
+
+| Term | Symbol | Operational mathematical meaning | Scientific limit |
+|---|---|---|---|
+| Feedback gain | `k` | Gain multiplying the delayed prior state in `x[t+1]=x[t]-k*x[t-d]` | Not a measured control law fitted to actual equipment |
+| Feedback delay | `d` | Exact nonnegative integer state lag (0 or 1 in RP-F005) | Different between compared treatments; cannot pretend `tau` is matched |
+| Delayed prehistory | `x[-1]` | Additional initial datum mandatory for the `d=1` recurrence | Does not exist as an independent datum for the `d=0` scalar model |
+| Augmented delay-one state | `s[t]` | Two-vector `(x[t], x[t-1])` with a `2×2` companion matrix | Not a two-node physical network |
+| Six-step squared residual | `Y6` | `x[6]^2/x[0]^2`, initial current state fixed to one | Not continuous-time recovery, probability of survival or variance |
+| Uniform strict contraction | `q<1` | Candidate coefficient bounding six-step squared augmented-state energy for every state | Failure at gain one does not imply failure for every gain |
+
+RP-F005 does **not** estimate `B,I,tau`, so the original
+proposed quotient `C` must not be evaluated or advertised
+as confirmed or falsified by this comparison.
+
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.

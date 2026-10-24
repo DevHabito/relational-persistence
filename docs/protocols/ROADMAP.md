@@ -29,6 +29,8 @@
   stability boundaries, and noncircular measurement definitions
   require separate registration and control experiments.
 
+- RP-F005 preregisters real one-step *state-feedback delay* versus zero delay with a fixed gain and prehistory. An exact six-step periodicity witness and negative/contrast gain controls are evaluated with two independent rational implementations. Unlike a matched-proxy study, this comparison **must not** be claimed to keep measured `tau` equal; it does not test the scalar index.
+
 ## Stage 2 — real-world performance measurements
 
 - Choose a public dataset with observed capacity/update rates, measured noise/uncertainty, response delays, and an independently observed failure/recovery target.

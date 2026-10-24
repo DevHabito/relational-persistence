@@ -152,6 +152,28 @@ that the capacity-noise-latency quotient predicts persistence, nor
 proof of a universal physical relation. No new Lean theorem was
 introduced by the instrumentation software.
 
+## Fully sampled instrumentation audit (RP-E004-P02)
+
+Following the successful but incompletely archived P01 pilot, we
+[preregistered a distinct P02 protocol](docs/preregistration/RP-E004-P02.md)
+**before** running four controlled trials. The first
+[GitHub-hosted execution](https://github.com/DevHabito/relational-persistence/actions/runs/40104534621)
+passed the frozen **instrument-auditability** gate:
+two controlled positive interventions, a controller-disabled
+positive intervention, and a zero-load sham.
+
+Unlike P01, P02 archives **every health observation** (queue depth,
+active workers and timestamps) and a service-side application
+timestamp separate from the controller's send and acknowledgement.
+The [first-run logs are preserved in Git](docs/results/RP-E004-P02-first-run/README.md),
+and independent replay tests verify the reported sampled recovery
+against the original archived bytes.
+
+Read the [P02 first-run results and limits](docs/results/RP-E004-P02.md).
+The result is **replayable sampled instrument feasibility on one
+Linux runner only**. It is not a new Lean theorem, a predictive
+validation of `B/(I*tau)`, or independent physical replication.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

@@ -130,6 +130,28 @@ The project will progress through a sequence of auditable claims rather than a s
 
 See [research scope](docs/foundations/SCOPE.md), [model and proofs](docs/foundations/CONSENSUS_MODEL.md), [dictionary](docs/glossary/DICTIONARY.md), [literature](docs/literature/PRIOR_WORK.md), [research roadmap](docs/protocols/ROADMAP.md), and [status ledger](docs/CLAIM_LEDGER.md).
 
+## First controlled instrumentation pilot (RP-E004-P01)
+
+A [three-trial feasibility protocol](docs/preregistration/RP-E004-P01.md)
+was committed **before measuring** a small FIFO HTTP service on GitHub
+Actions. Its first hosted run
+[#40046739200](https://github.com/DevHabito/relational-persistence/actions/runs/40046739200)
+passed the *programmed structural gate*: two positive interventions had
+separate calibration, injector, controller and recovery-monitor records;
+the sham had no intervention and correctly left the scalar undefined.
+
+[Read the numerical measurements, complete event logs and audit
+limitations](docs/results/RP-E004-P01.md). Crucially, the first
+monitor recorded its resulting recovery timestamp and number of
+samples, **not the entire sampled backlog trace**. Thus the original
+sustained-recovery interval cannot yet be independently replayed from
+saved per-sample readings. The instruments also share one host.
+
+This is **limited instrument-feasibility evidence**, not evidence
+that the capacity-noise-latency quotient predicts persistence, nor
+proof of a universal physical relation. No new Lean theorem was
+introduced by the instrumentation software.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

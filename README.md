@@ -330,6 +330,12 @@ relational physics discovery, not proof of independence
 across physical systems, and not a reversal of RP-E006's
 negative `C=B/(I*tau)` forecast result.
 
+## RP-E008: prospectively registered in-silico transfer stress test
+
+The [RP-E008-S01 preregistration](docs/preregistration/RP-E008-S01.md) was committed to main at `2ca6d8e` **before implementing or running the new simulation**. A separately written deterministic FCFS discrete-event simulator now tests the established RP-E007 two-sample queue trend forecast under three irregular arrival patterns and three job-duration variability classes. The frozen 72-case grid reserves 36 cases for evaluation and uses **two independent software event oracles** with integer timestamps and exact rational prediction errors. The primary threshold remains 10% lower held-out MAE than the static queue snapshot.
+
+[Pending first-run report](docs/results/RP-E008-S01.md). **This is mathematical software stress testing, not empirical transfer to another physical instrument or proof of new physics.** No new Lean theorem is asserted. The first simulation result must be archived unchanged, even if the forecast fails.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

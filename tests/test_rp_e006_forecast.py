@@ -179,7 +179,9 @@ def test_missing_original_run_terminates_with_explicit_stop(tmp_path, split):
     assert all(entry["split"] in ("train", "test") for entry in outcome["errors"])
 
 
-def test_missing_run_identity_cannot_be_accepted(tmp_path):
+def test_missing_run_identity_cannot_be_accepted(tmp_path, monkeypatch):
+    monkeypatch.delenv("GITHUB_SHA", raising=False)
+    monkeypatch.delenv("GITHUB_RUN_ID", raising=False)
     with pytest.raises(ValueError, match="GitHub"):
         acquire("train", tmp_path / "new_run")
 

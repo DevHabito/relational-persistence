@@ -268,30 +268,38 @@ instrumentation** across two GitHub jobs. It **does not** establish
 independent physical hardware, a new Lean theorem, causal prediction
 by `B/(I*tau)`, or a universal physical law.
 
-## Prospective predictive held-out recovery benchmark (RP-E006-P01)
+## RP-E006: first held-out recovery prediction — registered negative result
 
-The [RP-E006-P01 preregistration](docs/preregistration/RP-E006-P01.md)
-was committed as `2aeabc6` **before** the acquisition source
-and prediction code were created. A training-only 18-trial
-block precedes a separate 9-trial hosted VM held-out block,
-with three accepted queue loads and three preassigned
-reaction-delay levels. No RP-E005 records will be treated
-as training data.
+The [RP-E006-P01 protocol](docs/preregistration/RP-E006-P01.md)
+was frozen on `main` at `2aeabc6` **before** the
+experiment source or observations. Its first hosted
+[execution #40126290924](https://github.com/DevHabito/relational-persistence/actions/runs/40126290924)
+ran 18 training and 9 forward-held-out
+single-worker FIFO software trials. **All 27 trials**
+passed the source instrumentation audit; all **216**
+original event/health/feature logs were independently
+replayed and verified. The original negative result
+was [archived at `0fa7ad2`](https://github.com/DevHabito/relational-persistence/commit/0fa7ad29eb062b735a2918b4094ae8a2452526b6),
+with a 221-file SHA-256 manifest.
 
-The candidate is an index-only OLS recovery predictor using
-`1/C=I*tau/B`, with actually observed `B`, `I`, and
-service-applied `tau`. It must achieve at least **10% less
-held-out mean absolute error than both** the training
-constant and the fixed FIFO backlog-throughput baseline.
-Otherwise the registered answer is **NO_REGISTERED_PREDICTIVE_GAIN**,
-if all measurements are valid. A failed instrument gate
-is a STOP, never a selected subset of trials.
+**Registered outcome: `NO_REGISTERED_PREDICTIVE_GAIN`.**
+On nine held-out trials, the training-fitted index-only
+`1/C` predictor scored **68.19 ms MAE**, while a
+predeclared, unfitted finite backlog/(2B) queue predictor
+scored **11.12 ms MAE**. The index improved only
+~5.95% over the training-average constant, below
+the 10% criterion, and lost clearly to the finite
+queue predictor. Both comparators were primary; neither
+was changed after seeing the results.
 
-[Prospective report (no measurements yet)](docs/results/RP-E006-P01.md)
-and [the fixed experiment pipeline](.github/workflows/rp-e006-p01.yml)
-show the declared controls. Any future observation remains
-a restricted **hosted software** result, not a law of nature
-or independent physical replication.
+Read [the original negative findings and scope](docs/results/RP-E006-P01.md),
+[original replay/evaluation](docs/results/RP-E006-P01-first-run/evaluation.json),
+and [full first-run archive](docs/results/RP-E006-P01-first-run/).
+This is a **genuine negative prediction test of the
+registered scalar operationalization in a narrow hosted
+software queue**, not proof that all versions of
+relational persistence or all physical theories are
+false. No new Lean theorem was claimed.
 
 ## Naming and provenance
 

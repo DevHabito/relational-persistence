@@ -55,19 +55,17 @@
 
 ### Prospective forecast checkpoint: RP-E006-P01
 
-- Freeze the design and independent train/test temporal ordering
-  **before** acquiring any new results. Three intended loads,
-  three scheduled action delays, 18 training and nine
-  future held-out software trials; no historical RP-E005
-  labels enter the new model.
+- Frozen forward train/test design **before** results at `2aeabc6`;
+  first run #40126290924 passed 27/27 software instrumentation trials,
+  with source bytes and the original **negative** prediction result
+  archived at `0fa7ad2`. No historical RP-E005 labels entered the fit.
 - Use **actual service-applied** timestamps and pre-end queue
   observations. Replay recovery from raw health samples,
   with an independent second algorithm, before scoring.
-- Compare the fitted index-only prediction to a constant and
-  a classical finite backlog/throughput approximation,
-  requiring >=10% held-out MAE improvement against both.
-  Report NO_GAIN when measurements are valid but the
-  threshold is not met; preserve STOP for bad data.
+- Preregistered comparison returned **NO_REGISTERED_PREDICTIVE_GAIN**:
+  68.19 ms index-only held-out MAE vs 11.12 ms finite queue baseline
+  and 72.50 ms constant baseline. The 10% criterion against both
+  was **not** met. Do not retune on those nine holdout targets.
 - This is a restricted hosted FIFO benchmark, not a claim
   about unrelated physical systems. Subsequent study
   should target truly independent environments and

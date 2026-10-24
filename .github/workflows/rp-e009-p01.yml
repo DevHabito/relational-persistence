@@ -1,0 +1,183 @@
+name: RP-E009-P01 Prospective Executable TCP Queue Transfer
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e009-p01.yml
+      - experiments/rp_e009_tcp_service.py
+      - experiments/rp_e009_acquire.py
+      - experiments/rp_e009_evaluate.py
+      - tests/test_rp_e009_executable.py
+      - docs/preregistration/RP-E009-P01.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e009-p01-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  diagnostic:
+    name: Fresh TCP service / diagnostic block
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install fixed research dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Regress the new separate executable before measurements
+        run: python -m pytest -q tests/test_rp_e009_executable.py
+      - name: Acquire first original nine diagnostic service trials
+        run: |
+          python -m experiments.rp_e009_acquire \
+            --split diagnostic \
+            --output rp-e009-data/diagnostic
+      - name: Retain every raw diagnostic source even after failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e009-p01-diagnostic
+          path: rp-e009-data/diagnostic/
+          if-no-files-found: warn
+          retention-days: 90
+
+  holdout:
+    name: Separately hosted TCP service / forward holdout
+    needs: [diagnostic]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install identical source
+        run: python -m pip install -e '.[dev]'
+      - name: Acquire first original nine held-out independent-process service trials
+        run: |
+          python -m experiments.rp_e009_acquire \
+            --split holdout \
+            --output rp-e009-data/holdout
+      - name: Retain every raw held-out source even after failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e009-p01-holdout
+          path: rp-e009-data/holdout/
+          if-no-files-found: warn
+          retention-days: 90
+
+  evaluation:
+    name: Raw TCP event replay and immutable first-run verdict
+    needs: [diagnostic, holdout]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install independent auditors
+        run: python -m pip install -e '.[dev]'
+      - name: Retrieve original separately collected raw role records
+        uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: rp-e009-p01-*
+          path: rp-e009-original/
+          merge-multiple: false
+      - name: Verify every original event before assigning a prediction result
+        run: |
+          python -m experiments.rp_e009_evaluate \
+            --input rp-e009-original \
+            --output rp-e009-evaluation \
+            --run-id "${{ github.run_id }}" \
+            --source-sha "${{ github.sha }}"
+      - name: Retain source and full replay decision even if stopped
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e009-p01-first-evaluation
+          path: |
+            rp-e009-original/
+            rp-e009-evaluation/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Preserve original first-run bytes including negative or STOP outcomes
+        if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="docs/results/RP-E009-P01-first-run"
+          if test -e "$archive"; then
+            echo "Original archive already exists, no overwrite allowed."
+            exit 0
+          fi
+          if ! test -f rp-e009-evaluation/RP-E009-P01.json; then
+            echo "No original evaluator output: cannot honestly archive a verdict." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          if test -d rp-e009-original; then
+            cp -a rp-e009-original "$archive/raw"
+          fi
+          cp rp-e009-evaluation/RP-E009-P01.json "$archive/evaluation.json"
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          root = Path('docs/results/RP-E009-P01-first-run')
+          files = {
+              str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted(root.rglob('*')) if p.is_file()
+          }
+          evaluation = json.loads((root / 'evaluation.json').read_text())
+          summary = {
+              'protocol': 'RP-E009-P01',
+              'workflow_id': '${{ github.run_id }}',
+              'source_commit': '${{ github.sha }}',
+              'original_first_run_verdict': evaluation['decision'],
+              'original_file_sha256': files,
+              'archive_rule': 'first original observations, including negative and failure',
+              'physical_law_validation': 'NOT_PERFORMED',
+          }
+          (root / 'archive-index.json').write_text(
+              json.dumps(summary, sort_keys=True, indent=2) + '\n'
+          )
+          print('ORIGINAL_SOURCE_ARCHIVED_FILE_COUNT', len(files))
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(research): preserve first RP-E009 TCP executable transfer and STOP/negative records"
+          git push origin HEAD:main
+      - name: Do not mislabel valid negative results as failed observations
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('rp-e009-evaluation/RP-E009-P01.json')
+          if not path.is_file():
+              raise SystemExit('STOP_TRANSFER_AUDIT: original outcome missing')
+          result = json.loads(path.read_text())
+          verdict = result['decision']
+          print('FIRST_RP_E009_P01_VERDICT', verdict)
+          if verdict == 'STOP_TRANSFER_AUDIT':
+              raise SystemExit(verdict)
+          assert verdict in ('PASS_EXECUTABLE_TRANSFER', 'NO_REGISTERED_EXECUTABLE_GAIN')
+          PY

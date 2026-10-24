@@ -336,6 +336,29 @@ The [RP-E008-S01 preregistration](docs/preregistration/RP-E008-S01.md) was commi
 
 **Registered first-run result: PASS_SIMULATED_TRANSFER.** The first [72-case original run #40131416314](https://github.com/DevHabito/relational-persistence/actions/runs/40131416314) yielded 36 held-out exact MAEs of **29.611 ms (static) versus 12.014 ms (trend)**, a **59.43%** aggregate reduction, above the frozen 10% criterion. Trend nevertheless lost in **16 of 36 individual heldout cases** and in the entire **early-burst arrival subgroup** (12.125 vs 5.000 ms MAE). The [original 74-file source archive](docs/results/RP-E008-S01-first-run/) was permanently committed at `8a2c11a`; see the [full scoped report](docs/results/RP-E008-S01.md). This is only mathematical software stress testing, not external physical replication or proof of new physics; it neither validates scalar C nor reverses RP-E006's negative conclusion.
 
+## RP-E009: prospective separate executable TCP queue transfer
+
+The [RP-E009-P01 preregistration](docs/preregistration/RP-E009-P01.md)
+was frozen on main in commit `61674d0` **before writing the
+independent service or making new RP-E009 measurements**. It tests
+whether the unfitted RP-E007 two-pre-end-sample forecast improves
+over static backlog in an **actually executed**, separately written
+TCP/asyncio FIFO queue rather than the earlier threaded HTTP
+service or the mathematical simulator RP-E008.
+
+The study fixes 9 diagnostic and 9 **new chronological held-out**
+workload cells, two separately provisioned hosted VM jobs, three
+loads and three arrival schedules. Both forecasts use independently
+measured pre-intervention B and status observed before injection
+ends. PASS requires >=10% improvement in 9-case heldout MAE;
+valid failure means NO_GAIN and invalid raw evidence means STOP.
+
+[Prospective results status](docs/results/RP-E009-P01.md).
+This is software-implementation transfer, **not** external physical
+validation, independent hardware, or a newly demonstrated
+relational persistence law. Earlier RP-E006 and E007 data
+are not used as new heldout observations.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

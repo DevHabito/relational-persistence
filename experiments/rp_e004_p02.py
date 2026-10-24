@@ -288,6 +288,8 @@ def replay_monitor(samples: list[dict], event_end_ns: int, dwell_ns: int,
     if not samples:
         raise ValueError("Empty health sample stream")
     prior = None
+    last_source_snapshot = None
+    last_completed = None
     first = None
     confirmed = None
     max_gap = 0
@@ -302,10 +304,16 @@ def replay_monitor(samples: list[dict], event_end_ns: int, dwell_ns: int,
             raise ValueError("Non-integer monotonic timestamp or workload status")
         if q < 0 or active < 0 or completed < 0 or origin > stamp:
             raise ValueError("Invalid source status or clock ordering")
+        if last_source_snapshot is not None and origin <= last_source_snapshot:
+            raise ValueError("Nonmonotonic service-side snapshot timestamps")
+        if last_completed is not None and completed < last_completed:
+            raise ValueError("Service completion counter regressed")
+        last_source_snapshot = origin
+        last_completed = completed
         if prior is not None:
             if stamp <= prior:
                 raise ValueError("Nonmonotonic sampled probe timestamps")
-            if stamp >= event_end_ns and prior >= event_end_ns:
+            if stamp >= event_end_ns:
                 gap = stamp - prior
                 max_gap = max(max_gap, gap)
                 if gap > gap_limit_ns:
@@ -338,7 +346,11 @@ def audit_calibration(calibration: dict) -> dict:
     if len(windows) != CALIBRATION_WINDOWS:
         raise ValueError("Must retain exactly three pretrial calibration windows")
     rates = []
+    previous_window_end = None
     for w in windows:
+        if previous_window_end is not None and w["start_ns"] != previous_window_end:
+            raise ValueError("Calibration windows are not contiguous")
+        previous_window_end = w["end_ns"]
         delta = w["end_ns"] - w["start_ns"]
         count = w["completed_delta"]
         if (delta <= 0 or count <= 0 or w["queued_start"] <= 0
@@ -384,6 +396,11 @@ def audit_trial(folder: Path, intervention: str, prereg_sha: str,
         or replay["recovered_at_ns"] != monitor["recovered_at_ns"]
         or replay["confirmed_at_ns"] != monitor["confirmed_at_ns"]):
         raise ValueError("Independent replay contradicts monitor")
+    elapsed_followup_ns = monitor["observation_end_ns"] - injector["end_ns"]
+    if elapsed_followup_ns < 0 or elapsed_followup_ns > 8_000_000_000 + GAP_LIMIT_NS:
+        raise ValueError("Monitor follow-up exceeded frozen eight-second window")
+    if replay["recovered_at_ns"] is None and elapsed_followup_ns < 8_000_000_000:
+        raise ValueError("Censored trial terminated before full follow-up")
     if (monitor["observation_end_ns"] < samples[-1]["observed_ns"]
         or replay["confirmed_at_ns"] is not None
         and replay["confirmed_at_ns"] > monitor["observation_end_ns"]):

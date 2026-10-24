@@ -78,7 +78,8 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 ### RP-E008: conservative simulation-transfer stress test
 
 - Do not interpret RP-E007's positive result as transfer to independent service implementations. Freeze a new 72-case deterministic discrete-event FCFS model with irregular arrival and job-duration variability **before** generating its outputs; protocol at `2ca6d8e`.
-- Compare the fixed two-sample backlog extrapolation to a static queue snapshot in 36 untouched simulation cases; require exact oracle agreement and >=10% MAE gain, otherwise publish NO_GAIN or STOP. Preserve all original source/event traces.
+- The first source run #40131416314 passed exact 72-case FCFS oracle equality and the frozen >=10% aggregate MAE-gain gate, showing a 59.43% improvement across 36 held-out simulation cases. All source and event traces were permanently archived at `8a2c11a`.
+- Preserve the important adverse findings: trend lost 16/36 individual holdouts, and **early-burst** arrivals favored static backlog (5.000 vs 12.125 ms MAE). No regime may be retrospectively excluded or its results described as a universal positive effect.
 - Any later real-service, hardware or physical validation needs another experimental protocol. An in-silico model can expose engineering failures, but it is not external empirical confirmation of a law.
 
 ## Stage 3 — relationship to RZS and PMFF

@@ -1,0 +1,207 @@
+{
+  "actual_order": [
+    "sham-01",
+    "positive-controlled-01",
+    "positive-disabled-01",
+    "positive-controlled-02"
+  ],
+  "decision": "PASS_AUDITABLE_INSTRUMENTATION",
+  "external_replicability": "NOT_ESTABLISHED",
+  "git_sha": "48de8c3e56c2a9ac99331b226b925df8b4099ce9",
+  "monotonic_resolution_ns": 1,
+  "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "physical_law_test": "NOT_PERFORMED",
+  "preregistration_sha256": "c1e71b54b3bc63c69aa49959a4fc8387efe4352fe751f0dbd26f0c84c7ee4235",
+  "protocol": "RP-E004-P02",
+  "python": "3.12.15",
+  "scientific_claim": "CONTROLLED_SOFTWARE_INSTRUMENTATION_FEASIBILITY_ONLY",
+  "trial_seed": 20261024,
+  "trials": [
+    {
+      "calibration": {
+        "calibrated_local_B": 82.26380305412914,
+        "rate_windows_per_second": [
+          79.58888298821331,
+          83.6106436269708,
+          83.59295580472272
+        ],
+        "sparse_completed": 12,
+        "window_count": 3
+      },
+      "candidate_index_inverse_seconds": null,
+      "controller_enabled": false,
+      "delivered_units": 0,
+      "health_replay": {
+        "after_end_samples": 21,
+        "confirmed_at_ns": 827386801346,
+        "maximum_post_end_gap_ns": 26521310,
+        "recovered_at_ns": 826864857500,
+        "sample_count": 42
+      },
+      "intervention_positive": false,
+      "source_log_sha256": {
+        "calibration": "06df0d0b468a4b7b4bed03df02144fbd7aba69220166a9639181d8b94710f388",
+        "controller": "6a6178d6931b2debc514c5d36bd112e3430a67e37da01ecea9205aa32b066274",
+        "injector": "561990746d30729c89a59049cf92537f87d9041e1006c5ad3291129b4b7d70af",
+        "monitor": "2914329fb24c3d454f1c99e60b49f48f045e05514745a44d00d9bd25fb28a12b",
+        "monitor-samples": "72a0234e4b3e923f260b9d3bfea7f9542447ce12d092d582745fbcbaf0aea240",
+        "service-actions": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "trial_id": "sham-01",
+      "verdict": "SHAM_UNDEFINED_INDEX"
+    },
+    {
+      "action_timing_ns": {
+        "acknowledged": 831163452711,
+        "request_sent": 831162439928,
+        "request_to_ack": 1012783,
+        "service_applied": 831162828035
+      },
+      "calibration": {
+        "calibrated_local_B": 82.22617087325347,
+        "rate_windows_per_second": [
+          79.48596363727006,
+          83.58299673963029,
+          83.6140981938009
+        ],
+        "sparse_completed": 12,
+        "window_count": 3
+      },
+      "candidate_index_inverse_seconds": 3.9568161862098497,
+      "controller_enabled": true,
+      "delivered_units": 120,
+      "health_replay": {
+        "after_end_samples": 34,
+        "confirmed_at_ns": 832417959040,
+        "maximum_post_end_gap_ns": 26531587,
+        "recovered_at_ns": 831895703724,
+        "sample_count": 59
+      },
+      "intervention_positive": true,
+      "measurement": {
+        "candidate_index_inverse_seconds": 3.9568161862098497,
+        "capacity_calibration_units_per_second": 82.22617087325347,
+        "causal_identification": "NOT_ESTABLISHED",
+        "evidence_status": "STRUCTURAL_GATE_ONLY_NOT_EMPIRICALLY_VALIDATED",
+        "external_excess_intensity_units_per_second": 254.47973183875916,
+        "independently_observed_recovery_seconds": 0.342985669,
+        "measured_response_latency_seconds": 0.081660304,
+        "measurement_dimensions": {
+          "B": "local_HTTP_task/s",
+          "I": "local_HTTP_task/s",
+          "Y": "s",
+          "candidate_index": "1/s",
+          "tau": "s"
+        },
+        "recovery_lower_bound_seconds": null,
+        "recovery_right_censored": false,
+        "schema": "RP-E003-S01",
+        "system_id": "github-actions-p02-single-host-fifo",
+        "trial_id": "positive-controlled-01"
+      },
+      "source_log_sha256": {
+        "calibration": "711cdeb10da9532b69c0aaef5049d96c6a26eb708d58041b9f3de9e75bf81591",
+        "controller": "6bb855727824e1eac9a0638b1723945bcafecc3c64d0d16dc118c9ab8d532017",
+        "injector": "2542e14875d6e7fa2d486e8f672755c500d64836585efb64c5a5f0ed2eadc4f2",
+        "monitor": "615790c48d2d80eceef58e4ea499816dd3dff7aaa7d0b927db80a9a263e7482b",
+        "monitor-samples": "de51aa385ed2048dfdaf9acd98d9e63bfbfb17a446552b605b5bc4a4acb71ccc",
+        "service-actions": "ea6a739a52be337b8e4e779a39997c113aa4a605fb8bd5762cd0424f6b0facaa"
+      },
+      "trial_id": "positive-controlled-01",
+      "verdict": "AUDITABLE_CONTROLLED_POSITIVE"
+    },
+    {
+      "calibration": {
+        "calibrated_local_B": 82.26388448051033,
+        "rate_windows_per_second": [
+          79.60854187235358,
+          83.60606960318361,
+          83.57713047617457
+        ],
+        "sparse_completed": 12,
+        "window_count": 3
+      },
+      "candidate_index_inverse_seconds": null,
+      "controller_enabled": false,
+      "delivered_units": 120,
+      "health_replay": {
+        "after_end_samples": 60,
+        "confirmed_at_ns": 838070565288,
+        "maximum_post_end_gap_ns": 26762697,
+        "recovered_at_ns": 837548767257,
+        "sample_count": 83
+      },
+      "intervention_positive": true,
+      "source_log_sha256": {
+        "calibration": "e6e88e46f3ad4fda0a51ae58160e20f5c168e029fb99121651adb6b2b6f33486",
+        "controller": "a314ed6e4ebb715aca634276cb87054ff55f3b5804b132c4134ca2c6fd37c885",
+        "injector": "46c928911472b514ead8f04fd41990354dc5fca5a989f9f8b58a924289144260",
+        "monitor": "60b47c691bc8b46d1480e04bf6e7a6b380b526261a8425b2fd02c1d953f9e670",
+        "monitor-samples": "98e4429ecb1b8216139d61566ef5be2f9b91843dd936f87f2e9e6a61cb1dca6c",
+        "service-actions": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "trial_id": "positive-disabled-01",
+      "verdict": "DISABLED_CONTROL_RECOVERY_REPLAYED"
+    },
+    {
+      "action_timing_ns": {
+        "acknowledged": 841837547415,
+        "request_sent": 841836857890,
+        "request_to_ack": 689525,
+        "service_applied": 841837246132
+      },
+      "calibration": {
+        "calibrated_local_B": 82.2649055984799,
+        "rate_windows_per_second": [
+          79.56263623236705,
+          83.62031693374333,
+          83.61423868622505
+        ],
+        "sparse_completed": 12,
+        "window_count": 3
+      },
+      "candidate_index_inverse_seconds": 3.9507508824757758,
+      "controller_enabled": true,
+      "delivered_units": 120,
+      "health_replay": {
+        "after_end_samples": 33,
+        "confirmed_at_ns": 843079502817,
+        "maximum_post_end_gap_ns": 26819783,
+        "recovered_at_ns": 842556106496,
+        "sample_count": 57
+      },
+      "intervention_positive": true,
+      "measurement": {
+        "candidate_index_inverse_seconds": 3.9507508824757758,
+        "capacity_calibration_units_per_second": 82.2649055984799,
+        "causal_identification": "NOT_ESTABLISHED",
+        "evidence_status": "STRUCTURAL_GATE_ONLY_NOT_EMPIRICALLY_VALIDATED",
+        "external_excess_intensity_units_per_second": 253.38384999289246,
+        "independently_observed_recovery_seconds": 0.327448678,
+        "measured_response_latency_seconds": 0.082178087,
+        "measurement_dimensions": {
+          "B": "local_HTTP_task/s",
+          "I": "local_HTTP_task/s",
+          "Y": "s",
+          "candidate_index": "1/s",
+          "tau": "s"
+        },
+        "recovery_lower_bound_seconds": null,
+        "recovery_right_censored": false,
+        "schema": "RP-E003-S01",
+        "system_id": "github-actions-p02-single-host-fifo",
+        "trial_id": "positive-controlled-02"
+      },
+      "source_log_sha256": {
+        "calibration": "e1890739471397cf6920850b282f427ead6682a49c39487b42d392bbc31e8898",
+        "controller": "0b8046f1ce0d91af0788c8d99b3263c08b5b81e8f70c3e1d8c9559f2e60020fb",
+        "injector": "f4ee0f079f4fae55bc4eda2c86a8e5b32f17db00d206227240e657cce439ffb4",
+        "monitor": "1650cb1eb9ddd4ab0a5e3dbce117646511eee12b34a089f85becf5dafd54ac99",
+        "monitor-samples": "547d69c4a2e970cdf1e0ec3a1c61ad0c9bf6d10fe41199fc4c8ec0c6bedb9bd3",
+        "service-actions": "12ff87a87fc8c4d24fd48aff99cff50cc0fea00b98b53422ec49eb4dcef62952"
+      },
+      "trial_id": "positive-controlled-02",
+      "verdict": "AUDITABLE_CONTROLLED_POSITIVE"
+    }
+  ]
+}

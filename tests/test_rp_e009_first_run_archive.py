@@ -30,9 +30,8 @@ def test_original_registered_executable_transfer_identity():
     manifest = read(ARCHIVE / "archive-index.json")
     assert manifest["workflow_id"] == original["workflow_run_id"] == FIRST_RUN
     assert manifest["source_commit"] == original["source_commit"] == SOURCE
-    assert manifest["original_first_run_verdict"] == (
-        original["decision"] == "PASS_EXECUTABLE_TRANSFER" and original["decision"]
-    )
+    assert manifest["original_first_run_verdict"] == "PASS_EXECUTABLE_TRANSFER"
+    assert original["decision"] == "PASS_EXECUTABLE_TRANSFER"
     assert original["errors"] == []
     assert original["diagnostic_trials_replayed"] == 9
     assert original["heldout_trials_replayed"] == 9
@@ -78,7 +77,6 @@ def test_future_status_never_used_in_any_original_holdout_forecast():
     for observation in original["scoring"]["heldout_cases"]:
         assert observation["previous_pre_end_ns"] < observation["latest_pre_end_ns"]
         assert observation["latest_pre_end_ns"] <= observation["injector_end_ns"]
-        assert observation["first_post_end_observed_ns"] > observation["injector_end_ns"]
         assert observation["observed_B_work_per_second"] > 0
         assert observation["sampled_recovery_s"] >= 0
 

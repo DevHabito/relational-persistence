@@ -1,0 +1,10 @@
+{
+  "archived_audit_sha256": "4300798e762eda734eb07e1d51ca477583cda84810d172c711bbe34dd9c0e097",
+  "frozen_decision": "DATASET_SCHEMA_VERIFIED",
+  "original_bytes_in_temporary_actions_artifact_only": true,
+  "original_external_data_copied_to_git": false,
+  "original_source_commit": "aad2fc48d2e36fe765a1f248be67b09fdb081755",
+  "original_workflow_run_id": "40143917458",
+  "predictive_test": "NOT_PERFORMED",
+  "protocol": "RP-E010-D01"
+}

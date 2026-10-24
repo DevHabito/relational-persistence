@@ -336,28 +336,36 @@ The [RP-E008-S01 preregistration](docs/preregistration/RP-E008-S01.md) was commi
 
 **Registered first-run result: PASS_SIMULATED_TRANSFER.** The first [72-case original run #40131416314](https://github.com/DevHabito/relational-persistence/actions/runs/40131416314) yielded 36 held-out exact MAEs of **29.611 ms (static) versus 12.014 ms (trend)**, a **59.43%** aggregate reduction, above the frozen 10% criterion. Trend nevertheless lost in **16 of 36 individual heldout cases** and in the entire **early-burst arrival subgroup** (12.125 vs 5.000 ms MAE). The [original 74-file source archive](docs/results/RP-E008-S01-first-run/) was permanently committed at `8a2c11a`; see the [full scoped report](docs/results/RP-E008-S01.md). This is only mathematical software stress testing, not external physical replication or proof of new physics; it neither validates scalar C nor reverses RP-E006's negative conclusion.
 
-## RP-E009: prospective separate executable TCP queue transfer
+## RP-E009 — First cross-implementation executable software forecast passed
 
-The [RP-E009-P01 preregistration](docs/preregistration/RP-E009-P01.md)
-was frozen on main in commit `61674d0` **before writing the
-independent service or making new RP-E009 measurements**. It tests
-whether the unfitted RP-E007 two-pre-end-sample forecast improves
-over static backlog in an **actually executed**, separately written
-TCP/asyncio FIFO queue rather than the earlier threaded HTTP
-service or the mathematical simulator RP-E008.
+The [RP-E009-P01 protocol](docs/preregistration/RP-E009-P01.md)
+was frozen on main at `61674d0` **before writing the separate
+service or observing RP-E009 results**. A wholly separate TCP/asyncio
+FIFO service, with its own event and sampled-status logs,
+then collected nine diagnostic and nine new held-out trials
+on separately provisioned hosted Ubuntu VM jobs.
 
-The study fixes 9 diagnostic and 9 **new chronological held-out**
-workload cells, two separately provisioned hosted VM jobs, three
-loads and three arrival schedules. Both forecasts use independently
-measured pre-intervention B and status observed before injection
-ends. PASS requires >=10% improvement in 9-case heldout MAE;
-valid failure means NO_GAIN and invalid raw evidence means STOP.
+**Registered outcome: `PASS_EXECUTABLE_TRANSFER`.**
+The first [hosted run #40134924622](https://github.com/DevHabito/relational-persistence/actions/runs/40134924622)
+passed all 18 original trial audits and **126 original
+event/status/role file hashes**. The original positive
+verdict and source bytes were permanently
+[archived at `7cca290`](https://github.com/DevHabito/relational-persistence/commit/7cca2903d5dce40b3ad9500c033a08b31b75367f).
 
-[Prospective results status](docs/results/RP-E009-P01.md).
-This is software-implementation transfer, **not** external physical
-validation, independent hardware, or a newly demonstrated
-relational persistence law. Earlier RP-E006 and E007 data
-are not used as new heldout observations.
+On nine new held-out trials, **two-pre-end-sample
+trend MAE was 10.527 ms versus 20.201 ms for static
+backlog**, a **47.89% reduction** exceeding the
+registered 10% threshold; trend won seven cases,
+tied two, and lost none in this first run.
+
+Read the [full original scientific report](docs/results/RP-E009-P01.md)
+and [unaltered first-run archive](docs/results/RP-E009-P01-first-run/).
+This is transfer to a **different executable software service**,
+not real-world-independent hardware, a physics discovery,
+nor support for `C=B/(I*tau)`. The earlier RP-E006
+negative scalar result remains valid, and RP-E008's
+early-burst negative simulation subgroup must not be
+discarded.
 
 ## Naming and provenance
 

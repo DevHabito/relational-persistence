@@ -17,6 +17,6 @@
 
 | RP-E008-S01 | Independently implemented in-silico 72-case FCFS queue model with irregular arrivals and variable job durations | **PASS_SIMULATED_TRANSFER**; 36-case heldout exact trend MAE 173/14400 s vs static 533/18000 s (59.43%); early-burst subgroup is a negative result | Two algorithmically separate event oracles, exact rational errors; neither external physical replication nor a new Lean theorem |
 
-| RP-E009-P01 | Separately executable TCP/asyncio queue with service-side event records, nine diagnostic and nine new held-out software interventions | **PENDING FIRST HOSTED EXECUTION**; primary 10% MAE trend-vs-static improvement gate frozen before implementation | Actual hosted software timing on different queue implementation; no natural-world or physical-law validation |
+| RP-E009-P01 | Separately executable TCP/asyncio queue with service-side event records, nine diagnostic and nine new held-out software interventions | **PASS_EXECUTABLE_TRANSFER**; nine heldout trials, 10.527 ms trend MAE vs 20.201 ms static MAE (47.89% gain); 18/18 cases and 126/126 raw logs audited, archived at `7cca290` | Actual hosted software timing on different queue implementation; no natural-world or physical-law validation |
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

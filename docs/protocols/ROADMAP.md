@@ -86,7 +86,7 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 
 - Following the positive RP-E008 in-silico result with a negative early-burst subgroup, freeze **before measurements** an operationally different TCP/asyncio single-worker FIFO implementation (`61674d0`).
 - Measure own accepted/start/completed task events, calibration throughput, pre-end queue samples and independently replayed recovery. Nine new diagnostic and nine new heldout trials are collected on sequential hosted jobs.
-- Compare the original **unfitted** RP-E007 temporal and static queue forecasts at the registered 10% MAE threshold; preserve source failures as STOP, valid negative results as NO_GAIN and all original files unchanged.
+- **First RP-E009 run #40134924622 PASSED** the frozen >=10% heldout MAE gate: trend 10.527 ms versus static 20.201 ms (47.89% lower), nine diagnostic plus nine new heldout cases and 126/126 raw role/event files independently replayed. Original source bytes and outcome archived at `7cca290` without replacement.
 - This is still hosted Python software, not independent industrial deployment, sensor validation or evidence of a physical persistence law.
 
 ## Stage 3 — relationship to RZS and PMFF

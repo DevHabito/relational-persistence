@@ -52,11 +52,8 @@ theorem delayed_feedback_six_is_identity (s : FeedbackPair) :
     delayedFeedbackIter 6 s = s := by
   cases s with
   | mk a b =>
-    apply FeedbackPair.ext
-    · dsimp [delayedFeedbackIter, delayedFeedbackStep]
-      ring
-    · dsimp [delayedFeedbackIter, delayedFeedbackStep]
-      ring
+    dsimp [delayedFeedbackIter, delayedFeedbackStep] <;>
+      congr 1 <;> ring
 
 theorem undelayed_feedback_one_is_zero (x : ℝ) :
     undelayedFeedbackStep x = 0 := by
@@ -69,7 +66,6 @@ theorem undelayed_feedback_six_is_zero (x : ℝ) :
 theorem delayed_feedback_primary_witness :
     (delayedFeedbackIter 6 ⟨1, 1⟩).current = (1 : ℝ) := by
   rw [delayed_feedback_six_is_identity]
-  rfl
 
 /-- Precommitted residual contrast: exactly one vs zero after six steps. -/
 theorem delayed_feedback_registered_separation :

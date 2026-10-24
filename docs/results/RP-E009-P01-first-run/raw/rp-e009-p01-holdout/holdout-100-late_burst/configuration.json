@@ -1,0 +1,5 @@
+{
+  "arrival_mode": "late_burst",
+  "trial_id": "holdout-100-late_burst",
+  "work_units": 100
+}

@@ -1,0 +1,392 @@
+{"event": "accept", "job": 1, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97208521052}
+{"event": "start", "job": 1, "phase": "calibration", "time_ns": 97208695485}
+{"event": "accept", "job": 2, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97209107997}
+{"event": "accept", "job": 3, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97209558786}
+{"event": "accept", "job": 4, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97209993801}
+{"event": "accept", "job": 5, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97210446082}
+{"event": "accept", "job": 6, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97210860867}
+{"event": "accept", "job": 7, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97211295181}
+{"event": "accept", "job": 8, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97211711799}
+{"event": "accept", "job": 9, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97212150099}
+{"event": "accept", "job": 10, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97212564544}
+{"event": "accept", "job": 11, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97212981322}
+{"event": "accept", "job": 12, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97213444479}
+{"event": "accept", "job": 13, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97213857812}
+{"event": "accept", "job": 14, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97214290223}
+{"event": "accept", "job": 15, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97214710246}
+{"event": "accept", "job": 16, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97215134896}
+{"event": "accept", "job": 17, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97215542229}
+{"event": "accept", "job": 18, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97215949002}
+{"event": "accept", "job": 19, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97216372710}
+{"event": "accept", "job": 20, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97216782027}
+{"event": "complete", "job": 1, "phase": "calibration", "time_ns": 97216902579}
+{"event": "start", "job": 2, "phase": "calibration", "time_ns": 97216946084}
+{"event": "accept", "job": 21, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97217227808}
+{"event": "accept", "job": 22, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97217634571}
+{"event": "accept", "job": 23, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97218060283}
+{"event": "accept", "job": 24, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97218473615}
+{"event": "accept", "job": 25, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97218887479}
+{"event": "accept", "job": 26, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97219324687}
+{"event": "accept", "job": 27, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97219733623}
+{"event": "accept", "job": 28, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97220206567}
+{"event": "accept", "job": 29, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97220554431}
+{"event": "accept", "job": 30, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97220850087}
+{"event": "accept", "job": 31, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97221159192}
+{"event": "accept", "job": 32, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97221438483}
+{"event": "accept", "job": 33, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97221707328}
+{"event": "accept", "job": 34, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97221975863}
+{"event": "accept", "job": 35, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97222260862}
+{"event": "accept", "job": 36, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97222527323}
+{"event": "accept", "job": 37, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97222788096}
+{"event": "accept", "job": 38, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97223074448}
+{"event": "accept", "job": 39, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97223342972}
+{"event": "accept", "job": 40, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97223607611}
+{"event": "accept", "job": 41, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97223879600}
+{"event": "accept", "job": 42, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97224167955}
+{"event": "accept", "job": 43, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97224437511}
+{"event": "accept", "job": 44, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97224705645}
+{"event": "accept", "job": 45, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97224967459}
+{"event": "accept", "job": 46, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97225274001}
+{"event": "accept", "job": 47, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97225548855}
+{"event": "accept", "job": 48, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97225812713}
+{"event": "accept", "job": 49, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97226095489}
+{"event": "accept", "job": 50, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97226366947}
+{"event": "accept", "job": 51, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97226627770}
+{"event": "accept", "job": 52, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97227019310}
+{"event": "accept", "job": 53, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97227295156}
+{"event": "accept", "job": 54, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97227561126}
+{"event": "accept", "job": 55, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97227823552}
+{"event": "accept", "job": 56, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97228114620}
+{"event": "accept", "job": 57, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97228388903}
+{"event": "accept", "job": 58, "nominal_prechange_ms": 8, "phase": "calibration", "time_ns": 97228654834}
+{"event": "accept", "job": 59, "nominal_prechange_ms": 12, "phase": "calibration", "time_ns": 97228914165}
+{"event": "complete", "job": 2, "phase": "calibration", "time_ns": 97229019363}
+{"event": "start", "job": 3, "phase": "calibration", "time_ns": 97229045703}
+{"event": "accept", "job": 60, "nominal_prechange_ms": 16, "phase": "calibration", "time_ns": 97229201528}
+{"event": "complete", "job": 3, "phase": "calibration", "time_ns": 97245609675}
+{"event": "start", "job": 4, "phase": "calibration", "time_ns": 97245712340}
+{"event": "complete", "job": 4, "phase": "calibration", "time_ns": 97253820805}
+{"event": "start", "job": 5, "phase": "calibration", "time_ns": 97253847555}
+{"event": "complete", "job": 5, "phase": "calibration", "time_ns": 97266507817}
+{"event": "start", "job": 6, "phase": "calibration", "time_ns": 97266619415}
+{"event": "complete", "job": 6, "phase": "calibration", "time_ns": 97283420174}
+{"event": "start", "job": 7, "phase": "calibration", "time_ns": 97283497410}
+{"event": "complete", "job": 7, "phase": "calibration", "time_ns": 97291602740}
+{"event": "start", "job": 8, "phase": "calibration", "time_ns": 97291635960}
+{"event": "complete", "job": 8, "phase": "calibration", "time_ns": 97303739884}
+{"event": "start", "job": 9, "phase": "calibration", "time_ns": 97303785723}
+{"event": "complete", "job": 9, "phase": "calibration", "time_ns": 97321347679}
+{"event": "start", "job": 10, "phase": "calibration", "time_ns": 97321477174}
+{"event": "complete", "job": 10, "phase": "calibration", "time_ns": 97329592579}
+{"event": "start", "job": 11, "phase": "calibration", "time_ns": 97329618338}
+{"event": "complete", "job": 11, "phase": "calibration", "time_ns": 97343183873}
+{"event": "start", "job": 12, "phase": "calibration", "time_ns": 97343289402}
+{"event": "complete", "job": 12, "phase": "calibration", "time_ns": 97360028358}
+{"event": "start", "job": 13, "phase": "calibration", "time_ns": 97360105945}
+{"event": "complete", "job": 13, "phase": "calibration", "time_ns": 97368213729}
+{"event": "start", "job": 14, "phase": "calibration", "time_ns": 97368255471}
+{"event": "complete", "job": 14, "phase": "calibration", "time_ns": 97380353156}
+{"event": "start", "job": 15, "phase": "calibration", "time_ns": 97380377332}
+{"event": "complete", "job": 15, "phase": "calibration", "time_ns": 97396905200}
+{"event": "start", "job": 16, "phase": "calibration", "time_ns": 97396994004}
+{"event": "complete", "job": 16, "phase": "calibration", "time_ns": 97405134520}
+{"event": "start", "job": 17, "phase": "calibration", "time_ns": 97405182221}
+{"event": "complete", "job": 17, "phase": "calibration", "time_ns": 97417753767}
+{"event": "start", "job": 18, "phase": "calibration", "time_ns": 97417830943}
+{"event": "complete", "job": 18, "phase": "calibration", "time_ns": 97433951998}
+{"event": "start", "job": 19, "phase": "calibration", "time_ns": 97434030456}
+{"event": "complete", "job": 19, "phase": "calibration", "time_ns": 97442688509}
+{"event": "start", "job": 20, "phase": "calibration", "time_ns": 97442812676}
+{"event": "complete", "job": 20, "phase": "calibration", "time_ns": 97454947516}
+{"event": "start", "job": 21, "phase": "calibration", "time_ns": 97455026725}
+{"event": "complete", "job": 21, "phase": "calibration", "time_ns": 97472602162}
+{"event": "start", "job": 22, "phase": "calibration", "time_ns": 97472714571}
+{"event": "complete", "job": 22, "phase": "calibration", "time_ns": 97480833351}
+{"event": "start", "job": 23, "phase": "calibration", "time_ns": 97480864057}
+{"event": "complete", "job": 23, "phase": "calibration", "time_ns": 97493519291}
+{"event": "start", "job": 24, "phase": "calibration", "time_ns": 97493609257}
+{"event": "complete", "job": 24, "phase": "calibration", "time_ns": 97509731935}
+{"event": "start", "job": 25, "phase": "calibration", "time_ns": 97509783112}
+{"event": "complete", "job": 25, "phase": "calibration", "time_ns": 97518397759}
+{"event": "start", "job": 26, "phase": "calibration", "time_ns": 97518461745}
+{"event": "complete", "job": 26, "phase": "calibration", "time_ns": 97530559991}
+{"event": "start", "job": 27, "phase": "calibration", "time_ns": 97530598308}
+{"event": "complete", "job": 27, "phase": "calibration", "time_ns": 97547312567}
+{"event": "start", "job": 28, "phase": "calibration", "time_ns": 97547412717}
+{"event": "complete", "job": 28, "phase": "calibration", "time_ns": 97555520201}
+{"event": "start", "job": 29, "phase": "calibration", "time_ns": 97555556586}
+{"event": "complete", "job": 29, "phase": "calibration", "time_ns": 97568139390}
+{"event": "start", "job": 30, "phase": "calibration", "time_ns": 97568195935}
+{"event": "complete", "job": 30, "phase": "calibration", "time_ns": 97584295919}
+{"event": "start", "job": 31, "phase": "calibration", "time_ns": 97584326926}
+{"event": "complete", "job": 31, "phase": "calibration", "time_ns": 97592998950}
+{"event": "start", "job": 32, "phase": "calibration", "time_ns": 97593068645}
+{"event": "complete", "job": 32, "phase": "calibration", "time_ns": 97605182894}
+{"event": "start", "job": 33, "phase": "calibration", "time_ns": 97605234031}
+{"event": "complete", "job": 33, "phase": "calibration", "time_ns": 97621923673}
+{"event": "start", "job": 34, "phase": "calibration", "time_ns": 97621995941}
+{"event": "complete", "job": 34, "phase": "calibration", "time_ns": 97630117246}
+{"event": "start", "job": 35, "phase": "calibration", "time_ns": 97630164507}
+{"event": "complete", "job": 35, "phase": "calibration", "time_ns": 97642258285}
+{"event": "start", "job": 36, "phase": "calibration", "time_ns": 97642286638}
+{"event": "complete", "job": 36, "phase": "calibration", "time_ns": 97658763389}
+{"event": "start", "job": 37, "phase": "calibration", "time_ns": 97658843239}
+{"event": "complete", "job": 37, "phase": "calibration", "time_ns": 97666947578}
+{"event": "start", "job": 38, "phase": "calibration", "time_ns": 97666973076}
+{"event": "complete", "job": 38, "phase": "calibration", "time_ns": 97679619447}
+{"event": "start", "job": 39, "phase": "calibration", "time_ns": 97679727860}
+{"event": "complete", "job": 39, "phase": "calibration", "time_ns": 97696583600}
+{"event": "start", "job": 40, "phase": "calibration", "time_ns": 97696664062}
+{"event": "complete", "job": 40, "phase": "calibration", "time_ns": 97704766638}
+{"event": "start", "job": 41, "phase": "calibration", "time_ns": 97704791525}
+{"event": "complete", "job": 41, "phase": "calibration", "time_ns": 97717048389}
+{"event": "start", "job": 42, "phase": "calibration", "time_ns": 97717144494}
+{"event": "complete", "job": 42, "phase": "calibration", "time_ns": 97733938843}
+{"event": "start", "job": 43, "phase": "calibration", "time_ns": 97734222561}
+{"event": "complete", "job": 43, "phase": "calibration", "time_ns": 97742325667}
+{"event": "start", "job": 44, "phase": "calibration", "time_ns": 97742350975}
+{"event": "complete", "job": 44, "phase": "calibration", "time_ns": 97755149936}
+{"event": "start", "job": 45, "phase": "calibration", "time_ns": 97755211639}
+{"event": "complete", "job": 45, "phase": "calibration", "time_ns": 97771307516}
+{"event": "start", "job": 46, "phase": "calibration", "time_ns": 97771335077}
+{"event": "complete", "job": 46, "phase": "calibration", "time_ns": 97779986911}
+{"event": "start", "job": 47, "phase": "calibration", "time_ns": 97780045709}
+{"event": "complete", "job": 47, "phase": "calibration", "time_ns": 97792155131}
+{"event": "start", "job": 48, "phase": "calibration", "time_ns": 97792224306}
+{"event": "complete", "job": 48, "phase": "calibration", "time_ns": 97809790478}
+{"event": "start", "job": 49, "phase": "calibration", "time_ns": 97809903869}
+{"event": "complete", "job": 49, "phase": "calibration", "time_ns": 97818023499}
+{"event": "start", "job": 50, "phase": "calibration", "time_ns": 97818044311}
+{"event": "complete", "job": 50, "phase": "calibration", "time_ns": 97830468237}
+{"event": "start", "job": 51, "phase": "calibration", "time_ns": 97830526785}
+{"event": "complete", "job": 51, "phase": "calibration", "time_ns": 97846627440}
+{"event": "start", "job": 52, "phase": "calibration", "time_ns": 97846656453}
+{"event": "complete", "job": 52, "phase": "calibration", "time_ns": 97855318212}
+{"event": "start", "job": 53, "phase": "calibration", "time_ns": 97855362499}
+{"event": "complete", "job": 53, "phase": "calibration", "time_ns": 97867455005}
+{"event": "start", "job": 54, "phase": "calibration", "time_ns": 97867476848}
+{"event": "complete", "job": 54, "phase": "calibration", "time_ns": 97883980840}
+{"event": "start", "job": 55, "phase": "calibration", "time_ns": 97884043574}
+{"event": "complete", "job": 55, "phase": "calibration", "time_ns": 97892141333}
+{"event": "start", "job": 56, "phase": "calibration", "time_ns": 97892169355}
+{"event": "complete", "job": 56, "phase": "calibration", "time_ns": 97904673552}
+{"event": "start", "job": 57, "phase": "calibration", "time_ns": 97904711629}
+{"event": "complete", "job": 57, "phase": "calibration", "time_ns": 97920842778}
+{"event": "start", "job": 58, "phase": "calibration", "time_ns": 97920885373}
+{"event": "complete", "job": 58, "phase": "calibration", "time_ns": 97929550847}
+{"event": "start", "job": 59, "phase": "calibration", "time_ns": 97929620832}
+{"event": "complete", "job": 59, "phase": "calibration", "time_ns": 97941722113}
+{"event": "start", "job": 60, "phase": "calibration", "time_ns": 97941760010}
+{"event": "complete", "job": 60, "phase": "calibration", "time_ns": 97958459867}
+{"calibrated_tasks": 60, "event": "reset", "phase": "calibration", "time_ns": 97980674170}
+{"event": "accelerate", "phase": "experiment", "speed_factor": 2, "time_ns": 97981023666}
+{"event": "accept", "job": 1, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98097647322}
+{"event": "start", "job": 1, "phase": "experiment", "time_ns": 98097799321}
+{"event": "accept", "job": 2, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98099317147}
+{"event": "accept", "job": 3, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98100660821}
+{"event": "complete", "job": 1, "phase": "experiment", "time_ns": 98101977405}
+{"event": "start", "job": 2, "phase": "experiment", "time_ns": 98102019298}
+{"event": "accept", "job": 4, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98102098898}
+{"event": "accept", "job": 5, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98103445696}
+{"event": "accept", "job": 6, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98104792916}
+{"event": "accept", "job": 7, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98106152594}
+{"event": "accept", "job": 8, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98107499884}
+{"event": "complete", "job": 2, "phase": "experiment", "time_ns": 98108646591}
+{"event": "start", "job": 3, "phase": "experiment", "time_ns": 98108671348}
+{"event": "accept", "job": 9, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98108853934}
+{"event": "accept", "job": 10, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98110178359}
+{"event": "accept", "job": 11, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98111547101}
+{"event": "accept", "job": 12, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98112906208}
+{"event": "accept", "job": 13, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98114299897}
+{"event": "accept", "job": 14, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98115662470}
+{"event": "complete", "job": 3, "phase": "experiment", "time_ns": 98116814936}
+{"event": "start", "job": 4, "phase": "experiment", "time_ns": 98116845022}
+{"event": "accept", "job": 15, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98117044482}
+{"event": "accept", "job": 16, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98118423149}
+{"event": "accept", "job": 17, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98119779963}
+{"event": "complete", "job": 4, "phase": "experiment", "time_ns": 98121091358}
+{"event": "start", "job": 5, "phase": "experiment", "time_ns": 98121118008}
+{"event": "accept", "job": 18, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98121194674}
+{"event": "accept", "job": 19, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98122572339}
+{"event": "accept", "job": 20, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98123936234}
+{"event": "accept", "job": 21, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98125501933}
+{"event": "accept", "job": 22, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98126839117}
+{"event": "complete", "job": 5, "phase": "experiment", "time_ns": 98127987347}
+{"event": "start", "job": 6, "phase": "experiment", "time_ns": 98128022259}
+{"event": "accept", "job": 23, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98128177984}
+{"event": "accept", "job": 24, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98129544022}
+{"event": "accept", "job": 25, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98130901026}
+{"event": "accept", "job": 26, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98132281966}
+{"event": "accept", "job": 27, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98133654624}
+{"event": "accept", "job": 28, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98135039310}
+{"event": "complete", "job": 6, "phase": "experiment", "time_ns": 98136189593}
+{"event": "start", "job": 7, "phase": "experiment", "time_ns": 98136215962}
+{"event": "accept", "job": 29, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98136409834}
+{"event": "accept", "job": 30, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98137763413}
+{"event": "accept", "job": 31, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98139138655}
+{"event": "complete", "job": 7, "phase": "experiment", "time_ns": 98140452985}
+{"event": "start", "job": 8, "phase": "experiment", "time_ns": 98140484703}
+{"event": "accept", "job": 32, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98140575880}
+{"event": "accept", "job": 33, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98141937281}
+{"event": "accept", "job": 34, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98143318742}
+{"event": "accept", "job": 35, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98144677369}
+{"event": "accept", "job": 36, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98146320494}
+{"event": "complete", "job": 8, "phase": "experiment", "time_ns": 98147599751}
+{"event": "start", "job": 9, "phase": "experiment", "time_ns": 98147645230}
+{"event": "accept", "job": 37, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98152569299}
+{"event": "complete", "job": 9, "phase": "experiment", "time_ns": 98155744692}
+{"event": "start", "job": 10, "phase": "experiment", "time_ns": 98155779164}
+{"event": "accept", "job": 38, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98158045518}
+{"event": "complete", "job": 10, "phase": "experiment", "time_ns": 98160211041}
+{"event": "start", "job": 11, "phase": "experiment", "time_ns": 98160246334}
+{"event": "accept", "job": 39, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98163484191}
+{"event": "complete", "job": 11, "phase": "experiment", "time_ns": 98166646064}
+{"event": "start", "job": 12, "phase": "experiment", "time_ns": 98166675208}
+{"event": "accept", "job": 40, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98168895794}
+{"event": "accept", "job": 41, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98174325283}
+{"event": "complete", "job": 12, "phase": "experiment", "time_ns": 98175487103}
+{"event": "start", "job": 13, "phase": "experiment", "time_ns": 98175513352}
+{"event": "complete", "job": 13, "phase": "experiment", "time_ns": 98179828633}
+{"event": "start", "job": 14, "phase": "experiment", "time_ns": 98179860211}
+{"event": "accept", "job": 42, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98180064068}
+{"event": "accept", "job": 43, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98185427137}
+{"event": "complete", "job": 14, "phase": "experiment", "time_ns": 98186581365}
+{"event": "start", "job": 15, "phase": "experiment", "time_ns": 98186606974}
+{"event": "accept", "job": 44, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98190788854}
+{"event": "complete", "job": 15, "phase": "experiment", "time_ns": 98194935100}
+{"event": "start", "job": 16, "phase": "experiment", "time_ns": 98194963543}
+{"event": "accept", "job": 45, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98196163540}
+{"event": "complete", "job": 16, "phase": "experiment", "time_ns": 98199309910}
+{"event": "start", "job": 17, "phase": "experiment", "time_ns": 98199337241}
+{"event": "accept", "job": 46, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98201522022}
+{"event": "complete", "job": 17, "phase": "experiment", "time_ns": 98205985416}
+{"event": "start", "job": 18, "phase": "experiment", "time_ns": 98206033058}
+{"event": "accept", "job": 47, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98207172675}
+{"event": "accept", "job": 48, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98212523896}
+{"event": "complete", "job": 18, "phase": "experiment", "time_ns": 98214673113}
+{"event": "start", "job": 19, "phase": "experiment", "time_ns": 98214700074}
+{"event": "accept", "job": 49, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98217923961}
+{"event": "complete", "job": 19, "phase": "experiment", "time_ns": 98219087353}
+{"event": "start", "job": 20, "phase": "experiment", "time_ns": 98219114584}
+{"event": "accept", "job": 50, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98223336534}
+{"event": "complete", "job": 20, "phase": "experiment", "time_ns": 98225484760}
+{"event": "start", "job": 21, "phase": "experiment", "time_ns": 98225511971}
+{"event": "accept", "job": 51, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98228968468}
+{"event": "complete", "job": 21, "phase": "experiment", "time_ns": 98234168922}
+{"event": "start", "job": 22, "phase": "experiment", "time_ns": 98234207100}
+{"event": "accept", "job": 52, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98234441713}
+{"event": "complete", "job": 22, "phase": "experiment", "time_ns": 98238596512}
+{"event": "start", "job": 23, "phase": "experiment", "time_ns": 98238625175}
+{"event": "accept", "job": 53, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98239845003}
+{"event": "complete", "job": 23, "phase": "experiment", "time_ns": 98244995682}
+{"event": "start", "job": 24, "phase": "experiment", "time_ns": 98245038066}
+{"event": "accept", "job": 54, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98245192509}
+{"event": "accept", "job": 55, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98250565462}
+{"event": "complete", "job": 24, "phase": "experiment", "time_ns": 98253716810}
+{"event": "start", "job": 25, "phase": "experiment", "time_ns": 98253744191}
+{"event": "accept", "job": 56, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98256285189}
+{"event": "complete", "job": 25, "phase": "experiment", "time_ns": 98258433936}
+{"event": "start", "job": 26, "phase": "experiment", "time_ns": 98258461998}
+{"event": "accept", "job": 57, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98261695569}
+{"event": "complete", "job": 26, "phase": "experiment", "time_ns": 98264846075}
+{"event": "start", "job": 27, "phase": "experiment", "time_ns": 98264872765}
+{"event": "accept", "job": 58, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98267101333}
+{"event": "accept", "job": 59, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98272495388}
+{"event": "complete", "job": 27, "phase": "experiment", "time_ns": 98273653943}
+{"event": "start", "job": 28, "phase": "experiment", "time_ns": 98273680483}
+{"event": "complete", "job": 28, "phase": "experiment", "time_ns": 98277762553}
+{"event": "start", "job": 29, "phase": "experiment", "time_ns": 98277779789}
+{"event": "accept", "job": 60, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98277926900}
+{"event": "accept", "job": 61, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98283649301}
+{"event": "complete", "job": 29, "phase": "experiment", "time_ns": 98284805172}
+{"event": "start", "job": 30, "phase": "experiment", "time_ns": 98284830520}
+{"event": "accept", "job": 62, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98289065440}
+{"event": "complete", "job": 30, "phase": "experiment", "time_ns": 98293218276}
+{"event": "start", "job": 31, "phase": "experiment", "time_ns": 98293246057}
+{"event": "accept", "job": 63, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98294453566}
+{"event": "complete", "job": 31, "phase": "experiment", "time_ns": 98297601749}
+{"event": "start", "job": 32, "phase": "experiment", "time_ns": 98297627778}
+{"event": "accept", "job": 64, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98299829916}
+{"event": "complete", "job": 32, "phase": "experiment", "time_ns": 98303978846}
+{"event": "start", "job": 33, "phase": "experiment", "time_ns": 98304019016}
+{"event": "accept", "job": 65, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98305185954}
+{"event": "accept", "job": 66, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98310867152}
+{"event": "complete", "job": 33, "phase": "experiment", "time_ns": 98313024372}
+{"event": "start", "job": 34, "phase": "experiment", "time_ns": 98313053876}
+{"event": "accept", "job": 67, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98316268659}
+{"event": "complete", "job": 34, "phase": "experiment", "time_ns": 98317416899}
+{"event": "start", "job": 35, "phase": "experiment", "time_ns": 98317441696}
+{"event": "accept", "job": 68, "nominal_prechange_ms": 12, "phase": "experiment", "time_ns": 98321637998}
+{"event": "complete", "job": 35, "phase": "experiment", "time_ns": 98323782729}
+{"event": "start", "job": 36, "phase": "experiment", "time_ns": 98323817531}
+{"event": "accept", "job": 69, "nominal_prechange_ms": 16, "phase": "experiment", "time_ns": 98327025944}
+{"event": "complete", "job": 36, "phase": "experiment", "time_ns": 98332178706}
+{"event": "start", "job": 37, "phase": "experiment", "time_ns": 98332209533}
+{"event": "accept", "job": 70, "nominal_prechange_ms": 8, "phase": "experiment", "time_ns": 98332587643}
+{"event": "complete", "job": 37, "phase": "experiment", "time_ns": 98336732987}
+{"event": "start", "job": 38, "phase": "experiment", "time_ns": 98336764054}
+{"event": "complete", "job": 38, "phase": "experiment", "time_ns": 98342850192}
+{"event": "start", "job": 39, "phase": "experiment", "time_ns": 98342868370}
+{"event": "complete", "job": 39, "phase": "experiment", "time_ns": 98350950945}
+{"event": "start", "job": 40, "phase": "experiment", "time_ns": 98350968462}
+{"event": "complete", "job": 40, "phase": "experiment", "time_ns": 98355050181}
+{"event": "start", "job": 41, "phase": "experiment", "time_ns": 98355065253}
+{"event": "complete", "job": 41, "phase": "experiment", "time_ns": 98361644975}
+{"event": "start", "job": 42, "phase": "experiment", "time_ns": 98361680969}
+{"event": "complete", "job": 42, "phase": "experiment", "time_ns": 98369780671}
+{"event": "start", "job": 43, "phase": "experiment", "time_ns": 98369818668}
+{"event": "complete", "job": 43, "phase": "experiment", "time_ns": 98373909290}
+{"event": "start", "job": 44, "phase": "experiment", "time_ns": 98373924543}
+{"event": "complete", "job": 44, "phase": "experiment", "time_ns": 98380021658}
+{"event": "start", "job": 45, "phase": "experiment", "time_ns": 98380037161}
+{"event": "complete", "job": 45, "phase": "experiment", "time_ns": 98388352658}
+{"event": "start", "job": 46, "phase": "experiment", "time_ns": 98388395713}
+{"event": "complete", "job": 46, "phase": "experiment", "time_ns": 98392479785}
+{"event": "start", "job": 47, "phase": "experiment", "time_ns": 98392497532}
+{"event": "complete", "job": 47, "phase": "experiment", "time_ns": 98398576640}
+{"event": "start", "job": 48, "phase": "experiment", "time_ns": 98398593495}
+{"event": "complete", "job": 48, "phase": "experiment", "time_ns": 98406674699}
+{"event": "start", "job": 49, "phase": "experiment", "time_ns": 98406691825}
+{"event": "complete", "job": 49, "phase": "experiment", "time_ns": 98410956659}
+{"event": "start", "job": 50, "phase": "experiment", "time_ns": 98410990350}
+{"event": "complete", "job": 50, "phase": "experiment", "time_ns": 98417089338}
+{"event": "start", "job": 51, "phase": "experiment", "time_ns": 98417115547}
+{"event": "complete", "job": 51, "phase": "experiment", "time_ns": 98425201658}
+{"event": "start", "job": 52, "phase": "experiment", "time_ns": 98425221428}
+{"event": "complete", "job": 52, "phase": "experiment", "time_ns": 98429305130}
+{"event": "start", "job": 53, "phase": "experiment", "time_ns": 98429319942}
+{"event": "complete", "job": 53, "phase": "experiment", "time_ns": 98435517408}
+{"event": "start", "job": 54, "phase": "experiment", "time_ns": 98435552831}
+{"event": "complete", "job": 54, "phase": "experiment", "time_ns": 98443698072}
+{"event": "start", "job": 55, "phase": "experiment", "time_ns": 98443739644}
+{"event": "complete", "job": 55, "phase": "experiment", "time_ns": 98447829726}
+{"event": "start", "job": 56, "phase": "experiment", "time_ns": 98447852720}
+{"event": "complete", "job": 56, "phase": "experiment", "time_ns": 98453937306}
+{"event": "start", "job": 57, "phase": "experiment", "time_ns": 98453956986}
+{"event": "complete", "job": 57, "phase": "experiment", "time_ns": 98462368668}
+{"event": "start", "job": 58, "phase": "experiment", "time_ns": 98462404411}
+{"event": "complete", "job": 58, "phase": "experiment", "time_ns": 98466488714}
+{"event": "start", "job": 59, "phase": "experiment", "time_ns": 98466506882}
+{"event": "complete", "job": 59, "phase": "experiment", "time_ns": 98472589495}
+{"event": "start", "job": 60, "phase": "experiment", "time_ns": 98472606540}
+{"event": "complete", "job": 60, "phase": "experiment", "time_ns": 98480705730}
+{"event": "start", "job": 61, "phase": "experiment", "time_ns": 98480721464}
+{"event": "complete", "job": 61, "phase": "experiment", "time_ns": 98484802522}
+{"event": "start", "job": 62, "phase": "experiment", "time_ns": 98484817044}
+{"event": "complete", "job": 62, "phase": "experiment", "time_ns": 98491029653}
+{"event": "start", "job": 63, "phase": "experiment", "time_ns": 98491069733}
+{"event": "complete", "job": 63, "phase": "experiment", "time_ns": 98499160562}
+{"event": "start", "job": 64, "phase": "experiment", "time_ns": 98499182194}
+{"event": "complete", "job": 64, "phase": "experiment", "time_ns": 98503266397}
+{"event": "start", "job": 65, "phase": "experiment", "time_ns": 98503281940}
+{"event": "complete", "job": 65, "phase": "experiment", "time_ns": 98509364773}
+{"event": "start", "job": 66, "phase": "experiment", "time_ns": 98509379465}
+{"event": "complete", "job": 66, "phase": "experiment", "time_ns": 98517703746}
+{"event": "start", "job": 67, "phase": "experiment", "time_ns": 98517746550}
+{"event": "complete", "job": 67, "phase": "experiment", "time_ns": 98521834588}
+{"event": "start", "job": 68, "phase": "experiment", "time_ns": 98521854298}
+{"event": "complete", "job": 68, "phase": "experiment", "time_ns": 98527939816}
+{"event": "start", "job": 69, "phase": "experiment", "time_ns": 98527957883}
+{"event": "complete", "job": 69, "phase": "experiment", "time_ns": 98536040378}
+{"event": "start", "job": 70, "phase": "experiment", "time_ns": 98536059547}
+{"event": "complete", "job": 70, "phase": "experiment", "time_ns": 98540351863}

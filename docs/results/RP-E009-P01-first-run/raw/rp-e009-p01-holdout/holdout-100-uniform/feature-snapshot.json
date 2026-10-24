@@ -1,0 +1,7 @@
+{
+  "latest_observed_ns": 103030131898,
+  "latest_queued_and_active": 46,
+  "previous_observed_ns": 103004317851,
+  "previous_queued_and_active": 42,
+  "source": "two original TCP health responses prior to injector end"
+}

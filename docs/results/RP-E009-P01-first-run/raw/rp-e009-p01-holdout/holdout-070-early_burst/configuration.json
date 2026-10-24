@@ -1,0 +1,5 @@
+{
+  "arrival_mode": "early_burst",
+  "trial_id": "holdout-070-early_burst",
+  "work_units": 70
+}

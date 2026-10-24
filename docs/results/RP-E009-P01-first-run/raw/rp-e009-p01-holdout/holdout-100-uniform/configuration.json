@@ -1,0 +1,5 @@
+{
+  "arrival_mode": "uniform",
+  "trial_id": "holdout-100-uniform",
+  "work_units": 100
+}

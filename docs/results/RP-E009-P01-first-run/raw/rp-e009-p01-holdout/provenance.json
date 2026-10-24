@@ -1,0 +1,58 @@
+{
+  "independent_physical_system": "NOT_ESTABLISHED",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "predictive_scalar_C_test": "NOT_PERFORMED",
+  "preregistration_sha256": "1195d4fd2803d21a7015b3000681f351a6d3d80670fb2adc84a10c9901daf53a",
+  "protocol": "RP-E009-P01",
+  "runtime": "3.12.15",
+  "source_commit": "d940d39a7ac32d83fc6b638c056cad6982ec4a00",
+  "split": "holdout",
+  "trial_order": [
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-070-early_burst",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-040-uniform",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-100-uniform",
+      "work_units": 100
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-070-uniform",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-040-late_burst",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-070-late_burst",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-040-early_burst",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-100-early_burst",
+      "work_units": 100
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-100-late_burst",
+      "work_units": 100
+    }
+  ],
+  "workflow_run_id": "40134924622"
+}

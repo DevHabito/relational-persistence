@@ -1,0 +1,12 @@
+{
+  "accepted": 60,
+  "completed": 60,
+  "first_enqueue_sent_ns": 97208196705,
+  "last_completed_observed_ns": 97980178818,
+  "observed_B_work_per_second": 77.72200804865021,
+  "prechange_duration_cycle_ms": [
+    8,
+    12,
+    16
+  ]
+}

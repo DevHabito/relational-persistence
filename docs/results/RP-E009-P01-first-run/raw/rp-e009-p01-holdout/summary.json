@@ -1,0 +1,196 @@
+{
+  "acquisition_gate": "PASS_ALL_RECORDED",
+  "independent_physical_system": "NOT_ESTABLISHED",
+  "original_trials": [
+    {
+      "accepted_intervention_work": 70,
+      "file_sha256": {
+        "calibration.json": "30240ab06862c14da542dfe2864e019daa4f8b024f384d60836363003463dd61",
+        "configuration.json": "513a18e8049e86311ac90207f72a316f48eb7ae22280a5176424281e32184c7b",
+        "controller.json": "1fef461a36c06460568f499d80df5c4702105983e9956d1b83e5769df8764bb0",
+        "feature-snapshot.json": "7d6989b1508cd4982a89faafe5c6af455f52fff69b428cf2466dfdbb5d446747",
+        "injector.json": "019715c29b37f45c3581c02965c209ef3276284c8d56cebbb1a33950cf9f09f7",
+        "monitor-samples.jsonl": "0157ba18a80bdb2cf945a4d553dec917b9bfb63526e33cc16edb791cd2e9abe1",
+        "service-events.jsonl": "f8430980497e2630739936882d146cb1adbbba62d6e635f7143c6e5b45dd6bed"
+      },
+      "monitor_samples": 55,
+      "observed_B_work_per_second": 77.72200804865021,
+      "trial_id": "holdout-070-early_burst"
+    },
+    {
+      "accepted_intervention_work": 40,
+      "file_sha256": {
+        "calibration.json": "56b86f8a7a74ae54798a7759f052603d7077418c0ce9449b92c78904396036d5",
+        "configuration.json": "4f3128e7a6c2d9fa0367ecf7da4dda5e12bfdf889ad23c74657606527420d3b5",
+        "controller.json": "4c010c31386de52469de08f6760fb8e9f71224782904ca929aa55339189cb54a",
+        "feature-snapshot.json": "04ee1c782c82faf32fa2b96faff772249c7d3353d34467e4f7d436dc39070e4f",
+        "injector.json": "7d566a6fb1df0afddaed8de663c82cb09a45b64d04775e392cf007ef2a33093e",
+        "monitor-samples.jsonl": "9fa5776c99795f97590ba1c24cba98f6e4ccf5eb4865b9493f6190b10f509c34",
+        "service-events.jsonl": "a86b4f6a1581a21367d34f002924cc54d33bb57fd85a20d8bb24675a7530895a"
+      },
+      "monitor_samples": 51,
+      "observed_B_work_per_second": 80.45333070433303,
+      "trial_id": "holdout-040-uniform"
+    },
+    {
+      "accepted_intervention_work": 100,
+      "file_sha256": {
+        "calibration.json": "6289f1e4275bb49de5da241269796417a14ec54ebb7b8e15325d82df9b57ba6a",
+        "configuration.json": "dd68e410b206b5a55f3b8216672a925332460b9d851daccff695d7a4284b7884",
+        "controller.json": "91ee66287b82a123b43f6f011a7267fb9f67d8311e9d387068308d7af5eea8ab",
+        "feature-snapshot.json": "3efee66ad2d2240805b912693edb1000a6c7c8569e8f3a257124c2c1f6143c34",
+        "injector.json": "1f30d5c7787b39c412f3dfb362846d4d1c9446dfbbeb803234a30170007fd689",
+        "monitor-samples.jsonl": "83ea6e77ae674d885621f276f52843e552af26898dcabaf859f04019dad039bb",
+        "service-events.jsonl": "a83123d84d9b6ba6e65e1133f71b165c03ff5bf09dd8c990e069138976ac2299"
+      },
+      "monitor_samples": 59,
+      "observed_B_work_per_second": 79.18841106745363,
+      "trial_id": "holdout-100-uniform"
+    },
+    {
+      "accepted_intervention_work": 70,
+      "file_sha256": {
+        "calibration.json": "5507b0e5a6335945be77f571824f3eb3a50ef636f74081c32a752bc573483b62",
+        "configuration.json": "e527622278adf16bccfe0612d5b3559a163a962a76348ef2eccec9463e5dbc43",
+        "controller.json": "841bbf1c9fd53e683a46fb8e54912cefb87ec800dde8e68d5f5fae47e22d600a",
+        "feature-snapshot.json": "ed54d9f44a30ae3eba8d0421ccda9d443f44a0378ce098787a32e321a36464ab",
+        "injector.json": "2f00eaa73cec878436c55a09721c45c13646857b3f1050e93ba2a3e1e9bc182d",
+        "monitor-samples.jsonl": "d56f5454bb296694be6bccf8a7b507fff2d9a32e81a8e15d3cf800fd0ef4a7ac",
+        "service-events.jsonl": "d50930139daacdebbf90d3234bfa54f908a68d06884e1b168fa392455873f092"
+      },
+      "monitor_samples": 56,
+      "observed_B_work_per_second": 79.22550006769225,
+      "trial_id": "holdout-070-uniform"
+    },
+    {
+      "accepted_intervention_work": 40,
+      "file_sha256": {
+        "calibration.json": "546659d6bd44c3e17aedb547394e9e649e4ee3fed3c6166692ead215194b8512",
+        "configuration.json": "24e9de788fe50eb8be7eaf8d594332a75927121018a34e1940ad1161fef26094",
+        "controller.json": "1015e783ba0384e3dee17f6bb6eb7712ccbf1dc1b6373bc6075729f0da623b6b",
+        "feature-snapshot.json": "b76437a77d1b89c91297af29a43c8bbe4306dbfe80b1fb5a9de5460eeb63df8a",
+        "injector.json": "8f41dd0ce503d3059be06d90dddfa0619480e49bebf51c1f8006cfa58c536f67",
+        "monitor-samples.jsonl": "0eac04e89f8b6089de30a9a10067d44f1ec610046163e5ff8dd088177c846b65",
+        "service-events.jsonl": "a71c0bd09bb62a06ae87d70621545bda02a9d64b28b74618bed44cb1246fe723"
+      },
+      "monitor_samples": 52,
+      "observed_B_work_per_second": 79.29167991702221,
+      "trial_id": "holdout-040-late_burst"
+    },
+    {
+      "accepted_intervention_work": 70,
+      "file_sha256": {
+        "calibration.json": "bd80a43ab338c676db7986733a600a707f070fe484b88a75311acaca74744214",
+        "configuration.json": "b41c5a28e22a11898eba8a68318190b83ea8dea59d46ecbecf3561055dfde7f9",
+        "controller.json": "ddda7c284aacda1496d3e1e164674691ffe49a6e40d07a17fc0a9ba607cf38dd",
+        "feature-snapshot.json": "4f49d0476e40f61ee1758d8851204a7a8ac9c61ee5c7ccacd9703bdea34ea036",
+        "injector.json": "b581b9e78a303c3c48c4d1513c8bec37d02c23c59e8dd745a1728713a1a90563",
+        "monitor-samples.jsonl": "53aaf32efeff95250e61bb0316495777f36d64828782519724beaa9a6fb009c3",
+        "service-events.jsonl": "45d9c42d856b1b5a9b021f770e34878c00f7c0c6075f14acb4ee8b3a0387aa0b"
+      },
+      "monitor_samples": 56,
+      "observed_B_work_per_second": 78.90225200953482,
+      "trial_id": "holdout-070-late_burst"
+    },
+    {
+      "accepted_intervention_work": 40,
+      "file_sha256": {
+        "calibration.json": "1597c9363a9a1cdc0107b46090d69e54990a3c85c8db376b872cc7438eb96d33",
+        "configuration.json": "df1374869507ced13088ea39b56f9ae4247e6936852ac7e0153b2cf6eb47c6e4",
+        "controller.json": "e42ff408b1b8f07d68acf73ee91ce1ee92c2a4221ae283a6f32a7ae0aa5efb52",
+        "feature-snapshot.json": "cf55f22ce81ec6e58c967fdc051134ad65592f7ff87db2658fabfa6a90e52e9a",
+        "injector.json": "4a809a1481d3b5907f4d91ffe51f8808d530a0ad46b483c9cde294275791ae59",
+        "monitor-samples.jsonl": "23f245a63ace2294b54305f5a145bcbe51ca32ce661cba461c8a01d5759b4b91",
+        "service-events.jsonl": "91cce9ae7dcf68eaaa15daffae85914f20954d4237fd261c17cacc8c77ff65ae"
+      },
+      "monitor_samples": 51,
+      "observed_B_work_per_second": 78.38922496831958,
+      "trial_id": "holdout-040-early_burst"
+    },
+    {
+      "accepted_intervention_work": 100,
+      "file_sha256": {
+        "calibration.json": "359de582d3dd42a251a01a8e8c146ef010d58b438573bd53b5ddbe3e145db3a8",
+        "configuration.json": "98766cedc96cba6f0df603619b863bd745ef10324d57b95dd7808f962a9060e8",
+        "controller.json": "e84a29271ae8389460d15d75a98c3b40c8ae525dcd6d1ef04086772a983a0557",
+        "feature-snapshot.json": "07b35860c4021f0f9ca3338de6ff3caef3bf6a6e56eada3de49a3aedc4ff5574",
+        "injector.json": "aca4f2923e3ec6850d1b3482c9062ca70195a3a23f1595485251edc45a6f339e",
+        "monitor-samples.jsonl": "ecd38a0476f1d4a3280dda60720530e3eb4fabbc9910edfe5b36b862a3a136b8",
+        "service-events.jsonl": "702c965b7991560733128f88ce98604120773d031eaeb40ed6aa6c189e286ec4"
+      },
+      "monitor_samples": 59,
+      "observed_B_work_per_second": 79.28716797629555,
+      "trial_id": "holdout-100-early_burst"
+    },
+    {
+      "accepted_intervention_work": 100,
+      "file_sha256": {
+        "calibration.json": "f7d2caabd835d98091f3a3bb26c564cbd40b53dfe629f7e62f7c3d90e6ea0ead",
+        "configuration.json": "69a229b62887385771e183ddbdbe1b306de07f0036fdfc75a70da3587661a6fa",
+        "controller.json": "bd5e4e7b50208ce3287a15b03fb431a6d190c452822d600a7d17146dcaa57757",
+        "feature-snapshot.json": "eeabd5f9295e681ce5b2e21880b0f2259953cbf51cd7f9185d815d575f9d1b3d",
+        "injector.json": "181ef8d09eb1c3467346b31027eba43cc24f84882d26d9f3d6f328c38a1f5bd5",
+        "monitor-samples.jsonl": "a3ff7c6b85d4f075c51e1f720d84f8bbc3a6481dc13fcb83d0a5b6d7c82700cc",
+        "service-events.jsonl": "292c026c517bd8684ec794aa50c994eb53e95c2d7ed52d5c6a140bcb0ba4a594"
+      },
+      "monitor_samples": 60,
+      "observed_B_work_per_second": 79.23636931602658,
+      "trial_id": "holdout-100-late_burst"
+    }
+  ],
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "predictive_scalar_C_test": "NOT_PERFORMED",
+  "preregistration_sha256": "1195d4fd2803d21a7015b3000681f351a6d3d80670fb2adc84a10c9901daf53a",
+  "protocol": "RP-E009-P01",
+  "runtime": "3.12.15",
+  "source_commit": "d940d39a7ac32d83fc6b638c056cad6982ec4a00",
+  "split": "holdout",
+  "trial_order": [
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-070-early_burst",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-040-uniform",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-100-uniform",
+      "work_units": 100
+    },
+    {
+      "arrival_mode": "uniform",
+      "trial_id": "holdout-070-uniform",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-040-late_burst",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-070-late_burst",
+      "work_units": 70
+    },
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-040-early_burst",
+      "work_units": 40
+    },
+    {
+      "arrival_mode": "early_burst",
+      "trial_id": "holdout-100-early_burst",
+      "work_units": 100
+    },
+    {
+      "arrival_mode": "late_burst",
+      "trial_id": "holdout-100-late_burst",
+      "work_units": 100
+    }
+  ],
+  "workflow_run_id": "40134924622"
+}

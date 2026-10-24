@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/rp-e005-p01.yml
       - experiments/rp_e005_cross_runner.py
+      - experiments/rp_e005_idle_oracle.py
       - experiments/rp_e005_replica.py
       - docs/preregistration/RP-E005-P01.md
   workflow_dispatch:

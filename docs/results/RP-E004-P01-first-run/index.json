@@ -1,0 +1,70 @@
+{
+  "causal_identification": "NOT_ESTABLISHED",
+  "cross_machine_replication": "NOT_PERFORMED",
+  "decision": "PROCEED_TO_SEPARATE_STUDY_DESIGN",
+  "git_sha": "3e65737b18f4fef88f7aa64b9a55e2dc32f06d55",
+  "monotonic_resolution_ns": 1,
+  "note": "Transcription of first hosted run. Raw role records are preserved below and their original SHA-256 hashes validated against the downloaded artifact before committing.",
+  "original_github_run_id": 40046739200,
+  "original_zip_sha256": "a665406a00d52ead8413c3e1ac34861f4dfb8f46010cd38cc76822d5d5232aec",
+  "os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "physical_law_test": "NOT_PERFORMED",
+  "positive_results": [
+    {
+      "B_work_units_per_second": 81.98480919867319,
+      "candidate_index_inverse_seconds": 3.821032869409988,
+      "I_work_units_per_second": 272.7736622281156,
+      "recovered": true,
+      "schema_verdict": "STRUCTURALLY_ADMISSIBLE",
+      "tau_seconds": 0.078659319,
+      "trial_id": "positive-01",
+      "Y_seconds": 0.340819506
+    },
+    {
+      "B_work_units_per_second": 81.9859851517262,
+      "candidate_index_inverse_seconds": 4.169116959390166,
+      "I_work_units_per_second": 270.79193140959524,
+      "recovered": true,
+      "schema_verdict": "STRUCTURALLY_ADMISSIBLE",
+      "tau_seconds": 0.072620598,
+      "trial_id": "positive-02",
+      "Y_seconds": 0.341000489
+    }
+  ],
+  "protocol": "RP-E004-P01",
+  "python": "3.12.15",
+  "registration_sha256": "9156028eaaa3dcdace8b7546f2612d8cab249b260318628dc8e196fb750d4c3b",
+  "scientific_claim": "INSTRUMENT_FEASIBILITY_ONLY",
+  "sham": {
+    "candidate_index_inverse_seconds": null,
+    "controller_action_ns": null,
+    "delivered_tasks": 0,
+    "schema_verdict": "SHAM_UNDEFINED_INDEX",
+    "trial_id": "sham-01"
+  },
+  "source_event_log_hashes": {
+    "positive-01": {
+      "calibration": "f937e2a802e5f383ffd3c7fc90989bb97644e666bbc88889805d058df9bc3c10",
+      "controller": "e14233504680b29bfa0330e7e6ddb4c6eb5a5a801220952be1739701b47580e4",
+      "injector": "bfcfef9479f3e6ca28f587d9cc5dec74912b741e578d56155e0587f85161bf36",
+      "monitor": "e14d83e417eb9d0bb0701846e4530d82bf89773afb1926905b8a75c562e55629"
+    },
+    "positive-02": {
+      "calibration": "aed80d1505492ff20e34dda8ce44442ce8ea27e30197fca6428605a49551060d",
+      "controller": "423dbae3a2b7ef2c6f876543fc7ddc694ddf45bb86d2a18e254c552c4133661c",
+      "injector": "e6e7018f8bc6e7d4fb71162a7c3a6895d5dbb259cb383ef7cd0a65473c3c0af4",
+      "monitor": "8af9949bb0f7b06d2324f216e8b7718b3ae96bfd269202ac9352c0ccc9f46cc8"
+    },
+    "sham-01": {
+      "calibration": "41695a81df4bca5025905782f3a2e118fb778591cb",
+      "controller": "b860d4d4b4af8f5bc7695f240a0637f2f9bad8a058c09c940cffc7b68506994e",
+      "injector": "8f6ebc044debf8ceb67a6f7e8a88bfb0ad67dcbfb204fa70eaef2f842e604ac7",
+      "monitor": "bfbeb8d1213165cf92d14932c11e469f861c0cb6ff1af2669201a0857bc57f0f"
+    }
+  },
+  "trial_order": [
+    "positive-01",
+    "sham-01",
+    "positive-02"
+  ]
+}

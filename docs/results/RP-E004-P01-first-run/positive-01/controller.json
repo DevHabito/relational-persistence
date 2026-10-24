@@ -1,0 +1,8 @@
+{
+  "action": "requested_worker_interval_6ms",
+  "action_ns": 48306062747,
+  "logger_id": "controller-2324",
+  "observed_queue_when_triggered": 10,
+  "pid": 2324,
+  "role": "controller"
+}

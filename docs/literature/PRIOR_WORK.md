@@ -35,3 +35,8 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 
 - Ross, J. V., Taimre, T., and Pollett, P. K. (2007), [Estimation for queues from queue length data](https://doi.org/10.1007/s11134-006-9009-2), Queueing Systems 55:131-138. Prior research on rates inferred from sampled queues. The new two-sample RP-E007 forecast is a much simpler engineering extrapolation and not a novel theory of queues.
 - Bhaskara, A., Gollapudi, S., Im, S., Kollias, K., and Munagala, K. (2025), [Online Distributed Queue Length Estimation](https://research.google/pubs/online-distributed-queue-length-estimation/), ACDA 2025. Contemporary work on monitored queue length; contextual rather than an equivalent experiment.
+
+## Established discrete-event verification context for RP-E008
+
+- [Improving performances of the emergency department using discrete event simulation, DEA and the MADM methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC6001262/), Section 4.3 (2018). Distinguishes verifying a simulator's behavior against its assumed model from validating the model against real-world behavior. RP-E008 verifies a second queue software model only; it does not provide that independent empirical validation.
+- [Reproducible analytical pipelines for healthcare discrete-event simulation: an open guide and worked examples](https://pmc.ncbi.nlm.nih.gov/articles/PMC13675625/) (2026), describes scenario and sensitivity analysis as standard reproducible simulation practice. No novelty in using a discrete-event simulation or a fixed sensitivity grid is claimed.

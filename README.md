@@ -122,6 +122,26 @@ For claims and precise verification scopes, consult the
 [formalization status](docs/formalization/STATUS.md) and
 [claim ledger](docs/CLAIM_LEDGER.md).
 
+## Exact equal-degree topology stress test (RP-F003-A01)
+
+The [RP-F003-A01 protocol](docs/preregistration/RP-F003-A01.md) was
+committed **before** computing a new graph contrast. Exhaustive, exact
+integer arithmetic examined all 32,768 labeled six-vertex simple graphs,
+including 26,704 connected graphs. Within the group with identical sorted
+degrees `(1,2,2,2,2,3)`, two connected graphs produced normalized
+20-step **squared-energy** residuals of about 0.01165 and 0.05373,
+a separation of 0.04208 against the predeclared threshold 0.01.
+
+[Results and limits](docs/results/RP-F003-A01.md) include the full
+degree-group distribution, exact rational values, independent trace
+checks and adversarial tests. A separate [Lean source](RelationalPersistence/DegreeMatchedWitness.lean)
+targets a **one-step** matched-degree witness; it is not a Lean proof
+of the exhaustive 20-step maximum. The distinction between these two
+validation scopes remains explicit.
+
+This is a conditional classical consensus counterexample, not
+observational validation of the proposed scalar index or any physical law.
+
 ## Scientific boundaries
 
 A classical theorem used here remains a classical theorem. A simulated signal remains simulated. A graph measured in the field does not turn hypothetical dynamics on that graph into empirical validation. A test of a special case is not a proof about nature.

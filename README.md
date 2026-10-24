@@ -301,11 +301,34 @@ software queue**, not proof that all versions of
 relational persistence or all physical theories are
 false. No new Lean theorem was claimed.
 
-## RP-E007: prospective temporal queue-state forecast
+## RP-E007 — Prospective temporal queue prediction passed its frozen benchmark
 
-RP-E006 gave a negative index-only prediction result. RP-E007 now prospectively tests whether the recent change in observed queue backlog improves an unfitted queueing forecast. The protocol was frozen in commit 150dd5f before new code or observations. A static backlog/(2B) model and a two-sample linear extrapolation/(2B) must be compared on nine *new* forward-held-out software interventions. Passing requires at least 10% lower mean absolute error; valid negative results and source failures have separately frozen labels.
+After the original negative RP-E006 index-only forecast, the
+[RP-E007-P01 protocol](docs/preregistration/RP-E007-P01.md)
+was frozen at commit `150dd5f` before acquiring **new**
+observations. The [first hosted execution #40129313787](https://github.com/DevHabito/relational-persistence/actions/runs/40129313787)
+completed **18 fresh diagnostic/training trials and nine
+sequential held-out trials**, with **216 original source
+files** passing byte integrity and independent recovery
+audits. The source and original verdict were automatically
+[archived at `dd718df`](https://github.com/DevHabito/relational-persistence/commit/dd718df15c62bc1b34172448240bdf004399d308).
 
-See [the registered RP-E007 protocol](docs/preregistration/RP-E007-P01.md), [the prospective report](docs/results/RP-E007-P01.md), and [the hosted pipeline](.github/workflows/rp-e007-p01.yml). This is classical queue estimation, not evidence of a new physical law. Existing RP-E006 held-out outcomes cannot be treated as new observations.
+**Registered outcome: `PASS_TREND_INCREMENT`.**
+An unfitted classical extrapolation of the latest two
+pre-injection-end queue observations yielded
+**13.617 ms held-out MAE**, compared with **23.227 ms**
+for an unfitted static queue/(2B) model. The improvement
+was **41.37%**, exceeding the preregistered 10% criterion.
+The training-only constant gave **73.351 ms** MAE
+as a secondary comparator.
+
+Read the [original scientific report](docs/results/RP-E007-P01.md)
+and [full first-run archive](docs/results/RP-E007-P01-first-run/).
+This is a **restricted software forecasting success of
+established temporal queue estimation**, not a new
+relational physics discovery, not proof of independence
+across physical systems, and not a reversal of RP-E006's
+negative `C=B/(I*tau)` forecast result.
 
 ## Naming and provenance
 

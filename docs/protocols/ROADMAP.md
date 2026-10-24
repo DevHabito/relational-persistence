@@ -41,8 +41,9 @@
 
 ### Measurement feasibility checkpoint: RP-E005-P01
 
-- Freeze an actual two-runner replay protocol before any new measurement.
-  Reuse immutable P02 instrumentation on each newly allocated runner VM.
+- Frozen two-runner replay protocol before new measurement at `20d9262`.
+  First hosted execution #40124159620 completed; 8/8 software trials
+  and 48/48 source files passed independent replay, archived at `d48d041`.
 - Independently replay all source logs, record cross-run measurement
   variation only descriptively, and archive every original trial,
   including runs stopped by preregistered gates.

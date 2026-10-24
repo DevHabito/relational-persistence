@@ -367,27 +367,36 @@ negative scalar result remains valid, and RP-E008's
 early-burst negative simulation subgroup must not be
 discarded.
 
-## RP-E010 — External third-party workload trace eligibility (no prediction yet)
+## RP-E010 — Independently collected HPC workload source verified
 
-After a positive RP-E009 executable software transfer, **the next
-evidence must come from independently collected operational traces**.
-The [frozen RP-E010-D01 protocol](docs/preregistration/RP-E010-D01.md)
-was registered on main at `0aa03d6` before any code or new trace
-inspection. It pins the public third-party HPC2N Seth
-cluster workload *mirror* to one complete Git commit
-and original Git blob hash, documents the upstream
-filtering/curation, and explicitly refuses to infer queue
-arrivals from NASA-iPSC-1993 (whose converted "submit" times
-were actually substituted start times).
+The [RP-E010-D01 protocol](docs/preregistration/RP-E010-D01.md)
+was registered at `0aa03d6` before external file
+inspection. The [original hosted source audit #40143917458](https://github.com/DevHabito/relational-persistence/actions/runs/40143917458)
+verified the pinned third-party HPC2N cleaned SWF
+mirror against its expected Git blob hash and
+source size. Two independently implemented parsers
+agreed on **202,871 workload records**, of which
+**201,992 are structurally eligible** for later
+observational study; original metadata and the
+source digest are [archived at `ecae2dd`](https://github.com/DevHabito/relational-persistence/commit/ecae2dd4541b0aab8f552e0191d3da32607e257b).
 
-The [source feasibility report](docs/results/RP-E010-D01.md)
-and [one-shot audit workflow](.github/workflows/rp-e010-d01.yml)
-check source bytes, SWF column meaning, original arrival/wait
-fields, duplicate job IDs, invalid/missing times and agreement
-between two independently written parsers. **No empirical
-forecast is asserted, no holdout result is inspected
-and no model is tuned.** A separate prediction protocol
-is required before any real-world predictive claim.
+**No empirical prediction has yet been run.**
+There are **no usable per-queue identifiers**
+in the cleaned mirror; it describes a parallel
+scheduler and cannot be treated as a single FIFO.
+Upstream data were cleaned and filtered, and
+the Git mirror has not been independently proven
+byte-identical to the original PWA gzip.
+The NASA iPSC/860 archive was excluded from
+queue-arrival work because its converted
+"submit" times are substituted starts, not
+observed arrivals.
+
+See [the source integrity report](docs/results/RP-E010-D01.md)
+and [original byte-hash audit metadata](docs/results/RP-E010-D01-first-run/).
+Any forecast on this trace needs a **separately frozen
+observational protocol**, causal feature cutoff and
+credible classical scheduling comparators.
 
 ## Naming and provenance
 

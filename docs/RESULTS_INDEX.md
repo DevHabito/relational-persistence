@@ -19,6 +19,6 @@
 
 | RP-E009-P01 | Separately executable TCP/asyncio queue with service-side event records, nine diagnostic and nine new held-out software interventions | **PASS_EXECUTABLE_TRANSFER**; nine heldout trials, 10.527 ms trend MAE vs 20.201 ms static MAE (47.89% gain); 18/18 cases and 126/126 raw logs audited, archived at `7cca290` | Actual hosted software timing on different queue implementation; no natural-world or physical-law validation |
 
-| RP-E010-D01 | Version-pinned third-party production HPC2N Seth SWF trace; two independent source/schema parsers | **FIRST SOURCE-ELIGIBILITY AUDIT PENDING** — NOT a predictive test | Real external workload provenance verification only; no natural recovery inference, Lean theorem or physical law |
+| RP-E010-D01 | Version-pinned third-party production HPC2N Seth SWF trace; two independent source/schema parsers | **DATASET_SCHEMA_VERIFIED** — 202,871 records, 201,992 eligible, SHA-256 verified; all queue IDs missing; NOT a predictive test | Real external workload provenance verification only; no natural recovery inference, Lean theorem or physical law |
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

@@ -1,0 +1,10 @@
+{
+  "end_ns": 48667328599,
+  "logger_id": "injector-2332",
+  "onset_ns": 48227403428,
+  "pid": 2332,
+  "requested_work_units": 120,
+  "role": "injector",
+  "sham": false,
+  "successfully_delivered_work_units": 120
+}

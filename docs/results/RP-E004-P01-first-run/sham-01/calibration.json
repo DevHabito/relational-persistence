@@ -1,0 +1,11 @@
+{
+  "completed_work_units": 41,
+  "end_ns": 50434537428,
+  "logger_id": "calibrator-2527",
+  "pid": 2527,
+  "queue_after": 72,
+  "queue_before": 113,
+  "role": "calibration",
+  "saturation_evidence": "positive-queue-at-both-sampled-boundaries",
+  "start_ns": 49934457316
+}

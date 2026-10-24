@@ -1,0 +1,11 @@
+{
+  "logged_injection_end_ns": 51998428154,
+  "logger_id": "monitor-2690",
+  "observation_end_ns": 52518439812,
+  "pid": 2690,
+  "probe_period_requested_ms": 25.0,
+  "recovered_at_ns": 52008321852,
+  "role": "monitor",
+  "samples": 40,
+  "sustained_window_ns": 500000000
+}

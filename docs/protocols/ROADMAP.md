@@ -89,6 +89,24 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - **First RP-E009 run #40134924622 PASSED** the frozen >=10% heldout MAE gate: trend 10.527 ms versus static 20.201 ms (47.89% lower), nine diagnostic plus nine new heldout cases and 126/126 raw role/event files independently replayed. Original source bytes and outcome archived at `7cca290` without replacement.
 - This is still hosted Python software, not independent industrial deployment, sensor validation or evidence of a physical persistence law.
 
+### RP-E010: first independent archival workload source
+
+- Move beyond author-built software: audit the third-party HPC2N Seth
+  operational trace, using the exact pinned Git mirror revision from
+  preregistration `0aa03d6`; do not mistake the mirror for a verified
+  bit-exact copy of the PWA original.
+- Before any predictive scoring, verify SWF source-byte identity,
+  original submit/wait/runtime fields, schema integrity,
+  duplicated IDs and missing or corrupted values with independent
+  parsers. Publish BLOCKED/REJECTED as legitimate source findings.
+- **Do not** use NASA-iPSC-1993 SWF as real submission times:
+  its original conversion substitutes start times because
+  actual submission is absent.
+- Only after E010-D01 proves a usable source should a fresh
+  E010 observational forecast preregistration define real
+  scheduler-specific states, causal cutoff, data partition,
+  endpoints, classical controls, confounding and negative gates.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

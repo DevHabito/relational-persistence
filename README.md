@@ -367,6 +367,28 @@ negative scalar result remains valid, and RP-E008's
 early-burst negative simulation subgroup must not be
 discarded.
 
+## RP-E010 — External third-party workload trace eligibility (no prediction yet)
+
+After a positive RP-E009 executable software transfer, **the next
+evidence must come from independently collected operational traces**.
+The [frozen RP-E010-D01 protocol](docs/preregistration/RP-E010-D01.md)
+was registered on main at `0aa03d6` before any code or new trace
+inspection. It pins the public third-party HPC2N Seth
+cluster workload *mirror* to one complete Git commit
+and original Git blob hash, documents the upstream
+filtering/curation, and explicitly refuses to infer queue
+arrivals from NASA-iPSC-1993 (whose converted "submit" times
+were actually substituted start times).
+
+The [source feasibility report](docs/results/RP-E010-D01.md)
+and [one-shot audit workflow](.github/workflows/rp-e010-d01.yml)
+check source bytes, SWF column meaning, original arrival/wait
+fields, duplicate job IDs, invalid/missing times and agreement
+between two independently written parsers. **No empirical
+forecast is asserted, no holdout result is inspected
+and no model is tuned.** A separate prediction protocol
+is required before any real-world predictive claim.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

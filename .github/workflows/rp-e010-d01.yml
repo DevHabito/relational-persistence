@@ -1,0 +1,105 @@
+name: RP-E010-D01 Locked Production Trace Eligibility Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e010-d01.yml
+      - experiments/rp_e010_source_audit.py
+      - tests/test_rp_e010_source_audit.py
+      - docs/preregistration/RP-E010-D01.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e010-d01-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  source_feasibility:
+    name: Retrieve pinned third-party bytes and verify provenance only
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the frozen research source
+        run: python -m pip install -e '.[dev]'
+      - name: Reject parser errors before reading third-party observations
+        run: python -m pytest -q tests/test_rp_e010_source_audit.py
+      - name: FIRST pinned mirror data-identity and schema audit — no predictions
+        run: |
+          python -m experiments.rp_e010_source_audit \
+            --output rp-e010-d01-observed/
+      - name: Temporarily retain fetched source with raw byte identity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e010-d01-original-source-and-metadata
+          path: rp-e010-d01-observed/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Permanently archive only first-run audit metadata including BLOCKED
+        if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          destination="docs/results/RP-E010-D01-first-run"
+          if test -e "$destination"; then
+            echo "Original first-run audit already exists. Never overwrite."
+            exit 0
+          fi
+          if ! test -f rp-e010-d01-observed/RP-E010-D01.json; then
+            echo "First run could not produce a trustworthy audit JSON." >&2
+            exit 1
+          fi
+          mkdir -p "$destination"
+          cp rp-e010-d01-observed/RP-E010-D01.json "$destination/audit.json"
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          root = Path('docs/results/RP-E010-D01-first-run')
+          audit = json.loads((root / 'audit.json').read_text())
+          digest = hashlib.sha256((root / 'audit.json').read_bytes()).hexdigest()
+          archive = {
+              'protocol': 'RP-E010-D01',
+              'original_source_commit': '${{ github.sha }}',
+              'original_workflow_run_id': '${{ github.run_id }}',
+              'frozen_decision': audit['decision'],
+              'archived_audit_sha256': digest,
+              'original_external_data_copied_to_git': False,
+              'original_bytes_in_temporary_actions_artifact_only': True,
+              'predictive_test': 'NOT_PERFORMED',
+          }
+          (root / 'archive-index.json').write_text(
+              json.dumps(archive, sort_keys=True, indent=2) + '\n'
+          )
+          PY
+          git add "$destination"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): preserve original RP-E010 source-eligibility verdict without predictions"
+          git push origin HEAD:main
+      - name: Require provenance and schema eligibility — NEVER a predictive verdict
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          file = Path('rp-e010-d01-observed/RP-E010-D01.json')
+          if not file.is_file():
+              raise SystemExit('SOURCE_ACCESS_BLOCKED: missing first-run audit')
+          report = json.loads(file.read_text())
+          print('ORIGINAL_RP_E010_D01_SOURCE_VERDICT', report['decision'])
+          if report['decision'] != 'DATASET_SCHEMA_VERIFIED':
+              raise SystemExit(report['decision'])
+          assert report['real_world_queue_predictive_test'] == 'NOT_PERFORMED'
+          PY

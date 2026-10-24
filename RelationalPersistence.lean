@@ -10,3 +10,4 @@ import RelationalPersistence.PathSlowEigenmode
 import RelationalPersistence.StarSharpNorm
 import RelationalPersistence.PathSharpSOS
 import RelationalPersistence.DegreeMatchedWitness
+import RelationalPersistence.ColoredNoiseMoments

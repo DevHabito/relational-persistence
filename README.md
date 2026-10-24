@@ -143,6 +143,28 @@ validation scopes remains explicit.
 This is a conditional classical consensus counterexample, not
 observational validation of the proposed scalar index or any physical law.
 
+## Exact temporal-correlation stress test (RP-F004-A01)
+
+The [RP-F004-A01 preregistration](docs/preregistration/RP-F004-A01.md)
+fixes a dimensionless AR(1) state recurrence driven by two symmetric
+binary Markov noise processes. Both have the **same one-time noise
+distribution**, variance 1/100, gain 1/2 and hypothetical scalar proxies
+`B=1, I=1/100, tau=1` (`C=100`). Only sign autocorrelation differs.
+
+The exact limiting output variances are **1/75** and **1/45**.
+Their difference **2/225** exceeds the frozen **1/200**
+threshold. A 4,096-history full-path exact rational oracle
+independently reproduces the 12-step moment recurrence.
+[Read the complete result, controls and limitations](docs/results/RP-F004-A01.md)
+or inspect the [rational archive](docs/results/RP-F004-A01.json).
+
+[Lean 4 source](RelationalPersistence/ColoredNoiseMoments.lean) contains
+fixed-point and uniqueness lemmas over rational moments. It does
+**not** formalize a probability space, a stationary stochastic process,
+or its limit theorem; verify its acceptance against CI before claiming
+formal proof. This is textbook colored-noise moment algebra and a
+conditional scalar-sufficiency counterexample, **not a new physical law**.
+
 ## Scientific boundaries
 
 A classical theorem used here remains a classical theorem. A simulated signal remains simulated. A graph measured in the field does not turn hypothetical dynamics on that graph into empirical validation. A test of a special case is not a proof about nature.

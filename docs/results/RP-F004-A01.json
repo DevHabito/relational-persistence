@@ -1,0 +1,55 @@
+{
+  "protocol": "RP-F004-A01",
+  "model": "x[t+1]=x[t]/2+eta[t]",
+  "dimensionless": true,
+  "initial_state": "0/1",
+  "scalar_inputs": {
+    "B": "1/1",
+    "I": "1/100",
+    "tau": "1/1",
+    "C": "100/1"
+  },
+  "noise_distribution": {
+    "+1/10": "1/2",
+    "-1/10": "1/2"
+  },
+  "primary_output": "stationary state variance",
+  "cases": [
+    {
+      "stay_probability": "1/2",
+      "lag_one_correlation": "0/1",
+      "noise_mean": "0/1",
+      "noise_variance": "1/100",
+      "paths_enumerated": 4096,
+      "path_total_weight": "1/1",
+      "variance_at_12": "1118481/83886080",
+      "path_oracle_variance_at_12": "1118481/83886080",
+      "cross_covariance_at_12": "0/1",
+      "variance_at_40": "16119010928195055662749/1208925819614629174706176",
+      "stationary_variance": "1/75",
+      "stationary_cross_covariance": "0/1",
+      "stationary_variance_approximation": 0.013333333333333334
+    },
+    {
+      "stay_probability": "3/4",
+      "lag_one_correlation": "1/2",
+      "noise_mean": "0/1",
+      "noise_variance": "1/100",
+      "paths_enumerated": 4096,
+      "path_total_weight": "1/1",
+      "variance_at_12": "9320667/419430400",
+      "path_oracle_variance_at_12": "9320667/419430400",
+      "cross_covariance_at_12": "1118481/167772160",
+      "variance_at_40": "134325091068292130522903/6044629098073145873530880",
+      "stationary_variance": "1/45",
+      "stationary_cross_covariance": "1/150",
+      "stationary_variance_approximation": 0.022222222222222223
+    }
+  ],
+  "stationary_variance_difference": "2/225",
+  "stationary_variance_difference_approximation": 0.008888888888888889,
+  "registered_threshold": "1/200",
+  "decision": "PASS_CORRELATION_MATTERS",
+  "source_kind": "exact mathematical Markov model; no observed trajectories",
+  "lean_scope": "rational moment fixed points and uniqueness only"
+}

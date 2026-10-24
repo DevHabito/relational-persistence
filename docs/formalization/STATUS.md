@@ -116,3 +116,22 @@ Track subsequent formal refinements at [RP-F001](https://github.com/DevHabito/re
   **It is not a theorem formalized in Lean 4.**
 - **No inferred physics:** neither the finite graph algebra nor successful
   CI demonstrates a fundamental stability law or a physical observable.
+
+## RP-F004: correlated-noise moment fixed points — submitted for Lean checking
+
+- **Preregistered model:** `docs/preregistration/RP-F004-A01.md`;
+  frozen before implementing F004 at `1ef43702931de3498d8cd9218563fa276b3dc3aa`.
+- **Proposed Lean scope:** `RelationalPersistence/ColoredNoiseMoments.lean`
+  checks two rational second-moment fixed points, proves uniqueness
+  **over rational moment pairs** for two specified correlation
+  parameters, and their exact variance separation `2/225`.
+- **Not formalized:** construction of the Markov noise process on a
+  probability space, conditional-expectation identity, convergence to
+  the stationary second moment, empirical measurements, PMFF bridges,
+  and any universal physical relationship.
+- **Formal verification status:** source submitted; **only a completed
+  successful pinned CI run can establish verified status**.
+- **Independent numerical-method check:** RP-F004's separate 4096-path
+  exact rational enumerator compares the twelve-step outcome with the
+  moment recurrence; this finite check is not a Lean proof of an
+  infinite-time limit.

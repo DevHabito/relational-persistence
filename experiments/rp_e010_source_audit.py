@@ -143,14 +143,15 @@ def parse_swf_primary(content: bytes) -> dict:
 
 
 def parse_swf_independent(content: bytes) -> dict:
-    """Independent tokenization and numeric parsing, same frozen counters.
+    """Independent field recognition AND counter algorithm.
 
-    This is a second parser oracle, not an independent scientific dataset.
+    This second oracle does not call the first parser's record
+    classifier. Shared output keys describe the frozen audit only.
     """
     text = content.decode("utf-8", errors="strict")
     result = empty_statistics()
-    seen: set[int] = set()
-    prior = None
+    discovered: set[int] = set()
+    previous_valid_submit = None
     for index, line in enumerate(re.split(r"\r\n|\r|\n", text), 1):
         tokens = re.findall(r"\S+", line)
         if not tokens:
@@ -164,19 +165,46 @@ def parse_swf_independent(content: bytes) -> dict:
             observed_record(result, index, "not 18 SWF columns")
             continue
         try:
-            job = int(tokens[0])
-            numbers = [Decimal(tokens[k]) for k in (1, 2, 3, 4)]
-            status, queue = int(tokens[10]), int(tokens[14])
-            if not all(x.is_finite() for x in numbers):
-                raise ValueError("nonfinite value")
-            if numbers[3] != numbers[3].to_integral_value():
+            job_id = int(tokens[0])
+            submit = Decimal(tokens[1])
+            wait = Decimal(tokens[2])
+            runtime = Decimal(tokens[3])
+            processors = Decimal(tokens[4])
+            status = int(tokens[10])
+            queue = int(tokens[14])
+            if not all(x.is_finite() for x in (
+                submit, wait, runtime, processors
+            )):
+                raise ValueError("nonfinite decimal field")
+            if processors != processors.to_integral_value():
                 raise ValueError("nonintegral processors")
-            row = (job, *numbers, status, queue)
         except (InvalidOperation, ValueError, OverflowError):
             result["invalid_numeric"] += 1
             observed_record(result, index, "invalid SWF numeric field")
             continue
-        prior = count_valid_row(result, seen, prior, row, index)
+
+        if job_id <= 0:
+            result["nonpositive_job_id"] += 1
+            observed_record(result, index, "nonpositive job id")
+        if job_id in discovered:
+            result["duplicate_job_ids"] += 1
+            observed_record(result, index, "duplicate job id")
+        discovered.add(job_id)
+        if submit.is_signed() and submit < 0:
+            result["missing_submit"] += 1
+        else:
+            if previous_valid_submit is not None and submit < previous_valid_submit:
+                result["unsorted_submit"] += 1
+                observed_record(result, index, "submit timestamp decreased")
+            previous_valid_submit = submit
+        result["missing_wait"] += int(wait < 0)
+        result["missing_runtime"] += int(runtime < 0)
+        result["missing_processors"] += int(processors <= 0)
+        result["missing_status"] += int(status < 0)
+        result["missing_queue"] += int(queue < 0)
+        if (job_id > 0 and submit >= 0 and wait >= 0
+                and runtime >= 0 and processors > 0 and status == 1):
+            result["eligible_completed"] += 1
     return result
 
 
@@ -203,6 +231,14 @@ def inspect_bytes(content: bytes) -> dict:
             and git_blob_sha1(content) == EXPECTED_BLOB
         ),
     }
+    if not identity["identity_verified"]:
+        # Refuse all interpretation when provenance does not match.
+        return {
+            **identity, "counters": None,
+            "independent_parser_agreement": None,
+            "independent_parser_counters": None,
+            "decision": "DATASET_SCHEMA_REJECTED",
+        }
     left = parse_swf_primary(content)
     right = parse_swf_independent(content)
     return {
@@ -210,7 +246,7 @@ def inspect_bytes(content: bytes) -> dict:
         "counters": left,
         "independent_parser_agreement": left == right,
         "independent_parser_counters": right,
-        "decision": classify(left, identity_verified=identity["identity_verified"])
+        "decision": classify(left, identity_verified=True)
         if left == right else "DATASET_SCHEMA_REJECTED",
     }
 

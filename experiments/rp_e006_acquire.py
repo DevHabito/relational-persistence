@@ -110,7 +110,7 @@ def control(port: int, onset_file: Path, report_file: Path, lag_ms: int) -> None
     })
 
 
-def audit_trial(folder: Path, spec: dict) -> dict:
+def audit_trial(folder: Path, spec: dict, *, preserve_snapshot: bool = True) -> dict:
     calibration = json.loads((folder / "calibration.json").read_text())
     injector = json.loads((folder / "injector.json").read_text())
     onset = json.loads((folder / "injector-onset.json").read_text())
@@ -179,7 +179,11 @@ def audit_trial(folder: Path, spec: dict) -> dict:
         "completed": last["completed"],
         "source": "last monitor observation at or before injector end",
     }
-    write_log(folder / "forecast-snapshot.json", feature_snapshot)
+    if preserve_snapshot:
+        write_log(folder / "forecast-snapshot.json", feature_snapshot)
+    else:
+        if json.loads((folder / "forecast-snapshot.json").read_text()) != feature_snapshot:
+            raise ValueError("Frozen pre-end feature snapshot contradicts original monitor")
     b = measured_calibration["calibrated_local_B"]
     i = injector["delivered"] * 1e9 / (end - start)
     tau = (applied - start) / 1e9

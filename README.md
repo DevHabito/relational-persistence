@@ -330,11 +330,11 @@ relational physics discovery, not proof of independence
 across physical systems, and not a reversal of RP-E006's
 negative `C=B/(I*tau)` forecast result.
 
-## RP-E008: prospectively registered in-silico transfer stress test
+## RP-E008: first independent simulation transfer passed, with a negative subgroup
 
 The [RP-E008-S01 preregistration](docs/preregistration/RP-E008-S01.md) was committed to main at `2ca6d8e` **before implementing or running the new simulation**. A separately written deterministic FCFS discrete-event simulator now tests the established RP-E007 two-sample queue trend forecast under three irregular arrival patterns and three job-duration variability classes. The frozen 72-case grid reserves 36 cases for evaluation and uses **two independent software event oracles** with integer timestamps and exact rational prediction errors. The primary threshold remains 10% lower held-out MAE than the static queue snapshot.
 
-[Pending first-run report](docs/results/RP-E008-S01.md). **This is mathematical software stress testing, not empirical transfer to another physical instrument or proof of new physics.** No new Lean theorem is asserted. The first simulation result must be archived unchanged, even if the forecast fails.
+**Registered first-run result: PASS_SIMULATED_TRANSFER.** The first [72-case original run #40131416314](https://github.com/DevHabito/relational-persistence/actions/runs/40131416314) yielded 36 held-out exact MAEs of **29.611 ms (static) versus 12.014 ms (trend)**, a **59.43%** aggregate reduction, above the frozen 10% criterion. Trend nevertheless lost in **16 of 36 individual heldout cases** and in the entire **early-burst arrival subgroup** (12.125 vs 5.000 ms MAE). The [original 74-file source archive](docs/results/RP-E008-S01-first-run/) was permanently committed at `8a2c11a`; see the [full scoped report](docs/results/RP-E008-S01.md). This is only mathematical software stress testing, not external physical replication or proof of new physics; it neither validates scalar C nor reverses RP-E006's negative conclusion.
 
 ## Naming and provenance
 

@@ -131,10 +131,10 @@ def test_missing_github_identity_cannot_be_assumed(tmp_path, monkeypatch):
 def test_service_double_control_and_nonidle_reset_are_rejected(tmp_path):
     async def check():
         state = MeasuredQueue(tmp_path / "scratch-event.jsonl")
+        response = await state.respond({"op": "enqueue"})
+        assert response["accepted"] is True
         with pytest.raises(ValueError, match="nonidle"):
-            await state.respond({"op": "reset"}) if (
-                await state.respond({"op": "enqueue"})
-            ) else None
+            await state.respond({"op": "reset")
     asyncio.run(check())
 
 
@@ -166,5 +166,5 @@ def test_disposable_fresh_executable_and_source_byte_audit(tmp_path):
 
 def test_bad_calibration_and_controller_source_never_trusted(tmp_path):
     """No fabricated positive report from incomplete evidence."""
-    with pytest.raises(OSError):
+    with pytest.raises(ValueError, match="Missing or altered"):
         replay_trial(tmp_path, {"trial_id": "missing"}, {})

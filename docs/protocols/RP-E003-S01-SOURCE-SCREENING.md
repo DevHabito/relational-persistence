@@ -68,6 +68,43 @@ the four-variable physical conjecture.** This is a genuine methodological
 stop, not a reason to silently substitute speed variance, detector
 count or interval spacing as missing variables.
 
+### RCAEval case-index field audit — explicit schema, not inspected outcomes
+
+The publisher's pinned [case-index documentation at
+afeacb11bcc94dadfd1c8f483ee4377b2b8b614e](https://huggingface.co/datasets/phamquiluan/RCAEval/commit/afeacb11bcc94dadfd1c8f483ee4377b2b8b614e)
+defines `cases.parquet` with 735 index rows and a fixed field set.
+The published index includes identifiers, root-cause labels,
+`fault`, `fault_description`, `repetition`, `inject_time`,
+`n_metrics`, `n_timesteps`, `time_start`, `time_end`,
+`duration_minutes`, `normal_timesteps`, `faulty_timesteps`,
+and log/trace availability counters.
+
+**These names do not encode the required observables:**
+
+- `inject_time` is the fault-injection timestamp, **not** a
+  separately observed controller-action timestamp. It cannot
+  establish `tau` by itself.
+- `duration_minutes` and `faulty_timesteps` describe the
+  recorded case duration/coverage, **not** an independently
+  monitored time of sustained recovery. They cannot establish `Y`.
+- `n_metrics` counts telemetry fields; it cannot calibrate
+  processing capacity `B`.
+- A fault category or description is not a calibrated, continuous,
+  externally observed disturbance rate/variance `I`.
+- Per-case traces and metrics may be useful for further
+  **field-level exploratory auditing**, but treating a trace
+  duration as actual controller response requires identifying
+  the action span and clock-correlation semantics first.
+
+This is a **schema-based nonidentifiability result** concerning
+the publisher's published *index*, not a blanket assertion that
+no future per-case instrumentation could contain a needed field.
+The Hugging Face dataset card currently labels the mirror
+`mit`; original artifact rights and linked software/data
+licenses should be reviewed before redistributing anything.
+No RCAEval fault outcomes were used here for model fitting,
+and no recovery targets were constructed.
+
 ## Typed measurement dictionary — mandatory fields
 
 An admissible study record must specify the following in explicit

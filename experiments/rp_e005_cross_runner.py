@@ -12,7 +12,8 @@ import json
 import random
 from pathlib import Path
 
-from experiments.rp_e004_p02 import SEED, TRIAL_NAMES, audit_trial, decide
+from experiments.rp_e004_p02 import SEED, TRIAL_NAMES, audit_trial, decide, read_jsonlines
+from experiments.rp_e005_idle_oracle import replay_idle_groups
 
 PROTOCOL = "RP-E005-P01"
 SLOTS = ("runner-a", "runner-b")
@@ -109,6 +110,13 @@ def audit_one(
         checked = audit_trial(folder, trial, p02_prereg_sha, resolution)
         if checked != recorded[trial]:
             raise ValueError(f"{slot}: independently recomputed trial differs: {trial}")
+        # A separate contiguous-run algorithm, not P02's original
+        # streaming recovery state machine, must reproduce every sample.
+        original_samples = read_jsonlines(folder / "monitor-samples.jsonl")
+        event_end = load_json(folder / "injector.json")["end_ns"]
+        alternate_recovery = replay_idle_groups(original_samples, event_end)
+        if alternate_recovery != checked["health_replay"]:
+            raise ValueError(f"{slot}: distinct recovery algorithms disagree: {trial}")
         audited[trial] = checked
 
     if decide(list(audited.values())) != "PASS_AUDITABLE_INSTRUMENTATION":

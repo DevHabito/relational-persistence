@@ -177,3 +177,89 @@ def test_empty_run_identity_is_rejected(tmp_path):
 def test_fixed_six_original_role_files_per_trial():
     assert len(SOURCE_FILES) == 6
     assert len(SLOTS) * 4 * len(SOURCE_FILES) == 48
+
+
+from experiments.rp_e004_p02 import read_jsonlines
+from experiments.rp_e005_idle_oracle import replay_idle_groups
+
+
+@pytest.mark.parametrize("trial", [
+    "positive-controlled-01", "positive-controlled-02",
+    "positive-disabled-01", "sham-01",
+])
+def test_separate_group_oracle_matches_first_run_original_samples(trial):
+    folder = HISTORICAL / trial
+    samples = read_jsonlines(folder / "monitor-samples.jsonl")
+    end = load_json(folder / "injector.json")["end_ns"]
+    alternate = replay_idle_groups(samples, end)
+    historical = load_json(HISTORICAL / "summary.json")
+    trial_record = next(x for x in historical["trials"] if x["trial_id"] == trial)
+    assert alternate == trial_record["health_replay"]
+
+
+def _synthetic_sample(t: int, q=0, active=0, completed=10) -> dict:
+    return {
+        "observed_ns": t,
+        "server_snapshot_ns": t - 100,
+        "queued": q,
+        "active": active,
+        "completed": completed,
+    }
+
+
+def test_group_oracle_recovers_first_confirmed_stable_idle_start():
+    end = 1_000_000_000
+    samples = [_synthetic_sample(end, q=5)] + [
+        _synthetic_sample(end + 25_000_000 * i)
+        for i in range(1, 23)
+    ]
+    oracle = replay_idle_groups(samples, end)
+    assert oracle["recovered_at_ns"] == end + 25_000_000
+    assert oracle["confirmed_at_ns"] == end + 525_000_000
+    assert oracle["sample_count"] == 23
+
+
+def test_group_oracle_restarts_idle_after_observed_busy_sample():
+    end = 1_000_000_000
+    samples = [
+        _synthetic_sample(end),
+        _synthetic_sample(end + 25_000_000, q=2),
+    ] + [
+        _synthetic_sample(end + (i + 2) * 25_000_000)
+        for i in range(22)
+    ]
+    result = replay_idle_groups(samples, end)
+    assert result["recovered_at_ns"] == end + 50_000_000
+    assert result["confirmed_at_ns"] == end + 550_000_000
+
+
+def test_group_oracle_does_not_invent_continuous_idle_between_samples():
+    end = 1_000_000_000
+    samples = [_synthetic_sample(end),
+               _synthetic_sample(end + 200_000_000)]
+    with pytest.raises(ValueError, match="Missing sample interval"):
+        replay_idle_groups(samples, end)
+
+
+def test_group_oracle_rejects_nonidle_after_confirmed_recovery():
+    end = 1_000_000_000
+    samples = [
+        _synthetic_sample(end + i * 25_000_000)
+        for i in range(22)
+    ]
+    samples.append(_synthetic_sample(end + 550_000_000, q=1))
+    with pytest.raises(ValueError, match="Busy sample"):
+        replay_idle_groups(samples, end)
+
+
+def test_group_oracle_rejects_backward_timestamps_and_invalid_values():
+    end = 1_000_000_000
+    with pytest.raises(ValueError, match="Backwards"):
+        replay_idle_groups(
+            [_synthetic_sample(end),
+             _synthetic_sample(end - 25_000_000)], end - 1,
+        )
+    with pytest.raises(ValueError, match="Invalid"):
+        replay_idle_groups(
+            [_synthetic_sample(end, active=True)], end,
+        )

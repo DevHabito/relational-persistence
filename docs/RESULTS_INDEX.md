@@ -15,5 +15,7 @@
 | RP-E006-P01 | Original 18-training + 9-heldout hosted FIFO software intervention study | **NO_REGISTERED_PREDICTIVE_GAIN**: index 68.19 ms MAE, finite backlog comparator 11.12 ms MAE; all 27 trials and 216 source files auditable | Original archived negative result `0fa7ad2`, fixed criterion set at `2aeabc6`, no physical-law confirmation or inferential population claim |
 | RP-E007-P01 | 18 diagnostic plus nine **new** held-out software queue interventions | **PASS_TREND_INCREMENT**: 13.617 ms trend MAE vs 23.227 ms static queue MAE; frozen 10% threshold surpassed (41.37% improvement) | First run #40129313787 and original 216 event/health traces archived at dd718df; classical queue forecast, not novel physics |
 
+| RP-E008-S01 | Independently implemented in-silico 72-case FCFS queue model with irregular arrivals and variable job durations | **FROZEN, FIRST SIMULATION NOT YET EXECUTED**; 36 heldout cases, 10% MAE improvement threshold | Two algorithmically separate event oracles, exact rational errors; neither external physical replication nor a new Lean theorem |
+
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

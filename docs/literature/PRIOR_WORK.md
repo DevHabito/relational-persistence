@@ -18,6 +18,9 @@ This is a starting bibliography, not a completed novelty review. Citations ident
 
 10. **Shin, J. S., Miyazaki, R. and Kim, D. (2023)**. ["Stability regions of discrete linear periodic systems with delayed feedback controls"](https://doi.org/10.1186/s13662-023-03781-5), *Advances in Continuous and Discrete Models* (2023), article 35. Prior work on delayed discrete feedback and stability regions. RP-F005's six-step special-case identity is classical finite-dimensional recurrence algebra, not claimed as original theory.
 
+11. **Little, J. D. C. (1961).** ["A Proof for the Queuing Formula: L = λW"](https://doi.org/10.1287/opre.9.3.383), *Operations Research* **9**(3), 383–387. The stationary average work-in-system relation is well-established. The RP-E006 finite observed-backlog/(postaction throughput) **heuristic is not Little's law**; it is a deliberately simple competing engineering approximation.
+12. **Scikit-learn developers**, [TimeSeriesSplit documentation](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.TimeSeriesSplit.html). Forward-ordered validation motivates separating training and future test labels. RP-E006 uses a single frozen, sequential two-job split rather than claiming statistical performance from a full time-series cross-validation study.
+
 ## Project history and primary records (no novelty inferred)
 
 1. **Romero, F. G. (2026).** *The Romero Law of Relational Stability (RZS): A Closed-Form Statement, Cross-Domain Operationalization, and Computational Verification.* Historical formulation. Retained for provenance, not adopted as a validated law. The archived document calculates the putative outcome from its input quotient, so its algebraic consistency check does not count as external physical confirmation.

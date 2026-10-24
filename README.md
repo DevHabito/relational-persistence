@@ -268,6 +268,31 @@ instrumentation** across two GitHub jobs. It **does not** establish
 independent physical hardware, a new Lean theorem, causal prediction
 by `B/(I*tau)`, or a universal physical law.
 
+## Prospective predictive held-out recovery benchmark (RP-E006-P01)
+
+The [RP-E006-P01 preregistration](docs/preregistration/RP-E006-P01.md)
+was committed as `2aeabc6` **before** the acquisition source
+and prediction code were created. A training-only 18-trial
+block precedes a separate 9-trial hosted VM held-out block,
+with three accepted queue loads and three preassigned
+reaction-delay levels. No RP-E005 records will be treated
+as training data.
+
+The candidate is an index-only OLS recovery predictor using
+`1/C=I*tau/B`, with actually observed `B`, `I`, and
+service-applied `tau`. It must achieve at least **10% less
+held-out mean absolute error than both** the training
+constant and the fixed FIFO backlog-throughput baseline.
+Otherwise the registered answer is **NO_REGISTERED_PREDICTIVE_GAIN**,
+if all measurements are valid. A failed instrument gate
+is a STOP, never a selected subset of trials.
+
+[Prospective report (no measurements yet)](docs/results/RP-E006-P01.md)
+and [the fixed experiment pipeline](.github/workflows/rp-e006-p01.yml)
+show the declared controls. Any future observation remains
+a restricted **hosted software** result, not a law of nature
+or independent physical replication.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

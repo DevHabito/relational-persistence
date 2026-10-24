@@ -16,6 +16,8 @@ This is a starting bibliography, not a completed novelty review. Citations ident
 8. **The Pennsylvania State University**, [STAT 510 Lesson 1: Time Series Basics](https://online.stat.psu.edu/stat510/Lesson01), time-series lecture materials on weak stationarity, white-noise assumptions and AR(1) variance. The independent-white-noise formula used as RP-F004's negative control is established textbook mathematics.
 9. **Arellano, M.**, [*Time Series*](https://www.cemfi.es/~arellano/Time-Series.pdf), lecture notes, CEMFI. Documents autocorrelation and stationarity of AR(1)-style sequences; general time-series background to RP-F004. The repository's binary Markov-input comparison is a separately specified toy example and is **not** claimed to originate this theory.
 
+10. **Shin, J. S., Miyazaki, R. and Kim, D. (2023)**. ["Stability regions of discrete linear periodic systems with delayed feedback controls"](https://doi.org/10.1186/s13662-023-03781-5), *Advances in Continuous and Discrete Models* (2023), article 35. Prior work on delayed discrete feedback and stability regions. RP-F005's six-step special-case identity is classical finite-dimensional recurrence algebra, not claimed as original theory.
+
 ## Project history and primary records (no novelty inferred)
 
 1. **Romero, F. G. (2026).** *The Romero Law of Relational Stability (RZS): A Closed-Form Statement, Cross-Domain Operationalization, and Computational Verification.* Historical formulation. Retained for provenance, not adopted as a validated law. The archived document calculates the putative outcome from its input quotient, so its algebraic consistency check does not count as external physical confirmation.

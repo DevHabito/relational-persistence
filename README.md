@@ -166,6 +166,31 @@ process, or its limit theorem. Python [CI #40120059073](https://github.com/DevHa
 passed 148 regression tests on both configured runtimes. This is textbook colored-noise moment algebra and a
 conditional scalar-sufficiency counterexample, **not a new physical law**.
 
+## Exact feedback-delay stress test (RP-F005-A01)
+
+The [preregistered RP-F005-A01 protocol](docs/preregistration/RP-F005-A01.md)
+fixes the scalar feedback recurrence `x[t+1]=x[t]-k*x[t-d]`
+at primary gain `k=1`, comparing actual feedback delays
+`d=0` and `d=1`. With `x[0]=x[-1]=1` as appropriate
+to each model, the six-step squared residual is exactly
+**0 versus 1**, exceeding the predeclared **1/2**
+contrast threshold. The delayed gain-one companion
+matrix obeys `A³=-Id` and `A⁶=Id`.
+
+The [exact report](docs/results/RP-F005-A01.md) and
+[complete rational path archive](docs/results/RP-F005-A01.json)
+include 25-step trajectories at two other prespecified gains,
+independent matrix-power and scalar-history oracles,
+and adversarial tests. [Lean source](RelationalPersistence/DelayedFeedback.lean)
+targets a **real six-step identity and finite contraction
+obstruction**; describe the new proof as verified only
+when pinned CI passes.
+
+**The feedback delays are different.** It would be false
+to call this a matched-latency test of `B/(I*tau)`.
+The result belongs to classical delayed linear control
+dynamics, not empirical validation or new physics.
+
 ## Scientific boundaries
 
 A classical theorem used here remains a classical theorem. A simulated signal remains simulated. A graph measured in the field does not turn hypothetical dynamics on that graph into empirical validation. A test of a special case is not a proof about nature.

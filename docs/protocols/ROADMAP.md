@@ -14,6 +14,21 @@
 - Study delay and noise correlation; compare models with matched degree sequences and alternative spectra.
 - Validate analytical derivations with independent implementations, interval bounds where appropriate, and limited Lean 4 formalization of clean lemmas.
 
+### Stage 1 progression — exact audits, not empirical validation
+
+- RP-F003 established, by exhaustive six-node integer computation, that
+  a fixed degree sequence does not determine the chosen twenty-step
+  disagreement observable. Its separate one-step rational witness
+  passed Lean 4 (not the exhaustive maximum).
+- RP-F004 registers an exact scalar AR(1) model with two binary Markov
+  noise sources. Their marginal distributions are identical but temporal
+  correlations differ. The planned exact moment and full-path
+  checks test a distinct missing parameter, with no field data.
+- Next structural concern: response delay cannot be represented merely
+  by a declared one-step `tau`; an actual delayed state equation,
+  stability boundaries, and noncircular measurement definitions
+  require separate registration and control experiments.
+
 ## Stage 2 — real-world performance measurements
 
 - Choose a public dataset with observed capacity/update rates, measured noise/uncertainty, response delays, and an independently observed failure/recovery target.

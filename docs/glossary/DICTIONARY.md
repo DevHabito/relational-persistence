@@ -54,6 +54,24 @@ in tests/test_measurement_gate.py. Its acceptance is not a physical
 measurement validation. See
 [RP-E003-S01 source screening](../protocols/RP-E003-S01-SOURCE-SCREENING.md).
 
+## RP-F004 temporal-correlation vocabulary
+
+All entries below describe **dimensionless mathematical model values**,
+not new real-world instrumentation.
+
+| Item | Symbol | Definition | Explicit limitation |
+|---|---|---|---|
+| Binary noise sign stay probability | `p` | `P(eta[t+1]=eta[t] | eta[t])` for a symmetric two-state Markov process | Only `1/2` and `3/4` are allowed by RP-F004 |
+| Lag-one noise correlation | `r` | `2p-1` | Not inferable from one-time variance |
+| Marginal noise variance | `s²` | `E[eta[t]²]=1/100` with equal ±1/10 marginal probabilities | Not injection rate or Shannon entropy |
+| State-noise cross-covariance | `c_t` | `E[x_t eta_t]` | Must not be dropped with colored noise |
+| Output second moment | `v_t` | `E[x_t²]`, equal to variance here because mean is zero | Not measured failure rate or survival probability |
+| Limiting output variance | `Y(p)` | `lim E[x_t²]`, conditional on stability of the declared recurrence | Not the RP-001 graph residual or RP-E004 recovery time |
+
+The same symbol `I` has different declared operational meanings
+across RP-001, RP-E004 and RP-F004. No cross-domain physical inference
+is allowed without a new measurement bridge.
+
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.

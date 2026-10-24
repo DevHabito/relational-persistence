@@ -53,6 +53,26 @@
   and must include meaningful independent variation of measured
   disturbance, actual response time and a classical queueing baseline.
 
+### Prospective forecast checkpoint: RP-E006-P01
+
+- Freeze the design and independent train/test temporal ordering
+  **before** acquiring any new results. Three intended loads,
+  three scheduled action delays, 18 training and nine
+  future held-out software trials; no historical RP-E005
+  labels enter the new model.
+- Use **actual service-applied** timestamps and pre-end queue
+  observations. Replay recovery from raw health samples,
+  with an independent second algorithm, before scoring.
+- Compare the fitted index-only prediction to a constant and
+  a classical finite backlog/throughput approximation,
+  requiring >=10% held-out MAE improvement against both.
+  Report NO_GAIN when measurements are valid but the
+  threshold is not met; preserve STOP for bad data.
+- This is a restricted hosted FIFO benchmark, not a claim
+  about unrelated physical systems. Subsequent study
+  should target truly independent environments and
+  adequate inferential power.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

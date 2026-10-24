@@ -1,0 +1,177 @@
+name: RP-E006-P01 Locked Forward-Held-Out Recovery Forecast
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e006-p01.yml
+      - experiments/rp_e006_acquire.py
+      - experiments/rp_e006_evaluate.py
+      - tests/test_rp_e006_forecast.py
+      - docs/preregistration/RP-E006-P01.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e006-p01-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  train:
+    name: Source-pinned training measurements
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen research source
+        run: python -m pip install -e '.[dev]'
+      - name: Regression gate before measuring
+        run: python -m pytest -q tests/test_rp_e006_forecast.py tests/test_rp_e005_original_archive.py
+      - name: Collect the preregistered 18 training trials only
+        run: |
+          python -m experiments.rp_e006_acquire \
+            --split train --output rp-e006-measured/train
+      - name: Preserve original train logs even if training fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e006-p01-train
+          path: rp-e006-measured/train/
+          retention-days: 90
+          if-no-files-found: warn
+
+  test:
+    name: Forward held-out test measurements
+    needs: [train]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      PYTHONHASHSEED: '0'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install frozen source without training data
+        run: python -m pip install -e '.[dev]'
+      - name: Collect only the preregistered nine future test trials
+        run: |
+          python -m experiments.rp_e006_acquire \
+            --split test --output rp-e006-measured/test
+      - name: Preserve original test logs even if holdout fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e006-p01-test
+          path: rp-e006-measured/test/
+          retention-days: 90
+          if-no-files-found: warn
+
+  evaluation:
+    name: Independent source replay, honest result and first-run archival
+    needs: [train, test]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install research dependencies for independent re-audit
+        run: python -m pip install -e '.[dev]'
+      - name: Download the first training and test bytes
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          pattern: rp-e006-p01-*
+          path: rp-e006-downloaded/
+          merge-multiple: false
+      - name: Recompute every original measurement and score the sealed holdout
+        run: |
+          python -m experiments.rp_e006_evaluate \
+            --input rp-e006-downloaded \
+            --output rp-e006-evaluation \
+            --run-id "${{ github.run_id }}" \
+            --source-sha "${{ github.sha }}"
+      - name: Preserve raw events and frozen score even if a STOP occurred
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e006-p01-original-evaluation
+          path: |
+            rp-e006-evaluation/
+            rp-e006-downloaded/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Immutable first-run Git archival, including negative results
+        if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          archive="docs/results/RP-E006-P01-first-run"
+          if test -e "$archive"; then
+            echo "An original first-run archive already exists: no replacement."
+            exit 0
+          fi
+          if ! test -f rp-e006-evaluation/RP-E006-P01.json; then
+            echo "Original evaluator output is missing: archival failed." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          if test -d rp-e006-downloaded; then
+            cp -a rp-e006-downloaded "$archive/raw"
+          fi
+          cp rp-e006-evaluation/RP-E006-P01.json "$archive/evaluation.json"
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json
+          root = Path('docs/results/RP-E006-P01-first-run')
+          observed = {
+              str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+              for p in sorted(root.rglob('*')) if p.is_file()
+          }
+          evaluation = json.loads((root / 'evaluation.json').read_text())
+          manifest = {
+              'archive_policy': 'original first run; source bytes retained including STOP',
+              'workflow_run_id': '${{ github.run_id }}',
+              'source_commit': '${{ github.sha }}',
+              'decision': evaluation['decision'],
+              'file_sha256': observed,
+              'predictive_scope': 'held-out single-host FIFO software benchmark only',
+              'physical_law_validation': 'NOT_PERFORMED',
+          }
+          (root / 'archive-index.json').write_text(
+              json.dumps(manifest, indent=2, sort_keys=True) + '\n')
+          print('ORIGINAL_SOURCE_ARCHIVE_FILES', len(observed))
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(research): preserve original RP-E006-P01 heldout forecast including failures"
+          git push origin HEAD:main
+      - name: Require valid data while keeping a negative forecast verdict
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('rp-e006-evaluation/RP-E006-P01.json')
+          if not p.exists():
+              raise SystemExit('STOP_INSTRUMENTATION: no preserved evaluator record')
+          verdict = json.loads(p.read_text())['decision']
+          print('FIRST_RP_E006_FORECAST_VERDICT', verdict)
+          if verdict.startswith('STOP_'):
+              raise SystemExit(verdict)
+          assert verdict in ('PASS_PREDICTIVE_GAIN', 'NO_REGISTERED_PREDICTIVE_GAIN')
+          PY

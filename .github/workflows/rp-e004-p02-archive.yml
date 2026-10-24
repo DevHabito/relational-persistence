@@ -1,0 +1,74 @@
+name: RP-E004-P02 One-Time Original Run Archive
+
+on:
+  push:
+    paths:
+      - .github/workflows/rp-e004-p02-archive.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  preserve-first-run:
+    if: github.ref == 'refs/heads/research/rp-e004-p02-full-trace'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download original first-run artifact, without rerunning trials
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p rp-e004-original
+          gh run download 40104534621 --name rp-e004-p02-first-fully-sampled-run --dir rp-e004-original
+      - name: Verify provenance and persist full event records
+        run: |
+          python - <<'PY'
+          import hashlib, json, shutil
+          from pathlib import Path
+          src = Path('rp-e004-original')
+          summary_path = src / 'summary.json'
+          summary = json.loads(summary_path.read_text())
+          assert summary['protocol'] == 'RP-E004-P02'
+          assert summary['git_sha'] == '48de8c3e56c2a9ac99331b226b925df8b4099ce9'
+          assert summary['decision'] == 'PASS_AUDITABLE_INSTRUMENTATION'
+          assert summary['physical_law_test'] == 'NOT_PERFORMED'
+          prereg = Path('docs/preregistration/RP-E004-P02.md')
+          assert hashlib.sha256(prereg.read_bytes()).hexdigest() == summary['preregistration_sha256']
+          assert len(summary['trials']) == 4
+          expected = set(summary['actual_order'])
+          assert expected == {'sham-01', 'positive-controlled-01', 'positive-controlled-02', 'positive-disabled-01'}
+          for trial in summary['trials']:
+              folder = src / trial['trial_id']
+              for role, expected_sha in trial['source_log_sha256'].items():
+                  filename = role+'.jsonl' if role in {'monitor-samples','service-actions'} else role+'.json'
+                  path = folder / filename
+                  assert path.is_file(), str(path)
+                  assert hashlib.sha256(path.read_bytes()).hexdigest() == expected_sha, str(path)
+          dst = Path('docs/results/RP-E004-P02-first-run')
+          if dst.exists():
+              raise RuntimeError('Original archive destination already present')
+          shutil.copytree(src, dst)
+          (dst / 'README.md').write_text(
+              '# RP-E004-P02: first observed software instrumentation run\\n\\n'
+              'Original first-run event records from GitHub Actions run '
+              '[#40104534621](https://github.com/DevHabito/relational-persistence/actions/runs/40104534621).\\n\\n'
+              'All timestamped monitor samples and service-side action logs are preserved, '
+              'with each role-file SHA-256 listed in \\x60summary.json\\x60. '
+              'Results concern one controlled software queue, not a new physical law.\\n',
+              encoding='utf-8')
+          print('Archived', len(list(dst.rglob('*'))), 'entries from the original first run')
+          PY
+      - name: Commit original bytes to this existing research branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/results/RP-E004-P02-first-run
+          git commit -m "archive: retain original P02 sampled event logs and SHA-256 metadata"
+          git push origin HEAD:research/rp-e004-p02-full-trace

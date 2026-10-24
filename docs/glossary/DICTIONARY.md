@@ -27,6 +27,33 @@ Terms must carry units, observation rules, assumptions and identifying limitatio
 
 For the earlier informal use, if `B` is updates/second, `I` dimensionless and `tau` seconds, `B/(I*tau)` has units `seconds^-2`. It is **not dimensionless** merely because of its quotient form. RP-001 fixes a discrete-time numerical convention; cross-domain comparisons need explicit reference scales `(B0,I0,tau0)` or a declared dimensional calibration factor.
 
+## RP-E003 prospective measurement vocabulary
+
+These are **candidate measurement conventions**, not new measurements or
+retroactive definitions of RP-001. The METR-LA benchmark did not
+identify them.
+
+| RP-E003 candidate term | Proposed instrument and units | What is insufficient |
+|---|---|---|
+| Calibrated capacity B | Saturated work completions per second in an independent pre-trial run | Sensor count, configured threads, fitted post-recovery throughput |
+| External disturbance intensity I | Injector-log excess work units per second, in the same work unit as B | Outcome standard deviation, a fault category, nominal requested rate |
+| Measured reaction latency tau | Seconds between an externally logged onset and an independently observed controller action | Sample cadence, nominal programmed delay, actual recovery duration |
+| Independently observed recovery Y | Sustained health criterion with right-censoring, evaluated after separately logged intervention end | Computing Y from B, I, tau or post hoc fault labels |
+| Clock domain | Common monotonic nanosecond clock, or separately certified synchronization | Subtracting uncorrected wall and monotonic timestamps |
+| Stream separation | Calibration, injector, controller and health-monitor data flows kept auditable | Four columns derived from a single outcome series |
+
+Under the RP-E003 illustrative convention, both B and I are rates
+(work/second), so B/(I*tau) has dimension inverse second. This differs
+from the RP-001 discrete-time variance-like convention: the two
+definitions must not be conflated. A dimensionless alternative requires
+an independently justified reference timescale and new preregistration.
+
+The structural source gate is implemented at
+src/relational_persistence/measurement_gate.py, with synthetic fixtures
+in tests/test_measurement_gate.py. Its acceptance is not a physical
+measurement validation. See
+[RP-E003-S01 source screening](../protocols/RP-E003-S01-SOURCE-SCREENING.md).
+
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.

@@ -151,7 +151,7 @@ def parse_swf_independent(content: bytes) -> dict:
     result = empty_statistics()
     seen: set[int] = set()
     prior = None
-    for index, line in enumerate(re.findall(r"[^\r\n]+", text), 1):
+    for index, line in enumerate(re.split(r"\r\n|\r|\n", text), 1):
         tokens = re.findall(r"\S+", line)
         if not tokens:
             continue

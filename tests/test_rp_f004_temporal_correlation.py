@@ -125,3 +125,16 @@ def test_calibration_is_not_an_observed_noise_measure():
     """The protocol fixes a dimensionless proxy; no data-driven fit occurs."""
     assert NOISE_VARIANCE == Fraction(1, 100)
     assert stationary_moments(Fraction(3, 4)).variance != NOISE_VARIANCE
+
+
+def test_committed_record_matches_recomputed_exact_output():
+    """Archived fractions are not hand-updated or independently refitted."""
+    import json
+    from pathlib import Path
+
+    archived_path = (
+        Path(__file__).resolve().parents[1]
+        / "docs" / "results" / "RP-F004-A01.json"
+    )
+    record = json.loads(archived_path.read_text(encoding="utf-8"))
+    assert record == evaluate()

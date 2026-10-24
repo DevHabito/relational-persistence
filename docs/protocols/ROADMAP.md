@@ -73,7 +73,7 @@
 
 ### Prospective incremental temporal-state audit: RP-E007-P01
 
-The prior RP-E006 holdout may not be used to adjust or validate a subsequent hypothesis as though it remained unseen. RP-E007 prospectively tests a two-sample temporal backlog prediction on new held-out data against the classical static queue baseline. The 10% MAE threshold, source replay and STOP gates were frozen in commit 150dd5f. This is an instrumental software-control study, not a proof of new physics. Any future proposed relational state model must demonstrate incremental utility beyond established queue and control alternatives.
+The prior RP-E006 holdout may not be used to adjust or validate a subsequent hypothesis as though it remained unseen. RP-E007 prospectively tests a two-sample temporal backlog prediction on new held-out data against the classical static queue baseline. The 10% MAE threshold, source replay and STOP gates were frozen in commit 150dd5f. The first hosted run #40129313787 produced **PASS_TREND_INCREMENT**: 13.617 ms trend MAE versus 23.227 ms static MAE on nine new held-out trials, archived unmodified at dd718df. This is a classical software queue forecasting result, not a proof of new physics. Any future proposed relational state model must demonstrate incremental utility beyond established queue and control alternatives.
 
 ## Stage 3 — relationship to RZS and PMFF
 

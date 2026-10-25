@@ -192,6 +192,22 @@ def test_synthetic_small_complete_holdout_records_all_results(monkeypatch, tmp_p
         p01.evaluate(jobs, folder, expected_holdout=2)
 
 
+def test_zero_heldout_queue_is_reported_as_zero_instead_of_hidden(monkeypatch, tmp_path):
+    monkeypatch.setattr(p01, "CUTOFF", D(1000))
+    jobs = [
+        job(1, 0, 10, "a"),
+        job(2, 50, 20, "b"),
+        job(3, 100, 30, "c"),
+        job(4, 1200, 0, "a"),
+        job(5, 1500, 40, "b"),
+    ]
+    report = p01.evaluate(jobs, tmp_path / "zero-heldout", expected_holdout=2)
+    queue_c = sha256(b"c").hexdigest()
+    assert len(report["heldout_by_queue_sha256"]) == 3
+    assert report["heldout_by_queue_sha256"][queue_c]["jobs"] == 0
+    assert report["heldout_by_queue_sha256"][queue_c]["mae_seconds"] is None
+
+
 def test_original_external_access_blocked_archived_as_stop(monkeypatch, tmp_path):
     def blocked():
         raise SourceBlocked("fixture original source blocked")

@@ -1,0 +1,100 @@
+name: RP-E011-D03 Pinned CERIT Source Anomaly Forensics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e011-d03.yml
+      - experiments/rp_e011_d03_anomaly.py
+      - tests/test_rp_e011_d03_anomaly.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e011-d03-first-run
+  cancel-in-progress: false
+
+jobs:
+  first_forensic_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONHASHSEED: "0"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Stop rather than overwrite an existing D03 first run
+        run: |
+          if test -e docs/results/RP-E011-D03-first-run; then
+            echo "Permanent D03 first run already exists; no retry may replace it."
+            exit 1
+          fi
+      - name: Install research test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Check synthetic adversarial scenarios before source access
+        run: python -m pytest -q tests/test_rp_e011_d03_anomaly.py
+      - name: Inspect exact publisher source once for registered D03 question
+        run: |
+          python -m experiments.rp_e011_d03_anomaly \
+            --output rp-e011-d03-original/
+      - name: Preserve first D03 metadata as temporary external artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e011-d03-first-source-only-audit
+          path: rp-e011-d03-original/RP-E011-D03.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Archive original first-run metadata on main even when unfavorable
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          audit="rp-e011-d03-original/RP-E011-D03.json"
+          destination="docs/results/RP-E011-D03-first-run"
+          if test -e "$destination"; then
+            echo "First-run archival destination already exists; refusing replacement."
+            exit 1
+          fi
+          if ! test -f "$audit"; then
+            echo "No first-run audit exists: cannot fabricate missing data." >&2
+            exit 1
+          fi
+          mkdir -p "$destination"
+          cp "$audit" "$destination/audit.json"
+          python - <<'PY'
+          from hashlib import sha256
+          import json
+          from pathlib import Path
+
+          folder = Path("docs/results/RP-E011-D03-first-run")
+          blob = (folder / "audit.json").read_bytes()
+          report = json.loads(blob)
+          identity = report.get("source_identity") or {}
+          index = {
+              "protocol": "RP-E011-D03",
+              "first_run_id": "${{ github.run_id }}",
+              "source_code_commit": "${{ github.sha }}",
+              "first_run_decision": report["decision"],
+              "audit_sha256": sha256(blob).hexdigest(),
+              "observed_source_sha256": identity.get("observed_sha256"),
+              "d02_first_verdict_unchanged": "DATASET_SCHEMA_REJECTED",
+              "third_party_bulk_rows_published": False,
+              "predictions_computed": False,
+          }
+          (folder / "archive-index.json").write_text(
+              json.dumps(index, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+          git add "$destination"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze first RP-E011-D03 source forensic outcome"
+          git push origin HEAD:main

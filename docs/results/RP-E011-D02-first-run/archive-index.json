@@ -1,0 +1,11 @@
+{
+  "first_observed_audit_sha256": "99be405c4e88dfd3646ea1812030eb7927b0a076de808f0257cd55d6e5db11f0",
+  "first_observed_verdict": "DATASET_SCHEMA_REJECTED",
+  "forecast_computed": false,
+  "original_external_data_copied_into_git": false,
+  "original_run_id": "40148759632",
+  "original_source_code_commit": "a281772ababd8b77415008bae6434e6efddedd70",
+  "protocol": "RP-E011-D02",
+  "source_bytes_prehash_registered": false,
+  "supersedes_RP_E011_D01": false
+}

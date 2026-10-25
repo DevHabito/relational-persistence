@@ -1,0 +1,44 @@
+{
+  "decision": "DATASET_SCHEMA_REJECTED",
+  "errors": [],
+  "execution_environment": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "first_run_id": "40148759632",
+  "first_source_commit": "a281772ababd8b77415008bae6434e6efddedd70",
+  "original_download_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+  "original_publisher_page": "https://jsspp.org/workload/index.php?page=cerit",
+  "physical_generalization_claimed": false,
+  "protocol": "RP-E011-D02",
+  "retrospective_forecast_evaluated": false,
+  "scalar_C_law_tested": false,
+  "schema": {
+    "all_rows_from_independently_collected_operational_trace": true,
+    "counts": {
+      "data_rows": 472400,
+      "eligible_with_documented_extended_queue_name": 472399,
+      "invalid_job_id": 1,
+      "prefix_oracle_valid_shlex": 472400,
+      "prefix_oracle_valid_whitespace": 472400,
+      "standard_eligible_rows": 472399,
+      "valid_numeric_prefix_rows": 472400
+    },
+    "distinct_documented_extended_queue_names_on_eligible_jobs": 13,
+    "first_10_source_structure_problems": [],
+    "header_comment_preview": [],
+    "independent_standard_prefix_readers_agree": true,
+    "parsed_record_widths": {
+      "22": 472400
+    },
+    "queue_wait_predictions_computed": false,
+    "source_immutable_prior_to_first_retrieval": false,
+    "source_provenance": "original JSSPP CERIT-SC 2017 grid-jobs extended SWF"
+  },
+  "source": {
+    "content_type": "application/x-shockwave-flash",
+    "final_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+    "original_bytes": 59430886,
+    "requested_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+    "sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+    "status": 200
+  },
+  "source_unmodified": true
+}

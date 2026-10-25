@@ -27,4 +27,6 @@
 
 | RP-E011-D02 | Original JSSPP 2017 CERIT-SC extended SWF (source documents additional node/queue/request information), separately preregistered after D01 blocked | **DATASET_SCHEMA_REJECTED**: first #40148759632 downloaded 472,400 SWF jobs, 472,399 structurally eligible and 13 genuine queues but one invalid job ID violated the frozen zero-invalid gate; archived `b9b0f02` | Distinct independent data candidate, not a D01 substitution or any waiting-time predictive result |
 
+| RP-E011-D03 | Byte-identical original JSSPP 2017 CERIT-SC extended SWF; separately registered known-anomaly ID audit | **ANOMALY_LOCALIZED**: original first run #40181814358 matched SHA-256, 472,400 records and 13 queues; both independent ID tokenizers localized sole nonpositive **job ID 0 on physical line 1**; original D02 rejection unchanged, archived `056fe32` | First-run source forensics only; neither a post-hoc D02 pass nor waiting-time prediction, Lean theorem or physical law |
+
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

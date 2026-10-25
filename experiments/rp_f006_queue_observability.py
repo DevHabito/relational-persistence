@@ -129,7 +129,7 @@ def replay_registered_dispatch(world: World) -> dict:
         actual_completion = actual_start + job.service
         if actual_start != job.start or actual_completion != job.end:
             raise ValueError("Independent FCFS dispatch replay disagrees with witness")
-        emitted.append((job.name, str(actual_start), str(actual_completion)))
+        emitted.append([job.name, str(actual_start), str(actual_completion)])
         server_available = actual_completion
     return {
         "independent_dispatch_replay_agrees": True,

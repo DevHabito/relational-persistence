@@ -234,7 +234,7 @@ def test_existing_original_run_never_overwritten(tmp_path):
 def test_no_leakage_through_future_scheduler_fields_in_schema():
     # D01 can count these columns' presence, never score a wait predictor.
     record = row("1")
-    record["EXIT_CODE"] = "0"
+    record["END_TIMESTAMP"] = "2022-08-09 09:20:00"
     report = structural_audit(csv_fixture([record]))
     assert report["missing_and_invalid_counts"].get("wait_mae", 0) == 0
     assert report["independent_csv_readers_agree"] is True

@@ -208,9 +208,10 @@ def feature_at_origin(origin: Decimal, events: RecordedEvents,
     if b <= 0:
         raise ValueError("Invalid historical start-rate denominator")
     correction = max(0, last_binary + (last_binary - old_binary))
+    # Calculate count/rate directly, avoiding a second rounding of B.
     preds = {
-        "static": Decimal(last_binary) / b,
-        "trend": Decimal(correction) / b,
+        "static": Decimal(last_binary) * START_WINDOW_SECONDS / Decimal(count),
+        "trend": Decimal(correction) * START_WINDOW_SECONDS / Decimal(count),
         "history": historical_wait_sum / Decimal(count),
     }
     if any(not value.is_finite() or value < 0 for value in preds.values()):

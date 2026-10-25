@@ -121,7 +121,7 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 ### RP-E011-D02 — separately registered primary-source candidate after D01 blocked
 
 - Freeze new candidate JSSPP 2017 CERIT-SC grid jobs original extended SWF at `e3a2d21`; this is **not** another D01 attempt or a change to the D01 outcome.
-- Audit the original direct academic publisher source for byte SHA, valid 18-field SWF records, actual extended queue labels and at least two distinct queues. Preserve blocked or schema-negative findings as final D02 source evidence.
+- **Original D02 run #40148759632 was DATASET_SCHEMA_REJECTED**: 59,430,886 bytes downloaded with verified source SHA, 472,400 valid numeric SWF prefixes and 13 actual extended queue names, but precisely ONE invalid job ID violated the preregistered zero-invalid requirement. Full original source summary archived at `b9b0f02`. No source gate may be retroactively passed by relaxing to `<=1` errors.
 - No waiting-time forecasting, recovery experiment or Lean theorem is claimed by a source eligibility study. A separate predictive protocol is required after passing source availability.
 
 ## Stage 3 — relationship to RZS and PMFF

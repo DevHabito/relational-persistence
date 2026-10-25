@@ -144,6 +144,14 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - **Strong concentration:** 149,760 and 18,880 of 169,189 heldout jobs belonged to just two queues (~99.68%); seven other original queues had zero heldout jobs. Do not claim independent performance across 13 queue policies. The medium requested-size subgroup was mildly favorable versus static, but the full frozen result is negative.
 - Next work should be an independent research question or external source/year, not refitting on this original holdout and calling a second evaluation blind. Preserve both E010 and E011 external negative findings and clarify their distinct targets and source types. Do not interpret their software-engineering indicators as a physical `C=B/(I*tau)` test.
 
+### RP-F006-A01 — finite pre-origin identifiability obstruction (SYNTHETIC ONLY)
+
+- Protocol frozen at `3670d7d` before any RP-F006 simulator implementation or Lean proof. Use known negative external forecasting evidence only for motivation, not for tuning synthetic contrast or reframing prior heldout.
+- Original first synthetic run #40205665104 was `FINITE_NONIDENTIFIABILITY_VERIFIED`: the SAME entire pre-origin event history, two queue snapshots, resource requests, running service age and history-start indicators are compatible with observed target waits **1 and 100 s** in distinct FCFS-compatible worlds. All registered controls, exact rational oracles and dispatch replays passed.
+- Exact sharp bound from existing triangle inequality: any deterministic predictor using only the common observed input has max two-world absolute error >=**99/2**; midpoint prediction **101/2** attains equality. Lean 4 CI `40205365501`, reviewed PR #45 merged `406e923`, original synthetic report frozen `caab6ad`.
+- State limits accurately: earlier work is NOT asserted to have globally work-conserving immediate dispatch (the original H/R waits are 1 second); no empirical HPC scheduler or probabilistic population inference; no newly discovered theorem; no universal physical law and no scalar C test.
+- **Next distinct question:** identify causally *measurable before submission* scheduler capacity, actual running occupation, elapsed times, requested resource/walltimes, policy reservations and priority. Only then justify new empirical evaluations on a truly independent source/year. Do not recycle the seen 169,189-task CERIT-SC holdout as untouched.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

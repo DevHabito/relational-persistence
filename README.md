@@ -467,11 +467,27 @@ and remains immutable in [original source records](docs/results/RP-E011-D02-firs
 
 The negative source decision must **not be
 relabeled PASS** because the other 472,399
-jobs look usable. A separate documented
-source-only anomaly investigation could
-clarify the sole invalid ID. No new
-forecast or physical stability result
-was computed from either source.
+jobs look usable. A separately registered
+[RP-E011-D03 source-only investigation](docs/preregistration/RP-E011-D03.md)
+was frozen at `2df3d83` *after* the D02
+aggregate result but *before* new row-level
+inspection. The **first D03 run #40181814358**
+reproduced the exact original file SHA-256 and
+independently localized the only nonpositive
+ID: **job number 0 on physical line 1 / data
+record 1**. The source remained 472,400 rows,
+472,399 eligible under D02 conditions, 13
+documented queue names, and no duplicate IDs.
+The diagnostic result is **ANOMALY_LOCALIZED**;
+the first D02 result remains **DATASET_SCHEMA_REJECTED**.
+
+The [first D03 forensic audit](docs/results/RP-E011-D03.md)
+and immutable [first-run metadata](docs/results/RP-E011-D03-first-run/)
+were archived at `056fe32`. The SWF standard
+says job numbering starts at 1; the reason this
+publisher file starts with ID 0 is **not known**.
+Neither D03 nor D02 computed any queue-wait
+prediction or new physical stability result.
 
 Read the [complete D02 negative source report](docs/results/RP-E011-D02.md).
 The **RP-E010-P01 predictive failure** remains

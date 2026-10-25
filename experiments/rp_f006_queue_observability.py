@@ -181,8 +181,12 @@ def causal_observation(world: World) -> dict:
     if world.named("R").start >= ORIGIN or world.named("R").end <= ORIGIN:
         raise ValueError("R must be currently running in both worlds")
     return {
-        "all_pre_origin_events": visible_event_history(world),
-        "all_public_requests": public_requests(world),
+        "all_pre_origin_events": [
+            list(event) for event in visible_event_history(world)
+        ],
+        "all_public_requests": [
+            list(request) for request in public_requests(world)
+        ],
         "target_submission_s": str(ORIGIN),
         "running_job_start_s": str(world.named("R").start),
         "running_job_age_s": str(ORIGIN - world.named("R").start),

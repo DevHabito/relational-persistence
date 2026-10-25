@@ -1,0 +1,95 @@
+name: RP-E012-D01 First Official Borg v3 Schema Evidence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e012-d01.yml
+      - experiments/rp_e012_d01_schema.py
+      - tests/test_rp_e012_d01_schema.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e012-d01-first-official-schema
+  cancel-in-progress: false
+
+jobs:
+  first_official_schema_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refuse any attempt to replace original schema findings
+        run: |
+          if test -e docs/results/RP-E012-D01-first-run; then
+            echo "Already archived original first schema audit. No replacement."
+            exit 1
+          fi
+      - name: Install frozen developer tests
+        run: python -m pip install -e '.[dev]'
+      - name: Pass synthetic-only adversarial suite BEFORE official byte downloads
+        run: python -m pytest -q tests/test_rp_e012_d01_schema.py
+      - name: Fetch only two official pinned publisher schema/doc files
+        run: |
+          python -m experiments.rp_e012_d01_schema \
+            --output rp-e012-d01-original/audit.json
+      - name: Preserve original first-run metadata temporarily
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e012-d01-first-publisher-schema-metadata
+          path: rp-e012-d01-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit immutable metadata even on blocked/negative decision
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="rp-e012-d01-original/audit.json"
+          archive="docs/results/RP-E012-D01-first-run"
+          if test -e "$archive"; then
+            echo "Refusing to replace first E012-D01 schema evidence."
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo "No original report; cannot invent observations." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          cp "$src" "$archive/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          folder=Path("docs/results/RP-E012-D01-first-run")
+          b=(folder/"audit.json").read_bytes()
+          original=json.loads(b)
+          index={
+            "protocol":"RP-E012-D01",
+            "first_run_id":"${{ github.run_id }}",
+            "first_code_commit":"${{ github.sha }}",
+            "first_original_decision":original["decision"],
+            "first_original_report_sha256":sha256(b).hexdigest(),
+            "preregistration_commit":"a024612b596f1f9d2d16219437b09b80f920d52f",
+            "raw_production_rows_examined":0,
+            "no_external_holdout_forecast_computed":True,
+            "real_runtime_cap_enforcement_verified":False,
+          }
+          (folder/"archive-index.json").write_text(
+            json.dumps(index,sort_keys=True,indent=2)+"\n",
+            encoding="utf-8"
+          )
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze original RP-E012-D01 Borg schema decision"
+          git push origin HEAD:main

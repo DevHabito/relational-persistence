@@ -1,0 +1,174 @@
+{
+  "broad_family": {
+    "admissible_wait_max_seconds": 470,
+    "admissible_wait_min_seconds": 1,
+    "admissible_world_count": 470,
+    "independent_analytic_error_bound_s": "469/2",
+    "independent_fcfs_dispatch_replay_for_every_world": true,
+    "minimax_midpoint_prediction_s": "471/2",
+    "public_hard_cap_enforced": true,
+    "public_hard_cap_seconds": 500,
+    "public_observation": {
+      "all_pre_origin_events": [
+        [
+          "-201",
+          "submit",
+          "H"
+        ],
+        [
+          "-200",
+          "start",
+          "H"
+        ],
+        [
+          "-190",
+          "end",
+          "H"
+        ],
+        [
+          "-31",
+          "submit",
+          "R"
+        ],
+        [
+          "-30",
+          "start",
+          "R"
+        ]
+      ],
+      "all_public_requests": [
+        [
+          "H",
+          "500",
+          1,
+          "synthetic-single-queue"
+        ],
+        [
+          "R",
+          "500",
+          1,
+          "synthetic-single-queue"
+        ],
+        [
+          "T",
+          "500",
+          1,
+          "synthetic-single-queue"
+        ]
+      ],
+      "historical_start_rate_per_s": "1/3540",
+      "historical_wait_median_s": "1",
+      "known_running_age_s": "30",
+      "past_started_count": 1,
+      "q_minus_120": 0,
+      "q_minus_60": 0,
+      "q_pre_target": 0,
+      "running_job_age_s": "30",
+      "running_job_observed_busy": true,
+      "running_job_start_s": "-30",
+      "running_walltime_limit_is_enforced": true,
+      "source": "synthetic deterministic FCFS-compatible three-job schedule",
+      "target_submission_s": "0"
+    },
+    "public_observations_identical_in_family": true,
+    "running_elapsed_seconds_at_origin": 30,
+    "sharp_minimax_worst_case_error_s": "469/2",
+    "three_queue_state_oracles_for_every_world": true,
+    "zero_prediction_worst_case_error_s": "470"
+  },
+  "decision": "BOUNDED_STATE_MINIMAX_VERIFIED",
+  "frozen_preregistration_commit": "93d5dc4f2c99b663bfede40d515c2dc37bc14e14",
+  "minimax_error_decrease_s": "205",
+  "narrow_family": {
+    "admissible_wait_max_seconds": 60,
+    "admissible_wait_min_seconds": 1,
+    "admissible_world_count": 60,
+    "independent_analytic_error_bound_s": "59/2",
+    "independent_fcfs_dispatch_replay_for_every_world": true,
+    "minimax_midpoint_prediction_s": "61/2",
+    "public_hard_cap_enforced": true,
+    "public_hard_cap_seconds": 90,
+    "public_observation": {
+      "all_pre_origin_events": [
+        [
+          "-201",
+          "submit",
+          "H"
+        ],
+        [
+          "-200",
+          "start",
+          "H"
+        ],
+        [
+          "-190",
+          "end",
+          "H"
+        ],
+        [
+          "-31",
+          "submit",
+          "R"
+        ],
+        [
+          "-30",
+          "start",
+          "R"
+        ]
+      ],
+      "all_public_requests": [
+        [
+          "H",
+          "500",
+          1,
+          "synthetic-single-queue"
+        ],
+        [
+          "R",
+          "90",
+          1,
+          "synthetic-single-queue"
+        ],
+        [
+          "T",
+          "500",
+          1,
+          "synthetic-single-queue"
+        ]
+      ],
+      "historical_start_rate_per_s": "1/3540",
+      "historical_wait_median_s": "1",
+      "known_running_age_s": "30",
+      "past_started_count": 1,
+      "q_minus_120": 0,
+      "q_minus_60": 0,
+      "q_pre_target": 0,
+      "running_job_age_s": "30",
+      "running_job_observed_busy": true,
+      "running_job_start_s": "-30",
+      "running_walltime_limit_is_enforced": true,
+      "source": "synthetic deterministic FCFS-compatible three-job schedule",
+      "target_submission_s": "0"
+    },
+    "public_observations_identical_in_family": true,
+    "running_elapsed_seconds_at_origin": 30,
+    "sharp_minimax_worst_case_error_s": "59/2",
+    "three_queue_state_oracles_for_every_world": true,
+    "zero_prediction_worst_case_error_s": "60"
+  },
+  "narrow_over_broad_minimax_error_ratio": "59/469",
+  "no_external_prediction_data_used": true,
+  "no_original_rp_e010_or_rp_e011_result_changed": true,
+  "novel_queuing_theorem_claimed": false,
+  "physical_law_or_scalar_C_claimed": false,
+  "protocol": "RP-F007-A01",
+  "public_cap_change_means_public_observation_changes": true,
+  "registered_controls": {
+    "advertised_only_500_not_a_guarantee": true,
+    "changed_dispatch_rejected": true,
+    "future_running_completion_oracle_is_not_public": true,
+    "hard_cap_overrun_rejected": true,
+    "unregistered_future_arrival_rejected": true
+  },
+  "source": "SYNTHETIC_ONLY"
+}

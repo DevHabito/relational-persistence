@@ -1,0 +1,11 @@
+{
+  "existing_first_runs_modified": false,
+  "external_dataset_downloaded": false,
+  "first_code_commit": "4023bb11aab25174524aaa80da6319f6bf9ff171",
+  "first_run_id": "40229910510",
+  "new_physical_law_claimed": false,
+  "original_decision": "BOUNDED_STATE_MINIMAX_VERIFIED",
+  "original_report_sha256": "113b641c150fd604a94451460ec65a4616809efc49919fe99313b4d1a66fff54",
+  "preregistration_commit": "93d5dc4f2c99b663bfede40d515c2dc37bc14e14",
+  "protocol": "RP-F007-A01"
+}

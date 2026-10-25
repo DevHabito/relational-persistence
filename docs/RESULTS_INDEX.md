@@ -23,4 +23,6 @@
 
 | RP-E010-P01 | Frozen external HPC2N wait-to-start target; reconstructed aggregate waiting-job proxy compared against static and historical wait controls, chronological holdout | **NO_REGISTERED_OBSERVATIONAL_GAIN**: 49,995 heldout, trend 234,691.80 s MAE vs static 227,534.07 s and historical mean 123,965.25 s; original run #40145857634 archived at `f8560cf` | Observational source is upstream-cleaned and multi-resource; not queue-ID-specific, a randomized intervention, a new Lean theorem or a physical law |
 
+| RP-E011-D01 | Official ALCF Polaris Aug-Dec 2022 job export (catalog describes queue names, requests, submission/start and distinct waits), frozen source-access gate | **PENDING FIRST OFFICIAL SOURCE AUDIT**; exact 27,825,794-byte CSV, independent readers and queue coverage required; no forecast | Official provider portal lacks preregistered checksum and may block raw access; not yet validated data, physical law or prediction |
+
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

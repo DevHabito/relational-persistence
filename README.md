@@ -439,6 +439,37 @@ retune a method using this already-seen holdout.
 No universal relational persistence physical law
 or empirical validity of `C=B/(I*tau)` is claimed.
 
+## RP-E011 — Official independent Polaris scheduler data source audit
+
+After the registered **negative RP-E010-P01** observational result,
+the [RP-E011-D01 protocol](docs/preregistration/RP-E011-D01.md)
+was frozen at `0529649` **before any new source retrieval or
+forecast development**. The source chosen is the **official
+Argonne Leadership Computing Facility 2022 Polaris job CSV**,
+rather than another upstream-cleaned PWA mirror.
+
+Its published [data dictionary](https://reports.alcf.anl.gov/data/datadictionary/datadictionary_dim_job_composite.html)
+describes actual `QUEUE_NAME`, `QUEUED_TIMESTAMP`,
+`START_TIMESTAMP`, `NODES_REQUESTED` and **both**
+`QUEUED_WAIT_SECONDS` and `ELIGIBLE_WAIT_SECONDS`.
+These are distinct: one includes queue ineligibility/holds;
+the other excludes them. File-level presence and quality
+must still be verified directly, and the official
+resource is **not** an immutable upstream snapshot.
+
+The [source-only D01 audit](docs/results/RP-E011-D01.md)
+requires verified official download provenance, the
+catalog-specified 27,825,794-byte original CSV,
+two agreeing CSV readers, at least 1,000 eligible
+timestamp/resource records and at least two observed
+queues. An unavailable direct download is reported
+**SOURCE_ACCESS_BLOCKED** without source substitution.
+
+**This is not a new prediction test.** RP-E010-P01's
+failed historical forecast remains a published
+counterexample; a separate prospective RP-E011-P01
+protocol is required before scoring any Polaris data.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

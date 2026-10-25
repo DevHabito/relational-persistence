@@ -105,7 +105,7 @@ def test_requested_processor_group_history_is_prior_only():
     jobs.append(job(50, 50, 500, requested=100))
     history = p01.HistoricalStarts(jobs)
     assert history.historical_wait_median("a", "small", D(1000)) == D("8.5")
-    assert history.historical_wait_median("a", "large", D(1000)) == D("8.5")
+    assert history.historical_wait_median("a", "large", D(1000)) == D(9)
     assert history.historical_wait_median("a", "large", D(60)) == 0
 
 

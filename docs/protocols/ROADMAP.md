@@ -124,6 +124,13 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - **Original D02 run #40148759632 was DATASET_SCHEMA_REJECTED**: 59,430,886 bytes downloaded with verified source SHA, 472,400 valid numeric SWF prefixes and 13 actual extended queue names, but precisely ONE invalid job ID violated the preregistered zero-invalid requirement. Full original source summary archived at `b9b0f02`. No source gate may be retroactively passed by relaxing to `<=1` errors.
 - No waiting-time forecasting, recovery experiment or Lean theorem is claimed by a source eligibility study. A separate predictive protocol is required after passing source availability.
 
+### RP-E011-D03 — separately frozen original-source anomaly localization
+
+- D03 was registered at `2df3d83` **after** D02's original source-rejection summary but **before** D03 implementation or per-row investigation. It is **known-anomaly forensics**, not independent confirmation of eligibility.
+- First official source run #40181814358 **ANOMALY_LOCALIZED** the lone nonpositive ID: **integer 0 in the first physical line and first data row**. Two independent ID readers agreed on all 472,400 records. Exact source size/SHA and D02 schema counts matched. Original D03 metadata archived without replacement at `056fe32`.
+- The original D02 `DATASET_SCHEMA_REJECTED` and original E010 negative 49,995-job forecast remain unchanged. Do not claim that knowing the first-line location proves a publisher fault or that dropping it retroactively validates D02.
+- Before any new queue-aware observational forecast, separately define the prospective job population and disclosure for an initial ID 0, train/holdout chronology, prerecord available queue/processor state, and strong historical per-queue baselines. Do not use any new outcomes to choose inclusion or thresholds.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

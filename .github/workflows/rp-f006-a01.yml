@@ -1,0 +1,94 @@
+name: RP-F006-A01 Original Synthetic Identifiability Certificate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-f006-a01.yml
+      - experiments/rp_f006_queue_observability.py
+      - tests/test_rp_f006_queue_observability.py
+      - RelationalPersistence/QueueObservability.lean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-f006-a01-first-source
+  cancel-in-progress: false
+
+jobs:
+  first_synthetic_witness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refuse reclassification or overwrite of original witness
+        run: |
+          if test -e docs/results/RP-F006-A01-first-run; then
+            echo "Original RP-F006 audit already exists; refusing a rerun as first."
+            exit 1
+          fi
+      - name: Install fixed test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Adversarial rational and independently counted events
+        run: python -m pytest -q tests/test_rp_f006_queue_observability.py
+      - name: Obtain deterministic first synthetic certificate
+        run: |
+          python -m experiments.rp_f006_queue_observability \
+            --output rp-f006-original/RP-F006-A01.json
+      - name: Preserve original first-run synthetic report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-f006-a01-first-synthetic-certificate
+          path: rp-f006-original/RP-F006-A01.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Archive first synthetic report bytes and digest even if invalid
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          source="rp-f006-original/RP-F006-A01.json"
+          archive="docs/results/RP-F006-A01-first-run"
+          if test -e "$archive"; then
+            echo "Original RP-F006 result exists; no overwriting."
+            exit 1
+          fi
+          if ! test -f "$source"; then
+            echo "No first-run executable output; never invent a certificate." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          cp "$source" "$archive/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          root=Path("docs/results/RP-F006-A01-first-run")
+          data=(root/"audit.json").read_bytes()
+          report=json.loads(data)
+          index={
+              "protocol":"RP-F006-A01",
+              "first_run_id":"${{ github.run_id }}",
+              "first_code_commit":"${{ github.sha }}",
+              "first_verdict":report["decision"],
+              "first_report_sha256":sha256(data).hexdigest(),
+              "original_external_data_used":False,
+              "existing_empirical_results_modified":False,
+              "new_physical_law_claimed":False,
+          }
+          (root/"archive-index.json").write_text(
+              json.dumps(index,sort_keys=True,indent=2)+"\n",encoding="utf-8"
+          )
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze first RP-F006 synthetic witness verdict"
+          git push origin HEAD:main

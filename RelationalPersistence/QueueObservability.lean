@@ -95,9 +95,7 @@ theorem queue_no_perfect_observation_only_predictor
       max
         |predict shortQueueWorld.observed - queueTargetWait shortQueueWorld|
         |predict longQueueWorld.observed - queueTargetWait longQueueWorld| := by
-  change (99 / 2 : ℝ) ≤
-    max |predict sharedQueueObservation - 1|
-        |predict sharedQueueObservation - 100|
-  exact queue_two_world_minimax_lower_bound (predict sharedQueueObservation)
+  simpa [shortQueueWorld, longQueueWorld, queueTargetWait] using
+    (queue_two_world_minimax_lower_bound (predict sharedQueueObservation))
 
 end RelationalPersistence

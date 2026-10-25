@@ -108,7 +108,7 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 
 - The source-only D01 gate passed on a version-pinned third-party mirror; that did **not** compute or validate forecasts. No per-queue identifiers were present and upstream filtering must remain disclosed.
 - The [P01 protocol](../preregistration/RP-E010-P01.md) was frozen at `dfec155` **before** any predictive computations. It defines one aggregate reconstructed waiting proxy, two independent time-count oracles, a fixed 70%-of-time cutoff and three unfitted classical forecasts.
-- A valid P01 PASS requires >=10% unweighted heldout MAE improvement against **both** static start-rate backlog and historical mean wait; preserve failed observational transfer honestly as NO_GAIN and bad source/timing as STOP. No retrospective trimming or tuning.
+- The original, complete **RP-E010-P01 result was NO_REGISTERED_OBSERVATIONAL_GAIN** on run #40145857634, archived at `f8560cf`: 49,995 chronological heldout task waits, trend MAE 234,691.80 s versus static 227,534.07 s and historical mean wait 123,965.25 s. All source and double event-counter gates were valid. The trend failed to beat **either** classical comparator and was worse than static in all three registered processor groups. No retrospective trimming, split edits or coefficient tuning.
 - The P01 target is *historical submission-to-start waiting time*, **not** the service-recovery target from RP-E007/009 and cannot be described as the same endpoint. It is not a new physical law.
 
 ## Stage 3 — relationship to RZS and PMFF

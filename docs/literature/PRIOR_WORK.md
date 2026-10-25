@@ -60,6 +60,13 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## RP-E012 Google Borg original v3 schema and causal feature limitations
+
+- John Wilkes and collaborators, [official Google 2019 cluster usage trace](https://github.com/google/cluster-data/blob/master/ClusterData2019.md) and [v3 protobuf schema](https://github.com/google/cluster-data/blob/master/clusterdata_trace_format_v3.proto). Published Google cluster management/Borg traces predate RP-E012, and all event names, priority/resource fields and missing-event flags belong to the provider, not our theory.
+- John Wilkes et al., [*Google cluster-usage traces v3*](https://drive.google.com/file/d/10r6cnJ5cJ89fPWCgj7j4LtLBqYN9RiI9/view), updated 2020: SCHEDULE placement need not imply process execution at that exact instant; some transitions are repaired/synthesized; instance usage is aggregated over typically five-minute measurement windows and may contain missingness. Delayed publication and reconstructed events are potential information-leakage hazards when retrospectively designing causal predictors.
+- Nan Deng, [official 2020 trace update](https://groups.google.com/g/googleclusterdata-discuss/c/WuRDhbI8YzA): JSON/GCS access was subsequently introduced, despite an older project README's BigQuery-only statement. Neither announcement implies the E012 source acquired any production events.
+- RP-E012-D01's original source audit, preregistration `a024612`, first source run #40234431456 and permanent `e68202a`, establishes ONLY schema-name presence, verified original provider bytes and lack of an explicit duration-cap field under a prespecified name set. It does **not** establish absence of a private scheduling policy, actual job-level data completeness, temporal release latencies, enforced hard runtime limits, improved historical predictions or physical relation C.
+
 ## RP-F007 enforced upper bounds on remaining service — prior theory and model scope
 
 - Ward Whitt (1999), [*Predicting Queueing Delays*](https://doi.org/10.1287/mnsc.45.6.870), *Management Science* 45(6):870–888, studied prediction with additional elapsed-service information and conditional remaining-service distributions. That predates RP-F007 and its synthetic finite midpoint minimax result.

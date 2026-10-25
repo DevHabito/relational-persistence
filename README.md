@@ -648,6 +648,56 @@ See the [full F007 report](docs/results/RP-F007-A01.md).
 No universal physical relational persistence law
 or scalar `C=B/(I*tau)` was verified.
 
+## RP-E012-D01 — Verified independent Borg event schema, unverified runtime cap
+
+A NEW, separate original-source
+[RP-E012-D01 preregistration](docs/preregistration/RP-E012-D01.md)
+was frozen on main at `a024612` *before automated
+original byte retrieval and schema audit code*.
+It explicitly disclosed that Google Borg v3
+public documentation had already been inspected.
+
+An original Google
+[`cluster-data` 2019 schema](https://github.com/google/cluster-data)
+was retrieved from exact publisher commit `48b1244`,
+with both Git blob SHA identities verified
+**before parsing** and two independent parsers
+in agreement. The first official
+[schema-only run #40234431456](https://github.com/DevHabito/relational-persistence/actions/runs/40234431456)
+returned
+`SCHEMA_EVENT_METADATA_PRESENT_RUNTIME_CAP_UNVERIFIED`
+and was archived unchanged at `e68202a`.
+
+The publisher's protobuf schema describes timestamped
+submissions, scheduling events, resource requests,
+priorities, machine capacity, missing-event flags,
+and time-windowed utilization. These are potential
+inputs to a FUTURE strictly causal feature
+reconstruction, **not verified raw row coverage**.
+Specifically, `SCHEDULE` is machine placement,
+not guaranteed execution start, and a usage
+window's aggregate cannot enter the past
+before its end timestamp.
+
+The original schema contains no exact documented
+runtime-duration cap field under the predeclared
+name checks. It DOES contain
+`InstanceUsage.assigned_memory`, but a
+memory constraint is not an **enforced wallclock
+duration** limit. No evidence of real runtime
+cap enforcement was obtained. Absence from
+these particular fields does **not** establish
+absence of internal policies.
+
+**No raw production event rows were accessed;
+no forecasting error or new Lean theorem was
+computed.** RP-F007's **synthetic enforced-cap
+guarantee cannot yet be transported** to the
+Borg corpus. Read the
+[complete E012 schema report](docs/results/RP-E012-D01.md).
+Both original E010/E011 negative forecasting
+outcomes remain untouched.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

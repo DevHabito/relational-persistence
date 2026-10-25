@@ -160,6 +160,14 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - Negative advertised-only control: an actual 501-second runtime under requested walltime 500 violates a true bound. Real schedulers' effective limits and possible overrides must be verified before using such a bound. The earlier RP-F006 nonidentifiability theorem still applies: knowing an upper bound does not reveal the exact future residual.
 - **Next practical stop gate:** source/time-stamped configuration and whether assigned limits are enforceable at submission, plus historically recorded running age, requests, current occupancy, missing/censored jobs and scheduling policy. A new source/year and fully preregistered temporal design are required before another independent heldout predictive claim. Keep E010 and E011 negatives unchanged.
 
+### RP-E012-D01 — original external Borg v3 causal-schema feasibility (SOURCE ONLY)
+
+- NEW independent provider Google `google/cluster-data` pinned to publisher commit `48b1244`. Public schema was consulted **before** registration; protocol `a024612` explicitly discloses informed triage rather than blind field discovery.
+- Original first official two-file Git-blob-verified run #40234431456 was **SCHEMA_EVENT_METADATA_PRESENT_RUNTIME_CAP_UNVERIFIED**, archived `e68202a`: two parsers concurred on timestamped events, requests, priorities, machine capacity, missing-event flags and window utilization schema.
+- Not yet observed: a provider-enforced **wallclock execution-duration cap** or reliable before-origin row availability. `assigned_memory` is a MEMORY bound. `SCHEDULE` is placement rather than guaranteed actual process start. A usage measurement window closing after origin cannot enter that origin's causal feature set; reconstructed/missing events cannot be treated as exact historical transitions.
+- No original Google production trace rows were read, no BigQuery spend was incurred, no new forecast or Lean theorem was attempted, and no RP-F007 practical validation was claimed. E010/E011 original external forecast negatives remain final.
+- **Next gate:** preregister a minimal provider-authentic raw-event subset (exact machine/cell/time provenance and a zero/low-cost access plan), inspect missingness/synthetic-event prevalence and timestamp alignment WITHOUT scoring any predictor. Stop and archive if source access or historical feature releases cannot be established. Full hard-cap transfer needs a different verified field/provider or independently verified policy-level enforcement records.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

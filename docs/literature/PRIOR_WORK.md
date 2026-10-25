@@ -60,6 +60,14 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## RP-F006 prior queue-state identifiability and residual work — established, NOT novel
+
+- Ward Whitt (1999), [*Predicting Queueing Delays*](https://doi.org/10.1287/mnsc.45.6.870), *Management Science* 45(6):870–888. Queue length and service-class observations alone do not generally encode remaining work: additional information about elapsed services and conditional residual-service distributions improves queue delay inference.
+- [*Queueing Systems* lecture notes](https://iadan.win.tue.nl/queueing.pdf), chapter on residual service time and Pollaczek–Khinchin relations. Even a single-server waiting-time calculation depends on residual workload, not solely a sampled number of waiting jobs.
+- HPC @ LLNL, [*Batch System Primer*](https://hpc.llnl.gov/banks-jobs/running-jobs/batch-system-primer). FCFS versus backfilling and service availability are established operational scheduling choices; an exact finite one-server witness is NOT a model of all real HPC scheduling policies.
+- RP-F006-A01's real-valued sharp 99/2 lower bound is **ordinary triangle inequality** conditional on a specifically frozen two-world observation, not an original general queue theorem. The registered model does NOT assert the scheduler is globally work conserving during the two recorded 1-second idle dispatch delays; it proves a separate finite FCFS-compatible existence witness.
+- The registered original external negatives RP-E010-P01 and RP-E011-P01 cannot be retroactively explained causally by RP-F006's SYNTHETIC example. Scheduler data may require residual service, active resource use, priority and policy information not identified by the earlier proxy; that is motivation for NEW source validation only.
+
 ## Existing queue waiting-time prediction methods (not project discoveries)
 
 - P. Murali and S. Vadhiyar (2016), [Qespera: an adaptive framework for prediction of queue waiting times in supercomputer systems](https://doi.org/10.1002/cpe.3735), *Concurrency and Computation: Practice and Experience*. Queue-specific historical prediction and adaptive scheduling are well established.

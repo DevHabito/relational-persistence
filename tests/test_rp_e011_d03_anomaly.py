@@ -135,6 +135,16 @@ def test_mismatched_eligible_count_never_pretends_profile_verified(monkeypatch):
     assert result["diagnostic"]["d02_standard_eligible_rows"] == 1
 
 
+def test_missing_queue_names_never_count_as_complete_source_profile(monkeypatch):
+    # Eligible count and distinct queue count alone cannot establish coverage.
+    raw = fixture(row(1, "short"), row(0, "long"), row(3, "?"))
+    pin_fixture(monkeypatch, raw, eligible=2, queues=1)
+    result = study.audit_bytes(raw)
+    assert result["diagnostic"]["d02_standard_eligible_rows"] == 2
+    assert result["diagnostic"]["d02_extended_queue_count"] == 1
+    assert result["decision"] == "PARSER_DISAGREEMENT"
+
+
 def test_first_source_archives_access_block_instead_of_retry(monkeypatch, tmp_path):
     def blocked():
         raise SourceBlocked("fixture simulated official source blocked")

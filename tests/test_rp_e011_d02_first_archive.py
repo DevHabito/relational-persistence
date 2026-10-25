@@ -32,8 +32,9 @@ def test_original_first_run_sha_identity_and_frozen_negative_gate():
     assert source["first_source_commit"] == index["original_source_code_commit"] == FIRST_CODE
     assert source["first_run_id"] == index["original_run_id"] == FIRST_RUN
     assert sha256((ARCHIVE / "audit.json").read_bytes()).hexdigest() == (
-        index["first_observed_audit_sha256"] == FIRST_REPORT_SHA
+        index["first_observed_audit_sha256"]
     )
+    assert index["first_observed_audit_sha256"] == FIRST_REPORT_SHA
     assert index["supersedes_RP_E011_D01"] is False
 
 

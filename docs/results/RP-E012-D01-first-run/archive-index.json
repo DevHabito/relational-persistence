@@ -1,0 +1,11 @@
+{
+  "first_code_commit": "25147643481b0ec1f740655254dbcc0e58dc142e",
+  "first_original_decision": "SCHEMA_EVENT_METADATA_PRESENT_RUNTIME_CAP_UNVERIFIED",
+  "first_original_report_sha256": "57d67b1e51b975f19d9907bea1fa2d3ac7a0876016be175db123c2785bfa647b",
+  "first_run_id": "40234431456",
+  "no_external_holdout_forecast_computed": true,
+  "preregistration_commit": "a024612b596f1f9d2d16219437b09b80f920d52f",
+  "protocol": "RP-E012-D01",
+  "raw_production_rows_examined": 0,
+  "real_runtime_cap_enforcement_verified": false
+}

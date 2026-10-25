@@ -1,0 +1,95 @@
+name: RP-E011-D04 Original CERIT Temporal Source Gate
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e011-d04.yml
+      - experiments/rp_e011_d04_temporal.py
+      - tests/test_rp_e011_d04_temporal.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e011-d04-original
+  cancel-in-progress: false
+
+jobs:
+  first_original_temporal_gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      PYTHONHASHSEED: "0"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refuse a second original source run
+        run: |
+          if test -e docs/results/RP-E011-D04-first-run; then
+            echo "The original D04 verdict already exists. No repeated first-run claim."
+            exit 1
+          fi
+      - name: Install requirements
+        run: python -m pip install -e '.[dev]'
+      - name: Pass adversarial source tests before accessing originals
+        run: python -m pytest -q tests/test_rp_e011_d04_temporal.py
+      - name: Inspect original source once — source-only, never forecast
+        run: |
+          python -m experiments.rp_e011_d04_temporal \
+            --output rp-e011-d04-original/
+      - name: Keep first-run audit in temporary Actions artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e011-d04-first-original-source-audit
+          path: rp-e011-d04-original/RP-E011-D04.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit permanent metadata even for BLOCKED or INFEASIBLE
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          original="rp-e011-d04-original/RP-E011-D04.json"
+          archive="docs/results/RP-E011-D04-first-run"
+          if test -e "$archive"; then
+            echo "Original first-run archive already exists: refusing replacement."
+            exit 1
+          fi
+          if ! test -f "$original"; then
+            echo "Missing original audit; no evidence can be invented." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          cp "$original" "$archive/audit.json"
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path("docs/results/RP-E011-D04-first-run")
+          blob=(root/"audit.json").read_bytes()
+          report=json.loads(blob)
+          index={
+              "protocol":"RP-E011-D04",
+              "first_run_id":"${{ github.run_id }}",
+              "first_source_code_commit":"${{ github.sha }}",
+              "first_run_verdict":report["decision"],
+              "first_audit_sha256":hashlib.sha256(blob).hexdigest(),
+              "d02_original_verdict_unchanged":"DATASET_SCHEMA_REJECTED",
+              "no_heldout_forecast":True,
+              "no_third_party_bulk_data":True,
+          }
+          (root/"archive-index.json").write_text(
+              json.dumps(index,indent=2,sort_keys=True)+"\n",encoding="utf-8"
+          )
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): archive first RP-E011-D04 temporal source finding"
+          git push origin HEAD:main

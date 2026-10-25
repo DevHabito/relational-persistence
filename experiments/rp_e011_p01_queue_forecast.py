@@ -403,8 +403,9 @@ def evaluate(jobs: list[Job], output: Path,
         "heldout_target_count": len(heldout),
         "heldout": summary,
         "heldout_by_queue_sha256": {
-            queue_hashed[name]: stats.summary()
-            for name, stats in sorted(per_queue.items())
+            # Preserve every original queue including queues with ZERO heldout jobs.
+            queue_hashed[name]: per_queue[name].summary()
+            for name in sorted(queue_hashed)
         },
         "heldout_by_requested_processor_group": {
             key: per_group[key].summary() for key in ("small", "medium", "large")

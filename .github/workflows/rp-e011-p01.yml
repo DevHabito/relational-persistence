@@ -1,0 +1,121 @@
+name: RP-E011-P01 Original Queue-Aware External Holdout
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e011-p01.yml
+      - experiments/rp_e011_p01_queue_forecast.py
+      - tests/test_rp_e011_p01_queue_forecast.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e011-p01-first-original-forecast
+  cancel-in-progress: false
+
+jobs:
+  first_original_prediction:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      PYTHONHASHSEED: "0"
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Never replace an already archived first prediction result
+        run: |
+          if test -e docs/results/RP-E011-P01-first-run; then
+            echo "First P01 result already exists; a replay cannot replace it."
+            exit 1
+          fi
+      - name: Install fixed dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run adversarial synthetic suite before ANY original predictions
+        run: python -m pytest -q tests/test_rp_e011_p01_queue_forecast.py
+      - name: First original source+forecast evaluation — negative is valid
+        run: |
+          python -m experiments.rp_e011_p01_queue_forecast \
+            --output rp-e011-p01-original/
+      - name: Preserve all original first-run predicted target lines temporarily
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e011-p01-first-original-report-and-per-job-predictions
+          path: rp-e011-p01-original/
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Permanently archive original result metadata even if negative/STOP
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          original="rp-e011-p01-original/RP-E011-P01.json"
+          archive="docs/results/RP-E011-P01-first-run"
+          if test -e "$archive"; then
+            echo "First-run prediction archive already present; refusing replacement."
+            exit 1
+          fi
+          if ! test -f "$original"; then
+            echo "Original report missing; cannot invent a forecast verdict." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          cp "$original" "$archive/audit.json"
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+
+          root=Path("docs/results/RP-E011-P01-first-run")
+          blob=(root/"audit.json").read_bytes()
+          observed=json.loads(blob)
+          forecast=observed.get("forecast") or {}
+          prediction=forecast.get("original_predictions_file") or {}
+          index={
+              "protocol":"RP-E011-P01",
+              "first_run_id":"${{ github.run_id }}",
+              "original_code_commit":"${{ github.sha }}",
+              "first_run_decision":observed["decision"],
+              "first_audit_sha256":hashlib.sha256(blob).hexdigest(),
+              "heldout_prediction_sha256":prediction.get("sha256"),
+              "heldout_prediction_bytes":prediction.get("bytes"),
+              "d02_first_rejected_verdict_untouched":True,
+              "e010_first_negative_verdict_untouched":True,
+              "raw_external_source_committed_to_git":False,
+              "per_job_predictions_committed_to_git":False,
+              "new_lean_theorem":False,
+          }
+          (root/"archive-index.json").write_text(
+              json.dumps(index,sort_keys=True,indent=2)+"\n",
+              encoding="utf-8"
+          )
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): archive FIRST RP-E011-P01 external holdout outcome"
+          git push origin HEAD:main
+      - name: Positive and negative valid outcomes differ from STOP
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          record=json.loads(Path(
+              "rp-e011-p01-original/RP-E011-P01.json"
+          ).read_text(encoding="utf-8"))
+          assert record["protocol"]=="RP-E011-P01"
+          assert record["original_D02_schema_verdict_unchanged"]=="DATASET_SCHEMA_REJECTED"
+          assert record["physics_law_tested"] is False
+          if record["decision"]=="STOP_SOURCE_OR_FEATURE_AUDIT":
+              raise SystemExit("Original P01 registered SOURCE/FEATURE STOP")
+          assert record["decision"] in (
+              "PASS_QUEUE_SPECIFIC_INCREMENT",
+              "NO_REGISTERED_QUEUE_GAIN",
+          )
+          PY

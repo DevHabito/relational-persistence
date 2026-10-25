@@ -1,0 +1,24 @@
+{
+  "acquisition": null,
+  "catalog_declared_compressed_bytes": 2261468,
+  "catalog_declared_raw_csv_bytes": 27825794,
+  "decision": "SOURCE_ACCESS_BLOCKED",
+  "errors": [
+    {
+      "reason": "Cannot access official URL: HTTPError",
+      "stage": "official-source-access"
+    }
+  ],
+  "first_github_run_id": "40148017404",
+  "first_github_source_commit": "af2f25ddf19258bb7581a21362619d9f951f951a",
+  "new_lean_theorem": false,
+  "official_resource_page": "https://reports.alcf.anl.gov/data/ANL-ALCF-DJC-POLARIS_20220809_20221231.html",
+  "original_provider_citation": "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357.",
+  "physical_law_validated": false,
+  "protocol": "RP-E011-D01",
+  "provider": "Argonne Leadership Computing Facility",
+  "queue_prediction_scored": false,
+  "schema": null,
+  "source_version_pinned_before_retrieval": false,
+  "timestamp_format": "YYYY-MM-DD HH:MM:SS[.fraction]"
+}

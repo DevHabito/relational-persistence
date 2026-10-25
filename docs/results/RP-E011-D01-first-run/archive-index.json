@@ -1,0 +1,11 @@
+{
+  "downloaded_official_original_stored_in_git": false,
+  "integrity_policy": "archive first observed attempt even on rejection or blocked access",
+  "new_prediction_or_law_claim": false,
+  "original_first_run_id": "40148017404",
+  "original_report_sha256": "28bd3d11dd0fdbb9789cff251233cef468889b43bcd3942100634e73ae4a0248",
+  "protocol": "RP-E011-D01",
+  "registered_first_verdict": "SOURCE_ACCESS_BLOCKED",
+  "source_code_sha": "af2f25ddf19258bb7581a21362619d9f951f951a",
+  "source_version_pinned_before_first_run": false
+}

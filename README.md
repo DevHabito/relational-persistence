@@ -567,6 +567,43 @@ Read the [first P01 negative scientific report](docs/results/RP-E011-P01.md),
 and [prior RP-E010 negative result](docs/results/RP-E010-P01.md).
 The negative cases are part of the research record.
 
+## RP-F006-A01 — An exact, limited obstruction to queue-state identifiability
+
+Following two registered negative external holdout forecasts,
+the [RP-F006-A01 mathematical protocol](docs/preregistration/RP-F006-A01.md)
+was frozen on main at `3670d7d` **before the model code or proof**.
+
+A three-job **synthetic** one-server, nonpreemptive
+FCFS-compatible experiment constructs two worlds with
+**identical complete pre-origin event history, queue snapshots,
+historical starts, target requests and running-job age**.
+Only the current running job's unobserved actual future
+completion differs. A target submitted at zero then has
+waiting time **1 or 100 seconds** respectively.
+
+For any deterministic predictor using solely the same
+observation, the two-world maximum absolute prediction error
+is at least **99/2=49.5 seconds**. Predicting **101/2=50.5**
+achieves this bound. This is the elementary classical
+triangle-inequality obstruction; it is **not a new
+queueing theorem**, a real HPC performance estimate, or a
+claim that no statistical predictor is possible.
+
+The first original [synthetic GitHub Actions certificate #40205665104](https://github.com/DevHabito/relational-persistence/actions/runs/40205665104)
+returned `FINITE_NONIDENTIFIABILITY_VERIFIED`, archived
+unaltered at `caab6ad`. The
+[Lean 4 proof](RelationalPersistence/QueueObservability.lean)
+passed at [run #40205365501](https://github.com/DevHabito/relational-persistence/actions/runs/40205365501)
+with 499 Python regressions per supported version.
+The source model **does not assert universal work conservation**:
+its earlier jobs have fixed one-second dispatch delays.
+Read the [complete report](docs/results/RP-F006-A01.md).
+
+This supplies a formal *possible missing-information
+mechanism*, **not evidence that it caused RP-E010 or
+RP-E011's negative external outcomes**. Neither `C=B/(I*tau)`
+nor a physical persistence law was tested.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

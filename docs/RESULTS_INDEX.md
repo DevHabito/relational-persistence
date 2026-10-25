@@ -21,4 +21,6 @@
 
 | RP-E010-D01 | Version-pinned third-party production HPC2N Seth SWF trace; two independent source/schema parsers | **DATASET_SCHEMA_VERIFIED** — 202,871 records, 201,992 eligible, SHA-256 verified; all queue IDs missing; NOT a predictive test | Real external workload provenance verification only; no natural recovery inference, Lean theorem or physical law |
 
+| RP-E010-P01 | Frozen external HPC2N wait-to-start target; reconstructed aggregate waiting-job proxy compared against static and historical wait controls, chronological holdout | **PREREGISTERED BUT NOT YET MEASURED**; both comparators must be beaten by >=10% in unweighted heldout MAE | Observational source is upstream-cleaned and multi-resource; not queue-ID-specific, a randomized intervention, a new Lean theorem or a physical law |
+
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

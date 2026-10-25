@@ -104,6 +104,13 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
   scheduler-specific states, causal cutoff, data partition,
   endpoints, classical controls, confounding and negative gates.
 
+### RP-E010-P01 — external observational prediction test, after D01
+
+- The source-only D01 gate passed on a version-pinned third-party mirror; that did **not** compute or validate forecasts. No per-queue identifiers were present and upstream filtering must remain disclosed.
+- The [P01 protocol](../preregistration/RP-E010-P01.md) was frozen at `dfec155` **before** any predictive computations. It defines one aggregate reconstructed waiting proxy, two independent time-count oracles, a fixed 70%-of-time cutoff and three unfitted classical forecasts.
+- A valid P01 PASS requires >=10% unweighted heldout MAE improvement against **both** static start-rate backlog and historical mean wait; preserve failed observational transfer honestly as NO_GAIN and bad source/timing as STOP. No retrospective trimming or tuning.
+- The P01 target is *historical submission-to-start waiting time*, **not** the service-recovery target from RP-E007/009 and cannot be described as the same endpoint. It is not a new physical law.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

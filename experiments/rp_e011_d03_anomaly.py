@@ -124,7 +124,11 @@ def matches_original_d02_profile(ids: dict, parsed: dict) -> bool:
         and ids["duplicate_job_id_count"] == 0
         and counts.get("data_rows", 0) == EXPECTED_DATA_ROWS
         and counts.get("valid_numeric_prefix_rows", 0) == EXPECTED_DATA_ROWS
+        and counts.get("prefix_oracle_valid_whitespace", 0) == EXPECTED_DATA_ROWS
+        and counts.get("prefix_oracle_valid_shlex", 0) == EXPECTED_DATA_ROWS
         and counts.get("standard_eligible_rows", 0) == EXPECTED_ELIGIBLE_ROWS
+        and counts.get("eligible_with_documented_extended_queue_name", 0)
+        == EXPECTED_ELIGIBLE_ROWS
         and counts.get("invalid_job_id", 0) == 1
         and counts.get("duplicate_job_id", 0) == 0
         and counts.get("prefix_oracle_disagreements", 0) == 0

@@ -439,7 +439,7 @@ retune a method using this already-seen holdout.
 No universal relational persistence physical law
 or empirical validity of `C=B/(I*tau)` is claimed.
 
-## RP-E011 — Two honest external source gates, neither yet predictive
+## RP-E011 — Independent source forensics and an external forecast failure
 
 After RP-E010's **negative** external holdout, the
 [RP-E011-D01 official Argonne Polaris source gate](docs/results/RP-E011-D01.md)

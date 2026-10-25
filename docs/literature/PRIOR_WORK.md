@@ -60,6 +60,13 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## RP-F007 enforced upper bounds on remaining service — prior theory and model scope
+
+- Ward Whitt (1999), [*Predicting Queueing Delays*](https://doi.org/10.1287/mnsc.45.6.870), *Management Science* 45(6):870–888, studied prediction with additional elapsed-service information and conditional remaining-service distributions. That predates RP-F007 and its synthetic finite midpoint minimax result.
+- [Official Slurm sbatch `--time` documentation](https://slurm.schedmd.com/sbatch.html): configured runtime limits may send termination signals, with possible `OverTimeLimit` exceptions. [Slurm configuration](https://slurm.schedmd.com/slurm.conf.html) permits administrator-influenced limits. Requested walltime is NOT automatically an immutable or universally enforced upper bound in real operations.
+- Elementary maximum absolute-error minimax prediction for all values in a known closed interval is the **interval midpoint**; tight error is half the endpoint difference. This follows from the standard triangle inequality and contains no new mathematical priority.
+- The project's RP-F007-A01 original synthetic audit states exactly when the cap is assumed enforced, fixes two separate public-cap populations and demonstrates an advertised-only overrun negative control. It DOES NOT infer real scheduler enforcement, stochastic distribution calibration, external HPC forecast improvement, or a new physical scalar. The original RP-E010/RP-E011 predictions remain negative.
+
 ## RP-F006 prior queue-state identifiability and residual work — established, NOT novel
 
 - Ward Whitt (1999), [*Predicting Queueing Delays*](https://doi.org/10.1287/mnsc.45.6.870), *Management Science* 45(6):870–888. Queue length and service-class observations alone do not generally encode remaining work: additional information about elapsed services and conditional residual-service distributions improves queue delay inference.

@@ -439,41 +439,44 @@ retune a method using this already-seen holdout.
 No universal relational persistence physical law
 or empirical validity of `C=B/(I*tau)` is claimed.
 
-## RP-E011 — Distinct external scheduling trace source candidates
+## RP-E011 — Two honest external source gates, neither yet predictive
 
-Following the negative RP-E010-P01 real-world waiting-time
-forecast, [RP-E011-D01](docs/preregistration/RP-E011-D01.md)
-was registered at `0529649` for official ALCF
-Polaris data. Its **first** hosted source run
+After RP-E010's **negative** external holdout, the
+[RP-E011-D01 official Argonne Polaris source gate](docs/results/RP-E011-D01.md)
+was frozen at `0529649`. Its first run
 [#40148017404](https://github.com/DevHabito/relational-persistence/actions/runs/40148017404)
-returned **SOURCE_ACCESS_BLOCKED** because the
-official resource page could not be retrieved
-(HTTPError; no proven numeric status).
-No source data or forecasts were obtained.
-The original failure is [archived at `4366736`](https://github.com/DevHabito/relational-persistence/commit/4366736bad06490cea4b24562768ae40aa14db18)
-and [reported](docs/results/RP-E011-D01.md).
-It is **not** changed to a predictive failure.
+was **SOURCE_ACCESS_BLOCKED** on HTTP source
+retrieval. No ALCF job records were obtained.
+The original blocked evidence is archived at `4366736`.
 
-Rather than replacing that source invisibly,
-a separate [RP-E011-D02 protocol](docs/preregistration/RP-E011-D02.md)
-was frozen on main at `e3a2d21` for the original
-JSSPP 2017 **CERIT-SC extended SWF**
-[grid workload](https://jsspp.org/workload/index.php?page=cerit).
-The publisher documents queue names,
-execution nodes and requested GPU information
-in addition to SWF fields. An independent
-[new source-only audit](docs/results/RP-E011-D02.md)
-will verify original bytes, 18-field prefix
-integrity and genuine extended queue-name
-coverage without importing a replacement
-for D01 or computing a forecast.
+A separate [RP-E011-D02 JSSPP CERIT-SC source gate](docs/preregistration/RP-E011-D02.md)
+was then frozen at `e3a2d21` **before
+downloading the new original data**.
+The first [original JSSPP source run #40148759632](https://github.com/DevHabito/relational-persistence/actions/runs/40148759632)
+successfully retrieved 59,430,886 bytes of
+publisher-provided **extended SWF records**,
+SHA256 `dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c`.
+Two standard-field readers agreed on **472,400
+job lines**, with **472,399 structurally
+eligible** and **13 distinct extended queue
+names**. However, precisely **one job ID was
+invalid**, violating the prospectively
+registered zero-invalid-ID requirement.
+The first decision is **DATASET_SCHEMA_REJECTED**
+and remains immutable in [original source records](docs/results/RP-E011-D02-first-run/).
 
-RP-E010-P01 remains a fully documented
-**negative** 49,995-case observational study.
-A new predictive claim would require
-a separately registered protocol after
-source availability and semantics are
-actually verified.
+The negative source decision must **not be
+relabeled PASS** because the other 472,399
+jobs look usable. A separate documented
+source-only anomaly investigation could
+clarify the sole invalid ID. No new
+forecast or physical stability result
+was computed from either source.
+
+Read the [complete D02 negative source report](docs/results/RP-E011-D02.md).
+The **RP-E010-P01 predictive failure** remains
+an independent result and is not overturned
+by finding a source with queue names.
 
 ## Naming and provenance
 

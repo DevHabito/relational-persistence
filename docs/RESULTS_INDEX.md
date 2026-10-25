@@ -25,6 +25,6 @@
 
 | RP-E011-D01 | Official ALCF Polaris Aug-Dec 2022 job export (catalog describes queue names, requests, submission/start and distinct waits), frozen source-access gate | **SOURCE_ACCESS_BLOCKED**, original run #40148017404 archived at `4366736`; the official page returned HTTPError, no source rows were retrieved or modeled | Official provider portal lacks preregistered checksum and may block raw access; not yet validated data, physical law or prediction |
 
-| RP-E011-D02 | Original JSSPP 2017 CERIT-SC extended SWF (source documents additional node/queue/request information), separately preregistered after D01 blocked | **ORIGINAL SOURCE AUDIT PENDING**; source byte digest, two numeric-prefix readers and real extended queue names required | Distinct independent data candidate, not a D01 substitution or any waiting-time predictive result |
+| RP-E011-D02 | Original JSSPP 2017 CERIT-SC extended SWF (source documents additional node/queue/request information), separately preregistered after D01 blocked | **DATASET_SCHEMA_REJECTED**: first #40148759632 downloaded 472,400 SWF jobs, 472,399 structurally eligible and 13 genuine queues but one invalid job ID violated the frozen zero-invalid gate; archived `b9b0f02` | Distinct independent data candidate, not a D01 substitution or any waiting-time predictive result |
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

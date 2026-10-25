@@ -84,7 +84,7 @@ def parse_verified_jobs(raw: bytes) -> tuple[list[Job], dict]:
         try:
             job = Job(
                 int(tokens[0]), Decimal(tokens[1]), Decimal(tokens[2]),
-                Decimal(tokens[3]), int(tokens[4]), int(tokens[10])
+                Decimal(tokens[3]), int(Decimal(tokens[4])), int(tokens[10])
             )
         except (InvalidOperation, ValueError) as error:
             raise ValueError("Unparseable verified workload") from error
@@ -271,6 +271,21 @@ def stringify_row(job: Job, split: str, feature: dict,
     }
 
 
+def frozen_gate(maes: dict[str, Decimal]) -> str:
+    """Two-comparator 10% gate fixed before the HPC first run."""
+    if any(name not in maes for name in ("static", "trend", "history")):
+        raise ValueError("A preregistered comparator is missing")
+    if any(not value.is_finite() or value < 0 for value in maes.values()):
+        raise ValueError("Invalid observational forecast score")
+    if (
+        maes["static"] > 0 and maes["history"] > 0
+        and maes["trend"] <= THRESHOLD_RATIO * maes["static"]
+        and maes["trend"] <= THRESHOLD_RATIO * maes["history"]
+    ):
+        return "PASS_OBSERVATIONAL_INCREMENT"
+    return "NO_REGISTERED_OBSERVATIONAL_GAIN"
+
+
 class DecimalMetrics:
     def __init__(self, models: tuple[str, ...]) -> None:
         self.models = models
@@ -353,15 +368,10 @@ def evaluate_data(jobs: list[Job], provenance: dict, output: Path) -> dict:
     diagnostic = diagnostic_stats.summary()
     heldout = test_stats.summary()
     errors = {k: Decimal(v) for k, v in heldout["mae_seconds"].items()}
-    passed = (
-        errors["static"] > 0 and errors["history"] > 0
-        and errors["trend"] <= THRESHOLD_RATIO * errors["static"]
-        and errors["trend"] <= THRESHOLD_RATIO * errors["history"]
-    )
+    decision = frozen_gate(errors)
     result = {
         "protocol": PROTOCOL,
-        "decision": ("PASS_OBSERVATIONAL_INCREMENT" if passed
-                     else "NO_REGISTERED_OBSERVATIONAL_GAIN"),
+        "decision": decision,
         "registered_primary_improvement_ratio": str(THRESHOLD_RATIO),
         "interpretation": "historical archive-derived aggregate wait proxy, not observed physical FIFO",
         "independent_physical_replication": "NOT_PERFORMED",
@@ -372,6 +382,11 @@ def evaluate_data(jobs: list[Job], provenance: dict, output: Path) -> dict:
         "split": times,
         "past_start_observation_count": len(events.stamps),
         "distinct_prediction_origins": len(origins),
+        "feature_eligible_targets": len(selected_diag) + len(selected_test),
+        "excluded_by_zero_prior_starts": (
+            len(all_targets) - len(selected_diag) - len(selected_test)
+        ),
+        "source_unknown_wait_records": provenance["missing_wait_count"],
         "two_queue_oracles_agree_all_origins": True,
         "source_schema_eligible_targets": EXPECTED_TARGET_ELIGIBLE,
         "diagnostic": diagnostic,

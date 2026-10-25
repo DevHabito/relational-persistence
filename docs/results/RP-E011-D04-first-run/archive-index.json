@@ -1,0 +1,10 @@
+{
+  "d02_original_verdict_unchanged": "DATASET_SCHEMA_REJECTED",
+  "first_audit_sha256": "be9b871e29b2bd014d0bc365f4ae6d2f23f8ad428aa41b1932446edf173fb240",
+  "first_run_id": "40183836342",
+  "first_run_verdict": "TEMPORAL_SOURCE_FEASIBLE",
+  "first_source_code_commit": "14264ecb00f1c04985f4d1712ddd1f95e1e0266d",
+  "no_heldout_forecast": true,
+  "no_third_party_bulk_data": true,
+  "protocol": "RP-E011-D04"
+}

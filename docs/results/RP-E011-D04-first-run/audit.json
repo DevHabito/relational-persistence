@@ -1,0 +1,49 @@
+{
+  "d02_original_verdict_unchanged": "DATASET_SCHEMA_REJECTED",
+  "decision": "TEMPORAL_SOURCE_FEASIBLE",
+  "environment": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "errors": [],
+  "first_run_id": "40183836342",
+  "new_lean_theorem": false,
+  "physics_claimed": false,
+  "predictions_computed": false,
+  "protocol": "RP-E011-D04",
+  "schema": {
+    "included_status_counts": {
+      "1": 472399
+    },
+    "known_first_line_id_zero_exception_count": 1,
+    "original_file_adjacent_submit_inversions": 0,
+    "original_file_adjacent_submit_ties": 167252,
+    "original_source_data_rows": 472400
+  },
+  "source_commit": "14264ecb00f1c04985f4d1712ddd1f95e1e0266d",
+  "source_identity": {
+    "bytes": 59430886,
+    "expected_bytes": 59430886,
+    "expected_sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+    "provider": {
+      "content_type": "application/x-shockwave-flash",
+      "final_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+      "original_bytes": 59430886,
+      "requested_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+      "sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+      "status": 200
+    },
+    "sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c"
+  },
+  "temporal_coverage": {
+    "diagnostic_candidate_count": 303210,
+    "distinct_queue_count": 13,
+    "eligible_total_count": 472399,
+    "feasible": true,
+    "fixed_chronological_cutoff_seconds": "1472994372.8",
+    "forecast_or_wait_loss_computed": false,
+    "heldout_candidate_count": 169189,
+    "independent_sorted_vs_streaming_split_counts_agree": true,
+    "shared_queues_meeting_100_jobs_on_each_side": 2,
+    "submit_max_seconds": "1483220546",
+    "submit_min_seconds": "1449133302",
+    "tied_submit_handling": "submit < T diagnostic, submit >= T heldout"
+  }
+}

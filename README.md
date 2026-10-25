@@ -398,6 +398,32 @@ Any forecast on this trace needs a **separately frozen
 observational protocol**, causal feature cutoff and
 credible classical scheduling comparators.
 
+## RP-E010-P01 — Registered real-world historical wait-time forecast
+
+After the external [RP-E010-D01 source audit](docs/results/RP-E010-D01.md)
+verified the source *without* computing any prediction,
+the [RP-E010-P01 observational protocol](docs/preregistration/RP-E010-P01.md)
+was frozen on `main` at `dfec155` **before implementation or
+prediction**. The design tests a two-point trend in the count
+of recorded tasks waiting to start, using only the
+history available before each real HPC job's submission.
+That count is a reconstructed **aggregate proxy from an
+upstream-cleaned parallel cluster trace**, not an
+actual per-queue measurement.
+
+The original candidate must reduce held-out waiting-time
+MAE by **at least 10% relative to BOTH** an unfitted
+static backlog/start-rate forecast and an observed
+prior-job-wait historical average, in a 70%/30%
+chronological time split. Invalid event/source history
+means STOP; a valid failure remains **NO_GAIN**.
+Every original per-job forecast and source hash will
+be archived; no new Lean theorem or universal
+relational-persistence law is proposed.
+
+[Pending source-only evaluation report](docs/results/RP-E010-P01.md).
+**No observational prediction result is presently claimed.**
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

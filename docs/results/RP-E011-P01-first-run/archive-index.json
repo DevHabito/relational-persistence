@@ -1,0 +1,14 @@
+{
+  "d02_first_rejected_verdict_untouched": true,
+  "e010_first_negative_verdict_untouched": true,
+  "first_audit_sha256": "bb173096a23413f57d2eaecffbdd6d9703e88173eb3c7e5175d628460b6878d7",
+  "first_run_decision": "NO_REGISTERED_QUEUE_GAIN",
+  "first_run_id": "40185076529",
+  "heldout_prediction_bytes": 104512786,
+  "heldout_prediction_sha256": "0c1f679e94f56abe3605ae8ff00134042a54f0e1017843849e5e0d6dfd9504ff",
+  "new_lean_theorem": false,
+  "original_code_commit": "7c556ca6f72dcc62c068c37a51efe0eba6fc6d5b",
+  "per_job_predictions_committed_to_git": false,
+  "protocol": "RP-E011-P01",
+  "raw_external_source_committed_to_git": false
+}

@@ -63,10 +63,10 @@ def test_independent_event_driven_dispatch_replay_derives_exact_starts():
         long_records["fixed_pre_origin_dispatch_lags_seconds"]
     ) == {"H": "1", "R": "1", "T": "0"}
     assert short_records["recorded_start_finish_events"] == [
-        ("H", "-200", "-190"), ("R", "-30", "1"), ("T", "1", "2")
+        ["H", "-200", "-190"], ["R", "-30", "1"], ["T", "1", "2"]
     ]
     assert long_records["recorded_start_finish_events"] == [
-        ("H", "-200", "-190"), ("R", "-30", "100"), ("T", "100", "101")
+        ["H", "-200", "-190"], ["R", "-30", "100"], ["T", "100", "101"]
     ]
     assert short_records["global_work_conservation_claimed"] is False
 

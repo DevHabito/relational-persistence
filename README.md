@@ -398,31 +398,46 @@ Any forecast on this trace needs a **separately frozen
 observational protocol**, causal feature cutoff and
 credible classical scheduling comparators.
 
-## RP-E010-P01 — Registered real-world historical wait-time forecast
+## RP-E010-P01 — First real external observational forecasting test failed
 
-After the external [RP-E010-D01 source audit](docs/results/RP-E010-D01.md)
-verified the source *without* computing any prediction,
-the [RP-E010-P01 observational protocol](docs/preregistration/RP-E010-P01.md)
-was frozen on `main` at `dfec155` **before implementation or
-prediction**. The design tests a two-point trend in the count
-of recorded tasks waiting to start, using only the
-history available before each real HPC job's submission.
-That count is a reconstructed **aggregate proxy from an
-upstream-cleaned parallel cluster trace**, not an
-actual per-queue measurement.
+The [RP-E010-P01 prediction protocol](docs/preregistration/RP-E010-P01.md)
+was frozen on `main` at `dfec155` **before code,
+predictors or heldout results**. Following a separate
+source-only D01 audit, the original
+[historical heldout run #40145857634](https://github.com/DevHabito/relational-persistence/actions/runs/40145857634)
+evaluated recorded HPC2N submit-to-start waiting
+time for **137,701 diagnostic** and **49,995
+chronological held-out tasks**. Input checks and
+two independent aggregate event-count algorithms
+passed. The original **negative** outcome was
+permanently [archived at `f8560cf`](https://github.com/DevHabito/relational-persistence/commit/f8560cfe1fe3ee0338dbba6f5360c5cf2b0132c5).
 
-The original candidate must reduce held-out waiting-time
-MAE by **at least 10% relative to BOTH** an unfitted
-static backlog/start-rate forecast and an observed
-prior-job-wait historical average, in a 70%/30%
-chronological time split. Invalid event/source history
-means STOP; a valid failure remains **NO_GAIN**.
-Every original per-job forecast and source hash will
-be archived; no new Lean theorem or universal
-relational-persistence law is proposed.
+**Registered result: `NO_REGISTERED_OBSERVATIONAL_GAIN`.**
+The unfitted two-pre-submission-sample aggregate
+trend had **234,691.80 seconds heldout MAE**,
+worse than **static aggregate count / historical
+start rate** at **227,534.07 seconds** and
+**past-started-job mean wait** at **123,965.25
+seconds**. Even a diagnostic-only constant
+(83,834.22 seconds) was better. TREND was worse
+than static in **all three** prespecified
+allocated-processor groups.
 
-[Pending source-only evaluation report](docs/results/RP-E010-P01.md).
-**No observational prediction result is presently claimed.**
+This **does not erase** the narrower positive
+software recovery experiments RP-E007/009,
+because this external test uses a **different
+waiting-time endpoint**, a historically filtered
+parallel scheduler, and no actual per-queue IDs.
+It **does reject the registered incremental
+forecasting claim on this historical source**.
+Do not trim long waits, move the cutoff or
+retune a method using this already-seen holdout.
+
+[First-run report](docs/results/RP-E010-P01.md);
+[unchanged original evaluation and SHA index](docs/results/RP-E010-P01-first-run/);
+[read-only reproducibility script](experiments/rp_e010_verify_first_run.py).
+No universal relational persistence physical law
+or empirical validity of `C=B/(I*tau)` is claimed.
 
 ## Naming and provenance
 

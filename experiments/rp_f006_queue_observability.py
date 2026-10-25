@@ -112,6 +112,33 @@ def validate_fcfs_compatible(world: World) -> dict:
     }
 
 
+def replay_registered_dispatch(world: World) -> dict:
+    """Independent event-driven service simulation with known dispatch lags.
+
+    The predeclared H/R submitted-to-start one-second offsets require an
+    explicit dispatch eligibility delay. These two fixed delays are
+    identical in both worlds and cannot depend on the eventual wait of T.
+    We do NOT impose earlier global work conservation.
+    """
+    prescribed_lag = {"H": Fraction(1), "R": Fraction(1), "T": Fraction(0)}
+    server_available = Fraction(-10_000)
+    emitted = []
+    for job in sorted(world.jobs, key=lambda item: item.submit):
+        eligible = job.submit + prescribed_lag[job.name]
+        actual_start = max(server_available, eligible)
+        actual_completion = actual_start + job.service
+        if actual_start != job.start or actual_completion != job.end:
+            raise ValueError("Independent FCFS dispatch replay disagrees with witness")
+        emitted.append((job.name, str(actual_start), str(actual_completion)))
+        server_available = actual_completion
+    return {
+        "independent_dispatch_replay_agrees": True,
+        "fixed_pre_origin_dispatch_lags_seconds": {"H": "1", "R": "1", "T": "0"},
+        "recorded_start_finish_events": emitted,
+        "global_work_conservation_claimed": False,
+    }
+
+
 def visible_event_history(world: World) -> tuple[tuple[str, str, str], ...]:
     """All completed events before t=0; the current target submits at 0.
 
@@ -237,6 +264,8 @@ def audit_witness() -> dict:
     long = construct_world(REGISTERED_LONG_END)
     short_valid = validate_fcfs_compatible(short)
     long_valid = validate_fcfs_compatible(long)
+    short_replay = replay_registered_dispatch(short)
+    long_replay = replay_registered_dispatch(long)
     short_observed = causal_observation(short)
     long_observed = causal_observation(long)
     if short_observed != long_observed:
@@ -280,8 +309,8 @@ def audit_witness() -> dict:
         "decision": "FINITE_NONIDENTIFIABILITY_VERIFIED",
         "source": "SYNTHETIC_ONLY",
         "first_preregistered_code": "3670d7d9bb15e69c6d354f056ecc4de87b27d55c",
-        "world_short": short_valid,
-        "world_long": long_valid,
+        "world_short": {**short_valid, **short_replay},
+        "world_long": {**long_valid, **long_replay},
         "full_pre_origin_observations_identical": True,
         "registered_common_observation": short_observed,
         "short_target_wait_s": str(short.named("T").wait),

@@ -1,0 +1,22 @@
+{
+  "archive_policy": "first-run even when negative or STOP; no hidden rerun",
+  "archived_evaluation_sha256": "766bc27154638b63e15c5a63bcd247edd0bb0c80edba9557f16fe3581b350118",
+  "original_github_run_id": "40145857634",
+  "original_per_job_files": {
+    "diagnostic-original-predictions.jsonl": {
+      "bytes": 134578470,
+      "retention": "original GitHub Actions artifact; not copied into Git",
+      "sha256": "66fe7632c7340273d0a72ccfae14963ccaa2e237dd0bdc0a51136569079feba0"
+    },
+    "holdout-original-predictions.jsonl": {
+      "bytes": 59773248,
+      "retention": "original GitHub Actions artifact; not copied into Git",
+      "sha256": "4f7a08759e6ea72645a35e8a37283dadba344003e07418e80f38422e694a77f0"
+    }
+  },
+  "original_source_commit": "c589bae80a8045be69094515c928c8d467b96dc0",
+  "original_verdict": "NO_REGISTERED_OBSERVATIONAL_GAIN",
+  "predictor_validated_as_physical_law": false,
+  "protocol": "RP-E010-P01",
+  "source_corpus_copied_to_git": false
+}

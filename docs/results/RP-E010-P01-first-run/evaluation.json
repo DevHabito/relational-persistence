@@ -1,0 +1,139 @@
+{
+  "decision": "NO_REGISTERED_OBSERVATIONAL_GAIN",
+  "errors": [],
+  "first_run_environment": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "first_run_github_id": "40145857634",
+  "first_run_source_commit": "c589bae80a8045be69094515c928c8d467b96dc0",
+  "original_results": {
+    "decision": "NO_REGISTERED_OBSERVATIONAL_GAIN",
+    "diagnostic": {
+      "bias_seconds": {
+        "history": "-8425.42846727650442054947668236768871322503141",
+        "static": "7817.01336498588650237516905795121602581773836",
+        "trend": "9941.91355226615014616327425181538344527717562"
+      },
+      "jobs": 137701,
+      "mae_seconds": {
+        "history": "40895.2908666709401091855398339907740956346004",
+        "static": "47274.1879246231791274806117216027141161530414",
+        "trend": "48138.9339275996889794688005262503431967672958"
+      },
+      "zero_wait_jobs": 8120
+    },
+    "distinct_prediction_origins": 172503,
+    "excluded_by_zero_prior_starts": 14293,
+    "feature_eligible_targets": 187696,
+    "heldout": {
+      "bias_seconds": {
+        "diagnostic_constant": "-40692.2324353192612236583314397844530969106067",
+        "history": "-8355.27326148105763453741423450802192611044316",
+        "static": "116821.366425458706023579484623938829634823312",
+        "trend": "124640.413373295242273420134940923004630995768"
+      },
+      "jobs": 49995,
+      "mae_seconds": {
+        "diagnostic_constant": "83834.2217850746374845907187504539954434791467",
+        "history": "123965.252705860659062317706036581828990843982",
+        "static": "227534.065419298062494714433259636507090480156",
+        "trend": "234691.799952743548153735030655507829377469111"
+      },
+      "zero_wait_jobs": 1585
+    },
+    "heldout_by_allocated_processors": {
+      "1..2": {
+        "bias_seconds": {
+          "diagnostic_constant": "-66347.9922027588166686454780524864309226177988",
+          "history": "-47443.4904903976020624570390401543523434620852",
+          "static": "131043.129343392081948033986481085607170241021",
+          "trend": "142929.623172410609270838360863669277237249517"
+        },
+        "jobs": 31542,
+        "mae_seconds": {
+          "diagnostic_constant": "108345.064087618175557857601734079659567321191",
+          "history": "136149.985608840178349864934669040655414218292",
+          "static": "291299.273759798966757927919433168646460223743",
+          "trend": "302332.403047973358032792883005614232105425701"
+        },
+        "zero_wait_jobs": 1254
+      },
+      "3..16": {
+        "bias_seconds": {
+          "diagnostic_constant": "4025.29741205080354748193857051056587293695071",
+          "history": "59209.6993837706882301089217253713301865075728",
+          "static": "95581.5136868455629987412817056912059413846783",
+          "trend": "96526.3845767278718495457480210255147034233660"
+        },
+        "jobs": 16521,
+        "mae_seconds": {
+          "diagnostic_constant": "41174.6473240701328905855102294645612307268223",
+          "history": "102258.346075294554338494406740556018084543406",
+          "static": "120647.724875564412184001619176265509304993001",
+          "trend": "121230.300045278422902717489805909551096819347"
+        },
+        "zero_wait_jobs": 302
+      },
+      ">16": {
+        "bias_seconds": {
+          "diagnostic_constant": "-4224.49745800165368650710078876904099669366732",
+          "history": "52037.9124332816498787227768765322357196161366",
+          "static": "66262.7541776187435516374829853494580080916946",
+          "trend": "66459.0542968939073563720315498068040859481636"
+        },
+        "jobs": 1932,
+        "mae_seconds": {
+          "diagnostic_constant": "48460.4338779458292498992212896598675111224135",
+          "history": "110657.260582570089069807375883696797384694073",
+          "static": "100508.718963264995472461131285424040430841141",
+          "trend": "100622.202199892963819789903092959693057284372"
+        },
+        "zero_wait_jobs": 29
+      }
+    },
+    "holdout_constant_from_diagnostic_only_s": "31021.3767656008307855425886522247478231821120",
+    "independent_physical_replication": "NOT_PERFORMED",
+    "independent_queue_identifiers": "UNAVAILABLE",
+    "interpretation": "historical archive-derived aggregate wait proxy, not observed physical FIFO",
+    "new_lean_theorem": false,
+    "one_observational_trace_upstream_cleaned": true,
+    "original_prediction_files": {
+      "diagnostic": {
+        "file": "diagnostic-original-predictions.jsonl",
+        "original_bytes": 134578470,
+        "sha256": "66fe7632c7340273d0a72ccfae14963ccaa2e237dd0bdc0a51136569079feba0"
+      },
+      "holdout": {
+        "file": "holdout-original-predictions.jsonl",
+        "original_bytes": 59773248,
+        "sha256": "4f7a08759e6ea72645a35e8a37283dadba344003e07418e80f38422e694a77f0"
+      }
+    },
+    "past_start_observation_count": 202870,
+    "protocol": "RP-E010-P01",
+    "registered_primary_improvement_ratio": "0.90",
+    "scalar_C_physical_law_test": "NOT_PERFORMED",
+    "source": {
+      "actual_external_bytes": 19242100,
+      "actual_external_git_blob_sha1": "6d3cf513d74f6b839dc8425dd30bc889e15dc3be",
+      "actual_external_sha256": "77b8993c73ae438385f6c0015708251f52dc316267b03ac19a406fbea2802afa",
+      "missing_status_count": 878,
+      "missing_wait_count": 1,
+      "schema_eligible_target_count": 201992,
+      "source_record_count": 202871,
+      "source_url": "https://raw.githubusercontent.com/wrench-project/task_clustering_batch_datasets/f349db7f7783333f668e79618da62f8714fd7f2c/workloads/hpc2n.swf",
+      "unavailable_queue_id_count": 202871
+    },
+    "source_mirror_equals_original_PWA_gzip": "NOT_ESTABLISHED",
+    "source_schema_eligible_targets": 201992,
+    "source_unknown_wait_records": 1,
+    "split": {
+      "candidate_diagnostic_targets_before_past-start-eligibility": 146637,
+      "candidate_heldout_targets_before_past-start-eligibility": 55352,
+      "chronological_cutoff_seconds": "76811122",
+      "earliest_submit_seconds": "342072",
+      "feature_age_floor_seconds": "345672",
+      "latest_submit_seconds": "109583573"
+    },
+    "two_queue_oracles_agree_all_origins": true
+  },
+  "protocol": "RP-E010-P01"
+}

@@ -604,6 +604,50 @@ mechanism*, **not evidence that it caused RP-E010 or
 RP-E011's negative external outcomes**. Neither `C=B/(I*tau)`
 nor a physical persistence law was tested.
 
+## RP-F007-A01 — What a GUARANTEED residual-service bound can tell us
+
+The separate [RP-F007-A01 protocol](docs/preregistration/RP-F007-A01.md)
+was frozen at `93d5dc4` before any new code, proof or
+synthetic calculation, building on RP-F006's known finite
+nonidentifiability result. An **enforced**, public running
+job walltime cap changes the set of possible future waits
+when its elapsed execution time is known.
+
+Under the declared synthetic one-server FCFS-compatible
+model, a job already running for 30 seconds and
+subject to **hard cap 500 seconds** permits all 470
+integer future waits 1..470. The exact minimax
+absolute-error prediction is **235.5 s**, with
+**234.5 s worst-case error**. Under an actually
+enforced **90-second cap**, all 60 waits 1..60
+are admissible, midpoint **30.5 s** and sharp
+worst-case error **29.5 s**.
+
+The two groups have DIFFERENT known public caps,
+so their input information is NOT equal between
+groups. The 205-second difference in synthetic
+minimax worst-case error is **not empirical
+forecasting improvement, a causal scheduler
+effect or a new queuing theorem**.
+
+The original first hosted
+[RP-F007-A01 run #40229910510](https://github.com/DevHabito/relational-persistence/actions/runs/40229910510)
+verified all **530** preregistered synthetic
+scenarios and adversarial controls, archived
+unaltered at `6d0d794`. The
+[Lean 4 proof](RelationalPersistence/ResidualBounds.lean)
+was approved before the code merged at `4023bb1`.
+A **requested** walltime is not necessarily
+an ENFORCED cap; a 501-second actual runtime
+under a nominal 500-second limit was the
+predeclared adverse control. No external
+E010/E011 holdout was reused, and the empirical
+negative findings remain negative.
+
+See the [full F007 report](docs/results/RP-F007-A01.md).
+No universal physical relational persistence law
+or scalar `C=B/(I*tau)` was verified.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

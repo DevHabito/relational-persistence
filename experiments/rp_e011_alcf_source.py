@@ -351,12 +351,23 @@ def first_audit(output: Path, *, page_override: str | None = None,
             page = page_override
             meta = {"requested_url": PAGE, "final_url": PAGE,
                     "http_status": 200, "fixture_only": True}
-        url, resolution = resolve_download(page)
+        # Preserve the provider's public HTML *before* attempting to
+        # resolve any dynamic download element. This supports an honest
+        # blocked-source finding without inventing an alternative URL.
         record["acquisition"] = {
             "catalog_page": meta,
+            "original_catalog_html_sha256": sha256(
+                page.encode("utf-8")
+            ).hexdigest(),
+        }
+        (output / "original-catalog-page.html").write_text(
+            page, encoding="utf-8"
+        )
+        url, resolution = resolve_download(page)
+        record["acquisition"].update({
             "resolution": resolution,
             "download_url": url,
-        }
+        })
         if download_override is None:
             payload, headers = open_official(url, max_bytes=MAX_DOWNLOAD_BYTES)
         else:

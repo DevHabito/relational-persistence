@@ -308,7 +308,21 @@ def main() -> None:
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit("Refusing to overwrite an existing RP-F006 original report")
-    result = audit_witness()
+    try:
+        result = audit_witness()
+    except (ValueError, AssertionError) as exc:
+        # Frozen registered invalid case; preserve the first attempt,
+        # rather than replace an adverse witness with a convenient one.
+        result = {
+            "protocol": PROTOCOL,
+            "decision": "WITNESS_INVALID",
+            "source": "SYNTHETIC_ONLY",
+            "error": f"{type(exc).__name__}: {str(exc)[:300]}",
+            "new_queuing_theorem_claimed": False,
+            "empirical_external_validation_claimed": False,
+            "scalar_C_validated": False,
+            "physical_law_claimed": False,
+        }
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         json.dumps(result, sort_keys=True, indent=2) + "\n", encoding="utf-8"
@@ -317,12 +331,14 @@ def main() -> None:
         "protocol": PROTOCOL,
         "decision": result["decision"],
         "waits_s": [
-            result["short_target_wait_s"], result["long_target_wait_s"]
+            result.get("short_target_wait_s"), result.get("long_target_wait_s")
         ],
-        "lower_bound_s": result["exact_rational_obstruction"][
+        "lower_bound_s": (result.get("exact_rational_obstruction") or {}).get(
             "unavoidable_maximum_absolute_error_s"
-        ],
+        ),
     }, sort_keys=True))
+    if result["decision"] != "FINITE_NONIDENTIFIABILITY_VERIFIED":
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

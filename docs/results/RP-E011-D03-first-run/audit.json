@@ -1,0 +1,49 @@
+{
+  "d02_first_verdict_unchanged": "DATASET_SCHEMA_REJECTED",
+  "decision": "ANOMALY_LOCALIZED",
+  "diagnostic": {
+    "all_integer_id_readers_agree": true,
+    "d02_duplicate_job_ids": 0,
+    "d02_extended_queue_count": 13,
+    "d02_invalid_job_ids": 1,
+    "d02_parsed_widths": {
+      "22": 472400
+    },
+    "d02_standard_eligible_rows": 472399,
+    "d02_valid_numeric_prefix_rows": 472400,
+    "data_rows": 472400,
+    "duplicate_job_id_count": 0,
+    "nonpositive_job_id_count": 1,
+    "nonpositive_job_ids": [
+      {
+        "data_record_ordinal": 1,
+        "integer_job_id": 0,
+        "original_line_without_newline_sha256": "37fa5779391bcf43b42d672f89b13206efcf3f9336f2ec31d19d1874f848056c",
+        "physical_line": 1
+      }
+    ]
+  },
+  "errors": [],
+  "execution_environment": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "first_run_id": "40181814358",
+  "frozen_d02_audit_sha256": "99be405c4e88dfd3646ea1812030eb7927b0a076de808f0257cd55d6e5db11f0",
+  "original_provider_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+  "physical_law_tested": false,
+  "predictive_scores_computed": false,
+  "protocol": "RP-E011-D03",
+  "source_commit": "143d2a5193b977851de100d3dd6c230af239b1de",
+  "source_identity": {
+    "expected_bytes": 59430886,
+    "expected_sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+    "observed_bytes": 59430886,
+    "observed_sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+    "provider": {
+      "content_type": "application/x-shockwave-flash",
+      "final_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+      "original_bytes": 59430886,
+      "requested_url": "https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf",
+      "sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+      "status": 200
+    }
+  }
+}

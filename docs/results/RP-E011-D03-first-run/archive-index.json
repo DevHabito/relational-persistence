@@ -1,0 +1,11 @@
+{
+  "audit_sha256": "a3031311456ed5949bfbc73cd4f634c6bfa688c768806a94d6998ba20719e75d",
+  "d02_first_verdict_unchanged": "DATASET_SCHEMA_REJECTED",
+  "first_run_decision": "ANOMALY_LOCALIZED",
+  "first_run_id": "40181814358",
+  "observed_source_sha256": "dd48cf7ca369d485b14add5d2baca70a1001c19d9b447688ff7639812673dc7c",
+  "predictions_computed": false,
+  "protocol": "RP-E011-D03",
+  "source_code_commit": "143d2a5193b977851de100d3dd6c230af239b1de",
+  "third_party_bulk_rows_published": false
+}

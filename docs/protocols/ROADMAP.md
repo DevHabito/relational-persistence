@@ -152,6 +152,14 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - State limits accurately: earlier work is NOT asserted to have globally work-conserving immediate dispatch (the original H/R waits are 1 second); no empirical HPC scheduler or probabilistic population inference; no newly discovered theorem; no universal physical law and no scalar C test.
 - **Next distinct question:** identify causally *measurable before submission* scheduler capacity, actual running occupation, elapsed times, requested resource/walltimes, policy reservations and priority. Only then justify new empirical evaluations on a truly independent source/year. Do not recycle the seen 169,189-task CERIT-SC holdout as untouched.
 
+### RP-F007-A01 — guaranteed-cap versus merely requested runtime (SYNTHETIC ONLY)
+
+- The protocol was frozen on main at `93d5dc4`, *before* implementation and results. Reviewed code at `4023bb1` passed Python 3.11/3.12 and Lean 4 CI on exact PR head; original first synthetic run #40229910510 was `BOUNDED_STATE_MINIMAX_VERIFIED`, archived without replacement at `6d0d794`.
+- R is already executing at age 30 in the original single-server FCFS-compatible model, which does not claim global work conservation before target arrival. A **guaranteed and enforced** runtime maximum of 500 yields the exact positive integer residual wait set 1..470 (sharp minimax 469/2 s), and a guaranteed maximum of 90 yields 1..60 (sharp minimax 59/2 s).
+- The explicit 205-second mathematical worst-case error bound decrease is conditional on TWO DIFFERENT public-cap regimes, not same-information treatment or observed real-world forecast improvement. Endpoints and full interval containment are Lean-checked; independent Python simulates all 530 finite worlds, pre-origin histories and dispatch.
+- Negative advertised-only control: an actual 501-second runtime under requested walltime 500 violates a true bound. Real schedulers' effective limits and possible overrides must be verified before using such a bound. The earlier RP-F006 nonidentifiability theorem still applies: knowing an upper bound does not reveal the exact future residual.
+- **Next practical stop gate:** source/time-stamped configuration and whether assigned limits are enforceable at submission, plus historically recorded running age, requests, current occupancy, missing/censored jobs and scheduling policy. A new source/year and fully preregistered temporal design are required before another independent heldout predictive claim. Keep E010 and E011 negatives unchanged.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

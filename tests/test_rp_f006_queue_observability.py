@@ -53,6 +53,37 @@ def test_three_jobs_keep_registered_times_and_requested_resources():
         assert len({j.queue for j in world.jobs}) == 1
 
 
+def test_independent_event_driven_dispatch_replay_derives_exact_starts():
+    short, long = worlds()
+    short_records = study.replay_registered_dispatch(short)
+    long_records = study.replay_registered_dispatch(long)
+    assert short_records["independent_dispatch_replay_agrees"] is True
+    assert long_records["independent_dispatch_replay_agrees"] is True
+    assert short_records["fixed_pre_origin_dispatch_lags_seconds"] == (
+        long_records["fixed_pre_origin_dispatch_lags_seconds"]
+    ) == {"H": "1", "R": "1", "T": "0"}
+    assert short_records["recorded_start_finish_events"] == [
+        ("H", "-200", "-190"), ("R", "-30", "1"), ("T", "1", "2")
+    ]
+    assert long_records["recorded_start_finish_events"] == [
+        ("H", "-200", "-190"), ("R", "-30", "100"), ("T", "100", "101")
+    ]
+    assert short_records["global_work_conservation_claimed"] is False
+
+
+def test_independent_dispatch_replay_detects_changed_schedule():
+    original, _ = worlds()
+    tampered = replace(original, jobs=(
+        original.named("H"),
+        replace(original.named("R"), start=Fraction(-29)),
+        original.named("T"),
+    ))
+    # FCFS/no-overlap alone allows many schedules, but the declared
+    # deterministic dispatch replay must catch this changed start.
+    with pytest.raises(ValueError, match="dispatch replay"):
+        study.replay_registered_dispatch(tampered)
+
+
 def test_all_visible_event_history_and_public_requests_are_identical():
     short, long = worlds()
     expected = (

@@ -111,6 +111,13 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - The original, complete **RP-E010-P01 result was NO_REGISTERED_OBSERVATIONAL_GAIN** on run #40145857634, archived at `f8560cf`: 49,995 chronological heldout task waits, trend MAE 234,691.80 s versus static 227,534.07 s and historical mean wait 123,965.25 s. All source and double event-counter gates were valid. The trend failed to beat **either** classical comparator and was worse than static in all three registered processor groups. No retrospective trimming, split edits or coefficient tuning.
 - The P01 target is *historical submission-to-start waiting time*, **not** the service-recovery target from RP-E007/009 and cannot be described as the same endpoint. It is not a new physical law.
 
+### RP-E011-D01 — second independent official operational source gate
+
+- Retain the negative RP-E010-P01 result (49,995 heldout tasks; trend was worse than both registered classical controls) as immutable evidence. No claim of universal generalization or retrospective holdout reuse.
+- Freeze the official Argonne Leadership Computing Facility Polaris 2022 CSV **before** reading its job rows or computing any forecast (`0529649`). The publisher dictionary lists actual queue names, requested-node counts and two distinct wait definitions, but file-level availability is not yet verified.
+- Require official source download provenance, original data size and SHA, two agreeing CSV parsers, time/resource integrity and observed queue coverage. A blocked button or inaccessible portal is **SOURCE_ACCESS_BLOCKED**, not permission for alternative years/mirrors.
+- Only after verified D01 eligibility, preregister a separate queue/resource-aware observational prediction model with strong per-queue classical controls, correct held-time/eligible-time semantics, causal pre-arrival inputs and independent holdout.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

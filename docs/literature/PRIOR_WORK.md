@@ -52,3 +52,10 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - [SWF 2.2 official column specification](https://www.cs.huji.ac.il/labs/parallel/workload/swf.html): 18-field job records, missing=-1 conventions, submit, wait, runtime, allocated processors, status and queue meaning.
 - [Parallel Workloads Archive, NASA-iPSC 1993 conversion notes](https://www.cs.huji.ac.il/labs/parallel/workload/l_nasa_ipsc/): no real job submission timestamps were recorded; converted SWF substituted job starts for missing submit times. **Excluded as an independent observed queue-arrival dataset.**
 - D. G. Feitelson, D. Tsafrir and D. Krakov (2014), [Experience with using the Parallel Workloads Archive](https://doi.org/10.1016/j.jpdc.2014.06.013), *Journal of Parallel and Distributed Computing*, 74(10), 2967–2982: source curation, cleanup and anomalies are methodological issues requiring disclosure, not evidence of a newly discovered physical mechanism.
+
+## RP-E011 official ALCF Polaris scheduler data provenance (not a new result)
+
+- [ALCF Polaris DIM_JOB_COMPOSITE catalog](https://reports.alcf.anl.gov/data/polaris.html), Aug–Dec 2022 CSV, catalog original size 27,825,794 bytes. Resource page https://reports.alcf.anl.gov/data/ANL-ALCF-DJC-POLARIS_20220809_20221231.html. The official catalog is NOT a content-addressed repository and does not provide a preregistered SHA.
+- [Official ALCF job data dictionary](https://reports.alcf.anl.gov/data/datadictionary/datadictionary_dim_job_composite.html): `QUEUE_NAME`, node requests/allocations, chronological queued/start/end, and distinct `QUEUED_WAIT_SECONDS` (includes holds) versus `ELIGIBLE_WAIT_SECONDS` (excludes holds). Future allocation outcomes and termination codes must not become ex-ante predictors.
+- Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
+- Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.

@@ -1,0 +1,10 @@
+{
+  "existing_empirical_results_modified": false,
+  "first_code_commit": "406e92399da3f572f5c7852db016ba79421cca13",
+  "first_report_sha256": "5b1a7a0bc5bda671ae542fc02d25d995df8bccc85f1929d2e8dcf73a932b4a5d",
+  "first_run_id": "40205665104",
+  "first_verdict": "FINITE_NONIDENTIFIABILITY_VERIFIED",
+  "new_physical_law_claimed": false,
+  "original_external_data_used": false,
+  "protocol": "RP-F006-A01"
+}

@@ -1,0 +1,165 @@
+{
+  "decision": "FINITE_NONIDENTIFIABILITY_VERIFIED",
+  "empirical_external_validation_claimed": false,
+  "exact_rational_obstruction": {
+    "equal_weighted_minimax_prediction_s": "101/2",
+    "equal_weighting_is_synthetic_assumption_only": true,
+    "equally_weighted_two_world_expected_mae_lower_bound_s": "99/2",
+    "label_separation_s": "99",
+    "unavoidable_maximum_absolute_error_s": "99/2"
+  },
+  "first_preregistered_code": "3670d7d9bb15e69c6d354f056ecc4de87b27d55c",
+  "frozen_candidate_and_baseline_predictions": {
+    "history": {
+      "long_abs_error_s": "99",
+      "prediction_s": "1",
+      "short_abs_error_s": "0",
+      "worst_case_abs_error_s": "99"
+    },
+    "static": {
+      "long_abs_error_s": "100",
+      "prediction_s": "0",
+      "short_abs_error_s": "1",
+      "worst_case_abs_error_s": "100"
+    },
+    "trend": {
+      "long_abs_error_s": "100",
+      "prediction_s": "0",
+      "short_abs_error_s": "1",
+      "worst_case_abs_error_s": "100"
+    }
+  },
+  "full_pre_origin_observations_identical": true,
+  "long_target_wait_s": "100",
+  "new_queuing_theorem_claimed": false,
+  "physical_law_claimed": false,
+  "protocol": "RP-F006-A01",
+  "registered_common_observation": {
+    "all_pre_origin_events": [
+      [
+        "-201",
+        "submit",
+        "H"
+      ],
+      [
+        "-200",
+        "start",
+        "H"
+      ],
+      [
+        "-190",
+        "end",
+        "H"
+      ],
+      [
+        "-31",
+        "submit",
+        "R"
+      ],
+      [
+        "-30",
+        "start",
+        "R"
+      ]
+    ],
+    "all_public_requests": [
+      [
+        "H",
+        "500",
+        1,
+        "synthetic-single-queue"
+      ],
+      [
+        "R",
+        "500",
+        1,
+        "synthetic-single-queue"
+      ],
+      [
+        "T",
+        "500",
+        1,
+        "synthetic-single-queue"
+      ]
+    ],
+    "historical_start_rate_per_s": "1/3540",
+    "historical_wait_median_s": "1",
+    "past_started_count": 1,
+    "q_minus_120": 0,
+    "q_minus_60": 0,
+    "q_pre_target": 0,
+    "running_job_age_s": "30",
+    "running_job_observed_busy": true,
+    "running_job_start_s": "-30",
+    "source": "synthetic deterministic FCFS-compatible three-job schedule",
+    "target_submission_s": "0"
+  },
+  "registered_negative_controls": {
+    "changing_target_service_does_not_change_wait": true,
+    "identical_running_completion_gives_no_wait_contrast": true,
+    "illicit_future_completion_oracle_distinguishes_worlds": true
+  },
+  "scalar_C_validated": false,
+  "short_target_wait_s": "1",
+  "source": "SYNTHETIC_ONLY",
+  "world_long": {
+    "fcfs_arrival_and_start_order": true,
+    "fixed_pre_origin_dispatch_lags_seconds": {
+      "H": "1",
+      "R": "1",
+      "T": "0"
+    },
+    "global_work_conservation_claimed": false,
+    "independent_dispatch_replay_agrees": true,
+    "no_overlapping_service": true,
+    "recorded_start_finish_events": [
+      [
+        "H",
+        "-200",
+        "-190"
+      ],
+      [
+        "R",
+        "-30",
+        "100"
+      ],
+      [
+        "T",
+        "100",
+        "101"
+      ]
+    ],
+    "target_starts_at_running_completion": true,
+    "work_conservation_before_origin_asserted": false
+  },
+  "world_short": {
+    "fcfs_arrival_and_start_order": true,
+    "fixed_pre_origin_dispatch_lags_seconds": {
+      "H": "1",
+      "R": "1",
+      "T": "0"
+    },
+    "global_work_conservation_claimed": false,
+    "independent_dispatch_replay_agrees": true,
+    "no_overlapping_service": true,
+    "recorded_start_finish_events": [
+      [
+        "H",
+        "-200",
+        "-190"
+      ],
+      [
+        "R",
+        "-30",
+        "1"
+      ],
+      [
+        "T",
+        "1",
+        "2"
+      ]
+    ],
+    "target_starts_at_running_completion": true,
+    "work_conservation_before_origin_asserted": false
+  }
+}

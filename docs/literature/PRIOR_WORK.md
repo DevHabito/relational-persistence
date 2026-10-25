@@ -60,6 +60,13 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## Existing queue waiting-time prediction methods (not project discoveries)
+
+- P. Murali and S. Vadhiyar (2016), [Qespera: an adaptive framework for prediction of queue waiting times in supercomputer systems](https://doi.org/10.1002/cpe.3735), *Concurrency and Computation: Practice and Experience*. Queue-specific historical prediction and adaptive scheduling are well established.
+- [Predicting queue wait time probabilities for multi-scale computing](https://pmc.ncbi.nlm.nih.gov/articles/PMC6388012/) (2019). Historical/job-attribute-based probabilistic wait prediction preceded RP-E011-P01. The present work does not propose an original algorithm for probabilistic queue forecasting.
+- [Queue congestion prediction for large-scale HPC systems using a hidden Markov model](https://doi.org/10.1007/s11227-022-04356-z) (2022). Time-varying queue congestion and historical scheduler records were studied independently of the present project.
+- RP-E011-P01's queue-specific historical median, waiting-count ratio and two-snapshot trend are **classical operational benchmarks**. Their preregistered comparison on one external source is a study of empirical incremental value, not a claim of mathematical priority. Status: original negative, no >=10% joint improvement. Extremely imbalanced queues and shared system policies limit generalization.
+
 ## RP-E011-D02 external mixed-workload source after original ALCF block
 
 - [JSSPP, CERIT-SC 2017 workload archive](https://jsspp.org/workload/index.php?page=cerit), original [extended SWF grid-jobs trace](https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf). Source documentation adds the execution node, queue name, qsub submitted command-line arguments and requested GPUs to standard 18-field SWF. Documented capabilities are **not** measured coverage in the file until D02 passes.

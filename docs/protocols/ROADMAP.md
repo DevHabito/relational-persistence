@@ -131,6 +131,19 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - The original D02 `DATASET_SCHEMA_REJECTED` and original E010 negative 49,995-job forecast remain unchanged. Do not claim that knowing the first-line location proves a publisher fault or that dropping it retroactively validates D02.
 - Before any new queue-aware observational forecast, separately define the prospective job population and disclosure for an initial ID 0, train/holdout chronology, prerecord available queue/processor state, and strong historical per-queue baselines. Do not use any new outcomes to choose inclusion or thresholds.
 
+### RP-E011-D04 — conditional source temporal feasibility after known ID anomaly
+
+- D04 preregistration at `c6e33b1` was frozen **before new D04 implementation/data** and explicitly allowed only the already-identified physical-line-one ID=0 as a new-source population exception. D02 remains definitively REJECTED.
+- First original D04 source-only run #40183836342 passed **TEMPORAL_SOURCE_FEASIBLE**: 472,399 conditional candidate jobs, 303,210 diagnostic / 169,189 heldout, 13 real queues but only two meeting the prespecified >=100 cases on both sides. Data are timestamp-ordered with many ties. Original audit archived `1fef039`.
+- D04's source feasibility is **not** a prediction test, and the later queue imbalance and MAE findings were not used to select its gates.
+
+### RP-E011-P01 — first queue-aware primary-source wait-time forecast
+
+- P01 protocol was separately frozen on `main` at `d6029a1` before predictor source or heldout results; implementation code at `7c556ca` passed 465 regressions per Python version and existing Lean 4 CI. It uses strictly causal pre-origin events, online historical starts, a fixed 70/30 clock cutoff, all 169,189 heldout jobs and two primary unfitted classical comparators. Original full prediction bytes were preserved temporarily, original SHA and summary permanently.
+- First full original prediction run #40185076529 was **NO_REGISTERED_QUEUE_GAIN** with valid source/feature oracles: TREND MAE **45,328.01 s**, STATIC **43,953.98 s**, HISTORY **34,309.43 s**. TREND lost to both. Archived unchanged at `534720b`; no threshold edit or new source/holdout choice.
+- **Strong concentration:** 149,760 and 18,880 of 169,189 heldout jobs belonged to just two queues (~99.68%); seven other original queues had zero heldout jobs. Do not claim independent performance across 13 queue policies. The medium requested-size subgroup was mildly favorable versus static, but the full frozen result is negative.
+- Next work should be an independent research question or external source/year, not refitting on this original holdout and calling a second evaluation blind. Preserve both E010 and E011 external negative findings and clarify their distinct targets and source types. Do not interpret their software-engineering indicators as a physical `C=B/(I*tau)` test.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

@@ -494,6 +494,79 @@ The **RP-E010-P01 predictive failure** remains
 an independent result and is not overturned
 by finding a source with queue names.
 
+## RP-E011-D04 — Verified temporal source coverage, not predictive evidence
+
+After D03 localized the known ID 0,
+the independently [preregistered D04 temporal source audit](docs/preregistration/RP-E011-D04.md)
+explicitly documented a **new, retrospective-informed one-row
+exclusion**; the original D02 rejection was **not**
+relabeled. The first original D04
+[source run #40183836342](https://github.com/DevHabito/relational-persistence/actions/runs/40183836342)
+met its frozen `TEMPORAL_SOURCE_FEASIBLE` gate, preserving
+472,399 eligible jobs in 13 queues with exactly
+303,210 earlier diagnostic and 169,189 later
+chronological candidate targets. There were **zero
+original-file submission order inversions** and
+167,252 adjacent timestamp ties. Original
+source-only evidence was archived at `1fef039`;
+[complete D04 report](docs/results/RP-E011-D04.md).
+No prediction errors were computed by D04.
+
+## RP-E011-P01 — Queue-aware external forecast: registered NEGATIVE
+
+The new [P01 prediction protocol](docs/preregistration/RP-E011-P01.md)
+was frozen on `main` at `d6029a1` **before
+the P01 code or predictions**. A reviewed,
+Python- and Lean-CI-checked implementation at
+`7c556ca` defined an unfitted queue-specific
+two-snapshot trend and two **primary classical
+controls**: queue-static backlog/past-start rate
+and a history-of-already-started-job median that
+also uses submitted processor-size groups.
+
+The original [run #40185076529](https://github.com/DevHabito/relational-persistence/actions/runs/40185076529)
+successfully audited original JSSPP source bytes,
+reconstructed all requested queue-state snapshots
+by two agreeing algorithms, and scored **all
+169,189 chronological heldout jobs** without
+trimming. **Registered result:
+`NO_REGISTERED_QUEUE_GAIN`.**
+
+| Forecast | Heldout MAE in seconds |
+|---|---:|
+| History of started jobs (queue/resource-aware) | **34,309.43** |
+| Static queue backlog / past start rate | **43,953.98** |
+| Two-snapshot queue trend | **45,328.01** |
+
+TREND was **3.13% worse than STATIC** and
+**32.12% worse than HISTORY**, not 10%
+better than both. The source and two
+independent reconstruction oracles passed.
+The unfavorable original report and
+SHA-256 of the **104,512,786-byte original
+heldout prediction file** are preserved in Git
+at `534720b`; the full per-job records
+remain temporarily in Actions artifacts.
+
+**Important scope limit:** although 13 genuine
+queue names were found, **149,760 + 18,880**
+jobs came from just two queues, **99.68%**
+of the heldout set; seven queues had no
+heldout targets. All queues remain in the
+original per-queue report, including zeros.
+The results concern historical
+submit-to-start waiting time in one original
+mixed shared cloud/HPC source. They do
+**not** overturn the narrowly successful
+software recovery experiments, identify
+a new physical law, validate `C=B/(I*tau)`
+or prove independent physical generality.
+
+Read the [first P01 negative scientific report](docs/results/RP-E011-P01.md),
+[original first-run metadata](docs/results/RP-E011-P01-first-run/)
+and [prior RP-E010 negative result](docs/results/RP-E010-P01.md).
+The negative cases are part of the research record.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

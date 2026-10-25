@@ -1,0 +1,43 @@
+name: RP-E010-P01 Read-Only Original Prediction Replay
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e010-first-run-replay.yml
+      - experiments/rp_e010_verify_first_run.py
+      - tests/test_rp_e010_first_prediction_archive.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay_original:
+    name: Re-fetch same historical data, reproduce first-run byte hashes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install fixed research code
+        run: python -m pip install -e '.[dev]'
+      - name: Verify archived first result, source digest and negative gate
+        run: |
+          python -m pytest -q \
+            tests/test_rp_e010_first_prediction_archive.py \
+            tests/test_rp_e010_observational_forecast.py
+      - name: Deterministically reconstruct SAME history; no new research sample
+        run: |
+          python -m experiments.rp_e010_verify_first_run \
+            --output original-read-only-replay.json
+      - name: Save read-only reproducibility verdict, never replace original source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e010-p01-read-only-replay
+          path: original-read-only-replay.json
+          if-no-files-found: warn
+          retention-days: 90

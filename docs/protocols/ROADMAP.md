@@ -115,8 +115,14 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 
 - Retain the negative RP-E010-P01 result (49,995 heldout tasks; trend was worse than both registered classical controls) as immutable evidence. No claim of universal generalization or retrospective holdout reuse.
 - Freeze the official Argonne Leadership Computing Facility Polaris 2022 CSV **before** reading its job rows or computing any forecast (`0529649`). The publisher dictionary lists actual queue names, requested-node counts and two distinct wait definitions, but file-level availability is not yet verified.
-- Require official source download provenance, original data size and SHA, two agreeing CSV parsers, time/resource integrity and observed queue coverage. A blocked button or inaccessible portal is **SOURCE_ACCESS_BLOCKED**, not permission for alternative years/mirrors.
+- **First RP-E011-D01 source attempt #40148017404 was SOURCE_ACCESS_BLOCKED** by HTTPError retrieving the official Polaris resource. No CSV bytes, queues or predictor scores were observed. The original metadata are immutable at `4366736`.
 - Only after verified D01 eligibility, preregister a separate queue/resource-aware observational prediction model with strong per-queue classical controls, correct held-time/eligible-time semantics, causal pre-arrival inputs and independent holdout.
+
+### RP-E011-D02 — separately registered primary-source candidate after D01 blocked
+
+- Freeze new candidate JSSPP 2017 CERIT-SC grid jobs original extended SWF at `e3a2d21`; this is **not** another D01 attempt or a change to the D01 outcome.
+- Audit the original direct academic publisher source for byte SHA, valid 18-field SWF records, actual extended queue labels and at least two distinct queues. Preserve blocked or schema-negative findings as final D02 source evidence.
+- No waiting-time forecasting, recovery experiment or Lean theorem is claimed by a source eligibility study. A separate predictive protocol is required after passing source availability.
 
 ## Stage 3 — relationship to RZS and PMFF
 

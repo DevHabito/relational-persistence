@@ -59,3 +59,10 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - [Official ALCF job data dictionary](https://reports.alcf.anl.gov/data/datadictionary/datadictionary_dim_job_composite.html): `QUEUE_NAME`, node requests/allocations, chronological queued/start/end, and distinct `QUEUED_WAIT_SECONDS` (includes holds) versus `ELIGIBLE_WAIT_SECONDS` (excludes holds). Future allocation outcomes and termination codes must not become ex-ante predictors.
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
+
+## RP-E011-D02 external mixed-workload source after original ALCF block
+
+- [JSSPP, CERIT-SC 2017 workload archive](https://jsspp.org/workload/index.php?page=cerit), original [extended SWF grid-jobs trace](https://jsspp.org/workload/logs/2017/cerit/grid-jobs.swf). Source documentation adds the execution node, queue name, qsub submitted command-line arguments and requested GPUs to standard 18-field SWF. Documented capabilities are **not** measured coverage in the file until D02 passes.
+- Klusáček, D. and Parák, B. (2017), *Analysis of Mixed Workloads from Shared Cloud Infrastructure*, Job Scheduling Strategies for Parallel Processing. Acknowledge CERIT-SC and the Czech National Distributed Infrastructure MetaCentrum, as the publisher requests.
+- [Parallel Workloads Archive standard 18-column SWF definitions](https://www.cs.huji.ac.il/labs/parallel/workload/swf.html). Original JSSPP server response may carry a nonsemantic Content-Type; byte contents, not filename/MIME, determine whether the file is SWF text.
+- Original RP-E011-D01 ALCF attempt remained `SOURCE_ACCESS_BLOCKED`; it is not scientifically equivalent to a failed predictor, nor is this JSSPP source a retry of its frozen experiment.

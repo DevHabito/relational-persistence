@@ -23,6 +23,8 @@
 
 | RP-E010-P01 | Frozen external HPC2N wait-to-start target; reconstructed aggregate waiting-job proxy compared against static and historical wait controls, chronological holdout | **NO_REGISTERED_OBSERVATIONAL_GAIN**: 49,995 heldout, trend 234,691.80 s MAE vs static 227,534.07 s and historical mean 123,965.25 s; original run #40145857634 archived at `f8560cf` | Observational source is upstream-cleaned and multi-resource; not queue-ID-specific, a randomized intervention, a new Lean theorem or a physical law |
 
-| RP-E011-D01 | Official ALCF Polaris Aug-Dec 2022 job export (catalog describes queue names, requests, submission/start and distinct waits), frozen source-access gate | **PENDING FIRST OFFICIAL SOURCE AUDIT**; exact 27,825,794-byte CSV, independent readers and queue coverage required; no forecast | Official provider portal lacks preregistered checksum and may block raw access; not yet validated data, physical law or prediction |
+| RP-E011-D01 | Official ALCF Polaris Aug-Dec 2022 job export (catalog describes queue names, requests, submission/start and distinct waits), frozen source-access gate | **SOURCE_ACCESS_BLOCKED**, original run #40148017404 archived at `4366736`; the official page returned HTTPError, no source rows were retrieved or modeled | Official provider portal lacks preregistered checksum and may block raw access; not yet validated data, physical law or prediction |
+
+| RP-E011-D02 | Original JSSPP 2017 CERIT-SC extended SWF (source documents additional node/queue/request information), separately preregistered after D01 blocked | **ORIGINAL SOURCE AUDIT PENDING**; source byte digest, two numeric-prefix readers and real extended queue names required | Distinct independent data candidate, not a D01 substitution or any waiting-time predictive result |
 
 A claim may be mathematically proved and still be false as a physical interpretation; an observed topology is not an observed trajectory.

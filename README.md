@@ -439,36 +439,41 @@ retune a method using this already-seen holdout.
 No universal relational persistence physical law
 or empirical validity of `C=B/(I*tau)` is claimed.
 
-## RP-E011 — Official independent Polaris scheduler data source audit
+## RP-E011 — Distinct external scheduling trace source candidates
 
-After the registered **negative RP-E010-P01** observational result,
-the [RP-E011-D01 protocol](docs/preregistration/RP-E011-D01.md)
-was frozen at `0529649` **before any new source retrieval or
-forecast development**. The source chosen is the **official
-Argonne Leadership Computing Facility 2022 Polaris job CSV**,
-rather than another upstream-cleaned PWA mirror.
+Following the negative RP-E010-P01 real-world waiting-time
+forecast, [RP-E011-D01](docs/preregistration/RP-E011-D01.md)
+was registered at `0529649` for official ALCF
+Polaris data. Its **first** hosted source run
+[#40148017404](https://github.com/DevHabito/relational-persistence/actions/runs/40148017404)
+returned **SOURCE_ACCESS_BLOCKED** because the
+official resource page could not be retrieved
+(HTTPError; no proven numeric status).
+No source data or forecasts were obtained.
+The original failure is [archived at `4366736`](https://github.com/DevHabito/relational-persistence/commit/4366736bad06490cea4b24562768ae40aa14db18)
+and [reported](docs/results/RP-E011-D01.md).
+It is **not** changed to a predictive failure.
 
-Its published [data dictionary](https://reports.alcf.anl.gov/data/datadictionary/datadictionary_dim_job_composite.html)
-describes actual `QUEUE_NAME`, `QUEUED_TIMESTAMP`,
-`START_TIMESTAMP`, `NODES_REQUESTED` and **both**
-`QUEUED_WAIT_SECONDS` and `ELIGIBLE_WAIT_SECONDS`.
-These are distinct: one includes queue ineligibility/holds;
-the other excludes them. File-level presence and quality
-must still be verified directly, and the official
-resource is **not** an immutable upstream snapshot.
+Rather than replacing that source invisibly,
+a separate [RP-E011-D02 protocol](docs/preregistration/RP-E011-D02.md)
+was frozen on main at `e3a2d21` for the original
+JSSPP 2017 **CERIT-SC extended SWF**
+[grid workload](https://jsspp.org/workload/index.php?page=cerit).
+The publisher documents queue names,
+execution nodes and requested GPU information
+in addition to SWF fields. An independent
+[new source-only audit](docs/results/RP-E011-D02.md)
+will verify original bytes, 18-field prefix
+integrity and genuine extended queue-name
+coverage without importing a replacement
+for D01 or computing a forecast.
 
-The [source-only D01 audit](docs/results/RP-E011-D01.md)
-requires verified official download provenance, the
-catalog-specified 27,825,794-byte original CSV,
-two agreeing CSV readers, at least 1,000 eligible
-timestamp/resource records and at least two observed
-queues. An unavailable direct download is reported
-**SOURCE_ACCESS_BLOCKED** without source substitution.
-
-**This is not a new prediction test.** RP-E010-P01's
-failed historical forecast remains a published
-counterexample; a separate prospective RP-E011-P01
-protocol is required before scoring any Polaris data.
+RP-E010-P01 remains a fully documented
+**negative** 49,995-case observational study.
+A new predictive claim would require
+a separately registered protocol after
+source availability and semantics are
+actually verified.
 
 ## Naming and provenance
 

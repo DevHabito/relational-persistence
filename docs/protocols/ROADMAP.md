@@ -168,6 +168,13 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - No original Google production trace rows were read, no BigQuery spend was incurred, no new forecast or Lean theorem was attempted, and no RP-F007 practical validation was claimed. E010/E011 original external forecast negatives remain final.
 - **Next gate:** preregister a minimal provider-authentic raw-event subset (exact machine/cell/time provenance and a zero/low-cost access plan), inspect missingness/synthetic-event prevalence and timestamp alignment WITHOUT scoring any predictor. Stop and archive if source access or historical feature releases cannot be established. Full hard-cap transfer needs a different verified field/provider or independently verified policy-level enforcement records.
 
+### RP-E012-D02 — bounded ORIGINAL real event prefixes, not forecasts
+
+- [Original protocol](../preregistration/RP-E012-D02.md) frozen on main `e5efc724` before any E012-D02 metadata/row read. The zero-cost anonymous source and deterministic first 100-listed-shard choice were public-documentation-informed, not blind.
+- First original provider GCS source run #40421367613 **SOURCE_PREFIX_AUDITED**, original archived `a6051fc`: cell `a`, first compressed machine/instance shards, verified provider generation and 16,384-byte actual compressed SHA-256 prefix each, no full gzip CRC/whole-object data. 500 machine ADD; 495 instance SUBMIT + 5 LOST, five nonzero missing-event flags. Adversarial Python + existing Lean regressions passed before initial source access.
+- Both file prefix streams contain **many temporal inversions** (258 machine, 183 instance), so neither filename nor row ordinal identifies a chronological holdout. The 1000 original rows are NONRANDOM and NOT representative. They do not establish source completeness, trace-wide missingness, actual placement/start equivalence, hard enforced runtime caps or real forecast gains.
+- **Next proposed independent feasibility gate:** can bounded access to all required original shards for a fixed actual event-time subwindow establish event-history coverage and a sound tie/missingness reconstruction? Select exact range/sources and budget BEFORE access; prohibit target-label inspection and any parameter refitting on prior E010/E011 revealed holdouts.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

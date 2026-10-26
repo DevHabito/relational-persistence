@@ -302,21 +302,19 @@ def read_exact_prefix(table: str, metadata: dict) -> dict:
             not content_range or not content_range.startswith("bytes 0-")
         ):
             raise SourceAccess("Partial GCS byte range does not start at zero")
-        chunks = []
         consumed = 0
-        pending = b""
-        # Never read beyond 2MiB in total, even if Range was not honored.
-        while consumed < MAX_COMPRESSED:
-            chunk = response.read(min(READ_CHUNK, MAX_COMPRESSED - consumed))
-            if not chunk:
-                break
-            consumed += len(chunk)
-            chunks.append(chunk)
-            # Termination bounded by the source reader's fixed bytes cap;
-            # the decompressor may stop earlier if it reaches 500 rows.
-    evidence = parse_bounded_gzip_prefix(chunks, table)
-    if evidence["compressed_prefix_bytes_consumed"] > consumed:
-        raise PrefixInvalid("Parser consumed unreceived source bytes")
+        def streamed_prefix():
+            nonlocal consumed
+            # Lazy: network reads STOP when the 500th complete row is parsed.
+            while consumed < MAX_COMPRESSED:
+                chunk = response.read(min(READ_CHUNK, MAX_COMPRESSED - consumed))
+                if not chunk:
+                    break
+                consumed += len(chunk)
+                yield chunk
+        evidence = parse_bounded_gzip_prefix(streamed_prefix(), table)
+        if evidence["compressed_prefix_bytes_consumed"] != consumed:
+            raise PrefixInvalid("Parser bytes disagree with actual source download")
     evidence["http_status"] = http_status
     evidence["server_content_range"] = content_range
     evidence["server_object_generation_confirmed"] = (

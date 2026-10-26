@@ -60,6 +60,14 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## RP-E012-D02: original Google Borg production source versus project-specific audit
+
+- The publisher's [August 2020 GCS publication](https://groups.google.com/g/googleclusterdata-discuss/c/WuRDhbI8YzA) established official cell bucket names, table shards, compressed newline JSON, and 64-bit integer-string encoding. All original production traces, event meaning and GCS metadata **precede RP-E012** and belong to Google's prior work.
+- [*Borg: The Next Generation*](https://research.google/pubs/borg-the-next-generation/) (Tirmazi et al., EuroSys 2020) presents analyses of the original eight-cell 2019 data. E012 is not the first demonstration that such events exist, are imperfect or can be used to study cluster scheduling.
+- RP-E012-D02 prereg `e5efc724` and original #40421367613, permanent `a6051fc`: exactly 500 first original complete rows each of `machine_events` and `instance_events` from publisher cell `a`, with compressed-byte-range provenance, basic event enum and missingness validation, and documented nonmonotonic timestamps.
+- The **258 + 183 timestamp inversions** are per adjacent pair in these nonrepresentative file prefixes, **not** an estimated cluster-wide event error rate. Five LOST instance events had nonzero missingness flags. We cannot assign real-world prevalence, inference of physical process start from SCHEDULE, or compare unseen wait forecasts from these selective first-row summaries.
+- The project contribution is a bounded, first-run-frozen source pipeline, not original scheduler theory, raw Google data ownership, proof of running walltime enforcement or a physical state scalar.
+
 ## RP-E012 Google Borg original v3 schema and causal feature limitations
 
 - John Wilkes and collaborators, [official Google 2019 cluster usage trace](https://github.com/google/cluster-data/blob/master/ClusterData2019.md) and [v3 protobuf schema](https://github.com/google/cluster-data/blob/master/clusterdata_trace_format_v3.proto). Published Google cluster management/Borg traces predate RP-E012, and all event names, priority/resource fields and missing-event flags belong to the provider, not our theory.

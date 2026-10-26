@@ -181,10 +181,18 @@ def verify_line(line: bytes, table: str) -> tuple[dict, dict]:
             raise PrefixInvalid("Unknown original missing-event kind")
     else:
         missing_type = None
+    optional_names = (
+        ("capacity", "switch_id", "platform_id")
+        if table == "machine_events" else
+        ("priority", "resource_request", "machine_id", "missing_type")
+    )
     return item, {
         "time": moment, "type": event_type,
         "nonzero_missing_flag": bool(missing_type),
         "declares_missing_type": missing is not None,
+        "present_optional_names": tuple(
+            name for name in optional_names if name in item
+        ),
     }
 
 
@@ -254,6 +262,10 @@ def parse_bounded_gzip_prefix(compressed_chunks: list[bytes], table: str) -> dic
         "rows_with_nonzero_missing_event_flag": sum(
             item["nonzero_missing_flag"] for item in observed
         ),
+        "optional_field_presence_counts_prefix_only": dict(sorted(
+            Counter(name for item in observed
+                    for name in item["present_optional_names"]).items()
+        )),
         "max_rows": MAX_ROWS,
         "no_production_ids_or_raw_lines_retained": True,
         "not_a_population_representative_sample": True,

@@ -698,6 +698,55 @@ Borg corpus. Read the
 Both original E010/E011 negative forecasting
 outcomes remain untouched.
 
+## RP-E012-D02 — First original Borg production event prefixes audited
+
+A separate [RP-E012-D02 source protocol](docs/preregistration/RP-E012-D02.md)
+was frozen on `main` at `e5efc724` BEFORE
+any RP-E012-D02 original GCS object metadata or
+event-row access and before implementation.
+Google's 2020 GCS announcement was known
+and disclosed before registration.
+
+Reviewed [PR #51](https://github.com/DevHabito/relational-persistence/pull/51)
+passed **605 Python tests on each of 3.11 and
+3.12** and existing Lean CI before merging
+at `1d10146`. The FIRST original
+[source run #40421367613](https://github.com/DevHabito/relational-persistence/actions/runs/40421367613)
+returned **`SOURCE_PREFIX_AUDITED`** and
+permanently archived its result and
+compressed-prefix SHA-256 digests at
+`a6051fc`.
+
+Exactly **500 original machine-event rows**
+and **500 instance-event rows** were read,
+from the **first lexicographically selected
+GCS object and fixed compressed prefix** in
+cell `a`, without BigQuery or credentials.
+The initial machine events were 500 ADD,
+and initial instance events 495 SUBMIT and
+5 LOST, all 5 bearing nonzero missing-event
+flags. The first 500 rows contained **258
+machine timestamp inversions** and **183
+instance timestamp inversions**: storage
+row order cannot be mistaken for time order.
+
+These are **nonrandom, nonrepresentative file
+prefixes**, not an exhaustive chronological
+sample or evidence of complete scheduling
+state. Only 16,384 bytes of each original
+compressed object were consumed. GCS
+generation and HTTP byte-range boundaries
+were checked; whole-object hashes/gzip
+trailers were NOT checked because the
+sample was deliberately partial.
+No raw production IDs/rows were committed.
+
+Read the [full E012-D02 report](docs/results/RP-E012-D02.md).
+**No real forecast, wallclock runtime
+guarantee, new Lean theorem or physical
+scalar C was tested.** Earlier original
+E010/E011 negative results remain intact.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

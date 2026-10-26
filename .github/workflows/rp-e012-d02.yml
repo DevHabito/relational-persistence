@@ -1,0 +1,96 @@
+name: RP-E012-D02 Original GCS Event Prefix Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e012-d02.yml
+      - experiments/rp_e012_d02_prefix.py
+      - tests/test_rp_e012_d02_prefix.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e012-d02-first-source
+  cancel-in-progress: false
+
+jobs:
+  first_original_gcs_event_prefix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Refuse replacing first original external GCS prefix verdict
+        run: |
+          if test -e docs/results/RP-E012-D02-first-run; then
+            echo "Original first-run evidence exists; abort duplicate."
+            exit 1
+          fi
+      - name: Install test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run adversarial SYNTHETIC tests before ANY GCS row requests
+        run: python -m pytest -q tests/test_rp_e012_d02_prefix.py
+      - name: First preregistered ORIGINAL GCS metadata and bounded row prefixes
+        run: |
+          python -m experiments.rp_e012_d02_prefix \
+            --output rp-e012-d02-original/audit.json
+      - name: Preserve first report as Actions artifact even if negative
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e012-d02-first-source-evidence-only
+          path: rp-e012-d02-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Archive immutable first report and byte identities
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="rp-e012-d02-original/audit.json"
+          target="docs/results/RP-E012-D02-first-run"
+          if test -e "$target"; then
+            echo "Refusing to replace original D02 result."
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo "No original report to archive; cannot invent an outcome." >&2
+            exit 1
+          fi
+          mkdir -p "$target"
+          cp "$src" "$target/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          directory=Path("docs/results/RP-E012-D02-first-run")
+          raw=(directory/"audit.json").read_bytes()
+          report=json.loads(raw)
+          index={
+            "protocol":"RP-E012-D02",
+            "first_run_id":"${{ github.run_id }}",
+            "first_code_commit":"${{ github.sha }}",
+            "preregistration_commit":"e5efc72498fb3377aed4fd5302a288df95c57a23",
+            "original_decision":report["decision"],
+            "first_report_sha256":sha256(raw).hexdigest(),
+            "production_data_rows_committed_to_git":False,
+            "no_bigquery_user_auth_or_paid_query":True,
+            "new_lean_theorem_claimed":False,
+            "original_e010_e011_negative_results_unchanged":True,
+          }
+          (directory/"archive-index.json").write_text(
+            json.dumps(index, sort_keys=True, indent=2)+"\n",
+            encoding="utf-8",
+          )
+          PY
+          git add "$target"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze FIRST RP-E012-D02 original GCS prefix verdict"
+          git push origin HEAD:main

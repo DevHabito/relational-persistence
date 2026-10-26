@@ -1,0 +1,106 @@
+{
+  "bigquery_used": false,
+  "complete_event_history_asserted": false,
+  "decision": "SOURCE_PREFIX_AUDITED",
+  "errors": [],
+  "first_run_id": "40421367613",
+  "forecast_or_holdout_calculated": false,
+  "original_code_commit": "1d10146eca6c6c18caa4f06b8c30415d2f5f28dd",
+  "physical_scalar_C_or_new_lean_theorem_claimed": false,
+  "preregistration_commit": "e5efc72498fb3377aed4fd5302a288df95c57a23",
+  "production_rows_are_nonrepresentative_prefixes": true,
+  "protocol": "RP-E012-D02",
+  "source_bucket": "clusterdata_2019_a",
+  "synthetic_strict_causal_boundary_passed": true,
+  "table_evidence": {
+    "instance_events": {
+      "object_metadata": {
+        "first_100_listing_was_paginated": true,
+        "full_object_size_bytes": "465101721",
+        "generation": "1596841812600976",
+        "metadata_selection": "lexicographically_first_valid_shard_in_first_100",
+        "name": "instance_events-000000000000.json.gz",
+        "provider_crc32c_whole_object_unverified": "y3K/fQ==",
+        "provider_md5Hash_whole_object_unverified": "2+LyHfE5e9k1MPhxOvrkog=="
+      },
+      "prefix": {
+        "adjacent_event_time_inversions_in_prefix": 183,
+        "compressed_prefix_bytes_consumed": 16384,
+        "compressed_prefix_sha256": "5d0ff0b9109ae5c447089b15a4cb618accf9356e52b578ca2956a0af4c5c3ae9",
+        "event_type_counts_prefix_only": {
+          "0": 495,
+          "8": 5
+        },
+        "full_object_digest_verified": false,
+        "gzip_member_end_reached": false,
+        "gzip_trailer_validated": false,
+        "http_status": 206,
+        "incomplete_trailing_line_not_parsed": true,
+        "max_rows": 500,
+        "no_production_ids_or_raw_lines_retained": true,
+        "no_provider_runtime_walltime_enforcement_verified": true,
+        "not_a_population_representative_sample": true,
+        "optional_field_presence_counts_prefix_only": {
+          "machine_id": 8,
+          "missing_type": 5,
+          "priority": 500,
+          "resource_request": 500
+        },
+        "parsed_complete_prefix_rows": 500,
+        "requested_range": "bytes=0-2097151",
+        "rows_with_declared_missing_flag": 5,
+        "rows_with_nonzero_missing_event_flag": 5,
+        "server_content_range": "bytes 0-2097151/465101721",
+        "server_honored_range": true,
+        "server_object_generation_confirmed": true,
+        "time_max_microseconds_from_trace_start": 2669831496698,
+        "time_min_microseconds_from_trace_start": 82373323250,
+        "uncompressed_bytes_released_by_decoder": 226056
+      }
+    },
+    "machine_events": {
+      "object_metadata": {
+        "first_100_listing_was_paginated": false,
+        "full_object_size_bytes": "651854",
+        "generation": "1596844153688368",
+        "metadata_selection": "lexicographically_first_valid_shard_in_first_100",
+        "name": "machine_events-000000000000.json.gz",
+        "provider_crc32c_whole_object_unverified": "thWuKw==",
+        "provider_md5Hash_whole_object_unverified": "vf+o5W7VQu6rr8+BfU93aw=="
+      },
+      "prefix": {
+        "adjacent_event_time_inversions_in_prefix": 258,
+        "compressed_prefix_bytes_consumed": 16384,
+        "compressed_prefix_sha256": "1bd079d9e35f525287cb65995969991ab607b916ec86614653f552cfadaedd47",
+        "event_type_counts_prefix_only": {
+          "1": 500
+        },
+        "full_object_digest_verified": false,
+        "gzip_member_end_reached": false,
+        "gzip_trailer_validated": false,
+        "http_status": 206,
+        "incomplete_trailing_line_not_parsed": true,
+        "max_rows": 500,
+        "no_production_ids_or_raw_lines_retained": true,
+        "no_provider_runtime_walltime_enforcement_verified": true,
+        "not_a_population_representative_sample": true,
+        "optional_field_presence_counts_prefix_only": {
+          "capacity": 41,
+          "platform_id": 500,
+          "switch_id": 500
+        },
+        "parsed_complete_prefix_rows": 500,
+        "requested_range": "bytes=0-2097151",
+        "rows_with_declared_missing_flag": 0,
+        "rows_with_nonzero_missing_event_flag": 0,
+        "server_content_range": "bytes 0-651853/651854",
+        "server_honored_range": true,
+        "server_object_generation_confirmed": true,
+        "time_max_microseconds_from_trace_start": 2640239818406,
+        "time_min_microseconds_from_trace_start": 0,
+        "uncompressed_bytes_released_by_decoder": 156667
+      }
+    }
+  },
+  "user_auth_or_paid_query_used": false
+}

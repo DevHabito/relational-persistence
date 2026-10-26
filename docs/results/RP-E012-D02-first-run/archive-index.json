@@ -1,0 +1,12 @@
+{
+  "first_code_commit": "1d10146eca6c6c18caa4f06b8c30415d2f5f28dd",
+  "first_report_sha256": "15ffce6c25efdcd37ac23d4992db1b3f0fbfb901ba79260e2377b5268edcfb3c",
+  "first_run_id": "40421367613",
+  "new_lean_theorem_claimed": false,
+  "no_bigquery_user_auth_or_paid_query": true,
+  "original_decision": "SOURCE_PREFIX_AUDITED",
+  "original_e010_e011_negative_results_unchanged": true,
+  "preregistration_commit": "e5efc72498fb3377aed4fd5302a288df95c57a23",
+  "production_data_rows_committed_to_git": false,
+  "protocol": "RP-E012-D02"
+}

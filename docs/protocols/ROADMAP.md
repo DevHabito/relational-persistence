@@ -175,6 +175,15 @@ The prior RP-E006 holdout may not be used to adjust or validate a subsequent hyp
 - Both file prefix streams contain **many temporal inversions** (258 machine, 183 instance), so neither filename nor row ordinal identifies a chronological holdout. The 1000 original rows are NONRANDOM and NOT representative. They do not establish source completeness, trace-wide missingness, actual placement/start equivalence, hard enforced runtime caps or real forecast gains.
 - **Next proposed independent feasibility gate:** can bounded access to all required original shards for a fixed actual event-time subwindow establish event-history coverage and a sound tie/missingness reconstruction? Select exact range/sources and budget BEFORE access; prohibit target-label inspection and any parameter refitting on prior E010/E011 revealed holdouts.
 
+### RP-E012-D03 — COMPLETE machine original source with bounded cross-table coverage
+
+- Informed, new source-only preregistration at `41befcd` BEFORE D03 source access or code; D02's machine vs instance compressed-size contrast was already public and acknowledged. Reviewed original code merged `5d05d53` after 636 Python regression tests per runtime (3.11 and 3.12) and existing Lean 4 CI.
+- First original Google GCS source audit #40425342721 was **MACHINE_EVENTS_COMPLETE_OBJECT_AUDITED_JOINT_UNCERTIFIED**, archived permanently at `d1c0f25`: one sole unpaginated cell-a machine shard, complete original 651,854 bytes verified with GCS generation, full provider MD5, independent entire-file SHA256 and gzip trailer/CRC; 46,219 real events, 10,001 machine identifiers, 18,274 adjacent original timestamp inversions.
+- Event-implied machine category snapshots at 1e12 / 2e12 microseconds: latest ADD/UPDATE 9,841 / 9,825; latest REMOVE 63 / 121; no earlier machine event 97 / 55. These are NOT certified live scheduler machine capacity or real-time publication.
+- Other tables metadata only: first `collection_events` object advertised 133,462,892 compressed bytes (10 matching objects no pagination), first `instance_events` object 465,101,721 bytes (50 matching in first page WITH pagination; not total count). **JOINT_CAUSAL_HISTORY_NOT_CERTIFIED** must remain true. No raw collection/instance rows read D03.
+- Next source challenge: register cost/coverage-credible independent ways to guarantee cross-shard time completeness and event receipt timing for a selected interval, including all instance/collection shards, without claiming a prefix is chronological. Any future forecast requires an entirely separate protocol and heldout design.
+- Preserve unchanged RP-E010/E011 original negative results and RP-F006/F007 conditional formal examples.
+
 ## Stage 3 — relationship to RZS and PMFF
 
 - Demand a typed and dimensionally consistent mapping from `(R,q,mu,K,pi)` to observed quantities.

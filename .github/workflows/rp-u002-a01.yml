@@ -1,0 +1,95 @@
+name: RP-U002-A01 Original Finite Turnover Repair Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-u002-a01.yml
+      - experiments/rp_u002_dynamic_repair.py
+      - tests/test_rp_u002_dynamic_repair.py
+      - RelationalPersistence/TurnoverRepair.lean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u002-a01-first-and-only-run
+  cancel-in-progress: false
+
+jobs:
+  first_finite_turnover_repair:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject replacement of existing original RP-U002 result
+        run: |
+          if test -e docs/results/RP-U002-A01-first-run; then
+            echo 'First original already archived: NO replay as a new result'
+            exit 1
+          fi
+      - name: Install pinned project test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run adversarial synthetic test gates BEFORE original experiment
+        run: python -m pytest -q tests/test_rp_u002_dynamic_repair.py
+      - name: Run FIRST preregistered finite dynamic repair experiment
+        run: |
+          python -m experiments.rp_u002_dynamic_repair \
+            --output rp-u002-a01-first-execution/audit.json
+      - name: Preserve original artifact even when the verdict is negative
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u002-a01-original-finite-repair-report
+          path: rp-u002-a01-first-execution/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Commit permanent original verdict and byte SHA before explanation
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=rp-u002-a01-first-execution/audit.json
+          directory=docs/results/RP-U002-A01-first-run
+          if test -e "$directory"; then
+            echo "First experiment already archived; original immutable."
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo "First-source report absent; cannot invent any result."
+            exit 1
+          fi
+          mkdir -p "$directory"
+          cp "$src" "$directory/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          directory=Path("docs/results/RP-U002-A01-first-run")
+          raw=(directory/"audit.json").read_bytes()
+          report=json.loads(raw)
+          manifest={
+            "protocol":"RP-U002-A01",
+            "frozen_protocol_commit":"fa7f9d0133370b0e8a769d0b7d95759e402a2dc8",
+            "original_code_commit":"${{ github.sha }}",
+            "original_run_id":"${{ github.run_id }}",
+            "first_original_verdict":report["verdict"],
+            "first_report_sha256":sha256(raw).hexdigest(),
+            "real_observations_used":0,
+            "new_mathematical_or_physical_law_claimed":False,
+            "original_U001_and_external_HPC_negatives_untouched":True,
+          }
+          (directory/"archive-index.json").write_text(
+            json.dumps(manifest,indent=2,sort_keys=True)+"\n",
+            encoding="utf-8")
+          PY
+          git add "$directory"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze FIRST RP-U002 temporal function-repair result"
+          git push origin HEAD:main

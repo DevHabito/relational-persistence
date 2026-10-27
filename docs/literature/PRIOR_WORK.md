@@ -1,5 +1,14 @@
 # Prior work and provenance
 
+## RP-U003-A01: existing constrained graph-restoration optimization and our finite benchmark
+
+- Hu et al. (2016), [*Recovery of infrastructure networks after localised attacks*](https://doi.org/10.1038/srep24522): network restoration via preexisting metric-based, periphery and greedy recovery strategies. Task-aware and topology-aware greedy restoration are NOT project-invented ideas.
+- Bartolini et al. (2017), [*On critical service recovery after massive network failures*](https://doi.org/10.1109/TNET.2017.2688330): cost- and demand-aware recovery of communication network services by heuristics and optimization, clearly PRIOR work.
+- Averbakh and Pereira (2018), [*Lateness Minimization in Pairwise Connectivity Restoration Problems*](https://doi.org/10.1287/ijoc.2017.0796): constrained network link/edge restoration scheduling and optimality bounds are PRIOR combinatorial optimization.
+- Gao, Barzel and Barabási (2016), [*Universal resilience patterns in complex networks*](https://doi.org/10.1038/nature16948) and [erratum](https://doi.org/10.1038/nature18019): only conditional network resilience under specified models, NOT a broad proven physical law applying to any network.
+- Separate preregistered RP-U003-A01 protocol `5cb8d3a` fixed the exhaustive labeled graph family, costs, four repair policies, two function criteria and an explicit primary H1 BEFORE code. First original #40572859641 preserved at `2a68d81`, N684 graphs, primary F1 ASC15,736, DEGREE15,748, GREEDY1=LOOKAHEAD2=offline15,888 and secondary F2 greedy7,852 vs lookahead7,968. Lookahead used more candidate evaluations. The zero additional F1 gain over one-step greedy is a critical NEGATIVE comparator result.
+- The project-specific delivery is exact preregistration, exhaustive bounded topology enumeration (not sampling), independent BFS/DFS, vertex-cut/path oracle and best-subset envelope, full adverse-inclusive original SHA audit and human-scoped interpretation. No new graph theorem or ecological/healthcare result; no new Lean theorem for the full ensemble.
+
 ## RP-U002-A01: component identity turnover and time-limited graph repair
 
 - **Already known:** an unweighted node graph can regain its node COUNT before reconnecting a missing source-target path; graph connectivity, Menger's vertex-disjoint paths, network reliability, failure tolerance, resilience and graph recovery are classical concepts, not new physical principles. For ecology, species functional redundancy and succession are prior-established fields, and this synthetic repair schedule contains NO organisms.

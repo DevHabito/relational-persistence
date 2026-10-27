@@ -1,5 +1,15 @@
 # Prior work and provenance
 
+## Functional Continuity RP-U001: already established versus exact project calculation
+
+- C. S. Holling (1973), [*Resilience and Stability of Ecological Systems*](https://doi.org/10.1146/annurev.es.04.110173.000245). Resilience, resistance, disruption and relation preservation in changing ecological systems were not first proposed by this project.
+- E. Desjardins, G. Barker, Z. Lindo, C. Dieleman and A. C. Dussault (2015), [*Promoting Resilience*](https://doi.org/10.1086/681439). Functional redundancy, diversity and the existence of multiple resilience concepts are PRIOR literature.
+- J. Gao, B. Barzel and A.-L. Barabási (2016), [*Universal resilience patterns in complex networks*](https://doi.org/10.1038/nature16948) and [2016 erratum](https://doi.org/10.1038/nature18019). Network/dynamical universality frameworks with CONDITIONS are established prior work; this synthetic pair is neither empirical support nor a replacement.
+- K. Menger (1927), vertex connectivity and internally vertex-disjoint routes (see [Diestel *Graph Theory*](https://www.cs.unibo.it/babaoglu/courses/cas00-01/tutorials/GraphTheory.pdf), §3.3). Reachability, bottlenecks and cut vertices are classical mathematics, NOT novel RP theories.
+- RP-U001-A01 first finite protocol frozen alone `81ce6d1` before code, [PR #55](https://github.com/DevHabito/relational-persistence/pull/55) with small Lean 4 Bool certificate and independent Python path oracles; original #40490582350 archive `f54c784` A one-loss 4/4, B 3/4, k=2 both 2/6; changes to the required functional criterion invalidate any unqualified global persistence claim. A new disclosed reproducible contrast, NOT a new universal law.
+- Real canopy recovery and replacement are NOT modeled: these discrete graphs only lose permanent components. Any dynamic repair or field test must be separately registered and provide independent measures and established ecological/graph baselines.
+
+
 This is a starting bibliography, not a completed novelty review. Citations identify existing results; they do not demonstrate priority for any proposal here.
 
 ## Established literature (not our discoveries)

@@ -1,5 +1,12 @@
 # Research roadmap and stop conditions
 
+## New track: Functional Continuity (RP-U001)
+
+- Motivation: can a specified functional output persist even when individual system components are lost? Amazon canopy gaps are ONLY an analogy. Do not rename existing ecological resilience/functional redundancy or graph connectivity as new theory.
+- RP-U001-A01 separate prospective protocol committed ALONE on main `81ce6d1` before code/first result. Two fixed undirected graphs, 6 nodes and 7 links each, match source/target degrees; exhaust ALL 16 removable-internal-node subsets each; compare independently implemented BFS vs simple DFS, exact relabeling case checks, stronger two-path function and frozen k=2 tie negative control.
+- Original first #40490582350: **FINITE_FUNCTION_CONTINUITY_CONTRAST_VERIFIED**, archive `f54c784`; k0..4 retained-path counts A=[1,4,2,0,0], B=[1,3,2,0,0]. k=1 contrast 4/4 vs 3/4, k=2 BOTH 2/6. Initial two-disjoint-route function differs; k=1 ZERO for both under stronger function definition. Python 658 per version, Lean finite Bool single-deletion certificate pass. This is known graph theory with disclosed toy networks.
+- NOT YET DONE: a separately registered dynamic component-turnover / repair / rewiring model with temporal performance, controls and independently fixed costs; then real/ecological/health data, nontrivial baseline comparisons, pre-origin measurement validity and true heldout predictions. Strong universal claims may be false and MUST be exposed by negative controls.
+
 ## Stage 0 — methodological baseline (this commit)
 
 - Register RP-001 before computation, preserve immutable tag and Git history.

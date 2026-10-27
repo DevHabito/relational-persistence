@@ -810,6 +810,53 @@ physical `C=B/(I*tau)` result.
 Original E010/E011 negative forecasts
 remain unchanged.
 
+## New track: functional continuity under component loss (RP-U001-A01)
+
+A forest-gap discussion motivated a separate question:
+when system components disappear, does a *specified
+function* persist, even if the remaining component
+count is identical? Established ecological resilience,
+functional redundancy and vertex cuts are PRIOR science;
+this project makes no new universal-law claim.
+
+The [RP-U001-A01 protocol](docs/preregistration/RP-U001-A01.md)
+was frozen alone to `main` at `81ce6d1`
+before implementation or original computation.
+Reviewed [PR #55](https://github.com/DevHabito/relational-persistence/pull/55)
+passed 658 Python regressions in each of
+3.11 and 3.12 and Lean 4 formal checking.
+FIRST original finite [run #40490582350](https://github.com/DevHabito/relational-persistence/actions/runs/40490582350)
+was archived at `f54c784` with decision
+`FINITE_FUNCTION_CONTINUITY_CONTRAST_VERIFIED`.
+
+Two specifically selected, artificial
+six-vertex, seven-edge graphs with source
+and target of degree two were tested for
+ALL 16 node-loss subsets per graph, with
+independent BFS and DFS path oracles:
+`k=0..4` successful cases were
+**A=[1,4,2,0,0]**, **B=[1,3,2,0,0]**.
+A retains source-target reachability
+after any ONE internal node loss, B only
+three of four cases. However, both have
+**2/6 continuity at two node losses**,
+a registered negative control against
+universal A superiority. Requiring TWO
+independent routes as the operational
+function instead yields ZERO passes for
+both after any one node loss.
+
+This is an EXACT synthetic illustration
+of established vertex connectivity/
+functional-definition dependence, not
+Amazon ecological data, real biological
+turnover, regeneration, a new graph
+theorem or a physical `C=B/(I*tau)`
+validation. Read the
+[full RP-U001-A01 result](docs/results/RP-U001-A01.md).
+The existing external forecast negatives
+remain unchanged.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

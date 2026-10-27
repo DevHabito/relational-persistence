@@ -1,0 +1,96 @@
+name: RP-U003-A01 First Exhaustive Equal-Budget Repair Benchmark
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-u003-a01.yml
+      - experiments/rp_u003_equal_budget.py
+      - tests/test_rp_u003_equal_budget.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u003-a01-first-run
+  cancel-in-progress: false
+
+jobs:
+  first_registered_exhaustive_repair_benchmark:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse any re-run replacing a source first result
+        run: |
+          if test -e docs/results/RP-U003-A01-first-run; then
+            echo 'FIRST original benchmark archived; refuse rewriting result'
+            exit 1
+          fi
+      - name: Install registered dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Source-family and adverse-oracle tests BEFORE original benchmark
+        run: python -m pytest -q tests/test_rp_u003_equal_budget.py
+      - name: Original exhaustive benchmark: preserve positive AND negative H1
+        run: |
+          python -m experiments.rp_u003_equal_budget \
+            --output rp-u003-first/audit.json
+      - name: Keep initial complete report independently accessible as Actions artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u003-first-original-exhaustive-graph-benchmark
+          path: rp-u003-first/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Freeze SHA and exact original positive or negative decision
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src=rp-u003-first/audit.json
+          dir=docs/results/RP-U003-A01-first-run
+          if test -e "$dir"; then
+            echo 'Cannot overwrite original study result'
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo 'No actual original report to archive; refusing fabrication'
+            exit 1
+          fi
+          mkdir -p "$dir"
+          cp "$src" "$dir/audit.json"
+          python - <<'PY'
+          from hashlib import sha256
+          from pathlib import Path
+          import json
+          root=Path('docs/results/RP-U003-A01-first-run')
+          raw=(root/'audit.json').read_bytes()
+          report=json.loads(raw)
+          index={
+            "protocol":"RP-U003-A01",
+            "frozen_protocol_commit":"5cb8d3af473aa95848ab22d5ecc591c5a1567a00",
+            "first_code_commit":"${{ github.sha }}",
+            "first_run_id":"${{ github.run_id }}",
+            "first_verdict":report["verdict"],
+            "original_audit_sha256":sha256(raw).hexdigest(),
+            "labeled_family_sha256":report["family"].get("labeled_family_sha256"),
+            "individual_case_trace_sha256":report.get("all_cases_json_sha256"),
+            "real_world_rows_examined":0,
+            "existing_negative_external_results_unchanged":True,
+            "new_universal_scientific_law_claimed":False,
+          }
+          (root/'archive-index.json').write_text(
+            json.dumps(index, sort_keys=True, indent=2)+'\n',
+            encoding='utf-8')
+          PY
+          git add "$dir"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze FIRST RP-U003 exhaustive equal-budget verdict"
+          git push origin HEAD:main

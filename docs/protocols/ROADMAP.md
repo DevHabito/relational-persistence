@@ -1,5 +1,12 @@
 # Research roadmap and stop conditions
 
+## RP-U003-A01 — exhaustive matched-budget repair comparator (finished)
+
+- The first independent U003 protocol was committed ALONE at `5cb8d3a` before U003 calculations; exhaustive 14 available edge-pair choose seven graph construction, source/target degrees exactly two, all six vertices connected, no direct terminal edge, all original internal single-node failures. Graph ensemble two independently checked enumerators; exactly 684 labeled source graphs and 2,736 graph-loss cases.
+- Four full-time edge-budget-matched policies: original-neighbor ASC, original-node-degree DESC, task-aware GREEDY1 and task-aware LOOKAHEAD2. FIRST result #40572859641 `FINITE_BENCHMARK_LOOKAHEAD_F1_ADVANTAGE_SUPPORTED`, original SHA/negative-inclusive records archived `2a68d81`. Reviewed code PR #59 merge `b6c97ca` after 726 Python regressions each version and existing Lean 4 CI.
+- F1 uptime over 16,416 deterministic scenario-steps per policy: ASC15,736; DEGREE15,748; GREEDY1=LOOKAHEAD2=F1 offline upper bound15,888. **No F1 advantage over the one-step GREEDY1 classical control.** Stronger F2: GREEDY1 7,852 vs LOOKAHEAD2=offline bound7,968. Candidate function evaluations differ (13,164 vs31,236); equal edge cost is NOT equal compute expense or information. All pairwise F1 case losses, wins and ties and degree strata archived.
+- Not an independent ecological/health/biological dataset or a universal law. Future new protocol should vary graph size/repair cost and observation information BEFORE inference, compare task-aware standard graph restoration, and consider real operational data with strictly causal features and independent heldouts. Keep all original RP-E010/E011 negative results and U001/U002 first runs immutable.
+
 ## RP-U002-A01 — temporal replacement and relational repair (finished finite study)
 
 - Separately registered **BEFORE implementation/first run** alone on main `fa7f9d0`; fixed original six-vertex seven-edge A/B graphs, each original single-internal-node loss, and all t=0..5 snapshots.

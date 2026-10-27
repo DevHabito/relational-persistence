@@ -1,0 +1,94 @@
+name: RP-U001-A01 Original Function Continuity Finite Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-u001-a01.yml
+      - experiments/rp_u001_functional_continuity.py
+      - tests/test_rp_u001_functional_continuity.py
+      - RelationalPersistence/FunctionalContinuity.lean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u001-a01-first-verdict
+  cancel-in-progress: false
+
+jobs:
+  original_finite_continuity_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse replacing any previous original audit
+        run: |
+          if test -e docs/results/RP-U001-A01-first-run; then
+            echo "Original study verdict already preserved; not rerunning."
+            exit 1
+          fi
+      - name: Install preregistered Python dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Independent adversarial Python tests before original finite run
+        run: python -m pytest -q tests/test_rp_u001_functional_continuity.py
+      - name: Execute first full EXACT registered finite graph enumeration
+        run: |
+          python -m experiments.rp_u001_functional_continuity \
+            --output rp-u001-original/audit.json
+      - name: Preserve original result artifact, including negative cases
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u001-a01-first-finite-audit
+          path: rp-u001-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Archive one immutable first run with original SHA
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="rp-u001-original/audit.json"
+          dir="docs/results/RP-U001-A01-first-run"
+          if test -e "$dir"; then
+            echo "First result already saved; refusing overwrite."
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo "No original verdict exists; refusing fabrication."
+            exit 1
+          fi
+          mkdir -p "$dir"
+          cp "$src" "$dir/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          path=Path("docs/results/RP-U001-A01-first-run")
+          raw=(path/"audit.json").read_bytes()
+          report=json.loads(raw)
+          index={
+            "protocol":"RP-U001-A01",
+            "first_run_id":"${{ github.run_id }}",
+            "original_code_commit":"${{ github.sha }}",
+            "frozen_protocol_commit":"81ce6d186c3ba1a86c25297a30fb0f6a27cb7d4e",
+            "original_result":report["original_decision"],
+            "first_json_sha256":sha256(raw).hexdigest(),
+            "real_external_domain_rows_read":0,
+            "new_universal_scientific_law_claimed":False,
+            "original_negative_external_forecasts_changed":False
+          }
+          (path/"archive-index.json").write_text(
+            json.dumps(index,sort_keys=True,indent=2)+"\n",encoding="utf-8")
+          PY
+          git add "$dir"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze FIRST RP-U001-A01 finite continuity outcome"
+          git push origin HEAD:main

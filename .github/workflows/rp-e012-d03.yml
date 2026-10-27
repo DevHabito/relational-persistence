@@ -1,0 +1,97 @@
+name: RP-E012-D03 Original Complete Machine Event Source Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/rp-e012-d03.yml
+      - experiments/rp_e012_d03_machine_audit.py
+      - tests/test_rp_e012_d03_machine_audit.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-e012-d03-first-official-source
+  cancel-in-progress: false
+
+jobs:
+  original_gcs_machine_history_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse any replacement of original first-source verdict
+        run: |
+          test ! -e docs/results/RP-E012-D03-first-run ||
+            { echo 'First D03 original report exists, refusing overwrite'; exit 1; }
+      - name: Install fixed Python research dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run exact synthetic adverse-event checks BEFORE original source request
+        run: python -m pytest -q tests/test_rp_e012_d03_machine_audit.py
+      - name: Original bounded GCS inventory and complete machine shard
+        run: |
+          python -m experiments.rp_e012_d03_machine_audit \
+            --output rp-e012-d03-original/audit.json
+      - name: Preserve original source metadata verdict as Actions artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-e012-d03-original-full-machine-events-audit
+          path: rp-e012-d03-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90
+      - name: Freeze first original verified or adverse decision immutably
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          src="rp-e012-d03-original/audit.json"
+          archive="docs/results/RP-E012-D03-first-run"
+          if test -e "$archive"; then
+            echo "Original D03 first run already exists. Refusing overwrite."
+            exit 1
+          fi
+          if ! test -f "$src"; then
+            echo "No first-source report exists; no result can be fabricated." >&2
+            exit 1
+          fi
+          mkdir -p "$archive"
+          cp "$src" "$archive/audit.json"
+          python - <<'PY'
+          from pathlib import Path
+          from hashlib import sha256
+          import json
+          root=Path("docs/results/RP-E012-D03-first-run")
+          original=(root/"audit.json").read_bytes()
+          evidence=json.loads(original)
+          index={
+            "protocol":"RP-E012-D03",
+            "first_run_id":"${{ github.run_id }}",
+            "original_code_commit":"${{ github.sha }}",
+            "preregistration_commit":"41befcd7970a86f558b50de8f66f89473920fa6e",
+            "first_original_decision":evidence["original_decision"],
+            "first_report_sha256":sha256(original).hexdigest(),
+            "actual_machine_object_original_sha256":(
+              (evidence.get("machine_source") or {}).get(
+                "original_full_compressed_object_sha256")),
+            "collection_or_instance_raw_rows_downloaded":False,
+            "all_cross_table_states_certified":False,
+            "bigquery_or_billing_used":False,
+            "prediction_or_new_lean_theorem_proposed":False
+          }
+          (root/"archive-index.json").write_text(
+            json.dumps(index,sort_keys=True,indent=2)+"\n",
+            encoding="utf-8"
+          )
+          PY
+          git add "$archive"
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "data(provenance): freeze FIRST RP-E012-D03 original machine event verdict"
+          git push origin HEAD:main

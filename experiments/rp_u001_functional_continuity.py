@@ -42,11 +42,12 @@ REGISTERED_TWO_DISJOINT_SINGLE_LOSS = 0
 
 
 def canonical_edges(edges):
-    result = frozenset(tuple(sorted((u, v))) for u, v in edges)
+    original = tuple(edges)
+    result = frozenset(tuple(sorted((u, v))) for u, v in original)
     if any(u == v or u not in VERTICES or v not in VERTICES
            for u, v in result):
         raise ValueError("Original source graph is not a simple six-vertex graph")
-    if len(result) != len(tuple(edges)):
+    if len(result) != len(original):
         raise ValueError("Duplicate original source edge")
     return result
 
@@ -182,11 +183,11 @@ def audit():
             check_baseline(edges)
             actual = exhaustive_one_graph(edges)
             translated = exhaustive_one_graph(relabel_edges(edges), relabel=True)
-            if any(
+            if (
                 [(entry["k"], entry["function_retained_subsets"])
                  for entry in actual] !=
                 [(entry["k"], entry["function_retained_subsets"])
-                 for entry in translated],
+                 for entry in translated]
             ):
                 raise AssertionError("Internal-vertex relabeling changed outcomes")
             for left, right in zip(actual, translated):

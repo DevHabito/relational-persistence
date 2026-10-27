@@ -1,0 +1,456 @@
+{
+  "cross_domain_physical_law_claimed": false,
+  "empirical_bio_function_preservation_verified": false,
+  "errors": [],
+  "first_run_id": "40490582350",
+  "graphs": {
+    "A": {
+      "all_full_sweep_records": [
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [],
+              "surviving_vertex_fraction": "1",
+              "two_disjoint_paths": true
+            }
+          ],
+          "function_retained_subsets": 1,
+          "function_retention_fraction": "1",
+          "k": 0,
+          "tested_subsets": 1
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                1
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                2
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                3
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                4
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 4,
+          "function_retention_fraction": "1",
+          "k": 1,
+          "tested_subsets": 4
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                1,
+                2
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                3
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                3
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 2,
+          "function_retention_fraction": "1/3",
+          "k": 2,
+          "tested_subsets": 6
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                3
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 0,
+          "function_retention_fraction": "0",
+          "k": 3,
+          "tested_subsets": 4
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/3",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 0,
+          "function_retention_fraction": "0",
+          "k": 4,
+          "tested_subsets": 1
+        }
+      ],
+      "counts_by_removed_vertex_count": [
+        1,
+        4,
+        2,
+        0,
+        0
+      ],
+      "edges": 7,
+      "relabeling_casewise_verified": true,
+      "source_terminal_degree": 2,
+      "target_terminal_degree": 2,
+      "vertices": 6
+    },
+    "B": {
+      "all_full_sweep_records": [
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [],
+              "surviving_vertex_fraction": "1",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 1,
+          "function_retention_fraction": "1",
+          "k": 0,
+          "tested_subsets": 1
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                1
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                3
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                4
+              ],
+              "surviving_vertex_fraction": "5/6",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 3,
+          "function_retention_fraction": "3/4",
+          "k": 1,
+          "tested_subsets": 4
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                3
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                1,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                3
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": true,
+              "dfs_reachable": true,
+              "removed": [
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "2/3",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 2,
+          "function_retention_fraction": "1/3",
+          "k": 2,
+          "tested_subsets": 6
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                3
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            },
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                2,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/2",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 0,
+          "function_retention_fraction": "0",
+          "k": 3,
+          "tested_subsets": 4
+        },
+        {
+          "exact_set_outcomes": [
+            {
+              "bfs_reachable": false,
+              "dfs_reachable": false,
+              "removed": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "surviving_vertex_fraction": "1/3",
+              "two_disjoint_paths": false
+            }
+          ],
+          "function_retained_subsets": 0,
+          "function_retention_fraction": "0",
+          "k": 4,
+          "tested_subsets": 1
+        }
+      ],
+      "counts_by_removed_vertex_count": [
+        1,
+        3,
+        2,
+        0,
+        0
+      ],
+      "edges": 7,
+      "relabeling_casewise_verified": true,
+      "source_terminal_degree": 2,
+      "target_terminal_degree": 2,
+      "vertices": 6
+    }
+  },
+  "measured_ecological_or_technological_data_used": false,
+  "negative_control_strict_superiority_all_k": true,
+  "new_mathematical_principle_claimed": false,
+  "original_code_commit": "01023aaeb77059697f7cbcb73637518934d724cd",
+  "original_decision": "FINITE_FUNCTION_CONTINUITY_CONTRAST_VERIFIED",
+  "preregistration_commit": "81ce6d186c3ba1a86c25297a30fb0f6a27cb7d4e",
+  "protocol": "RP-U001-A01",
+  "registered_two_disjoint_path_control": {
+    "A": {
+      "initial_has_two_disjoint_routes": true,
+      "single_deletion_cases_retaining_two_disjoint_routes": 0
+    },
+    "B": {
+      "initial_has_two_disjoint_routes": false,
+      "single_deletion_cases_retaining_two_disjoint_routes": 0
+    }
+  },
+  "scope": "six-node deterministic in-silico graphs, no recovery or dynamics"
+}

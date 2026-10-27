@@ -1,0 +1,11 @@
+{
+  "first_json_sha256": "ac1c94e2c71624ccf4fd3e54c6df4f8ca2f166d78975c625d4d0b533e2615ab0",
+  "first_run_id": "40490582350",
+  "frozen_protocol_commit": "81ce6d186c3ba1a86c25297a30fb0f6a27cb7d4e",
+  "new_universal_scientific_law_claimed": false,
+  "original_code_commit": "01023aaeb77059697f7cbcb73637518934d724cd",
+  "original_negative_external_forecasts_changed": false,
+  "original_result": "FINITE_FUNCTION_CONTINUITY_CONTRAST_VERIFIED",
+  "protocol": "RP-U001-A01",
+  "real_external_domain_rows_read": 0
+}

@@ -186,7 +186,7 @@ def test_fake_original_vertex_return_or_wrong_repair_edge_is_caught(monkeypatch)
         steps[3] = (edges, nodes | {lost})
         return steps
     monkeypatch.setattr(u, "build_by_events", bad)
-    with pytest.raises(AssertionError, match="state|budget|returned"):
+    with pytest.raises(AssertionError, match="snapshot disagree|budget|returned"):
         u.trace_for_policy(base, 2, "ASC")
 
 

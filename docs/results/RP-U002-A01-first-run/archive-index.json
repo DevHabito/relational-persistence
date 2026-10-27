@@ -1,0 +1,11 @@
+{
+  "first_original_verdict": "FINITE_TURNOVER_REPAIR_CONTRAST_VERIFIED",
+  "first_report_sha256": "67b6f1df8bac52aa48c507f31e5b93486fb23bcffcbd849d42c72b14a4fec3a9",
+  "frozen_protocol_commit": "fa7f9d0133370b0e8a769d0b7d95759e402a2dc8",
+  "new_mathematical_or_physical_law_claimed": false,
+  "original_U001_and_external_HPC_negatives_untouched": true,
+  "original_code_commit": "e0929d6f554dffadabb19d932409e8ab84055b0f",
+  "original_run_id": "40499618845",
+  "protocol": "RP-U002-A01",
+  "real_observations_used": 0
+}

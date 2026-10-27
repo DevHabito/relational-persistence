@@ -747,6 +747,69 @@ guarantee, new Lean theorem or physical
 scalar C was tested.** Earlier original
 E010/E011 negative results remain intact.
 
+## RP-E012-D03 — Complete original machine events, NOT complete joint scheduler state
+
+A separate [RP-E012-D03 protocol](docs/preregistration/RP-E012-D03.md)
+was frozen alone to main at `41befcd` BEFORE
+new D03 source retrieval or implementation.
+This was INFORMED source selection: prior
+D02 had already reported machine shard
+size 651,854 bytes, instance shard
+465,101,721 bytes, and nonmonotone
+first-prefix event timestamps.
+
+Reviewed [PR #53](https://github.com/DevHabito/relational-persistence/pull/53)
+passed **636 Python tests per version
+(3.11 and 3.12)** and existing Lean 4 CI
+before merging at `5d05d53`. The FIRST
+[source run #40425342721](https://github.com/DevHabito/relational-persistence/actions/runs/40425342721)
+returned
+`MACHINE_EVENTS_COMPLETE_OBJECT_AUDITED_JOINT_UNCERTIFIED`,
+archived unaltered at `d1c0f25`.
+
+For the entire publisher-listed cell-a
+`machine_events` table (one source file
+without GCS listing pagination), the
+original **651,854 compressed bytes**
+were downloaded and verified by matching
+the provider's full-object MD5,
+independently computing its entire
+compressed SHA-256 and checking a
+complete valid gzip trailer/CRC.
+Exactly **46,219 real machine events**
+for **10,001 distinct machine IDs**
+were independently audited:
+27,777 ADD, 17,941 REMOVE, 501 UPDATE.
+The original file exhibited **18,274
+adjacent timestamp inversions** and
+had zero same-machine/same-time
+conflicting event type groups.
+
+Two fixed strict before-origin
+event-implied state snapshots were
+independently reconstructed, without
+publishing original obfuscated identities.
+**These are not proven true online
+machine availability or resource
+occupation states.** The separate
+collection/instance source tables were
+ONLY inventoried: instance listing is
+paginated and its first source shard
+alone is ~465 MB. No D03 raw
+collection/instance events or forecast
+labels were downloaded. The original
+result explicitly says
+`JOINT_CAUSAL_HISTORY_NOT_CERTIFIED`.
+
+Read the [full source report](docs/results/RP-E012-D03.md).
+This adds genuine complete MACHINE source
+auditing, **not** cross-table event
+completeness, hard wallclock runtime
+enforcement, a new Lean theorem or
+physical `C=B/(I*tau)` result.
+Original E010/E011 negative forecasts
+remain unchanged.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

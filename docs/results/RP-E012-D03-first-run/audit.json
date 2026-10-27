@@ -1,0 +1,99 @@
+{
+  "bigquery_or_paid_credentials_used": false,
+  "collection_and_instance_raw_event_rows_downloaded": 0,
+  "errors": [],
+  "first_run_id": "40425342721",
+  "forecast_targets_computed": false,
+  "full_online_event_release_history_proven": false,
+  "joint_causal_history": "JOINT_CAUSAL_HISTORY_NOT_CERTIFIED",
+  "machine_counts": {
+    "all_complete_machine_event_rows": 46219,
+    "conflicting_same_machine_same_timestamp_type_groups": 0,
+    "distinct_machine_ids_aggregate_only": 10001,
+    "event_implied_state_not_full_live_capacity": true,
+    "event_type_counts": {
+      "1": 27777,
+      "2": 17941,
+      "3": 501
+    },
+    "missing_type_code_counts": {
+      "0": 46219
+    },
+    "no_observed_machine_ids_or_event_rows_persisted": true,
+    "original_file_adjacent_timestamp_inversions": 18274,
+    "original_maximum_timestamp_us": 2678851683489,
+    "original_minimum_timestamp_us": 0,
+    "rows_with_capacity_field": 45760,
+    "rows_with_nonzero_missing_type": 0,
+    "same_machine_same_timestamp_tie_groups": 0,
+    "snapshots_strict_before_origin": {
+      "1000000000000": {
+        "last_event_implied_active": 9841,
+        "last_event_implied_removed": 63,
+        "no_prior_event": 97
+      },
+      "2000000000000": {
+        "last_event_implied_active": 9825,
+        "last_event_implied_removed": 121,
+        "no_prior_event": 55
+      }
+    },
+    "timestamp_is_not_proven_online_release_time": true
+  },
+  "machine_source": {
+    "advertised_full_size_bytes": 651854,
+    "entire_object_authenticated_not_prefix_only": true,
+    "full_object_bytes_downloaded": 651854,
+    "full_object_http_status": 200,
+    "full_object_provider_md5_verified": true,
+    "generation": "1596844153688368",
+    "name": "machine_events-000000000000.json.gz",
+    "original_full_compressed_object_sha256": "b04455f48e57c303fc8987b41e35911d89f3aa31e5a6d3997f07e27749dc1791",
+    "provider_crc32c_base64_unverified": "thWuKw==",
+    "provider_full_md5_base64": "vf+o5W7VQu6rr8+BfU93aw==",
+    "publisher_generation_requested": "1596844153688368"
+  },
+  "metadata_first_page": {
+    "collection_events": {
+      "first_page_returned_items": 35,
+      "inventory_incomplete_due_to_pagination": false,
+      "matching_shards_on_first_page": 10,
+      "not_total_shards_when_paginated": true,
+      "raw_event_rows_downloaded_from_this_table": false,
+      "selected_first_shard": "collection_events-000000000000.json.gz",
+      "selected_first_size_bytes_metadata_only": "133462892",
+      "sum_first_page_listed_sizes_bytes_not_total": "1334163435",
+      "table": "collection_events"
+    },
+    "instance_events": {
+      "first_page_returned_items": 100,
+      "inventory_incomplete_due_to_pagination": true,
+      "matching_shards_on_first_page": 50,
+      "not_total_shards_when_paginated": true,
+      "raw_event_rows_downloaded_from_this_table": false,
+      "selected_first_shard": "instance_events-000000000000.json.gz",
+      "selected_first_size_bytes_metadata_only": "465101721",
+      "sum_first_page_listed_sizes_bytes_not_total": "27398516613",
+      "table": "instance_events"
+    },
+    "machine_events": {
+      "first_page_returned_items": 2,
+      "inventory_incomplete_due_to_pagination": false,
+      "matching_shards_on_first_page": 1,
+      "not_total_shards_when_paginated": true,
+      "raw_event_rows_downloaded_from_this_table": false,
+      "selected_first_shard": "machine_events-000000000000.json.gz",
+      "selected_first_size_bytes_metadata_only": "651854",
+      "sum_first_page_listed_sizes_bytes_not_total": "651854",
+      "table": "machine_events"
+    }
+  },
+  "new_lean_theorem_or_physical_law_claimed": false,
+  "original_code_commit": "5d05d53c8058efab38907dc9f01a65708bf2d9f7",
+  "original_decision": "MACHINE_EVENTS_COMPLETE_OBJECT_AUDITED_JOINT_UNCERTIFIED",
+  "preregistration_commit": "41befcd7970a86f558b50de8f66f89473920fa6e",
+  "protocol": "RP-E012-D03",
+  "real_running_job_hard_walltime_cap_verified": false,
+  "source_bucket": "clusterdata_2019_a",
+  "source_provider": "Google Borg 2019 cell a"
+}

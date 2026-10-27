@@ -1,0 +1,13 @@
+{
+  "actual_machine_object_original_sha256": "b04455f48e57c303fc8987b41e35911d89f3aa31e5a6d3997f07e27749dc1791",
+  "all_cross_table_states_certified": false,
+  "bigquery_or_billing_used": false,
+  "collection_or_instance_raw_rows_downloaded": false,
+  "first_original_decision": "MACHINE_EVENTS_COMPLETE_OBJECT_AUDITED_JOINT_UNCERTIFIED",
+  "first_report_sha256": "393ed949a3aec3e4cd27f6e6ca8f617102b855a5e0934021d3b6909be31b6f0a",
+  "first_run_id": "40425342721",
+  "original_code_commit": "5d05d53c8058efab38907dc9f01a65708bf2d9f7",
+  "prediction_or_new_lean_theorem_proposed": false,
+  "preregistration_commit": "41befcd7970a86f558b50de8f66f89473920fa6e",
+  "protocol": "RP-E012-D03"
+}

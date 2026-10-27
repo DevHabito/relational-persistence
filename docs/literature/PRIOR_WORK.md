@@ -60,6 +60,13 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Required acknowledgment: "This data was generated from resources of the Argonne Leadership Computing Facility, which is a DOE Office of Science User Facility supported under Contract DE-AC02-06CH11357."
 - Standard-library Python CSV parsing is existing technology; parser/source eligibility checks are not novel physics or forecasting evidence.
 
+## RP-E012-D03 complete original machine-events object — provenance and claim boundaries
+
+- Google [2019 cluster Borg traces](https://github.com/google/cluster-data), [publisher original GCS update](https://groups.google.com/g/googleclusterdata-discuss/c/WuRDhbI8YzA), and Tirmazi et al. (2020), [*Borg: the Next Generation*](https://research.google/pubs/borg-the-next-generation/). Machine ADD/REMOVE/UPDATE events, shard names, machine IDs, time semantics and source format are **all prior publisher data and literature**, not discoveries by the Relational Persistence project.
+- After prior D02's fixed-size first-file observations, separately registered RP-E012-D03 `41befcd` verified the **entire** original machine_events cell-a single shard at original run #40425342721. First result `d1c0f25`: 46,219 events, 10,001 distinct source machine IDs, full original MD5/SHA and gzip CRC; independent event-time oracles across two fixed origins, with no hidden IDs published. Adjacent original row-time inversions (18,274) document the data ordering and require timestamp sorting.
+- Machine table source coverage does **NOT** certify the completeness of instance or collection event shards, especially the paginated instance listing. The latest stored event before a trace-relative time is not necessarily a fact available to a live scheduler at that time; no provider receipt clock, runtime cap enforcement or true active capacity was established.
+- The project-specific contribution is **reproducible source-provenance and conditional event-history audit**, not original Borg scheduler theory, actual event-time causal identification, statistically independent forecast performance or the physical scalar C.
+
 ## RP-E012-D02: original Google Borg production source versus project-specific audit
 
 - The publisher's [August 2020 GCS publication](https://groups.google.com/g/googleclusterdata-discuss/c/WuRDhbI8YzA) established official cell bucket names, table shards, compressed newline JSON, and 64-bit integer-string encoding. All original production traces, event meaning and GCS metadata **precede RP-E012** and belong to Google's prior work.

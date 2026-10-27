@@ -857,6 +857,58 @@ validation. Read the
 The existing external forecast negatives
 remain unchanged.
 
+## RP-U002-A01 — finite turnover and incremental recovery of function
+
+The new time-indexed functional-continuity track
+tests a SMALL, fully disclosed, deterministic
+node replacement example, not forest or
+healthcare dynamics. A separate
+[RP-U002 protocol](docs/preregistration/RP-U002-A01.md)
+was frozen ALONE on main at `fa7f9d0`
+BEFORE code and execution, fixing two
+original RP-U001 artificial graphs,
+four independent single-node failures
+per graph, t=0..5, NEW replacement
+node identities at t2, restoration
+of one original relationship per
+subsequent tick, and a matched
+no-repair loss control.
+
+Reviewed [PR #57](https://github.com/DevHabito/relational-persistence/pull/57)
+passed **691 Python regressions on each
+of 3.11 and 3.12** plus Lean 4 before
+merging source at `e0929d6`.
+The FIRST [run #40499618845](https://github.com/DevHabito/relational-persistence/actions/runs/40499618845)
+was `FINITE_TURNOVER_REPAIR_CONTRAST_VERIFIED`,
+archived unchanged at `07c07e6`.
+This is finite deterministic computation,
+NOT independent observational confirmation.
+
+Exact post-damage 20-case/tick sums:
+retaining ONE source-target path (F1),
+A repair and no repair **20/20**;
+B repair **17/20** versus no-repair
+**15/20**. With TWO internally
+vertex-disjoint paths (F2), A repair
+**11/20** versus no-repair **0/20**,
+and B both **0/20**. At B's
+loss of bottleneck node 2, the
+node COUNT returns to SIX at t2
+but F1 only returns at t4 after
+the third preregistered link
+is restored. Replacement identity,
+restoration of relations and
+recovery of a defined service
+are different model events.
+
+[Full RP-U002-A01 report](docs/results/RP-U002-A01.md).
+No stochastic estimates, plant
+regeneration, resource competition,
+new mathematical law, cross-domain
+generality or real `C=B/(I*tau)`
+validation; original external
+negative results remain unaltered.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

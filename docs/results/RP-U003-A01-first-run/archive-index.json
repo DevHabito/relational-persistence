@@ -1,0 +1,13 @@
+{
+  "existing_negative_external_results_unchanged": true,
+  "first_code_commit": "b6c97cae2e39dc971dc7437ae9962308c28db5d4",
+  "first_run_id": "40572859641",
+  "first_verdict": "FINITE_BENCHMARK_LOOKAHEAD_F1_ADVANTAGE_SUPPORTED",
+  "frozen_protocol_commit": "5cb8d3af473aa95848ab22d5ecc591c5a1567a00",
+  "individual_case_trace_sha256": "82f3225239370b601ada328c642ddb1ed3409b80679fe15057b89044cb5efb4f",
+  "labeled_family_sha256": "76aef644704c01b52b7b9eeac0d8b36deccf65d36bdc3d2225955436ff7671e3",
+  "new_universal_scientific_law_claimed": false,
+  "original_audit_sha256": "cbac86c673be8de662e0ee741c958a44e860c03cdf420641ceb801a95c97934d",
+  "protocol": "RP-U003-A01",
+  "real_world_rows_examined": 0
+}

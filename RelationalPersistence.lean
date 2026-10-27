@@ -14,3 +14,4 @@ import RelationalPersistence.ColoredNoiseMoments
 import RelationalPersistence.DelayedFeedback
 import RelationalPersistence.QueueObservability
 import RelationalPersistence.ResidualBounds
+import RelationalPersistence.FunctionalContinuity

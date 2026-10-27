@@ -36,7 +36,7 @@ jobs:
         run: python -m pip install -e '.[dev]'
       - name: Source-family and adverse-oracle tests BEFORE original benchmark
         run: python -m pytest -q tests/test_rp_u003_equal_budget.py
-      - name: Original exhaustive benchmark: preserve positive AND negative H1
+      - name: "Original exhaustive benchmark: preserve positive AND negative H1"
         run: |
           python -m experiments.rp_u003_equal_budget \
             --output rp-u003-first/audit.json

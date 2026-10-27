@@ -1,5 +1,13 @@
 # Research roadmap and stop conditions
 
+## RP-U002-A01 — temporal replacement and relational repair (finished finite study)
+
+- Separately registered **BEFORE implementation/first run** alone on main `fa7f9d0`; fixed original six-vertex seven-edge A/B graphs, each original single-internal-node loss, and all t=0..5 snapshots.
+- A new identity replaces the failed component at t2; at most ONE old-neighbor link reappears per step, predetermined ascending numeric order using a publicly assumed graph blueprint. Controls undergo exactly the same original failure but no replacement or links. No adaptive tuning or ecological regrowth.
+- Original first run #40499618845 `FINITE_TURNOVER_REPAIR_CONTRAST_VERIFIED`, archived `07c07e6`; reviewed code PR #57 `e0929d6` passed Python 3.11+3.12 (691 regressions each) and Lean 4. Registered B bottleneck node2 has six present components at t2 yet no F1 path until t4. The original F1 20 case-tick sums A 20 repair/20 no-repair, B 17 repair/15 no-repair. F2 sums A 11 repair/0 no-repair, B0/0. All negative/zero effects preserved.
+- Next falsifiable gate: compare baseline vertex-connectivity, calibrated repair costs, randomized/frozen topology families or exhaustively degree-matched small graphs; test alternative local vs path-informed repair rules under truly equalized budgets and temporal observability. New source/experimental protocol required BEFORE selecting graphs or results. Ecological/medical observation requires actual domain data and domain-appropriate recovery definitions.
+- Do not claim a new universal law, Menger theorem, plant dynamics, general system behavior, stochastic confidence interval or observable meaning for the historical scalar C from this exact toy model.
+
 ## New track: Functional Continuity (RP-U001)
 
 - Motivation: can a specified functional output persist even when individual system components are lost? Amazon canopy gaps are ONLY an analogy. Do not rename existing ecological resilience/functional redundancy or graph connectivity as new theory.

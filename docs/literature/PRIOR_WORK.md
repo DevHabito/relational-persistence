@@ -1,5 +1,13 @@
 # Prior work and provenance
 
+## RP-U002-A01: component identity turnover and time-limited graph repair
+
+- **Already known:** an unweighted node graph can regain its node COUNT before reconnecting a missing source-target path; graph connectivity, Menger's vertex-disjoint paths, network reliability, failure tolerance, resilience and graph recovery are classical concepts, not new physical principles. For ecology, species functional redundancy and succession are prior-established fields, and this synthetic repair schedule contains NO organisms.
+- The finite RP-U002-A01 protocol was frozen separately at `fa7f9d0` before code/results using the SAME previously examined RP-U001 networks. First original #40499618845 automatically archived unchanged at `07c07e6`: fixed t0..5, four individual failures in each graph, new identity at t2 and at most one original adjacency per tick, paired no-repair. Exact F1 uptime B 17/20 repaired vs15/20 no-repair; A20/20 vs20/20 (zero gain). Stronger F2 A11/20 vs0/20; B0/20 vs0/20.
+- The finite Lean certificate proves the specific B original-bottleneck repair Bool sequence only. These fixed finite results do not establish a new general theorem, a biologically measured time-to-recovery, or an independently validated multi-domain physical law.
+- Related previous works listed below include [Holling 1973](https://doi.org/10.1146/annurev.es.04.110173.000245), [Desjardins et al. 2015](https://doi.org/10.1086/681439) and [Gao, Barzel and Barabási 2016](https://doi.org/10.1038/nature16948), with [erratum](https://doi.org/10.1038/nature18019), plus Menger's classical connectivity theorem.
+- **Project-specific delivery:** a frozen exact two-function longitudinal toy-network contrast, independent state and reachability/disjoint-route verifications, explicit zero-benefit controls, SHA-pinned first outcome; NOT a new theory.
+
 ## Functional Continuity RP-U001: already established versus exact project calculation
 
 - C. S. Holling (1973), [*Resilience and Stability of Ecological Systems*](https://doi.org/10.1146/annurev.es.04.110173.000245). Resilience, resistance, disruption and relation preservation in changing ecological systems were not first proposed by this project.

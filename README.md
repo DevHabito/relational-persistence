@@ -909,6 +909,70 @@ generality or real `C=B/(I*tau)`
 validation; original external
 negative results remain unaltered.
 
+## RP-U003-A01 — Exhaustive equal-edge-budget repair comparisons
+
+The new [registered RP-U003-A01 protocol](docs/preregistration/RP-U003-A01.md)
+was frozen ALONE on main at `5cb8d3a`
+**before implementation or first computation**.
+Unlike the earlier two selected graphs, this
+study exhaustively enumerates ALL **684 labeled**
+connected six-node seven-edge graphs with
+both terminal degrees exactly two and
+no direct terminal link. Four individual
+internal component losses each give
+**2,736 fixed artificial scenarios**,
+six after-failure ticks per policy:
+**16,416 synthetic scenario-steps per policy**.
+
+Reviewed [PR #59](https://github.com/DevHabito/relational-persistence/pull/59)
+passed **726 Python tests on each of
+3.11 and 3.12** and existing Lean 4 CI,
+merging first code at `b6c97ca`.
+The FIRST original [run #40572859641](https://github.com/DevHabito/relational-persistence/actions/runs/40572859641)
+was independently archived at `2a68d81`
+with registered
+`FINITE_BENCHMARK_LOOKAHEAD_F1_ADVANTAGE_SUPPORTED`
+and SHA-256 of all case records.
+
+Four original-neighbor edge-repair
+strategies, all with EXACTLY the same
+node/edge/time/cumulative repair costs:
+ASC numeric order, original-degree DESC,
+one-step (F1,F2)-aware GREEDY1, and
+two-step LOOKAHEAD2. Primary retained
+F1 path counts:
+ASC **15,736**, DEGREE **15,748**,
+GREEDY1 **15,888**, LOOKAHEAD2
+**15,888** of 16,416. The latter
+two also exactly match the exhaustive
+offline per-tick F1 bound:
+**NO additional F1 gain from
+two-step lookahead over GREEDY1**.
+For the stronger F2 function
+(two internally disjoint paths):
+GREEDY1 **7,852**, LOOKAHEAD2
+**7,968** (offline bound **7,968**).
+Lookahead required 31,236
+candidate-function evaluations
+versus greedy's 13,164.
+
+This is an exact in-silico benchmark
+of **PREEXISTING** graph repair
+heuristics; graphs are labeled,
+not independent sampled networks.
+Task-informed rules use more
+information than ASC and DEGREE.
+NO new formal Lean theorem about
+all these graphs was proposed.
+There are ZERO forest/clinical
+observations, novel network laws,
+ecological regeneration results
+or empirical scalar C.
+[Read the complete RP-U003 report](docs/results/RP-U003-A01.md).
+Earlier negative external forecasts
+and all original first-run files
+remain unchanged.
+
 ## Naming and provenance
 
 **Relational Persistence** names a research question and a family of model-building efforts. It is not a physical law. The earlier phrase *Romero Law of Relational Stability* is retained solely where historically necessary for accurate citation. We are not silently rewriting earlier publications or pretending that a revised title changes the evidence.

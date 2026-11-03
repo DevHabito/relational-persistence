@@ -340,9 +340,19 @@ def offline_optimum(graph, lost: int, table):
         scores.append((f1, f2, order))
     if not scores:
         raise AssertionError("No complete candidate repair permutations")
+    best_f1 = max(s[0] for s in scores)
+    best_f2 = max(s[1] for s in scores)
+    f1_orders = tuple(s[2] for s in scores if s[0] == best_f1)
+    f2_orders = tuple(s[2] for s in scores if s[1] == best_f2)
+    if not f1_orders or not f2_orders:
+        raise AssertionError("Missing maximizing repair order")
     return {
-        "F1": max(s[0] for s in scores),
-        "F2": max(s[1] for s in scores),
+        "F1": best_f1,
+        "F2": best_f2,
+        "F1_optimal_order_first_lex": list(min(f1_orders)),
+        "F2_optimal_order_first_lex": list(min(f2_orders)),
+        "F1_optimal_order_count": len(f1_orders),
+        "F2_optimal_order_count": len(f2_orders),
         "permutations": len(scores),
     }
 
@@ -380,6 +390,15 @@ def audit():
     try:
         sources = all_source_graphs()
         pairs, singleton_count = matched_degree_pairs(sources)
+        source_degree_counts = Counter(degrees(graph) for graph in sources)
+        if sum(source_degree_counts.values()) != len(sources):
+            raise AssertionError("Original degree-stratum census incomplete")
+        excluded_singleton_keys = sorted(
+            degree_key for degree_key, count in source_degree_counts.items()
+            if count == 1
+        )
+        if len(excluded_singleton_keys) != singleton_count:
+            raise AssertionError("Singleton degree-stratum census mismatch")
         selected = tuple(graph for _key, first, last in pairs
                          for graph in (first, last))
         if len(set(selected)) != len(selected):
@@ -389,6 +408,13 @@ def audit():
             "accepted_labeled_family_sha256": hash_sequence(sources),
             "matched_degree_pair_strata": len(pairs),
             "excluded_singleton_degree_strata": singleton_count,
+            "excluded_singleton_degree_tuples": [
+                list(degree_key) for degree_key in excluded_singleton_keys
+            ],
+            "all_degree_tuple_strata_counts": {
+                canonical_json(degree_key): count
+                for degree_key, count in sorted(source_degree_counts.items())
+            },
             "selected_labeled_graphs": len(selected),
             "selected_labeled_family_sha256": hash_sequence(selected),
             "all_graphs_degree_matched_within_pairs": True,

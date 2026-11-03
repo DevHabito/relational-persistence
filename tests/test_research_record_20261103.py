@@ -49,3 +49,10 @@ def test_literature_review_identifies_prior_scholarship_and_corrections():
         "not an exhaustive priority search",
     ):
         assert expected in reading
+
+def test_results_index_has_one_contiguous_study_table():
+    index = (ROOT / "docs/RESULTS_INDEX.md").read_text(encoding="utf-8")
+    assert "| Study | Inputs | Outcome | Evidence level |" in index
+    assert "| RP-U003-A01 |" in index
+    assert "| RP-U003-F01 |" in index
+    assert not re.search(r"\\n\\n(?=\\| RP-[A-Z0-9-]+ \\|)", index)

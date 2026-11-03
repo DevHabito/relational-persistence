@@ -1,5 +1,9 @@
 # Prior work and provenance
 
+## Dated bibliographic audit — 3 November 2026
+
+For a short, verified author/date/source guide directly relevant to graph repair, F1/F2 path connectivity, ecological resilience, network control and external workload data, see [Literature Notes — 3 November 2026](REVIEW-2026-11-03.md). Its citations remain **prior art**, not evidence for a novel RP theorem. The [dated research record](../research/RESEARCH-RECORD-2026-11-03.md) separates the project's established finite results from conjectures and unresolved measurements. The comprehensive bibliography below remains available; this insert does not supersede older references.
+
 ## RP-U002-A01: component identity turnover and time-limited graph repair
 
 - **Already known:** an unweighted node graph can regain its node COUNT before reconnecting a missing source-target path; graph connectivity, Menger's vertex-disjoint paths, network reliability, failure tolerance, resilience and graph recovery are classical concepts, not new physical principles. For ecology, species functional redundancy and succession are prior-established fields, and this synthetic repair schedule contains NO organisms.

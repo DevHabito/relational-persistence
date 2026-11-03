@@ -10,6 +10,12 @@ Relational Persistence is an open, independently reproducible mathematical and c
 
 I keep an ongoing record of what I have verified, what has failed, and what remains unresolved. The [dated research record](docs/research/RESEARCH-RECORD-2026-11-03.md) follows the scientific work from the original scalar tests through the finite network-repair studies, including the original external forecasting failures, the RP-U003 F1 tie, and the later Lean 4 certificate for one already-known F2 counterexample. The [dated literature review](docs/literature/REVIEW-2026-11-03.md) identifies the authors, dates and sources of earlier related work. Neither document replaces the original preregistrations, first-run archives or [claim ledger](docs/CLAIM_LEDGER.md).
 
+## Current prospective study — RP-U004 (no registered outcome yet)
+
+The [RP-U004-P01 protocol](docs/preregistration/RP-U004-P01.md) was frozen separately on main at `186d6fc5d8cc6451fca63abb5f6ef4f2029a3d7b` before any U004 results. I am testing six fixed network-repair strategies on degree-matched pairs of seven-vertex synthetic graphs. Unlike RP-U003, all policies may consult the **same complete function table**, although their decision-time CPU costs may still differ. The primary question is whether F2-aware two-step lookahead exceeds an F2-aware one-step greedy method under the same repaired-edge cost. A tie or loss will remain a negative result. The [prior-art note](docs/literature/RP-U004-PRIOR-ART.md) identifies earlier greedy, two-step and repair-scheduling research.
+
+The implementation is being reviewed in [PR #65](https://github.com/DevHabito/relational-persistence/pull/65). **A proposed implementation and CI regression checks are not an original experimental outcome.** This summary must not be promoted to a claim of improvement until the first full preregistered run and its original archive are available.
+
 ## Our first question
 
 If two networks have the same update budget, injected noise variance, and response delay, must they recover from a disturbance at the same rate?

@@ -402,18 +402,29 @@ def audit():
         pair_comparisons = Counter()
         strata = {}
         offline_f1, offline_f2 = 0, 0
+        primary_table_entries = 0
+        relabeled_table_entries = 0
+        source_graphs_with_f2 = 0
+        relabel_changes = Counter()
         for degree_key, first, last in pairs:
             stratum_id = canonical_json(degree_key)
             stratum_totals = {"scenario_count": 0, "F1": Counter(), "F2": Counter()}
             for graph in (first, last):
+                original_f1, original_f2 = functions(frozenset(graph), VERTICES)
+                if original_f1 != 1:
+                    raise AssertionError("Connected source lacks the original F1 function")
+                source_graphs_with_f2 += original_f2
                 for lost in INTERNAL:
                     table = truth_table(graph, lost)
+                    primary_table_entries += len(table)
                     optimal = offline_optimum(graph, lost, table)
                     offline_f1 += optimal["F1"]
                     offline_f2 += optimal["F2"]
                     case = {
                         "degree_tuple": list(degree_key),
                         "original_graph": [list(e) for e in graph],
+                        "original_F1": original_f1,
+                        "original_F2": original_f2,
                         "removed_vertex": lost,
                         "eligible_neighbors": list(old_neighbors(graph, lost)),
                         "truth_table_entries": len(table),
@@ -456,6 +467,7 @@ def audit():
                     if not independent_source_valid(relabeled):
                         raise AssertionError("Relabeled graph became inadmissible")
                     relabeled_table = truth_table(relabeled, relost)
+                    relabeled_table_entries += len(relabeled_table)
                     deviations = {}
                     for policy in POLICIES:
                         translated = policy_trace(relabeled, relost, policy, relabeled_table)
@@ -464,6 +476,9 @@ def audit():
                             "F1_changed": original["F1_uptime"] != translated["F1_uptime"],
                             "F2_changed": original["F2_uptime"] != translated["F2_uptime"],
                         }
+                        for metric in ("F1", "F2"):
+                            if deviations[policy][metric + "_changed"]:
+                                relabel_changes[policy + "_" + metric] += 1
                     case["cyclic_relabeling_sensitivity"] = deviations
                     report["cases"].append(case)
             strata[stratum_id] = {
@@ -480,6 +495,11 @@ def audit():
         report["aggregates"] = {
             "scenarios": len(report["cases"]),
             "post_failure_case_ticks_per_policy": denominator,
+            "source_graphs_with_initial_F2": source_graphs_with_f2,
+            "source_graphs_total": len(selected),
+            "primary_truth_table_entries": primary_table_entries,
+            "cyclic_relabel_truth_table_entries": relabeled_table_entries,
+            "cyclic_relabel_changed_score_cases": dict(sorted(relabel_changes.items())),
             "F1_uptime": dict(sorted(f1_total.items())),
             "F2_uptime": dict(sorted(f2_total.items())),
             "offline_F1_maximum_sum": offline_f1,

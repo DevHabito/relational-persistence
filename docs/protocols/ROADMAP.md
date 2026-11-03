@@ -1,5 +1,11 @@
 # Research roadmap and stop conditions
 
+## Current audit and immediate next gate (3 November 2026)
+
+The [dated research record](../research/RESEARCH-RECORD-2026-11-03.md) summarizes the original positive and negative results, source and proof boundaries, and the correction of a reported RP-U003 digest without changing its first-run archive. [RP-U003-F01](../preregistration/RP-U003-F01.md) is now a Lean-checked certificate for one **already-known** F1/F2 strategy difference (PR #63), not a general result about lookahead.
+
+**Next experimental gate, not yet run:** create a distinct, prospective RP-U004 protocol before selecting new graphs, coding its implementation or looking at outcomes. It must justify independent graph-family selection, specify matched topology/degree controls, include strong path-aware and F2-aware established restoration methods, equalize information access, report measurable computational work as well as repair-edge cost, and preserve all losses. A real-data track requires independently measured functions and proof of which inputs were historically available at each decision. The known U003 families and past external prediction holdouts are not fresh blind test data.
+
 ## RP-U002-A01 — temporal replacement and relational repair (finished finite study)
 
 - Separately registered **BEFORE implementation/first run** alone on main `fa7f9d0`; fixed original six-vertex seven-edge A/B graphs, each original single-internal-node loss, and all t=0..5 snapshots.

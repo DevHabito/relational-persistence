@@ -1,0 +1,14 @@
+{
+  "accepted_family_sha256": "bcc1b5ae2d05482277486e401fbc5918d51a75ffcc5df09ceea5b98c6f57427c",
+  "case_trace_sha256": "2226f33592ec72895063f30ff8f784e3501fb447805727f2651b943e5385122b",
+  "first_code_commit": "d6f927cabdaa5f15f04cb1f0c929025879b601bf",
+  "first_run_id": "41721533933",
+  "first_verdict": "FINITE_MATCHED_DEGREE_F2_LOOKAHEAD_ADVANTAGE_SUPPORTED",
+  "new_lean_theorem_claimed": false,
+  "new_physical_law_claimed": false,
+  "original_audit_sha256": "172603ff933cc269372afa55d2a67163586604a561839a237c2be3d17ce67f09",
+  "physical_data_rows": 0,
+  "protocol": "RP-U004-P01",
+  "protocol_freeze_commit": "186d6fc5d8cc6451fca63abb5f6ef4f2029a3d7b",
+  "selected_family_sha256": "46eda52afa56de2830b869112a7569cc9bb72780bac82a6943872c91cef83e94"
+}

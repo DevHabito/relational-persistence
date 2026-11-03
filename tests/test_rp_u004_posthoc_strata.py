@@ -71,3 +71,15 @@ def test_a_tampered_case_cannot_match_the_original_aggregate(frozen_original):
             analyze(frozen_original)
     finally:
         value["F2_uptime"] = original_value
+
+
+def test_absent_original_f2_cannot_hide_a_positive_repair_score(frozen_original):
+    case = next(case for case in frozen_original["cases"] if case["original_F2"] == 0)
+    record = case["policies"]["ASC"]
+    original = record["F2_uptime"]
+    try:
+        record["F2_uptime"] = 1
+        with pytest.raises(ValueError, match="F2 appeared under subset-only repair"):
+            analyze(frozen_original)
+    finally:
+        record["F2_uptime"] = original

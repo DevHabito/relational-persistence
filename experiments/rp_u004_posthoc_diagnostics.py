@@ -78,6 +78,12 @@ def analyze(original: dict) -> dict:
         initial_f2 = case["original_F2"]
         if initial_f2 not in (0, 1):
             raise ValueError("Invalid original F2 Boolean state")
+        if initial_f2 == 0 and any(
+            data["F2_uptime"] != 0
+            or any(snapshot["F2"] != 0 for snapshot in data["snapshots"])
+            for data in score.values()
+        ):
+            raise ValueError("F2 appeared under subset-only repair despite absent original F2")
 
         group = by_initial_f2["present" if initial_f2 else "absent"]
         degree = str(case["degree_tuple"][removed])

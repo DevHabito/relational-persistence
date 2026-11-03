@@ -113,17 +113,16 @@ def connected_bfs(edges) -> bool:
 
 
 def connected_independent_dfs(edges) -> bool:
-    """Separate connectivity implementation using simple vertex exploration."""
+    """A stack-based DFS, separate from the BFS source-graph validator."""
     seen = {SOURCE}
+    stack = [SOURCE]
     graph = frozenset(edges)
-    changed = True
-    while changed:
-        changed = False
-        for u in tuple(sorted(seen)):
-            for v in VERTICES - seen:
-                if edge(u, v) in graph:
-                    seen.add(v)
-                    changed = True
+    while stack:
+        current = stack.pop()
+        for neighbor in sorted(VERTICES):
+            if neighbor not in seen and edge(current, neighbor) in graph:
+                seen.add(neighbor)
+                stack.append(neighbor)
     return seen == VERTICES
 
 

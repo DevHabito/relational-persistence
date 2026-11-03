@@ -54,3 +54,18 @@ def test_independent_finite_replay_matches_every_original_case():
     assert outcome["comparisons"]["LOOKAHEAD2_F2_vs_GREEDY_F2_F2_tie"] == 2784
     assert outcome["comparisons"]["LOOKAHEAD2_F1_vs_GREEDY_F1_F1_win"] == 6
     assert outcome["comparisons"]["LOOKAHEAD2_F1_vs_GREEDY_F1_F1_tie"] == 2844
+
+
+def test_f1_first_and_f2_first_rules_are_not_independent_controls():
+    # F2 implies F1, so only three Boolean outcome pairs are admissible.
+    admissible = ((0, 0), (1, 0), (1, 1))
+    assert sorted(admissible) == sorted(admissible, key=lambda pair: (pair[1], pair[0]))
+    for left in admissible:
+        for right in admissible:
+            assert (left < right) == ((left[1], left[0]) < (right[1], right[0]))
+
+    original = json.loads(FIRST_REPORT.read_bytes())
+    for case in original["cases"]:
+        records = case["policies"]
+        assert records["GREEDY_F1"]["order"] == records["GREEDY_F2"]["order"]
+        assert records["LOOKAHEAD2_F1"]["order"] == records["LOOKAHEAD2_F2"]["order"]

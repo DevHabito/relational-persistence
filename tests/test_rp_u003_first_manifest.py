@@ -40,3 +40,12 @@ def test_report_does_not_claim_greedy_F1_is_worse_than_lookahead():
 
 def test_manifest_SHA_would_detect_a_changed_digest():
     assert sha256((EXPECTED_AUDIT_SHA+"mutation").encode()).hexdigest()!=EXPECTED_AUDIT_SHA
+
+def test_report_family_sha_matches_original_archive_exactly():
+    archive = json.loads(INDEX.read_text(encoding="utf-8"))
+    report = REPORT.read_text(encoding="utf-8")
+    marker = "The first source family SHA:"
+    assert report.count(marker) == 1
+    reported_digest = report.split(marker, 1)[1].split("`", 2)[1]
+    assert len(reported_digest) == 64
+    assert reported_digest == archive["labeled_family_sha256"]

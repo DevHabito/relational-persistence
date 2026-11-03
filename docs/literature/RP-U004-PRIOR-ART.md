@@ -31,3 +31,7 @@ Any future priority or generalization claim will need a separate novelty review,
 ## Provenance note
 
 I checked the cited publisher, institutional or PubMed records before adding these bibliographic entries. Exact publication dates are supplied where they could be verified; otherwise only the publication year is asserted. I have not independently replicated the calculations in the papers or examined every potentially competing method.
+
+## Outcome of the preregistered comparison (added after the first run)
+
+The first [RP-U004-P01 result](../results/RP-U004-P01.md) was archived on 3 November 2026 after the methods above had already been cited. It found a positive lookahead-versus-greedy difference **in a selected finite synthetic model**, with many ties and different lookup costs. It does not change the priority of any established recovery method. A subsequent audit also exposed a redundant comparison: prioritizing F1 over F2 or vice versa is equivalent for Boolean scores with F2 ⇒ F1. Any future study seeking a distinct objective-tradeoff effect needs non-nested objectives fixed before outcome inspection, not a reinterpretation of these scores.

@@ -32,7 +32,7 @@ def test_research_record_preserves_original_negative_f1_tie_and_limits():
     diary = DATED[0].read_text(encoding="utf-8")
     assert "| GREEDY1 | 15,888 | 7,852 |" in diary
     assert "| LOOKAHEAD2 | 15,888 | 7,968 |" in diary
-    assert "not a blind" in diary.lower()
+    assert "not blind" in diary.lower()
     assert "No experimentally calibrated persistence observable" in diary
     assert "No physical derivation of spacetime" in diary
 

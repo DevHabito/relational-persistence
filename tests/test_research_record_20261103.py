@@ -55,4 +55,4 @@ def test_results_index_has_one_contiguous_study_table():
     assert "| Study | Inputs | Outcome | Evidence level |" in index
     assert "| RP-U003-A01 |" in index
     assert "| RP-U003-F01 |" in index
-    assert not re.search(r"\\n\\n(?=\\| RP-[A-Z0-9-]+ \\|)", index)
+    assert not re.search(r"\n\n(?=\| RP-[A-Z0-9-]+ \|)", index)

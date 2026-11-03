@@ -6,6 +6,10 @@ That question is the starting point of this project. We are interested in the co
 
 Relational Persistence is an open, independently reproducible mathematical and computational research program led by **Felipe Gianini Romero**. It grew out of work on the Relational Zero State (RZS) hypothesis and the [Precategorical Modal Field Framework](https://github.com/DevHabito/precategorical-modal-field-framework). These connections motivate questions; they are **not** established deductions, and this repository does not claim a new fundamental law of physics.
 
+## Current research record — 3 November 2026
+
+I keep an ongoing record of what I have verified, what has failed, and what remains unresolved. The [dated research record](docs/research/RESEARCH-RECORD-2026-11-03.md) follows the scientific work from the original scalar tests through the finite network-repair studies, including the original external forecasting failures, the RP-U003 F1 tie, and the later Lean 4 certificate for one already-known F2 counterexample. The [dated literature review](docs/literature/REVIEW-2026-11-03.md) identifies the authors, dates and sources of earlier related work. Neither document replaces the original preregistrations, first-run archives or [claim ledger](docs/CLAIM_LEDGER.md).
+
 ## Our first question
 
 If two networks have the same update budget, injected noise variance, and response delay, must they recover from a disturbance at the same rate?

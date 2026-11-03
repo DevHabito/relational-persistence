@@ -160,3 +160,24 @@ def test_no_hidden_policy_or_outcome_target_posthoc():
     assert not hasattr(u, "preferred_graphs_from_results")
     assert u.canonical_json({"b": 2, "a": 1}) == '{"a":1,"b":2}'
     assert len(u.hash_sequence([list(FIXTURE)])) == 64
+
+
+def test_original_f2_is_measured_before_failure_not_assumed_from_degrees():
+    assert u.source_valid(FIXTURE)
+    assert u.functions(frozenset(FIXTURE), u.VERTICES)[1] == 1
+    # Removing a single terminal edge retains F1 but destroys two-route F2.
+    damaged = frozenset(FIXTURE) - {(2, 6)}
+    assert u.functions(damaged, u.VERTICES) == (1, 0)
+
+
+def test_precomputed_subset_table_is_complete_and_not_policy_specific():
+    table = u.truth_table(FIXTURE, 3)
+    neighbors = u.old_neighbors(FIXTURE, 3)
+    expected = {
+        frozenset(subset)
+        for n in range(len(neighbors) + 1)
+        for subset in combinations(neighbors, n)
+    }
+    assert set(table) == expected
+    for policy in u.POLICIES:
+        assert set(u.policy_trace(FIXTURE, 3, policy, table)["order"]) == set(neighbors)

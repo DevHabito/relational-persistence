@@ -202,8 +202,12 @@ def test_offline_optimum_repair_orders_are_actual_argmax():
         assert original_score + trace_score == optimum[metric]
 
 
-def test_degree_stratum_census_can_account_for_excluded_singletons():
-    graphs = (FIXTURE,)
-    degree_counts = {u.degrees(graph): 1 for graph in graphs}
-    assert sum(degree_counts.values()) == len(graphs)
-    assert len([key for key, count in degree_counts.items() if count == 1]) == 1
+def test_degree_stratum_census_accounts_for_all_accepted_sources():
+    from collections import Counter
+
+    accepted = u.all_source_graphs()
+    degree_counts = Counter(u.degrees(graph) for graph in accepted)
+    pairs, singleton_count = u.matched_degree_pairs(accepted)
+    assert sum(degree_counts.values()) == len(accepted)
+    assert singleton_count == sum(count == 1 for count in degree_counts.values())
+    assert len(pairs) == sum(count >= 2 for count in degree_counts.values())

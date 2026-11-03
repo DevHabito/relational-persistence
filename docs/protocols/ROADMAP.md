@@ -1,5 +1,13 @@
 # Research roadmap and stop conditions
 
+## RP-U004-P01 — prospective degree-matched repair, not yet scored
+
+- I froze the full [RP-U004-P01 protocol](../preregistration/RP-U004-P01.md) **alone on main** at `186d6fc5d8cc6451fca63abb5f6ef4f2029a3d7b`, before U004 implementation, tests, or outcome inspection. The earlier U003 results, including the equal-F1 GREEDY1/LOOKAHEAD2 tie, were already known.
+- The new experiment uses seven original vertices, eight original edges, a deterministic graph-family selection based only on degree tuples, independent graph and function oracles, and six fixed repair policies. All policies share model information and an immutable F1/F2 truth table; equal edge costs **do not** imply equal decision-time CPU costs.
+- The **registered H1** compares LOOKAHEAD2_F2 against GREEDY_F2, with strict improvement required. H2 compares corresponding F1-aware policies separately. Both an advantage and a tie/loss must be archived without altering the frozen rules. The exact finite source census is not an independent sample of real systems.
+- [RP-U004 prior-art note](../literature/RP-U004-PRIOR-ART.md) records existing restoration and lookahead strategies by Hu et al. (2016), Bartolini et al. (2017), Averbakh and Pereira (2018), Wang et al. (2023), and Crocker and Boyles (2025). Nothing about the strategy class is presented as newly invented.
+- **Stop gate:** review PR #65, require Python 3.11/3.12 plus existing Lean 4 regression CI on its exact head, then and only then run the frozen first original benchmark and preserve its raw positive, negative or invalid report. Lean 4 is a regression gate, not a theorem certifying the full U004 census. No empirical or physical claims are authorized.
+
 ## Current audit and immediate next gate (3 November 2026)
 
 The [dated research record](../research/RESEARCH-RECORD-2026-11-03.md) summarizes the original positive and negative results, source and proof boundaries, and the correction of a reported RP-U003 digest without changing its first-run archive. [RP-U003-F01](../preregistration/RP-U003-F01.md) is now a Lean-checked certificate for one **already-known** F1/F2 strategy difference (PR #63), not a general result about lookahead.

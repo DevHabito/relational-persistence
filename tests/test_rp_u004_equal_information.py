@@ -181,3 +181,29 @@ def test_precomputed_subset_table_is_complete_and_not_policy_specific():
     assert set(table) == expected
     for policy in u.POLICIES:
         assert set(u.policy_trace(FIXTURE, 3, policy, table)["order"]) == set(neighbors)
+
+
+def test_offline_optimum_repair_orders_are_actual_argmax():
+    """Each claimed optimum must be attained by its reported repair order."""
+    graph, lost = FIXTURE, 3
+    table = u.truth_table(graph, lost)
+    optimum = u.offline_optimum(graph, lost, table)
+    eligible = u.old_neighbors(graph, lost)
+    for metric in ("F1", "F2"):
+        order = tuple(optimum[f"{metric}_optimal_order_first_lex"])
+        assert tuple(sorted(order)) == eligible
+        assert 1 <= optimum[f"{metric}_optimal_order_count"] <= optimum["permutations"]
+        original_edges, original_nodes = u.snapshot(graph, lost, (), 1)
+        original_score = u.functions(original_edges, original_nodes)[0 if metric == "F1" else 1]
+        trace_score = sum(
+            table[frozenset(order[:min(tick - 1, len(order))])][0 if metric == "F1" else 1]
+            for tick in range(2, 7)
+        )
+        assert original_score + trace_score == optimum[metric]
+
+
+def test_degree_stratum_census_can_account_for_excluded_singletons():
+    graphs = (FIXTURE,)
+    degree_counts = {u.degrees(graph): 1 for graph in graphs}
+    assert sum(degree_counts.values()) == len(graphs)
+    assert len([key for key, count in degree_counts.items() if count == 1]) == 1

@@ -50,14 +50,15 @@ def validated_key(row: tuple[str, str, str, str]) -> tuple[str | None, tuple[str
     """The four literal source strings; no normalization of original IDs."""
     company, year, month, incident = row
     failures = []
-    if not (len(company) == 14 and company.isascii() and company.isdecimal()):
+    if not (isinstance(company, str) and len(company) == 14
+            and company.isascii() and company.isdecimal()):
         failures.append("invalid_distributor")
-    if year != "2026":
+    if not isinstance(year, str) or year != "2026":
         failures.append("invalid_competence_year")
-    if not (len(month) == 2 and month.isascii() and month.isdecimal()
+    if not (isinstance(month, str) and len(month) == 2 and month.isascii() and month.isdecimal()
             and "01" <= month <= "12"):
         failures.append("invalid_competence_month")
-    if not (1 <= len(incident) <= 10 and incident.isascii()
+    if not (isinstance(incident, str) and 1 <= len(incident) <= 10 and incident.isascii()
             and incident == incident.strip() and KEY_SEPARATOR not in incident):
         failures.append("invalid_occurrence_code")
     if failures:

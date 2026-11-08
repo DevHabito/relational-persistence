@@ -150,3 +150,19 @@ These definitions describe **exact-field database correspondence**, not certifie
 | Linked-row fraction | Matched eligible source rows divided by **eligible** source rows within a fixed source and key convention | Conditional descriptive denominator, **not** sensitivity, match precision, physical event recovery rate or predictive model accuracy |
 
 Original [RP-U005-D09 results](../results/RP-U005-D09.md) and its [frozen protocol](../protocols/RP-U005-D09-ANEEL-DUAL-KEY-CENSUS.md) preserve complete provenance. Foundational literature: Ivan P. Fellegi and Alan B. Sunter (1969), DOI [10.1080/01621459.1969.10501049](https://doi.org/10.1080/01621459.1969.10501049); Peter Christen (2012), DOI [10.1007/978-3-642-31164-2](https://doi.org/10.1007/978-3-642-31164-2). These precede the present deterministic source-key audit.
+
+## RP-U005-D10 — printed interval and literal equipment-code source consistency
+
+These definitions are strictly **observational comparisons of published columns**, not newly measured physical link redundancy or operator actions.
+
+| Term | Registered source-data meaning | What it cannot establish |
+|---|---|---|
+| One-to-one literal-key source pair | Exactly one original emergency occurrence and exactly one original interruption row share the frozen four-field D09 literal key; duplicated keys remain counted separately, not paired | Independent physical incident identity, unique disturbance, active equipment or counterfactual repair |
+| Valid printed civil-time interval | Both original start/end fields strictly parse using predeclared second-granularity datetime syntax and end is not earlier than start; timezone unknown | Synchronization between external monitoring systems or precise physical-event boundaries |
+| Closed-interval overlap | Two fully valid printed intervals intersect, including a common boundary instant; `TOUCHING` is recorded separately | Same incident, cause-effect relation, chosen switching action or contemporaneously available decision information |
+| Valid disjoint intervals | Two valid original timestamp intervals **do not intersect** under their printed civil values | Automatic data corruption, two unrelated physical events or a falsification of the publisher |
+| Indeterminate temporal pair | Either source interval is missing, unrecognized under frozen syntax, or reversed; reasons may overlap and remain distinct from disjoint | Absence of an actual event or absence of temporal overlap |
+| Literal feeder/substation equality | Two nonempty original `CodAlimentador` or `CodSubestacao` strings are exactly equal; missing on either side is `UNKNOWN` | Actual connected/energized topology, substation transfer, equivalent coded asset at a given time |
+| Ambiguous matched key | Exact source key appears multiple times in either file; D10 counts it in the D09 key census but omits individual pair comparisons | An opportunity to choose the 'best' interruption or multiply incidents without separate independent evidence |
+
+First source evidence: [RP-U005-D10](../results/RP-U005-D10.md) and the [frozen protocol](../protocols/RP-U005-D10-ANEEL-TEMPORAL-METADATA.md). The result found 668 disjoint printed intervals, 9,241 unknown time comparisons, and 2,239,820 unknown substation comparisons among 3,307,396 F one-to-one textual-key pairs. These do not establish a repair-policy effect.

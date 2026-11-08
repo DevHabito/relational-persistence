@@ -1,0 +1,43 @@
+name: RP-U005-D10 Original ANEEL Temporal and Feeder Consistency
+
+on:
+  push:
+    branches:
+      - audit/aneel-temporal-consistency-20261108
+    paths:
+      - .github/workflows/rp-u005-d10-source-metadata.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d10-first-aneel-pair-metadata
+  cancel-in-progress: false
+
+jobs:
+  original_one_to_one_pair_metadata_census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing research dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Check timestamp, ambiguous-group, CRC and synthetic denominator controls BEFORE source access
+        run: python -m pytest -q tests/test_rp_u005_d10_pair_metadata.py
+      - name: Reauthenticate fixed original ZIPs and compare unique source pairs
+        run: python -m experiments.rp_u005_d10_pair_metadata
+      - name: Print complete first-source numeric JSON SHA-256
+        run: |
+          test -f rp-u005-d10-original/audit.json
+          sha256sum rp-u005-d10-original/audit.json
+      - name: Preserve only source aggregate report, never original CSV, ZIP or private key database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d10-first-source-temporal-feeder-json
+          path: rp-u005-d10-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

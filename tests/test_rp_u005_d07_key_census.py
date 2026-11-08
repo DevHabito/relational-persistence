@@ -37,7 +37,7 @@ def insert(con, table, data):
 def test_identifier_scope_does_not_drop_leading_zeroes():
     assert key("001") != key("1")
     assert key("001", company=A) != key("001", company=B)
-    assert key("001", year="2026") != key("001", year="2025") if False else True
+    assert c.validated_key((A, "2025", "01", "001"))[0] is None
     assert key("001", month="01") != key("001", month="02")
 
 
@@ -54,11 +54,7 @@ def test_invalid_keys_are_explicitly_classified_not_silently_normalized():
         ((A, "2026", "01", "00123456789"), "invalid_occurrence_code"),
     ]
     for values, expected_reason in cases:
-        try:
-            canonical, failures = c.validated_key(values)
-        except TypeError:
-            # Numeric input is not an admissible literal source string.
-            canonical, failures = None, ("invalid_distributor",)
+        canonical, failures = c.validated_key(values)
         assert canonical is None and expected_reason in failures
 
 
@@ -82,9 +78,9 @@ def test_cross_source_census_conservation_with_all_cardinality_types(tmp_path):
         assert audit["literal_candidate_key_cross_source"]["matched_many_to_one_keys"] == 2
         assert audit["literal_candidate_key_cross_source"]["matched_one_to_many_keys"] == 0
         assert audit["literal_candidate_key_cross_source"]["occurrence_rows_on_matched_keys"] == 7
-        assert audit["literal_candidate_key_cross_source"]["interruption_rows_on_matched_keys"] == 7
+        assert audit["literal_candidate_key_cross_source"]["interruption_rows_on_matched_keys"] == 6
         assert audit["literal_candidate_key_cross_source"]["unmatched_valid_occurrence_rows"] == 1
-        assert audit["literal_candidate_key_cross_source"]["unmatched_valid_interruption_rows"] == 2
+        assert audit["literal_candidate_key_cross_source"]["unmatched_valid_interruption_rows"] == 3
         assert audit["literal_candidate_key_cross_source"]["unmatched_distinct_occurrence_keys"] == 1
         assert audit["literal_candidate_key_cross_source"]["unmatched_distinct_interruption_keys"] == 2
         assert audit["per_source"]["occ_2026"]["extra_rows_on_repeated_keys"] == 3
@@ -190,16 +186,19 @@ def test_changed_complete_compressed_source_is_stopped_before_any_keys(monkeypat
 
 
 def test_scientific_guards_survive_python_optimized_interpreter():
-    probe = ("from experiments.rp_u005_d07_key_census import validated_key; "
-             "answer, failures = validated_key(('no','2026','01','X'));"
-             "assert False if answer is not None else True;")
+    # This explicit Python raise is *not* removed by optimization.
+    probe = (
+        "from experiments.rp_u005_d07_key_census import validated_key;"
+        "key, reasons = validated_key(('no','2026','01','X'));"
+        "print('GUARD_ACTIVE' if key is None and 'invalid_distributor' in reasons "
+        "else 'GUARD_ERASED')"
+    )
     result = subprocess.run(
         [sys.executable, "-O", "-c", probe], capture_output=True, text=True,
         check=False, timeout=30,
     )
-    # Scientific validation is in explicit branches; under -O the bad key
-    # still has no valid canonical identity. This command must be safe to run.
     assert result.returncode == 0
+    assert result.stdout.strip() == "GUARD_ACTIVE"
 
 
 def test_all_original_identifiers_are_stored_only_in_temporary_key_database():

@@ -15,6 +15,8 @@ from pathlib import Path
 ORIGINAL = Path("docs/results/RP-E012-D03-first-run")
 BLOCKED_VERDICT = "RP_U005_DIRECT_POLICY_SOURCE_BLOCKED"
 SOURCE_SCOPE = "GOOGLE_BORG_2019_CELL_A_MACHINE_EVENTS_ONLY"
+PINNED_FIRST_REPORT_SHA256 = "393ed949a3aec3e4cd27f6e6ca8f617102b855a5e0934021d3b6909be31b6f0a"
+PINNED_MACHINE_OBJECT_SHA256 = "b04455f48e57c303fc8987b41e35911d89f3aa31e5a6d3997f07e27749dc1791"
 
 
 @dataclass(frozen=True)
@@ -43,7 +45,8 @@ def _load_source(archive_dir: Path) -> tuple[dict, dict, bytes]:
     )
     raw = (archive_dir / "audit.json").read_bytes()
     _require(
-        sha256(raw).hexdigest() == index["first_report_sha256"],
+        sha256(raw).hexdigest() == index["first_report_sha256"]
+        == PINNED_FIRST_REPORT_SHA256,
         "Original D03 archive bytes do not match first-run SHA-256",
     )
     report = json.loads(raw)
@@ -125,7 +128,8 @@ def read_historical_source(
         source["entire_object_authenticated_not_prefix_only"] is True
         and source["full_object_provider_md5_verified"] is True
         and source["original_full_compressed_object_sha256"]
-        == index["actual_machine_object_original_sha256"],
+        == index["actual_machine_object_original_sha256"]
+        == PINNED_MACHINE_OBJECT_SHA256,
         "Original machine source identity is not certified",
     )
     _require(

@@ -1,0 +1,45 @@
+name: RP-U005-D04 Original ANEEL 2026 ZIP Source Gate
+
+on:
+  push:
+    branches:
+      - audit/aneel-operational-source-20261108
+    paths:
+      - .github/workflows/rp-u005-d04-aneel-zip.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d04-first-aneel-zips
+  cancel-in-progress: false
+
+jobs:
+  first_bounded_original_zip_source_gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing Python research test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Execute synthetic adverse source tests BEFORE downloading any new ANEEL rows
+        run: python -m pytest -q tests/test_rp_u005_d04_source.py
+      - name: Download, authenticate and parse exact original source ZIPs within frozen limits
+        run: python -m experiments.rp_u005_d04_source
+      - name: Print SHA-256 of first original source audit JSON
+        run: |
+          test -f rp-u005-d04-original/audit.json
+          sha256sum rp-u005-d04-original/audit.json
+      - name: Preserve first positive or negative source decision as JSON artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d04-original-aneel-2026-source-audit
+          path: rp-u005-d04-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

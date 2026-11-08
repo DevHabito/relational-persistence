@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install existing pinned research test dependencies
+        run: python -m pip install -e '.[dev]'
       - name: Test synthetic adverse graph and temporal controls BEFORE original source run
         run: python -m pytest -q tests/test_rp_s001_structure_noise.py
       - name: Run registered full finite graph enumeration with two independent path oracles

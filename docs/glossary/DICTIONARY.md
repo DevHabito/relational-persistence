@@ -90,3 +90,19 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+
+## RP-U005-D06 — actual third-party original source-file measurements (8 November 2026)
+
+These are **observations of two precise 2026 ANEEL ZIP files**, identified by original complete compressed SHA-256. They are neither estimates of a fully observed real-world event population nor measures of a physical persistence law.
+
+| Term | Defined observation/unit | Verified by | Limitation |
+|---|---|---|---|
+| Complete compressed original ZIP identity | Whole byte count and SHA-256 of one official CKAN resource ZIP | Sequential bounded first-party download, exact URL/resource and metadata identity; SHA must equal the D04 first-run value | The file represents the publisher's current 2026 resource revision, not necessarily all 2026 events |
+| Complete decoded original CSV | SHA-256 and byte count of all decompressed member bytes | Strict UTF-8 stream and end-to-end ZIP member CRC/EOF, no silently omitted original data row | Format validity is not correctness or completeness of upstream reported incidents |
+| Original file row count | Number of non-header CSV data records consumed to member EOF | Streaming CSV parser with strict column width; 6,789,484 occurrences and 6,078,331 interruptions in the two exact 2026 files | Not a count of unique physical events, all active customers or independent randomized observations |
+| Required field empty-cell count | Number of literal `""` values in a particular CSV required column | Exact full-source scan, with no imputation or row exclusion | Does not count absent physical events, all missingness sentinels, distinct incomplete records, or missing-at-random processes |
+| First source gate versus corrected source gate | D04 permanently rejected CSV instrumentation at a quoted header; D05 diagnosed the alternative delimiter bug; D06 independently retested the same exact ZIP bytes after one predefined correction | Separate frozen protocols, first-run JSON and independent ZIP fingerprints | D06 success **does not retroactively change** D04's negative first verdict; no real repair policy outcome was computed |
+| Source schema coverage | Presence of registered ANEEL 2026 column *names* and valid row widths in whole original CSVs | Frozen required field list, CRC/EOF, exact header and row-width validation | No automatic validation of time zones, actual reference-link cardinalities, distribution switch status, repair action or decision-time access |
+
+Primary audited source evidence: [RP-U005-D06 original source report](../results/RP-U005-D06.md). Before any new operational-effect comparison, the incidence key/time joins and field validity require a separately frozen protocol.

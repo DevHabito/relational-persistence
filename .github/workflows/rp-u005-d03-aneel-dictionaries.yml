@@ -1,0 +1,43 @@
+name: RP-U005-D03 original ANEEL dictionary PDF identity
+
+on:
+  push:
+    branches:
+      - audit/aneel-dictionary-byte-identity-20261108
+    paths:
+      - .github/workflows/rp-u005-d03-aneel-dictionaries.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d03-first-source-four-pdf
+  cancel-in-progress: false
+
+jobs:
+  original_dictionary_byte_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned regression and PDF decoding dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Negative fixtures BEFORE any original PDF acquisition
+        run: python -m pytest -q tests/test_rp_u005_d03_pdf_identity.py
+      - name: First bounded four-source ANEEL original publisher PDF audit
+        run: python -m experiments.rp_u005_d03_pdf_identity
+      - name: Publish first output JSON digest in immutable Actions logs
+        run: |
+          test -f _aneel_dictionary_audit/audit.json
+          sha256sum _aneel_dictionary_audit/audit.json
+      - name: Preserve original source PDF bytes, independent page renders and JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d03-first-four-aneel-dictionaries
+          path: _aneel_dictionary_audit/
+          if-no-files-found: warn
+          retention-days: 90

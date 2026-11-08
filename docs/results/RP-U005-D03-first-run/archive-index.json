@@ -1,0 +1,22 @@
+{
+  "study": "RP-U005-D03",
+  "first_run_id": "42505852818",
+  "first_job_id": "128808206816",
+  "source_workflow_head_sha": "199a18f256b7ccf02f5534f6d61af2d3152f71b4",
+  "protocol_commit_sha": "c46f1326e7de685af956f55d3f7b65d7d5cc4752",
+  "first_audit_json_sha256": "1243c3389b5800035d7feac93c91bfc0ca18c789cd1fd3ab94b5d0efe95274fa",
+  "first_original_decision": "FOUR_DICTIONARIES_AUTHENTICATED_EXPECTED_VERSIONS",
+  "original_external_row_data_downloaded": false,
+  "source_count": 4,
+  "source_sha256": {
+    "occ_2026": "e12befc9c8984d6f13df545f50c2f6373e2f35318f30d986ca2a54f47a3db4dd",
+    "occ_pre2026": "e3115f6d117eaca13d91f5d125c34094dcac1ee0aab8e780684486200f39aa24",
+    "int_2026": "d510fabae63909fa9237215c0f17860e8144810de2e3c2ed65fd4fad516062ad",
+    "int_pre2026": "e7234c20b9f8d478ffea7d83c121de8811e93a869e13e6ced38ed58b26fe566c"
+  },
+  "first_artifact_id": "13627770391",
+  "first_artifact_zip_sha256_from_job_log": "73dd97df0a0d3119790ef855e14d503a165da0b121861510ba59fa343396a49e",
+  "first_artifact_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42505852818/artifacts/13627770391",
+  "source_run_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42505852818",
+  "notes": "Original PDF hashes measured by bounded direct GitHub-hosted acquisition; JSON body reconstructed verbatim from the original CI output. The original source PDFs are in a time-limited GitHub Actions artifact, not in this Git tree. No incident rows, physical repairs or prediction outcomes were read."
+}

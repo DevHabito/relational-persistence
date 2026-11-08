@@ -1,0 +1,43 @@
+name: RP-U005-D08 ANEEL Original Month and Code Format Audit
+
+on:
+  push:
+    branches:
+      - audit/aneel-key-format-diagnostic-20261108
+    paths:
+      - .github/workflows/rp-u005-d08-lexical-format.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d08-first-original-lexical-profile
+  cancel-in-progress: false
+
+jobs:
+  original_2026_source_lexical_profile:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed existing research dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Check invented month spellings and source-fingerprint controls first
+        run: python -m pytest -q tests/test_rp_u005_d08_format_profile.py
+      - name: Count only nonidentifying lexical bins on same exact original ZIPs
+        run: python -m experiments.rp_u005_d08_format_profile
+      - name: Print original summary-only JSON SHA-256
+        run: |
+          test -f rp-u005-d08-original/audit.json
+          sha256sum rp-u005-d08-original/audit.json
+      - name: Preserve first source lexical diagnostic as JSON only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d08-first-aneel-month-code-format-json
+          path: rp-u005-d08-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

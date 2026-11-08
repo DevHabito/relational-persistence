@@ -90,3 +90,18 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+## RP-U005-D03 — primary publisher PDF object identity (8 November 2026)
+
+The terms below describe source **provenance**, not the meaning or accuracy of uninspected operational event rows.
+
+| Term | Unit and observation | Evidence rule | Limit |
+|---|---|---|---|
+| First-party publisher PDF byte identity | Complete original PDF bytes, with byte count and SHA-256 | Direct HTTPS original URL, verified content length when given, PDF magic/trailer, full-object SHA-256 | Authentication of one PDF is not authentication of the associated large CSV/Parquet data file |
+| Extracted dictionary header year | Calendar year printed in document's first-page header | Extracted on the directly downloaded original PDF with fixed PyMuPDF decoder; compared to the designated era | A year printed in a dictionary is not the collection's latest operational-record date |
+| First-page raster fingerprint | SHA-256 of a PNG generated from that original PDF first page | Pin renderer, scale, color space and source PDF digest | Raster SHA can change between renderer versions; does not substitute for original PDF SHA |
+| Report byte integrity | SHA-256 of original first-run JSON | Compare stored original audit bytes to an independently pinned digest printed in the first CI job | Does not prove every publisher field is valid or each recorded case exists in the underlying large source |
+| Archived source artifact | Original four public PDFs, page renders and JSON held in first GitHub Actions run | Independently verify ZIP digest, each PDF digest and original report digest | Artifact retention is temporary; an artifact is not a verified publisher-held permanent timestamp |
+| Dictionary-era distinction | 2022 reference for data through 2025 versus 2026 reference for later data | Distinct publisher URLs, complete PDF SHA and document title/date | Same version number can occur in different documents; old and new column names are not automatically equivalent |
+
+The [RP-U005-D03 original result](../results/RP-U005-D03.md) and its [frozen protocol](../protocols/RP-U005-D03-ANEEL-PDF-IDENTITY.md) define the limits of these terms. In this gate, **four dictionaries** were authenticated; **zero** ANEEL emergency or interruption **event rows** were inspected.

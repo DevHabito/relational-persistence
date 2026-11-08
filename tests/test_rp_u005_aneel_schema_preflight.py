@@ -177,3 +177,38 @@ def test_decision_preserves_unknown_and_negative_findings():
     assert result["contemporaneous_topology"] == "NOT_CERTIFIED"
     assert result["real_policy_comparison_supported"] is False
     assert result["decision"] == "CANDIDATE_FOR_SEPARATE_SOURCE_ONLY_AUDIT"
+
+
+def test_normally_open_tie_is_not_an_energized_second_path():
+    """Synthetic demonstration of the *installed* versus *active* graph gap.
+
+    Vertices 0 and 3 are terminals; the normally open 0--3 tie exists in
+    the built network but not in its radially energized state. This is a
+    finite topology illustration, not a physical feeder observation.
+    """
+    def f2(edge_list):
+        links = {v: set() for v in range(4)}
+        for a, b in edge_list:
+            links[a].add(b)
+            links[b].add(a)
+        complete = []
+
+        def visit(route):
+            if route[-1] == 3:
+                complete.append(route)
+                return
+            for candidate in links[route[-1]]:
+                if candidate not in route:
+                    visit(route + (candidate,))
+
+        visit((0,))
+        return any(
+            set(path[1:-1]).isdisjoint(other[1:-1])
+            for idx, path in enumerate(complete)
+            for other in complete[idx + 1:]
+        )
+
+    active_tree = ((0, 1), (1, 2), (2, 3))
+    installed_with_open_tie = active_tree + ((0, 3),)
+    assert f2(active_tree) is False
+    assert f2(installed_with_open_tie) is True

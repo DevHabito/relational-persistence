@@ -90,3 +90,19 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+
+## RP-U004-C01 — retrospective lookup-price accounting (8 November 2026)
+
+These terms apply **only** to the already-completed synthetic RP-U004 experiment; they do not redefine any previous variable.
+
+| Term | Symbol | Mathematical type / units | Observation rule | Scientific limitation |
+|---|---|---|---|---|
+| Functional case-tick total | `U_F(p)` | Nonnegative integer / synthetic successful scenario-ticks | Sum of F1 or F2 Boolean successes over the frozen RP-U004 cases and six recorded ticks, for one policy | Not measured seconds, independent random samples, survival probability, or a universal measure |
+| Instrumented lookup total | `L(p)` | Nonnegative integer / truth-table reads under the original program's counting conventions | Frozen aggregate `policy_lookup_counts` in the SHA-256-checked RP-U004 archive | Not CPU time, power, network latency, knowledge acquisition or total cost of generating the truth table |
+| Hypothetical constant lookup price | `λ` | Nonnegative rational / synthetic successful scenario-ticks per table lookup | Chosen for a *retrospective sensitivity calculation*; never fitted to measured outcomes | Neither known nor identified in a real system; different systems and strategies may have nonlinear costs |
+| Net accounting score | `J_F(p;λ)` | Rational / synthetic successful scenario-tick equivalents | Definition `U_F(p) - λ L(p)` | Not an empirical service utility and not an optimized policy; the original repair schedule is held fixed |
+| Additive F2 break-even price | `λ*_F2` | Rational = `5/1248` in the above units | Frozen F2 difference `100` divided by extra lookups `24960` | Conditional identity for the recorded synthetic totals only; no measured real price |
+| Additive F1 break-even price | `λ*_F1` | Rational = `1/4160` in the above units | Frozen F1 difference `6` divided by extra lookups `24960` | F1 is nested with F2; this is **not** independent confirmation of a second policy effect |
+
+A separate formal statement and scientific record are in [RP-U004-C01-SCOPE.md](../formalization/RP-U004-C01-SCOPE.md) and [RP-U004-COST-AUDIT-2026-11-08.md](../research/RP-U004-COST-AUDIT-2026-11-08.md). No earlier first-run archive or variable meaning was changed.

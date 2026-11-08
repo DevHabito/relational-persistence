@@ -99,3 +99,21 @@ def test_original_connectivity_invariant_under_all_internal_relabels():
         mapping.update(zip((1, 2, 3, 4, 5), perm))
         edges = tuple(tuple(sorted((mapping[a], mapping[b]))) for a, b in WITNESS)
         assert independent.function_pair(edges, set(range(7))) == initial
+
+
+def test_optimized_python_still_rejects_a_corrupted_function_oracle():
+    """Scientific guards must not disappear with Python's -O switch."""
+    import subprocess
+    import sys
+
+    code = (
+        "from experiments import rp_u004_recompute_20261108 as audit\n"
+        "audit.path_masks = lambda adjacency: iter(())\n"
+        "audit.function_pair(((0,1),(1,6),(0,2),(2,6)), {0,1,2,6})\n"
+    )
+    process = subprocess.run(
+        [sys.executable, "-O", "-c", code],
+        capture_output=True, text=True, timeout=30, check=False,
+    )
+    assert process.returncode != 0
+    assert "Independent F1 oracles differ" in process.stderr

@@ -1,0 +1,36 @@
+{
+  "study": "RP-U005-D08",
+  "first_run_id": "42518642502",
+  "first_job_id": "128847073989",
+  "protocol_commit": "7404adde5753b23e8d8a1050b6dccbe2a69cfa71",
+  "first_original_code_and_workflow_head": "b510aac196b7dc13c1563a07fefe12b171831a2b",
+  "first_result": "SOURCE_FORMAT_PROFILE_COMPLETE",
+  "first_audit_json_sha256": "2f7f0b27241034e62d6cd414ef1f61bd579a02f050e692de32bb5d9d91313cde",
+  "first_artifact_id": "13632640780",
+  "first_artifact_zip_sha256": "a6f157f640dd1a90cf824423dc6e1c0d07022dadcfb9343f618043f70713b17e",
+  "original_zip_sha256": {
+    "occ_2026": "7ed1050092342916bc6e797f4dd79577ac84683956963e1f2c3be652a7876c8c",
+    "int_2026": "87dd5be92a0752bedfffaa80090022182db359538b2fd0518c26537a26576e4d"
+  },
+  "original_decoded_sha256": {
+    "occ_2026": "736602782af54abb82bc9a73070bd09b7bd51213daf3ec22bd3a7dbba64e0567",
+    "int_2026": "4f7112502bffc3028ba69784d77f6b678c9068eb58742a6d57b66991a47528ce"
+  },
+  "source_month_format_summary": {
+    "occ_2026": {
+      "records": 6789484,
+      "unpad_month_strings": "1 to 8",
+      "august_month_string_8_count": 419,
+      "long_code_rows": 1929271
+    },
+    "int_2026": {
+      "records": 6078331,
+      "unpad_month_strings": "1 to 7",
+      "august_month_string_8_count": 0,
+      "long_code_rows": 1293508
+    }
+  },
+  "source_rows_joined": 0,
+  "source_identifiers_published": false,
+  "note": "First D08 original result is a format-only diagnostic after D07's strict two-digit month failure. Entire original source ZIPs, UTF-8 CSV/CRC and decoded SHA matched D06. No individual occurrence identifiers were emitted; full literal month and code-frequency counts are preserved in original audit JSON. Do not reclassify D07 or infer source-join validity."
+}

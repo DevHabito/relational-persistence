@@ -2,10 +2,10 @@
 
 **Research lead:** Felipe Gianini Romero  
 **Audit classification:** implementation-level reproduction after the original outcomes were known  
-**Baseline:** \`main\` at \`214133c5eb33f68cb55f2e10f4b8008097d8d4e8\` (3 November 2026)  
-**First study:** RP-U004-P01, preregistered at \`186d6fc5d8cc6451fca63abb5f6ef4f2029a3d7b\`; original run [#41721533933](https://github.com/DevHabito/relational-persistence/actions/runs/41721533933); first archive at \`36996adb456c3d628de1634cb2a57edadc315ebd\`  
-**New audit code:** \`experiments/rp_u004_recompute_20261108.py\`  
-**New checks:** \`tests/test_rp_u004_recompute_20261108.py\` and \`tests/test_rp_u004_20261108_relabel_stress.py\`
+**Baseline:** `main` at `214133c5eb33f68cb55f2e10f4b8008097d8d4e8` (3 November 2026)  
+**First study:** RP-U004-P01, preregistered at `186d6fc5d8cc6451fca63abb5f6ef4f2029a3d7b`; original run [#41721533933](https://github.com/DevHabito/relational-persistence/actions/runs/41721533933); first archive at `36996adb456c3d628de1634cb2a57edadc315ebd`  
+**New audit code:** `experiments/rp_u004_recompute_20261108.py`  
+**New checks:** `tests/test_rp_u004_recompute_20261108.py` and `tests/test_rp_u004_20261108_relabel_stress.py`
 
 ## What I asked
 
@@ -17,11 +17,11 @@ This is a question about *computational reproducibility*. The first RP-U004 outc
 
 I inspected the GitHub repository tree and the original U004 preregistration, results, first-run archive manifest, Python scoring/replay code, post-result report, Lean Boolean-order proof, and Python/Lean workflow definitions.
 
-Direct container access to GitHub by \`git ls-remote\` failed because the execution container could not resolve \`github.com\`. I did not bypass that failure by claiming a local repository checkout. I read the versioned sources and original hashes through the connected GitHub repository tool, and ran a self-contained alternative implementation locally with Python 3.13.5.
+Direct container access to GitHub by `git ls-remote` failed because the execution container could not resolve `github.com`. I did not bypass that failure by claiming a local repository checkout. I read the versioned sources and original hashes through the connected GitHub repository tool, and ran a self-contained alternative implementation locally with Python 3.13.5.
 
 The local prototype, which does not import the original program or read its result JSON, matched the exact population and scores below. A separately committed, cleaned version was then executed as part of the repository's Python regression jobs, with the full original result archive available in CI. See [PR #71](https://github.com/DevHabito/relational-persistence/pull/71).
 
-- Commit \`fe6859c875eb8e27b026d4caf6490431d5b8676b\`: [Python CI #42498807515](https://github.com/DevHabito/relational-persistence/actions/runs/42498807515) **passed 776 tests under Python 3.11 and 776 under Python 3.12**. The run included the new recomputation tests, source/manifest SHA checks, full original archive SHA check, deliberately corrupted F1 oracle, and 68,400-relabelling stress test. Both job logs were inspected.
+- Commit `fe6859c875eb8e27b026d4caf6490431d5b8676b`: [Python CI #42498807515](https://github.com/DevHabito/relational-persistence/actions/runs/42498807515) **passed 776 tests under Python 3.11 and 776 under Python 3.12**. The run included the new recomputation tests, source/manifest SHA checks, full original archive SHA check, deliberately corrupted F1 oracle, and 68,400-relabelling stress test. Both job logs were inspected.
 - The 8 November local source-and-score reproduction ran directly, outside GitHub CI, on Python 3.13.5. This is an additional execution environment, not an independent physical dataset. Its measured wall-clock duration is not treated as a controlled algorithm-performance benchmark.
 - The original U004 first-run archive was **not modified**, replaced or rerun as a fresh preregistered experiment.
 
@@ -42,23 +42,23 @@ Instead of copying the original combination-over-all-edges source enumerator, th
 
 The independent sorted accepted-family SHA-256 is
 
-\`\`\`text
+```text
 bcc1b5ae2d05482277486e401fbc5918d51a75ffcc5df09ceea5b98c6f57427c
-\`\`\`
+```
 
 The independent first/last selected-family SHA-256 is
 
-\`\`\`text
+```text
 46eda52afa56de2830b869112a7569cc9bb72780bac82a6943872c91cef83e94
-\`\`\`
+```
 
-Both reproduce the values frozen in \`docs/results/RP-U004-P01-first-run/archive-index.json\`. These digests bind the full ordered finite populations rather than merely their sizes.
+Both reproduce the values frozen in `docs/results/RP-U004-P01-first-run/archive-index.json`. These digests bind the full ordered finite populations rather than merely their sizes.
 
 The full original archive is also checked directly in the new CI regression against its separate byte-level SHA-256:
 
-\`\`\`text
+```text
 172603ff933cc269372afa55d2a67163586604a561839a237c2be3d17ce67f09
-\`\`\`
+```
 
 That archival test only confirms byte integrity of the old JSON. The reconstruction of the source graph family is a separate algorithmic check.
 
@@ -85,7 +85,7 @@ F2 scenario-level contrasts against GREEDY_F2: **2,784 ties**, **39 gains of one
 
 The positive F2 scenarios occur after failure of original-degree-three, -four, or -five nodes: **25, 18, and 23 wins**, respectively. This is a retrospective subgroup description, not a new registered threshold. None of the 2,140 scenarios arising from an original graph without F2 contributes a positive F2 difference.
 
-The F1-first and F2-first policies again choose identical orders within their greedy and lookahead classes. As previously explained by \`RelationalPersistence/BooleanRepairRank.lean\`, nested Boolean functions do not provide two independent priority-order controls. There are six labels but four distinct decision rules here.
+The F1-first and F2-first policies again choose identical orders within their greedy and lookahead classes. As previously explained by `RelationalPersistence/BooleanRepairRank.lean`, nested Boolean functions do not provide two independent priority-order controls. There are six labels but four distinct decision rules here.
 
 ## Adversarial and stress tests
 
@@ -103,7 +103,7 @@ This invariance concerns *the graph functions* F1/F2, not the selected actions o
 
 **Not tested by this new independent module:** byte-for-byte reproduction of every field of every archived case object, which is handled by the repository's previously committed independent case-level replay and its tests; operational CPU time under a fixed budget; real repair time or material costs; randomized samples from new network populations; prospective external holdouts; physical, ecological, medical or chemical mechanisms.
 
-**Scientific result:** \`RERUN_AGREED\` for the finite retrospective computation. The original H1 is still **SUPPORTED WITHIN FINITE SYNTHETIC SCOPE** and nothing broader. There is no new empirical or mathematical priority claim.
+**Scientific result:** `RERUN_AGREED` for the finite retrospective computation. The original H1 is still **SUPPORTED WITHIN FINITE SYNTHETIC SCOPE** and nothing broader. There is no new empirical or mathematical priority claim.
 
 ## Next gate
 

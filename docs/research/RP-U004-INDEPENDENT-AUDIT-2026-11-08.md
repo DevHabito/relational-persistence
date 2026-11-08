@@ -95,6 +95,12 @@ For a broader deterministically exhaustive **label-permutation stress check**, I
 
 This invariance concerns *the graph functions* F1/F2, not the selected actions of the repair policies. Repair decisions can legitimately differ under labels because their explicit tie rules depend on vertex numbers. Equating the two invariances would be a methodological error.
 
+## Failed adversarial control and corrective action
+
+The first, locally executed prototype relied on Python `assert` statements to enforce several consistency checks. I deliberately replaced its path enumerator with an empty iterator and executed the corrupted example under `python -O`. In optimized mode, Python omitted the assertions and the defective oracle returned **(F1,F2) = (1,0)** for a graph whose correct answer is **(1,1)**, without raising an error. This is a **real audit-harness weakness found after the initial positive reproduction**, not an adverse result of the original RP-U004 graph model. The original production `functions` implementation has explicit exception-raising oracle disagreement checks, so this defect must not be misattributed to it.
+
+I corrected the **new independent audit module**, replacing all eight scientific/input consistency assertions with explicit checks and exceptions that remain active under optimized Python. I also added a subprocess regression that launches `python -O`, deliberately corrupts the F1 path oracle and demands a nonzero exit accompanied by the specific `Independent F1 oracles differ` error. The local failure remains recorded here rather than disappearing from the history. The correction does not change source selection, policy definitions, original outcome JSON, numerical thresholds or the original first-run code.
+
 ## What passed, what did not, and what remains open
 
 **Passed in the local independent implementation and the Python CI:** finite family counts, both family hashes, F1/F2 function oracle agreement, policy totals, the complete F2 gain/tie/loss distribution, the small F1 difference, modeled operation counters, and offline maxima. Byte-level archive identity passed in CI. The corruption-rejection test and structural relabeling stress check passed.

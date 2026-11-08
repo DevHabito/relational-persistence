@@ -1,0 +1,43 @@
+name: RP-U005-D07 ANEEL 2026 Original Candidate Key Census
+
+on:
+  push:
+    branches:
+      - audit/aneel-key-linkage-20261108
+    paths:
+      - .github/workflows/rp-u005-d07-key-census.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d07-first-aneel-literal-key-census
+  cancel-in-progress: false
+
+jobs:
+  first_original_literal_key_census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing pinned project dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Test synthetic cardinality, source identity, fail-closed and conservation controls first
+        run: python -m pytest -q tests/test_rp_u005_d07_key_census.py
+      - name: Reauthenticate both whole source ZIPs and count literal four-field key matches
+        run: python -m experiments.rp_u005_d07_key_census
+      - name: Publish immutable original numeric-only report digest
+        run: |
+          test -f rp-u005-d07-original/audit.json
+          sha256sum rp-u005-d07-original/audit.json
+      - name: Preserve first outcome JSON only, never ZIP/CSV or key database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d07-first-aneel-key-census-json
+          path: rp-u005-d07-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

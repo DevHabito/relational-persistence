@@ -12,7 +12,7 @@ authors = [{name = "Felipe Gianini Romero"}]
 dependencies = ["numpy>=1.24,<3", "networkx>=3.0,<4"]
 
 [project.optional-dependencies]
-dev = ["pytest>=7,<10"]
+dev = ["pytest>=7,<10", "PyMuPDF==1.26.5"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

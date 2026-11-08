@@ -1,0 +1,45 @@
+name: RP-U005-D09 ANEEL Original Dual Literal-Key Census
+
+on:
+  push:
+    branches:
+      - audit/aneel-key-census-dual-20261108
+    paths:
+      - .github/workflows/rp-u005-d09-dual-key.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d09-first-original-dual-census
+  cancel-in-progress: false
+
+jobs:
+  original_dual_key_census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing regression dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Test synthetic S/F cardinalities and provenance guards before original access
+        run: python -m pytest -q tests/test_rp_u005_d09_dual_key_census.py
+      - name: Reauthenticate original ZIPs and compute both exact literal-key cohorts
+        run: python -m experiments.rp_u005_d09_dual_key_census
+      - name: Publish first source report digest in original Actions job log
+        run: |
+          test -f rp-u005-d09-original/audit.json
+          sha256sum rp-u005-d09-original/audit.json
+      - name: Preserve only aggregated original first-run JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d09-first-aneel-dual-key-json
+          path: rp-u005-d09-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

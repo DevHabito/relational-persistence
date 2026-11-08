@@ -1,0 +1,43 @@
+name: RP-S001-P01 Original Exact Structure-Noise Falsifier
+
+on:
+  push:
+    branches:
+      - research/structure-noise-threshold-20261108
+    paths:
+      - .github/workflows/rp-s001-p01.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-s001-p01-first-registered-source
+  cancel-in-progress: false
+
+jobs:
+  first_exact_finite_graph_source_run:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing pinned research test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Test synthetic adverse graph and temporal controls BEFORE original source run
+        run: python -m pytest -q tests/test_rp_s001_structure_noise.py
+      - name: Run registered full finite graph enumeration with two independent path oracles
+        run: python -m experiments.rp_s001_structure_noise
+      - name: Print SHA-256 of original first exact result JSON
+        run: |
+          test -f rp-s001-p01-first-run/audit.json
+          sha256sum rp-s001-p01-first-run/audit.json
+      - name: Preserve positive or negative original finite outcome as JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-s001-p01-first-exact-source-json
+          path: rp-s001-p01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

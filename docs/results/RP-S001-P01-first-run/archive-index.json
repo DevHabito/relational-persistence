@@ -1,0 +1,46 @@
+{
+  "study": "RP-S001-P01",
+  "protocol_only_commit": "5f61ae5a3dc239bb0017fa09ced81a52d49df493",
+  "first_source_job_attempt": {
+    "run_id": "42532412191",
+    "head": "023a6fa24b25d6fda43b1670117ba8f158b2e346",
+    "status": "FAILED_BEFORE_SOURCE",
+    "error": "Python pytest missing on fresh isolated runner; no graph outcome executed or artifact produced"
+  },
+  "first_completed_source_run": {
+    "run_id": "42532463153",
+    "job_id": "128889446549",
+    "head": "c603ae9fdf3743f10e01faff811596b7fb57b6d6",
+    "status": "COMPLETED_SUCCESS",
+    "source_json_sha256": "6d825f055fcdc4955513218b56ec477900911f72c7e2ac7ada8f0c0cba36de19",
+    "first_artifact_id": "13638050817",
+    "first_artifact_zip_sha256_in_job_logs": "15e4b4d81088984f56e28d9c6e06c08e33e671496d51876f2430dcbd30f2807f"
+  },
+  "reported_primary_decision": "SUMMARY_SUFFICIENCY_COUNTEREXAMPLE",
+  "reported_temporal_decision": "TEMPORAL_CORRELATION_CONTRAST",
+  "synthetic_graph_population": 540,
+  "degree_classes": 79,
+  "varying_degree_classes": 31,
+  "first_witness": {
+    "labeled_degrees": [
+      2,
+      5,
+      3,
+      2,
+      2,
+      2
+    ],
+    "terminal_edge_cut": 2,
+    "graph_A_K": 25,
+    "graph_B_K": 26,
+    "per_graph_failure_subsets": 28,
+    "horizon": 3,
+    "graph_A_frozen": "25/28",
+    "graph_A_renewed": "15625/21952",
+    "graph_B_frozen": "13/14",
+    "graph_B_renewed": "2197/2744"
+  },
+  "independent_crosscheck": "A separate JS union-find recomputation over all 3003 unfiltered graphs with independent connectivity logic matched original 540 admissible, 79 classes, 31 varying classes, K histogram and first lex pair; this is not a Lean result or real-world observation.",
+  "prior_art": "Menger 1927; Albert Jeong Barabasi 2000 doi:10.1038/35019019; Brown Kolokolnikov Kooij 2024 doi:10.1002/net.22215; RP-F003 & RP-F004 main.",
+  "no_new_physical_law_or_original_theorem_claimed": true
+}

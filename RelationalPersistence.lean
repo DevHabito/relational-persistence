@@ -18,3 +18,4 @@ import RelationalPersistence.FunctionalContinuity
 import RelationalPersistence.TurnoverRepair
 import RelationalPersistence.RepairStrategySeparation
 import RelationalPersistence.BooleanRepairRank
+import RelationalPersistence.StructureNoiseWitness

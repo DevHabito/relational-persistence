@@ -90,3 +90,21 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+## RP-S001-P01 — finite noise tolerance, structural sufficiency and time correlation
+
+These terms apply **only to the registered synthetic six-vertex terminal-connectivity study**, unless new measurements explicitly bridge them to a physical system.
+
+| Term | Registered meaning | Critical exclusion |
+|---|---|---|
+| Relational state `G` | Complete undirected labeled list of original graph edges between six fixed vertices | Not a measured power feeder, organism, ecosystem or spacetime |
+| Coarse structural summary `X(G)` | Six nodes, eight edges, entire **labeled** degree vector and source–target minimum **edge** cut | Not complete adjacency; a counterexample to `X` does not disprove prediction from all topology |
+| Declared function `F1` | A route exists from vertex 0 to vertex 5 under the current surviving edge set | Not general system health, F2 internally vertex-disjoint redundancy, or physical service delivery |
+| One-step two-edge-failure tolerance `K(G)/28` | Fraction of all 28 equally likely unordered deletions of two original edges that preserve F1 | Not worst-case edge-cut, independent Bernoulli edge failure, field failure probability or a new theorem |
+| Maximum adversarial structural threshold | Smallest number of original edges whose deletion can sever the specified terminal connection; `2` in registered graph family | Classical minimum edge-cut; not random expected failure lifetime |
+| Frozen-failure process | Uniformly choose two absent edges once, retain the same failed edges at three observation ticks | Not actual repair, accumulation of external information or derived physical time |
+| Independently renewed-failure process | Select a new independent uniform two-edge failure subset at each of three ticks, same one-time marginal at each tick | Failures are **not** monotone permanent damage; this is a different dynamic assumption |
+| Sustained three-tick persistence | Indicator that F1 is true in **all** three externally defined observations; probability `K/28` for frozen or `(K/28)^3` for independent renewal | Not measured real-world duration, physical time emergence, or a law transcending noise assumptions |
+| Registered coarse-sufficiency falsifier | A pair of source graphs with identical `X(G)` but differing exact `K(G)` | Only falsifies the specified **coarse summary**; full reliability based on complete graph and failure model remains possible |
+
+The first [RP-S001-P01 report](../results/RP-S001-P01.md) records 540 eligible graphs and a first lexicographic witness (25/28 versus 26/28) with independent union-find recomputation. For general prior art, see Menger's connectivity theorem, Albert, Jeong & Barabási (2000), DOI 10.1038/35019019, and Brown, Kolokolnikov & Kooij (2024), DOI 10.1002/net.22215.

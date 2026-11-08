@@ -1,0 +1,163 @@
+{
+  "admissible_source_graphs": 540,
+  "any_real_source_data_used": false,
+  "degree_classes_with_at_least_two_members": 55,
+  "degree_classes_with_nonconstant_survival": 31,
+  "exact_failure_subsets_per_graph": 28,
+  "first_lexicographic_primary_witness": {
+    "full_labeled_degree_vector": [
+      2,
+      5,
+      3,
+      2,
+      2,
+      2
+    ],
+    "graph_A_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "graph_A_survival_fraction": {
+      "denominator": 28,
+      "numerator": 25
+    },
+    "graph_A_surviving_two_edge_subsets": 25,
+    "graph_A_three_step_disturbance_controls": {
+      "emergent_physical_time_tested": false,
+      "frozen_two_edge_failure_set_sustained_3": {
+        "denominator": 28,
+        "numerator": 25
+      },
+      "independent_new_failure_set_each_tick_sustained_3": {
+        "denominator": 21952,
+        "numerator": 15625
+      },
+      "one_time_survival": {
+        "denominator": 28,
+        "numerator": 25
+      },
+      "same_uniform_per_tick_failure_distribution": true,
+      "strict_temporal_gap": true,
+      "three_step_independent_successful_schedules": 15625,
+      "three_step_total_schedules": 21952
+    },
+    "graph_B_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "graph_B_survival_fraction": {
+      "denominator": 14,
+      "numerator": 13
+    },
+    "graph_B_surviving_two_edge_subsets": 26,
+    "graph_B_three_step_disturbance_controls": {
+      "emergent_physical_time_tested": false,
+      "frozen_two_edge_failure_set_sustained_3": {
+        "denominator": 14,
+        "numerator": 13
+      },
+      "independent_new_failure_set_each_tick_sustained_3": {
+        "denominator": 2744,
+        "numerator": 2197
+      },
+      "one_time_survival": {
+        "denominator": 14,
+        "numerator": 13
+      },
+      "same_uniform_per_tick_failure_distribution": true,
+      "strict_temporal_gap": true,
+      "three_step_independent_successful_schedules": 17576,
+      "three_step_total_schedules": 21952
+    },
+    "shared_terminal_minimum_edge_cut": 2
+  },
+  "forbidden_direct_terminal_edge": [
+    0,
+    5
+  ],
+  "full_family_unfiltered_graphs": 3003,
+  "full_labeled_degree_classes": 79,
+  "graphs_with_nondegenerate_one_time_survival": 540,
+  "independent_BFS_and_DFS_oracles_checked": true,
+  "independent_vertex_cut_and_deletion_cut_oracles_checked": true,
+  "maximum_within_degree_class_surviving_numerator_gap": 2,
+  "new_graph_theorem_or_physical_law_claimed": false,
+  "originality_verified_against_all_literature": false,
+  "primary_decision": "SUMMARY_SUFFICIENCY_COUNTEREXAMPLE",
+  "protocol_commit": "5f61ae5a3dc239bb0017fa09ced81a52d49df493",
+  "source_edges": 8,
+  "source_is_synthetic": true,
+  "source_terminal_mincut": 2,
+  "source_vertices": 6,
+  "study": "RP-S001-P01",
+  "survival_numerator_histogram": {
+    "24": 24,
+    "25": 204,
+    "26": 312
+  },
+  "temporal_decision": "TEMPORAL_CORRELATION_CONTRAST",
+  "terminal_degrees": [
+    2,
+    2
+  ]
+}

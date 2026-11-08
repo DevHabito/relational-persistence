@@ -121,3 +121,16 @@ The following concepts are source/measurement terms for a **retrospective** ANEE
 | Empty admissible population | All original rows fail the predeclared key test; both valid-key tables are empty | **Zero key matches do not imply 0% real event correspondence.** A match rate with zero eligible denominator is undefined |
 
 The original [RP-U005-D07](../results/RP-U005-D07.md) audit found zero eligible rows from 6,789,484 occurrence and 6,078,331 interruption records because the strict month representation failed for every row. A later format diagnosis may establish how the source actually spells month values, but it cannot retrospectively alter the first result.
+
+## RP-U005-D08 — unpadded month and occurrence-code lexical representation
+
+These are observations about **exact ANEEL 2026 source snapshot field spellings**, not new graph-theoretic functions or evidence of real incident correspondence.
+
+| Term | Observed/operational meaning | Limit of inference |
+|---|---|---|
+| Original competence-month spelling | Literal source CSV `NumMesCompetencia` or `MesCompetencia`. The exact D08 originals use unpadded strings `1`–`8` for occurrence files and `1`–`7` for interruption files | A 2-character field-width declaration does **not** mean the source pads `1` to `01`. Do not back-edit the D07 strict `01`–`12` experiment |
+| Code length outside dictionary width | Literal source occurrence reference `CodOcorrenciaEmergencial` / `CodOcorrencia` having more than 10 characters, which D07 excluded | Source-dictionary-width discrepancy, **not** proof of an invalid incident, bad event, or unusable full source code |
+| Lexical format profile | Aggregated counts of allowlisted month spellings and nonidentifying syntax failure categories after exact original ZIP/CSV CRC/SHA checks | No original identifier, company-level statistic, individual event, verified join, action or policy outcome is exposed |
+| Post-result format diagnostic | A separate, explicitly dated source study undertaken **after** D07 reported all keys ineligible | It can explain a previous measurement failure but cannot turn the earlier zero-key result into a successful preregistered event-linkage experiment |
+
+The exact original counts, first-run hashes and historical sequence are recorded in [RP-U005-D08](../results/RP-U005-D08.md) and [its frozen protocol](../protocols/RP-U005-D08-ANEEL-LEXICAL-KEYS.md). Neither study has established a source-to-source actual incident match.

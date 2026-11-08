@@ -1,0 +1,43 @@
+name: RP-U005-D05 Original ANEEL ZIP Header Prefix Diagnosis
+
+on:
+  push:
+    branches:
+      - audit/aneel-header-diagnostic-20261108
+    paths:
+      - .github/workflows/rp-u005-d05-prefix.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d05-one-first-original-prefix
+  cancel-in-progress: false
+
+jobs:
+  original_header_prefix_diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed existing Python test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Check synthetic header and HTTP range guards BEFORE source request
+        run: python -m pytest -q tests/test_rp_u005_d05_header_diagnostic.py
+      - name: Read only one bounded 65536-byte ZIP prefix per original source
+        run: python -m experiments.rp_u005_d05_header_diagnostic
+      - name: Record first source diagnostic report SHA
+        run: |
+          test -f rp-u005-d05-original/audit.json
+          sha256sum rp-u005-d05-original/audit.json
+      - name: Preserve source-only positive or negative diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d05-first-aneel-header-diagnostic
+          path: rp-u005-d05-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

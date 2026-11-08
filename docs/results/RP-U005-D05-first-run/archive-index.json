@@ -1,0 +1,19 @@
+{
+  "study": "RP-U005-D05",
+  "first_run_id": "42509613295",
+  "first_job_id": "128819608495",
+  "protocol_commit": "dacefbf39be9987bc9b9c5b37ce5cb45015b8307",
+  "code_commit": "4ce847914987710e774adc1ef8422246683dc79a",
+  "first_original_report_sha256": "3919f24513fc74e0b9f6f9108da8a8b4c51b9422148d7eda717f2bd94e1a17ff",
+  "first_artifact_id": "13628073985",
+  "first_artifact_zip_sha256": "f2fe566b55997ba40aa531c7e877f46f23775969a08c18cad47a9e8ab66c7788",
+  "first_result": "PREFIX_DIAGNOSTIC_CONFIRMS_DELIMITER_DEFECT",
+  "original_prefix_sha256": {
+    "occ_2026": "36a7538951403d3e3e1966c63764a94ec06a42af782ec97f4cb1e56fc8c87684",
+    "int_2026": "690733e7304a64827b4228c664ba6e83d5e91ef0c15f34087568f0ee224b0a52"
+  },
+  "original_complete_D04_zip_sha256_not_reverified": true,
+  "new_original_event_rows_parsed": 0,
+  "original_run_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42509613295",
+  "note": "The 64 KiB compressed prefixes had HTTP 206 and matching advertised total sizes but no whole-file identity proof. First-line semicolon header and wrong-comma errors confirmed on both observed ranges. Original D04 negative outcome is not changed."
+}

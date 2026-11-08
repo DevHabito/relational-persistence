@@ -106,3 +106,18 @@ These are **observations of two precise 2026 ANEEL ZIP files**, identified by or
 | Source schema coverage | Presence of registered ANEEL 2026 column *names* and valid row widths in whole original CSVs | Frozen required field list, CRC/EOF, exact header and row-width validation | No automatic validation of time zones, actual reference-link cardinalities, distribution switch status, repair action or decision-time access |
 
 Primary audited source evidence: [RP-U005-D06 original source report](../results/RP-U005-D06.md). Before any new operational-effect comparison, the incidence key/time joins and field validity require a separately frozen protocol.
+
+## RP-U005-D07 — literal candidate-key eligibility and empty comparison population
+
+The following concepts are source/measurement terms for a **retrospective** ANEEL 2026 *candidate linkage*, not new graph-theoretic or causal observables.
+
+| Term | Meaning | Unlicensed interpretation |
+|---|---|---|
+| Literal candidate key | Unmodified (14 ASCII-digit distributor CNPJ, literal year 2026, two-digit month 01–12, ASCII 1–10-character original occurrence ID) with a safe separator | Not proof that a matching code means the same physical incident, outage or repair |
+| Eligible key row | An original CSV row passing **all** registered syntactic key conditions | Not an observed operational intervention, an accurately reported outage or a valid causal observation |
+| Invalid-reason counter | Number of original rows failing a particular syntactic condition, even if the same row fails other conditions | Different reason counts are **not disjoint** and must not be summed as separate observations |
+| Distinct matching candidate key | One literal string-key present in both fully audited source tables after validity filters | Not the number of distinct real emergencies, independently restored connections or assigned repair policies |
+| Matched source row | One original record whose **valid** candidate key appears in the other source; repeated keys keep their full row multiplicities | Not a one-to-one join, a new outage observation, or evidence of causal effect |
+| Empty admissible population | All original rows fail the predeclared key test; both valid-key tables are empty | **Zero key matches do not imply 0% real event correspondence.** A match rate with zero eligible denominator is undefined |
+
+The original [RP-U005-D07](../results/RP-U005-D07.md) audit found zero eligible rows from 6,789,484 occurrence and 6,078,331 interruption records because the strict month representation failed for every row. A later format diagnosis may establish how the source actually spells month values, but it cannot retrospectively alter the first result.

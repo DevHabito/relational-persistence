@@ -83,12 +83,14 @@ def path_masks(adjacency):
 def function_pair(edges, active_nodes):
     adjacency = {vertex: set() for vertex in active_nodes}
     for a, b in edges:
-        assert a in adjacency and b in adjacency
+        if a not in adjacency or b not in adjacency:
+            raise ValueError("Graph edge contains an absent vertex")
         adjacency[a].add(b)
         adjacency[b].add(a)
     one_route_bfs = reaches(adjacency)
     paths = tuple(path_masks(adjacency))
-    assert one_route_bfs == bool(paths), "Independent F1 oracles differ"
+    if one_route_bfs != bool(paths):
+        raise AssertionError("Independent F1 oracles differ")
     two_routes_paths = any(
         not (first & second)
         for index, first in enumerate(paths)
@@ -98,7 +100,8 @@ def function_pair(edges, active_nodes):
         reaches(adjacency, removed)
         for removed in active_nodes if removed not in TERMINALS
     )
-    assert two_routes_paths == two_routes_cut, "Independent F2 oracles differ"
+    if two_routes_paths != two_routes_cut:
+        raise AssertionError("Independent F2 oracles differ")
     return int(one_route_bfs), int(two_routes_paths)
 
 
@@ -119,8 +122,10 @@ def case_function_table(graph, lost):
             table[frozenset(subset)] = function_pair(
                 remaining_edges + additions, remaining_nodes | {replacement}
             )
-    assert table[frozenset()] == initial_score
-    assert len(table) == 2 ** len(neighbors)
+    if table[frozenset()] != initial_score:
+        raise AssertionError("Empty repair table disagrees with damaged state")
+    if len(table) != 2 ** len(neighbors):
+        raise AssertionError("Repair truth table is incomplete")
     return neighbors, table, initial_score
 
 
@@ -219,15 +224,18 @@ def recompute():
                 sums[2] += lookups
                 sums[3] += comparisons
 
-            assert outcomes["GREEDY_F1"][0] == outcomes["GREEDY_F2"][0]
-            assert outcomes["LOOKAHEAD2_F1"][0] == outcomes["LOOKAHEAD2_F2"][0]
+            if outcomes["GREEDY_F1"][0] != outcomes["GREEDY_F2"][0]:
+                raise AssertionError("Nested greedy priorities disagreed")
+            if outcomes["LOOKAHEAD2_F1"][0] != outcomes["LOOKAHEAD2_F2"][0]:
+                raise AssertionError("Nested lookahead priorities disagreed")
             delta_f2 = outcomes["LOOKAHEAD2_F2"][2] - outcomes["GREEDY_F2"][2]
             delta_f1 = outcomes["LOOKAHEAD2_F1"][1] - outcomes["GREEDY_F1"][1]
             differences[("F2", delta_f2)] += 1
             differences[("F1", delta_f1)] += 1
             if delta_f2 > 0:
                 winnings_by_degree[degree_vector(graph)[lost]] += 1
-            assert original_f2 or delta_f2 == 0
+            if not original_f2 and delta_f2 != 0:
+                raise AssertionError("Original F2-negative control yielded a difference")
 
     return {
         "source_count": len(graphs),

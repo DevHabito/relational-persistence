@@ -97,7 +97,7 @@ def candidate_key(company: object, year: object, ident: object) -> CandidateLink
     if not (isinstance(year, str) and len(year) == 4 and
             year.isascii() and year.isdecimal()):
         raise SourceGateError("Year must be a four-character decimal string")
-    if not (isinstance(ident, str) and 0 < len(ident) <= 30 and
+    if not (isinstance(ident, str) and 0 < len(ident) <= 10 and
             ident == ident.strip()):
         raise SourceGateError("Occurrence ID absent or ambiguously normalized")
     return CandidateLink(company, year, ident)

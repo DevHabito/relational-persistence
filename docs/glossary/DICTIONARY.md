@@ -90,3 +90,21 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+
+## RP-U005-D01 — observational data eligibility (8 November 2026)
+
+These are **epistemic and source-quality distinctions**, not new mathematical state variables or modifications of earlier protocols.
+
+| Term | Operational definition | What would establish it | What does **not** establish it |
+|---|---|---|---|
+| Complete archived source object | All bytes of one specifically named, generation-pinned object authenticated through original size and digest checks | Full original download and independently checked whole-object hash | A first-page listing, compressed prefix, file-size header or successful partial parser |
+| Complete joint state history | All declared tables and entity transitions required for a specified historical decision window have verified coverage and correct joins | Full window/source coverage, integrity, missingness/tie rules and independent replay | One complete machine table when task and collection histories are not checked |
+| Event timestamp | Time assigned to an event in the provider's trace-relative clock; Borg v3 uses microseconds | Source field and publisher clock convention | Proof that a scheduler or repair controller had received the event at that time |
+| Online decision-time availability | A feature was actually observable to the decision-maker before an intervention was chosen | Historical receipt/release record or a justified, separately audited causal availability bound | Reconstructing a feature later from future records and sorting by event time |
+| Observed relational intervention | Specific link/relationship repair or alteration chosen at an observed decision, including feasible alternatives and timing | Event/action logs with edge identities, pre-state, ordering and constraints | An unlabeled machine ADD/REMOVE, server error, or inferred reconnection |
+| Independently measured functional outcome | Task-specific recovered service/flow/terminal-connectivity observable from records independent of the modeled choice/scorer | Declared topology, terminal pair(s), actual state measurements, cutoff and independent measurement oracle | A synthetic graph function copied onto an unrelated real event type |
+| Resource cost of repair decision | Measured computation, acquisition, crew/equipment or delay in the original domain's units | Time/resource/energy/expense instrumentation and measurement protocol | Number of table lookups or the hypothetical `λ` of RP-U004-C01 |
+| Direct policy source eligibility | All defined provenance, coverage, causal-time, intervention, outcome and cost gates pass for one precise empirical comparison | A complete documented eligibility review and inspectable primary source | Source authenticity alone, a schema with event IDs, or one passing test suite |
+
+Only the meaning required for a declared research task is eligible for source screening. A candidate blocked for real edge-repair policy evaluation may still be valid for a *different* study of machine changes or aggregate recovery. Reference: [RP-U005-D01 scope](../protocols/RP-U005-D01-SOURCE-ELIGIBILITY.md) and [source assessment](../research/RP-U005-REAL-SOURCE-ELIGIBILITY-2026-11-08.md).

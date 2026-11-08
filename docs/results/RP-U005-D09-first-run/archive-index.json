@@ -1,0 +1,44 @@
+{
+  "study": "RP-U005-D09",
+  "registration_date": "2026-11-08",
+  "protocol_only_commit": "ae9e00e0e0ca2fcd5b08da286923f54f02a6e71c",
+  "first_source_code_workflow_commit": "b4c3678f597d749e5ace16a36c9217a7b9ce3972",
+  "first_source_workflow_run_id": "42520496111",
+  "first_source_workflow_job_id": "128852717918",
+  "first_source_workflow_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42520496111",
+  "first_source_decision": "BOTH_SOURCE_DUAL_KEY_CENSUS_AUDITED",
+  "first_json_sha256": "24b869d0f9c85783ced0d42161cf645b25d07f704d5874538cb0eb9b885fbf3e",
+  "first_artifact_id": "13632939247",
+  "first_artifact_zip_sha256": "f428066fcb41137cb196d9f0b6eccfbf06d515c03a692c6e2eecf3d7030270c3",
+  "first_artifact_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42520496111/artifacts/13632939247",
+  "independent_artifact_integrity_check": "Downloaded GitHub Actions ZIP independently in the analysis container and rehashed ZIP and contained original JSON. Both matched source logs.",
+  "source_snapshots": {
+    "occ_2026": {
+      "compressed_bytes": 176074116,
+      "compressed_sha256": "7ed1050092342916bc6e797f4dd79577ac84683956963e1f2c3be652a7876c8c",
+      "decoded_bytes": 2236732733,
+      "decoded_sha256": "736602782af54abb82bc9a73070bd09b7bd51213daf3ec22bd3a7dbba64e0567",
+      "original_csv_rows": 6789484
+    },
+    "int_2026": {
+      "compressed_bytes": 202900063,
+      "compressed_sha256": "87dd5be92a0752bedfffaa80090022182db359538b2fd0518c26537a26576e4d",
+      "decoded_bytes": 2328209339,
+      "decoded_sha256": "4f7112502bffc3028ba69784d77f6b678c9068eb58742a6d57b66991a47528ce",
+      "original_csv_rows": 6078331
+    }
+  },
+  "registered_cohorts": {
+    "S": "literal code lengths 1 through 10; no truncation",
+    "F": "complete original literal code string up to original CSV bound; no truncation"
+  },
+  "first_matched_literal_distinct_key_totals": {
+    "S": 2968556,
+    "F": 3609614,
+    "additional_in_F": 641058
+  },
+  "first_original_individual_identifiers_uploaded": false,
+  "semantic_or_temporal_join_validated": false,
+  "policy_effect_or_physical_law_estimated": false,
+  "notes": "Source-only first run. The number of matched textual keys and source rows is not a count of distinct real physical incidents. Both D07 original failed-key outcome and D08 original format audit remain unchanged."
+}

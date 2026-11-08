@@ -192,7 +192,7 @@ def census_one(con: sqlite3.Connection, table: str) -> dict:
         "valid_candidate_key_rows_from_sqlite": row_total,
         "repeated_candidate_keys": repeated_keys,
         "rows_on_repeated_keys": repeated_rows,
-        "unique_occurrence_keys_exactly_once": k - repeated_keys,
+        "keys_occurring_exactly_once": k - repeated_keys,
         "extra_rows_on_repeated_keys": row_total - k,
     }
 
@@ -234,7 +234,7 @@ def audited_census(con: sqlite3.Connection, sources: list[dict]) -> dict:
                 or data["original_csv_records"] !=
                 data["valid_candidate_key_rows"] + data["invalid_candidate_key_rows"]
                 or population["distinct_valid_candidate_keys"]
-                != population["unique_occurrence_keys_exactly_once"] + population["repeated_candidate_keys"]):
+                != population["keys_occurring_exactly_once"] + population["repeated_candidate_keys"]):
             raise LinkageGateError("SOURCE_GROUP_CONSERVATION_FAILED")
     categories = ("matched_one_to_one_keys", "matched_one_to_many_keys",
                   "matched_many_to_one_keys", "matched_many_to_many_keys")
@@ -305,8 +305,17 @@ def run(output: Path) -> dict:
             finally:
                 con.close()
     except LinkageGateError as exc:
-        record.update(decision=("SOURCE_OBJECT_CHANGED" if str(exc) == "SOURCE_OBJECT_CHANGED"
-                                else "SOURCE_GATE_NOT_PASSED"), error=str(exc))
+        message = str(exc)
+        if message == "SOURCE_OBJECT_CHANGED":
+            verdict = "SOURCE_OBJECT_CHANGED"
+        elif message in ("SOURCE_GROUP_CONSERVATION_FAILED",
+                         "SOURCE_ROW_COUNT_NOT_CONSERVED",
+                         "LINKAGE_CARDINALITIES_NOT_CONSERVED",
+                         "JOIN_COUNTS_NOT_CONSERVED"):
+            verdict = "INSTRUMENT_FAILURE"
+        else:
+            verdict = "SOURCE_GATE_NOT_PASSED"
+        record.update(decision=verdict, error=message)
     except (d06.SourceAccessError, d06.SourceResourceError, d06.SourceSchemaError) as exc:
         record.update(decision="SOURCE_GATE_NOT_PASSED", error=type(exc).__name__ + ":" + str(exc)[:120])
     except (sqlite3.Error, OSError, MemoryError, ValueError) as exc:

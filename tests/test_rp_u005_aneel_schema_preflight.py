@@ -74,6 +74,7 @@ def test_candidate_identifier_preserves_leading_zeroes_and_scope():
         (CNPJ, "2026", 123),
         (CNPJ, "2026", ""),
         (CNPJ, "2026", " 000123"),
+        (CNPJ, "2026", "00000000000"),
     ],
 )
 def test_invalid_candidate_keys_are_rejected(bad):

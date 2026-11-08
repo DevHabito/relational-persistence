@@ -1,0 +1,58 @@
+{
+  "study": "RP-U005-D10",
+  "protocol_only_commit": "d0a7afed425ac7460a4e2be94a6a723869847381",
+  "original_code_workflow_commit": "c8655fc38e49954e63e17edd06281b05705232ac",
+  "original_run_id": "42522701731",
+  "original_job_id": "128859473045",
+  "original_run_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42522701731",
+  "original_decision": "SOURCE_PAIR_METADATA_CENSUS_COMPLETE",
+  "original_json_sha256": "75b91c94447c4da58f0f95fa785efd47a7f72c8562f0a84a48d72983c226909d",
+  "first_source_artifact_id": "13634357066",
+  "first_source_artifact_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42522701731/artifacts/13634357066",
+  "first_artifact_zip_sha256": "67eaed980afdf54c7575e1b10d0fdabe3418aedc0097f51b88398fb9b0b79d8a",
+  "independent_sha_recheck": "The ZIP and its original contained audit.json were re-hashed after a separate GitHub artifact download; both agreed with first source job SHA-256.",
+  "sources": {
+    "occ_2026": {
+      "rows": 6789484,
+      "compressed_sha256": "7ed1050092342916bc6e797f4dd79577ac84683956963e1f2c3be652a7876c8c",
+      "decoded_sha256": "736602782af54abb82bc9a73070bd09b7bd51213daf3ec22bd3a7dbba64e0567"
+    },
+    "int_2026": {
+      "rows": 6078331,
+      "compressed_sha256": "87dd5be92a0752bedfffaa80090022182db359538b2fd0518c26537a26576e4d",
+      "decoded_sha256": "4f7112502bffc3028ba69784d77f6b678c9068eb58742a6d57b66991a47528ce"
+    }
+  },
+  "D09_reference_matches": {
+    "S": {
+      "matched_keys": 2968556,
+      "one_to_one": 2716202,
+      "one_to_many": 252093,
+      "many_to_one": 0,
+      "many_to_many": 261
+    },
+    "F": {
+      "matched_keys": 3609614,
+      "one_to_one": 3307396,
+      "one_to_many": 301957,
+      "many_to_one": 0,
+      "many_to_many": 261
+    }
+  },
+  "D10_F_one_to_one": {
+    "pairs": 3307396,
+    "time_overlap": 3297487,
+    "time_disjoint": 668,
+    "time_unknown": 9241,
+    "feeder_equal": 3288117,
+    "feeder_different": 19279,
+    "feeder_unknown": 0,
+    "substation_equal": 1058781,
+    "substation_different": 8795,
+    "substation_unknown": 2239820,
+    "both_codes_equal": 1051514
+  },
+  "new_physical_identity_or_repair_policy_evidence": false,
+  "original_identifiable_records_or_keys_published": false,
+  "notes": "Counts are exact source text key pairs, only unique 1:1. Date overlap uses predeclared naive civil-time parser, no clock normalization. Feeder/substation are literal metadata string agreements, not verified energized network topology."
+}

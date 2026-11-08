@@ -90,3 +90,23 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+
+## RP-U005-D02 — emergency-response source screening (8 November 2026)
+
+The terms below describe **official publisher metadata and not yet authenticated original event rows**. ANEEL distributes separate data dictionaries for pre-2026 and 2026 onward; the exact current PDF bytes and the schema transformation remain unverified.
+
+| Term | Candidate field(s), 2026 documentation | Units / operational meaning | Availability or measurement warning |
+|---|---|---|---|
+| Emergency occurrence identifier | `CodOcorrenciaEmergencial` | Distributor-defined string identifier, not a globally unique integer | Preserve leading zeroes, company scope and calendar context; do not assume equivalence with interruption codes before testing original rows |
+| Interruption's occurrence reference | `CodOcorrencia` | Distributor-defined string reference to an emergency occurrence | Not yet a verified join to `CodOcorrenciaEmergencial`; one-to-many and unmatched records must be reported |
+| Feeder reference | `CodAlimentador` | Identifier of distribution feeder (network grouping) | Not a historically observed individual link-repair action or a time-varying graph state |
+| Substation reference | `CodSubestacao` | Distribution substation identifier | Not a switch operation or observed two-path F2 functionality |
+| Emergency preparation duration | `NumTempoPreparacao` | Minutes from incident knowledge to field-team travel authorization (regulatory definition) | Operational phase timing, **not** algorithm's CPU decision time |
+| Emergency travel duration | `NumTempoDeslocamento` | Minutes from authorization to field team arrival | Not a graph-edge restoration measurement |
+| Emergency execution duration | `NumTempoExecucao` | Minutes from team arrival to event restoration/closure | Postdecision outcome; cannot appear as a predecision forecast feature |
+| Outage interval | `DatInicioInterrupcao`, `DatFimInterrupcao` | Date/time start and end of a recorded power interruption | End time is postevent; event timestamps do not prove historic operator receipt times |
+| Geographic BDGD network | Regulator's annual per-distributor geodatabase | Simplified geographic and technical representation of assets | An annual map does not certify live incident-time switches, open branches, repairs or topology |
+| Published catalog update | `DatGeracaoConjuntoDados` and CKAN resource update dates | Generation/publication bookkeeping, not original incident time | Never substitute publication timestamp for real-time feature availability |
+
+The original pre-2026 dictionaries instead use names including `NumOcorrencia`, `MdaExecucao`, `DscNumInterrupcao` and `NumOrdemInterrupcao`; these are **not** verified aliases of the 2026 fields. The source-level assessment and strict illustrative controls are linked in [RP-U005-D02 protocol](../protocols/RP-U005-D02-ANEEL-SOURCE-PREFLIGHT.md) and [research record](../research/RP-U005-ANEEL-DISCOVERY-2026-11-08.md). No observed relation, measured effect, original data or physical law has been added.

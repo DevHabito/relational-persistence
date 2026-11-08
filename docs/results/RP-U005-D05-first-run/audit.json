@@ -1,0 +1,123 @@
+{
+  "all_prefixes_confirm_delimiter_defect": true,
+  "full_original_source_files_downloaded": false,
+  "full_zip_crc_verified": false,
+  "original_event_rows_parsed": 0,
+  "policy_effect_computed": false,
+  "protocol_commit": "dacefbf39be9987bc9b9c5b37ce5cb45015b8307",
+  "run_utc": "2026-11-08T18:21:56.414394+00:00",
+  "source_results": [
+    {
+      "candidate_delimiters": {
+        "comma": {
+          "parser_accepted": false,
+          "parser_error": "',' expected after '\"'",
+          "parser_error_class": "Error",
+          "required_field_names_present": false
+        },
+        "semicolon": {
+          "header_names": [
+            "DatGeracaoConjuntoDados",
+            "NumCnpjDistribuidora",
+            "NomAgente",
+            "SigAgente",
+            "CodMunicipioIBGE",
+            "CodOcorrenciaEmergencial",
+            "CodConjUnidConsumidora",
+            "CodAlimentador",
+            "CodSubestacao",
+            "NumAnoCompetencia",
+            "NumMesCompetencia",
+            "DthIniOcorrencia",
+            "DthFimOcorrencia",
+            "DscFormaConhecimento",
+            "DscInterrupcaoAssociada",
+            "DscMotivoExpurgo",
+            "DscFatoGeradorOrigem",
+            "DscFatoGeradorTipo",
+            "DscFatoGeradorCausa",
+            "DscFatoGeradorDetalhe",
+            "NumTempoPreparacao",
+            "NumTempoDeslocamento",
+            "NumTempoExecucao"
+          ],
+          "parser_accepted": true,
+          "required_field_names_present": true,
+          "unique_nonempty": true
+        }
+      },
+      "complete_source_sha256_reverified": false,
+      "content_range": "bytes 0-65535/176074116",
+      "decision": "PREFIX_DIAGNOSTIC_CONFIRMS_DELIMITER_DEFECT",
+      "decompressed_prefix_is_not_full_member": true,
+      "final_url": "https://dadosabertos.aneel.gov.br/dataset/ced06b4c-45a5-4cae-8a7e-f576ffc3b412/resource/040c840a-b9fa-4c63-bd3c-f1a99640366b/download/ocorrencias-emergenciais-rede-distribuicao-2026.zip",
+      "first_D04_complete_zip_SHA256_not_reverified": true,
+      "first_zip_member_method": 8,
+      "first_zip_member_name": "ocorrencias-emergenciais-rede-distribuicao-2026.csv",
+      "http_status": 206,
+      "literal_first_header_sha256": "646fc13aa137bfbc3eede2e9a291ba4cb25b28bd71924ef2be01cd460847b4cd",
+      "original_prefix_sha256": "36a7538951403d3e3e1966c63764a94ec06a42af782ec97f4cb1e56fc8c87684",
+      "original_url": "https://dadosabertos.aneel.gov.br/dataset/ced06b4c-45a5-4cae-8a7e-f576ffc3b412/resource/040c840a-b9fa-4c63-bd3c-f1a99640366b/download/ocorrencias-emergenciais-rede-distribuicao-2026.zip",
+      "prefix_bytes": 65536,
+      "source_id": "occ_2026"
+    },
+    {
+      "candidate_delimiters": {
+        "comma": {
+          "parser_accepted": false,
+          "parser_error": "',' expected after '\"'",
+          "parser_error_class": "Error",
+          "required_field_names_present": false
+        },
+        "semicolon": {
+          "header_names": [
+            "DatGeracaoConjuntoDados",
+            "NumCNPJDistribuidora",
+            "NomAgente",
+            "SigAgente",
+            "CodMunicipioIBGE",
+            "CodInterrupcao",
+            "CodEvento",
+            "CodOcorrencia",
+            "CodConjUnidadeConsumidora",
+            "DscConjuntoUnidadeConsumidora",
+            "CodAlimentador",
+            "CodSubestacao",
+            "AnoCompetencia",
+            "MesCompetencia",
+            "DscLocalizacaoInterrupcao",
+            "DscMotivoExpurgo",
+            "DatInicioInterrupcao",
+            "DatFimInterrupcao",
+            "DscFatoGeradorOrigem",
+            "DscFatoGeradorTipo",
+            "DscFatoGeradorCausa",
+            "DscFatoGeradorDetalhe",
+            "NumNivelTensao",
+            "QtdConsumidoresAfetados",
+            "QtdConsumidoresAtivos",
+            "DscTipoElementoInterrompido"
+          ],
+          "parser_accepted": true,
+          "required_field_names_present": true,
+          "unique_nonempty": true
+        }
+      },
+      "complete_source_sha256_reverified": false,
+      "content_range": "bytes 0-65535/202900063",
+      "decision": "PREFIX_DIAGNOSTIC_CONFIRMS_DELIMITER_DEFECT",
+      "decompressed_prefix_is_not_full_member": true,
+      "final_url": "https://dadosabertos.aneel.gov.br/dataset/ccb25653-f07b-4f28-84c2-62a89d1f5a56/resource/33a21bd6-4893-42fc-bc05-888154f7511e/download/interrupcoes-energia-eletrica-2026.zip",
+      "first_D04_complete_zip_SHA256_not_reverified": true,
+      "first_zip_member_method": 8,
+      "first_zip_member_name": "interrupcoes-energia-eletrica-2026.csv",
+      "http_status": 206,
+      "literal_first_header_sha256": "a076606f84f6856296d58eef293f648bb142e6fe8f0d998bd2f9d2da7380f643",
+      "original_prefix_sha256": "690733e7304a64827b4228c664ba6e83d5e91ef0c15f34087568f0ee224b0a52",
+      "original_url": "https://dadosabertos.aneel.gov.br/dataset/ccb25653-f07b-4f28-84c2-62a89d1f5a56/resource/33a21bd6-4893-42fc-bc05-888154f7511e/download/interrupcoes-energia-eletrica-2026.zip",
+      "prefix_bytes": 65536,
+      "source_id": "int_2026"
+    }
+  ],
+  "study": "RP-U005-D05"
+}

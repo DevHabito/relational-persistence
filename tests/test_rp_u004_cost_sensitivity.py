@@ -56,8 +56,7 @@ def test_manifest_sha_corruption_fails_before_reading_results(tmp_path):
     index["original_audit_sha256"] = "0" * 64
     copy = tmp_path / "archive-index.json"
     copy.write_text(json.dumps(index), encoding="utf-8")
-    # Only the manifest changes; link to original data to avoid duplicating 29 MB.
-    import os
+    # Only the manifest changes; link to original data instead of copying 29 MB.
     (tmp_path / "audit.json").symlink_to((ARCHIVE_DIR / "audit.json").resolve())
     with pytest.raises(ValueError, match="archive SHA-256"):
         read_original_contrasts(tmp_path)

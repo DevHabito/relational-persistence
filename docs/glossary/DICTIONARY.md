@@ -134,3 +134,19 @@ These are observations about **exact ANEEL 2026 source snapshot field spellings*
 | Post-result format diagnostic | A separate, explicitly dated source study undertaken **after** D07 reported all keys ineligible | It can explain a previous measurement failure but cannot turn the earlier zero-key result into a successful preregistered event-linkage experiment |
 
 The exact original counts, first-run hashes and historical sequence are recorded in [RP-U005-D08](../results/RP-U005-D08.md) and [its frozen protocol](../protocols/RP-U005-D08-ANEEL-LEXICAL-KEYS.md). Neither study has established a source-to-source actual incident match.
+
+## RP-U005-D09 — parallel literal source key cohorts and multiplicity
+
+These definitions describe **exact-field database correspondence**, not certified physical events or new scientific laws.
+
+| Term | Registered meaning | What must not be inferred |
+|---|---|---|
+| Cohort S — dictionary width | Four-field literal (CNPJ, year, unpadded month, original code), with source code length 1–10. Longer codes are *ineligible*, not truncated | Does not assert that source codes longer than ten are invalid physical incidents |
+| Cohort F — full source code | The same four-field literal key using the complete original code string, including lengths >10 within the original CSV bound | Does not resolve ANEEL dictionary-versus-source code-width mismatch or establish physical identity |
+| Matched distinct literal key | Unique four-field string observed in **both** original files; source duplicates collapse only for the *key-count statistic* | Not number of distinct physical emergencies, independent repairs, or correctly paired causal cases |
+| Matched original source row | A row with a valid candidate key present in the other file; multiplicities are retained | Not an independent incident or a one-to-one event pairing when a key repeats |
+| One-to-many by key | One occurrence source row but multiple interruption source rows sharing a literal key | Not proof that the interruption rows are sequential field actions or that one repair caused multiple restorations |
+| Long-code marginal matched cohort | The full F matched-key count minus the S matched-key count; D09 observed 641,058 additional matching **distinct textual keys** | Not proof that F is more accurate, or that more complex repair policy has a benefit |
+| Linked-row fraction | Matched eligible source rows divided by **eligible** source rows within a fixed source and key convention | Conditional descriptive denominator, **not** sensitivity, match precision, physical event recovery rate or predictive model accuracy |
+
+Original [RP-U005-D09 results](../results/RP-U005-D09.md) and its [frozen protocol](../protocols/RP-U005-D09-ANEEL-DUAL-KEY-CENSUS.md) preserve complete provenance. Foundational literature: Ivan P. Fellegi and Alan B. Sunter (1969), DOI [10.1080/01621459.1969.10501049](https://doi.org/10.1080/01621459.1969.10501049); Peter Christen (2012), DOI [10.1007/978-3-642-31164-2](https://doi.org/10.1007/978-3-642-31164-2). These precede the present deterministic source-key audit.

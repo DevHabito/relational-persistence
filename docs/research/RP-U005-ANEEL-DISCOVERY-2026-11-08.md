@@ -49,6 +49,21 @@ The official publisher provides dictionaries for **pre-2026** and **2026 onward*
 
 The textual extraction of the nominal 2026 occurrence PDF reported version 1.1 and 28 July 2026. However, the screenshot tool displayed a 2022 version-1.0 document **even when asked to render the nominal 2026 resource**, matching the separately linked old dictionary. A similar issue appeared when checking the interruption PDF. I have not resolved whether this comes from caching, an asset routing bug or another cause. I will not label these dictionaries as *original-byte authenticated* without a separate download, SHA-256 and render inspection. This matters: a supposed schema update might otherwise be treated as a proven mapping and silently create invalid joins.
 
+## Other original sources screened on the same date
+
+I did not select the ANEEL catalog merely because it seemed convenient. I also inspected these **publisher-documented** alternatives; their data rows were not downloaded and none is a proven U004 policy dataset.
+
+| Primary source | What is actually published | Why it is not a direct U004 edge-repair evaluation |
+|---|---|---|
+| [ONS — interruption of load](https://dados.ons.org.br/dataset/interrupcao_carga) | Official Brazilian system-operator dataset for forced transmission-network outages and distribution-only interruptions exceeding **100 MW for 10 minutes** | Selection threshold excludes smaller events; the catalog does not establish chosen link-repair alternatives or dispatcher compute costs |
+| [E-REDES — scheduled distribution maintenance](https://e-redes.opendatasoft.com/explore/dataset/network-scheduling-work/information/) | Planned interventions by geographic area and period, supplied by the Portuguese distribution operator | **Plans and notices**, not certified realized action sequences and their counterfactual outcomes |
+| [E-REDES — number of remote work orders](https://e-redes.huwise.com/explore/dataset/15-ordens-de-servico/api/) | Monthly work-order counts by service type and locality, history after 2020 | Aggregates are not time-ordered decisions for individual network-edge repairs |
+| [US ORNL EAGLE-I outage data](https://smc-datachallenge.ornl.gov/eagle/) | Historical county-level outage counts at 15-minute intervals, 2014–2022 | Genuine regional restoration patterns may be studied, but customer counts do not reveal physical link-action choices or their costs |
+| [California Office of Emergency Services outage incidents](https://publish.data.ca.gov/dataset/power-outage-incidents) | A map-derived operational incident feed, refreshed around 15-minute intervals | Publisher explicitly says it contains only **most recent incidents, not historical data**; current availability cannot be mistaken for archived trajectories |
+| [PowerBench](https://doi.org/10.5281/zenodo.15400564) (Jacob, Uddin, Olojede, Coskunuzer and Zhang, 14 May 2025) | OpenDSS-generated line-outage and state-estimation benchmark using standard feeders and graph exports | Explicitly **simulated**, not recorded natural grid repair actions. Potential software baseline, not independent field evidence |
+
+These distinctions do not establish that the underlying publisher source lacks unpublished data. They concern only the public material actually inspected.
+
 ## What could be asked once the source passes a separate gate?
 
 A limited observational question might ask whether specific **pre-existing** incident/context variables are associated with later recorded response or outage duration. Before attempting this, I would have to prove that the variables were available at the time a dispatcher made a decision. For example, **execution time and final interruption time are outcomes**, not valid features in a forecast made earlier; this is a common and potentially fatal source of leakage.

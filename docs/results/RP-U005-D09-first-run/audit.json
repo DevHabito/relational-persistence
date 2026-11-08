@@ -1,0 +1,162 @@
+{
+  "causal_effect_computed": false,
+  "census": {
+    "cohort_F_full_original_code": {
+      "literal_cross_source_key_counts": {
+        "many_to_many_keys": 261,
+        "many_to_one_keys": 0,
+        "matched_distinct_keys": 3609614,
+        "matched_interruption_source_rows": 4651463,
+        "matched_long_code_distinct_keys": 641058,
+        "matched_long_code_interruption_rows": 787884,
+        "matched_long_code_occurrence_rows": 641058,
+        "matched_occurrence_source_rows": 3609875,
+        "one_to_many_keys": 301957,
+        "one_to_one_keys": 3307396,
+        "same_key_short_flag_disagreements": 0
+      },
+      "source_group_counts": {
+        "int_2026": {
+          "distinct_candidate_keys": 4155664,
+          "eligible_long_code_distinct_keys": 972993,
+          "eligible_long_code_source_rows": 1293508,
+          "eligible_source_rows_from_groups": 6078331,
+          "keys_occurring_once": 3789507,
+          "matched_valid_source_rows": 4651463,
+          "repeated_distinct_keys": 366157,
+          "source_rows_on_repeated_keys": 2288824,
+          "surplus_rows_beyond_first": 1922667,
+          "unmatched_distinct_keys": 546050,
+          "unmatched_long_code_distinct_keys": 331935,
+          "unmatched_long_code_source_rows": 505624,
+          "unmatched_valid_source_rows": 1426868
+        },
+        "occ_2026": {
+          "distinct_candidate_keys": 6789001,
+          "eligible_long_code_distinct_keys": 1929271,
+          "eligible_long_code_source_rows": 1929271,
+          "eligible_source_rows_from_groups": 6789484,
+          "keys_occurring_once": 6788518,
+          "matched_valid_source_rows": 3609875,
+          "repeated_distinct_keys": 483,
+          "source_rows_on_repeated_keys": 966,
+          "surplus_rows_beyond_first": 483,
+          "unmatched_distinct_keys": 3179387,
+          "unmatched_long_code_distinct_keys": 1288213,
+          "unmatched_long_code_source_rows": 1288213,
+          "unmatched_valid_source_rows": 3179609
+        }
+      }
+    },
+    "cohort_S_documented_width_at_most_10": {
+      "literal_cross_source_key_counts": {
+        "many_to_many_keys": 261,
+        "many_to_one_keys": 0,
+        "matched_distinct_keys": 2968556,
+        "matched_interruption_source_rows": 3863579,
+        "matched_long_code_distinct_keys": 0,
+        "matched_long_code_interruption_rows": 0,
+        "matched_long_code_occurrence_rows": 0,
+        "matched_occurrence_source_rows": 2968817,
+        "one_to_many_keys": 252093,
+        "one_to_one_keys": 2716202,
+        "same_key_short_flag_disagreements": 0
+      },
+      "source_group_counts": {
+        "int_2026": {
+          "distinct_candidate_keys": 3182671,
+          "eligible_source_rows_from_groups": 4784823,
+          "keys_occurring_once": 2910701,
+          "matched_valid_source_rows": 3863579,
+          "repeated_distinct_keys": 271970,
+          "source_rows_on_repeated_keys": 1874122,
+          "surplus_rows_beyond_first": 1602152,
+          "unmatched_distinct_keys": 214115,
+          "unmatched_valid_source_rows": 921244
+        },
+        "occ_2026": {
+          "distinct_candidate_keys": 4859730,
+          "eligible_source_rows_from_groups": 4860213,
+          "keys_occurring_once": 4859247,
+          "matched_valid_source_rows": 2968817,
+          "repeated_distinct_keys": 483,
+          "source_rows_on_repeated_keys": 966,
+          "surplus_rows_beyond_first": 483,
+          "unmatched_distinct_keys": 1891174,
+          "unmatched_valid_source_rows": 1891396
+        }
+      }
+    },
+    "event_time_or_feeder_consistency_verified": false,
+    "matched_source_rows_are_not_unique_real_incidents": true,
+    "repair_policy_or_causal_effect_tested": false
+  },
+  "decision": "BOTH_SOURCE_DUAL_KEY_CENSUS_AUDITED",
+  "identifiable_source_rows_or_keys_uploaded": false,
+  "original_source_aggregates": [
+    {
+      "full_eligible_long_code_rows": 1929271,
+      "full_key_eligible_rows": 6789484,
+      "full_key_ineligible_rows": 0,
+      "identifiers_or_source_rows_emitted": false,
+      "invalid_reason_counts_full_nonexclusive": {
+        "invalid_distributor": 0,
+        "invalid_full_code": 0,
+        "invalid_month": 0,
+        "invalid_year": 0
+      },
+      "invalid_reason_counts_short_nonexclusive": {
+        "code_longer_than_10": 1929271,
+        "invalid_distributor": 0,
+        "invalid_full_code": 0,
+        "invalid_month": 0,
+        "invalid_year": 0
+      },
+      "long_code_rows_in_original": 1929271,
+      "original_csv_data_rows": 6789484,
+      "original_decompressed_bytes": 2236732733,
+      "original_decompressed_sha256": "736602782af54abb82bc9a73070bd09b7bd51213daf3ec22bd3a7dbba64e0567",
+      "original_zip_bytes": 176074116,
+      "original_zip_sha256": "7ed1050092342916bc6e797f4dd79577ac84683956963e1f2c3be652a7876c8c",
+      "short_key_eligible_rows": 4860213,
+      "short_key_ineligible_rows": 1929271,
+      "source_id": "occ_2026",
+      "source_resource_id": "040c840a-b9fa-4c63-bd3c-f1a99640366b",
+      "zip_crc_eof_verified": true
+    },
+    {
+      "full_eligible_long_code_rows": 1293508,
+      "full_key_eligible_rows": 6078331,
+      "full_key_ineligible_rows": 0,
+      "identifiers_or_source_rows_emitted": false,
+      "invalid_reason_counts_full_nonexclusive": {
+        "invalid_distributor": 0,
+        "invalid_full_code": 0,
+        "invalid_month": 0,
+        "invalid_year": 0
+      },
+      "invalid_reason_counts_short_nonexclusive": {
+        "code_longer_than_10": 1293508,
+        "invalid_distributor": 0,
+        "invalid_full_code": 0,
+        "invalid_month": 0,
+        "invalid_year": 0
+      },
+      "long_code_rows_in_original": 1293508,
+      "original_csv_data_rows": 6078331,
+      "original_decompressed_bytes": 2328209339,
+      "original_decompressed_sha256": "4f7112502bffc3028ba69784d77f6b678c9068eb58742a6d57b66991a47528ce",
+      "original_zip_bytes": 202900063,
+      "original_zip_sha256": "87dd5be92a0752bedfffaa80090022182db359538b2fd0518c26537a26576e4d",
+      "short_key_eligible_rows": 4784823,
+      "short_key_ineligible_rows": 1293508,
+      "source_id": "int_2026",
+      "source_resource_id": "33a21bd6-4893-42fc-bc05-888154f7511e",
+      "zip_crc_eof_verified": true
+    }
+  ],
+  "protocol_commit": "ae9e00e0e0ca2fcd5b08da286923f54f02a6e71c",
+  "run_utc": "2026-11-08T20:31:08.311931+00:00",
+  "semantic_incident_identity_proven": false,
+  "study": "RP-U005-D09"
+}

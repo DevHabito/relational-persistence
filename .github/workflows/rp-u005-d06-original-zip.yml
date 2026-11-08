@@ -1,0 +1,43 @@
+name: RP-U005-D06 Exact Original ANEEL ZIP Full Replay After D05
+
+on:
+  push:
+    branches:
+      - audit/aneel-full-source-corrected-20261108
+    paths:
+      - .github/workflows/rp-u005-d06-original-zip.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-d06-first-original-full-zip
+  cancel-in-progress: false
+
+jobs:
+  original_full_zip_replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed research Python regression dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Check original metadata and synthetic adverse guards before acquiring original records
+        run: python -m pytest -q tests/test_rp_u005_d06_source.py
+      - name: Full original ZIP source SHA matching and strict CSV EOF/CRC audit
+        run: python -m experiments.rp_u005_d06_source
+      - name: Print immutable original D06 source verdict JSON digest
+        run: |
+          test -f rp-u005-d06-original/audit.json
+          sha256sum rp-u005-d06-original/audit.json
+      - name: Preserve first D06 successful or negative source-only JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-d06-original-aneel-zip-replay-json
+          path: rp-u005-d06-original/audit.json
+          if-no-files-found: warn
+          retention-days: 90

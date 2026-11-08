@@ -64,6 +64,16 @@ I did not select the ANEEL catalog merely because it seemed convenient. I also i
 
 These distinctions do not establish that the underlying publisher source lacks unpublished data. They concern only the public material actually inspected.
 
+## Important transfer obstacle: radial operation versus a two-route objective
+
+There is an even deeper reason not to equate an ANEEL feeder with the synthetic F2 target. **Many actual distribution networks are operated radially**, even where their physical construction includes normally open ties that would permit alternative configurations after a failure. The [US Department of Energy's *Electricity Distribution System Baseline Report* (2017)](https://www.energy.gov/sites/default/files/2017/01/f34/Electricity%20Distribution%20System%20Baseline%20Report.pdf) describes sectionalizing and normally open ties; published reviews such as [*Power Distribution Network Reconfiguration Techniques: A Thorough Review* (2024)](https://www.mdpi.com/2071-1050/16/23/10307) discuss reconfiguration by opening and closing switches.
+
+In a *radially energized* graph there cannot be two internally vertex-disjoint energized paths between distinct terminals: that would create a cycle. **Therefore the U004 F2 predicate may be systematically zero for operationally acceptable real feeder states**, and "restore two simultaneous paths" could be a technically inappropriate or even invalid optimization target. A physical network can contain a redundant *available alternative* without energizing both routes at the same time. The distinction between installed redundancy, switch-accessible contingency paths and concurrently energized paths must be modeled rather than erased.
+
+A realistic new task might instead quantify restored consumers or load, duration until energization, feasible switching operations, voltage/thermal constraints and crew or decision resources. Such a replacement is **a new outcome and a new hypothesis**. The original finite F2 result is still correct in its own graph model but provides no direct evidence for this operational target. Some distribution networks and operating regimes can be meshed; this review does not assert all feeders must be radial.
+
+This structural mismatch is independent of source-byte identity. Even complete event archives and perfectly resolved joins cannot transform an inappropriate function into a valid physical measure.
+
 ## What could be asked once the source passes a separate gate?
 
 A limited observational question might ask whether specific **pre-existing** incident/context variables are associated with later recorded response or outage duration. Before attempting this, I would have to prove that the variables were available at the time a dispatcher made a decision. For example, **execution time and final interruption time are outcomes**, not valid features in a forecast made earlier; this is a common and potentially fatal source of leakage.

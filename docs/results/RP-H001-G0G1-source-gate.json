@@ -1,0 +1,168 @@
+{
+  "candidate_simulator_ids": [
+    "SMART-DS"
+  ],
+  "date_reviewed": "2026-11-09",
+  "decision": "NO_END_TO_END_REAL_WORLD_CAUSAL_SOURCE_IDENTIFIED",
+  "eligible_real_source_ids": [],
+  "external_unreviewed_source_existence_not_refuted": true,
+  "gaps_counted_across_reviewed_sources": {
+    "cost_measurements": 8,
+    "decision_time_availability": 8,
+    "feasible_action_set": 8,
+    "joint_population_coverage": 8,
+    "observed_action_sequence": 8,
+    "predecision_disturbance_history": 8,
+    "predecision_topology": 6,
+    "registered_functional_outcome": 5
+  },
+  "joint_source_data_audited_in_this_review": false,
+  "observed_source_count": 5,
+  "original_theorem_or_physical_law_claimed": false,
+  "physical_time_emergence_tested": false,
+  "prediction_or_repair_policy_compared": false,
+  "protocol_commit": "2291d499583e594211e703c997ac3743f55dddcc",
+  "source_assessments": [
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "NOT_ESTABLISHED",
+        "predecision_topology": "PROXY_ONLY",
+        "registered_functional_outcome": "PROXY_ONLY"
+      },
+      "number_of_not_evidenced_criteria": 8,
+      "original_joint_data_processed_here": false,
+      "source_id": "ANEEL-2026",
+      "source_kind": "OBSERVED"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "PROXY_ONLY",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "predecision_topology": "NOT_ESTABLISHED"
+      },
+      "number_of_not_evidenced_criteria": 7,
+      "original_joint_data_processed_here": false,
+      "source_id": "EAGLE-I",
+      "source_kind": "OBSERVED"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "predecision_topology": "NOT_ESTABLISHED"
+      },
+      "number_of_not_evidenced_criteria": 7,
+      "original_joint_data_processed_here": false,
+      "source_id": "DOE-EOD",
+      "source_kind": "OBSERVED"
+    },
+    {
+      "decision": "SIMULATOR_CANDIDATE_NOT_YET_VALIDATED",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "feasible_action_set": "PROXY_ONLY",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "PROXY_ONLY"
+      },
+      "number_of_not_evidenced_criteria": 7,
+      "original_joint_data_processed_here": false,
+      "source_id": "SMART-DS",
+      "source_kind": "SYNTHETIC"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "PROXY_ONLY",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "predecision_topology": "PROXY_ONLY",
+        "registered_functional_outcome": "PROXY_ONLY"
+      },
+      "number_of_not_evidenced_criteria": 8,
+      "original_joint_data_processed_here": false,
+      "source_id": "METR-LA",
+      "source_kind": "OBSERVED"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "PROXY_ONLY",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "predecision_topology": "NOT_ESTABLISHED",
+        "registered_functional_outcome": "NOT_ESTABLISHED"
+      },
+      "number_of_not_evidenced_criteria": 8,
+      "original_joint_data_processed_here": false,
+      "source_id": "GOOGLE-BORG-2019",
+      "source_kind": "OBSERVED"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "predecision_topology": "NOT_ESTABLISHED"
+      },
+      "number_of_not_evidenced_criteria": 7,
+      "original_joint_data_processed_here": false,
+      "source_id": "NASA-CMAPSS",
+      "source_kind": "SYNTHETIC"
+    },
+    {
+      "decision": "NOT_ELIGIBLE_FOR_FULL_REAL_POLICY_TEST",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "gaps_by_criterion": {
+        "cost_measurements": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "feasible_action_set": "PROXY_ONLY",
+        "joint_population_coverage": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "NOT_ESTABLISHED",
+        "registered_functional_outcome": "PROXY_ONLY"
+      },
+      "number_of_not_evidenced_criteria": 7,
+      "original_joint_data_processed_here": false,
+      "source_id": "IEEE-OPENDSS-TEST-FEEDERS",
+      "source_kind": "SYNTHETIC"
+    }
+  ],
+  "source_count": 8,
+  "study": "RP-H001-G0G1"
+}

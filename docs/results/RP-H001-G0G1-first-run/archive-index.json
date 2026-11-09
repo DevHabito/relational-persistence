@@ -1,0 +1,28 @@
+{
+  "study": "RP-H001-G0G1",
+  "original_review_date": "2026-11-09",
+  "protocol_only_commit": "2291d499583e594211e703c997ac3743f55dddcc",
+  "first_evidence_registered_commit": "640bf227319c962777e5585f36d8de0d00b64686",
+  "first_code_test_workflow_commit": "98eb776f2a051baed08fcb10879382b03e1e8450",
+  "original_workflow_run_id": "42593200510",
+  "original_workflow_job_id": "129079538798",
+  "original_workflow_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42593200510",
+  "original_source_review_decision": "NO_END_TO_END_REAL_WORLD_CAUSAL_SOURCE_IDENTIFIED",
+  "original_source_gate_json_sha256": "e68eeef1d665e22c34e4adee1407a9613d707e0e1cd2313e32bd45282660c6f0",
+  "original_artifact_id": "13661634031",
+  "original_artifact_url": "https://github.com/DevHabito/relational-persistence/actions/runs/42593200510/artifacts/13661634031",
+  "original_artifact_zip_sha256_from_first_job_log": "86be5ded3a46c66a98a378b945f204104ca75419aaff603a543d21d8476fbd3c",
+  "first_preflight_test_cases_reported_passed": 24,
+  "source_families_reviewed": 8,
+  "observed_families_in_register": 5,
+  "synthetic_families_in_register": 3,
+  "joint_historical_real_policy_sources_proven_ready": 0,
+  "synthetic_simulator_candidates_not_yet_validated": [
+    "SMART-DS"
+  ],
+  "original_third_party_rows_downloaded_or_analyzed_in_this_review": false,
+  "general_dataset_nonexistence_claimed": false,
+  "new_predictor_or_physical_theorem_claimed": false,
+  "source_scope_note": "Source evidence classifications use publisher pages and prior separate repository audits. Original first run is a deterministic metadata decision, not a pre-registered unknown original-data experiment. It does not prove any candidate's undocumented fields do not exist.",
+  "original_report_historic_negative_verdict_immutable": true
+}

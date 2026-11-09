@@ -90,3 +90,24 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+## RP-H001 — causal evidence and dynamic reliability eligibility
+
+These expressions are **definitions for an audit of prior publications and possible data sources**, not evidence that the research's central physical hypothesis has been confirmed.
+
+| Term | Operational meaning | Important limitation |
+|---|---|---|
+| Complete predecision relational state | The full function-relevant network edges, active operating conditions and network constraints that were actually available to an operator before a fixed decision origin `t0` | A static original drawing, feeder label, original outage completion time or spatial proxy is not enough |
+| Disturbance history available by `t0` | Timestamped input/forcing observations already released before the decision, with any missingness and dependence made explicit | Retrospective start/end timestamps may be known only after restoration; avoid lookahead leakage |
+| Functional persistence endpoint | A preregistered measurable system function `F` remaining true over a chosen post-origin horizon, or an independently measured recovery outcome | Not automatically customer counts, graph reachability or a universal physical quantity |
+| Feasible action set | Permitted switching, reconfiguration or actual physical repair interventions at a given decision state, subject to system constraints | Available edge labels and simulated connectivity do not certify electrical feasibility or historic choices |
+| Historical action trace | Time-indexed real decisions/interventions with contemporaneous observed state and known release times | Scheduled dates and inferred source-event matches are not necessarily intervention logs |
+| Correct causal-time eligibility | All prediction features were observable before the registered decision, not backfilled from subsequent results | Ordinary event-time fields are not proof of time of information release |
+| Original joint source audit | Whole required source tables jointly authenticated across the exact selected decision-time window with explicit completeness/censoring checks | Authenticating one event table or a first shard is not joint completeness |
+| Proxy-only source evidence | Metadata or measurements that approximate the desired entity/field but do not directly establish it, e.g., sensor distance for true active topology | A proxy cannot be silently upgraded to an actual intervention, state or independently observed function |
+| Real-world causal policy-ready | A verified observed-data source jointly establishing the eight fields frozen by RP-H001, with enough information to identify/evaluate interventions | `NOT_ESTABLISHED` within eight reviewed sources is not universal absence |
+| Synthetic simulator candidate | A documented generated network with outage/scenario capabilities that **may** support an independently audited artificial intervention experiment | Not real field validation, a verified power-flow run or evidence of actual historical actions |
+| Prior-art / originality gate | Comparison of a narrowly specified proposed claim to existing proven results, algorithms and prior empirical studies | Calling a classical dynamic fault-tree, MDP or spatio-temporal graph forecast “relational” does not make it novel |
+| Incremental held-out predictive value | Properly evaluated score reduction beyond the **best appropriate prespecified baseline**, with leakage controls and uncertainty reporting | Beating a constant or weak model does not demonstrate novelty or policy causality |
+
+The source-by-source evidence, fixed audit protocol and original conservative decision appear in [RP-H001 G0G1](../research/RP-H001-G0G1-LITERATURE-SOURCE-REVIEW-2026-11-09.md). Strong prior art includes Rubin and Du (2024), DOI 10.1002/qre.3693; Zhao and Luo (2024), DOI 10.20517/ces.2024.54; and existing physics-aware switching work, DOI 10.1109/TSG.2023.3310893. No new mathematical theorem was introduced in RP-H001.

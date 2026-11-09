@@ -21,6 +21,7 @@ import numpy as np
 from experiments import neu01_g01_brainvision_auth as source
 
 PROTOCOL_SHA="8afd08353216c0afc3a58a13e2132de2f8c62e67"
+REVISION_SHA="b4671dd92236d88edde55fa72a0fb587c36bbae5"
 OUTPUT=Path("docs/results/NEU-01-G02-first-run/audit.json")
 SOURCE_SHA={
     ("eyesclosed","vhdr"):"b3f437f5e1cc95b3dbedb989d9c637c832ae4406b55782f8c8aeeb2fefc96061",
@@ -52,7 +53,7 @@ def bounded_float(value:float) -> float:
 
 
 def parse_channel_metadata(header:bytes) -> dict:
-    """Counts numeric resolutions and literal units, never electrode names."""
+    """Never invent acquisition scaling/units when original header omits them."""
     sections=source.parse_sections(header)
     common=sections.get("common infos",{})
     if common.get("NumberOfChannels")!="61":
@@ -62,29 +63,43 @@ def parse_channel_metadata(header:bytes) -> dict:
         raise QcInstrumentError("CHANNEL_DETAIL_COUNT_CHANGED")
     units=Counter()
     resolutions=Counter()
+    missing_units=0
+    missing_resolutions=0
     for i in range(1,N_CHANNELS+1):
         value=channels.get(f"Ch{i}")
         if not isinstance(value,str):
             raise QcInstrumentError("CHANNEL_ORDINALS_NOT_COMPLETE")
         parts=value.split(",")
-        if len(parts)<4:
-            raise QcInstrumentError("CHANNEL_SCALING_OR_UNIT_UNSPECIFIED")
-        try:
-            res=float(parts[2] if parts[2] else "1")
-        except ValueError as exc:
-            raise QcInstrumentError("CHANNEL_RESOLUTION_UNPARSABLE") from exc
-        if not math.isfinite(res) or res<=0:
-            raise QcInstrumentError("CHANNEL_RESOLUTION_INVALID")
-        unit=parts[3].strip()
-        if not unit:
-            raise QcInstrumentError("CHANNEL_UNIT_MISSING")
-        units[unit]+=1
-        resolutions[format(res,".12g")]+=1
+        if not parts or not parts[0].strip():
+            raise QcInstrumentError("CHANNEL_NAME_MISSING")
+        declared_res=parts[2].strip() if len(parts)>2 else ""
+        declared_unit=parts[3].strip() if len(parts)>3 else ""
+        if not declared_res:
+            missing_resolutions+=1
+            resolutions["MISSING"]+=1
+        else:
+            try:
+                res=float(declared_res)
+            except ValueError as exc:
+                raise QcInstrumentError("CHANNEL_RESOLUTION_UNPARSABLE") from exc
+            if not math.isfinite(res) or res<=0:
+                raise QcInstrumentError("CHANNEL_RESOLUTION_INVALID")
+            resolutions[format(res,".12g")]+=1
+        if not declared_unit:
+            missing_units+=1
+            units["MISSING"]+=1
+        else:
+            units[declared_unit]+=1
     if sum(units.values())!=N_CHANNELS or sum(resolutions.values())!=N_CHANNELS:
         raise QcInstrumentError("CHANNEL_METADATA_PARTITION_FAILURE")
-    return {"header_unit_counts":dict(sorted(units.items())),
-            "header_resolution_counts":dict(sorted(resolutions.items())),
-            "physical_amplifier_clipping_threshold_verified":False}
+    return {
+        "header_unit_counts":dict(sorted(units.items())),
+        "header_resolution_counts":dict(sorted(resolutions.items())),
+        "header_channels_missing_declared_resolution":missing_resolutions,
+        "header_channels_missing_declared_unit":missing_units,
+        "header_calibration_complete":missing_resolutions==0 and missing_units==0,
+        "physical_amplifier_clipping_threshold_verified":False,
+    }
 
 
 def describe_original_samples(data:np.ndarray) -> dict:
@@ -210,6 +225,8 @@ def describe_original_samples(data:np.ndarray) -> dict:
 
 def run_source(opener=source.urlopen) -> dict:
     result={"study":"NEU-01-G02","protocol_only_commit":PROTOCOL_SHA,
+            "pre_original_signal_content_addendum_commit":REVISION_SHA,
+            "original_failed_first_attempt":42637541779,
             "original_openneuro_source_commit":source.SOURCE_COMMIT,
             "source_version":"ds004148/1.0.0",
             "source_scope":"original sub-01 session1 eyesclosed and eyesopen only",
@@ -260,13 +277,22 @@ def run_source(opener=source.urlopen) -> dict:
             q["channels_with_undefined_relative_extreme_reference"]
             for q in flags
         )
+        calibration_complete=all(
+            reports[t]["source_header_details"]["header_calibration_complete"]
+            for t in ("eyesclosed","eyesopen")
+        )
+        status=("SOURCE_NATIVE_NUMERIC_QC_REVIEW_REQUIRED" if review_needed else
+                "SOURCE_SIGNAL_QC_CENSUS_COMPLETE" if calibration_complete else
+                "SOURCE_NATIVE_NUMERIC_QC_CENSUS_COMPLETE_CALIBRATION_UNVERIFIED")
         result.update({"all_source_objects_authenticated":True,
                        "tasks":reports,
                        "total_original_float32_values_examined":2*TOTAL_PER_TASK,
                        "total_ten_second_channel_epochs_examined":2*EPOCH_CELLS,
                        "aggregate_source_qc_review_flags_present":bool(review_needed),
-                       "decision":("SOURCE_SIGNAL_QC_REVIEW_REQUIRED" if review_needed
-                                   else "SOURCE_SIGNAL_QC_CENSUS_COMPLETE")})
+                       "calibrated_physical_amplitude_ready":calibration_complete,
+                       "unit_calibration_status":("FULLY_DECLARED_NOT_HARDWARE_VERIFIED"
+                         if calibration_complete else "NOT_ESTABLISHED"),
+                       "decision":status})
     except source.SourceBlocked as exc:
         result.update(decision="SOURCE_RETRIEVAL_BLOCKED",error_code=str(exc))
     except source.SourceHashMismatch as exc:

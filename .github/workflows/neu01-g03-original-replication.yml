@@ -1,0 +1,51 @@
+name: NEU-01-G03 Original Cross-Subject Native Repetition
+
+on:
+  push:
+    branches:
+      - research/neu-01-g03-replication-20261109
+    paths:
+      - .github/workflows/neu01-g03-original-replication.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g03-original-first-source-census
+  cancel-in-progress: false
+
+jobs:
+  original_g03_first_census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout full history for protocol chronology
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify protocol exists in history before implementation
+        run: |
+          git merge-base --is-ancestor ed0d77e5a3812ec1931ec6b7e3dbdcc0e87777b3 "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G03-CROSS-SUBJECT-DIGITAL-REPETITION-2026-11-09.md
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing declared research dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Synthetic and adversarial G03 preflight MUST pass first
+        run: python -m pytest -q tests/test_neu01_g03_replication.py
+      - name: Authenticate and inspect all six original participant recordings
+        run: python -m experiments.neu01_g03_replication
+      - name: Freeze SHA-256 of aggregate-only first G03 report
+        run: |
+          test -f docs/results/NEU-01-G03-first-run/audit.json
+          sha256sum docs/results/NEU-01-G03-first-run/audit.json
+      - name: Preserve G03 result or source-stop evidence, NEVER original EEG data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g03-first-source-aggregates-only
+          path: docs/results/NEU-01-G03-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

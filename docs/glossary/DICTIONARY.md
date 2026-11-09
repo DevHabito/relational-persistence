@@ -104,3 +104,17 @@ New meanings require a new protocol and documented migration, not retroactive ed
 | Sample/epoch window control | Fixed recording duration, sampling rate, nonoverlapping windowing and artifact rejection rules before outcome inspection | Proof that a LZc contrast has neuronal rather than artefactual cause |
 
 The [NEU-01-G00 audit](../research/NEU-01-G00-LITERATURE-AND-SOURCE-2026-11-09.md) verified one sidecar-only discrepancy among five pinned task records and **did not calculate LZc on EEG recordings**. See Wang et al. (2022), DOI 10.1038/s41597-022-01607-9; Pal et al. (2020), DOI 10.1523/JNEUROSCI.1910-19.2019; Höhn et al. (2024), DOI 10.1523/ENEURO.0259-23.2024. These are established methods and prior source descriptions, not original discoveries here.
+
+## NEU-01-G01 — original BrainVision identity and BIDS-source agreement
+
+| Term | Verified operational meaning | Not established by it |
+|---|---|---|
+| Original BrainVision header `.vhdr` | Retrieved and authenticated publisher's source header, including `NumberOfChannels`, `SamplingInterval`, binary format and 61 ordered channel names in each of the first two paired resting recordings | A physiologically artifact-free EEG, equivalent processing between tasks or a clinical observation |
+| Original BrainVision marker `.vmrk` | Retrieved publisher's annex-key-matched marker object; 151 marker records by source header parse in each task | Mechanism, stimulus or EEG signal interpretation from marker contents; no original marker values published |
+| Original BrainVision binary `.eeg` | Genuine 36,600,000-byte tagged publisher source object with pre-registered annex MD5 and freshly measured SHA-256; layout matches 61 × 150,000 × 4-byte float32 | Direct analysis of physiological voltages, amplitude quality or any Lempel–Ziv measure |
+| Channel identity agreement | 61 source `[Channel Infos]` names match 61 source `channels.tsv` names in original order for both eyes-open and eyes-closed; all 61 name labels intersect | Equivalent filtering, independent neural generators, exact anatomical location or raw signal homogeneity |
+| BIDS JSON 64-channel discrepancy | In sub-01/session1 eyesclosed only, the BIDS `*_eeg.json` count of 64 differs from **authenticated** original 61-channel `.vhdr` and 61-row TSV | A different number of underlying acquired raw sensors, defect in every participant's data or incorrect interpretation of every EEG recording |
+| Source integrity gate | Whole-file object MD5/byte-size matching the frozen annex version, whole-file SHA256, strict header/marker format and matching actual source TSV | Verified biological effect, clinical biomarker, thermodynamic entropy or subjective identity |
+| Physiological QC gate | A **later** registered and tested source-level process for nonfinite/clipped amplitudes, per-channel variation, artifact handling and task preprocessing | Already satisfied by G01 merely because source bytes are authentic |
+
+First original source evidence and bounds are recorded in [NEU-01-G01](../research/NEU-01-G01-AUTHENTICATED-BRAINVISION-2026-11-09.md). G01 did not calculate EEG LZc or validate the theory of the Self.

@@ -1,0 +1,81 @@
+{
+  "study": "NEU-01-G00",
+  "review_date": "2026-11-09",
+  "source_kind": "SOURCE_METADATA_ONLY",
+  "protocol_only_commit": "b0267de1c20362dc38bda0ef32d09f3d97f240a9",
+  "source_repository": "OpenNeuroDatasets/ds004148",
+  "source_git_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "dataset_doi": "10.18112/openneuro.ds004148.v1.0.0",
+  "original_dataset_publication_doi": "10.1038/s41597-022-01607-9",
+  "nemar_catalog_doi": "10.82901/nemar.on004148",
+  "metadata_review_scope": "Only five task BIDS JSON and TSV sidecars for sub-01/ses-session1; not source raw BrainVision binary bodies",
+  "published_cohort_participants": 60,
+  "published_session_count": 3,
+  "published_task_count": 5,
+  "catalog_recordings_reported": 900,
+  "full_catalog_recording_count_independently_verified": false,
+  "raw_eeg_bodies_downloaded_or_verified": false,
+  "original_eeg_signal_lzc_evaluated": false,
+  "records": [
+    {
+      "task": "eyesclosed",
+      "eeg_sidecar_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-eyesclosed_eeg.json",
+      "eeg_sidecar_git_blob_sha": "e42057e3041f316388955e96c485dd073101a845",
+      "channels_tsv_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-eyesclosed_channels.tsv",
+      "channels_tsv_git_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "declared_eeg_channels": 64,
+      "channel_rows_in_companion_tsv": 61,
+      "sampling_frequency_hz": 500,
+      "declared_duration_seconds": 300,
+      "eeg_reference": "FCz"
+    },
+    {
+      "task": "eyesopen",
+      "eeg_sidecar_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-eyesopen_eeg.json",
+      "eeg_sidecar_git_blob_sha": "857311c71e3844e3842ad009ea77f457226fac0e",
+      "channels_tsv_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-eyesopen_channels.tsv",
+      "channels_tsv_git_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "declared_eeg_channels": 61,
+      "channel_rows_in_companion_tsv": 61,
+      "sampling_frequency_hz": 500,
+      "declared_duration_seconds": 300,
+      "eeg_reference": "FCz"
+    },
+    {
+      "task": "mathematic",
+      "eeg_sidecar_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-mathematic_eeg.json",
+      "eeg_sidecar_git_blob_sha": "d6522b6477e2d714008bc0167ff0c0de5a021388",
+      "channels_tsv_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-mathematic_channels.tsv",
+      "channels_tsv_git_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "declared_eeg_channels": 61,
+      "channel_rows_in_companion_tsv": 61,
+      "sampling_frequency_hz": 500,
+      "declared_duration_seconds": 300,
+      "eeg_reference": "FCz"
+    },
+    {
+      "task": "memory",
+      "eeg_sidecar_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-memory_eeg.json",
+      "eeg_sidecar_git_blob_sha": "0596b5c3c6079d653597e2e6f5bd6ec3e7f5a031",
+      "channels_tsv_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-memory_channels.tsv",
+      "channels_tsv_git_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "declared_eeg_channels": 61,
+      "channel_rows_in_companion_tsv": 61,
+      "sampling_frequency_hz": 500,
+      "declared_duration_seconds": 300,
+      "eeg_reference": "FCz"
+    },
+    {
+      "task": "music",
+      "eeg_sidecar_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-music_eeg.json",
+      "eeg_sidecar_git_blob_sha": "aaf9baa424bfd4b176ef287a8a8fc919f0788228",
+      "channels_tsv_path": "sub-01/ses-session1/eeg/sub-01_ses-session1_task-music_channels.tsv",
+      "channels_tsv_git_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "declared_eeg_channels": 61,
+      "channel_rows_in_companion_tsv": 61,
+      "sampling_frequency_hz": 500,
+      "declared_duration_seconds": 300,
+      "eeg_reference": "FCz"
+    }
+  ]
+}

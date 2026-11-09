@@ -1,4 +1,4 @@
-# Twenty-two small, falsifiable questions about cellular, instrumental and neural persistence
+# Twenty-four small, falsifiable questions about cellular, instrumental and neural persistence
 
 **Literature reconnaissance:** 9 November 2026  
 **Purpose:** generate precise **research candidates**, not claim new laws, previously unseen work or clinical translation.

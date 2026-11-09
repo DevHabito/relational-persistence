@@ -28,7 +28,7 @@ No shared metric is mandatory. Cross-domain comparison is permitted **only after
 5. **Define whose function we protect.** Tumour persistence and tissue health may conflict. Adaptive brain state transitions are not equivalent to low disorder scores. Rejecting an astronomical alert may avert false discovery or cause loss of a real phenomenon.
 6. **Preserve null and negative answers.** Register hypothesis, fixed source version, denominator, proxy and comparison baseline before looking at primary outcomes; publish failure, missing data, contradictory evidence, and inability to establish identifiability.
 7. **Causality needs identification.** A correlation between signals does not prove internal versus external origin. Observed state differences do not establish response to a counterfactual intervention; a simulation does not establish field efficacy.
-8. **Protect scope.** Do not assert that all 22 candidate questions in the accompanying portfolio have never been addressed in literature. They are candidate **research niches** with explicit neighbouring prior art, not certified exclusive scientific priority.
+8. **Protect scope.** Do not assert that all 24 candidate questions in the accompanying portfolio have never been addressed in literature. They are candidate **research niches** with explicit neighbouring prior art, not certified exclusive scientific priority.
 
 ## Scientific aim
 

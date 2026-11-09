@@ -1,0 +1,26 @@
+{
+  "all_900_eeg_recordings_audited": false,
+  "decision": "SOURCE_SIDECAR_DISAGREEMENT_PRESENT",
+  "five_task_metadata_pairs": 5,
+  "lz_complexity_computed_on_original_eeg": false,
+  "number_of_disagreeing_task_sidecars": 1,
+  "physical_entropy_or_mental_health_claimed": false,
+  "protocol_only_commit": "b0267de1c20362dc38bda0ef32d09f3d97f240a9",
+  "raw_eeg_binary_values_downloaded": false,
+  "recording_duration_metadata_seconds_each": 300,
+  "same_subject_channel_harmonization_verified": false,
+  "sampling_rate_metadata_hz": 500,
+  "sidecar_channel_count_disagreements": [
+    {
+      "companion_tsv_rows": 61,
+      "declared_eeg_channels": 64,
+      "source_channels_tsv_blob_sha": "105960eb0ac14bae43bea73aa479a5c6d995c7a3",
+      "source_eeg_sidecar_blob_sha": "e42057e3041f316388955e96c485dd073101a845",
+      "task": "eyesclosed"
+    }
+  ],
+  "source_git_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "source_scope": "five BIDS JSON/TSV sidecar pairs from sub-01 session1",
+  "study": "NEU-01-G00",
+  "subject_diagnosis_or_self_continuity_inferred": false
+}

@@ -1,0 +1,18 @@
+{
+  "all_source_objects_authenticated": false,
+  "decision": "INSTRUMENT_FAILURE",
+  "error_code": "CHANNEL_SCALING_OR_UNIT_UNSPECIFIED",
+  "lzc_computed": false,
+  "n_original_channels_each": 61,
+  "n_samples_per_channel_each": 150000,
+  "original_openneuro_source_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "original_sample_rate_hz": 500,
+  "original_signal_values_published": false,
+  "protocol_only_commit": "8afd08353216c0afc3a58a13e2132de2f8c62e67",
+  "source_eyesopen_additional_ICA_documented": true,
+  "source_scope": "original sub-01 session1 eyesclosed and eyesopen only",
+  "source_version": "ds004148/1.0.0",
+  "study": "NEU-01-G02",
+  "subjective_self_or_clinical_claim": false,
+  "ten_second_epochs_each": 30
+}

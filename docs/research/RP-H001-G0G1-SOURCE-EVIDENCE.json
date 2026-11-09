@@ -1,0 +1,201 @@
+{
+  "study": "RP-H001-G0G1",
+  "review_date": "2026-11-09",
+  "rubric_protocol_only_commit": "2291d499583e594211e703c997ac3743f55dddcc",
+  "original_joint_data_processed_in_this_study": false,
+  "material_examined": "Publisher catalog/abstract/pages and previously audited project reports; no raw source files downloaded for G0/G1",
+  "criteria": [
+    "predecision_topology",
+    "predecision_disturbance_history",
+    "registered_functional_outcome",
+    "feasible_action_set",
+    "observed_action_sequence",
+    "decision_time_availability",
+    "cost_measurements",
+    "joint_population_coverage"
+  ],
+  "status_values": [
+    "EVIDENCED",
+    "PROXY_ONLY",
+    "NOT_ESTABLISHED",
+    "CONTRADICTED"
+  ],
+  "evidence_levels": [
+    "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+    "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+    "COMPLETE_JOINT_ORIGINAL_AUDIT"
+  ],
+  "records": [
+    {
+      "id": "ANEEL-2026",
+      "kind": "OBSERVED",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "PROXY_ONLY",
+        "predecision_disturbance_history": "NOT_ESTABLISHED",
+        "registered_functional_outcome": "PROXY_ONLY",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://dadosabertos.aneel.gov.br/dataset/interrupcoes-de-energia-eletrica-nas-redes-de-distribuicao",
+        "https://github.com/DevHabito/relational-persistence/pull/82"
+      ],
+      "reason": "Two exact 2026 published original files were byte-audited and text/time-key matched in stacked D06-D10. Feeder labels and interruption end times are not a complete pre-decision energized graph, exogenous forcing and action logs; outcome may be correlated across the shared source-key. No joint historical operator-action dataset established. ANEEL 2026 snapshot is partial-year."
+    },
+    {
+      "id": "EAGLE-I",
+      "kind": "OBSERVED",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "EVIDENCED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "PROXY_ONLY"
+      },
+      "references": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10915145/",
+        "https://impact.ornl.gov/en/datasets/eagle-i-power-outage-data-2014-2022/"
+      ],
+      "reason": "ORNL/EAGLE-I 2014-2022 source describes 15-minute county-level customers-out estimates and coverage. The publication explicitly warns zero-outage readings are omitted and cannot be distinguished from missing collection; public county figures do not establish feeder topology, operator actions or decision costs."
+    },
+    {
+      "id": "DOE-EOD",
+      "kind": "OBSERVED",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "EVIDENCED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://catalog.data.gov/dataset/event-correlated-outage-dataset-in-america"
+      ],
+      "reason": "US DOE catalog describes event-correlated county outage aggregates derived from EAGLE-I, DOE-417 and population estimates. Event correlation is derived analysis, not independent feeder-state and operator switching records. Catalog discovery alone does not authenticate complete raw rows."
+    },
+    {
+      "id": "SMART-DS",
+      "kind": "SYNTHETIC",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "documented_network_topology": true,
+      "documented_outage_scenarios": true,
+      "criteria": {
+        "predecision_topology": "EVIDENCED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "PROXY_ONLY",
+        "feasible_action_set": "PROXY_ONLY",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://nrel.sitefinity.cloud/grid/smart-ds",
+        "https://data.openei.org/submissions/2981"
+      ],
+      "reason": "National laboratory documentation states full-scale synthetic feeder/substation topology with detailed equipment, time-series profiles, outage scenarios and simulation use cases. Neither a physical field intervention history nor a downloaded/verified restoration run was examined; suitable only as a future candidate simulator after full audit."
+    },
+    {
+      "id": "METR-LA",
+      "kind": "OBSERVED",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "PROXY_ONLY",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "PROXY_ONLY",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "PROXY_ONLY"
+      },
+      "references": [
+        "https://github.com/DevHabito/relational-persistence/blob/main/docs/results/RP-E002-A01.md"
+      ],
+      "reason": "The existing RP-E002 original benchmark verified 207 traffic sensor histories and a DCRNN distance-based graph, then registered negative heldout forecasts. Distance weights and traffic speeds are useful proxies but not complete function-relevant physical connectivity, exogenous failure history or actual repair decisions."
+    },
+    {
+      "id": "GOOGLE-BORG-2019",
+      "kind": "OBSERVED",
+      "evidence_level": "PARTIAL_ORIGINAL_SOURCE_AUDIT",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "NOT_ESTABLISHED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "PROXY_ONLY",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://github.com/DevHabito/relational-persistence/blob/main/docs/results/RP-E012-D03.md"
+      ],
+      "reason": "RP-E012-D03 verified the complete cell-a machine_events object (46,219 records), but no instance_events or collection_events original row bodies, and no joint machine/instance causal-time state. Machine add/remove events do not certify full scheduler allocation intervention history or repair costs."
+    },
+    {
+      "id": "NASA-CMAPSS",
+      "kind": "SYNTHETIC",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "documented_network_topology": false,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "NOT_ESTABLISHED",
+        "predecision_disturbance_history": "PROXY_ONLY",
+        "registered_functional_outcome": "EVIDENCED",
+        "feasible_action_set": "NOT_ESTABLISHED",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "PROXY_ONLY",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/"
+      ],
+      "reason": "NASA describes simulated aircraft-engine run-to-failure trajectories with three operational settings and sensor channels. It is a prognostics training benchmark, not a measured complete graph with time-stamped feasible physical restoration actions."
+    },
+    {
+      "id": "IEEE-OPENDSS-TEST-FEEDERS",
+      "kind": "SYNTHETIC",
+      "evidence_level": "PRIMARY_SOURCE_DESCRIPTION_ONLY",
+      "documented_network_topology": true,
+      "documented_outage_scenarios": false,
+      "criteria": {
+        "predecision_topology": "EVIDENCED",
+        "predecision_disturbance_history": "NOT_ESTABLISHED",
+        "registered_functional_outcome": "PROXY_ONLY",
+        "feasible_action_set": "PROXY_ONLY",
+        "observed_action_sequence": "NOT_ESTABLISHED",
+        "decision_time_availability": "NOT_ESTABLISHED",
+        "cost_measurements": "NOT_ESTABLISHED",
+        "joint_population_coverage": "NOT_ESTABLISHED"
+      },
+      "references": [
+        "https://opendss.epri.com/ExamplesDocsandTestCases.html"
+      ],
+      "reason": "EPRI documentation offers IEEE distribution test-feeder circuit models and simulation scripts; the checked page does not establish a specifically downloaded fault-scenario history, timestamped operator switches, independent natural outcomes or action/CPU costs."
+    }
+  ]
+}

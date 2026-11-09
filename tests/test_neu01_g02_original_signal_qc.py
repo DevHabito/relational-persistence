@@ -132,12 +132,30 @@ def test_declared_channel_units_and_resolutions_aggregated_without_names():
     (60,"1","µV","ORIGINAL_HEADER_CHANNEL_COUNT_CHANGED"),
     (61,"NaN","µV","CHANNEL_RESOLUTION_INVALID"),
     (61,"0","µV","CHANNEL_RESOLUTION_INVALID"),
-    (61,"1","","CHANNEL_UNIT_MISSING"),
     (61,"non-numeric","µV","CHANNEL_RESOLUTION_UNPARSABLE"),
 ])
 def test_bad_header_dimension_resolution_or_unit_rejected(count,resolution,unit,message):
     with pytest.raises(qc.QcInstrumentError,match=message):
         qc.parse_channel_metadata(create_header(count,resolution,unit))
+
+
+def test_original_header_omitted_unit_or_scaling_is_not_invented():
+    missing_unit=qc.parse_channel_metadata(create_header(61,"1",""))
+    assert missing_unit["header_channels_missing_declared_unit"]==61
+    assert missing_unit["header_channels_missing_declared_resolution"]==0
+    assert missing_unit["header_unit_counts"]=={"MISSING":61}
+    assert missing_unit["header_calibration_complete"] is False
+
+    minimal=(
+        "[Common Infos]\\nNumberOfChannels=61\\n[Channel Infos]\\n"
+        + "".join(f"Ch{i}=E{i},\\n" for i in range(1,62))
+    ).replace("\\n","\n").encode("latin-1")
+    omitted=qc.parse_channel_metadata(minimal)
+    assert omitted["header_channels_missing_declared_unit"]==61
+    assert omitted["header_channels_missing_declared_resolution"]==61
+    assert omitted["header_calibration_complete"] is False
+    assert omitted["header_resolution_counts"]=={"MISSING":61}
+    assert qc.REVISION_SHA=="b4671dd92236d88edde55fa72a0fb587c36bbae5"
 
 
 def test_g02_network_unavailable_does_not_create_false_signal_result(monkeypatch):

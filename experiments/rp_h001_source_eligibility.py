@@ -31,6 +31,10 @@ EVIDENCE_LEVELS = frozenset({
     "COMPLETE_JOINT_ORIGINAL_AUDIT",
 })
 SOURCE_KINDS = frozenset({"OBSERVED", "SYNTHETIC", "MIXED"})
+FIXED_SOURCE_IDS = frozenset({
+    "ANEEL-2026", "EAGLE-I", "DOE-EOD", "SMART-DS", "METR-LA",
+    "GOOGLE-BORG-2019", "NASA-CMAPSS", "IEEE-OPENDSS-TEST-FEEDERS",
+})
 
 
 class GateError(ValueError):
@@ -47,8 +51,7 @@ def check_evidence(data: dict) -> None:
     if data.get("original_joint_data_processed_in_this_study") is not False:
         raise GateError("THIS_STUDY_CANNOT_CLAIM_RAW_DATA_ACCESS")
     if (data.get("criteria") != list(CRITERIA)
-            or data.get("status_values") != sorted(STATUSES)
-            and data.get("status_values") != [
+            or data.get("status_values") != [
                 "EVIDENCED", "PROXY_ONLY", "NOT_ESTABLISHED", "CONTRADICTED"
             ]):
         raise GateError("PREDECLARED_CRITERIA_OR_STATUS_SET_CHANGED")
@@ -85,6 +88,8 @@ def check_evidence(data: dict) -> None:
             raise GateError("EVIDENCE_URL_MISSING_OR_UNSAFE")
         if not isinstance(item.get("reason"), str) or len(item["reason"]) < 40:
             raise GateError("SOURCE_RATIONALE_MISSING")
+    if seen != FIXED_SOURCE_IDS:
+        raise GateError("FROZEN_REVIEWED_SOURCE_SET_CHANGED")
 
 
 def evaluate_one(item: dict) -> dict:

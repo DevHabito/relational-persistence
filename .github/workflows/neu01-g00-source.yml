@@ -1,0 +1,43 @@
+name: NEU-01-G00 EEG Source Metadata Gate
+
+on:
+  push:
+    branches:
+      - research/neu-01-lzc-validity-20261109
+    paths:
+      - .github/workflows/neu01-g00-source.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g00-first-source-metadata-audit
+  cancel-in-progress: false
+
+jobs:
+  first_source_metadata_audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing research test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run source provenance and adversarial tests before first gate
+        run: python -m pytest -q tests/test_neu01_source_metadata_gate.py
+      - name: Evaluate five pinned OpenNeuro source metadata pairs
+        run: python -m experiments.neu01_source_metadata_gate
+      - name: Record exact first source report hash
+        run: |
+          test -f docs/results/NEU-01-G00-first-run/audit.json
+          sha256sum docs/results/NEU-01-G00-first-run/audit.json
+      - name: Archive only the aggregate source metadata discrepancy report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g00-first-source-sidecar-audit
+          path: docs/results/NEU-01-G00-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

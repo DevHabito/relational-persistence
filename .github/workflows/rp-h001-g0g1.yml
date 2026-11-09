@@ -1,0 +1,43 @@
+name: RP-H001-G0G1 Evidence and Real-Source Eligibility Gate
+
+on:
+  push:
+    branches:
+      - research/central-h1-eligibility-20261109
+    paths:
+      - .github/workflows/rp-h001-g0g1.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-h001-first-fixed-literature-source-gate
+  cancel-in-progress: false
+
+jobs:
+  first_fixed_evidence_review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Verify adversarial source evidence and fixture tests before first report
+        run: python -m pytest -q tests/test_rp_h001_source_eligibility.py
+      - name: Evaluate all frozen eight-source evidence records without external row downloads
+        run: python -m experiments.rp_h001_source_eligibility
+      - name: Pin hash of this initial evidence-gate JSON
+        run: |
+          test -f docs/results/RP-H001-G0G1-source-gate.json
+          sha256sum docs/results/RP-H001-G0G1-source-gate.json
+      - name: Preserve first aggregate eligibility decision (JSON only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-h001-g0g1-first-source-eligibility-json
+          path: docs/results/RP-H001-G0G1-source-gate.json
+          if-no-files-found: warn
+          retention-days: 90

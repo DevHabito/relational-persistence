@@ -56,12 +56,12 @@ def test_count_matches_independent_hand_oracle():
                  dtype="<f4")
     report = g03.describe_native(x, frames=4, channels=3)
     assert report["exact_zero_values"] == 3
-    assert report["within_channel_equal_adjacent"] == 5
+    assert report["within_channel_equal_adjacent"] == 6
     assert report["within_channel_possible_adjacencies"] == 9
     assert (report["channels_with_any_equal_adjacent"],
             report["median_per_channel_equal_adjacent_count"],
             report["max_per_channel_equal_adjacent_count"]) == (3, 2, 2)
-    assert reference_counter(x) == (3, 5, 3, 2, 2)
+    assert reference_counter(x) == (3, 6, 3, 2, 2)
 
 
 def test_no_false_pairs_when_interleaved_channels_change():

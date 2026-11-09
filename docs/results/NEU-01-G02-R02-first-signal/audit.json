@@ -1,0 +1,132 @@
+{
+  "aggregate_source_qc_review_flags_present": false,
+  "all_source_objects_authenticated": true,
+  "calibrated_physical_amplitude_ready": false,
+  "decision": "SOURCE_NATIVE_NUMERIC_QC_CENSUS_COMPLETE_CALIBRATION_UNVERIFIED",
+  "lzc_computed": false,
+  "n_original_channels_each": 61,
+  "n_samples_per_channel_each": 150000,
+  "original_failed_first_attempt": 42637541779,
+  "original_openneuro_source_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "original_sample_rate_hz": 500,
+  "original_signal_values_published": false,
+  "pre_original_signal_content_addendum_commit": "b4671dd92236d88edde55fa72a0fb587c36bbae5",
+  "protocol_only_commit": "8afd08353216c0afc3a58a13e2132de2f8c62e67",
+  "source_eyesopen_additional_ICA_documented": true,
+  "source_scope": "original sub-01 session1 eyesclosed and eyesopen only",
+  "source_version": "ds004148/1.0.0",
+  "study": "NEU-01-G02",
+  "subjective_self_or_clinical_claim": false,
+  "tasks": {
+    "eyesclosed": {
+      "sample_integrity": {
+        "channels_exactly_constant_full_record": 0,
+        "channels_with_all_finite_values": 61,
+        "channels_with_any_exactly_constant_epoch": 0,
+        "channels_with_nonfinite_values": 0,
+        "channels_with_undefined_relative_extreme_reference": 0,
+        "exact_adjacent_equal_within_channel_pairs": 195420,
+        "exact_zero_sample_count": 23558,
+        "external_artifact_free_status": "NOT_ESTABLISHED",
+        "finite_sample_count": 9150000,
+        "finite_ten_second_channel_epochs": 1830,
+        "lzc_result_computed": false,
+        "median_native_numeric_epoch_ptp": 61.5,
+        "median_native_numeric_epoch_rms": 22.9430919198,
+        "median_native_numeric_epoch_std": 10.3965268194,
+        "nan_sample_count": 0,
+        "negative_infinity_sample_count": 0,
+        "original_adjacent_pair_universe": 9149939,
+        "physical_adc_clipping_status": "NOT_IDENTIFIABLE_WITHOUT_CALIBRATION",
+        "positive_infinity_sample_count": 0,
+        "relative_extreme_ptp_factor_strictly_greater_than": 10,
+        "ten_second_channel_epochs_exactly_constant": 0,
+        "ten_second_channel_epochs_with_nonfinite": 0,
+        "ten_second_channel_epochs_with_relative_ptp_extreme": 0,
+        "total_original_float32_values": 9150000,
+        "total_ten_second_channel_epochs": 1830
+      },
+      "source_header_details": {
+        "header_calibration_complete": false,
+        "header_channels_missing_declared_resolution": 0,
+        "header_channels_missing_declared_unit": 61,
+        "header_resolution_counts": {
+          "1": 61
+        },
+        "header_unit_counts": {
+          "MISSING": 61
+        },
+        "physical_amplifier_clipping_threshold_verified": false
+      },
+      "verified_file_identity": {
+        "eeg": {
+          "bytes": 36600000,
+          "original_annex_md5_confirmed": true,
+          "sha256": "022b9f34914e4314f4d9e45d17bc367031c9d9d879ea983a8d6eb43f7affbc47"
+        },
+        "vhdr": {
+          "bytes": 1122,
+          "original_annex_md5_confirmed": true,
+          "sha256": "b3f437f5e1cc95b3dbedb989d9c637c832ae4406b55782f8c8aeeb2fefc96061"
+        }
+      }
+    },
+    "eyesopen": {
+      "sample_integrity": {
+        "channels_exactly_constant_full_record": 0,
+        "channels_with_all_finite_values": 61,
+        "channels_with_any_exactly_constant_epoch": 0,
+        "channels_with_nonfinite_values": 0,
+        "channels_with_undefined_relative_extreme_reference": 0,
+        "exact_adjacent_equal_within_channel_pairs": 7,
+        "exact_zero_sample_count": 0,
+        "external_artifact_free_status": "NOT_ESTABLISHED",
+        "finite_sample_count": 9150000,
+        "finite_ten_second_channel_epochs": 1830,
+        "lzc_result_computed": false,
+        "median_native_numeric_epoch_ptp": 57.717540741,
+        "median_native_numeric_epoch_rms": 23.0842290601,
+        "median_native_numeric_epoch_std": 9.3724256661,
+        "nan_sample_count": 0,
+        "negative_infinity_sample_count": 0,
+        "original_adjacent_pair_universe": 9149939,
+        "physical_adc_clipping_status": "NOT_IDENTIFIABLE_WITHOUT_CALIBRATION",
+        "positive_infinity_sample_count": 0,
+        "relative_extreme_ptp_factor_strictly_greater_than": 10,
+        "ten_second_channel_epochs_exactly_constant": 0,
+        "ten_second_channel_epochs_with_nonfinite": 0,
+        "ten_second_channel_epochs_with_relative_ptp_extreme": 0,
+        "total_original_float32_values": 9150000,
+        "total_ten_second_channel_epochs": 1830
+      },
+      "source_header_details": {
+        "header_calibration_complete": false,
+        "header_channels_missing_declared_resolution": 0,
+        "header_channels_missing_declared_unit": 61,
+        "header_resolution_counts": {
+          "1": 61
+        },
+        "header_unit_counts": {
+          "MISSING": 61
+        },
+        "physical_amplifier_clipping_threshold_verified": false
+      },
+      "verified_file_identity": {
+        "eeg": {
+          "bytes": 36600000,
+          "original_annex_md5_confirmed": true,
+          "sha256": "d4c9357b8996fa8e989317d9c945b8e71adfe9e3564c96812689c9cf29e09ac9"
+        },
+        "vhdr": {
+          "bytes": 1118,
+          "original_annex_md5_confirmed": true,
+          "sha256": "7a02a0d6d25413ebc1600a737f2d30f33fc4fc608b25c03564f5918463c3845f"
+        }
+      }
+    }
+  },
+  "ten_second_epochs_each": 30,
+  "total_original_float32_values_examined": 18300000,
+  "total_ten_second_channel_epochs_examined": 3660,
+  "unit_calibration_status": "NOT_ESTABLISHED"
+}

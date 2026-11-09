@@ -248,6 +248,7 @@ def parse_markers(task:str,raw:bytes) -> dict:
 def inspect_original_pair(opener=urlopen) -> dict:
     findings={}
     file_hashes=[]
+    channel_sets=[]
     with TemporaryDirectory(prefix="neu01-g01-") as directory:
         root=Path(directory)
         for task in ("eyesclosed","eyesopen"):
@@ -262,6 +263,7 @@ def inspect_original_pair(opener=urlopen) -> dict:
             markers=parse_markers(task,paths["vmrk"].read_bytes())
             if names!=names_tsv:
                 raise SourceLayoutError("ACTUAL_HEADER_CHANNELS_DIFFER_FROM_TSV")
+            channel_sets.append(set(names))
             findings[task]={
                 **header,**markers,**tsv_status,
                 "header_to_tsv_names_exactly_equal":True,
@@ -272,7 +274,7 @@ def inspect_original_pair(opener=urlopen) -> dict:
     return {
         "original_files":file_hashes,
         "tasks":findings,
-        "channel_intersection_count":len(set(names_tsv)), # overwritten below
+        "channel_intersection_count":len(channel_sets[0] & channel_sets[1]),
     }
 
 
@@ -293,6 +295,7 @@ def evaluate(opener=urlopen) -> dict:
         result.update({
             "original_files":checked["original_files"],
             "task_header_vs_sidecar":checked["tasks"],
+            "cross_condition_exact_named_channel_intersection_count":checked["channel_intersection_count"],
             "all_original_annex_keys_authenticated":True,
             "decision":"ORIGINAL_BRAINVISION_PAIR_AUTHENTICATED",
         })

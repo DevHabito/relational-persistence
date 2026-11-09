@@ -90,3 +90,17 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+## NEU-01-G00 — metadata versus neural signal and theoretical Self
+
+| Term | Bounded operational meaning | Not established by it |
+|---|---|---|
+| Lempel–Ziv complexity (LZc) | A specified finite-sequence/compression-parsing statistic on **a fixed, binarized and length-controlled EEG signal** | A direct measure of energy, free energy, psychological rigidity or identity |
+| Spectral null / phase-randomized surrogate | A synthetic time series designed to retain specified Fourier spectral amplitudes while perturbing phase organization under declared constraints | An independently recorded brain or a complete null for all neural signal structure |
+| Dataset source-sidecar disagreement | One original EEG BIDS `*_eeg.json` declares a count different from its companion `*_channels.tsv` row count, at explicitly pinned file revisions | Defective binary signal or evidence that biological channel counts really differ |
+| Sensor montage harmonization | Verify identical actual source electrode names, sample units, reference, filtering and available time windows across conditions before comparing EEG measures | Follows automatically from equal numeric channel counts or publisher metadata |
+| Original EEG body | Binary EEG sample array and its real channel/header/marker records, separately downloaded and authenticated | Represented by git-annex/symlink listing or a text JSON metadata file |
+| Subjective Self continuity | Independently obtained relevant first-person/behavioral continuity or agency measurement, not a generic resting-state EEG condition | EEG LZc, task label or complexity value without independent construct validation |
+| Sample/epoch window control | Fixed recording duration, sampling rate, nonoverlapping windowing and artifact rejection rules before outcome inspection | Proof that a LZc contrast has neuronal rather than artefactual cause |
+
+The [NEU-01-G00 audit](../research/NEU-01-G00-LITERATURE-AND-SOURCE-2026-11-09.md) verified one sidecar-only discrepancy among five pinned task records and **did not calculate LZc on EEG recordings**. See Wang et al. (2022), DOI 10.1038/s41597-022-01607-9; Pal et al. (2020), DOI 10.1523/JNEUROSCI.1910-19.2019; Höhn et al. (2024), DOI 10.1523/ENEURO.0259-23.2024. These are established methods and prior source descriptions, not original discoveries here.

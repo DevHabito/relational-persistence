@@ -1,0 +1,43 @@
+name: NEU-01-G01 Original BrainVision Pair Source Authentication
+
+on:
+  push:
+    branches:
+      - research/neu-01-g01-brainvision-20261109
+    paths:
+      - .github/workflows/neu01-g01-raw-source.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g01-first-original-raw-source
+  cancel-in-progress: false
+
+jobs:
+  first_original_brainvision_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing research test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run all synthetic header, hash, network, layout and negative tests BEFORE source
+        run: python -m pytest -q tests/test_neu01_g01_brainvision_auth.py
+      - name: Authenticate the six EXACT original annex EEG objects and two channel TSVs
+        run: python -m experiments.neu01_g01_brainvision_auth
+      - name: Print first report SHA256 without original EEG sample values
+        run: |
+          test -f docs/results/NEU-01-G01-first-run/audit.json
+          sha256sum docs/results/NEU-01-G01-first-run/audit.json
+      - name: Preserve only the first non-identifying JSON; never original voltage or headers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g01-first-brainvision-source-identity-json
+          path: docs/results/NEU-01-G01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

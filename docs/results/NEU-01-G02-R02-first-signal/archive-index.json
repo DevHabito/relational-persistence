@@ -1,0 +1,65 @@
+{
+  "study": "NEU-01-G02",
+  "registered_date": "2026-11-09",
+  "source_openneuro_tag": "1.0.0",
+  "source_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "parent_g01_pr": 87,
+  "first_protocol_only_commit": "8afd08353216c0afc3a58a13e2132de2f8c62e67",
+  "first_failed_run": {
+    "run_id": 42637541779,
+    "job_id": 129229613629,
+    "source_code_workflow_commit": "d0b2119dc2b434c6a140755931b7488155781b4a",
+    "result": "INSTRUMENT_FAILURE",
+    "error": "CHANNEL_SCALING_OR_UNIT_UNSPECIFIED",
+    "synthetic_preflight_tests_passed": 16,
+    "original_amplitude_samples_examined": 0,
+    "original_failed_report_sha256": "1b14fb32bce882c737350260a70dcfade14086e0cc29ec3dd042dd19d8ece59d",
+    "artifact_id": 13683497829,
+    "original_artifact_zip_sha256_from_first_log": "9990d1f96dc39642ecef493eaf2cff3573fb12857aa335eeb1674b8dc3654dea"
+  },
+  "pre_amplitude_revised_protocol_commit": "b4671dd92236d88edde55fa72a0fb587c36bbae5",
+  "first_successful_amplitude_run": {
+    "run_id": 42638326092,
+    "job_id": 129232339041,
+    "first_code_and_workflow_head": "7db18d3f8915d6181d8682a4b38904bf3f043a8c",
+    "synthetic_preflight_tests_passed": 16,
+    "decision": "SOURCE_NATIVE_NUMERIC_QC_CENSUS_COMPLETE_CALIBRATION_UNVERIFIED",
+    "sha256": "2b72a36e7692533130c890a28294ab8b8b5bc739b566697c9fa946bf26528ff2",
+    "artifact_id": 13682749819,
+    "zip_sha256_from_first_log": "8123212dcf497774a6bc46a320b069e126470ec1067b434916580bd1ee776e1e"
+  },
+  "sampling_method": "61 fixed original channels * 150000 samples per task, 30 10-second original epochs per channel, no outcome-driven exclusions, no filtering, no ICA, native stored float32 units only",
+  "exact_total_values": 18300000,
+  "exact_total_channel_epochs": 3660,
+  "source_g01_sha256_repeated": true,
+  "source_original_annex_md5_and_size_repeated": true,
+  "first_result_summary": {
+    "eyesclosed": {
+      "finite_values": 9150000,
+      "nan": 0,
+      "positive_inf": 0,
+      "negative_inf": 0,
+      "zero_values": 23558,
+      "adjacent_equal_values": 195420,
+      "flat_channel_epochs": 0,
+      "flat_full_channels": 0,
+      "median_ptp_stored_numeric": 61.5
+    },
+    "eyesopen": {
+      "finite_values": 9150000,
+      "nan": 0,
+      "positive_inf": 0,
+      "negative_inf": 0,
+      "zero_values": 0,
+      "adjacent_equal_values": 7,
+      "flat_channel_epochs": 0,
+      "flat_full_channels": 0,
+      "median_ptp_stored_numeric": 57.717540741
+    }
+  },
+  "unit_calibration_status": "All 61 original header resolutions explicitly 1 for both, but none of 61 channel entries per task explicitly declares physical unit; cannot claim uV or amplifier clipping.",
+  "clinical_mental_health_biomarker_claim": false,
+  "no_lzc_or_psychological_or_thermodynamic_result": true,
+  "no_identifiable_original_signal_samples_published": true,
+  "note": "Separate first-failure source log and first successful R02 result retained exactly. The first-failure JSON SHA was independently reconstructed from log print using original json.dumps(indent=2,sort_keys=True) serializer; first R02 source SHA logged by job. Original artifact ZIP hashes are quoted from respective hosted logs, not independently re-downloaded."
+}

@@ -1,4 +1,4 @@
-name: NEU-01-G02 Original EEG Two-State Signal Quality Census
+name: NEU-01-G02-R02 Original EEG Numeric Quality Census
 
 on:
   push:
@@ -11,11 +11,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: neu01-g02-first-original-signal-qc
+  group: neu01-g02-revision-02-first-amplitude-read
   cancel-in-progress: false
 
 jobs:
-  first_original_signal_quality:
+  revised_first_original_signal_quality:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -25,9 +25,9 @@ jobs:
           python-version: '3.11'
       - name: Install existing pinned research dependencies
         run: python -m pip install -e '.[dev]'
-      - name: Synthetic preflight MUST pass before genuine EEG samples are read
+      - name: R02 synthetic preflight MUST pass before first genuine amplitude read
         run: python -m pytest -q tests/test_neu01_g02_original_signal_qc.py
-      - name: Run exact original EEG sample and 10-second-channel-epoch QC
+      - name: Run G02-R02 original sample QC using native numbers with missing-unit status explicit
         run: python -m experiments.neu01_g02_original_signal_qc
       - name: Pin checksum of aggregate first-run signal QC, never upload EEG samples
         run: |
@@ -37,7 +37,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: neu01-g02-first-source-qc-aggregates-only
+          name: neu01-g02-r02-first-amplitude-qc-aggregates-only
           path: docs/results/NEU-01-G02-first-run/audit.json
           if-no-files-found: warn
           retention-days: 90

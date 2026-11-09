@@ -118,3 +118,19 @@ The [NEU-01-G00 audit](../research/NEU-01-G00-LITERATURE-AND-SOURCE-2026-11-09.m
 | Physiological QC gate | A **later** registered and tested source-level process for nonfinite/clipped amplitudes, per-channel variation, artifact handling and task preprocessing | Already satisfied by G01 merely because source bytes are authentic |
 
 First original source evidence and bounds are recorded in [NEU-01-G01](../research/NEU-01-G01-AUTHENTICATED-BRAINVISION-2026-11-09.md). G01 did not calculate EEG LZc or validate the theory of the Self.
+
+## NEU-01-G02 — native-value EEG QC before an LZc comparison
+
+| Term | Registered, source-limited definition | What it **does not** establish |
+|---|---|---|
+| Original EEG native numeric value | A little-endian IEEE float32 number stored in the G01 hash-authenticated original `.eeg` object, without additional unit conversion/referencing/ICA | Verified microvolts or comparable physiological amplitude across tasks |
+| Finite sample | A stored float32 value that is neither NaN nor ±Inf, over all 61×150,000 values/task | Freedom from blink/movement artifacts or instrument clipping |
+| Exact-zero sample | A stored numerical value exactly equal to floating-point zero | Dead sensor, brain inactivity, lack of external information or clinical rigidity |
+| Adjacent equal sample pair | Two consecutive raw float32 values within one original channel that compare equal, over 61×149,999 comparisons per task | Exact duration of a neural state, artifact mechanism or independent zero count |
+| Ten-second channel-epoch | A fixed full 5,000-sample segment from one channel (30/channel/task), counted even if unusable | Statistically independent person, calibrated physiological epoch, or validated LZ evaluation window |
+| Exactly constant channel-epoch | All 5,000 stored numeric samples are finite and equal in one 10-second segment | A validated manufacturer-defined flatline or artifact threshold |
+| Relative peak-to-peak outlier | Registered, strictly >10× the median PTP of finite 10-second epochs within the same source channel | Detection of all artifacts; zero flags does not mean perfect signal |
+| Missing physical unit in source header | The original `ChN` source field lacks an explicit named physical unit, even when it has numeric resolution 1; recorded as `MISSING` without interpolation | That stored source voltages are known microvolts or exact acquisition calibration |
+| G02-R02 chronology | The first G02 source run stopped before amplitude samples due to incomplete calibration; separate prior-to-amplitude addendum permits **weaker source stored-number QC** without physical inference | Post hoc successful original G02 test with unchanged preconditions, or a newly discovered biomarker |
+
+The original first-run results and registered boundaries are in [NEU-01-G02](../research/NEU-01-G02-ORIGINAL-SIGNAL-QC-2026-11-09.md), with original G02 failure and later G02-R02 first full raw-value run separately archived. A zero count of nonfinite/constant values is a **technical source-integrity result**, not an assertion of artifact-free or clinically valid brain measurement.

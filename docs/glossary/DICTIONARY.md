@@ -134,3 +134,18 @@ First original source evidence and bounds are recorded in [NEU-01-G01](../resear
 | G02-R02 chronology | The first G02 source run stopped before amplitude samples due to incomplete calibration; separate prior-to-amplitude addendum permits **weaker source stored-number QC** without physical inference | Post hoc successful original G02 test with unchanged preconditions, or a newly discovered biomarker |
 
 The original first-run results and registered boundaries are in [NEU-01-G02](../research/NEU-01-G02-ORIGINAL-SIGNAL-QC-2026-11-09.md), with original G02 failure and later G02-R02 first full raw-value run separately archived. A zero count of nonfinite/constant values is a **technical source-integrity result**, not an assertion of artifact-free or clinically valid brain measurement.
+
+## NEU-01-G03 — native digital-signature replication
+
+| Term | Bounded operational meaning | Not established by it |
+|---|---|---|
+| Participant-paired digital signature | Preselected original sub-02/sub-03/sub-04 same-session eyesclosed versus eyesopen native float32 adjacent equality comparison | Random human sampling or physiological causal mechanism |
+| Adjacent-equality numerator | Integer sum of exact equality comparisons between consecutive samples **within** the same channel over all 61 original channels | Neural quiescence, independence of 9.15 million individual observations or thermodynamic entropy |
+| Adjacent-equality denominator | Exactly 61 times 149,999 = 9,149,939 original within-channel transitions per source recording | Number of statistically independent people or physiologically calibrated epochs |
+| Exact-zero count | Stored float32 values numerically equal to +0.0 or -0.0, with original denominator 9,150,000 per recording | Dead electrode, exact duration of neural state, missing physical calibration or clinical rigidity |
+| Paired positive direction | Eyesclosed count strictly greater than eyesopen count for one preselected participant; registered G03 descriptive gate requires 3/3 | Formal population test, statistical significance or a repeated causal effect |
+| Channel count distribution | Per-recording number of channels with any equal pairs and median/maximum pair counts, without publishing channel identities | Proof of independent neural generators or mechanism of the digital transform |
+| Original result checksum | SHA-256 of 10,117-byte original G03 aggregate audit.json, distinct from original EEG binary and uploaded ZIP hashes | Independent full reread and recount of original signal arrays |
+| Unresolved processing confound | Published eyes-open ICA is a potential source of differing exact digital value statistics, without independently authenticated pre/post ICA records | A demonstrated ICA mechanism, physiological interpretation, or thermodynamic effect |
+
+The [G03 report](../research/NEU-01-G03-CROSS-SUBJECT-DIGITAL-REPETITION-2026-11-09.md) and [source archive](../results/NEU-01-G03-first-run/archive-index.json) define the fixed quantities. The six original headers omit physical units for all channels.

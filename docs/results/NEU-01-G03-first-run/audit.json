@@ -1,0 +1,303 @@
+{
+  "clinical_or_thermodynamic_conclusion": false,
+  "condition_order": [
+    "eyesclosed",
+    "eyesopen"
+  ],
+  "decision": "DESCRIPTIVE_DIRECTION_REPLICATED_IN_ALL_THREE",
+  "lzc_computed": false,
+  "observed_original_adjacencies": 54899634,
+  "observed_original_values": 54900000,
+  "original_signals_published": false,
+  "pair_differences": {
+    "sub-02": {
+      "paired_equal_common_denominator": 9149939,
+      "paired_equal_difference_numerator": 130482,
+      "paired_zero_common_denominator": 9150000,
+      "paired_zero_difference_numerator": 5923
+    },
+    "sub-03": {
+      "paired_equal_common_denominator": 9149939,
+      "paired_equal_difference_numerator": 152793,
+      "paired_zero_common_denominator": 9150000,
+      "paired_zero_difference_numerator": 11161
+    },
+    "sub-04": {
+      "paired_equal_common_denominator": 9149939,
+      "paired_equal_difference_numerator": 175595,
+      "paired_zero_common_denominator": 9150000,
+      "paired_zero_difference_numerator": 15318
+    }
+  },
+  "participants": [
+    "sub-02",
+    "sub-03",
+    "sub-04"
+  ],
+  "physical_amplitude_calibrated": false,
+  "preregistered_protocol_commit": "ed0d77e5a3812ec1931ec6b7e3dbdcc0e87777b3",
+  "primary_direction_signs": {
+    "negative": 0,
+    "positive": 3,
+    "zero": 0
+  },
+  "recordings": {
+    "sub-02": {
+      "eyesclosed": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 5923,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5136,
+          "median_per_channel_equal_adjacent_count": 2048,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 130491,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1122,
+            "sha256": "d097266f899c7511470a68a2301f6c9a29d712cc3353f8b9cb4cd8daba99bfa5"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      },
+      "eyesopen": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 7,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 9,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a50101cabe979ca"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1118,
+            "sha256": "09b9f83417e8ae62b5c188e81a0aafce0eeb27922cc1ecce6f0b95384f5786f8"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      }
+    },
+    "sub-03": {
+      "eyesclosed": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 11161,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5641,
+          "median_per_channel_equal_adjacent_count": 2275,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 152796,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "cb135f4e93d2a5a76ff04c791934f9a73fe050297e8bcc49cb0f7e04f27b0eb3"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1122,
+            "sha256": "32e38ca5bde5307c6b330154b3bcb9221606db55bfa65b6cde4e3c3a1d38b841"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      },
+      "eyesopen": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 3,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 1,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 3,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "7099f2df02407f316a445f3fc6fbad33407b841db0fc5abb4b951c6a22f84f45"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1118,
+            "sha256": "599ae47c7b370a3003c9997d33aac0e6196b7e4bc35299c8437ef07868586f2b"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      }
+    },
+    "sub-04": {
+      "eyesclosed": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 15318,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5709,
+          "median_per_channel_equal_adjacent_count": 2828,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 175607,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "eaa0cffa47243b6c121e41fa9e2bde8fa2f99439a9e57b1bf3272a05210592cb"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1122,
+            "sha256": "f439966f5762a700ef3444d23fc7f617691c240d1c3953e998143f8e6d1e2d54"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      },
+      "eyesopen": {
+        "native_census": {
+          "channels_with_any_equal_adjacent": 10,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "pos_inf": 0,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 12,
+          "within_channel_possible_adjacencies": 9149939
+        },
+        "source_identity": {
+          "channels_tsv_git_blob_verified": true,
+          "eeg": {
+            "annex_md5_verified": true,
+            "bytes": 36600000,
+            "sha256": "eb5bdd843f730e0e42d490840a542831b1c0e525cbfa2b20782f9c568c0032fd"
+          },
+          "vhdr": {
+            "annex_md5_verified": true,
+            "bytes": 1118,
+            "sha256": "d788ac7836d0ace08a26f4940b3cbffb628ef4d4851e7673abfa7f79b254df1d"
+          }
+        },
+        "source_unit_declarations": {
+          "header_calibration_complete": false,
+          "header_channels_missing_declared_resolution": 0,
+          "header_channels_missing_declared_unit": 61,
+          "header_resolution_counts": {
+            "1": 61
+          },
+          "header_unit_counts": {
+            "MISSING": 61
+          },
+          "physical_amplifier_clipping_threshold_verified": false
+        }
+      }
+    }
+  },
+  "secondary_zero_direction_signs": {
+    "negative": 0,
+    "positive": 3,
+    "zero": 0
+  },
+  "session": "session1",
+  "source_git_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "source_objects_authenticated": 12,
+  "source_version": "ds004148/1.0.0",
+  "study": "NEU-01-G03",
+  "tsv_blobs_authenticated": 6
+}

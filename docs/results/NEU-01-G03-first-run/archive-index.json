@@ -1,0 +1,74 @@
+{
+  "study": "NEU-01-G03",
+  "date": "2026-11-09",
+  "original_purpose": "Descriptive cross-subject check of native float32 digital repetition; no EEG LZc or biological effect.",
+  "parent_g02_pr": 88,
+  "separate_pr": 89,
+  "protocol_committed_before_new_original_amplitude": "ed0d77e5a3812ec1931ec6b7e3dbdcc0e87777b3",
+  "protocol_file": "docs/protocols/NEU-01-G03-CROSS-SUBJECT-DIGITAL-REPETITION-2026-11-09.md",
+  "original_implementation_and_workflow_sha": "f8ab6bd59e4b1cbe26e6322a4f83a4c08212df04",
+  "original_hosted_run": {
+    "run_id": 42657980659,
+    "job_id": 129301529684,
+    "conclusion": "success",
+    "synthetic_tests_passed_first": 19,
+    "artifact_id": 13692862537,
+    "artifact_name": "neu01-g03-first-source-aggregates-only",
+    "artifact_zip_sha256_reported_by_github": "9967077b76c2386ac9e5d6ade68ce7e0541dacf4ae67db1f51167f468c5e1478"
+  },
+  "original_aggregate_json": {
+    "path": "docs/results/NEU-01-G03-first-run/audit.json",
+    "sha256": "b142e6b0b0d03e1bd6167fba1a3d265bf3d5efd485e8389474f882955bf8195c",
+    "byte_length": 10117,
+    "provenance": "Exact audit.json bytes recovered from original GitHub Actions artifact ZIP and separately SHA-256-verified. The same log JSON was committed on the research branch without changing its body."
+  },
+  "source": {
+    "dataset": "OpenNeuro ds004148",
+    "version": "1.0.0",
+    "source_git_commit": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+    "source_route": "official OpenNeuro S3",
+    "participants": [
+      "sub-02",
+      "sub-03",
+      "sub-04"
+    ],
+    "session": "session1",
+    "tasks": [
+      "eyesclosed",
+      "eyesopen"
+    ],
+    "files_binary_and_header_authenticated": 12,
+    "channels_tsv_git_blobs_authenticated": 6,
+    "original_samples_censused": 54900000,
+    "within_channel_adjacent_opportunities": 54899634
+  },
+  "registered_result": "DESCRIPTIVE_DIRECTION_REPLICATED_IN_ALL_THREE",
+  "primary_signs": {
+    "positive": 3,
+    "tie": 0,
+    "negative": 0
+  },
+  "secondary_zero_signs": {
+    "positive": 3,
+    "tie": 0,
+    "negative": 0
+  },
+  "source_anomalies": "No nonfinite original numeric samples among the six recordings. All six .vhdr records omit physical units for 61 channels each; 366 missing unit declarations. Do not interpret native units as calibrated EEG amplitude.",
+  "correction_history": [
+    {
+      "commit": "e937c9dede5956ce1f79a184daa12ad52a30f08e",
+      "stage": "before G03 first original amplitude read",
+      "detail": "Corrected manually counted synthetic test fixture from five to six adjacent equalities; no scientific endpoint changed."
+    }
+  ],
+  "first_source_payload_published": false,
+  "limitation": "No inference about neural dynamics, ICA causality, clipping, Lempel-Ziv complexity, physical entropy, clinical biomarkers or population effects (n=3 purposively chosen participant IDs).",
+  "independent_source_replay_completed": false,
+  "full_regression_code_head": {
+    "run_id": 42658104122,
+    "head": "f8ab6bd59e4b1cbe26e6322a4f83a4c08212df04",
+    "python_311_passed": 851,
+    "python_312_passed": 851
+  },
+  "status_note": "CI workflow conclusions were inspected on 2026-11-09. First published report and digest are archive evidence; no independent re-download and recomputation of all original G03 EEG samples has yet been completed."
+}

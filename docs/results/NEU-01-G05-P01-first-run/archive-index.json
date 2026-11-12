@@ -1,0 +1,37 @@
+{
+  "study": "NEU-01-G05-P01",
+  "date": "2026-11-12",
+  "protocol_only_commit": "1702cbb602d35efe8a4bc3cdc484f2ad2e5f9f7a",
+  "implementation_commit": "4fcc04c7aa4e786c823f7ac7d7d33d490786c3b4",
+  "original_source_workflow_run_id": 43329558431,
+  "original_source_workflow_job_id": 131570544461,
+  "original_run_conclusion": "success",
+  "first_source_attempt_succeeded": true,
+  "synthetic_tests_before_source": 7,
+  "original_aggregate_json": {
+    "path": "docs/results/NEU-01-G05-P01-first-run/audit.json",
+    "bytes": 8559,
+    "sha256": "9dbf40942373aa5ec3fa9f7959b4442b9da96003c01090f76d5a4507639a21d4",
+    "method": "First complete original G05 GitHub Actions artifact ZIP downloaded. Extracted audit.json was checked locally against the SHA-256 emitted by the source workflow. Exact original JSON preserved without recomputation."
+  },
+  "github_original_artifact": {
+    "id": 13993594220,
+    "name": "neu01-g05-first-native-run-aggregates",
+    "zip_sha256_reported_by_github": "6105af9c7a72af68920792b1d3f921bf2a263ed440e167043edc3f7dc7832bd2"
+  },
+  "full_regression_at_implementation_commit": {
+    "run_id": 43329558203,
+    "python_311_passed": 895,
+    "python_312_passed": 895
+  },
+  "source_identity_prior": {
+    "study": "NEU-01-G04-P01",
+    "original_sha256": "7b32e1e0fc31d82ec2d1a3c509b0304bbbb4219db2145788d05d90d87140dc00"
+  },
+  "scientific_nonclaims": [
+    "Not new participants, new neural data, or independent acquisition.",
+    "No physical units/calibration; native integrality changes under scaling.",
+    "No ICA/interpolation/quantization causal attribution.",
+    "No Lempel-Ziv, EEG physiological complexity, entropy, rigidity, clinical outcome, or population inference."
+  ]
+}

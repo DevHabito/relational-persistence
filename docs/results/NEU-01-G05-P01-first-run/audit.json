@@ -1,0 +1,242 @@
+{
+  "integer_occupancy_is_only_native_numeric": true,
+  "neural_causal_interpretation": false,
+  "original_g04_archive_sha256": "7b32e1e0fc31d82ec2d1a3c509b0304bbbb4219db2145788d05d90d87140dc00",
+  "participants": [
+    "sub-02",
+    "sub-03",
+    "sub-04"
+  ],
+  "physical_calibration_validated": false,
+  "protocol_commit": "1702cbb602d35efe8a4bc3cdc484f2ad2e5f9f7a",
+  "same_previously_seen_processed_source": true,
+  "source_derived_records": {
+    "sub-02": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 5923,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5136,
+          "median_per_channel_equal_adjacent_count": 2048,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 130304,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 124569,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 130491,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 5736,
+          "zero_zero_equal_adjacent": 187
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 5,
+          "max_zero_repeat_run_length": 3,
+          "native_integer_nonzero_equal_pairs": 13008,
+          "native_integer_nonzero_samples": 912943,
+          "native_noninteger_nonzero_equal_pairs": 117296,
+          "native_nonzero_samples": 9144077,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 125230,
+            "3": 2456,
+            "4": 50,
+            "5": 3
+          },
+          "zero_repeat_run_histogram_all_lengths": {
+            "2": 173,
+            "3": 7
+          }
+        },
+        "eeg_sha256": "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd",
+        "units_missing": 61
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 7,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 9,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 9,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 9,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 2,
+          "max_zero_repeat_run_length": 0,
+          "native_integer_nonzero_equal_pairs": 0,
+          "native_integer_nonzero_samples": 60,
+          "native_noninteger_nonzero_equal_pairs": 9,
+          "native_nonzero_samples": 9150000,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 9
+          },
+          "zero_repeat_run_histogram_all_lengths": {}
+        },
+        "eeg_sha256": "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a50101cabe979ca",
+        "units_missing": 61
+      }
+    },
+    "sub-03": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 11161,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5641,
+          "median_per_channel_equal_adjacent_count": 2275,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 152365,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 141636,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 152796,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 10730,
+          "zero_zero_equal_adjacent": 431
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 5,
+          "max_zero_repeat_run_length": 4,
+          "native_integer_nonzero_equal_pairs": 14972,
+          "native_integer_nonzero_samples": 909053,
+          "native_noninteger_nonzero_equal_pairs": 137393,
+          "native_nonzero_samples": 9138839,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 145450,
+            "3": 3306,
+            "4": 97,
+            "5": 3
+          },
+          "zero_repeat_run_histogram_all_lengths": {
+            "2": 371,
+            "3": 27,
+            "4": 2
+          }
+        },
+        "eeg_sha256": "cb135f4e93d2a5a76ff04c791934f9a73fe050297e8bcc49cb0f7e04f27b0eb3",
+        "units_missing": 61
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 3,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 1,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 3,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 3,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 3,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 2,
+          "max_zero_repeat_run_length": 0,
+          "native_integer_nonzero_equal_pairs": 0,
+          "native_integer_nonzero_samples": 38,
+          "native_noninteger_nonzero_equal_pairs": 3,
+          "native_nonzero_samples": 9150000,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 3
+          },
+          "zero_repeat_run_histogram_all_lengths": {}
+        },
+        "eeg_sha256": "7099f2df02407f316a445f3fc6fbad33407b841db0fc5abb4b951c6a22f84f45",
+        "units_missing": 61
+      }
+    },
+    "sub-04": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 15318,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5709,
+          "median_per_channel_equal_adjacent_count": 2828,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 174967,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 160290,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 175607,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 14678,
+          "zero_zero_equal_adjacent": 640
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 5,
+          "max_zero_repeat_run_length": 4,
+          "native_integer_nonzero_equal_pairs": 17311,
+          "native_integer_nonzero_samples": 906988,
+          "native_noninteger_nonzero_equal_pairs": 157656,
+          "native_nonzero_samples": 9134682,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 165853,
+            "3": 4333,
+            "4": 140,
+            "5": 7
+          },
+          "zero_repeat_run_histogram_all_lengths": {
+            "2": 581,
+            "3": 25,
+            "4": 3
+          }
+        },
+        "eeg_sha256": "eaa0cffa47243b6c121e41fa9e2bde8fa2f99439a9e57b1bf3272a05210592cb",
+        "units_missing": 61
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 10,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 12,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 12,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 12,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "diagnostic": {
+          "max_nonzero_repeat_run_length": 2,
+          "max_zero_repeat_run_length": 0,
+          "native_integer_nonzero_equal_pairs": 0,
+          "native_integer_nonzero_samples": 47,
+          "native_noninteger_nonzero_equal_pairs": 12,
+          "native_nonzero_samples": 9150000,
+          "nonzero_repeat_run_histogram_all_lengths": {
+            "2": 12
+          },
+          "zero_repeat_run_histogram_all_lengths": {}
+        },
+        "eeg_sha256": "eb5bdd843f730e0e42d490840a542831b1c0e525cbfa2b20782f9c568c0032fd",
+        "units_missing": 61
+      }
+    }
+  },
+  "status": "G05_EXACT_SOURCE_CENSUS_COMPLETE",
+  "study": "NEU-01-G05-P01",
+  "total_native_float32_values": 54900000
+}

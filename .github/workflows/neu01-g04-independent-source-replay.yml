@@ -31,6 +31,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install isolated synthetic-test runner on hosted machine
+        run: python -m pip install 'pytest>=7,<10'
       - name: Synthetic and corruption gates run before all original access
         run: python -m pytest -q tests/test_neu01_g04_independent_replay.py
       - name: Reacquire and independently decode six exact original records

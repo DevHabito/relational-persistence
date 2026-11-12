@@ -29,7 +29,7 @@ PAIR_COUNT = CHANNELS * (FRAMES - 1)
 # Already-known hashes frozen in protocol: (EEG MD5, EEG SHA256, header MD5)
 IDENTITIES = {
     ("sub-02", "eyesclosed"): ("afc315cd4fbd76f2788a67fe31be9d8d", "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd", "10a0033fdb6dfd1f72a6e37b8164a269"),
-    ("sub-02", "eyesopen"): ("3ca243fb3ab6cabcac5a99b8939abcce", "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a501cabe979ca", "4eb149775baddc320f39fcd4fc6f79c6"),
+    ("sub-02", "eyesopen"): ("3ca243fb3ab6cabcac5a99b8939abcce", "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a50101cabe979ca", "4eb149775baddc320f39fcd4fc6f79c6"),
     ("sub-03", "eyesclosed"): ("4ca2b5bab215101621ddf023f31ba042", "cb135f4e93d2a5a76ff04c791934f9a73fe050297e8bcc49cb0f7e04f27b0eb3", "98a9f2d1fbffbab2ad2636c05f340531"),
     ("sub-03", "eyesopen"): ("099a4fdb6e0e5fe105f04f4c250bc0a4", "7099f2df02407f316a445f3fc6fbad33407b841db0fc5abb4b951c6a22f84f45", "ae548d8a0b43dfea2e28d1111d50450c"),
     ("sub-04", "eyesclosed"): ("8a7314e14dcaabc117de238ebec6841f", "eaa0cffa47243b6c121e41fa9e2bde8fa2f99439a9e57b1bf3272a05210592cb", "f79c52b469a3845d70a7877ad18e3e43"),

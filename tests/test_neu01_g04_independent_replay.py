@@ -146,3 +146,17 @@ def test_no_numpy_original_reader_dependency_in_source():
     assert "import numpy" not in source
     assert "from experiments import neu01_g03" not in source
     assert "import neu01_g02" not in source
+
+
+def test_six_frozen_hashes_rechecked_against_preexisting_immutable_g03_archive():
+    """Catches the G04 first-source SHA transcription error before source I/O."""
+    original = g04.original_report()
+    for subject in g04.SUBJECTS:
+        for task in g04.TASKS:
+            expected = g04.IDENTITIES[(subject, task)]
+            old = original["recordings"][subject][task]["source_identity"]
+            assert expected[0] == g04.IDENTITIES[(subject, task)][0]
+            assert expected[1] == old["eeg"]["sha256"]
+    assert g04.IDENTITIES[("sub-02", "eyesopen")][1] == (
+        "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a50101cabe979ca"
+    )

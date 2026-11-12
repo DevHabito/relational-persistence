@@ -5,6 +5,8 @@ on:
       - research/neu01-g04-independent-source-replay-20261112
     paths:
       - .github/workflows/neu01-g04-independent-source-replay.yml
+      - experiments/neu01_g04_independent_replay.py
+      - tests/test_neu01_g04_independent_replay.py
   workflow_dispatch:
 
 permissions:

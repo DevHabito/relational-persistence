@@ -1,0 +1,56 @@
+{
+  "study": "NEU-01-G04-P01",
+  "date": "2026-11-12",
+  "preregistered_protocol_only_commit": "6449070c5b95e1d4bbddd2243549593d4ed85f46",
+  "first_preflight_instrument_failure": {
+    "run_id": 43327245478,
+    "commit": "d8df3af9fc7aa6917de51e8360bd27c10736f1d4",
+    "status": "failed",
+    "reason": "pytest missing; no original EEG samples read"
+  },
+  "first_source_eligibility_failure": {
+    "run_id": 43327371558,
+    "commit": "0216077c6e8832217e742cc91e09094bf03c73c0",
+    "status": "SOURCE_NOT_ELIGIBLE",
+    "reason": "incorrectly transcribed known G03 SHA-256 for sub-02 eyesopen; stopped before six-source completion",
+    "partial_source_was_accessed": true
+  },
+  "standalone_postfailure_correction_addendum": "4b66545aa5d69bdb727b7a383c2198ec70f2f439",
+  "first_full_success": {
+    "run_id": 43327626650,
+    "job_id": 131563995497,
+    "exact_source_workflow_commit": "dd51387cdeae6a19eed4c42eb74a9bf9d463a3a6",
+    "conclusion": "success",
+    "synthetic_tests_passed_before_source": 12,
+    "artifact_id": 13992304540,
+    "artifact_name": "neu01-g04-independent-replay-aggregates-only",
+    "artifact_zip_sha256_reported_by_github": "3b39aab300c62a102cd6e5b022d326e14e100cfc85171e5e413d91c0a6e02b06",
+    "original_aggregate_json": {
+      "path": "docs/results/NEU-01-G04-P01-first-run/audit.json",
+      "bytes": 6022,
+      "sha256": "7b32e1e0fc31d82ec2d1a3c509b0304bbbb4219db2145788d05d90d87140dc00",
+      "method": "Downloaded original Actions artifact ZIP and independently SHA256-checked extracted audit.json. Reconstructed identical UTF-8 body from timestamp-stripped job stdout for archive commit, then compared both byte length and ZIP file hash."
+    }
+  },
+  "full_regression_at_source_commit": {
+    "run_id": 43327626617,
+    "python_311_passed": 884,
+    "python_312_passed": 884
+  },
+  "measured": {
+    "recounted_original_processed_numeric_values": 54900000,
+    "eyesclosed_equal_nonzero_total": 457636,
+    "eyesclosed_equal_zero_zero_total": 1258,
+    "eyesclosed_total_equal": 458894,
+    "eyesclosed_zero_runs_total": 31144,
+    "eyesopen_equal_nonzero_total": 24,
+    "eyesopen_zero_values_total": 0
+  },
+  "limits": [
+    "Already examined processed source files, not a new human group.",
+    "No physical calibration or equivalent preprocessing established.",
+    "No EEG complexity, clinical biomarker, entropy, independent physiological outcome or causality measured.",
+    "Not an independent acquisition, nor new blind human-population replication."
+  ],
+  "source_data_uploaded": false
+}

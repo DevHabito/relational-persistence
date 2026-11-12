@@ -1,0 +1,173 @@
+{
+  "no_neural_or_thermodynamic_inference": true,
+  "original_g03_oracle_sha256": "b142e6b0b0d03e1bd6167fba1a3d265bf3d5efd485e8389474f882955bf8195c",
+  "original_values_recounted": 54900000,
+  "participants": [
+    "sub-02",
+    "sub-03",
+    "sub-04"
+  ],
+  "protocol_commit": "6449070c5b95e1d4bbddd2243549593d4ed85f46",
+  "recordings": {
+    "sub-02": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 5923,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5136,
+          "median_per_channel_equal_adjacent_count": 2048,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 130304,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 124569,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 130491,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 5736,
+          "zero_zero_equal_adjacent": 187
+        },
+        "eeg_sha256": "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 7,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 9,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 9,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 9,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "eeg_sha256": "0e27c11253da07a3f6e6a4eff4716327ac38fcf061e71fc16a50101cabe979ca",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      }
+    },
+    "sub-03": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 11161,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5641,
+          "median_per_channel_equal_adjacent_count": 2275,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 152365,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 141636,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 152796,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 10730,
+          "zero_zero_equal_adjacent": 431
+        },
+        "eeg_sha256": "cb135f4e93d2a5a76ff04c791934f9a73fe050297e8bcc49cb0f7e04f27b0eb3",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 3,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 1,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 3,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 3,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 3,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "eeg_sha256": "7099f2df02407f316a445f3fc6fbad33407b841db0fc5abb4b951c6a22f84f45",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      }
+    },
+    "sub-04": {
+      "eyesclosed": {
+        "census": {
+          "channels_with_any_equal_adjacent": 61,
+          "exact_zero_values": 15318,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 5709,
+          "median_per_channel_equal_adjacent_count": 2828,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 174967,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 160290,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 175607,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 14678,
+          "zero_zero_equal_adjacent": 640
+        },
+        "eeg_sha256": "eaa0cffa47243b6c121e41fa9e2bde8fa2f99439a9e57b1bf3272a05210592cb",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      },
+      "eyesopen": {
+        "census": {
+          "channels_with_any_equal_adjacent": 10,
+          "exact_zero_values": 0,
+          "finite": 9150000,
+          "max_per_channel_equal_adjacent_count": 2,
+          "median_per_channel_equal_adjacent_count": 0,
+          "nan": 0,
+          "neg_inf": 0,
+          "nonzero_equal_adjacent": 12,
+          "pos_inf": 0,
+          "prior_d01_lower_bound_nonzero": 12,
+          "total_native_values": 9150000,
+          "within_channel_equal_adjacent": 12,
+          "within_channel_possible_adjacencies": 9149939,
+          "zero_runs": 0,
+          "zero_zero_equal_adjacent": 0
+        },
+        "eeg_sha256": "eb5bdd843f730e0e42d490840a542831b1c0e525cbfa2b20782f9c568c0032fd",
+        "unit_metadata": {
+          "calibrated_physical_amplitude": false,
+          "channels": 61,
+          "physical_unit_missing": 61
+        }
+      }
+    }
+  },
+  "retrospective_same_processed_sources": true,
+  "status": "INDEPENDENT_SIX_FILE_SOURCE_REPLAY_MATCH",
+  "study": "NEU-01-G04-P01",
+  "uses_independent_standard_library_reader": true
+}

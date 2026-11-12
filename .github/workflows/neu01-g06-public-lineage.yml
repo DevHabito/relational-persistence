@@ -1,0 +1,55 @@
+name: NEU-01-G06 Pinned Public Source-Lineage Metadata
+
+on:
+  push:
+    branches:
+      - research/neu01-g06-public-source-lineage-20261112
+    paths:
+      - .github/workflows/neu01-g06-public-lineage.yml
+      - experiments/neu01_g06_public_lineage.py
+      - tests/test_neu01_g06_public_lineage.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g06-source-lineage-first-metadata
+  cancel-in-progress: false
+
+jobs:
+  original_g06_public_metadata:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout and inspect frozen protocol chronology
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require G06 frozen protocol before implementation
+        run: |
+          git merge-base --is-ancestor 4dba6178e2d2092ef15cf0f55f5641996a95896c "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G06-P01-PUBLIC-SOURCE-LINEAGE-2026-11-12.md
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install hosted synthetic-test runner
+        run: python -m pip install 'pytest>=7,<10'
+      - name: Run adversarial G06 tests before public metadata access
+        run: python -m pytest -q tests/test_neu01_g06_public_lineage.py
+      - name: Audit pinned upstream Git-annex identities and six derivative HEAD metadata
+        run: python -m experiments.neu01_g06_public_lineage
+      - name: Freeze first G06 aggregate-only checksum
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G06-P01-first-run/audit.json ]; then
+            sha256sum docs/results/NEU-01-G06-P01-first-run/audit.json
+          fi
+      - name: Preserve provenance-only first source result; never any EEG binary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g06-first-public-source-lineage-only
+          path: docs/results/NEU-01-G06-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

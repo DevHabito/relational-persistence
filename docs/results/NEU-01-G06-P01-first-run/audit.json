@@ -1,0 +1,233 @@
+{
+  "derivative_body_md5_verified": false,
+  "derivative_head_decision": "SIX_DERIVATIVES_HEAD_SIZE_MATCHED",
+  "derivative_head_results": [
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-02",
+      "reported_size": 73824136,
+      "task": "eyesclosed"
+    },
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-02",
+      "reported_size": 73824136,
+      "task": "eyesopen"
+    },
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-03",
+      "reported_size": 73824136,
+      "task": "eyesclosed"
+    },
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-03",
+      "reported_size": 73824136,
+      "task": "eyesopen"
+    },
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-04",
+      "reported_size": 73824136,
+      "task": "eyesclosed"
+    },
+    {
+      "outcome": "DERIVATIVE_HEAD_SIZE_MATCH",
+      "participant_id": "sub-04",
+      "reported_size": 73824136,
+      "task": "eyesopen"
+    }
+  ],
+  "neural_or_thermodynamic_conclusion": false,
+  "new_eeg_values_read": 0,
+  "numeric_sample_alignment_verified": false,
+  "preprocessing_stage_causally_identified": false,
+  "protocol_commit": "4dba6178e2d2092ef15cf0f55f5641996a95896c",
+  "source_metadata": {
+    "dataset_type_from_json": "raw",
+    "dataset_version": "1.0.0",
+    "derivative_readme_identifies_preprocessed_data": true,
+    "derivative_set_file_count": 900,
+    "pipeline_processing_scripts_verifiably_published_in_derivatives_code": false,
+    "published_derivatives_code": [
+      "derivatives/code/figure6_plotSpectrum.m",
+      "derivatives/code/figure7_topo.m"
+    ],
+    "raw_label_does_not_prove_unprocessed_samples": true,
+    "root_eeg_file_count": 900,
+    "source_pairs": [
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "2ba3c01f752799634414e2142544fd9b",
+          "announced_size": 73824136,
+          "blob_sha": "2e00ddd64878b9a2abcc8cd3919704f8b3b0d62f",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub02_01_EC.set",
+        "participant_id": "sub-02",
+        "raw_path": "sub-02/ses-session1/eeg/sub-02_ses-session1_task-eyesclosed_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "afc315cd4fbd76f2788a67fe31be9d8d",
+          "announced_size": 36600000,
+          "blob_sha": "55dc3332c22a3f9599ccc314dbf545c72773080d",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesclosed"
+      },
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "2e4f087c19643b88e59fc2f526bc12c8",
+          "announced_size": 73824136,
+          "blob_sha": "851b6c0af8bb3cd4adf3c3c3b879248352215f26",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub02_01_EO.set",
+        "participant_id": "sub-02",
+        "raw_path": "sub-02/ses-session1/eeg/sub-02_ses-session1_task-eyesopen_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "3ca243fb3ab6cabcac5a99b8939abcce",
+          "announced_size": 36600000,
+          "blob_sha": "ed71e55a9fabc4e3e177ed70d273293d6f6f0f18",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesopen"
+      },
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "d300eaa41f478a3f39c28a0d0ceb5198",
+          "announced_size": 73824136,
+          "blob_sha": "eb32e9be9b844367b8ca755ddac7ab1ed725ce69",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub03_01_EC.set",
+        "participant_id": "sub-03",
+        "raw_path": "sub-03/ses-session1/eeg/sub-03_ses-session1_task-eyesclosed_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "4ca2b5bab215101621ddf023f31ba042",
+          "announced_size": 36600000,
+          "blob_sha": "4b13e11ad6af6d895ea89e695bad5246d5bef4e8",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesclosed"
+      },
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "b93b201815edbc5cfe1cd030aa5bbf45",
+          "announced_size": 73824136,
+          "blob_sha": "f2d64252256bf5b096ddb6973a2c3774bc18ba56",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub03_01_EO.set",
+        "participant_id": "sub-03",
+        "raw_path": "sub-03/ses-session1/eeg/sub-03_ses-session1_task-eyesopen_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "099a4fdb6e0e5fe105f04f4c250bc0a4",
+          "announced_size": 36600000,
+          "blob_sha": "cf1792a7206a39e506e9142d4a819db4fc1fd9c7",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesopen"
+      },
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "fc75f8e9015290d22510067d5a8e96bf",
+          "announced_size": 73824136,
+          "blob_sha": "23082fbb30d09f05a16f9424f0bcf6a9592c143c",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub04_01_EC.set",
+        "participant_id": "sub-04",
+        "raw_path": "sub-04/ses-session1/eeg/sub-04_ses-session1_task-eyesclosed_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "8a7314e14dcaabc117de238ebec6841f",
+          "announced_size": 36600000,
+          "blob_sha": "00a5a5ab18b74f9d7bb2a53b070f14fa3df61af5",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesclosed"
+      },
+      {
+        "bids_raw_label_metadata": {
+          "eeg_channels": 61,
+          "reference": "FCz",
+          "sampling_hz": 500,
+          "software_filters": "n/a"
+        },
+        "derivative_git_pointer": {
+          "announced_md5": "d5b765994ba96c189030d5162b151e09",
+          "announced_size": 73824136,
+          "blob_sha": "16665a7bbd5071fbf328073213b8eb7840e3054d",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "derivative_path": "derivatives/preprocessed data/preprocessed_data/sub04_01_EO.set",
+        "participant_id": "sub-04",
+        "raw_path": "sub-04/ses-session1/eeg/sub-04_ses-session1_task-eyesopen_eeg.eeg",
+        "sample_level_pair_alignment_verified": false,
+        "session": "session1",
+        "source_git_pointer": {
+          "announced_md5": "28079903eac38f9f8670a80f0dc766f1",
+          "announced_size": 36600000,
+          "blob_sha": "b151519dccb953509f04b11033d3fab49016dffb",
+          "body_downloaded": false,
+          "identity_verified_at": "git_annex_pointer_only"
+        },
+        "task": "eyesopen"
+      }
+    ],
+    "upstream_git_revision": "0c740d838a2c33feeec0b6e514aea323d0e65ca4"
+  },
+  "status": "NAMED_SOURCE_DERIVATIVE_POINTER_PAIRS_PRESENT",
+  "study": "NEU-01-G06-P01"
+}

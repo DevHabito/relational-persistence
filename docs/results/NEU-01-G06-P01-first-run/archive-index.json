@@ -1,0 +1,30 @@
+{
+  "study": "NEU-01-G06-P01",
+  "date": "2026-11-12",
+  "protocol_only_commit": "4dba6178e2d2092ef15cf0f55f5641996a95896c",
+  "first_source_implementation_commit": "bee40dbc0431da00bcb0c178988550dc1caaf3cf",
+  "first_source_workflow_run_id": 43331670355,
+  "first_source_workflow_job_id": 131577621917,
+  "first_source_workflow_conclusion": "success",
+  "first_source_attempt_number": 1,
+  "synthetic_adversarial_tests_before_source": 11,
+  "upstream_git_revision": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "original_artifact": {
+    "id": 13994129065,
+    "zip_sha256_reported_by_github": "7d34141bb79b5f2bbec616d76f2c2f9401d52c42d0430a5a60f34d46dba0f159"
+  },
+  "original_audit_json": {
+    "path": "docs/results/NEU-01-G06-P01-first-run/audit.json",
+    "bytes": 8826,
+    "sha256": "0634b51a93e93587e840190a0ab4990e18a585f91e2054c4016815f59915e962",
+    "independent_check": "Downloaded exact original GitHub Actions artifact ZIP, extracted one audit.json, independently SHA256-hashed its 8826 bytes and matched original job sha256sum."
+  },
+  "no_eeg_sample_values_read": true,
+  "not_established": [
+    "full pre-processing stage of root BIDS raw-labelled files",
+    "binary derivative MD5 authenticity",
+    "EEGLAB history and channel/time alignment",
+    "source-to-derivative causal relation",
+    "neural complexity/clinical outcomes"
+  ]
+}

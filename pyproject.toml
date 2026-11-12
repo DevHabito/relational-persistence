@@ -9,7 +9,7 @@ description = "Falsifiable mathematical and computational research on relational
 requires-python = ">=3.11"
 license = "Apache-2.0"
 authors = [{name = "Felipe Gianini Romero"}]
-dependencies = ["numpy>=1.24,<3", "networkx>=3.0,<4"]
+dependencies = ["numpy>=1.24,<3", "networkx>=3.0,<4", "scipy>=1.11,<2"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7,<10"]

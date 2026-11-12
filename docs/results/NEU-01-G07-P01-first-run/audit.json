@@ -1,0 +1,26 @@
+{
+  "clinical_or_thermodynamic_inference": false,
+  "derivative_body_authenticated": true,
+  "derivative_metadata": {
+    "container_family": "MATLAB_V5",
+    "metadata_parse_status": "EEGLAB_STRUCT_MISSING",
+    "original_eeg_amplitudes_reported": false,
+    "raw_eeghistory_reported": false
+  },
+  "matched_sample_order_or_channel_alignment_verified": false,
+  "one_fixed_original_derived_object_only": true,
+  "original_signal_body_uploaded": false,
+  "other_five_derivative_bodies_authenticated": false,
+  "processing_stage_causally_identified": false,
+  "protocol_commit": "6a0e0bd96fd5c8f4d4823c7c02fec0128c8c9d6e",
+  "publisher_source": "derivatives/preprocessed data/preprocessed_data/sub02_01_EC.set",
+  "source_identity": {
+    "observed_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+    "original_bytes": 73824136,
+    "publisher_annex_md5": "2ba3c01f752799634414e2142544fd9b",
+    "publisher_annex_md5_verified": true
+  },
+  "status": "DERIVATIVE_BYTES_AUTHENTICATED_METADATA_NOT_PARSED",
+  "study": "NEU-01-G07-P01",
+  "upstream_git_revision": "0c740d838a2c33feeec0b6e514aea323d0e65ca4"
+}

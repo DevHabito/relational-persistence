@@ -1,0 +1,40 @@
+# NEU-01-G08-D02 — After-result shared-gain residual and native-equality audit
+
+**12 November 2026. This protocol was written AFTER G08-P01 already reported Pearson r=1.0 on 61/61 projected channels.** The G08 result is known; the next residual test and derivative sample numeric-equality counts are POST-RESULT, not a blinded independent human or physics hypothesis. The first G08 source outcome remains immutable. This separate fixed analysis asks how close the paired sample arrays are under one constrained algebraic family.
+
+## Original one-pair eligibility and provenance
+
+Use exactly one existing participant/session/condition pair, OpenNeuro ds004148 v1.0.0 at publisher Git revision 0c740d838a2c33feeec0b6e514aea323d0e65ca4: sub-02/session1/eyesclosed root BIDS BrainVision .eeg and the corresponding EEGLAB sub02_01_EC.set. The original source .eeg is 36,600,000 bytes and SHA256 **9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd**. The already MD5-authenticated .set is 73,824,136 bytes, SHA256 **2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359**. These values and every P01 correlation were previously known. Check the immutable original G08-P01 aggregate: length **2,880 bytes**, SHA256 **18950086a3e0220dfc83c82210a5a84da9ad28d00e224fcdc7ac969aa842025b**, and positive previously-registered strict metadata gates before accessing either signal body. No other source pair is eligible. Verify source and derivative bytes again; do not reuse inexact new URLs.
+
+Input arrays fixed at 150,000 frames x 61 channels, no reordering, interpolation, re-sampling, bitdepth conversion other than float64 arithmetic for diagnostics, or use of any inferred time lag.
+
+## Algebraic model and endpoints, fixed before new source replay
+
+Let R[t,c] be original float32 numbers converted *exactly* to float64; D[t,c] the derivative float64 numbers. Let P(X)[t,c] = X[t,c] - mean_over_all_61_channels X[t,c] at the same frame. This per-time projection is specified in G08-P01, not fit to maximize correlation. It eliminates an arbitrary shared per-time additive channel offset but does not recover physical reference or prove causation.
+
+1. **No fitted gain model:** calculate native unit ratio ||P(D) - P(R)||F / ||P(D)||F and max_abs(P(D)-P(R)). Report if its denominator is zero, not a guessed value. This asks whether the two projected representations agree directly at native numeric gain=1.
+2. **One shared least-squares gain:** compute a = inner_product(P(R),P(D)) / inner_product(P(R),P(R)), a SINGLE scalar for the entire matrix. Calculate relative RMS residual ||P(D)-aP(R)||F / ||P(D)||F, max_abs residual, and observed projected explained fraction 1 - residual_ratio^2. Do not fit per-channel gains, time shifts, intercepts or nonlinear filters. Even an extremely small residual is consistent with a composite rescaling plus shared per-time offset, not proof of the unique publisher transformation.
+3. **Fixed negative controls:** using the same fitted a (do not refit it), compute the residual ratio for (i) derivative P(D) circularly shifted by exactly +500 frames (1s), and (ii) derivative P(D) channel order completely reversed, without relabeling. These controls are descriptive; no p-values or arbitrary pass/fail neural threshold.
+4. **Native exact equality occupancy:** independently count, for the same original ordered grids and all 61 channels, exact numeric zero samples, nonzero exact integers in native stored units, nonzero total samples, zero-zero equal-adjacent pairs, equal nonzero adjacent pairs, and total equal adjacent pairs for both original R and derivative D. Do not treat root and derivative native numbers as calibrated to common physical units, and do not attribute differences to one stage. Compare the root counts to immutable G05 sub-02 eyesclosed archive (8,559 bytes SHA256 **9dbf40942373aa5ec3fa9f7959b4442b9da96003c01090f76d5a4507639a21d4**); mismatch is G08_D02_PREVIOUS_SOURCE_COUNT_MISMATCH, not an interpretable new source observation. Derivative counts are new to this post-result investigation. Do not compute samplewise differences before authenticating both complete original bodies.
+
+Save only aggregate scalar results, exact integer counts and metadata booleans, with source identities, first workflow SHA and audit SHA. Do not publish individual raw/derived amplitudes, channel names, correlations by channel, scalp maps, derived offsets per frame, subjects other than selected public ID, MATLAB history or original binary files.
+
+## Frozen decisions, tests and safety
+
+- G08_D02_RESIDUAL_CENSUS_COMPLETE iff all original archives, byte hashes, 61-channel/150000-frame and relative-grid eligibility from frozen G08-P01, finite input and pre-existing G05 root census pass and all fixed residual/count diagnostics compute. This is a **technical measurement status only**, even if the best-fit residual is tiny.
+- G08_D02_PREVIOUS_SOURCE_COUNT_MISMATCH if already-authenticated root numeric counts differ from G05's original frozen 1-file counts; do not replace originals or change tolerance.
+- SOURCE_NOT_ELIGIBLE if original byte identity fails or archive/input format is unparseable.
+- RESIDUAL_NOT_ELIGIBLE if projected arrays are degenerate, contain nonfinite values or fail shape, rather than optimizing reference/gain/shift to "pass".
+- The descriptive slope/residual magnitude does not have a preregistered significance threshold; no inference about EEG physiology or a causal pipeline is made from numerical closeness.
+
+Synthetic/adversarial pre-source tests must include an independent nested-loop Frobenius slope and residual oracle on 2- and 3-channel synthetic arrays, perfectly re-referenced 1x gain, 3x shared gain, arbitrary time-changing shared offset, independent non-common channel perturbation, sign inversion, negative controls, original archive tampering, root integer count mutation and exact adjacent counts with nonzero and signed-zero samples. The positive synthetic condition must be genuinely informative: common-offset subtraction alone produces zero centered residual without fitting per-channel gains. Freeze this document ALONE before code and source requests. Preserve first-run output, including errors and later corrections in dated separate addenda.
+
+## Interpretation guard and source context
+
+The original BIDS channels.tsv contains declared uV units for all 61 channels although BrainVision header unit slots were blank; a declared source unit is not independent physical-gain calibration. The derivative is MATLAB double vs source float32, and declares common reference vs original root FCz. A near-exact projected result, if observed, is a mathematical relationship compatible with common re-reference and gain, not unique verification of EEGLAB command order, independent acquisition-time alignment or physiological effect.
+
+Sources: EEGLAB Consortium, Data Structures and EEGLAB .set saving formats, https://eeglab.org/tutorials/ConceptsGuide/Data_Structures.html; Brain Products GmbH, BrainVision Core Data Format 1.0, https://www.brainproducts.com/support-resources/brainvision-core-data-format-1-0/; Wang, Y., Duan, W., Dong, D., Ding, L., Lei, X. (2022), Scientific Data 9:566, https://doi.org/10.1038/s41597-022-01607-9.
+
+Definitions: projected source = samplewise per-time arithmetic mean removed; shared gain = ONE scalar fitted over all 9,150,000 projected sample positions; relative residual = Frobenius norm ratio, not a causal p-value; fixed controls = previously frozen one-second time shift and zero-lag channel reversal; exact native equality = numeric equality in original IEEE754 representation, not physical amplitude equality. No Lempel–Ziv, neural persistence, entropy, medical or new physics finding is claimed.
+
+**At this freeze:** G08-P01 r=1.0 and relative-grid/label matches were already known. The residual ratios, global fitted gain, fixed control residuals and derivative exact native equality counts have NOT been computed from this source pair under G08-D02.

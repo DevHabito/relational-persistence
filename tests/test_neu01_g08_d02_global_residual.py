@@ -33,7 +33,7 @@ def test_shared_gain_exact_common_reference_even_with_time_varying_offsets():
     assert abs(result["fitted_gain_relative_frobenius_residual"]-resid)<1e-12
     assert abs(result["shared_least_squares_gain"]-3)<1e-12
     assert result["fitted_gain_relative_frobenius_residual"]<1e-12
-    assert result["fixed_gain_one_relative_frobenius_residual"]>1
+    assert abs(result["fixed_gain_one_relative_frobenius_residual"] - 2/3) < 1e-12
     assert result["fixed_500_frame_shift_same_gain_residual"]>0.1
     assert result["fixed_channel_reversal_same_gain_residual"]>0.1
 

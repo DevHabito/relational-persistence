@@ -1,0 +1,179 @@
+{
+  "causal_processing_stage_identified": false,
+  "one_same_source_file_only": true,
+  "original_derivative_full_body_authenticated": true,
+  "original_derivative_identity": {
+    "observed_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+    "original_bytes": 73824136,
+    "publisher_annex_md5": "2ba3c01f752799634414e2142544fd9b",
+    "publisher_annex_md5_verified": true
+  },
+  "original_derived_path": "derivatives/preprocessed data/preprocessed_data/sub02_01_EC.set",
+  "original_eeg_binary_uploaded": false,
+  "other_five_derivative_bodies_authenticated": false,
+  "physiological_or_entropy_inference": false,
+  "prior_g07_original_sha256": "60a328cd0cbd69f41da4ffaa8b71921b96f1c0d7fd81751b63b7f126cd1481c3",
+  "protocol_commit": "7bc2b1e73032a290748fdb38326974771a6f8244",
+  "retrospective_post_g07_missing_EEG_variable": true,
+  "sample_alignment_verified": false,
+  "status": "TOPLEVEL_EEGLAB_FIELD_LAYOUT_RESOLVED",
+  "study": "NEU-01-G07-D02",
+  "top_level_metadata": {
+    "history_identification": {
+      "characters": null,
+      "contents_published": false,
+      "present": true,
+      "sha256": null
+    },
+    "known_field_names_published_only": true,
+    "metadata_status": "TOPLEVEL_EEGLAB_FIELD_LAYOUT_RESOLVED",
+    "missing_required_metadata": [],
+    "nbchan": 61,
+    "other_unpublished_variable_names_count": 22,
+    "pnts": 150000,
+    "raw_eeg_values_loaded_by_investigation": false,
+    "reference_label": "common",
+    "safe_known_top_level_fields": {
+      "chanlocs": {
+        "dimensions": [
+          1,
+          61
+        ],
+        "matlab_class": "struct"
+      },
+      "comments": {
+        "dimensions": [
+          0
+        ],
+        "matlab_class": "char"
+      },
+      "data": {
+        "dimensions": [
+          61,
+          150000
+        ],
+        "matlab_class": "double"
+      },
+      "epoch": {
+        "dimensions": [
+          0,
+          0
+        ],
+        "matlab_class": "double"
+      },
+      "event": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "struct"
+      },
+      "history": {
+        "dimensions": [
+          0
+        ],
+        "matlab_class": "char"
+      },
+      "icaact": {
+        "dimensions": [
+          0,
+          0
+        ],
+        "matlab_class": "double"
+      },
+      "icasphere": {
+        "dimensions": [
+          0,
+          0
+        ],
+        "matlab_class": "double"
+      },
+      "icaweights": {
+        "dimensions": [
+          0,
+          0
+        ],
+        "matlab_class": "double"
+      },
+      "icawinv": {
+        "dimensions": [
+          0,
+          0
+        ],
+        "matlab_class": "double"
+      },
+      "nbchan": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      },
+      "pnts": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      },
+      "ref": {
+        "dimensions": [
+          1
+        ],
+        "matlab_class": "char"
+      },
+      "setname": {
+        "dimensions": [
+          0
+        ],
+        "matlab_class": "char"
+      },
+      "srate": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      },
+      "times": {
+        "dimensions": [
+          1,
+          150000
+        ],
+        "matlab_class": "double"
+      },
+      "trials": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      },
+      "urevent": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "struct"
+      },
+      "xmax": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      },
+      "xmin": {
+        "dimensions": [
+          1,
+          1
+        ],
+        "matlab_class": "double"
+      }
+    },
+    "source_derivative_sample_alignment_verified": false,
+    "srate_hz": 500.0,
+    "total_matlab_variables": 42,
+    "trials": 1
+  }
+}

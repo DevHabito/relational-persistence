@@ -1,0 +1,70 @@
+{
+  "bids_declared_unit_metadata": {
+    "physical_scale_independently_calibrated": false,
+    "units_declared_in_bids_channels_tsv": "uV"
+  },
+  "conditional_waveform_diagnostic": {
+    "absolute_time_origin_verified": false,
+    "causal_processing_stage_identified": false,
+    "channels": 61,
+    "control_shift_frames": 500,
+    "derivative_projected_relative_unit": "matlab_double_no_calibration",
+    "fixed_zero_lag_projected": {
+      "channels": 61,
+      "count_abs_pearson_gt_0_9": 61,
+      "max_signed_pearson": 1.0,
+      "median_signed_pearson": 1.0,
+      "min_signed_pearson": 1.0
+    },
+    "prespecified_one_second_circular_shift_control": {
+      "channels": 61,
+      "count_abs_pearson_gt_0_9": 1,
+      "max_signed_pearson": 0.9565856873679349,
+      "median_signed_pearson": 0.4736345115680359,
+      "min_signed_pearson": 0.16977296266245406
+    },
+    "root_projected_relative_unit": "native_float32_no_calibration",
+    "samples_per_channel": 150000,
+    "signal_values_published": false,
+    "source_derivative_physical_calibration_verified": false
+  },
+  "derivative_original_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+  "metadata_eligibility": {
+    "absolute_acquisition_onset_aligned": false,
+    "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+    "channel_order_identical": true,
+    "channel_sets_identical": true,
+    "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+    "first_relative_time_ms": 0.0,
+    "last_relative_time_ms": 299998.0,
+    "matched_channel_labels_same_positions": 61,
+    "metadata_data_shape": [
+      61,
+      150000
+    ],
+    "metadata_gate_passed": true,
+    "metadata_rate_hz": 500.0,
+    "metadata_ref_label": "common",
+    "metadata_rejection_reasons": [],
+    "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+    "relative_time_grid_zero_anchored_2ms_eligible": true,
+    "time_grid_max_abs_error_ms": 0.0,
+    "time_sample_count": 150000,
+    "times_strictly_increasing": true,
+    "unverified_amplitude_physical_scale": true,
+    "xmax_seconds": 299.998,
+    "xmin_seconds": 0.0
+  },
+  "neurophysiological_or_clinical_conclusion": false,
+  "original_binary_archived": false,
+  "original_derived_body_authenticated": true,
+  "original_root_eeg_body_downloaded": true,
+  "processing_stage_causally_identified": false,
+  "protocol_commit": "efdeb6651f3614735d50629cdaabcf7e29c22de2",
+  "raw_original_sha256_from_known_G04": "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd",
+  "same_previously_seen_source_pair": true,
+  "sample_level_exact_alignment_proven": false,
+  "source_record": "sub-02/session1/eyesclosed",
+  "status": "FIXED_GRID_DESCRIPTIVE_COMPARISON_COMPLETE",
+  "study": "NEU-01-G08-P01"
+}

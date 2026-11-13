@@ -1,0 +1,55 @@
+name: NEU-01-G09 Five Remaining Publisher Derivative IEEE Pairs
+
+on:
+  push:
+    branches:
+      - research/neu01-g09-five-pair-derivative-audit-20261112
+    paths:
+      - .github/workflows/neu01-g09-five-pairs.yml
+      - experiments/neu01_g09_five_source_pairs.py
+      - tests/test_neu01_g09_five_source_pairs.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g09-five-pairs-first-unseen-derivatives
+  cancel-in-progress: false
+
+jobs:
+  first_original_five_derivatives:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout immutable original G08 archives and G09 frozen source scope
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require protocol-only G09 commit before first derivative access
+        run: |
+          git merge-base --is-ancestor 090efb85c4869ded1b968c9af883662a7eb0902d "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G09-P01-FIVE-DERIVATIVE-PAIRS-2026-11-12.md
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install declared source parsing and test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Before source I/O run targeted negative identity and grid tests
+        run: python -m pytest -q tests/test_neu01_g09_five_source_pairs.py
+      - name: Authenticate all five original EEGLAB derivatives and compare unmodified source samples
+        run: python -m experiments.neu01_g09_five_source_pairs
+      - name: Hash original all-pair audit JSON
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G09-P01-first-run/audit.json ]; then
+            sha256sum docs/results/NEU-01-G09-P01-first-run/audit.json
+          fi
+      - name: Retain only aggregate counts source identities and eligible statuses
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g09-five-derivatives-original-aggregate-only
+          path: docs/results/NEU-01-G09-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

@@ -1,0 +1,55 @@
+name: NEU-01-G08-D03 Direct IEEE Float32 Widening Identity
+
+on:
+  push:
+    branches:
+      - audit/neu01-g08-d03-widened-native-identity-20261112
+    paths:
+      - .github/workflows/neu01-g08-d03-widened-identity.yml
+      - experiments/neu01_g08_d03_native_identity.py
+      - tests/test_neu01_g08_d03_native_identity.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g08-d03-first-native-identity
+  cancel-in-progress: false
+
+jobs:
+  first_original_ieee_identity_census:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable G08 source chronology
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify frozen G08-D03 protocol before code
+        run: |
+          git merge-base --is-ancestor 795f3227641e46c972ebcfaf6aedd000c667173e "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G08-D03-EXACT-NATIVE-WIDENING-2026-11-12.md
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install declared project dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: IEEE and adversarial pre-source synthetic tests
+        run: python -m pytest -q tests/test_neu01_g08_d03_native_identity.py
+      - name: Reauthenticate original one-pair binaries and compare all native values
+        run: python -m experiments.neu01_g08_d03_native_identity
+      - name: Hash original source aggregate without any EEG samples
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G08-D03-first-run/audit.json ]; then
+            sha256sum docs/results/NEU-01-G08-D03-first-run/audit.json
+          fi
+      - name: Preserve first source outcome only; never source EEG bytes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g08-d03-first-ieee-original-aggregates-only
+          path: docs/results/NEU-01-G08-D03-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

@@ -1,0 +1,35 @@
+{
+  "study": "NEU-01-G07-D02",
+  "date": "2026-11-12",
+  "post_result_protocol_commit": "7bc2b1e73032a290748fdb38326974771a6f8244",
+  "first_implementation_commit": "49cb81125a212da5a6a01f482e7707ea1ae6d8fd",
+  "first_source_workflow_run_id": 43333636930,
+  "first_source_workflow_job_id": 131584194210,
+  "first_source_workflow_conclusion": "success",
+  "source_attempt_number": 1,
+  "pre_source_synthetic_tests_passed": 6,
+  "full_regression_at_source_commit": {
+    "run_id": 43333636782,
+    "python_311_tests_passed": 932,
+    "python_312_tests_passed": 932
+  },
+  "source_derivative_published_md5": "2ba3c01f752799634414e2142544fd9b",
+  "source_derivative_observed_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+  "original_artifact": {
+    "id": 13996481794,
+    "zip_sha256_reported_by_github": "639917ee554a7ed495bf5b39d540ec984a24d7077e8c9723c36b9e5bc8abd8d4"
+  },
+  "first_aggregate_json": {
+    "path": "docs/results/NEU-01-G07-D02-first-run/audit.json",
+    "bytes": 4008,
+    "sha256": "5bf3dd61678b267c4997ed56328ae1c8183389d44e1c21910b315d59f8e7cef9",
+    "verification": "Downloaded original GitHub Actions ZIP, unzipped sole audit.json, verified original 4008 bytes independently by SHA256 against first-run job sha256sum."
+  },
+  "scientific_limitations": [
+    "The older G07 P01 first-run result remains unchanged: original parser did not find top-level EEG variable.",
+    "whosmat reports shape/class but does not compare source/derivative signals.",
+    "History field was present but no readable procedure was established; MATLAB whosmat showed a 0-length char field.",
+    "Channel count and rate matching source do not establish numerical alignment.",
+    "No isolated preprocessing/ICA causal effect, physiology, entropy or clinical inference."
+  ]
+}

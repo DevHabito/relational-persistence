@@ -1,0 +1,37 @@
+{
+  "study": "NEU-01-G08-P01",
+  "date": "2026-11-12",
+  "protocol_only_commit": "efdeb6651f3614735d50629cdaabcf7e29c22de2",
+  "first_source_implementation_commit": "d1b34b32ed9083c406053fc7636e1e435d92cd77",
+  "first_original_source_workflow_run_id": 43335456284,
+  "first_source_job_id": 131590375297,
+  "first_source_outcome": "FIXED_GRID_DESCRIPTIVE_COMPARISON_COMPLETE",
+  "original_source_attempt_number": 1,
+  "synthetic_adversarial_tests_before_source": 11,
+  "full_regression_at_source_commit": {
+    "run_id": 43335456211,
+    "python_311_passed": 947,
+    "python_312_passed": 947
+  },
+  "original_artifact": {
+    "id": 13996733831,
+    "zip_sha256_reported_by_github": "97553ca5c225282e64d255249d9e7e63af07fea39c9ff9fb04164b1da4bdf2ab"
+  },
+  "original_audit": {
+    "path": "docs/results/NEU-01-G08-P01-first-run/audit.json",
+    "bytes": 2880,
+    "sha256": "18950086a3e0220dfc83c82210a5a84da9ad28d00e224fcdc7ac969aa842025b",
+    "method": "Downloaded original first GitHub Actions ZIP artifact, extracted original audit.json and independently checked length and SHA256 against first job log"
+  },
+  "source_authentication": [
+    "One original BrainVision .eeg and .vhdr fully authenticated by frozen G04 hashes.",
+    "One original EEGLAB .set fully authenticated by frozen G07 MD5 and SHA256.",
+    "One original BIDS channel.tsv independently authenticated against upstream pinned Git object SHA1."
+  ],
+  "interpretive_guard": [
+    "All 61 matched labels and exactly matching relative time coordinates do not prove identical absolute acquisition onset.",
+    "Pearson correlation printed as 1 is not exact bytewise numerical identity and cannot uniquely identify an algorithm.",
+    "BIDS channels.tsv declares uV; BrainVision header omitted units, independent scale calibration remains unverified.",
+    "Only one previously examined participant/condition source pair, not a population replication or physiological conclusion."
+  ]
+}

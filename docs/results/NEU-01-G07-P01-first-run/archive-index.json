@@ -1,0 +1,33 @@
+{
+  "study": "NEU-01-G07-P01",
+  "date": "2026-11-12",
+  "protocol_only_commit": "6a0e0bd96fd5c8f4d4823c7c02fec0128c8c9d6e",
+  "implementation_commit": "a3e8698dba9c4441552253a1b4d82d83a1e91866",
+  "first_original_source_workflow_run_id": 43332821093,
+  "first_original_source_job_id": 131581452270,
+  "first_original_source_attempt_number": 1,
+  "first_workflow_conclusion": "success",
+  "before_source_synthetic_adversarial_tests_passed": 8,
+  "source_object": "derivatives/preprocessed data/preprocessed_data/sub02_01_EC.set",
+  "source_original_expected_bytes": 73824136,
+  "source_published_annex_md5": "2ba3c01f752799634414e2142544fd9b",
+  "original_verified_derivative_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+  "first_outcome": "DERIVATIVE_BYTES_AUTHENTICATED_METADATA_NOT_PARSED",
+  "original_metadata_error_status": "EEGLAB_STRUCT_MISSING",
+  "original_artifact": {
+    "id": 13995293239,
+    "zip_sha256_reported_by_github": "a7a3db1dc70ec8fcbc3ac93386381f796bc951751a7af1f26fd2da7ca2f16749"
+  },
+  "original_metadata_json": {
+    "path": "docs/results/NEU-01-G07-P01-first-run/audit.json",
+    "bytes": 1133,
+    "sha256": "60a328cd0cbd69f41da4ffaa8b71921b96f1c0d7fd81751b63b7f126cd1481c3",
+    "verified": "Downloaded and independently hashed sole original audit.json from original artifact, matching first source job sha256sum."
+  },
+  "scientific_nonclaims": [
+    "Original binary integrity verified for exactly one derivative .set only.",
+    "EEG struct not found by first named-variable parser, not proof of non-EEGLAB or corrupt data.",
+    "Sample alignment, other five derivative MD5s and causal processing stage unverified.",
+    "No physiological, LZc, entropy, rigidity or clinical claim."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "study": "NEU-01-G09-P01",
+  "date": "2026-11-12",
+  "protocol_only_commit": "090efb85c4869ded1b968c9af883662a7eb0902d",
+  "first_implementation_commit": "926a2665d9f9fffffe98fad752496572cdd9fc0f",
+  "first_real_source_workflow_run_id": 43338356181,
+  "first_real_source_workflow_job_id": 131600164138,
+  "first_source_workflow_conclusion": "success",
+  "first_source_attempt_number": 1,
+  "pre_source_synthetic_adversarial_tests_passed": 8,
+  "original_artifact": {
+    "id": 13997394683,
+    "zip_sha256_reported_by_github": "d1e9bb650be9bfce0a94f0e0acae535f99ebfe689352bdad08ceb7d10827a085"
+  },
+  "first_original_audit_json": {
+    "path": "docs/results/NEU-01-G09-P01-first-run/audit.json",
+    "bytes": 15338,
+    "sha256": "bb3350806c1b86a886f2e79a47b52f967fc34176d598c60742b4b4d1be9dfdba",
+    "verified": "Downloaded exact first Actions source artifact ZIP; independently inspected audit.json member and verified 15338 bytes SHA256 against first runner sha256sum."
+  },
+  "full_regression_at_first_source_commit": {
+    "run_id": 43338356082,
+    "python_311_passed": 980,
+    "python_312_passed": 980
+  },
+  "original_prior_G08_D03_one_pair_sha256": "0a20ff8636afd7c90057fbd852c55864fd6192b9094dc7310680f40557e54e46",
+  "conclusion_scope": {
+    "new_derivative_bodies_fully_authenticated": 5,
+    "new_direct_positions_checked": 45750000,
+    "prior_first_pair_positions_checked": 9150000,
+    "six_pair_total_positions_checked": 54900000,
+    "remaining_publisher_raw_derivative_file_pairs_not_tested": 894,
+    "preprocessing_causal_pipeline_identified": false,
+    "human_new_cohort": false
+  },
+  "scientific_nonclaims": [
+    "No exact-file-byte identity between .eeg and .set: each pair is differently encoded, and all float32 values were widened exactly to double for comparison.",
+    "No source-historical inference that no preprocessing occurred upstream of both published representations.",
+    "Not evidence that all 900 or any nonregistered file pairs are identical.",
+    "Not an independently recruited human sample, neurophysiological biomarker, psychiatric outcome or thermodynamic law."
+  ]
+}

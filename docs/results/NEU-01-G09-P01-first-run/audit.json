@@ -1,0 +1,329 @@
+{
+  "all_five_preselected_pairs_included": true,
+  "causal_processing_stage_identified": false,
+  "first_original_five_pair_results": [
+    {
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_source_identity": {
+        "actual_sha256": "946165038f5d86fd3542a8aff15c5321db25b29d831b48fa1e21c2dde9b31a9a",
+        "annex_expected_md5": "2e4f087c19643b88e59fc2f526bc12c8",
+        "bytes": 73824136,
+        "fully_authenticated_publisher_md5": true,
+        "source_body_published": false
+      },
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "794655800364a008e32e70cb9880633ee06441bf4b0866e79d89e5009005a0fa",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 1,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "794655800364a008e32e70cb9880633ee06441bf4b0866e79d89e5009005a0fa"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "participant": "sub-02",
+      "root_eeg_signal_read": true,
+      "status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+      "task": "eyesopen"
+    },
+    {
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_source_identity": {
+        "actual_sha256": "9962d36ce0e1693a1c0386cb50a3ced4a50b70c53f7527ed5d6b7ea25926de2e",
+        "annex_expected_md5": "d300eaa41f478a3f39c28a0d0ceb5198",
+        "bytes": 73824136,
+        "fully_authenticated_publisher_md5": true,
+        "source_body_published": false
+      },
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "88b8c0fbd10eea3827ff6ca638b76769e0a056952352e44ce749acc78e0e528e",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 17436,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 155582,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "88b8c0fbd10eea3827ff6ca638b76769e0a056952352e44ce749acc78e0e528e"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "participant": "sub-03",
+      "root_eeg_signal_read": true,
+      "status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_source_identity": {
+        "actual_sha256": "37ac0b3e7135172f25ecc9c382e94bbda475f26fcd6ecd7177a948dbc72c86f9",
+        "annex_expected_md5": "b93b201815edbc5cfe1cd030aa5bbf45",
+        "bytes": 73824136,
+        "fully_authenticated_publisher_md5": true,
+        "source_body_published": false
+      },
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "58a8ab67e8edd2a6e03d70412716014d6c2b24723e6e01a8ddd7c5de2baffafb",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 2,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "58a8ab67e8edd2a6e03d70412716014d6c2b24723e6e01a8ddd7c5de2baffafb"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "participant": "sub-03",
+      "root_eeg_signal_read": true,
+      "status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+      "task": "eyesopen"
+    },
+    {
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_source_identity": {
+        "actual_sha256": "61864e29228defe57bd9c6ba1a11fc525dc4518fdc4bae8af23edc5eda24c657",
+        "annex_expected_md5": "fc75f8e9015290d22510067d5a8e96bf",
+        "bytes": 73824136,
+        "fully_authenticated_publisher_md5": true,
+        "source_body_published": false
+      },
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "3882991f926130c95f3f0779124a4111d021204a965d0f625997c8c5447b005e",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 17233,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 156356,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "3882991f926130c95f3f0779124a4111d021204a965d0f625997c8c5447b005e"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "participant": "sub-04",
+      "root_eeg_signal_read": true,
+      "status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_source_identity": {
+        "actual_sha256": "bdbdd5a823caacf444971d309376f994d7365a98df0096c52e9b7f25efc62696",
+        "annex_expected_md5": "d5b765994ba96c189030d5162b151e09",
+        "bytes": 73824136,
+        "fully_authenticated_publisher_md5": true,
+        "source_body_published": false
+      },
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "d86e48a91246e08834f1df7801a7efca3105f3b8d4ee3f3a800e8f02c7f1bfbe",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 1,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "d86e48a91246e08834f1df7801a7efca3105f3b8d4ee3f3a800e8f02c7f1bfbe"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "participant": "sub-04",
+      "root_eeg_signal_read": true,
+      "status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+      "task": "eyesopen"
+    }
+  ],
+  "fixed_source_record_count": 5,
+  "new_participants_or_independent_human_sample": false,
+  "number_exact_bitwise_identical_pairs": 5,
+  "number_numerically_different_pairs": 0,
+  "old_original_G08_D03_archive_sha256": "0a20ff8636afd7c90057fbd852c55864fd6192b9094dc7310680f40557e54e46",
+  "one_original_prior_G08_D03_pair_separate": true,
+  "physical_units_calibration_verified": false,
+  "preexisting_G08_D03_one_pair_identity_known": true,
+  "protocol_commit": "090efb85c4869ded1b968c9af883662a7eb0902d",
+  "publisher_dataset_revision": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "source_amplitude_values_uploaded": false,
+  "status": "FIVE_PAIR_DIRECT_IDENTITY_CENSUS_COMPLETE",
+  "study": "NEU-01-G09-P01"
+}

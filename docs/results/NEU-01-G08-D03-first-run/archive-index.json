@@ -1,0 +1,42 @@
+{
+  "study": "NEU-01-G08-D03",
+  "date": "2026-11-12",
+  "explicitly_post_result_study": true,
+  "protocol_only_commit": "795f3227641e46c972ebcfaf6aedd000c667173e",
+  "first_source_implementation_commit": "9494ab39da2b4e6635147f5ae019b028968e4491",
+  "first_source_workflow_run_id": 43337338166,
+  "first_source_job_id": 131596738298,
+  "first_source_workflow_conclusion": "success",
+  "first_source_attempt_number": 1,
+  "passing_pre_source_synthetic_tests": 6,
+  "full_regression_at_original_source_commit": {
+    "run_id": 43337338217,
+    "python_311_passed": 968,
+    "python_312_passed": 968
+  },
+  "original_artifact": {
+    "id": 13997791342,
+    "zip_sha256_reported_by_github": "9499441ec1ab49454f9eb053c1d3103a232265040f86cda6b0ef71b6e69bdf96"
+  },
+  "first_original_audit_json": {
+    "path": "docs/results/NEU-01-G08-D03-first-run/audit.json",
+    "bytes": 1865,
+    "sha256": "0a20ff8636afd7c90057fbd852c55864fd6192b9094dc7310680f40557e54e46",
+    "verified": "Original first Actions artifact independently downloaded; member audit.json 1865 bytes SHA256 matched original source job sha256sum."
+  },
+  "old_archives_pinned": [
+    "G04",
+    "G05",
+    "G07-P01",
+    "G07-D02",
+    "G08-P01",
+    "G08-D02"
+  ],
+  "scientific_limits": [
+    "One original publicly distributed sub-02/session1/eyesclosed pair only, not five other pairs.",
+    "Comparison is across exact widened float32 native numbers and EEGLAB float64, not identical file bytes.",
+    "Causal processing chronology and original acquisition history not inferred.",
+    "Reversed 61-channel control leaves the center channel in place, accounting for at least 150000 controlled matches.",
+    "No independent neural outcome, clinical relevance, thermodynamics or universal law."
+  ]
+}

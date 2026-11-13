@@ -1,0 +1,42 @@
+{
+  "study": "NEU-01-G08-D02",
+  "date": "2026-11-12",
+  "protocol_only_commit": "a5f5dd11d8ed95d618ca718bb7b9eec9ea32664a",
+  "first_pre_source_test_failure": {
+    "workflow_run_id": 43336398552,
+    "implementation_commit": "cbda4f544493c90234a8b2ea9266ed2fb7282cd5",
+    "status": "TEST_FAILURE_BEFORE_SOURCE",
+    "test_name": "test_shared_gain_exact_common_reference_even_with_time_varying_offsets",
+    "reason": "Synthetic gain=3 demands ratio 2/3, not >1; actual algorithm returned correct 2/3",
+    "original_source_access_attempted": false,
+    "regression_run_failed": 43336398645
+  },
+  "dated_pre_source_assertion_fix_commit": "03cdc3e6083518996c6eb98602e23b126937b59b",
+  "first_real_source_workflow_run_id": 43336512537,
+  "first_real_source_workflow_job_id": 131593937975,
+  "first_real_source_code_commit": "03cdc3e6083518996c6eb98602e23b126937b59b",
+  "first_source_outcome": "G08_D02_RESIDUAL_CENSUS_COMPLETE",
+  "passing_pre_source_synthetic_tests": 7,
+  "original_artifact": {
+    "id": 13997710715,
+    "zip_sha256_reported_by_github": "6e9fdea0175699338fc44bf4ddb4a86019b89025080ca032d849020c57a12af3"
+  },
+  "first_original_audit_json": {
+    "path": "docs/results/NEU-01-G08-D02-first-run/audit.json",
+    "bytes": 2332,
+    "sha256": "a0fe888346e76de66672b41aa5634d45a5798a56633f7fd551d06de5747ae0a8",
+    "verified": "Downloaded original Actions artifact ZIP, independently rehashed exact audit.json and compared original job sha256sum."
+  },
+  "full_regression_at_first_source_commit": {
+    "run_id": 43336512543,
+    "python_311_passed": 958,
+    "python_312_passed": 958
+  },
+  "nonclaims": [
+    "The two 9.15M-value original and derivative arrays were not tested for direct elementwise equality in D02.",
+    "Exact zero projected Frobenius residual with single gain1 implies no detected difference after per-frame mean projection, not a uniquely identified publisher workflow.",
+    "Derivative native equality and zero/integer counts match original for this one source, not a new human population or three-subject replication.",
+    "One earlier workflow failed a synthetic assertion before any original source read; preserved for audit.",
+    "No clinical, thermodynamic or physics consequence."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "derivative_native_census": {
+    "exact_zero_values": 5923,
+    "native_integer_nonzero_equal_pairs": 13008,
+    "native_integer_nonzero_samples": 912943,
+    "native_noninteger_nonzero_equal_pairs": 117296,
+    "native_nonzero_samples": 9144077,
+    "nonzero_equal_adjacent": 130304,
+    "total_native_values": 9150000,
+    "within_channel_equal_adjacent": 130491,
+    "zero_zero_equal_adjacent": 187
+  },
+  "globally_projected_model": {
+    "fit_is_single_global_scalar": true,
+    "fitted_gain_explained_projected_energy": 1.0,
+    "fitted_gain_max_abs_projected_error_native": 0.0,
+    "fitted_gain_relative_frobenius_residual": 0.0,
+    "fixed_500_frame_shift_same_gain_residual": 0.4493749669080816,
+    "fixed_channel_reversal_same_gain_residual": 1.5403313440617474,
+    "fixed_gain_one_max_abs_projected_error_native": 0.0,
+    "fixed_gain_one_relative_frobenius_residual": 0.0,
+    "physical_units_calibration_verified": false,
+    "projected_source_amplitudes_published": false,
+    "shared_least_squares_gain": 1.0,
+    "source_processing_causality_established": false
+  },
+  "neural_population_or_thermodynamics_claim": false,
+  "one_original_subject_state": "sub-02/session1/eyesclosed",
+  "original_G05_archive_sha256": "9dbf40942373aa5ec3fa9f7959b4442b9da96003c01090f76d5a4507639a21d4",
+  "original_G08_archive_sha256": "18950086a3e0220dfc83c82210a5a84da9ad28d00e224fcdc7ac969aa842025b",
+  "original_binary_uploaded": false,
+  "posthoc_after_original_G08_P01_pearson_one": true,
+  "protocol_commit": "a5f5dd11d8ed95d618ca718bb7b9eec9ea32664a",
+  "root_census_reconciles_with_G05": true,
+  "root_native_census": {
+    "exact_zero_values": 5923,
+    "native_integer_nonzero_equal_pairs": 13008,
+    "native_integer_nonzero_samples": 912943,
+    "native_noninteger_nonzero_equal_pairs": 117296,
+    "native_nonzero_samples": 9144077,
+    "nonzero_equal_adjacent": 130304,
+    "total_native_values": 9150000,
+    "within_channel_equal_adjacent": 130491,
+    "zero_zero_equal_adjacent": 187
+  },
+  "source_derivative_sha256": "2aa539bdbc6f8061865c029ba7b6d069383c52c4a622254e0c3fa2dbb4f11359",
+  "source_original_root_sha256": "9c9f8c321482c71657047e99a1c259aaa753bb3b5fbe09e392a06b33d8d6dacd",
+  "source_physical_gain_validated": false,
+  "status": "G08_D02_RESIDUAL_CENSUS_COMPLETE",
+  "study": "NEU-01-G08-D02"
+}

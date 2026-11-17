@@ -1,0 +1,56 @@
+name: RP-U005 First Frozen Functional Backlog Study
+
+on:
+  push:
+    branches:
+      - research/rp-u005-functional-backlog-20261117
+    paths:
+      - .github/workflows/rp-u005-first-run.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u005-first-frozen-original-study
+  cancel-in-progress: false
+
+jobs:
+  first_original_eight_worlds:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout immutable registered study and verified source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check protocol precedes implementation and approved test-source ancestry
+        run: |
+          git merge-base --is-ancestor ef5c45a815bbd1fd496b481cc0cfee5c1f368402 "$GITHUB_SHA"
+          git merge-base --is-ancestor 99169cc8d8476188c9a5744cc9cb247a670a596f "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U005-P01.md
+          test ! -e docs/results/RP-U005-P01-first-run/audit.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install declared test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Before the first original audit rerun frozen adversarial source tests
+        run: python -m pytest -q tests/test_rp_u005_functional_backlog.py
+      - name: Execute exactly eight registered worlds with independently matched service oracles
+        run: python -m experiments.rp_u005_functional_backlog
+      - name: Hash original first-run aggregate even on failed study gate
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U005-P01-first-run/audit.json ]; then
+            wc -c docs/results/RP-U005-P01-first-run/audit.json
+            sha256sum docs/results/RP-U005-P01-first-run/audit.json
+          fi
+      - name: Preserve original eight-world outcome without replacing it
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u005-first-synthetic-backlog-aggregate-only
+          path: docs/results/RP-U005-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

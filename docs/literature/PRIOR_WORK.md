@@ -132,3 +132,15 @@ A genuine novelty review requires claim-by-claim searches in network control, st
 - Klusáček, D. and Parák, B. (2017), *Analysis of Mixed Workloads from Shared Cloud Infrastructure*, Job Scheduling Strategies for Parallel Processing. Acknowledge CERIT-SC and the Czech National Distributed Infrastructure MetaCentrum, as the publisher requests.
 - [Parallel Workloads Archive standard 18-column SWF definitions](https://www.cs.huji.ac.il/labs/parallel/workload/swf.html). Original JSSPP server response may carry a nonsemantic Content-Type; byte contents, not filename/MIME, determine whether the file is SWF text.
 - Original RP-E011-D01 ALCF attempt remained `SOURCE_ACCESS_BLOCKED`; it is not scientifically equivalent to a failed predictor, nor is this JSSPP source a retry of its frozen experiment.
+
+## RP-U005: structural restoration versus service backlog (17 November 2026)
+
+The RP-U005-P01 experiment is a deliberately finite toy queue/service graph. Previously developed network resilience work already differentiates recovering paths or physical assets from recovering throughput, queue delay, availability and delivered demand. Nothing in this section supports a new discovery-priority claim.
+
+- *Recovery patterns and physics of the network* (2021), PLOS ONE, https://doi.org/10.1371/journal.pone.0245396. The published study explicitly relates link-restoration sequences to delivered network demand, not connectivity alone.
+- *Sequencing post-disruption concurrent restoration via a network flow approach* (2024), Transportation Research Part D 133, article 104234, https://www.sciencedirect.com/science/article/abs/pii/S1361920924001913. Flow-based decisions during restoration are established prior art.
+- *Enhancing Network Failure Mitigation with Performance-Aware Ranking* (NSDI 2025), https://www.usenix.org/system/files/nsdi25-namyar.pdf. End-to-end flow performance as an operational target in real incident responses predates RP-U005.
+- Carlos Pedroso and Aldri Santos (20 November 2025), *A Survey on Faults and Vulnerabilities in Network Topological Connectivity: Logical and Physical Perspectives*, ACM Computing Surveys, DOI https://doi.org/10.1145/3769668. The survey discusses topology failures and effects including packet loss, delays and availability.
+- Classical nonnegative discrete queue conservation is used as a **stipulated abstract model**, not introduced as new queuing theory. The specific frozen eight-world arithmetic and Lean statements are a transparent illustration of its consequences under a synthetic structural capacity mapping.
+
+See the independently archived first run at `docs/results/RP-U005-P01-first-run/audit.json` and its explicit evidence limits in `docs/results/RP-U005-P01.md`.

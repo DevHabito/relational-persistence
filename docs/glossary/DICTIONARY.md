@@ -90,3 +90,19 @@ as confirmed or falsified by this comparison.
 ## Versioning
 
 New meanings require a new protocol and documented migration, not retroactive edits to test inputs. A different operationalization can be scientifically legitimate, but it is a different hypothesis until a linking theorem is proved.
+
+## RP-U005 finite recovery and structural service vocabulary
+
+| Term | Bounded operational definition | What it does not establish |
+|---|---|---|
+| Structural route F1 | A Boolean source-to-destination path in the four-node toy network at each tick | Application throughput, task completion or recovery |
+| Structural redundancy F2 | Two internally vertex-disjoint source-to-destination routes in the same toy network | Sufficient spare service to eliminate historical backlog |
+| Abstract service capacity c(t) | Declared 1+F2 unit job-slots per model tick | Independent measurement of physical capacity or link latency |
+| Exogenous arrivals a(t) | Fixed externally specified 0,1,2,3 integer jobs entering the service at a tick | Shannon entropy, subjective demand, patient workload or population frequency |
+| End-of-tick backlog q(t+1) | Remaining FIFO unit jobs after fixed arrivals and bounded service in one tick | A property of topology alone, or unmeasured continuous-time occupancy |
+| Delivered jobs d(t) | Number of uniquely identified unit jobs removed by the FIFO service that tick | Real packet measurements or medical response |
+| Two-sample recovery endpoint | Second of two successive end-of-tick queue observations equal to zero, both after graph restoration | Continuous zero backlog between observations; universal resilience |
+| Right-censoring | No qualifying two-sample interval before the finite horizon t=11 | A mathematical impossibility of ever recovering |
+| Backlog state as memory | Jobs accumulated under the earlier failure/arrival history, not inferable from topology and future arrivals alone | A derivation of physical time emergence or brain identity |
+
+This vocabulary belongs solely to RP-U005-P01; it does not retroactively change RP-U004 F1/F2, RP-E004 trial timing, or other studies.

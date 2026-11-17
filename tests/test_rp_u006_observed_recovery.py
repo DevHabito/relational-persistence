@@ -57,7 +57,7 @@ def test_service_rejects_duplicate_submission_and_shutdown_with_work(tmp_path):
         state = svc.GatedService(tmp_path / "events.jsonl")
         assert (await state.command({"op": "batch", "count": 4}))["accepted"] == 4
         with pytest.raises(svc.ServiceProtocolError, match="REPEATED"):
-            await state.command({"op": "batch", "count": 1)
+            await state.command({"op": "batch", "count": 1})
         with pytest.raises(svc.ServiceProtocolError, match="UNFINISHED"):
             await state.command({"op": "shutdown"})
         assert state.snapshot()["queued"] == 4

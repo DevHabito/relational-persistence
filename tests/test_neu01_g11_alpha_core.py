@@ -39,9 +39,10 @@ def test_shuffled_epochs_preserve_each_sensor_power_and_are_deterministic():
     shuffled = g.epoch_shuffled(c, seed=1101)
     shuffled_again = g.epoch_shuffled(c, seed=1101)
     assert np.array_equal(shuffled, shuffled_again)
-    assert np.array_equal(
+    assert np.allclose(
         np.sum(np.abs(c) ** 2, axis=(0, 1)),
-        np.sum(np.abs(shuffled) ** 2, axis=(0, 1))
+        np.sum(np.abs(shuffled) ** 2, axis=(0, 1)),
+        rtol=1e-12, atol=0.0,
     )
     assert not np.array_equal(c, shuffled)
 

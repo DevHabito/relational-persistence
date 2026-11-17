@@ -89,10 +89,11 @@ def epoch_shuffled(coeff: np.ndarray, *, seed: int) -> np.ndarray:
     for channel in range(CHANNELS):
         order = rng.permutation(EPOCHS)
         out[:, :, channel] = coeff[order, :, channel]
-    # A multiset-preserving shuffle must not change any channel's power.
+    # The shuffle conserves power mathematically. Float summation is order-sensitive;
+    # allow only roundoff-scale relative differences, never material power changes.
     original = np.sum(np.abs(coeff) ** 2, axis=(0, 1))
     shuffled = np.sum(np.abs(out) ** 2, axis=(0, 1))
-    if not np.array_equal(original, shuffled):
+    if not np.allclose(original, shuffled, rtol=1e-12, atol=0.0):
         raise MeasurementIneligible("G11_EPOCH_SHUFFLE_CHANGED_CHANNEL_POWER")
     return out
 
@@ -105,7 +106,7 @@ def compute_three_features(coeff: np.ndarray, *,
     graph, powers = _power_and_graph(coeff)
     shuffled = epoch_shuffled(coeff, seed=1101 + 10 * participant_number + session)
     null_graph, null_powers = _power_and_graph(shuffled)
-    if not np.array_equal(powers, null_powers):
+    if not np.allclose(powers, null_powers, rtol=1e-12, atol=0.0):
         raise MeasurementIneligible("G11_POWER_CHANGED_BY_NEGATIVE_CONTROL")
     power_features = np.log(powers)
     if not bool(np.all(np.isfinite(power_features))):

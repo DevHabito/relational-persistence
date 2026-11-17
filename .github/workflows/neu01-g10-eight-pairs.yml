@@ -1,0 +1,58 @@
+name: NEU-01-G10 Cross-Session Eight-Pair Publisher Identity
+
+on:
+  push:
+    branches:
+      - research/neu01-g10-cross-session-native-identity-protocol-20261117
+    paths:
+      - .github/workflows/neu01-g10-eight-pairs.yml
+      - experiments/neu01_g10_source_runner.py
+      - tests/test_neu01_g10_source_runner.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g10-first-eight-pairs-source
+  cancel-in-progress: false
+
+jobs:
+  first_original_eight_pairs:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout complete frozen G08 G09 history and G10 protocol
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require registration commit to precede source implementation
+        run: |
+          git merge-base --is-ancestor 9375cb3ccece0a431c136257f0feb43bd43721ab "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G10-P01-CROSS-SESSION-NATIVE-IDENTITY-2026-11-17.md
+          test -f tests/test_neu01_g10_pre_source.py
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install declared parser and validation dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Before all G10 source I/O execute synthetic adversarial and old IEEE gates
+        run: |
+          python -m pytest -q tests/test_neu01_g10_pre_source.py tests/test_neu01_g10_source_runner.py tests/test_neu01_g09_five_source_pairs.py tests/test_neu01_g08_d03_native_identity.py
+      - name: Authenticate and inspect all eight fixed publisher source pairs
+        run: python -m experiments.neu01_g10_source_runner
+      - name: Hash the first unmodified G10 aggregate outcome
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G10-P01-first-run/audit.json ]; then
+            wc -c docs/results/NEU-01-G10-P01-first-run/audit.json
+            sha256sum docs/results/NEU-01-G10-P01-first-run/audit.json
+          fi
+      - name: Preserve only G10 counts and source digests not waveforms
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g10-eight-pairs-first-original-aggregate-only
+          path: docs/results/NEU-01-G10-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

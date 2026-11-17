@@ -1,0 +1,57 @@
+name: NEU-01-G11 Alpha Relationship Retest on 24 Original EEG Records
+
+on:
+  push:
+    branches:
+      - research/neu01-g11-alpha-imcoh-retest-20261117
+    paths:
+      - .github/workflows/neu01-g11-alpha-retest.yml
+      - experiments/neu01_g11_source_runner.py
+      - tests/test_neu01_g11_source_runner.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g11-first-source-24-original-eyesclosed
+  cancel-in-progress: false
+
+jobs:
+  first_g11_original_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout original source chronology with prior archive
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require protocol-only G11 registration before source access
+        run: |
+          git merge-base --is-ancestor 3c86a3b89ffacfc27c5136a5d1a696a56404733d "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G11-P01-ALPHA-RELATIONAL-RETEST-2026-11-17.md
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install declared numerical dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: First run all G11 pre-source synthetic gates
+        run: |
+          python -m pytest -q tests/test_neu01_g11_alpha_core.py tests/test_neu01_g11_source_runner.py tests/test_neu01_g10_first_archive.py
+      - name: Acquire exactly 24 authenticated publisher EEGs and compare declared features
+        run: python -m experiments.neu01_g11_source_runner
+      - name: Hash the first G11 aggregate outcome whether complete or incomplete
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G11-P01-first-run/audit.json ]; then
+            wc -c docs/results/NEU-01-G11-P01-first-run/audit.json
+            sha256sum docs/results/NEU-01-G11-P01-first-run/audit.json
+          fi
+      - name: Retain hashes and aggregate similarities only never original EEG waveforms
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g11-first-original-alpha-retest-aggregate-only
+          path: docs/results/NEU-01-G11-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

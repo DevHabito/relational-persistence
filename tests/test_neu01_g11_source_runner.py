@@ -22,6 +22,8 @@ class FakeResponse(BytesIO):
 def test_frozen_manifest_has_24_distinct_sources_and_prior_archive_intact():
     runner.check_frozen_evidence()
     assert len(runner.SOURCES) == 24
+    assert all(len(x.eeg_md5) == 32 and len(x.header_md5) == 32 for x in runner.SOURCES)
+    assert next(s for s in runner.SOURCES if s.subject == "sub-18" and s.session == 3).header_md5 == "13913715b5f5e1fe671c0974a297609b"
     assert [s.subject for s in runner.SOURCES[::2]] == list(runner.SUBJECTS)
     assert len({s.eeg_md5 for s in runner.SOURCES}) == 24
     assert len({s.header_md5 for s in runner.SOURCES}) == 24

@@ -1,0 +1,462 @@
+{
+  "actual_network_edge_restoration_performed": false,
+  "addendum_sha256": "24e4a257da3000a5089bfece192abbeb386491b44a6e72e562a2095b4561248c",
+  "availability_only_MAE_seconds": 0.06672416887499999,
+  "calibrated_completion_interval_seconds": 0.012642039,
+  "calibration": {
+    "block": "calibration",
+    "calibrated_service_interval_seconds": 0.012642039,
+    "controller_log_sha256": "38736ea36fa87f5027701f3227cd30c0fcf85b6aa81e81e79ef685deafb8f3a2",
+    "event_log_sha256": "6fb5312ef3070568401bf62c8da399ef690b4455fce11159f269299230562e4d",
+    "independent_job_identity_audit": {
+      "accepted": 12,
+      "completed": 12,
+      "server_enable_ns": 54062384300
+    },
+    "monitor_log_sha256": "c1c2730d51266fb7adb19efc861791380c3de8b8a30a02b1643268ab4c722080",
+    "monitor_process_exit_code": 0,
+    "ordinal": 0,
+    "original_event_count": 38,
+    "original_monitor_samples": 15,
+    "pre_enable_outstanding": null,
+    "predictions": null,
+    "recovery_seconds": null,
+    "requested_jobs": 12,
+    "server_enable_ns": 54062384300,
+    "server_process_exit_code": 0,
+    "source_trial_valid": true
+  },
+  "diagnostic": [
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "fd4afc4e12ab6645a413404f828d76001ae7f14d3e755c9138d53a5986965b42",
+      "event_log_sha256": "5555eb432b11d72692cddd74a2ab47aab774a59265d36b056f3f863e61961915",
+      "independent_job_identity_audit": {
+        "accepted": 8,
+        "completed": 8,
+        "server_enable_ns": 54625432593
+      },
+      "monitor_log_sha256": "a930c822f81b03ab780ce0bab5e8c206021ab46cd2d19c19468b1fdce683dc01",
+      "monitor_process_exit_code": 0,
+      "ordinal": 1,
+      "original_event_count": 26,
+      "original_monitor_samples": 16,
+      "pre_enable_outstanding": 8,
+      "predictions": null,
+      "recovery_seconds": 0.136478759,
+      "requested_jobs": 8,
+      "server_enable_ns": 54625432593,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "f4e2dcdca3fa65ee0d011377e95e1aadbb7ae0ed19fb1d283b4d24ad93c4c7b7",
+      "event_log_sha256": "1d9678c7a93aaf79472054177bc881547ea6a8253d88a9e9dc647bfdffba2ae0",
+      "independent_job_identity_audit": {
+        "accepted": 16,
+        "completed": 16,
+        "server_enable_ns": 55101396737
+      },
+      "monitor_log_sha256": "cdb4f9f9b387f97dad5cd7364f15f153386d866dae0ee29408cad596318435b2",
+      "monitor_process_exit_code": 0,
+      "ordinal": 2,
+      "original_event_count": 50,
+      "original_monitor_samples": 21,
+      "pre_enable_outstanding": 16,
+      "predictions": null,
+      "recovery_seconds": 0.241523842,
+      "requested_jobs": 16,
+      "server_enable_ns": 55101396737,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "d3dfeb29102d0efec18d1dfce5c8b3c592fe8f02e484f865a196a3a5df3a7da6",
+      "event_log_sha256": "ab4fb85347caf53f04828429a4ed727242da02c8e06fb06530c7fc9a8b6fec50",
+      "independent_job_identity_audit": {
+        "accepted": 24,
+        "completed": 24,
+        "server_enable_ns": 55682312250
+      },
+      "monitor_log_sha256": "d97431d12240954c3c4d3aa281af6db295f5888b2a2153cc883db3c40117dfff",
+      "monitor_process_exit_code": 0,
+      "ordinal": 3,
+      "original_event_count": 74,
+      "original_monitor_samples": 26,
+      "pre_enable_outstanding": 24,
+      "predictions": null,
+      "recovery_seconds": 0.342740185,
+      "requested_jobs": 24,
+      "server_enable_ns": 55682312250,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "e0c817cae7bc4f99e86cecdc7c34a56f454fc9eb294ea3ff52fff7235c773a82",
+      "event_log_sha256": "13e2ee6628fea114617de63111e5f11f8ef1bf293f6a03ca4fc651186a2c8cbc",
+      "independent_job_identity_audit": {
+        "accepted": 8,
+        "completed": 8,
+        "server_enable_ns": 56362237035
+      },
+      "monitor_log_sha256": "110d36825694f229403fd684010c31db4ddb8b8216d079830577c25e0c9d1834",
+      "monitor_process_exit_code": 0,
+      "ordinal": 4,
+      "original_event_count": 26,
+      "original_monitor_samples": 16,
+      "pre_enable_outstanding": 8,
+      "predictions": null,
+      "recovery_seconds": 0.136098301,
+      "requested_jobs": 8,
+      "server_enable_ns": 56362237035,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "e6b3a0e3ae3a20948600e70ab6e2d0b8462f3cc352e4419f47a30420f8a4eb14",
+      "event_log_sha256": "a96856b08b5f4cab0f984540b528a5492d159c4702b6f200d3a84e559c16f419",
+      "independent_job_identity_audit": {
+        "accepted": 16,
+        "completed": 16,
+        "server_enable_ns": 56835300701
+      },
+      "monitor_log_sha256": "d1407eddd28c40be4f9baeb7d0a6a42e9e8fe8607e7a04a8fecf2e531e28356d",
+      "monitor_process_exit_code": 0,
+      "ordinal": 5,
+      "original_event_count": 50,
+      "original_monitor_samples": 21,
+      "pre_enable_outstanding": 16,
+      "predictions": null,
+      "recovery_seconds": 0.238587261,
+      "requested_jobs": 16,
+      "server_enable_ns": 56835300701,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "diagnostic",
+      "controller_log_sha256": "d5120774d33afa43db66b12ab096f350f461b5e4cbf27cbbcd36fcf5443f25ca",
+      "event_log_sha256": "b7816d0e33a86a6220a4bb200eae7fdd8e452db15142008eae7bc71d4c5c7cc5",
+      "independent_job_identity_audit": {
+        "accepted": 24,
+        "completed": 24,
+        "server_enable_ns": 57411230328
+      },
+      "monitor_log_sha256": "90b3749b0dc61dae86a363ce01d5fc3618ebdb590f97ce0c7d01036f5283a105",
+      "monitor_process_exit_code": 0,
+      "ordinal": 6,
+      "original_event_count": 74,
+      "original_monitor_samples": 26,
+      "pre_enable_outstanding": 24,
+      "predictions": null,
+      "recovery_seconds": 0.340668596,
+      "requested_jobs": 24,
+      "server_enable_ns": 57411230328,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    }
+  ],
+  "diagnostic_order": [
+    8,
+    16,
+    24,
+    8,
+    16,
+    24
+  ],
+  "first_workflow_run_id": "44203138441",
+  "fixed_calibration_jobs": 12,
+  "heldout": [
+    {
+      "block": "holdout",
+      "controller_log_sha256": "a9efa261854ab02576be7ba75f79b9e9066978e9988f5e55b06bcf0300254c65",
+      "event_log_sha256": "71990affcafb8ec3742b0402309a057e28c3fd26173cc9ca13115ad9ffbffba7",
+      "independent_job_identity_audit": {
+        "accepted": 7,
+        "completed": 7,
+        "server_enable_ns": 58089377805
+      },
+      "monitor_log_sha256": "51354833f8f4e97460dca5e3020e23be3d899b10ec65752fe9e69462a25d5602",
+      "monitor_process_exit_code": 0,
+      "ordinal": 1,
+      "original_event_count": 23,
+      "original_monitor_samples": 15,
+      "pre_enable_outstanding": 7,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.12849427300000002
+      },
+      "recovery_seconds": 0.116565584,
+      "requested_jobs": 7,
+      "server_enable_ns": 58089377805,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "f3a61cfb39b7de60543c1331427544af9089b73fe07ead42f0bb404651e9bca4",
+      "event_log_sha256": "24bf44e3a93bd7d10b531552456110afeddd592dd49033c801849d03310cf89a",
+      "independent_job_identity_audit": {
+        "accepted": 11,
+        "completed": 11,
+        "server_enable_ns": 58543174407
+      },
+      "monitor_log_sha256": "4a9df8dd25f489c6e6b00f4717004c0df7bd93c020b4e9fcdcb014964d82d276",
+      "monitor_process_exit_code": 0,
+      "ordinal": 2,
+      "original_event_count": 35,
+      "original_monitor_samples": 18,
+      "pre_enable_outstanding": 11,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.17906242900000002
+      },
+      "recovery_seconds": 0.1773202,
+      "requested_jobs": 11,
+      "server_enable_ns": 58543174407,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "2e683f65620fe3d9acf222aeac040ca9e4bd254d5dbc5ea355407e2d1927c12e",
+      "event_log_sha256": "9553281fb6a8ed4fa5d1320d8eb6157b3bf7c5244d8bb960a6e2343f1540f7a0",
+      "independent_job_identity_audit": {
+        "accepted": 15,
+        "completed": 15,
+        "server_enable_ns": 59058367163
+      },
+      "monitor_log_sha256": "bb8df8711da5db22f08813b2c10c9b17744d9a8ef427903fca40be689c703622",
+      "monitor_process_exit_code": 0,
+      "ordinal": 3,
+      "original_event_count": 47,
+      "original_monitor_samples": 20,
+      "pre_enable_outstanding": 15,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.22963058500000003
+      },
+      "recovery_seconds": 0.219717756,
+      "requested_jobs": 15,
+      "server_enable_ns": 59058367163,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "e60a55fc7af4c355f93b8cfc8658bdce874e43b961ad9fbe756f3a2ec9507c69",
+      "event_log_sha256": "4a131e928ad9368131ab071ec262c5b05c49cb0e8244808449cc8badfcb25379",
+      "independent_job_identity_audit": {
+        "accepted": 19,
+        "completed": 19,
+        "server_enable_ns": 59615394890
+      },
+      "monitor_log_sha256": "5b90a7534d8c2e8b6ed1dcca167ec20994782f58f52adc372c9f44944c4f78f4",
+      "monitor_process_exit_code": 0,
+      "ordinal": 4,
+      "original_event_count": 59,
+      "original_monitor_samples": 23,
+      "pre_enable_outstanding": 19,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.28019874100000003
+      },
+      "recovery_seconds": 0.280423689,
+      "requested_jobs": 19,
+      "server_enable_ns": 59615394890,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "10d2759c48f1bb7aad0222084b11a3bf3d2ed6ead4c2e1b19ce2042dd84a9e28",
+      "event_log_sha256": "0f92df57c0e38d0750fba436b3961a3032819e6f33e02d4f0cb3215e8ff575a2",
+      "independent_job_identity_audit": {
+        "accepted": 23,
+        "completed": 23,
+        "server_enable_ns": 60234022239
+      },
+      "monitor_log_sha256": "32fd5261634cb40e99be6d9c03c6173125b544f1101ffd579fe032d254fa170c",
+      "monitor_process_exit_code": 0,
+      "ordinal": 5,
+      "original_event_count": 71,
+      "original_monitor_samples": 25,
+      "pre_enable_outstanding": 23,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.330766897
+      },
+      "recovery_seconds": 0.320651174,
+      "requested_jobs": 23,
+      "server_enable_ns": 60234022239,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "df530a6ec9c352adc8422a76523487b4f2cd57b0dcb9b2f5399fe1e41e07e905",
+      "event_log_sha256": "a69036d6eea851f0a51e37d6bc5bac5088e45cdd4501f0ce4d62f2e5466db5b5",
+      "independent_job_identity_audit": {
+        "accepted": 9,
+        "completed": 9,
+        "server_enable_ns": 60892317986
+      },
+      "monitor_log_sha256": "cc7de99185482dfe6cc28e52cb279984c3e63e9a9579a8d483438d6cec1a38ac",
+      "monitor_process_exit_code": 0,
+      "ordinal": 6,
+      "original_event_count": 29,
+      "original_monitor_samples": 17,
+      "pre_enable_outstanding": 9,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.153778351
+      },
+      "recovery_seconds": 0.136576188,
+      "requested_jobs": 9,
+      "server_enable_ns": 60892317986,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "6f71bdae4b98493c5929593be0acf78a1d13dfb8f48afdb6b6e5aa6ff82a8f83",
+      "event_log_sha256": "9354dc700fa934dbe66f0ac5129d37a9f6e3809cd5b27bf2ff6fcbef9c2c33f0",
+      "independent_job_identity_audit": {
+        "accepted": 21,
+        "completed": 21,
+        "server_enable_ns": 61386417747
+      },
+      "monitor_log_sha256": "1f70de6052cb0f585dea35abb2ad850f6ebe67c54fbb6d4510802deba7577002",
+      "monitor_process_exit_code": 0,
+      "ordinal": 7,
+      "original_event_count": 65,
+      "original_monitor_samples": 24,
+      "pre_enable_outstanding": 21,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.305482819
+      },
+      "recovery_seconds": 0.29995871,
+      "requested_jobs": 21,
+      "server_enable_ns": 61386417747,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    },
+    {
+      "block": "holdout",
+      "controller_log_sha256": "7c554fb1931bb7edab8a61d1180d5f0408c1e9edf25826f30072a89f6cce5527",
+      "event_log_sha256": "7f9086a458000c13fbf4ec604e45c4bd8644b531dbe25d81c3de937f16e41ea9",
+      "independent_job_identity_audit": {
+        "accepted": 13,
+        "completed": 13,
+        "server_enable_ns": 62023382544
+      },
+      "monitor_log_sha256": "9fe6b216e19363422998d99cab538b5097db9c66d50f1b707fd17ffd4f98c317",
+      "monitor_process_exit_code": 0,
+      "ordinal": 8,
+      "original_event_count": 41,
+      "original_monitor_samples": 19,
+      "pre_enable_outstanding": 13,
+      "predictions": {
+        "availability_only_seconds": 0.2400555515,
+        "outstanding_aware_seconds": 0.204346507
+      },
+      "recovery_seconds": 0.197171597,
+      "requested_jobs": 13,
+      "server_enable_ns": 62023382544,
+      "server_process_exit_code": 0,
+      "source_trial_valid": true
+    }
+  ],
+  "heldout_trial_count": 8,
+  "holdout": [
+    {
+      "availability_only_absolute_error": 0.12348996749999999,
+      "outstanding_aware_absolute_error": 0.01192868900000002,
+      "recovery_seconds": 0.116565584,
+      "requested_jobs": 7,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.06273535149999998,
+      "outstanding_aware_absolute_error": 0.0017422290000000118,
+      "recovery_seconds": 0.1773202,
+      "requested_jobs": 11,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.020337795500000005,
+      "outstanding_aware_absolute_error": 0.00991282900000004,
+      "recovery_seconds": 0.219717756,
+      "requested_jobs": 15,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.040368137499999984,
+      "outstanding_aware_absolute_error": 0.00022494799999994708,
+      "recovery_seconds": 0.280423689,
+      "requested_jobs": 19,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.08059562249999999,
+      "outstanding_aware_absolute_error": 0.010115723000000021,
+      "recovery_seconds": 0.320651174,
+      "requested_jobs": 23,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.1034793635,
+      "outstanding_aware_absolute_error": 0.01720216300000002,
+      "recovery_seconds": 0.136576188,
+      "requested_jobs": 9,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.059903158500000026,
+      "outstanding_aware_absolute_error": 0.005524108999999999,
+      "recovery_seconds": 0.29995871,
+      "requested_jobs": 21,
+      "state_forecast_strictly_better": true
+    },
+    {
+      "availability_only_absolute_error": 0.04288395449999999,
+      "outstanding_aware_absolute_error": 0.0071749100000000066,
+      "recovery_seconds": 0.197171597,
+      "requested_jobs": 13,
+      "state_forecast_strictly_better": true
+    }
+  ],
+  "holdout_order": [
+    7,
+    11,
+    15,
+    19,
+    23,
+    9,
+    21,
+    13
+  ],
+  "independent_hardware_sensors": false,
+  "new_physical_or_biological_law_proven": false,
+  "original_trials_valid": true,
+  "outstanding_aware_MAE_seconds": 0.007978200000000008,
+  "physical_network_repair_measured": false,
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "pre_source_correction_commit": "376eb4de39990d22112f80606a2fbe1d765e1163",
+  "protocol_commit": "b99e505d99d25bed57e2308029947407b2668777",
+  "protocol_sha256": "2cdbe1b1dc40d5d9c8ba6f9094ce64563aff4ec99efe53c5c8c8f07b46c1652b",
+  "python_version": "3.11.18",
+  "registered_gain_supported": true,
+  "relative_MAE_reduction": 0.8804301329710642,
+  "software_only_one_host": true,
+  "source_commit": "967909da3c1724cf23bd6226ede56d38b02cfd8c",
+  "state_forecast_strict_wins_of_eight": 8,
+  "status": "RP_U006_EXECUTABLE_STATE_FORECAST_GAIN_WITHIN_HOST",
+  "study": "RP-U006-P01",
+  "training_median_recovery_seconds": 0.2400555515
+}

@@ -1,0 +1,25 @@
+{
+  "block": "holdout",
+  "controller_log_sha256": "df530a6ec9c352adc8422a76523487b4f2cd57b0dcb9b2f5399fe1e41e07e905",
+  "event_log_sha256": "a69036d6eea851f0a51e37d6bc5bac5088e45cdd4501f0ce4d62f2e5466db5b5",
+  "independent_job_identity_audit": {
+    "accepted": 9,
+    "completed": 9,
+    "server_enable_ns": 60892317986
+  },
+  "monitor_log_sha256": "cc7de99185482dfe6cc28e52cb279984c3e63e9a9579a8d483438d6cec1a38ac",
+  "monitor_process_exit_code": 0,
+  "ordinal": 6,
+  "original_event_count": 29,
+  "original_monitor_samples": 17,
+  "pre_enable_outstanding": 9,
+  "predictions": {
+    "availability_only_seconds": 0.2400555515,
+    "outstanding_aware_seconds": 0.153778351
+  },
+  "recovery_seconds": 0.136576188,
+  "requested_jobs": 9,
+  "server_enable_ns": 60892317986,
+  "server_process_exit_code": 0,
+  "source_trial_valid": true
+}

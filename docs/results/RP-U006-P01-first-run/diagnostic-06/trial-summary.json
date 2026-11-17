@@ -1,0 +1,22 @@
+{
+  "block": "diagnostic",
+  "controller_log_sha256": "d5120774d33afa43db66b12ab096f350f461b5e4cbf27cbbcd36fcf5443f25ca",
+  "event_log_sha256": "b7816d0e33a86a6220a4bb200eae7fdd8e452db15142008eae7bc71d4c5c7cc5",
+  "independent_job_identity_audit": {
+    "accepted": 24,
+    "completed": 24,
+    "server_enable_ns": 57411230328
+  },
+  "monitor_log_sha256": "90b3749b0dc61dae86a363ce01d5fc3618ebdb590f97ce0c7d01036f5283a105",
+  "monitor_process_exit_code": 0,
+  "ordinal": 6,
+  "original_event_count": 74,
+  "original_monitor_samples": 26,
+  "pre_enable_outstanding": 24,
+  "predictions": null,
+  "recovery_seconds": 0.340668596,
+  "requested_jobs": 24,
+  "server_enable_ns": 57411230328,
+  "server_process_exit_code": 0,
+  "source_trial_valid": true
+}

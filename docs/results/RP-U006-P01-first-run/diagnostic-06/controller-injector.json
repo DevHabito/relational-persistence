@@ -1,0 +1,43 @@
+{
+  "batch_acknowledged": {
+    "accepted": 24,
+    "first_id": 1,
+    "last_id": 24
+  },
+  "batch_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "block": "diagnostic",
+  "controller_enable_ack_ns": 57411356908,
+  "enabled_acknowledged": {
+    "enabled": true,
+    "server_enable_ns": 57411230328
+  },
+  "ordinal": 6,
+  "pre_enable_outstanding": 24,
+  "prediction_created_ns": 57411404329,
+  "predictions": null
+}

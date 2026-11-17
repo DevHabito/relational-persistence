@@ -1,0 +1,37 @@
+{
+  "batch_acknowledged": {
+    "accepted": 15,
+    "first_id": 1,
+    "last_id": 15
+  },
+  "batch_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "block": "holdout",
+  "controller_enable_ack_ns": 59058500817,
+  "enabled_acknowledged": {
+    "enabled": true,
+    "server_enable_ns": 59058367163
+  },
+  "ordinal": 3,
+  "pre_enable_outstanding": 15,
+  "prediction_created_ns": 59058553555,
+  "predictions": {
+    "availability_only_seconds": 0.2400555515,
+    "outstanding_aware_seconds": 0.22963058500000003
+  }
+}

@@ -1,0 +1,62 @@
+name: RP-U006 First Source Gated-TCP Service Recovery
+
+on:
+  push:
+    branches:
+      - research/rp-u006-observed-service-recovery-20261117
+    paths:
+      - .github/workflows/rp-u006-original-service.yml
+      - experiments/rp_u006_observed_recovery.py
+      - tests/test_rp_u006_observed_recovery.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u006-first-executable-15-trial-service
+  cancel-in-progress: false
+
+jobs:
+  first_original_executable_measurement:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable protocol, addendum and previously approved offline source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Enforce before-source registration and fail-closed unique original outcome
+        run: |
+          git merge-base --is-ancestor b99e505d99d25bed57e2308029947407b2668777 "$GITHUB_SHA"
+          git merge-base --is-ancestor 376eb4de39990d22112f80606a2fbe1d765e1163 "$GITHUB_SHA"
+          git merge-base --is-ancestor 7e4adb5069e7178b79328082ece8965433817892 "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U006-P01.md
+          test -f docs/preregistration/RP-U006-P01-D01-PRE-SOURCE-CALIBRATION-CORRECTION.md
+          test ! -e docs/results/RP-U006-P01-first-run/summary.json
+      - name: Configure Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned repository dependency declarations
+        run: python -m pip install -e '.[dev]'
+      - name: Require all U006 adversarial synthetic and original-role tests before data access
+        run: |
+          python -m pytest -q tests/test_rp_u006_forecast_core.py tests/test_rp_u006_observed_recovery.py tests/test_rp_u005_first_archive.py
+      - name: First original run with 15 fresh server and monitor processes
+        run: python -m experiments.rp_u006_observed_recovery
+      - name: Archive complete first-outcome source identities and failures
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U006-P01-first-run/summary.json ]; then
+            wc -c docs/results/RP-U006-P01-first-run/summary.json
+            sha256sum docs/results/RP-U006-P01-first-run/summary.json
+            find docs/results/RP-U006-P01-first-run -type f | sort | wc -l
+          fi
+      - name: Retain every first-source role trace without selective omission
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u006-first-real-executable-service-role-logs
+          path: docs/results/RP-U006-P01-first-run/
+          if-no-files-found: warn
+          retention-days: 90

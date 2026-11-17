@@ -150,7 +150,7 @@ def test_zero_job_sham_and_repeated_batch_prevented(tmp_path: Path):
         with pytest.raises(svc.ServiceProtocolError, match="GATE_ALREADY"):
             await state.command({"op": "enable"})
         with pytest.raises(svc.ServiceProtocolError, match="INVALID_OR_REPEATED"):
-            await state.command({"op": "batch", "count": -1)
+            await state.command({"op": "batch", "count": -1})
     asyncio.run(demonstrate())
 
 

@@ -1,0 +1,811 @@
+{
+  "all_eight_purposively_preselected_pairs_included": true,
+  "clinical_or_neural_state_outcome_tested": false,
+  "count_directly_different": 0,
+  "count_directly_identical": 8,
+  "first_original_source_rows": [
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "fc02993d6f0a00dd31c8d865295399eb41b432fcc9214829f9f676b12ea77a55",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 20717,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 155624,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "fc02993d6f0a00dd31c8d865295399eb41b432fcc9214829f9f676b12ea77a55"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 2,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "04730b7db79c837a8be67bf914f3ee782f4c92188dfa63a6434d1713f4417b7b"
+        },
+        "header": {
+          "bytes": 1122,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "60a4c98733271f8bbf42c87cda8b74e3ac90b550dacf2d7c287ede562080a86b"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "93461628b534a536bc5060a8424dbc9a08a0630fb41a805057d1ca07592856c2"
+        },
+        "sidecar": {
+          "bytes": 593,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "1b40f17da5393f99652fabc8015bbd9f02503923470eb5ddf7aa3bd1e7b86efd"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-05",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "ca15a5c3b2ff659f70cdef1dfafa730a5bccf82dd9fc8ca02d02914744a544bb",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 0,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "ca15a5c3b2ff659f70cdef1dfafa730a5bccf82dd9fc8ca02d02914744a544bb"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 2,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "8d092e9f66dba8fdac98565fe8def54628e30cf62a4a209721c5e4132ab0833b"
+        },
+        "header": {
+          "bytes": 1118,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "4ce2d7eb70f76c3679dd50b6d6c5e705bfb01547cee2fd1a6f02c277bc620c2c"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "22bc173235d43b4dd10e4a3befd32eeca1e26988954f680758c864c81c22e77c"
+        },
+        "sidecar": {
+          "bytes": 597,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "fb6549619a968fe7044b84c5777802f8ec5e40792629313b0d4076c816859fb5"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-05",
+      "task": "eyesopen"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "755236d065e0f656e6ff67677d1fee0ccc912e659972c83f1f19fce3c34faf3b",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 21192,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 156160,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "755236d065e0f656e6ff67677d1fee0ccc912e659972c83f1f19fce3c34faf3b"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 3,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "5fa7f4a3108b4f56dd5b09b64d45b4efd12d28b2f60ed051744bded3423a23f9"
+        },
+        "header": {
+          "bytes": 1122,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "7faf013f6421697049ad46cb1aa2c0fbbcd2b92ac3f9a3b43bd8852e4f5b8cfb"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "7c66e0e75207aa01cd4df4695514bea8ff3f3b8b11bfaa081199a5b0bb32c94a"
+        },
+        "sidecar": {
+          "bytes": 593,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "1b40f17da5393f99652fabc8015bbd9f02503923470eb5ddf7aa3bd1e7b86efd"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-05",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "7da8083314e7b017e945034fcc3bd509363a3da22ad362f0de9676543bb138af",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 1,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "7da8083314e7b017e945034fcc3bd509363a3da22ad362f0de9676543bb138af"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 3,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "fcc34cb0fd5158c8b47a276a5f3b63b392f27cb074fe78e02e6eabf2e49733ff"
+        },
+        "header": {
+          "bytes": 1118,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "2dbec5f1e3d821e54fc11b3861728c6a7bab35b1a1a9fa923e6828684498e19e"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "34cd5430ccc170e4550a2c81396a196da75625397c22a61380fe3e4f19264b9d"
+        },
+        "sidecar": {
+          "bytes": 597,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "fb6549619a968fe7044b84c5777802f8ec5e40792629313b0d4076c816859fb5"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-05",
+      "task": "eyesopen"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 60,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 1,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": true,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "62c947ad029bf8239fcda55f1f1515874e077c4147443ae6bf24385b96bcad94",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 23252,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 159504,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "62c947ad029bf8239fcda55f1f1515874e077c4147443ae6bf24385b96bcad94"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 2,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "31c7258581b63f173a6962707da68fb41dc86d9c1fcecd4bb501310fed909b90"
+        },
+        "header": {
+          "bytes": 1122,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "3b2c119112c5f128ac3ea2f3a67cc69f81349c19e63c05da6f6324df16d8e40d"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "2b6e6364ccd957e8075cf833f6f3c88f21f91d9aa46ce3ad6e6e6de00a2b8091"
+        },
+        "sidecar": {
+          "bytes": 593,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "6edc6c853ca5a3e45ac9b6f1225dcd89cd2c75453bcf7be99508be294818a7c4"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-37",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 60,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 1,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": true,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "5b4fd947675f8bb6b1ac9b0a30094484b41610894774d26fa1db2dac2eb8b8e9",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 0,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "5b4fd947675f8bb6b1ac9b0a30094484b41610894774d26fa1db2dac2eb8b8e9"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 2,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "7dc3b42e186ea0ead4b6ef9ff0469eb93350f8de548b2cacb279722c5488f69c"
+        },
+        "header": {
+          "bytes": 1118,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "8d1381c4c564186cde76ea8eda50e9581763e43bf770d1f837a7f9aa614f2a86"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "b90da133ace703c578e9ff553f3f5cda6ac8703d67c927377cffd2fcddc1a84c"
+        },
+        "sidecar": {
+          "bytes": 597,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "ef8698163f942a65253a11e45560d07655de4ce25117102a828ff348a5ef4b92"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-37",
+      "task": "eyesopen"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "d96500cec0a3fff939af7614db2c4c14675bf69f0d730c249d9d7a6a0c0a5055",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 25173,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 160394,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "d96500cec0a3fff939af7614db2c4c14675bf69f0d730c249d9d7a6a0c0a5055"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 3,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "0e18ca3a919ee501ff6a82f9cf9afb96f3e2f856f730dbe4bf58a4477b3093d8"
+        },
+        "header": {
+          "bytes": 1122,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "c0be456632ac2502f0250e3113b4e6db4d5edccf9b34de9200f96786cfe822b3"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "a06058c0e093922c8e6c9713666d89c3983442be1ba27a9a2e3681fc60ce0719"
+        },
+        "sidecar": {
+          "bytes": 593,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "1b40f17da5393f99652fabc8015bbd9f02503923470eb5ddf7aa3bd1e7b86efd"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-37",
+      "task": "eyesclosed"
+    },
+    {
+      "bids_sidecar_channel_metadata": {
+        "amplifier_origin_or_preprocessing_history_proven": false,
+        "eeg_channel_count_declared": 61,
+        "eeg_reference_metadata": "FCz",
+        "misc_channel_count_declared": 0,
+        "root_channels_tsv_declares_61_EEG": true,
+        "source_sidecar_classification_disagrees_with_tsv": false,
+        "total_eeg_plus_misc": 61
+      },
+      "bids_units": {
+        "physical_scale_independently_calibrated": false,
+        "units_declared_in_bids_channels_tsv": "uV"
+      },
+      "derivative_waveform_read": true,
+      "direct_IEEE_comparison": {
+        "all_aligned_numeric_values_count": 9150000,
+        "canonical_64bit_content_digests_identical": true,
+        "derivative_double_canonical_sha256": "a6b83ebd39bdd422ae0b1cd60c3c1b0380965867c8d7ac6382d45f95599e5b70",
+        "direct_identity_status": "EXACT_WIDENED_NATIVE_ARRAYS_IDENTICAL",
+        "fixed_500_frame_shift_exact_numeric_equal_count": 2,
+        "fixed_reversed_61_channel_exact_numeric_equal_count": 150000,
+        "ieee_64bit_pattern_differ_count": 0,
+        "ieee_64bit_pattern_equal_count": 9150000,
+        "maximum_absolute_native_numeric_difference": 0.0,
+        "no_gain_projection_lag_or_channel_relabeling_applied": true,
+        "numeric_differ_count": 0,
+        "numeric_equal_but_ieee_bits_differ_count": 0,
+        "numeric_equal_count": 9150000,
+        "processing_causality_established": false,
+        "source_amplitudes_published": false,
+        "source_float32_exactly_widened_to_float64": true,
+        "source_original_double_canonical_sha256": "a6b83ebd39bdd422ae0b1cd60c3c1b0380965867c8d7ac6382d45f95599e5b70"
+      },
+      "metadata_gate": {
+        "absolute_acquisition_onset_aligned": false,
+        "bids_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "channel_order_identical": true,
+        "channel_sets_identical": true,
+        "derivative_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "first_relative_time_ms": 0.0,
+        "last_relative_time_ms": 299998.0,
+        "matched_channel_labels_same_positions": 61,
+        "metadata_data_shape": [
+          61,
+          150000
+        ],
+        "metadata_gate_passed": true,
+        "metadata_rate_hz": 500.0,
+        "metadata_ref_label": "common",
+        "metadata_rejection_reasons": [],
+        "original_ordered_labels_sha256": "0eb9d03a6f1c62af87f95e8de05d9a39632529208c4e8c1be945f809f77d9b99",
+        "relative_time_grid_zero_anchored_2ms_eligible": true,
+        "time_grid_max_abs_error_ms": 0.0,
+        "time_sample_count": 150000,
+        "times_strictly_increasing": true,
+        "unverified_amplitude_physical_scale": true,
+        "xmax_seconds": 299.998,
+        "xmin_seconds": 0.0
+      },
+      "root_eeg_signal_read": true,
+      "session": 3,
+      "source_identities": {
+        "channels": {
+          "bytes": 983,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "789b745fd42c9ced16ac4feda21b921f0b26628111f415d980abdd89ca0214c3"
+        },
+        "derivative": {
+          "bytes": 73824136,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "cb323a39dff5b79f69d3431aac7e9d0a7ca65a220ad78395ecbe2200ed1faf88"
+        },
+        "header": {
+          "bytes": 1118,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "9274be77cd7a2893dfa4c4d5ac566116af9d09c3d7066d4b884cde9d2505f052"
+        },
+        "root": {
+          "bytes": 36600000,
+          "pinned_publisher_git_blob_sha1_verified": false,
+          "publisher_pointer_md5_verified": true,
+          "source_body_sha256": "9cb1a6363e493a16700e2f08124f99b1e0065d65afb28a0a0280a1b078718516"
+        },
+        "sidecar": {
+          "bytes": 597,
+          "pinned_publisher_git_blob_sha1_verified": true,
+          "publisher_pointer_md5_verified": false,
+          "source_body_sha256": "fb6549619a968fe7044b84c5777802f8ec5e40792629313b0d4076c816859fb5"
+        }
+      },
+      "status": "DIRECT_ARRAYS_IDENTICAL",
+      "subject": "sub-37",
+      "task": "eyesopen"
+    }
+  ],
+  "neural_or_clinical_conclusion": false,
+  "physical_units_independently_calibrated": false,
+  "previous_G08_G09_six_pairs_not_new_subjects": true,
+  "protocol_commit": "9375cb3ccece0a431c136257f0feb43bd43721ab",
+  "publisher_revision": "0c740d838a2c33feeec0b6e514aea323d0e65ca4",
+  "row_statuses": [
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL",
+    "DIRECT_ARRAYS_IDENTICAL"
+  ],
+  "source_amplitudes_published": false,
+  "source_author_processing_history_identified": false,
+  "status": "G10_EIGHT_PAIR_CENSUS_COMPLETE",
+  "study": "NEU-01-G10-P01"
+}

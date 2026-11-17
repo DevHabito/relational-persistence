@@ -1,0 +1,57 @@
+name: NEU-01-G12 First Authenticated EEG Rank-Fusion Validation
+
+on:
+  push:
+    branches:
+      - research/neu01-g12-fixed-rank-fusion-20261117
+    paths:
+      - .github/workflows/neu01-g12-fixed-rank-fusion.yml
+      - experiments/neu01_g12_source_runner.py
+      - tests/test_neu01_g12_source_runner.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: neu01-g12-first-frozen-24-original-eeg
+  cancel-in-progress: false
+
+jobs:
+  first_g12_original_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout original frozen protocol and prior archives
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify G12 protocol-only commit predates EEG-source implementation
+        run: |
+          git merge-base --is-ancestor c6787a0a3186516ba1275e0e419fcfbd5b7d4b09 "$GITHUB_SHA"
+          test -f docs/protocols/NEU-01-G12-P01-FIXED-RANK-FUSION-2026-11-17.md
+      - name: Install Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install frozen repository dependency declarations
+        run: python -m pip install -e '.[dev]'
+      - name: BEFORE publisher EEG source access run G12 and earlier archive adversarial tests
+        run: |
+          python -m pytest -q tests/test_neu01_g12_rank_core.py tests/test_neu01_g12_source_runner.py tests/test_neu01_g11_first_archive.py
+      - name: Run first 24-source original EEG held-out analysis without re-fitting
+        run: python -m experiments.neu01_g12_source_runner
+      - name: Hash first JSON even if primary result is incomplete
+        if: always()
+        run: |
+          if [ -f docs/results/NEU-01-G12-P01-first-run/audit.json ]; then
+            wc -c docs/results/NEU-01-G12-P01-first-run/audit.json
+            sha256sum docs/results/NEU-01-G12-P01-first-run/audit.json
+          fi
+      - name: Keep aggregate G12 outcomes and source hashes, never waveforms
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neu01-g12-first-frozen-rank-fusion-source-aggregate
+          path: docs/results/NEU-01-G12-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

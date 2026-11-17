@@ -1,0 +1,28 @@
+{
+  "study": "NEU-01-G10-P01",
+  "date_utc": "2026-11-17",
+  "original_git_commit": "b4feb85a628fdeee81089877a376ba2964c2b7be",
+  "protocol_only_commit": "9375cb3ccece0a431c136257f0feb43bd43721ab",
+  "first_source_workflow": "https://github.com/DevHabito/relational-persistence/actions/runs/44058156465",
+  "first_source_job_id": 133952741270,
+  "original_actions_artifact_id": 14316762957,
+  "original_actions_artifact_name": "neu01-g10-eight-pairs-first-original-aggregate-only",
+  "archive_path": "docs/results/NEU-01-G10-P01-first-run/audit.json",
+  "first_original_audit_bytes": 36006,
+  "first_original_audit_sha256": "5d7c239260da9d9d65cda652c617fdfe906affdff88f85be1a829877f49568c5",
+  "first_original_source_status": "G10_EIGHT_PAIR_CENSUS_COMPLETE",
+  "fixed_pairs": 8,
+  "new_aligned_sample_positions": 73200000,
+  "direct_bitwise_equal_pairs": 8,
+  "first_source_pre_I_O_adversarial_pytest_tests": 32,
+  "full_source_commit_python_311_pytest": 1002,
+  "full_source_commit_python_312_pytest": 1002,
+  "sidecar_EEG_vs_BIDS_TSV_classification_conflicts": [
+    "sub-37/session2/eyesclosed",
+    "sub-37/session2/eyesopen"
+  ],
+  "archived_data": "aggregate counts and per-file source hashes only; no EEG amplitudes",
+  "artifact_sha256_recovered_and_checked_against_original_job_log": true,
+  "not_independent_human_replication": true,
+  "acquisition_to_publication_processing_history_not_proven": true
+}

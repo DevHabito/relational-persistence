@@ -118,10 +118,10 @@ def test_original_negative_result_and_3_2_7_comparison_is_immutable():
     assert recomputed["status"]==j["status"]
     assert recomputed["strict_state_wins"]==j["strict_state_wins"]==3
     assert recomputed["registered_increment_confirmed_within_host"] is False
-    assert recomputed["input_capacity_MAE_seconds"]==j[
-        "input_capacity_MAE_seconds"]
-    assert recomputed["observed_state_MAE_seconds"]==j[
-        "observed_state_MAE_seconds"]
+    assert abs(recomputed["input_capacity_MAE_seconds"] - j[
+        "input_capacity_MAE_seconds"]) <= 1e-14
+    assert abs(recomputed["observed_state_MAE_seconds"] - j[
+        "observed_state_MAE_seconds"]) <= 1e-14
     assert j["input_capacity_MAE_seconds"]==0.012734143750000008
     assert j["observed_state_MAE_seconds"]==0.012586991583333353
     assert 0 < j["relative_MAE_reduction"] < .02

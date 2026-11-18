@@ -1,0 +1,60 @@
+name: RP-U007 First Informed-Input and Live-State Recovery Source
+
+on:
+  push:
+    branches:
+      - research/rp-u007-conditional-state-recovery-20261117
+    paths:
+      - .github/workflows/rp-u007-first-source.yml
+      - experiments/rp_u007_observed_source.py
+      - tests/test_rp_u007_observed_source.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u007-first-frozen-conditional-recovery
+  cancel-in-progress: false
+
+jobs:
+  first_original_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable protocol/source chronology
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Enforce protocol-only freeze precedes source and first archive missing
+        run: |
+          git merge-base --is-ancestor 0589da88d5df064d033e5a8b774d31c862bede27 "$GITHUB_SHA"
+          git merge-base --is-ancestor 1574f30610e4c5e2ecdb7b719e9b5aa02c78fde6 "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U007-P01.md
+          test ! -e docs/results/RP-U007-P01-first-run/summary.json
+      - name: Install Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Require pre-source adversarial and prior immutable result tests
+        run: |
+          python -m pytest -q tests/test_rp_u007_forecast_core.py tests/test_rp_u007_observed_source.py tests/test_rp_u006_first_archive.py
+      - name: Run first prospective 3 calibration and 12 holdout separate-process trials
+        run: python -m experiments.rp_u007_observed_source
+      - name: Hash every first original source file whether complete or invalid
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U007-P01-first-run/summary.json ]; then
+            wc -c docs/results/RP-U007-P01-first-run/summary.json
+            sha256sum docs/results/RP-U007-P01-first-run/summary.json
+            find docs/results/RP-U007-P01-first-run -type f | wc -l
+          fi
+      - name: Retain every original source role record, not only favorable outcomes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u007-first-original-executable-observed-service
+          path: docs/results/RP-U007-P01-first-run/
+          if-no-files-found: warn
+          retention-days: 90

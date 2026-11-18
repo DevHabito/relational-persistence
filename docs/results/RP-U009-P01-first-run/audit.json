@@ -1,0 +1,24 @@
+{
+  "failure": {
+    "kind": "InvalidEvidence",
+    "reason": "LOW_PRESSURE_SWITCH_MUST_BE_BINARY"
+  },
+  "first_source_runner_sha": "d4fb7d7da8b2364d939e7962279f6142002f0b18",
+  "not_independent_exact_physical_repair_timestamps": true,
+  "official_original_source_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+  "original_source_credential_required": false,
+  "original_workflow_run_id": "44212185197",
+  "pre_source_validation_commit": "744f00af2bc94a87fbe119bea2dd0e7fee791b82",
+  "protocol_only_commit": "2c36bd9b84ac664798e544f24b3617c1f7b5a258",
+  "published_failure_events_known_before_source": true,
+  "source": {
+    "final_verified_source_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+    "official_version_not_git_fork": true,
+    "official_zip_bytes": 218381995,
+    "official_zip_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+    "original_source_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip"
+  },
+  "source_unmodified_and_never_mirrored": true,
+  "status": "RP_U009_SOURCE_OR_WINDOWS_INVALID",
+  "study": "RP-U009-P01"
+}

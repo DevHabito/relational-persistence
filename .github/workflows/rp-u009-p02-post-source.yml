@@ -50,7 +50,7 @@ jobs:
         run: |
           python -m pip install -e '.[dev]'
           python -m pytest -q
-      - name: Secondary source only: same official physical observations, corrected decimal LPS encoding
+      - name: 'Secondary source only: same official physical observations, corrected decimal LPS encoding'
         run: python -m experiments.rp_u009_post_source_salvage
       - name: Always hash P02 secondary source result
         if: always()

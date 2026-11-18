@@ -1,0 +1,59 @@
+name: RP-U008 First External Multi-Protocol Recovery Source
+
+on:
+  push:
+    branches:
+      - research/rp-u008-external-cross-protocol-recovery-20261117
+    paths:
+      - .github/workflows/rp-u008-first-external-source.yml
+      - experiments/rp_u008_external_source.py
+      - tests/test_rp_u008_external_source.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u008-first-immutable-external-raw-observation
+  cancel-in-progress: false
+
+jobs:
+  first_external_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout source-free registered method and previous archives
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Require preregistration and source-free tests earlier than publisher download
+        run: |
+          git merge-base --is-ancestor 0cfd8327a58f4e507967b074e612c581a8f24a39 "$GITHUB_SHA"
+          git merge-base --is-ancestor f85229514fb2a447efbaf5c708ccf7e4522f7d43 "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U008-P01.md
+          test ! -e docs/results/RP-U008-P01-first-run/audit.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run synthetic endpoint/negative cases and no-source authentication tests BEFORE external CSV download
+        run: |
+          python -m pytest -q tests/test_rp_u008_external_recovery_core.py tests/test_rp_u008_external_source.py tests/test_rp_u007_first_archive.py
+      - name: Run FIRST source-authenticated external gateway and HTTP recovery census
+        run: python -m experiments.rp_u008_external_source
+      - name: Always hash original first source audit if present
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U008-P01-first-run/audit.json ]; then
+            wc -c docs/results/RP-U008-P01-first-run/audit.json
+            sha256sum docs/results/RP-U008-P01-first-run/audit.json
+          fi
+      - name: Preserve original bounded cross-protocol outcome even if censored
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u008-first-external-original-source-aggregate-only
+          path: docs/results/RP-U008-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

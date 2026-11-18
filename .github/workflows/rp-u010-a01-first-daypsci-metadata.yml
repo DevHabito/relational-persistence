@@ -1,0 +1,58 @@
+name: RP-U010 A01 First DAYPSCI Official Source Manifest Feasibility
+
+on:
+  push:
+    branches:
+      - research/rp-u010-daypsci-source-feasibility-20261117
+    paths:
+      - .github/workflows/rp-u010-a01-first-daypsci-metadata.yml
+      - experiments/rp_u010_daypsci_source_inventory.py
+      - tests/test_rp_u010_daypsci_source_inventory.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u010-a01-original-official-manifest-inventory
+  cancel-in-progress: false
+
+jobs:
+  first_metadata_access_only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact registered source metadata protocol
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify protocol-only commit precedes all source access
+        run: |
+          git merge-base --is-ancestor 25d1041ab086b2c19273b5e32061ed6f130df0cb "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U010-A01-DAYPSCI-SOURCE-FEASIBILITY.md
+          test ! -e docs/results/RP-U010-A01-first-source/audit.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run synthetic source integrity and negative feasibility checks first
+        run: |
+          python -m pytest -q tests/test_rp_u010_daypsci_source_inventory.py tests/test_rp_u009_evidence_archives.py
+      - name: Original metadata-only source discovery, no CSV or PCAP downloads
+        run: python -m experiments.rp_u010_daypsci_source_inventory
+      - name: Hash first original metadata evidence even when inaccessible
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U010-A01-first-source/audit.json ]; then
+            wc -c docs/results/RP-U010-A01-first-source/audit.json
+            sha256sum docs/results/RP-U010-A01-first-source/audit.json
+          fi
+      - name: Preserve bounded original source and failed metadata attempts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u010-a01-first-publisher-manifest-attempt
+          path: docs/results/RP-U010-A01-first-source/audit.json
+          if-no-files-found: warn
+          retention-days: 90

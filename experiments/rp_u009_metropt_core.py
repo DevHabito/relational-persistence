@@ -137,7 +137,8 @@ def summarize_window(window: dict) -> dict:
 
 
 def original_csv_audit(stream: TextIOBase, *,
-                       expected_census: int | None = ORIGINAL_EXPECTED_ROWS) -> dict:
+                       expected_census: int | None = ORIGINAL_EXPECTED_ROWS,
+                       allow_decimal_lps: bool = False) -> dict:
     reader = csv.DictReader(stream)
     if (reader.fieldnames is None or
             len(set(reader.fieldnames)) != len(reader.fieldnames) or
@@ -170,13 +171,14 @@ def original_csv_audit(stream: TextIOBase, *,
                 motor = read_finite_nonnegative(
                     row["Motor_current"], "MOTOR_CURRENT")
                 state_value = row["LPS"]
-                if state_value not in ("0", "1"):
+                valid = ("0", "1", "0.0", "1.0") if allow_decimal_lps else ("0", "1")
+                if state_value not in valid:
                     raise InvalidEvidence("LOW_PRESSURE_SWITCH_MUST_BE_BINARY")
                 window["source_rows"].append({
                     "timestamp":t,
                     "reservoir_bar":pressure,
                     "motor_current_a":motor,
-                    "lps":int(state_value),
+                    "lps":int(float(state_value)) if allow_decimal_lps else int(state_value),
                 })
     if expected_census is not None and count != expected_census:
         raise InvalidEvidence("UCI_ORIGINAL_CSV_ROW_COUNT_CHANGED")

@@ -134,3 +134,18 @@ RP-U006 does **not** redefine RP-U005 F1/F2, the early RP-E004 measurement gate,
 | Negative first outcome | 3 strict wins, 2 losses, 7 ties; ~1.16% lower MAE not meeting the two-part threshold | No demonstrated gain under this specific model; not universal proof of no gain |
 
 RP-U007 does not redefine previous RP-U005 F1/F2 structural scores or RP-U006's availability-only baseline.
+
+## RP-U008 external telemetry recovery vocabulary
+
+| Term | Registered observable | Not licensed |
+|---|---|---|
+| Gateway DOWN row | Exactly ten target ICMP attempts with zero replies and simultaneous gateway 100% packet loss | Certified router hardware failure or physical repair |
+| Registered source outage | At least three contiguous DOWN rows with adjacent gaps ≤75 s | New incident discovery: the source publisher already reported four |
+| Gateway response recovery | Second of two post-outage source rows with a reachable gateway ping and finite nonnegative RTT | Full restored topology or continuous service |
+| Application response recovery | Second of two post-outage source rows with valid HTTP 200–399 and finite positive response-time observation | Guaranteed end-user application function or root cause |
+| HTTP usable response | HTTP success with first-response time at most 1,000 ms | Guaranteed throughput or quality of other services |
+| Lag in original sampling rows | Difference of second-positive source row indices (HTTP minus gateway) | Actual within-epoch failure/repair ordering or exact delay |
+| Cross-protocol evidence | Gateway ICMP and HTTP endpoints measured by **one workstation's collector** | Independent hardware timing systems or causal corroboration |
+| Source-window censoring | No two consecutive endpoint successes within the frozen ten rows after a DOWN episode | No eventual recovery for the system |
+
+These source-specific terms do not redefine RP-U005 structural path F1/F2 or RP-U006/U007 queue predictions.

@@ -1,0 +1,67 @@
+name: RP-U009 First Original UCI Compressor Maintenance Sensor Audit
+
+on:
+  push:
+    branches:
+      - research/rp-u009-metropt-physical-telemetry-20261117
+    paths:
+      - .github/workflows/rp-u009-first-uci-source.yml
+      - experiments/rp_u009_metropt_source.py
+      - tests/test_rp_u009_metropt_source.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u009-original-first-external-compressor-window-audit
+  cancel-in-progress: false
+
+jobs:
+  first_external_compressor_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout exact preregistered branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify pre-original protocol/core commits and absent immutable first result
+        run: |
+          git merge-base --is-ancestor 2c36bd9b84ac664798e544f24b3617c1f7b5a258 "$GITHUB_SHA"
+          git merge-base --is-ancestor 744f00af2bc94a87fbe119bea2dd0e7fee791b82 "$GITHUB_SHA"
+          test -f docs/preregistration/RP-U009-P01.md
+          test ! -e docs/results/RP-U009-P01-first-run/audit.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install fixed project dependencies before UCI source access
+        run: python -m pip install -e '.[dev]'
+      - name: ALL source-independent U009 and archived-original tests before original UCI download
+        run: |
+          python -m pytest -q tests/test_rp_u009_metropt_core.py tests/test_rp_u009_metropt_source.py tests/test_rp_u008_first_archive.py
+      - name: Python 3.12 full regression before first UCI source download
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Confirm source-free full repository Python 3.12 test gate
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q
+      - name: First original UCI archive source and two maintenance windows
+        run: python -m experiments.rp_u009_metropt_source
+      - name: Always record exact digest of first source outcome, even if invalid
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U009-P01-first-run/audit.json ]; then
+            wc -c docs/results/RP-U009-P01-first-run/audit.json
+            sha256sum docs/results/RP-U009-P01-first-run/audit.json
+          fi
+      - name: Retain first original source identity and four-window audit only, no big CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u009-first-uci-physical-maintenance-aggregate-only
+          path: docs/results/RP-U009-P01-first-run/audit.json
+          if-no-files-found: warn
+          retention-days: 90

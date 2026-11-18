@@ -163,3 +163,14 @@ These source-specific terms do not redefine RP-U005 structural path F1/F2 or RP-
 | P02 post-source invalid | Same original source and window thresholds with only opt-in LPS decimal parsing; fails temporal coverage | Neither proof of maintenance effect nor proof of no actual effect |
 
 The physical compressor dataset is unrelated to clinical subjects, neural identity, or the abstract graph F1/F2 toy experiments.
+
+## RP-U010 DAYPSCI source-feasibility vocabulary
+
+| Term | Operational definition in A01 | Boundary |
+|---|---|---|
+| Authenticated publisher DOI metadata | DataCite DOI `10.71486/2drf-1g53` returns 200 and a title naming DAYPSCI, with a recorded JSON SHA256 | Does not authenticate any original experimental CSV, PCAPNG or README |
+| Original publisher file manifest | Official RIUBU/DSpace file/bundle inventory with grounded path/UUID and declared byte count or checksum | Was **not resolved** in first A01; never infer from filenames mentioned in an article |
+| PLC scan ordering | `scan_id` and `event_order` are described in the scientific paper as an order of events within a PLC cycle | Actual data values not yet inspected; not a cross-instrument clock calibration |
+| External fault configuration | Experimenter-controlled sensor/valve fault batch described in the DAYPSCI paper | A fault label alone does not timestamp deactivation or establish successful subsequent production |
+| Functional restoration endpoint | Independently observed success in a task/part cycle after a perturbation ends | Not supplied/verified by A01; do not use `part_id` as proof of success |
+| Source availability blocker | Bounded hosted attempts at original RIUBU/Handle sources timed out while DataCite DOI metadata succeeded | Does **not** establish permanent unavailability or any scientific negative outcome |

@@ -120,3 +120,17 @@ This vocabulary belongs solely to RP-U005-P01; it does not retroactively change 
 | Pre-source correction | Exact nine positive completion intervals require timestamps of calibration jobs 3..12 | Does not permit tuning intervals after reading source outcomes |
 
 RP-U006 does **not** redefine RP-U005 F1/F2, the early RP-E004 measurement gate, or any user-level self/entropy concept.
+
+## RP-U007 source-conditional service forecast terms
+
+| Term | Frozen measurement in RP-U007 | Interpretation boundary |
+|---|---|---|
+| Informed input/capacity baseline | Input jobs accepted by the +100ms landmark minus the floor of elapsed time divided by the correct service-regime calibration interval, truncated at zero | A simple classical queue estimator, not a fully optimal history-conditioned forecast |
+| Live observed queue | Most recent monitor sample within 30ms *before or at* the +100ms landmark, with matching source accepted-work identity and conserved job counts | Same service-reported health counters; no independent hardware |
+| Future arrivals | Two jobs in each of the three scheduled postenable batches (+40, +80, +160ms); final two known by plan but not yet observed at prediction | Synthetic scripted demand, not a real traffic population |
+| Remaining-to-recovery target | Time from the +100ms landmark to the second post-final-job monitor observation with zero accepted-but-uncompleted work | A sampled service condition; not continuous-time robustness |
+| Strict heldout win | The new live-state prediction has strictly smaller absolute remaining-time error than input-only on the *same* original intervention | A paired descriptive outcome, not a biological replicate or p-value |
+| Registered incremental support | At least 20% reduction in 12-case MAE **and** at least 9 strict wins, both conditions necessary | Not proof of unique information in all programs or physical fields |
+| Negative first outcome | 3 strict wins, 2 losses, 7 ties; ~1.16% lower MAE not meeting the two-part threshold | No demonstrated gain under this specific model; not universal proof of no gain |
+
+RP-U007 does not redefine previous RP-U005 F1/F2 structural scores or RP-U006's availability-only baseline.

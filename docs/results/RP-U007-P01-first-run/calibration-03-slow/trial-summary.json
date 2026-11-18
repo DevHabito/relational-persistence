@@ -1,0 +1,18 @@
+{
+  "all_source_job_identity_verified": true,
+  "calibrated_interval_seconds": 0.018828704,
+  "calibration": true,
+  "complete_job_count": 18,
+  "controller_file_sha256": "6fc710913e89c1bdf40c3847bf278082b31492a1b3d130f7d77f1b3215b43d28",
+  "event_file_sha256": "77a6bce3f24bcba4f2a554d793d15ece4be6f9af2848480f324bfa17ed8a9d8a",
+  "initial_jobs": 18,
+  "monitor_file_sha256": "5b625d56d4bd802007b9e2ece104b0abcc50fda09b0bb0eee81a73cad5de8b0a",
+  "monitor_process_exitcode": 0,
+  "monitor_samples": 39,
+  "ordinal": 3,
+  "regime": "slow",
+  "server_enable_ns": 594826320474,
+  "service_events": 56,
+  "service_process_exitcode": 0,
+  "valid_original_trial": true
+}

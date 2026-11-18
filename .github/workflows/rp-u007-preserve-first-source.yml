@@ -1,0 +1,143 @@
+name: RP-U007 Preserve First Source and Independently Replay Evidence
+
+on:
+  push:
+    branches:
+      - research/rp-u007-conditional-state-recovery-20261117
+    paths:
+      - .github/workflows/rp-u007-preserve-first-source.yml
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: rp-u007-first-source-original-archive
+  cancel-in-progress: false
+
+jobs:
+  archive_and_verify_first_source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout protocol and source-only implementation
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Confirm source chronology and no prior first archive
+        run: |
+          git merge-base --is-ancestor 0589da88d5df064d033e5a8b774d31c862bede27 "$GITHUB_SHA"
+          git merge-base --is-ancestor 4951b1331cd1b2c8ca2e03017b7c5a5a32bf4534 "$GITHUB_SHA"
+          test ! -e docs/results/RP-U007-P01-first-run/summary.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independently download exact first original source artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: rp-u007-first-original-executable-observed-service
+          run-id: 44206490270
+          github-token: ${{ github.token }}
+          path: docs/results/RP-U007-P01-first-run
+      - name: Independently replay every source and check the first decision
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from experiments import rp_u007_forecast_core as c
+          from experiments import rp_u007_observed_source as runner
+          root = Path("docs/results/RP-U007-P01-first-run")
+          files = [p for p in root.rglob("*") if p.is_file()]
+          assert len(files) == 89, f"Expected 89 first source files, got {len(files)}"
+          raw = (root/"summary.json").read_bytes()
+          assert len(raw) == 28031
+          assert hashlib.sha256(raw).hexdigest() == "546c127e480422408278f87b816067bb9a0f8070531a1a5fbaabba4fb97a3fe8"
+          data=json.loads(raw)
+          assert data["source_commit"]=="4951b1331cd1b2c8ca2e03017b7c5a5a32bf4534"
+          assert data["original_workflow_run_id"]=="44206490270"
+          assert data["original_sources_all_valid"] is True
+          assert data["status"]=="RP_U007_COMPLETE_NO_CONFIRMED_INCREMENT"
+          assert len(data["calibration"])==3 and len(data["holdouts"])==12
+          assert [e["regime"] for e in data["calibration"]]==list(c.CALIBRATION_ORDER)
+          assert [(e["regime"],e["initial_jobs"]) for e in data["holdouts"]]==[
+              (p.regime,p.initial_jobs) for p in c.HOLDOUTS]
+          intervals={}
+          total_monitor=0
+          for i,entry in enumerate([*data["calibration"],*data["holdouts"]]):
+              cal=i<3
+              label=(f"calibration-{i+1:02d}-{entry['regime']}" if cal
+                     else f"holdout-{i-2:02d}-{entry['regime']}")
+              folder=root/label
+              expected_files=5 if cal else 6
+              assert folder.is_dir()
+              assert len([x for x in folder.iterdir() if x.is_file()])==expected_files
+              for fname,key in (
+                  ("service-events.jsonl","event_file_sha256"),
+                  ("monitor-samples.jsonl","monitor_file_sha256"),
+                  ("controller-injector.json","controller_file_sha256"),
+              ):
+                  assert hashlib.sha256((folder/fname).read_bytes()).hexdigest()==entry[key]
+              events=runner.jsonl(folder/"service-events.jsonl")
+              samples=runner.jsonl(folder/"monitor-samples.jsonl")
+              audit=c.validate_events(events,initial=entry["initial_jobs"],
+                                      calibration=cal)
+              assert audit["completed_count"]==entry["complete_job_count"]
+              assert audit["enable_ns"]==entry["server_enable_ns"]
+              assert entry["service_process_exitcode"]==0
+              assert entry["monitor_process_exitcode"]==0
+              c.validate_samples(
+                  samples,total=(entry["initial_jobs"] if cal else entry["initial_jobs"]+6),
+                  enable_ns=audit["enable_ns"])
+              assert len(samples)==entry["monitor_samples"]
+              total_monitor+=len(samples)
+              if cal:
+                  value=c.calibrated_interval(events)
+                  assert value==entry["calibrated_interval_seconds"]
+                  intervals[entry["regime"]]=value
+              else:
+                  landmark=entry["registered_landmark_ns"]
+                  assert landmark==audit["enable_ns"]+c.LANDMARK_NS
+                  sample=c.select_landmark_sample(
+                      samples,enable_ns=audit["enable_ns"],
+                      expected_accepted=entry["initial_jobs"]+4)
+                  assert sample==entry["prelandmark_live_sample"]
+                  assert entry["accepted_by_landmark"]==entry["initial_jobs"]+4
+                  assert entry["prediction_created_ns"]<audit["last_batch_last_accept_ns"]
+                  assert audit["first_two_post_batches_last_accept_ns"]<=landmark
+                  assert audit["last_batch_last_accept_ns"]>landmark
+                  assert c.measured_recovery(
+                      samples,landmark_ns=landmark,
+                      final_batch_accept_ns=audit["last_batch_last_accept_ns"]
+                  )==entry["measured_recovery_from_landmark_seconds"]
+                  expected=c.original_forecasts(
+                      intervals[entry["regime"]],
+                      accepted_at_landmark=entry["accepted_by_landmark"],
+                      observed_outstanding=sample["accepted"]-sample["completed"])
+                  assert expected==entry["predictions"]
+                  predpath=folder/"prediction-prelast.json"
+                  assert hashlib.sha256(predpath.read_bytes()).hexdigest()==entry[
+                      "prediction_prelast_file_sha256"]
+                  pred=json.loads(predpath.read_bytes())
+                  assert pred["model_predictions"]==expected
+                  assert pred["model_computed_time_ns"]==entry["prediction_created_ns"]
+                  assert pred["source_monitored_health"]==sample
+          replay_input=dict(data)
+          replay_input["status"]="RP_U007_SOURCE_READY_FOR_EVALUATION"
+          observed=c.evaluate_original(replay_input)
+          assert observed["status"]==data["status"]
+          assert observed["strict_state_wins"]==data["strict_state_wins"]==3
+          assert observed["total_holdouts"]==12
+          assert observed["input_capacity_MAE_seconds"]==data["input_capacity_MAE_seconds"]
+          assert observed["observed_state_MAE_seconds"]==data["observed_state_MAE_seconds"]
+          assert observed["registered_increment_confirmed_within_host"] is False
+          print(f"ORIGINAL_SOURCE_REPLAY_PASS: 89 files, 15 trials, {total_monitor} monitor records, 3 strict wins, registered no-increment result")
+          PY
+      - name: Commit exactly original source records to the unmerged U007 branch
+        run: |
+          git config user.name "RP-U007 Original Evidence"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/results/RP-U007-P01-first-run/
+          git diff --cached --quiet && exit 1
+          git commit -m "research(rp): preserve original U007 conditional-recovery source records"
+          git push origin HEAD:research/rp-u007-conditional-state-recovery-20261117

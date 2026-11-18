@@ -155,3 +155,14 @@ This study compares one prior-calibrated service-backlog forecast with a diagnos
 - The program's RP-E009 TCP/asyncio executable queue and RP-E004/P02 monitoring are **earlier in-repository precedents**, not new validated external sources.
 
 First source provenance: `docs/results/RP-U006-P01-first-run/archive-index.json`. The independent archival workflow preserved all 77 first source files and verified counts, SHA256s and event-level recovery replays. This is a useful instrumentation result with a narrow statistical population (one software service and one hosted VM).
+
+## RP-U007: conditional observation value in queue-aware recovery prediction (17 November 2026)
+
+The prospective RP-U007 single-host experiment registered a **negative/nonconfirmed result** for added live-backlog information over an input-and-calibration baseline. Queue-length forecasting, workload and time-varying demand were already studied well before this program; the small software result is not a new general theorem or a novel queueing method.
+
+- Rouba Ibrahim and Ward Whitt (2008), *Real-Time Delay Estimation Based on Delay History*, Manufacturing & Service Operations Management, https://doi.org/10.1287/msom.1080.0223. Earlier comparison of queue-length-based and delay-history-based estimates.
+- Rouba Ibrahim and Ward Whitt (2011), *Wait-Time Predictors for Customer Service Systems with Time-Varying Demand and Capacity*, Operations Research 59(5):1106–1118, https://doi.org/10.1287/opre.1110.0974. The real predictor must account for the time-dependent input and service setting, not just a binary up/down flag.
+- Andrzej Chydziński (2025), *Workload of Queueing Systems with Autocorrelated Service Times*, Entropy 27(3):272, https://doi.org/10.3390/e27030272. Existing work treats workload as a separate service state and studies service-time dependence.
+- RP-U006 first original result: `docs/results/RP-U006-P01.md`; RP-U007 original source artifact: `docs/results/RP-U007-P01-first-run/summary.json`. RP-U007 does **not** erase U006's positive result relative to its particular constant baseline but sharply limits the claimed generality.
+
+No field measurement, source-independent hardware validation or cross-domain transfer was performed.

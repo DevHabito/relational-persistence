@@ -1,0 +1,28 @@
+{
+  "calibration": false,
+  "initial_jobs": 14,
+  "monitor_poll_nominal_ms": 12,
+  "ordinal": 11,
+  "regime": "slow",
+  "registered_future_batches": [
+    {
+      "additional_jobs": 2,
+      "offset_from_enable_ms": 40
+    },
+    {
+      "additional_jobs": 2,
+      "offset_from_enable_ms": 80
+    },
+    {
+      "additional_jobs": 2,
+      "offset_from_enable_ms": 160
+    }
+  ],
+  "source_nominal_service_ms_options": [
+    12,
+    18,
+    24
+  ],
+  "study": "RP-U007-P01",
+  "worker_available_before_enable": false
+}

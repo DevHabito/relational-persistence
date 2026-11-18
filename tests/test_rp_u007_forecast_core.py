@@ -41,7 +41,7 @@ def test_calibration_has_thirteen_consecutive_gaps_for_ids_five_to_eighteen():
 
 def make_source(initial:int,regime:str,calibration:bool=False):
     total=initial if calibration else initial+6
-    events=[{"event":"enable","server_time_ns":10}]
+    events=[{"event":"enable","server_time_ns":15}]
     if calibration:
         events += [{"event":"accept","job":j,"server_time_ns":20+j}
                    for j in range(1,total+1)]

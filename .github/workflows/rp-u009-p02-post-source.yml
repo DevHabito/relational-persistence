@@ -1,0 +1,69 @@
+name: RP-U009-P02 Post-Source Physical Pressure Reanalysis (not P01)
+
+on:
+  push:
+    branches:
+      - research/rp-u009-metropt-physical-telemetry-20261117
+    paths:
+      - .github/workflows/rp-u009-p02-post-source.yml
+      - experiments/rp_u009_post_source_salvage.py
+      - tests/test_rp_u009_post_source_salvage.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u009-p02-post-source-physical-measurement
+  cancel-in-progress: false
+
+jobs:
+  first_post_source_salvage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout first invalid P01 and diagnostic D01 unchanged
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify source representation amendment followed original failure
+        run: |
+          git merge-base --is-ancestor 764a07a5f7489491e6da05d17d15d6ecb5695af5 "$GITHUB_SHA"
+          test -f docs/results/RP-U009-P01-first-run/audit.json
+          test -f docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json
+          test ! -e docs/results/RP-U009-P02-post-source-salvage/audit.json
+          printf '%s  %s\n' 0b74889ed609a43d8924880e702d93fb8e723fd517fd718734463125991c13e3 docs/results/RP-U009-P01-first-run/audit.json | sha256sum -c -
+          printf '%s  %s\n' 8020c11a460a97552777e75ac3be0c31c02cc535a3c5eaba8d8cdc376c5e5ee0 docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json | sha256sum -c -
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Run frozen P01 adversarial checks and P02 exact correction tests
+        run: |
+          python -m pytest -q tests/test_rp_u009_metropt_core.py tests/test_rp_u009_metropt_source.py tests/test_rp_u009_lps_token_diagnostic.py tests/test_rp_u009_post_source_salvage.py
+      - name: Confirm full Python 3.12 regressions without reading physical source
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require full repo synthetic and archive regression before secondary source
+        run: |
+          python -m pip install -e '.[dev]'
+          python -m pytest -q
+      - name: Secondary source only: same official physical observations, corrected decimal LPS encoding
+        run: python -m experiments.rp_u009_post_source_salvage
+      - name: Always hash P02 secondary source result
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U009-P02-post-source-salvage/audit.json ]; then
+            wc -c docs/results/RP-U009-P02-post-source-salvage/audit.json
+            sha256sum docs/results/RP-U009-P02-post-source-salvage/audit.json
+          fi
+      - name: Retain only the secondary summary (not copyrighted 218 MB sensor raw)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u009-p02-first-secondary-source-outcome
+          path: docs/results/RP-U009-P02-post-source-salvage/audit.json
+          if-no-files-found: warn
+          retention-days: 90

@@ -122,7 +122,9 @@ jobs:
                   assert pred["model_predictions"]==expected
                   assert pred["model_computed_time_ns"]==entry["prediction_created_ns"]
                   assert pred["source_monitored_health"]==sample
-          observed=c.evaluate_original(data)
+          replay_input=dict(data)
+          replay_input["status"]="RP_U007_SOURCE_READY_FOR_EVALUATION"
+          observed=c.evaluate_original(replay_input)
           assert observed["status"]==data["status"]
           assert observed["strict_state_wins"]==data["strict_state_wins"]==3
           assert observed["total_holdouts"]==12
@@ -131,7 +133,7 @@ jobs:
           assert observed["registered_increment_confirmed_within_host"] is False
           print(f"ORIGINAL_SOURCE_REPLAY_PASS: 89 files, 15 trials, {total_monitor} monitor records, 3 strict wins, registered no-increment result")
           PY
-      - name: Commit exactly original source records to the unmerged G07 branch
+      - name: Commit exactly original source records to the unmerged U007 branch
         run: |
           git config user.name "RP-U007 Original Evidence"
           git config user.email "github-actions[bot]@users.noreply.github.com"

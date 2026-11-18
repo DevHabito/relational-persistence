@@ -166,3 +166,13 @@ The prospective RP-U007 single-host experiment registered a **negative/nonconfir
 - RP-U006 first original result: `docs/results/RP-U006-P01.md`; RP-U007 original source artifact: `docs/results/RP-U007-P01-first-run/summary.json`. RP-U007 does **not** erase U006's positive result relative to its particular constant baseline but sharply limits the claimed generality.
 
 No field measurement, source-independent hardware validation or cross-domain transfer was performed.
+
+## RP-U008-P01: source-authenticated external recovery observation (17 November 2026)
+
+The first external audit uses a previously published dataset from one residential workstation. Its author had **already reported** all four short gateway/target outages. The registered raw-only reanalysis (four episodes, ten post rows each, two consecutive endpoint observations) found HTTP recovery one nominal sampling epoch later than gateway response in **2/4**, and no resolvable lag in **2/4**; under-one-second HTTP quality had one-epoch lag in **3/4**. This is a descriptive same-collector multi-protocol result, not a causal demonstration, a newly discovered outage or a general population estimate.
+
+- Alexander Ezharjan (2026), *LocalNet-Dynamics: A Longitudinal Local Area Network Telemetry Dataset*, v1.0.0, https://doi.org/10.57967/hf/10841; immutable source Git revision `d57ca705bfd2b0340b6476a2d01553d2c967636e` from https://github.com/Ezharjan/LocalNetDynamicsDataset.
+- CAIDA, *Internet Outage Detection and Analysis (IODA)*, https://www.caida.org/projects/ioda/. Multiple control/data-plane measurements are used to infer outages; inferred liveness is not identical to documented physical repair.
+- USC/ISI, *Internet Outage Datasets*, https://ant.isi.edu/datasets/outage/. Outage inference depends on active-probe sampling and unknown states.
+
+Raw original publisher CSV SHA256 `5a3d86be7127e27ebac8bf7071c4ee1991b2a2cb00f93fab8967310ca116b977`, 15,143,900 bytes, 54,617 records. RP-U008 first original reduced source audit SHA256 `8daf823275e8d55bee29f5cb68458449f5a14005f7b7cc279e3c42d77d9d2d38`, 30,225 bytes, artifact #14385845936. Original raw network addresses and free text were not mirrored. No new biological or fundamental-physics results asserted.

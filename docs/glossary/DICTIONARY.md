@@ -149,3 +149,17 @@ RP-U007 does not redefine previous RP-U005 F1/F2 structural scores or RP-U006's 
 | Source-window censoring | No two consecutive endpoint successes within the frozen ten rows after a DOWN episode | No eventual recovery for the system |
 
 These source-specific terms do not redefine RP-U005 structural path F1/F2 or RP-U006/U007 queue predictions.
+
+## RP-U009: physical-source eligibility and post-failure representations
+
+| Term | Source-level definition | Limit |
+|---|---|---|
+| Operator maintenance anchor | Literal public maintenance date printed in UCI MetroPT-3 failure report; eligible only when after the corresponding printed fault end | Not independently certified hardware repair completion time or synchronized UTC time |
+| Physical reservoir-pressure observation | Float `Reservoirs` (bar) from one actual railway APU sensor, in source acquisition window | Not measured air delivery to passengers or compressor causal restoration |
+| Low-pressure occupancy | Fraction of physical source rows in a fixed window for which `Reservoirs < 7` bar | Depends on which hours had recorded observations; no reliable result when coverage gate fails |
+| Six-hour-bucket coverage | At least six distinct source clock-hour bins with ≥30 observations in each frozen 22-hour before or after window | Not achieved for first P02 maintenance prewindow, so no eligible two-event comparison |
+| LPS literal coding | Source strings `0.0`, `1.0`; D01 did not inspect pressure values | A post-failure formatting diagnostic, not a binary physiological or physical response discovery |
+| P01 original invalid | First official-source result rejected strict LPS text when expecting `0`/`1` | Cannot be retroactively converted to an original positive finding |
+| P02 post-source invalid | Same original source and window thresholds with only opt-in LPS decimal parsing; fails temporal coverage | Neither proof of maintenance effect nor proof of no actual effect |
+
+The physical compressor dataset is unrelated to clinical subjects, neural identity, or the abstract graph F1/F2 toy experiments.

@@ -1,0 +1,79 @@
+{
+  "all_source_lps_literal_token_counts": {
+    "0.0": 1511760,
+    "1.0": 5188
+  },
+  "all_window_tokens_member_of_binary_encoding_set": true,
+  "csv_original_identity": {
+    "original_csv_member": "MetroPT3(AirCompressor).csv",
+    "original_csv_sha256": "db30ccb4ea402e3c8bf2c99db06e288d4f2a772f6928f9dbe26a920d69793e24",
+    "original_csv_uncompressed_bytes": 218300507
+  },
+  "diagnostic_code_commit": "8a8d2965204fee6012c7e5fac4b272ab97ab6782",
+  "diagnostic_workflow_id": "44212728803",
+  "first_source_clock": "2020-02-01 00:00:00",
+  "last_source_clock": "2020-09-01 03:59:50",
+  "no_motor_current_values_read": true,
+  "no_original_P01_result_replaced": true,
+  "no_pressure_or_maintenance_functional_outcome_computed": true,
+  "no_pressure_values_read": true,
+  "observed_max_gap_seconds": 172918.0,
+  "observed_median_gap_seconds": 10.0,
+  "observed_min_gap_seconds": 8.0,
+  "observed_p95_gap_seconds": 10.0,
+  "official_source_zip": {
+    "final_verified_source_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip",
+    "official_version_not_git_fork": true,
+    "official_zip_bytes": 218381995,
+    "official_zip_sha256": "aab991a970e58210de853bb8078ce0e63abb4d9412fdc5c79792dae3d8e1721a",
+    "original_source_url": "https://archive.ics.uci.edu/static/public/791/metropt%2B3%2Bdataset.zip"
+  },
+  "original_first_P01_failure_sha256": "0b74889ed609a43d8924880e702d93fb8e723fd517fd718734463125991c13e3",
+  "original_first_workflow_id": "44212185197",
+  "per_window_lps_literal_tokens": [
+    {
+      "event_number": 1,
+      "literal_token_counts": {
+        "0.0": 288,
+        "1.0": 312
+      },
+      "maintenance_clock_label": "2020-06-08 16:00:00",
+      "rows": 600,
+      "window_side": "before"
+    },
+    {
+      "event_number": 1,
+      "literal_token_counts": {
+        "0.0": 7990
+      },
+      "maintenance_clock_label": "2020-06-08 16:00:00",
+      "rows": 7990,
+      "window_side": "after"
+    },
+    {
+      "event_number": 2,
+      "literal_token_counts": {
+        "0.0": 7446,
+        "1.0": 530
+      },
+      "maintenance_clock_label": "2020-07-16 00:00:00",
+      "rows": 7976,
+      "window_side": "before"
+    },
+    {
+      "event_number": 2,
+      "literal_token_counts": {
+        "0.0": 7916
+      },
+      "maintenance_clock_label": "2020-07-16 00:00:00",
+      "rows": 7916,
+      "window_side": "after"
+    }
+  ],
+  "post_original_failure_addendum_commit": "26cf6dff3e15805124f58c61529ff54924be6b24",
+  "source_rows": 1516948,
+  "source_values_restricted_to_timestamp_and_LPS": true,
+  "status": "RP_U009_D01_BINARY_TEXT_ENCODING_ONLY",
+  "study": "RP-U009-P01-D01",
+  "zero_or_negative_gaps": 0
+}

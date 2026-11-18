@@ -1,0 +1,58 @@
+name: RP-U009-D01 Post-Failure Original LPS Token Diagnostic Only
+
+on:
+  push:
+    branches:
+      - research/rp-u009-metropt-physical-telemetry-20261117
+    paths:
+      - .github/workflows/rp-u009-d01-lps-diagnostic.yml
+      - experiments/rp_u009_lps_token_diagnostic.py
+      - tests/test_rp_u009_lps_token_diagnostic.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rp-u009-d01-one-token-diagnostic
+  cancel-in-progress: false
+
+jobs:
+  second_source_token_diagnostic_only:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Checkout immutable first invalid result and post-source D01 addendum
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify original invalid archive and no prior D01 diagnostic
+        run: |
+          git merge-base --is-ancestor 26cf6dff3e15805124f58c61529ff54924be6b24 "$GITHUB_SHA"
+          test -f docs/results/RP-U009-P01-first-run/audit.json
+          test ! -e docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json
+          printf '%s  %s\n' 0b74889ed609a43d8924880e702d93fb8e723fd517fd718734463125991c13e3 docs/results/RP-U009-P01-first-run/audit.json | sha256sum -c -
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install project dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Synthetic and original archive checks before second source access
+        run: python -m pytest -q tests/test_rp_u009_metropt_core.py tests/test_rp_u009_metropt_source.py tests/test_rp_u009_lps_token_diagnostic.py
+      - name: Second source download — inspect ONLY timestamp and LPS literal tokens
+        run: python -m experiments.rp_u009_lps_token_diagnostic
+      - name: Preserve exact D01 diagnostic bytes even on invalid
+        if: always()
+        run: |
+          if [ -f docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json ]; then
+            wc -c docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json
+            sha256sum docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json
+          fi
+      - name: Retain complete original token-only diagnostic, not large raw data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rp-u009-d01-second-source-lps-token-diagnostic
+          path: docs/results/RP-U009-P01-D01-post-source-token-diagnostic/audit.json
+          if-no-files-found: warn
+          retention-days: 90

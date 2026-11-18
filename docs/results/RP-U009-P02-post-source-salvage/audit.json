@@ -1,0 +1,11 @@
+{
+  "first_secondary_workflow_id": "44213342591",
+  "not_an_eligible_physical_recovery_study": true,
+  "original_P01_status_unchanged": "RP_U009_SOURCE_OR_WINDOWS_INVALID",
+  "post_source_addendum_commit": "764a07a5f7489491e6da05d17d15d6ecb5695af5",
+  "reason_code": "MAINTENANCE_WINDOW_HAS_TOO_FEW_HOUR_BUCKETS",
+  "reason_type": "InvalidEvidence",
+  "source_commit": "86e96edd2d4acd48db6168a52d0a139ad1e323b7",
+  "status": "RP_U009_P02_SOURCE_OR_WINDOWS_INVALID",
+  "study": "RP-U009-P02"
+}

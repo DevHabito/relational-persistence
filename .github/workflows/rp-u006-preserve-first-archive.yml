@@ -1,0 +1,109 @@
+name: RP-U006 Preserve Original First-Run Evidence
+
+on:
+  push:
+    branches:
+      - research/rp-u006-observed-service-recovery-20261117
+    paths:
+      - .github/workflows/rp-u006-preserve-first-archive.yml
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: rp-u006-preserve-source-archive-once
+  cancel-in-progress: false
+
+jobs:
+  verify_and_archive_original:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout U006 source for archival verification
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Confirm source experiment precedes the archival workflow
+        run: |
+          git merge-base --is-ancestor 967909da3c1724cf23bd6226ede56d38b02cfd8c "$GITHUB_SHA"
+          test ! -e docs/results/RP-U006-P01-first-run/summary.json
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recover exact original evidence from the first successful source workflow
+        uses: actions/download-artifact@v4
+        with:
+          name: rp-u006-first-real-executable-service-role-logs
+          run-id: 44203138441
+          github-token: ${{ github.token }}
+          path: docs/results/RP-U006-P01-first-run
+      - name: Independently verify all 77 source records before versioning
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          from experiments import rp_u006_forecast_core as c
+          from experiments import rp_u006_observed_recovery as runner
+          root = Path("docs/results/RP-U006-P01-first-run")
+          files = [p for p in root.rglob("*") if p.is_file()]
+          assert len(files) == 77, f"Expected 77 original trace files; found {len(files)}"
+          b = (root / "summary.json").read_bytes()
+          assert len(b) == 16963
+          assert hashlib.sha256(b).hexdigest() == "d051c72dc5c40caa23a59585c35cdd71b3c94671266a32790a28d27c22e4e897"
+          original = json.loads(b)
+          assert original["source_commit"] == "967909da3c1724cf23bd6226ede56d38b02cfd8c"
+          assert original["first_workflow_run_id"] == "44203138441"
+          assert original["original_trials_valid"] is True
+          assert original["status"] == "RP_U006_EXECUTABLE_STATE_FORECAST_GAIN_WITHIN_HOST"
+          records = [original["calibration"], *original["diagnostic"], *original["heldout"]]
+          assert len(records) == 15
+          for i, rec in enumerate(records):
+              name = ("calibration" if i == 0 else
+                      f"diagnostic-{i:02d}" if i <= 6 else
+                      f"holdout-{i-6:02d}")
+              path = root / name
+              assert path.is_dir()
+              assert len(list(path.iterdir())) == 5
+              for filename, hashkey in (
+                  ("service-events.jsonl", "event_log_sha256"),
+                  ("monitor-samples.jsonl", "monitor_log_sha256"),
+                  ("controller-injector.json", "controller_log_sha256"),
+              ):
+                  assert hashlib.sha256((path / filename).read_bytes()).hexdigest() == rec[hashkey]
+              events = runner.read_jsonlines(path / "service-events.jsonl")
+              samples = runner.read_jsonlines(path / "monitor-samples.jsonl")
+              audit = c.validate_service_events(
+                  events, rec["requested_jobs"], calibration=(i == 0))
+              assert audit["accepted"] == audit["completed"] == rec["requested_jobs"]
+              assert audit["server_enable_ns"] == rec["server_enable_ns"]
+              if i == 0:
+                  assert c.calibration_interval(events) == rec["calibrated_service_interval_seconds"]
+              else:
+                  assert c.recovery_elapsed(
+                      samples, rec["server_enable_ns"], rec["requested_jobs"]
+                  ) == rec["recovery_seconds"]
+          baseline = original["training_median_recovery_seconds"]
+          interval = original["calibrated_completion_interval_seconds"]
+          for rec in original["heldout"]:
+              assert rec["predictions"] == c.frozen_forecasts(
+                  [baseline] * len(c.DIAGNOSTIC_LOADS), interval,
+                  rec["pre_enable_outstanding"])
+          result = c.evaluate_original(original)
+          assert result["status"] == original["status"]
+          for key in ("availability_only_MAE_seconds",
+                      "outstanding_aware_MAE_seconds",
+                      "state_forecast_strict_wins_of_eight"):
+              assert result[key] == original[key]
+          print("ORIGINAL_EVIDENCE_GATE_PASS: 77 files, 15 trials, 8 holdouts")
+          PY
+      - name: Commit original sources only to this unmerged study branch
+        run: |
+          git config user.name "RP-U006 Evidence Archive"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/results/RP-U006-P01-first-run/
+          git diff --cached --quiet && exit 1
+          git commit -m "research(rp): preserve original U006 hosted role traces and first forecast result"
+          git push origin HEAD:research/rp-u006-observed-service-recovery-20261117

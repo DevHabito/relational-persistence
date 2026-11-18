@@ -1,0 +1,31 @@
+{
+  "batch_acknowledged": {
+    "accepted": 12,
+    "first_id": 1,
+    "last_id": 12
+  },
+  "batch_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "block": "calibration",
+  "controller_enable_ack_ns": 54062564279,
+  "enabled_acknowledged": {
+    "enabled": true,
+    "server_enable_ns": 54062384300
+  },
+  "ordinal": 0,
+  "pre_enable_outstanding": null,
+  "prediction_created_ns": 54063422707,
+  "predictions": null
+}

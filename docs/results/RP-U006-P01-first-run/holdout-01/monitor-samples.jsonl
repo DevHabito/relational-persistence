@@ -1,0 +1,15 @@
+{"accepted": 0, "active": 0, "available": false, "completed": 0, "observed_ns": 58021620576, "queued": 0, "server_snapshot_ns": 58021550581}
+{"accepted": 7, "active": 0, "available": false, "completed": 0, "observed_ns": 58042181597, "queued": 7, "server_snapshot_ns": 58042133735}
+{"accepted": 7, "active": 0, "available": false, "completed": 0, "observed_ns": 58062674397, "queued": 7, "server_snapshot_ns": 58062629569}
+{"accepted": 7, "active": 0, "available": false, "completed": 0, "observed_ns": 58083236861, "queued": 7, "server_snapshot_ns": 58083185884}
+{"accepted": 7, "active": 1, "available": true, "completed": 1, "observed_ns": 58103652233, "queued": 5, "server_snapshot_ns": 58103609799}
+{"accepted": 7, "active": 1, "available": true, "completed": 2, "observed_ns": 58124091552, "queued": 4, "server_snapshot_ns": 58124050590}
+{"accepted": 7, "active": 1, "available": true, "completed": 4, "observed_ns": 58144524451, "queued": 2, "server_snapshot_ns": 58144481226}
+{"accepted": 7, "active": 1, "available": true, "completed": 6, "observed_ns": 58165090971, "queued": 0, "server_snapshot_ns": 58165048987}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58185524090, "queued": 0, "server_snapshot_ns": 58185481757}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58205943389, "queued": 0, "server_snapshot_ns": 58205902537}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58226373344, "queued": 0, "server_snapshot_ns": 58226331140}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58246861176, "queued": 0, "server_snapshot_ns": 58246814145}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58267391241, "queued": 0, "server_snapshot_ns": 58267329167}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58287965361, "queued": 0, "server_snapshot_ns": 58287900023}
+{"accepted": 7, "active": 0, "available": true, "completed": 7, "observed_ns": 58308559241, "queued": 0, "server_snapshot_ns": 58308493522}

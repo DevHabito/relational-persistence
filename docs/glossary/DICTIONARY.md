@@ -106,3 +106,17 @@ New meanings require a new protocol and documented migration, not retroactive ed
 | Backlog state as memory | Jobs accumulated under the earlier failure/arrival history, not inferable from topology and future arrivals alone | A derivation of physical time emergence or brain identity |
 
 This vocabulary belongs solely to RP-U005-P01; it does not retroactively change RP-U004 F1/F2, RP-E004 trial timing, or other studies.
+
+## RP-U006 executable service recovery terms (17 November 2026)
+
+| Name | Declared measurement | Scope restriction |
+|---|---|---|
+| Worker availability | Software TCP service flag forbidding any worker dequeue while false and allowing FIFO processing when true | Not physical link uptime, restored graph edges or two network routes |
+| Accepted-but-uncompleted work | At enable time, service `accepted-completed=queued+active`, checked against injector batch and server logs | Known batch size, not a hidden state inferred from network observations |
+| Monitor recovery observation | Second of two consecutive post-enable health replies with no outstanding work, at least 15 ms apart | Not continuous-time health or physically independent telemetry |
+| Availability-only baseline | Median recovery time from six diagnostic interventions with common available state | Not an unsupervised zero-latency topology-only model |
+| Backlog-aware forecast | Outstanding count × pretrial median completion interval + a frozen 40 ms monitoring allowance | Uses workload known from source inputs; no postrepair arrivals |
+| Heldout MAE | Mean of eight original absolute forecast-minus-observed recovery durations | Not an eight-person natural population or a significance claim |
+| Pre-source correction | Exact nine positive completion intervals require timestamps of calibration jobs 3..12 | Does not permit tuning intervals after reading source outcomes |
+
+RP-U006 does **not** redefine RP-U005 F1/F2, the early RP-E004 measurement gate, or any user-level self/entropy concept.

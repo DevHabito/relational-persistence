@@ -144,3 +144,14 @@ The RP-U005-P01 experiment is a deliberately finite toy queue/service graph. Pre
 - Classical nonnegative discrete queue conservation is used as a **stipulated abstract model**, not introduced as new queuing theory. The specific frozen eight-world arithmetic and Lean statements are a transparent illustration of its consequences under a synthetic structural capacity mapping.
 
 See the independently archived first run at `docs/results/RP-U005-P01-first-run/audit.json` and its explicit evidence limits in `docs/results/RP-U005-P01.md`.
+
+## RP-U006 P01 single-host service instrumentation and queue recovery (17 November 2026)
+
+This study compares one prior-calibrated service-backlog forecast with a diagnostic median constant. It measures *actual wall-clock effects on one program* but not physical network repair, ecological recovery, human physiology or physical time emergence. Service availability, backlog observability and recovery-time predictions have established prior literature.
+
+- Oppenheimer, D., Ganapathi, A., and Patterson, D. A. (2003), *Why do Internet services fail, and what can be done about it?* 4th USENIX Symposium on Internet Technologies and Systems. https://www.usenix.org/legacy/event/usits03/tech/full_papers/oppenheimer/oppenheimer_html/. Measures operational services rather than assuming every repaired component means service restored.
+- Bartolini, N., Ciavarella, S., La Porta, T. F., and Silvestri, S. (2017), *On Critical Service Recovery after Massive Network Failures*, IEEE/ACM Transactions on Networking. https://doi.org/10.1109/TNET.2017.2688330.
+- *Mitigating long queues and waiting times with service resetting* (2022), PNAS Nexus. https://pmc.ncbi.nlm.nih.gov/articles/PMC9896945/. Established relationship between arrival/service processes and queueing performance.
+- The program's RP-E009 TCP/asyncio executable queue and RP-E004/P02 monitoring are **earlier in-repository precedents**, not new validated external sources.
+
+First source provenance: `docs/results/RP-U006-P01-first-run/archive-index.json`. The independent archival workflow preserved all 77 first source files and verified counts, SHA256s and event-level recovery replays. This is a useful instrumentation result with a narrow statistical population (one software service and one hosted VM).

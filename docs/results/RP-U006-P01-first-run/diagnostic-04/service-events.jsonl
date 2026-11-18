@@ -1,0 +1,26 @@
+{"event": "accept", "job": 1, "server_time_ns": 56295989170}
+{"event": "accept", "job": 2, "server_time_ns": 56296089130}
+{"event": "accept", "job": 3, "server_time_ns": 56296117272}
+{"event": "accept", "job": 4, "server_time_ns": 56296137212}
+{"event": "accept", "job": 5, "server_time_ns": 56296156361}
+{"event": "accept", "job": 6, "server_time_ns": 56296178014}
+{"event": "accept", "job": 7, "server_time_ns": 56296200888}
+{"event": "accept", "job": 8, "server_time_ns": 56296220828}
+{"available": true, "event": "enable", "server_time_ns": 56362237035}
+{"event": "start", "job": 1, "server_time_ns": 56362370395}
+{"event": "complete", "job": 1, "server_time_ns": 56374987476}
+{"event": "start", "job": 2, "server_time_ns": 56375070541}
+{"event": "complete", "job": 2, "server_time_ns": 56387698248}
+{"event": "start", "job": 3, "server_time_ns": 56387800361}
+{"event": "complete", "job": 3, "server_time_ns": 56400248870}
+{"event": "start", "job": 4, "server_time_ns": 56400325855}
+{"event": "complete", "job": 4, "server_time_ns": 56413042006}
+{"event": "start", "job": 5, "server_time_ns": 56413114675}
+{"event": "complete", "job": 5, "server_time_ns": 56425784656}
+{"event": "start", "job": 6, "server_time_ns": 56425838006}
+{"event": "complete", "job": 6, "server_time_ns": 56438148527}
+{"event": "start", "job": 7, "server_time_ns": 56438199113}
+{"event": "complete", "job": 7, "server_time_ns": 56450607332}
+{"event": "start", "job": 8, "server_time_ns": 56450666852}
+{"event": "complete", "job": 8, "server_time_ns": 56463282261}
+{"accepted": 8, "completed": 8, "event": "shutdown", "server_time_ns": 56633486138}

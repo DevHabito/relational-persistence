@@ -1,0 +1,23 @@
+{
+  "block": "calibration",
+  "calibrated_service_interval_seconds": 0.012642039,
+  "controller_log_sha256": "38736ea36fa87f5027701f3227cd30c0fcf85b6aa81e81e79ef685deafb8f3a2",
+  "event_log_sha256": "6fb5312ef3070568401bf62c8da399ef690b4455fce11159f269299230562e4d",
+  "independent_job_identity_audit": {
+    "accepted": 12,
+    "completed": 12,
+    "server_enable_ns": 54062384300
+  },
+  "monitor_log_sha256": "c1c2730d51266fb7adb19efc861791380c3de8b8a30a02b1643268ab4c722080",
+  "monitor_process_exit_code": 0,
+  "ordinal": 0,
+  "original_event_count": 38,
+  "original_monitor_samples": 15,
+  "pre_enable_outstanding": null,
+  "predictions": null,
+  "recovery_seconds": null,
+  "requested_jobs": 12,
+  "server_enable_ns": 54062384300,
+  "server_process_exit_code": 0,
+  "source_trial_valid": true
+}

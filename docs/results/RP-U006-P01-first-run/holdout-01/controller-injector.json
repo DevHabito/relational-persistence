@@ -1,0 +1,29 @@
+{
+  "batch_acknowledged": {
+    "accepted": 7,
+    "first_id": 1,
+    "last_id": 7
+  },
+  "batch_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "block": "holdout",
+  "controller_enable_ack_ns": 58089504695,
+  "enabled_acknowledged": {
+    "enabled": true,
+    "server_enable_ns": 58089377805
+  },
+  "ordinal": 1,
+  "pre_enable_outstanding": 7,
+  "prediction_created_ns": 58089553789,
+  "predictions": {
+    "availability_only_seconds": 0.2400555515,
+    "outstanding_aware_seconds": 0.12849427300000002
+  }
+}

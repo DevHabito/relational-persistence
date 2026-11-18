@@ -1,0 +1,9 @@
+{
+  "block": "diagnostic",
+  "monitor_requested_poll_seconds": 0.02,
+  "ordinal": 2,
+  "post_restore_job_arrivals": 0,
+  "requested_jobs": 16,
+  "service_requested_minimum_seconds": 0.012,
+  "worker_initially_available": false
+}

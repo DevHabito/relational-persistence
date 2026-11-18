@@ -1,0 +1,51 @@
+{
+  "actual_fault_deactivation_verified": false,
+  "all_outcome_and_population_inference_prohibited": true,
+  "file_descriptor_count": 0,
+  "file_descriptors_from_official_repository_json": [],
+  "first_source_original_csv_or_pcapng_downloaded": false,
+  "first_source_runner_commit": "073b23dd1a17905b982cebc2e4c1b5e48ce7b3d4",
+  "first_source_workflow_id": "44215663536",
+  "independent_functional_recovery_endpoint_verified": false,
+  "metadata_requests_made": 4,
+  "no_new_formal_theorem_or_physical_law": true,
+  "official_dataset_doi": "10.71486/2drf-1g53",
+  "official_dataset_handle": "10259/11686",
+  "plc_pcap_clock_alignment_verified": false,
+  "protocol_only_commit": "25d1041ab086b2c19273b5e32061ed6f130df0cb",
+  "publisher_metadata_attempts": [
+    {
+      "body_bytes": 12464,
+      "content_type": "application/json; charset=utf-8",
+      "file_descriptor_count": 0,
+      "final_url": "https://api.datacite.org/dois/10.71486/2drf-1g53",
+      "http_status": 200,
+      "identity_verified": true,
+      "kind": "datacite_doi",
+      "metadata_link_count": 1,
+      "redirect_chain": [],
+      "requested_url": "https://api.datacite.org/dois/10.71486/2drf-1g53",
+      "sha256": "943d7af61500634fe8712b4720203c6519f85b17ffe26161963e0a81aca1afe7"
+    },
+    {
+      "error_code": "<urlopen error timed out>",
+      "error_type": "URLError",
+      "integrity_violation": false,
+      "requested_url": "https://hdl.handle.net/10259/11686"
+    },
+    {
+      "error_code": "<urlopen error timed out>",
+      "error_type": "URLError",
+      "integrity_violation": false,
+      "requested_url": "https://riubu.ubu.es/server/api/core/handles/10259/11686"
+    },
+    {
+      "error_code": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+      "error_type": "URLError",
+      "integrity_violation": false,
+      "requested_url": "https://riubu.ubu.es/handle/10259/11686"
+    }
+  ],
+  "status": "RP_U010_A01_METADATA_ONLY_SOURCE_FILES_NOT_RESOLVED",
+  "study": "RP-U010-A01"
+}

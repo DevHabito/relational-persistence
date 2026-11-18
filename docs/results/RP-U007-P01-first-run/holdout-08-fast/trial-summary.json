@@ -1,0 +1,42 @@
+{
+  "accepted_by_landmark": 26,
+  "all_source_job_identity_verified": true,
+  "calibration": false,
+  "complete_job_count": 28,
+  "controller_file_sha256": "cbefc13ced18f2c5894ebd6311c960a1334c0e6cb25c6f109ffda87d9bae1965",
+  "event_file_sha256": "40b7c776860231904c4459ac624b2ce89c2e15b2114c880e1e4de85436cca687",
+  "final_batch_accept_ns": 600142061999,
+  "initial_jobs": 22,
+  "measured_recovery_from_landmark_seconds": 0.207878397,
+  "monitor_file_sha256": "e363cd0ec2908954a639c03b8be5e29df48cf4cc407f9d6104187293b5c1c533",
+  "monitor_process_exitcode": 0,
+  "monitor_samples": 36,
+  "ordinal": 8,
+  "prediction_created_ns": 600085247839,
+  "prediction_prelast_file_sha256": "2f8fc90d3cf55c505a2f0b3506a68245951ebfadc4541855341b378ef255246b",
+  "predictions": {
+    "accepted_by_landmark": 26,
+    "calibrated_interval_seconds": 0.009587385,
+    "future_registered_jobs": 2,
+    "input_capacity_prediction_seconds": 0.19657293,
+    "input_inferred_backlog": 16,
+    "observed_landmark_backlog": 16,
+    "observed_state_prediction_seconds": 0.19657293,
+    "sham_replacing_measured_with_inferred_seconds": 0.19657293
+  },
+  "prelandmark_live_sample": {
+    "accepted": 26,
+    "active": 1,
+    "available": true,
+    "completed": 10,
+    "observed_ns": 600075554184,
+    "queued": 15,
+    "server_snapshot_ns": 600075500876
+  },
+  "regime": "fast",
+  "registered_landmark_ns": 600080494412,
+  "server_enable_ns": 599980494412,
+  "service_events": 86,
+  "service_process_exitcode": 0,
+  "valid_original_trial": true
+}

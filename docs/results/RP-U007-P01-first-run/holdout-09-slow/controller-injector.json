@@ -1,0 +1,60 @@
+{
+  "enable": {
+    "enabled": true,
+    "server_enable_ns": 600617873800
+  },
+  "enable_ack_receipt_ns": 600618048274,
+  "initial_batch": {
+    "accepted_this_batch": 18,
+    "accepted_total": 18,
+    "first_job_id": 1,
+    "last_job_id": 18,
+    "server_last_accept_ns": 600616501149
+  },
+  "initial_batch_receipt_ns": 600616609960,
+  "post_enable_batches": [
+    {
+      "receipt_ns": 600658889212,
+      "response": {
+        "accepted_this_batch": 2,
+        "accepted_total": 20,
+        "first_job_id": 19,
+        "last_job_id": 20,
+        "server_last_accept_ns": 600658786733
+      },
+      "scheduled_offset_ns": 40000000
+    },
+    {
+      "receipt_ns": 600698874468,
+      "response": {
+        "accepted_this_batch": 2,
+        "accepted_total": 22,
+        "first_job_id": 21,
+        "last_job_id": 22,
+        "server_last_accept_ns": 600698752001
+      },
+      "scheduled_offset_ns": 80000000
+    },
+    {
+      "receipt_ns": 600779216214,
+      "response": {
+        "accepted_this_batch": 2,
+        "accepted_total": 24,
+        "first_job_id": 23,
+        "last_job_id": 24,
+        "server_last_accept_ns": 600779111951
+      },
+      "scheduled_offset_ns": 160000000
+    }
+  ],
+  "pre_enable_health": {
+    "accepted": 18,
+    "active": 0,
+    "available": false,
+    "completed": 0,
+    "queued": 18,
+    "server_snapshot_ns": 600617211399
+  },
+  "prediction_created_ns": 600722285338,
+  "prediction_file_written_before_final_batch": true
+}

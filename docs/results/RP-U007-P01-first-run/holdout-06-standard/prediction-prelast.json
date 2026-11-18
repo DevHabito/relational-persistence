@@ -1,0 +1,27 @@
+{
+  "access_to_future_service_completions": false,
+  "expected_final_batch_arrival_count": 2,
+  "initial_jobs": 22,
+  "model_computed_time_ns": 598821984962,
+  "model_predictions": {
+    "accepted_by_landmark": 26,
+    "calibrated_interval_seconds": 0.012502965,
+    "future_registered_jobs": 2,
+    "input_capacity_prediction_seconds": 0.28656226500000004,
+    "input_inferred_backlog": 19,
+    "observed_landmark_backlog": 19,
+    "observed_state_prediction_seconds": 0.28656226500000004,
+    "sham_replacing_measured_with_inferred_seconds": 0.28656226500000004
+  },
+  "regime": "standard",
+  "registered_landmark_ns": 598816925012,
+  "source_monitored_health": {
+    "accepted": 26,
+    "active": 1,
+    "available": true,
+    "completed": 7,
+    "observed_ns": 598812334108,
+    "queued": 18,
+    "server_snapshot_ns": 598812271774
+  }
+}

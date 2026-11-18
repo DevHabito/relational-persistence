@@ -1,0 +1,19 @@
+{
+  "enable": {
+    "enabled": true,
+    "server_enable_ns": 594826320474
+  },
+  "enable_ack_receipt_ns": 594826522447,
+  "initial_batch": {
+    "accepted_this_batch": 18,
+    "accepted_total": 18,
+    "first_job_id": 1,
+    "last_job_id": 18,
+    "server_last_accept_ns": 594827953933
+  },
+  "initial_batch_receipt_ns": 594828069775,
+  "post_enable_batches": [],
+  "pre_enable_health": null,
+  "prediction_created_ns": null,
+  "prediction_file_written_before_final_batch": false
+}

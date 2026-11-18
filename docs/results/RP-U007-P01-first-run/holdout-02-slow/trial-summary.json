@@ -1,0 +1,42 @@
+{
+  "accepted_by_landmark": 14,
+  "all_source_job_identity_verified": true,
+  "calibration": false,
+  "complete_job_count": 16,
+  "controller_file_sha256": "1120827562d19e56c142f8f51a27fcef8673fffbae291a31f1916484ce2ad39b",
+  "event_file_sha256": "9a618165a16d9401cee54d50b98869229df3516ff8385bf6c5a675c2169346ee",
+  "final_batch_accept_ns": 596230259824,
+  "initial_jobs": 10,
+  "measured_recovery_from_landmark_seconds": 0.221956911,
+  "monitor_file_sha256": "fcd423f4f91733d4a79c0dae0e3463b05df930e8e2991cc3e21a186d062cfc0b",
+  "monitor_process_exitcode": 0,
+  "monitor_samples": 37,
+  "ordinal": 2,
+  "prediction_created_ns": 596174537668,
+  "prediction_prelast_file_sha256": "e1f793c787b2f53a42eb4cb6c8142c92ea8fd13ecbdae87858b3476100f9080b",
+  "predictions": {
+    "accepted_by_landmark": 14,
+    "calibrated_interval_seconds": 0.018828704,
+    "future_registered_jobs": 2,
+    "input_capacity_prediction_seconds": 0.231115744,
+    "input_inferred_backlog": 9,
+    "observed_landmark_backlog": 9,
+    "observed_state_prediction_seconds": 0.231115744,
+    "sham_replacing_measured_with_inferred_seconds": 0.231115744
+  },
+  "prelandmark_live_sample": {
+    "accepted": 14,
+    "active": 1,
+    "available": true,
+    "completed": 5,
+    "observed_ns": 596165264611,
+    "queued": 8,
+    "server_snapshot_ns": 596165191246
+  },
+  "regime": "slow",
+  "registered_landmark_ns": 596169451393,
+  "server_enable_ns": 596069451393,
+  "service_events": 50,
+  "service_process_exitcode": 0,
+  "valid_original_trial": true
+}
